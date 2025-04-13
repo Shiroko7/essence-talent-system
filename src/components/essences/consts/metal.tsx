@@ -1,4 +1,4 @@
-const metalAbilities = [
+export const metalAbilities = [
     {
       id: 'metal_initiate_metalcrafting',
       name: 'Metalcrafting',
@@ -111,7 +111,7 @@ const metalAbilities = [
     },
    ];
   
-   const metalCantrips = [
+   export const metalCantrips = [
     {
       id: 'metal_cantrip_blade_ward',
       name: 'Blade Ward',
@@ -134,7 +134,7 @@ const metalAbilities = [
     },
    ];
   
-   const metalSpells = [
+   export const metalSpells = [
     {
       id: 'metal_2nd_level_cloud_of_daggers',
       name: 'Cloud of Daggers',

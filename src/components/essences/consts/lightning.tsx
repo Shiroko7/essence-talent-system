@@ -1,4 +1,4 @@
-const lightningAbilities = [
+export const lightningAbilities = [
     {
       id: 'lightning_initiate_thunderous_strike',
       name: 'Thunderous Strike',
@@ -111,7 +111,7 @@ const lightningAbilities = [
       },
    ];
   
-   const lightningCantrips = [
+   export const lightningCantrips = [
     {
       id: 'lightning_cantrip_lightning_lure',
       name: 'Lightning Lure',
@@ -134,7 +134,7 @@ const lightningAbilities = [
     },
    ];
   
-   const lightningSpells = [
+   export const lightningSpells = [
     {
       id: 'lightning_1st_level_witch_bolt',
       name: 'Witch Bolt',

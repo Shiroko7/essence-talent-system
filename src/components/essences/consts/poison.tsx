@@ -1,4 +1,4 @@
-const poisonAbilities = [
+export const poisonAbilities = [
     {
       id: 'poison_initiate_venomous_touch',
       name: 'Venomous Touch',
@@ -111,7 +111,7 @@ const poisonAbilities = [
     },
    ];
   
-   const poisonCantrips = [
+   export const poisonCantrips = [
     {
       id: 'poison_cantrip_poison_spray',
       name: 'Poison Spray',
@@ -134,7 +134,7 @@ const poisonAbilities = [
     },
    ];
   
-   const poisonSpells = [
+   export const poisonSpells = [
     {
       id: 'poison_1st_level_ray_of_sickness',
       name: 'Ray of Sickness',

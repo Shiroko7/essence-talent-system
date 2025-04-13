@@ -1,4 +1,4 @@
-const waterAbilities = [
+export const waterAbilities = [
     {
       id: 'water_initiate_echoes_of_the_deep',
       name: 'Echoes of the Deep',
@@ -121,7 +121,7 @@ const waterAbilities = [
     },
    ];
   
-   const waterCantrips = [
+   export const waterCantrips = [
     {
       id: 'water_cantrip_acid_splash',
       name: 'Acid Splash',
@@ -164,7 +164,7 @@ const waterAbilities = [
     },
    ];
   
-   const waterSpells = [
+   export const waterSpells = [
     {
       id: 'water_1st_level_create_or_destroy_water',
       name: 'Create or Destroy Water',

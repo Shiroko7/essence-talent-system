@@ -1,4 +1,4 @@
-const airAbilities = [
+export const airAbilities = [
   {
     id: 'air_initiate_gale_force_strike',
     name: 'Gale Force Strike',
@@ -131,7 +131,7 @@ const airAbilities = [
   },
  ];
 
- const airCantrips = [
+ export const airCantrips = [
   {
     id: 'air_cantrip_gust',
     name: 'Gust',
@@ -154,7 +154,7 @@ const airAbilities = [
   },
  ];
 
- const airSpells = [
+ export const airSpells = [
   {
     id: 'air_1st_level_fog_cloud',
     name: 'Fog Cloud',

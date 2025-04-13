@@ -1,4 +1,4 @@
-const woodAbilities = [
+export const woodAbilities = [
     {
       id: 'wood_initiate_vine_manipulation',
       name: 'Vine Manipulation',
@@ -91,7 +91,7 @@ const woodAbilities = [
     },
    ];
   
-   const woodCantrips = [
+   export const woodCantrips = [
     {
       id: 'wood_cantrip_thorn_whip',
       name: 'Thorn Whip',
@@ -124,7 +124,7 @@ const woodAbilities = [
     },
    ];
   
-   const woodSpells = [
+   export const woodSpells = [
     {
       id: 'wood_1st_level_purify_food_and_drink',
       name: 'Purify Food and Drink',

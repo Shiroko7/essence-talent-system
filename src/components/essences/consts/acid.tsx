@@ -1,4 +1,4 @@
-const acidAbilities = [
+export const acidAbilities = [
     {
       id: 'acid_initiate_expanded_explosion',
       name: 'Expanded Explosion',
@@ -101,7 +101,7 @@ const acidAbilities = [
     },
    ];
   
-   const acidCantrips = [
+   export const acidCantrips = [
     {
       id: 'acid_cantrip_acid_splash',
       name: 'Acid Splash',
@@ -124,7 +124,7 @@ const acidAbilities = [
     },
    ];
   
-   const acidSpells = [
+   export const acidSpells = [
     {
       id: 'acid_1st_level_absorb_elements',
       name: 'Absorb Elements',

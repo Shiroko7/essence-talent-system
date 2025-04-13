@@ -1,4 +1,4 @@
-const earthAbilities = [
+export const earthAbilities = [
     {
       id: 'earth_initiate_stonecunning',
       name: 'Stonecunning',
@@ -121,7 +121,7 @@ const earthAbilities = [
     },
    ];
   
-   const earthCantrips = [
+   export const earthCantrips = [
     {
       id: 'earth_cantrip_magic_stone',
       name: 'Magic Stone',
@@ -144,7 +144,7 @@ const earthAbilities = [
     },
    ];
   
-   const earthSpells = [
+   export const earthSpells = [
     {
       id: 'earth_1st_level_earth_tremor',
       name: 'Earth Tremor',

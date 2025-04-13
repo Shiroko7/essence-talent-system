@@ -1,4 +1,4 @@
-const fireAbilities = [
+export const fireAbilities = [
     {
       id: 'fire_initiate_flame_ward',
       name: 'Flame Ward',
@@ -101,7 +101,7 @@ const fireAbilities = [
     },
    ];
   
-   const fireCantrips = [
+   export const fireCantrips = [
     {
       id: 'fire_cantrip_control_flames',
       name: 'Control Flames',
@@ -154,7 +154,7 @@ const fireAbilities = [
     },
    ];
   
-   const fireSpells = [
+   export const fireSpells = [
     {
       id: 'fire_1st_level_burning_hands',
       name: 'Burning Hands',
