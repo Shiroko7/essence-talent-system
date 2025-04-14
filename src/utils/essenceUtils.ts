@@ -178,7 +178,7 @@ export function calculatePathEssenceStatus(
   );
   
   // Calculate available essence points
-  const available = Math.min(totalAvailablePoints, potentialActiveTotal - spent);
+  const available =  potentialActiveTotal - spent;
   
   return {
     spent,

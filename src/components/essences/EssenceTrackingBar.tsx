@@ -26,13 +26,10 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
   const totalCapacity = max + passiveReduction;
   
   // Calculate the width percentages for the bar segments
-  const spentPercentage = (spent / totalCapacity) * 100;
+  // In the inverted logic, we want to show available first, then spent
   const availablePercentage = (available / totalCapacity) * 100;
+  const spentPercentage = (spent / totalCapacity) * 100;
   const reducedPercentage = (passiveReduction / totalCapacity) * 100;
- 
-  console.log("ribbit");
-  console.log(spentPercentage, availablePercentage, reducedPercentage);
-  console.log(spent, available, passiveReduction, max, totalCapacity);
 
   return (
     <div className="w-full mb-3">
@@ -42,17 +39,17 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
           <span className="font-medium">{path.name} Essence</span>
         </div>
         <div className="text-sm">
-          Used: {spent}/{max}
+          Available: {available}/{max}
           {passiveReduction > 0 && ` (-${passiveReduction} reduced)`}
         </div>
       </div>
       
       <div className="flex items-center gap-2">
         <button
-          onClick={onDecrement}
-          disabled={spent <= 0}
+          onClick={onIncrement}
+          disabled={available <= 0}
           className={`p-1 rounded ${
-            spent <= 0 ? 'bg-gray-700 text-gray-500' : 'bg-red-700 hover:bg-red-600 text-white'
+            available <= 0 ? 'bg-gray-700 text-gray-500' : 'bg-red-700 hover:bg-red-600 text-white'
           }`}
           aria-label="Decrease essence points"
         >
@@ -60,25 +57,25 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
         </button>
 
         <div className="flex-1 h-8 bg-gray-700 rounded overflow-hidden">
-          {/* Visualization of the bar with all three states */}
+          {/* Visualization of the bar with all three states in the inverted order */}
           <div className="flex h-full w-full">
-            {/* Spent essence (active) - shown as bright blue */}
-            {spent > 0 && (
+            {/* Available essence (unused) - shown as bright blue */}
+            {available > 0 && (
               <div
                 className="h-full bg-blue-600"
-                style={{ width: `${spentPercentage}%` }}
+                style={{ width: `${availablePercentage}%` }}
                 role="progressbar"
-                aria-valuenow={spent}
+                aria-valuenow={available}
                 aria-valuemin={0}
                 aria-valuemax={totalCapacity}
               ></div>
             )}
             
-            {/* Available essence - shown as dark blue */}
-            {available > 0 && (
+            {/* Spent essence (active) - shown as dark blue */}
+            {spent > 0 && (
               <div
                 className="h-full bg-blue-900"
-                style={{ width: `${availablePercentage}%` }}
+                style={{ width: `${spentPercentage}%` }}
               ></div>
             )}
             
@@ -93,10 +90,10 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
         </div>
 
         <button
-          onClick={onIncrement}
-          disabled={available <= 0}
+          onClick={onDecrement}
+          disabled={spent <= 0}
           className={`p-1 rounded ${
-            available <= 0 ? 'bg-gray-700 text-gray-500' : 'bg-green-700 hover:bg-green-600 text-white'
+            spent <= 0 ? 'bg-gray-700 text-gray-500' : 'bg-green-700 hover:bg-green-600 text-white'
           }`}
           aria-label="Increase essence points"
         >
