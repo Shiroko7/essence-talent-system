@@ -25,7 +25,7 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
   const reducedPercentage = 100 - spentPercentage - availablePercentage;
 
   return (
-    <div className="mb-3 last:mb-0">
+    <div className="w-full">
       <div className="flex justify-between items-center mb-1">
         <div className="flex items-center gap-2">
           <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
@@ -43,6 +43,7 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
           className={`p-1 rounded ${
             spent <= 0 ? 'bg-gray-700 text-gray-500' : 'bg-red-700 hover:bg-red-600 text-white'
           }`}
+          aria-label="Decrease essence points"
         >
           <Minus size={16} />
         </button>
@@ -51,8 +52,14 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
           {/* Spent essence (active) */}
           {spent > 0 && (
             <div
-              className="h-full bg-blue-600 float-left"
-              style={{ width: `${spentPercentage}%` }}
+              className={`h-full float-left bg-blue-600`}
+              style={{ 
+                width: `${spentPercentage}%`
+              }}
+              role="progressbar"
+              aria-valuenow={spent}
+              aria-valuemin={0}
+              aria-valuemax={max}
             ></div>
           )}
           
@@ -79,6 +86,7 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
           className={`p-1 rounded ${
             available <= 0 ? 'bg-gray-700 text-gray-500' : 'bg-green-700 hover:bg-green-600 text-white'
           }`}
+          aria-label="Increase essence points"
         >
           <Plus size={16} />
         </button>

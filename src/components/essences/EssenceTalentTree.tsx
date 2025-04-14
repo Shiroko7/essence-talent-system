@@ -15,31 +15,15 @@ import {
   calculatePathEssenceStatus,
   pathHasActiveAbilities 
 } from '../../utils/essenceUtils';
-import { importEssenceData, importEssenceDataDirect } from '../../utils/essenceData';
+import { importEssenceData } from '../../utils/essenceData';
 
 const EssenceTalentTree: React.FC = () => {
   // Try to import essence data
   const [essenceData] = useState(() => {
-    try {
-      console.log("Attempting to load essence data...");
-      return importEssenceData();
-    } catch (e) {
-      console.warn("Standard import failed, trying direct access:", e);
-      
-      try {
-        return importEssenceDataDirect();
-      } catch (e2) {
-        console.error("Both import methods failed, using empty data:", e2);
-        
-        return {
-          abilities: {} as Record<EssencePathId, Ability[]>,
-          cantrips: {} as Record<EssencePathId, Ability[]>,
-          spells: {} as Record<EssencePathId, Ability[]>
-        };
-      }
-    }
+    return importEssenceData();
   });
   
+    
   const { abilities, cantrips, spells } = essenceData;
   
   // Set up filter state
@@ -119,31 +103,14 @@ const EssenceTalentTree: React.FC = () => {
       </header>
       
       {/* Main Content */}
-      <main className="flex-1 container mx-auto p-4 flex flex-col md:flex-row gap-4">
-        {/* Sidebar - Essence Paths */}
-        <aside className="w-full md:w-48 bg-gray-800 rounded p-2">
-          <h2 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2">Essence Paths</h2>
-          <ul className="space-y-1">
-            {ESSENCE_PATHS.map(path => (
-              <li key={path.id}>
-                <button
-                  className={`w-full text-left px-3 py-2 rounded flex items-center gap-2
-                    ${selectedPath === path.id ? 'bg-gray-700' : 'hover:bg-gray-700'}`}
-                  onClick={() => setSelectedPath(path.id)}
-                >
-                  <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
-                  {path.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-          
-          {/* Essence Tracking Bars */}
-          {pathsWithActiveAbilities.length > 0 && (
-            <div className="mt-6">
-              <h2 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2">
-                Active Essence
-              </h2>
+      <main className="flex-1 container mx-auto p-4 flex flex-col gap-4">
+        {/* Essence Tracking Bars Section - Moved from sidebar to top */}
+        {pathsWithActiveAbilities.length > 0 && (
+          <div className="w-full bg-gray-800 rounded-lg p-4 mb-4">
+            <h2 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2">
+              Active Essence
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {pathsWithActiveAbilities.map(path => {
                 const { spent, available, max } = calculatePathEssenceStatus(
                   path.id,
@@ -166,47 +133,69 @@ const EssenceTalentTree: React.FC = () => {
                 );
               })}
             </div>
-          )}
-        </aside>
+          </div>
+        )}
         
-        {/* Main Panel - Talent Tree */}
-        <div className="flex-1 bg-gray-800 rounded p-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-            <h2 className="text-xl font-bold">
-              {ESSENCE_PATHS.find(p => p.id === selectedPath)?.name} Path
-            </h2>
-            
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-              <FilterPills 
-                selectedFilter={selectedFilter} 
-                onFilterChange={handleFilterChange} 
-              />
+        {/* Content area with sidebar and talent tree */}
+        <div className="flex flex-col md:flex-row gap-4">
+          {/* Sidebar - Essence Paths */}
+          <aside className="w-full md:w-48 bg-gray-800 rounded p-2">
+            <h2 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2">Essence Paths</h2>
+            <ul className="space-y-1">
+              {ESSENCE_PATHS.map(path => (
+                <li key={path.id}>
+                  <button
+                    className={`w-full text-left px-3 py-2 rounded flex items-center gap-2
+                      ${selectedPath === path.id ? 'bg-gray-700' : 'hover:bg-gray-700'}`}
+                    onClick={() => setSelectedPath(path.id)}
+                  >
+                    <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
+                    {path.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </aside>
+          
+          {/* Main Panel - Talent Tree */}
+          <div className="flex-1 bg-gray-800 rounded p-4">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+              <h2 className="text-xl font-bold">
+                {ESSENCE_PATHS.find(p => p.id === selectedPath)?.name} Path
+              </h2>
               
-              <div className="flex items-center gap-2">
-                <div className="text-sm text-gray-400">Essence Points:</div>
-                <div className="px-3 py-1 bg-indigo-900 rounded-md font-medium">
-                  {totalPointsSpent} / {effectiveMaxPoints}
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+                <FilterPills 
+                  selectedFilter={selectedFilter} 
+                  onFilterChange={handleFilterChange} 
+                />
+                
+                <div className="flex items-center gap-2">
+                  <div className="text-sm text-gray-400">Essence Points:</div>
+                  <div className="px-3 py-1 bg-indigo-900 rounded-md font-medium">
+                    {totalPointsSpent} / {effectiveMaxPoints}
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-center gap-2">
-                <div className="text-sm text-gray-400">Total Essence:</div>
-                <div className="px-3 py-1 bg-purple-900 rounded-md font-medium">
-                  {totalEssencePoints}
+                
+                <div className="flex items-center gap-2">
+                  <div className="text-sm text-gray-400">Total Essence:</div>
+                  <div className="px-3 py-1 bg-purple-900 rounded-md font-medium">
+                    {totalEssencePoints}
+                  </div>
                 </div>
               </div>
             </div>
+            
+            {/* Render the selected path */}
+            <EssencePath
+              path={ESSENCE_PATHS.find(p => p.id === selectedPath)!}
+              abilities={getAllPathAbilities(selectedPath)}
+              selectedAbilities={character.selectedAbilities}
+              characterLevel={character.level}
+              activeFilter={selectedFilter}
+              onToggleAbility={(ability) => toggleAbility(ability, selectedPath)}
+            />
           </div>
-          
-          {/* Render the selected path */}
-          <EssencePath
-            path={ESSENCE_PATHS.find(p => p.id === selectedPath)!}
-            abilities={getAllPathAbilities(selectedPath)}
-            selectedAbilities={character.selectedAbilities}
-            characterLevel={character.level}
-            activeFilter={selectedFilter}
-            onToggleAbility={(ability) => toggleAbility(ability, selectedPath)}
-          />
         </div>
       </main>
       

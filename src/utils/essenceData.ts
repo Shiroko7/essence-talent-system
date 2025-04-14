@@ -1,61 +1,60 @@
+// src/utils/essenceData.ts
 import { Ability, EssencePathId } from '../types/essence';
 
+// Import all essence files directly
+import { fireAbilities, fireCantrips, fireSpells } from '../components/essences/consts/fire';
+import { waterAbilities, waterCantrips, waterSpells } from '../components/essences/consts/water';
+import { earthAbilities, earthCantrips, earthSpells } from '../components/essences/consts/earth';
+import { metalAbilities, metalCantrips, metalSpells } from '../components/essences/consts/metal';
+import { woodAbilities, woodCantrips, woodSpells } from '../components/essences/consts/wood';
+import { poisonAbilities, poisonCantrips, poisonSpells } from '../components/essences/consts/poison';
+import { acidAbilities, acidCantrips, acidSpells } from '../components/essences/consts/acid';
+import { lightningAbilities, lightningCantrips, lightningSpells } from '../components/essences/consts/lightning';
+import { airAbilities, airCantrips, airSpells } from '../components/essences/consts/air';
+
 /**
- * Imports essence data directly from the window globals.
- * This function reads from the global variables loaded from the imported .tsx files.
+ * Imports essence data directly from the module imports.
+ * This replaces the previous approach that tried to use window globals.
  */
 export function importEssenceData(): {
   abilities: Record<EssencePathId, Ability[]>;
   cantrips: Record<EssencePathId, Ability[]>;
   spells: Record<EssencePathId, Ability[]>;
 } {
-  // Access the global variables
   return {
     abilities: {
-      water: (window as any).waterAbilities || [],
-      fire: (window as any).fireAbilities || [],
-      earth: (window as any).earthAbilities || [],
-      metal: (window as any).metalAbilities || [],
-      wood: (window as any).woodAbilities || [],
-      poison: (window as any).poisonAbilities || [],
-      acid: (window as any).acidAbilities || [],
-      lightning: (window as any).lightningAbilities || [],
-      wind: (window as any).airAbilities || [],
+      fire: fireAbilities,
+      water: waterAbilities,
+      earth: earthAbilities,
+      metal: metalAbilities,
+      wood: woodAbilities,
+      poison: poisonAbilities,
+      acid: acidAbilities,
+      lightning: lightningAbilities,
+      wind: airAbilities, // Note: using 'wind' key to match EssencePathId
     },
     cantrips: {
-      water: (window as any).waterCantrips || [],
-      fire: (window as any).fireCantrips || [],
-      earth: (window as any).earthCantrips || [],
-      metal: (window as any).metalCantrips || [],
-      wood: (window as any).woodCantrips || [],
-      poison: (window as any).poisonCantrips || [],
-      acid: (window as any).acidCantrips || [],
-      lightning: (window as any).lightningCantrips || [],
-      wind: (window as any).airCantrips || [],
+      fire: fireCantrips,
+      water: waterCantrips,
+      earth: earthCantrips,
+      metal: metalCantrips,
+      wood: woodCantrips,
+      poison: poisonCantrips,
+      acid: acidCantrips,
+      lightning: lightningCantrips,
+      wind: airCantrips,
     },
     spells: {
-      water: (window as any).waterSpells || [],
-      fire: (window as any).fireSpells || [],
-      earth: (window as any).earthSpells || [],
-      metal: (window as any).metalSpells || [],
-      wood: (window as any).woodSpells || [],
-      poison: (window as any).poisonSpells || [],
-      acid: (window as any).acidSpells || [],
-      lightning: (window as any).lightningSpells || [],
-      wind: (window as any).airSpells || [],
+      fire: fireSpells,
+      water: waterSpells,
+      earth: earthSpells,
+      metal: metalSpells,
+      wood: woodSpells,
+      poison: poisonSpells,
+      acid: acidSpells,
+      lightning: lightningSpells,
+      wind: airSpells,
     }
   };
 }
 
-/**
- * Alternative implementation that directly accesses the window globals.
- * This provides a fallback in case the other method doesn't work.
- * (In this implementation, it's identical to importEssenceData)
- */
-export function importEssenceDataDirect(): {
-  abilities: Record<EssencePathId, Ability[]>;
-  cantrips: Record<EssencePathId, Ability[]>;
-  spells: Record<EssencePathId, Ability[]>;
-} {
-  return importEssenceData();
-}
