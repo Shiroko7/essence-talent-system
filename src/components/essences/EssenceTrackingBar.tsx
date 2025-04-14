@@ -29,7 +29,11 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
   const spentPercentage = (spent / totalCapacity) * 100;
   const availablePercentage = (available / totalCapacity) * 100;
   const reducedPercentage = (passiveReduction / totalCapacity) * 100;
-  
+ 
+  console.log("ribbit");
+  console.log(spentPercentage, availablePercentage, reducedPercentage);
+  console.log(spent, available, passiveReduction, max, totalCapacity);
+
   return (
     <div className="w-full mb-3">
       <div className="flex justify-between items-center mb-1">
@@ -38,7 +42,7 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
           <span className="font-medium">{path.name} Essence</span>
         </div>
         <div className="text-sm">
-          Used: {spent}/{spent + available}
+          Used: {spent}/{max}
           {passiveReduction > 0 && ` (-${passiveReduction} reduced)`}
         </div>
       </div>

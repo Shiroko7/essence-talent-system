@@ -177,10 +177,8 @@ export function calculatePathEssenceStatus(
     total + getTierCost(ability.tier), 0
   );
   
-  // The available essence is the minimum of (total available points + what's already spent on this path)
-  // and the potential active total for this path
-  // This ensures we don't show more available than what's actually possible
-  const available = Math.min(totalAvailablePoints + spent, potentialActiveTotal) - spent;
+  // Calculate available essence points
+  const available = Math.min(totalAvailablePoints, potentialActiveTotal - spent);
   
   return {
     spent,
