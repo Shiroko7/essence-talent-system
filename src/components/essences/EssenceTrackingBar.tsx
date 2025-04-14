@@ -6,7 +6,8 @@ interface EssenceTrackingBarProps {
   path: EssencePath;
   spent: number;
   available: number;
-  max: number;
+  max: number; 
+  passiveReduction: number; // Added to track passive/cantrip reductions
   onIncrement: () => void;
   onDecrement: () => void;
 }
@@ -16,23 +17,26 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
   spent,
   available,
   max,
+  passiveReduction,
   onIncrement,
   onDecrement
 }) => {
   // Calculate the width percentages for the bar segments
-  const spentPercentage = (spent / max) * 100;
-  const availablePercentage = (available / max) * 100;
-  const reducedPercentage = 100 - spentPercentage - availablePercentage;
-
+  const totalCapacity = max + passiveReduction; // Total width of the bar (100%)
+  const spentPercentage = (spent / totalCapacity) * 100;
+  const availablePercentage = (available / totalCapacity) * 100;
+  const reducedPercentage = (passiveReduction / totalCapacity) * 100;
+  
   return (
-    <div className="w-full">
+    <div className="w-full mb-3">
       <div className="flex justify-between items-center mb-1">
         <div className="flex items-center gap-2">
           <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
           <span className="font-medium">{path.name} Essence</span>
         </div>
         <div className="text-sm">
-          {spent}/{max} ({available} available)
+          {spent}/{max + available} ({available} available)
+          {passiveReduction > 0 && ` (-${passiveReduction} reduced)`}
         </div>
       </div>
       
@@ -48,36 +52,37 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
           <Minus size={16} />
         </button>
 
-        <div className="flex-1 h-6 bg-gray-700 rounded overflow-hidden">
-          {/* Spent essence (active) */}
-          {spent > 0 && (
-            <div
-              className={`h-full float-left bg-blue-600`}
-              style={{ 
-                width: `${spentPercentage}%`
-              }}
-              role="progressbar"
-              aria-valuenow={spent}
-              aria-valuemin={0}
-              aria-valuemax={max}
-            ></div>
-          )}
-          
-          {/* Available essence */}
-          {available > 0 && (
-            <div
-              className="h-full bg-blue-900 float-left"
-              style={{ width: `${availablePercentage}%` }}
-            ></div>
-          )}
-          
-          {/* Reduced essence (from passives/cantrips) */}
-          {reducedPercentage > 0 && (
-            <div
-              className="h-full bg-gray-800 float-left"
-              style={{ width: `${reducedPercentage}%` }}
-            ></div>
-          )}
+        <div className="flex-1 h-8 bg-gray-700 rounded overflow-hidden">
+          {/* Visualization of the bar with all states */}
+          <div className="flex h-full w-full">
+            {/* Spent essence (active) - shown as solid blue */}
+            {spent > 0 && (
+              <div
+                className="h-full bg-blue-600"
+                style={{ width: `${spentPercentage}%` }}
+                role="progressbar"
+                aria-valuenow={spent}
+                aria-valuemin={0}
+                aria-valuemax={totalCapacity}
+              ></div>
+            )}
+            
+            {/* Available essence - shown as dark blue */}
+            {available > 0 && (
+              <div
+                className="h-full bg-blue-900"
+                style={{ width: `${availablePercentage}%` }}
+              ></div>
+            )}
+            
+            {/* Reduced essence (from passives/cantrips) - shown as lighter gray */}
+            {passiveReduction > 0 && (
+              <div
+                className="h-full bg-gray-800"
+                style={{ width: `${reducedPercentage}%` }}
+              ></div>
+            )}
+          </div>
         </div>
 
         <button

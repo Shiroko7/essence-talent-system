@@ -4,7 +4,8 @@ import {
   Ability, 
   EssencePathId,
   calculateEssencePoints,
-  ESSENCE_PATHS
+  ESSENCE_PATHS,
+  getTierCost
 } from '../types/essence';
 import { 
   calculateTotalPointsSpent, 
@@ -47,6 +48,22 @@ const useEssenceAllocation = ({
   const totalPointsSpent = calculateTotalPointsSpent(character.selectedAbilities, allAbilitiesList);
   const effectiveMaxPoints = calculateEffectiveMaxPoints(character.level, character.selectedAbilities, allAbilitiesList);
   const availablePoints = effectiveMaxPoints - totalPointsSpent;
+
+  // Calculate the passive reduction per path
+  const getPathPassiveReduction = (pathId: EssencePathId) => {
+    const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
+    
+    return character.selectedAbilities.reduce((total, abilityId) => {
+      const ability = pathAbilities.find(a => a.id === abilityId);
+      if (!ability) return total;
+      
+      // Only passive abilities and cantrips reduce maximum essence
+      if (ability.isPassive || ability.isCantrip) {
+        return total + getTierCost(ability.tier);
+      }
+      return total;
+    }, 0);
+  };
 
   // Function to toggle ability selection
   const toggleAbility = (ability: Ability, pathId: EssencePathId) => {
@@ -102,10 +119,7 @@ const useEssenceAllocation = ({
     // For active abilities and spells
     else if (ability.isActive || ability.isSpell) {
       // Check available points
-      const cost = ability.isSpell ? 
-        (ability.tier === '1st' ? 1 : ability.tier === '2nd' ? 2 : ability.tier === '3rd' ? 3 : 4) :
-        (ability.tier === 'initiate' ? 1 : ability.tier === 'adept' ? 2 : ability.tier === 'master' ? 3 : 
-         ability.tier === 'grandmaster' ? 4 : 5);
+      const cost = getTierCost(ability.tier);
       
       if (cost > availablePoints) {
         alert("Not enough essence points available!");
@@ -155,10 +169,7 @@ const useEssenceAllocation = ({
         );
         
       const maxForPath = pathAbilities.reduce((total, ability) => {
-        const cost = ability.isSpell ? 
-          (ability.tier === '1st' ? 1 : ability.tier === '2nd' ? 2 : ability.tier === '3rd' ? 3 : 4) :
-          (ability.tier === 'initiate' ? 1 : ability.tier === 'adept' ? 2 : ability.tier === 'master' ? 3 : 
-           ability.tier === 'grandmaster' ? 4 : 5);
+        const cost = getTierCost(ability.tier);
         return total + cost;
       }, 0);
       
@@ -201,7 +212,7 @@ const useEssenceAllocation = ({
         activeEssenceByPath: ESSENCE_PATHS.reduce((acc, path) => {
           const pathHasUnallocated = getPathAbilities(path.id, allAbilities, cantrips, spells)
             .some(ability => 
-              ability.id in shouldBeUnallocated && 
+              shouldBeUnallocated.has(ability.id) && 
               (ability.isActive || ability.isSpell)
             );
             
@@ -223,7 +234,8 @@ const useEssenceAllocation = ({
     toggleAbility,
     updateCharacterLevel,
     resetCharacter,
-    updateActiveEssence
+    updateActiveEssence,
+    getPathPassiveReduction
   };
 };
 

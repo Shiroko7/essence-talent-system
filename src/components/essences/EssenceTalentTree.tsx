@@ -10,6 +10,7 @@ import {
 import FilterPills from './FilterPills';
 import EssencePath from './EssencePath';
 import EssenceTrackingBar from './EssenceTrackingBar';
+import EssenceLegend from './EssenceLegend';
 import useEssenceAllocation from '../../hooks/useEssenceAllocation';
 import { 
   calculatePathEssenceStatus,
@@ -29,6 +30,7 @@ const EssenceTalentTree: React.FC = () => {
   // Set up filter state
   const [selectedFilter, setSelectedFilter] = useState<FilterType>('all');
   const [selectedPath, setSelectedPath] = useState<EssencePathId>('water');
+  const [showLegend, setShowLegend] = useState<boolean>(false);
   
   // Set up essence allocation hook
   const {
@@ -40,7 +42,8 @@ const EssenceTalentTree: React.FC = () => {
     toggleAbility,
     updateCharacterLevel,
     resetCharacter,
-    updateActiveEssence
+    updateActiveEssence,
+    getPathPassiveReduction
   } = useEssenceAllocation({
     initialLevel: 8,
     allAbilities: abilities,
@@ -104,15 +107,28 @@ const EssenceTalentTree: React.FC = () => {
       
       {/* Main Content */}
       <main className="flex-1 container mx-auto p-4 flex flex-col gap-4">
-        {/* Essence Tracking Bars Section - Moved from sidebar to top */}
+        {/* Essence Tracking Bars Section - Full width, one per line */}
         {pathsWithActiveAbilities.length > 0 && (
           <div className="w-full bg-gray-800 rounded-lg p-4 mb-4">
-            <h2 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2">
-              Active Essence
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
+              <h2 className="text-lg font-bold">
+                Active Essence
+              </h2>
+              <EssenceLegend 
+                isOpen={showLegend} 
+                onToggle={() => setShowLegend(!showLegend)} 
+              />
+            </div>
+            
+            {showLegend && (
+              <div className="mb-4">
+                <EssenceLegend isOpen={true} onToggle={() => setShowLegend(false)} />
+              </div>
+            )}
+            
+            <div className="flex flex-col gap-4">
               {pathsWithActiveAbilities.map(path => {
-                const { spent, available, max } = calculatePathEssenceStatus(
+                const { spent, available, max, passiveReduction } = calculatePathEssenceStatus(
                   path.id,
                   character,
                   abilities,
@@ -127,6 +143,7 @@ const EssenceTalentTree: React.FC = () => {
                     spent={spent}
                     available={available}
                     max={max}
+                    passiveReduction={passiveReduction}
                     onIncrement={() => updateActiveEssence(path.id, 1)}
                     onDecrement={() => updateActiveEssence(path.id, -1)}
                   />

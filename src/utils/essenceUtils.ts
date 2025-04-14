@@ -8,7 +8,7 @@ import {
   getTierCost
 } from '../types/essence';
 
-// Check if a tier is unlocked
+// Updated to include cantrips and spells in tier unlocking
 export function isTierUnlocked(
   tier: TierId | SpellLevel,
   selectedAbilities: string[],
@@ -40,12 +40,32 @@ export function isTierUnlocked(
   // For higher tiers, check if we have any ability from the previous tier
   const prevTier = ['initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster'][tierIndex - 1] as TierId;
   
-  return pathAbilities
-    .some(ability => {
-      const tierMatch = ability.tier === prevTier;
-      const isSelected = selectedAbilities.includes(ability.id);
-      return tierMatch && isSelected;
-    });
+  // Find all abilities from the previous tier (including cantrips and spells)
+  const prevTierAbilities = pathAbilities.filter(ability => {
+    // For spells and cantrips, map them to the appropriate tier
+    if (ability.isCantrip || ability.isSpell) {
+      const spellTier = ability.tier as SpellLevel;
+      if (prevTier === 'initiate' && (spellTier === 'cantrip' || spellTier === '1st')) {
+        return true;
+      }
+      if (prevTier === 'adept' && spellTier === '2nd') {
+        return true;
+      }
+      if (prevTier === 'master' && spellTier === '3rd') {
+        return true;
+      }
+      if (prevTier === 'grandmaster' && spellTier === '4th') {
+        return true;
+      }
+      return false;
+    }
+    
+    // For regular abilities
+    return ability.tier === prevTier;
+  });
+  
+  // Check if the player has selected any of these abilities
+  return prevTierAbilities.some(ability => selectedAbilities.includes(ability.id));
 }
 
 // Calculate total essence points spent
@@ -121,8 +141,23 @@ export function calculatePathEssenceStatus(
   allAbilities: Record<EssencePathId, Ability[]>,
   cantrips: Record<EssencePathId, Ability[]>,
   spells: Record<EssencePathId, Ability[]>
-): { spent: number; available: number; max: number; } {
+): { spent: number; available: number; max: number; passiveReduction: number; } {
   const { level, selectedAbilities, activeEssenceByPath } = character;
+  
+  // Calculate passive reduction specifically for this path
+  const passiveReduction = selectedAbilities.reduce((total, abilityId) => {
+    const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
+    const ability = pathAbilities.find(a => a.id === abilityId);
+    
+    if (!ability) return total;
+    
+    // Only passive abilities and cantrips reduce maximum essence
+    if (ability.isPassive || ability.isCantrip) {
+      return total + getTierCost(ability.tier);
+    }
+    return total;
+  }, 0);
+  
   const effectiveMax = calculateEffectiveMaxPoints(level, selectedAbilities, 
     Object.values(allAbilities).flat().concat(
       Object.values(cantrips).flat(),
@@ -147,7 +182,8 @@ export function calculatePathEssenceStatus(
   return {
     spent,
     available,
-    max: Math.min(effectiveMax, potentialTotal)
+    max: Math.min(effectiveMax, potentialTotal),
+    passiveReduction
   };
 }
 
