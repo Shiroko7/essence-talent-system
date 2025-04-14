@@ -50,6 +50,16 @@ export const fireAbilities = [
       isCantrip: false,
     },
     {
+      id: 'fire_initiate_heart_crusher_grip',
+      name: 'Heart Crusher Grip (Nilo)',
+      description: 'As an action, you can target one bloodied creature you can see within 15 feet of you. The target must make a Constitution saving throw. On a failed save, the target takes 5d6 fire damage, or half as much damage on a successful save. If this damage reduces the target to 0 hit points, their heart is crushed and they die instantly.',
+      tier: 'initiate',
+      isActive: true,
+      isPassive: false,
+      isSpell: false,
+      isCantrip: false,
+    },
+    {
       id: 'fire_adept_blazing_presence',
       name: 'Blazing Presence',
       description: 'Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.',

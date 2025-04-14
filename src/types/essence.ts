@@ -56,8 +56,8 @@ export const ESSENCE_PATHS: EssencePath[] = [
   { id: 'earth', name: 'Earth', color: 'bg-yellow-800' },
   { id: 'metal', name: 'Metal', color: 'bg-gray-500' },
   { id: 'wood', name: 'Wood', color: 'bg-green-700' },
-  { id: 'poison', name: 'Poison', color: 'bg-green-500' },
-  { id: 'acid', name: 'Acid', color: 'bg-emerald-600' },
+  { id: 'poison', name: 'Poison', color: 'bg-purple-900' },
+  { id: 'acid', name: 'Acid', color: 'bg-lime-500' },
   { id: 'lightning', name: 'Lightning', color: 'bg-purple-500' },
   { id: 'wind', name: 'Wind', color: 'bg-sky-300' },
 ];

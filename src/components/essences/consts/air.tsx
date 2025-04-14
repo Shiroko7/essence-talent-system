@@ -70,6 +70,16 @@ export const airAbilities = [
     isCantrip: false,
   },
   {
+    id: 'air_initiate_whispers_of_the_gale',
+    name: 'Whispers of the Gale (Laura)',
+    description: 'When you miss with a ranged attack roll (including spell attacks), you can use your reaction and expend a spell slot of 1st level or higher to reroll the attack. You must use the new roll, and the spell slot is expended regardless of the outcome.',
+    tier: 'initiate',
+    isActive: false,
+    isPassive: true,
+    isSpell: false,
+    isCantrip: false,
+  },
+  {
     id: 'air_adept_echoing_footsteps',
     name: 'Echoing Footsteps',
     description: 'You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 10 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.',
