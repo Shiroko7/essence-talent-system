@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Info } from 'lucide-react';
 import { 
   ESSENCE_PATHS, 
@@ -7,6 +7,7 @@ import {
   FilterType,
   calculateEssencePoints
 } from '../../types/essence';
+import CharacterControls from './CharacterControls';
 import FilterPills from './FilterPills';
 import EssencePath from './EssencePath';
 import EssenceTrackingBar from './EssenceTrackingBar';
@@ -18,6 +19,14 @@ import {
 } from '../../utils/essenceUtils';
 import { importEssenceData } from '../../utils/essenceData';
 import Layout from '../layout/Layout';
+
+// Type for saved configuration
+interface SavedConfig {
+  characterLevel: number;
+  selectedAbilities: string[];
+  activeEssenceByPath: Record<string, number>;
+  version: string;
+}
 
 const EssenceTalentTree: React.FC = () => {
   // Try to import essence data
@@ -43,7 +52,8 @@ const EssenceTalentTree: React.FC = () => {
     updateCharacterLevel,
     resetCharacter,
     updateActiveEssence,
-    getPathPassiveReduction
+    getPathPassiveReduction,
+    setCharacterState
   } = useEssenceAllocation({
     initialLevel: 5, // Start at level 5 as default
     allAbilities: abilities,
@@ -75,10 +85,89 @@ const EssenceTalentTree: React.FC = () => {
       spells
     )
   );
+
+  // Save configuration
+  const handleSaveConfig = () => {
+    // Create configuration object
+    const config: SavedConfig = {
+      characterLevel: character.level,
+      selectedAbilities: character.selectedAbilities,
+      activeEssenceByPath: character.activeEssenceByPath,
+      version: '1.0' // Add version for future compatibility
+    };
+    
+    // Convert to JSON
+    const configData = JSON.stringify(config, null, 2);
+    
+    // Create download link
+    const blob = new Blob([configData], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    // Create and click a download link
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `essence-config-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    
+    // Clean up
+    URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  };
+  
+  // Load configuration
+  const handleLoadConfig = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const config = JSON.parse(e.target?.result as string) as SavedConfig;
+        
+        // Validate basic structure
+        if (!config.characterLevel || !Array.isArray(config.selectedAbilities)) {
+          throw new Error('Invalid configuration file format');
+        }
+        
+        // Set character state
+        setCharacterState({
+          level: config.characterLevel,
+          selectedAbilities: config.selectedAbilities,
+          activeEssenceByPath: config.activeEssenceByPath || {}
+        });
+        
+      } catch (error) {
+        console.error('Error loading configuration:', error);
+        alert('Error loading configuration. The file might be corrupted or in an invalid format.');
+      }
+    };
+    
+    reader.readAsText(file);
+    
+    // Reset the input
+    event.target.value = '';
+  };
   
   return (
     <Layout>
       <div className="max-w-6xl mx-auto">
+        <div className="w-full bg-gray-800 rounded-lg p-4 mb-4">
+          <div className="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
+            <h2 className="text-lg font-bold">
+              Character Setup
+            </h2>
+          </div>
+          
+          <CharacterControls
+            level={character.level}
+            onLevelChange={updateCharacterLevel}
+            onReset={resetCharacter}
+            onSaveConfig={handleSaveConfig}
+            onLoadConfig={handleLoadConfig}
+          />
+        </div>
+        
         {/* Essence Tracking Bars Section */}
         {pathsWithActiveAbilities.length > 0 && (
           <div className="w-full bg-gray-800 rounded-lg p-4 mb-4">

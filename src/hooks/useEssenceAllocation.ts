@@ -66,84 +66,84 @@ const useEssenceAllocation = ({
   };
 
   // Function to toggle ability selection
-const toggleAbility = (ability: Ability, pathId: EssencePathId) => {
-  const isSelected = character.selectedAbilities.includes(ability.id);
-  const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
-  
-  // If already selected, remove it
-  if (isSelected) {
-    // Create a copy of selectedAbilities without this ability
-    const newSelectedAbilities = character.selectedAbilities.filter(id => id !== ability.id);
+  const toggleAbility = (ability: Ability, pathId: EssencePathId) => {
+    const isSelected = character.selectedAbilities.includes(ability.id);
+    const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
     
-    // Check if removing this ability would require unallocating higher tier abilities
-    const abilitiesToUnallocate = pathAbilities
-      .filter(a => 
-        character.selectedAbilities.includes(a.id) && 
-        shouldUnallocateAbility(a, newSelectedAbilities, pathAbilities, character.level)
-      )
-      .map(a => a.id);
+    // If already selected, remove it
+    if (isSelected) {
+      // Create a copy of selectedAbilities without this ability
+      const newSelectedAbilities = character.selectedAbilities.filter(id => id !== ability.id);
+      
+      // Check if removing this ability would require unallocating higher tier abilities
+      const abilitiesToUnallocate = pathAbilities
+        .filter(a => 
+          character.selectedAbilities.includes(a.id) && 
+          shouldUnallocateAbility(a, newSelectedAbilities, pathAbilities, character.level)
+        )
+        .map(a => a.id);
+      
+      // Combine the ability being removed with any that must be unallocated
+      const allToRemove = [ability.id, ...abilitiesToUnallocate];
+      
+      // Update character state
+      setCharacter(prev => ({
+        ...prev,
+        selectedAbilities: prev.selectedAbilities.filter(id => !allToRemove.includes(id)),
+        // Reset active essence for this path if there are no active abilities left
+        activeEssenceByPath: {
+          ...prev.activeEssenceByPath,
+          [pathId]: 0
+        }
+      }));
+      
+      return;
+    }
     
-    // Combine the ability being removed with any that must be unallocated
-    const allToRemove = [ability.id, ...abilitiesToUnallocate];
+    // For selection logic, we need to check tier requirements and essence availability
+    // For passive and cantrip abilities
+    if (ability.isPassive || ability.isCantrip) {
+      // Calculate active points spent (only points spent on actives, not passives)
+      const activePointsSpent = character.selectedAbilities.reduce((total, abilityId) => {
+        const selectedAbility = allAbilitiesList.find(a => a.id === abilityId);
+        if (!selectedAbility) return total;
+        
+        if (selectedAbility.isActive || selectedAbility.isSpell) {
+          return total + getTierCost(selectedAbility.tier);
+        }
+        return total;
+      }, 0);
+      
+      // Check if we have enough total essence points (not currently spent)
+      const potentialMaxReduction = calculateEffectiveMaxPoints(
+        character.level, 
+        [...character.selectedAbilities, ability.id], 
+        allAbilitiesList
+      );
+      
+      // If adding this passive/cantrip would reduce max essence below what's already spent on actives, block it
+      if (potentialMaxReduction < activePointsSpent) {
+        alert("Adding this passive/cantrip would reduce your maximum essence below what you've already spent!");
+        return;
+      }
+    } 
+    // For active abilities and spells
+    else if (ability.isActive || ability.isSpell) {
+      // Check available points
+      const cost = getTierCost(ability.tier);
+      
+      if (cost > availablePoints) {
+        alert("Not enough essence points available!");
+        return;
+      }
+    }
     
-    // Update character state
+    // Add the ability
     setCharacter(prev => ({
       ...prev,
-      selectedAbilities: prev.selectedAbilities.filter(id => !allToRemove.includes(id)),
-      // Reset active essence for this path if there are no active abilities left
-      activeEssenceByPath: {
-        ...prev.activeEssenceByPath,
-        [pathId]: 0
-      }
+      selectedAbilities: [...prev.selectedAbilities, ability.id]
     }));
-    
-    return;
-  }
-  
-  // For selection logic, we need to check tier requirements and essence availability
-  // For passive and cantrip abilities
-  if (ability.isPassive || ability.isCantrip) {
-    // Calculate active points spent (only points spent on actives, not passives)
-    const activePointsSpent = character.selectedAbilities.reduce((total, abilityId) => {
-      const selectedAbility = allAbilitiesList.find(a => a.id === abilityId);
-      if (!selectedAbility) return total;
-      
-      if (selectedAbility.isActive || selectedAbility.isSpell) {
-        return total + getTierCost(selectedAbility.tier);
-      }
-      return total;
-    }, 0);
-    
-    // Check if we have enough total essence points (not currently spent)
-    const potentialMaxReduction = calculateEffectiveMaxPoints(
-      character.level, 
-      [...character.selectedAbilities, ability.id], 
-      allAbilitiesList
-    );
-    
-    // If adding this passive/cantrip would reduce max essence below what's already spent on actives, block it
-    if (potentialMaxReduction < activePointsSpent) {
-      alert("Adding this passive/cantrip would reduce your maximum essence below what you've already spent!");
-      return;
-    }
-  } 
-  // For active abilities and spells
-  else if (ability.isActive || ability.isSpell) {
-    // Check available points
-    const cost = getTierCost(ability.tier);
-    
-    if (cost > availablePoints) {
-      alert("Not enough essence points available!");
-      return;
-    }
-  }
-  
-  // Add the ability
-  setCharacter(prev => ({
-    ...prev,
-    selectedAbilities: [...prev.selectedAbilities, ability.id]
-  }));
-};
+  };
 
   // Function to update character level
   const updateCharacterLevel = (newLevel: number) => {
@@ -163,6 +163,11 @@ const toggleAbility = (ability: Ability, pathId: EssencePathId) => {
         [path.id]: 0
       }), {} as Record<EssencePathId, number>)
     });
+  };
+
+  // Function to set the entire character state (used for loading saved configs)
+  const setCharacterState = (newState: Character) => {
+    setCharacter(newState);
   };
 
   // Function to update active essence spent per path
@@ -245,7 +250,8 @@ const toggleAbility = (ability: Ability, pathId: EssencePathId) => {
     updateCharacterLevel,
     resetCharacter,
     updateActiveEssence,
-    getPathPassiveReduction
+    getPathPassiveReduction,
+    setCharacterState
   };
 };
 
