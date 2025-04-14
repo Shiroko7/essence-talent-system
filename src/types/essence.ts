@@ -115,3 +115,4 @@ export function calculateEssencePoints(level: number): number {
   
   return points;
 }
+

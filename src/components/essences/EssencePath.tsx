@@ -30,17 +30,17 @@ const EssencePath: React.FC<EssencePathProps> = ({
       }
       
       // For spell levels, map them to tiers based on level requirement
-      if (['cantrip', '1st', '2nd', '3rd', '4th'].includes(ability.tier)) {
-        if (tier.id === 'initiate' && (ability.tier === 'cantrip' || ability.tier === '1st')) {
+      if (['cantrip', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'].includes(ability.tier)) {
+        if (tier.id === 'initiate' && (ability.tier === 'cantrip' || ability.tier === '1st' || ability.tier === '2nd')) {
           return true;
         }
-        if (tier.id === 'adept' && ability.tier === '2nd') {
+        if (tier.id === 'adept' && (ability.tier === '3rd' || ability.tier === '4th')) {
           return true;
         }
-        if (tier.id === 'master' && ability.tier === '3rd') {
+        if (tier.id === 'master' && (ability.tier === '5th' || ability.tier === '6th')) {
           return true;
         }
-        if (tier.id === 'grandmaster' && ability.tier === '4th') {
+        if (tier.id === 'grandmaster' && (ability.tier === '7th' || ability.tier === '8th')) {
           return true;
         }
       }

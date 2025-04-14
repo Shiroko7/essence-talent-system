@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Settings, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { 
   ESSENCE_PATHS, 
   EssencePathId,
@@ -17,6 +17,7 @@ import {
   pathHasActiveAbilities 
 } from '../../utils/essenceUtils';
 import { importEssenceData } from '../../utils/essenceData';
+import Layout from '../layout/Layout';
 
 const EssenceTalentTree: React.FC = () => {
   // Try to import essence data
@@ -24,7 +25,6 @@ const EssenceTalentTree: React.FC = () => {
     return importEssenceData();
   });
   
-    
   const { abilities, cantrips, spells } = essenceData;
   
   // Set up filter state
@@ -45,7 +45,7 @@ const EssenceTalentTree: React.FC = () => {
     updateActiveEssence,
     getPathPassiveReduction
   } = useEssenceAllocation({
-    initialLevel: 8,
+    initialLevel: 5, // Start at level 5 as default
     allAbilities: abilities,
     cantrips,
     spells
@@ -77,52 +77,59 @@ const EssenceTalentTree: React.FC = () => {
   );
   
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900 text-white">
-      {/* Header */}
-      <header className="bg-gray-800 p-4 border-b border-gray-700">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Essence Talent System</h1>
-          <div className="flex gap-4 items-center">
-            <div className="flex items-center gap-2">
-              <span>Character Level:</span>
-              <select 
-                value={character.level} 
-                onChange={(e) => updateCharacterLevel(parseInt(e.target.value))}
-                className="bg-gray-700 rounded p-1"
-              >
-                {Array.from({length: 20}, (_, i) => i + 1).map(level => (
-                  <option key={level} value={level}>{level}</option>
-                ))}
-              </select>
-            </div>
-            <button 
-              onClick={resetCharacter}
-              className="px-4 py-1 bg-red-600 rounded hover:bg-red-700"
-            >
-              Reset
-            </button>
-          </div>
-        </div>
-      </header>
-      
-      {/* Main Content */}
-      <main className="flex-1 container mx-auto p-4 flex flex-col gap-4">
-        {/* Essence Tracking Bars Section - Full width, one per line */}
+    <Layout>
+      <div className="max-w-6xl mx-auto">
+        {/* Essence Tracking Bars Section */}
         {pathsWithActiveAbilities.length > 0 && (
           <div className="w-full bg-gray-800 rounded-lg p-4 mb-4">
             <div className="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
               <h2 className="text-lg font-bold">
                 Active Essence
               </h2>
-              <EssenceLegend 
-                isOpen={showLegend} 
-                onToggle={() => setShowLegend(!showLegend)} 
-              />
+              <button 
+                onClick={() => setShowLegend(!showLegend)}
+                className="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-200"
+              >
+                <Info size={14} />
+                <span>{showLegend ? 'Hide' : 'Show'} Legend</span>
+              </button>
             </div>
             
             {showLegend && (
               <div className="mb-4">
-                <EssenceLegend isOpen={true} onToggle={() => setShowLegend(false)} />
+                <div className="rounded bg-gray-700 p-3 text-sm">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="font-bold">Essence Bar Legend</h4>
+                    <button 
+                      onClick={() => setShowLegend(false)}
+                      className="text-gray-400 hover:text-gray-200"
+                    >
+                      Close
+                    </button>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-4 bg-blue-600"></div>
+                      <span>Spent essence (active abilities currently using essence)</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-4 bg-blue-900"></div>
+                      <span>Available essence (can be spent on active abilities)</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-4 bg-gray-800"></div>
+                      <span>Reduced essence (from passive abilities and cantrips)</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-3 text-gray-400 italic">
+                    Example: A bar showing "─────■■■" means you have some spent essence (blue),
+                    some available essence (dark blue), and some essence reduction from passives (gray).
+                  </div>
+                </div>
               </div>
             )}
             
@@ -133,7 +140,8 @@ const EssenceTalentTree: React.FC = () => {
                   character,
                   abilities,
                   cantrips,
-                  spells
+                  spells,
+                  availablePoints
                 );
                 
                 return (
@@ -152,7 +160,7 @@ const EssenceTalentTree: React.FC = () => {
             </div>
           </div>
         )}
-        
+
         {/* Content area with sidebar and talent tree */}
         <div className="flex flex-col md:flex-row gap-4">
           {/* Sidebar - Essence Paths */}
@@ -177,9 +185,6 @@ const EssenceTalentTree: React.FC = () => {
           {/* Main Panel - Talent Tree */}
           <div className="flex-1 bg-gray-800 rounded p-4">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-              <h2 className="text-xl font-bold">
-                {ESSENCE_PATHS.find(p => p.id === selectedPath)?.name} Path
-              </h2>
               
               <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
                 <FilterPills 
@@ -188,16 +193,9 @@ const EssenceTalentTree: React.FC = () => {
                 />
                 
                 <div className="flex items-center gap-2">
-                  <div className="text-sm text-gray-400">Essence Points:</div>
+                  <div className="text-sm text-gray-400">Essence Points Spent:</div>
                   <div className="px-3 py-1 bg-indigo-900 rounded-md font-medium">
-                    {totalPointsSpent} / {effectiveMaxPoints}
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <div className="text-sm text-gray-400">Total Essence:</div>
-                  <div className="px-3 py-1 bg-purple-900 rounded-md font-medium">
-                    {totalEssencePoints}
+                    {totalPointsSpent} / {totalEssencePoints}
                   </div>
                 </div>
               </div>
@@ -214,15 +212,8 @@ const EssenceTalentTree: React.FC = () => {
             />
           </div>
         </div>
-      </main>
-      
-      {/* Footer */}
-      <footer className="bg-gray-800 border-t border-gray-700 p-4">
-        <div className="container mx-auto text-center text-gray-400 text-sm">
-          Character essence calculator for the Leatrux campaign
-        </div>
-      </footer>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

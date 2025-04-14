@@ -37,7 +37,13 @@ export function isTierUnlocked(
   // Initiate is always unlocked
   if (tierIndex === 0) return true;
   
-  // For higher tiers, check if we have any ability from the previous tier
+  // For higher tiers, check character level first
+  const tierLevelRequirements = [1, 5, 9, 13, 17];
+  if (characterLevel < tierLevelRequirements[tierIndex]) {
+    return false;
+  }
+  
+  // Then check if we have any ability from the previous tier
   const prevTier = ['initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster'][tierIndex - 1] as TierId;
   
   // Find all abilities from the previous tier (including cantrips and spells)
@@ -45,16 +51,16 @@ export function isTierUnlocked(
     // For spells and cantrips, map them to the appropriate tier
     if (ability.isCantrip || ability.isSpell) {
       const spellTier = ability.tier as SpellLevel;
-      if (prevTier === 'initiate' && (spellTier === 'cantrip' || spellTier === '1st')) {
+      if (prevTier === 'initiate' && (spellTier === 'cantrip' || spellTier === '1st' || spellTier === '2nd')) {
         return true;
       }
-      if (prevTier === 'adept' && spellTier === '2nd') {
+      if (prevTier === 'adept' && spellTier === '3rd' || spellTier === '4th') {
         return true;
       }
-      if (prevTier === 'master' && spellTier === '3rd') {
+      if (prevTier === 'master' && spellTier === '5th' || spellTier === '6th') {
         return true;
       }
-      if (prevTier === 'grandmaster' && spellTier === '4th') {
+      if (prevTier === 'grandmaster' && spellTier === '7th' || spellTier === '8th') {
         return true;
       }
       return false;
@@ -74,11 +80,7 @@ export function calculateTotalPointsSpent(selectedAbilities: string[], allAbilit
     const ability = allAbilities.find(a => a.id === abilityId);
     if (!ability) return total;
     
-    // Only active abilities and spells cost essence to use
-    if (ability.isActive || ability.isSpell) {
-      return total + getTierCost(ability.tier);
-    }
-    return total;
+    return total + getTierCost(ability.tier);
   }, 0);
 }
 
@@ -130,9 +132,10 @@ export function pathHasActiveAbilities(
   const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
   
   return pathAbilities.some(ability => 
-    selectedAbilities.includes(ability.id) && (ability.isActive || ability.isSpell)
+    selectedAbilities.includes(ability.id)
   );
 }
+
 
 // Calculate spent and available essence for a specific path
 export function calculatePathEssenceStatus(
@@ -140,13 +143,16 @@ export function calculatePathEssenceStatus(
   character: Character,
   allAbilities: Record<EssencePathId, Ability[]>,
   cantrips: Record<EssencePathId, Ability[]>,
-  spells: Record<EssencePathId, Ability[]>
+  spells: Record<EssencePathId, Ability[]>,
+  totalAvailablePoints: number
 ): { spent: number; available: number; max: number; passiveReduction: number; } {
-  const { level, selectedAbilities, activeEssenceByPath } = character;
+  const { selectedAbilities, activeEssenceByPath } = character;
+  
+  // Get all abilities for this path
+  const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
   
   // Calculate passive reduction specifically for this path
   const passiveReduction = selectedAbilities.reduce((total, abilityId) => {
-    const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
     const ability = pathAbilities.find(a => a.id === abilityId);
     
     if (!ability) return total;
@@ -158,32 +164,29 @@ export function calculatePathEssenceStatus(
     return total;
   }, 0);
   
-  const effectiveMax = calculateEffectiveMaxPoints(level, selectedAbilities, 
-    Object.values(allAbilities).flat().concat(
-      Object.values(cantrips).flat(),
-      Object.values(spells).flat()
-    )
-  );
-  
-  // Calculate the essence currently spent on this path (from the simulation)
+  // Calculate the essence currently spent on this path
   const spent = activeEssenceByPath[pathId] || 0;
   
   // Calculate the total amount that could potentially be spent on this path
-  const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells)
-    .filter(ability => selectedAbilities.includes(ability.id) && (ability.isActive || ability.isSpell));
+  // (i.e., the sum of costs for all active abilities and spells)
+  const activePathAbilities = pathAbilities.filter(ability => 
+    selectedAbilities.includes(ability.id) && (ability.isActive || ability.isSpell)
+  );
   
-  const potentialTotal = pathAbilities.reduce((total, ability) => 
-    total + getTierCost(ability.tier), 0);
+  const potentialActiveTotal = activePathAbilities.reduce((total, ability) => 
+    total + getTierCost(ability.tier), 0
+  );
   
-  // The available essence is the minimum of the effective max and the potential total,
-  // minus what's already been spent
-  const available = Math.min(effectiveMax, potentialTotal) - spent;
+  // The available essence is the minimum of (total available points + what's already spent on this path)
+  // and the potential active total for this path
+  // This ensures we don't show more available than what's actually possible
+  const available = Math.min(totalAvailablePoints + spent, potentialActiveTotal) - spent;
   
   return {
     spent,
     available,
-    max: Math.min(effectiveMax, potentialTotal),
-    passiveReduction
+    max: potentialActiveTotal, // This is the maximum that can be spent on actives
+    passiveReduction // This is the amount reduced by passives and cantrips
   };
 }
 

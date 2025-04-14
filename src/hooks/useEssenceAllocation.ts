@@ -169,12 +169,11 @@ const useEssenceAllocation = ({
         );
         
       const maxForPath = pathAbilities.reduce((total, ability) => {
-        const cost = getTierCost(ability.tier);
-        return total + cost;
+        return total + getTierCost(ability.tier);
       }, 0);
       
-      // Ensure we don't exceed the maximum for this path or the effective max
-      const finalAmount = Math.min(newAmount, maxForPath, effectiveMaxPoints);
+      // Ensure we don't exceed the maximum for this path or the total available
+      const finalAmount = Math.min(newAmount, maxForPath, availablePoints + currentSpent);
       
       return {
         ...prev,
