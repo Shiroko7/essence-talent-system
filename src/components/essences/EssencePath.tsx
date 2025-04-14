@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ability, EssencePath as EssencePathType, Tier, TIERS } from '../../types/essence';
+import { Ability, EssencePath as EssencePathType, TIERS } from '../../types/essence';
 import EssenceTier from './EssenceTier';
 import { isTierUnlocked } from '../../utils/essenceUtils';
 

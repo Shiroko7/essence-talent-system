@@ -1,5 +1,5 @@
 // src/utils/essenceData.ts
-import { Ability, EssencePathId } from '../types/essence';
+import { Ability, EssencePathId, TierId, SpellLevel } from '../types/essence';
 
 // Import all essence files directly
 import { fireAbilities, fireCantrips, fireSpells } from '../components/essences/consts/fire';
@@ -13,8 +13,48 @@ import { lightningAbilities, lightningCantrips, lightningSpells } from '../compo
 import { airAbilities, airCantrips, airSpells } from '../components/essences/consts/air';
 
 /**
- * Imports essence data directly from the module imports.
- * This replaces the previous approach that tried to use window globals.
+ * Converts a raw ability object to a standardized Ability type with proper typing.
+ * This ensures the tier property is correctly typed as TierId | SpellLevel.
+ */
+function convertRawAbility(rawAbility: any): Ability {
+  // Validate tier to ensure it matches expected types
+  const validTiers: (TierId | SpellLevel)[] = [
+    'initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster',
+    'cantrip', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'
+  ];
+  
+  // Ensure tier is a valid value
+  const tier = validTiers.includes(rawAbility.tier as any) 
+    ? (rawAbility.tier as TierId | SpellLevel)
+    : 'initiate'; // Default to initiate if invalid
+  
+  return {
+    id: rawAbility.id || '',
+    name: rawAbility.name || '',
+    description: rawAbility.description || '',
+    tier: tier,
+    isActive: !!rawAbility.isActive,
+    isPassive: !!rawAbility.isPassive,
+    isSpell: !!rawAbility.isSpell,
+    isCantrip: !!rawAbility.isCantrip
+  };
+}
+
+/**
+ * Converts an array of raw abilities to standardized Ability types with proper typing.
+ */
+function convertRawAbilities(rawAbilities: any[]): Ability[] {
+  if (!Array.isArray(rawAbilities)) {
+    console.warn('Expected an array for raw abilities, got:', typeof rawAbilities);
+    return [];
+  }
+  
+  return rawAbilities.map(convertRawAbility);
+}
+
+/**
+ * Imports essence data directly from the module imports and properly converts the data
+ * to ensure all types match the Ability interface requirements.
  */
 export function importEssenceData(): {
   abilities: Record<EssencePathId, Ability[]>;
@@ -23,38 +63,37 @@ export function importEssenceData(): {
 } {
   return {
     abilities: {
-      fire: fireAbilities,
-      water: waterAbilities,
-      earth: earthAbilities,
-      metal: metalAbilities,
-      wood: woodAbilities,
-      poison: poisonAbilities,
-      acid: acidAbilities,
-      lightning: lightningAbilities,
-      wind: airAbilities, // Note: using 'wind' key to match EssencePathId
+      fire: convertRawAbilities(fireAbilities),
+      water: convertRawAbilities(waterAbilities),
+      earth: convertRawAbilities(earthAbilities),
+      metal: convertRawAbilities(metalAbilities),
+      wood: convertRawAbilities(woodAbilities),
+      poison: convertRawAbilities(poisonAbilities),
+      acid: convertRawAbilities(acidAbilities),
+      lightning: convertRawAbilities(lightningAbilities),
+      wind: convertRawAbilities(airAbilities), // Note: using 'wind' key to match EssencePathId
     },
     cantrips: {
-      fire: fireCantrips,
-      water: waterCantrips,
-      earth: earthCantrips,
-      metal: metalCantrips,
-      wood: woodCantrips,
-      poison: poisonCantrips,
-      acid: acidCantrips,
-      lightning: lightningCantrips,
-      wind: airCantrips,
+      fire: convertRawAbilities(fireCantrips),
+      water: convertRawAbilities(waterCantrips),
+      earth: convertRawAbilities(earthCantrips),
+      metal: convertRawAbilities(metalCantrips),
+      wood: convertRawAbilities(woodCantrips),
+      poison: convertRawAbilities(poisonCantrips),
+      acid: convertRawAbilities(acidCantrips),
+      lightning: convertRawAbilities(lightningCantrips),
+      wind: convertRawAbilities(airCantrips),
     },
     spells: {
-      fire: fireSpells,
-      water: waterSpells,
-      earth: earthSpells,
-      metal: metalSpells,
-      wood: woodSpells,
-      poison: poisonSpells,
-      acid: acidSpells,
-      lightning: lightningSpells,
-      wind: airSpells,
+      fire: convertRawAbilities(fireSpells),
+      water: convertRawAbilities(waterSpells),
+      earth: convertRawAbilities(earthSpells),
+      metal: convertRawAbilities(metalSpells),
+      wood: convertRawAbilities(woodSpells),
+      poison: convertRawAbilities(poisonSpells),
+      acid: convertRawAbilities(acidSpells),
+      lightning: convertRawAbilities(lightningSpells),
+      wind: convertRawAbilities(airSpells),
     }
   };
 }
-

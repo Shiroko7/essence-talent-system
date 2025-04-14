@@ -1,17 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Info } from 'lucide-react';
 import { 
   ESSENCE_PATHS, 
   EssencePathId,
-  Ability,
   FilterType,
-  calculateEssencePoints
 } from '../../types/essence';
 import CharacterControls from './CharacterControls';
 import FilterPills from './FilterPills';
 import EssencePath from './EssencePath';
 import EssenceTrackingBar from './EssenceTrackingBar';
-import EssenceLegend from './EssenceLegend';
 import useEssenceAllocation from '../../hooks/useEssenceAllocation';
 import { 
   calculatePathEssenceStatus,
@@ -46,13 +43,10 @@ const EssenceTalentTree: React.FC = () => {
     character,
     totalEssencePoints,
     totalPointsSpent,
-    effectiveMaxPoints,
-    availablePoints,
     toggleAbility,
     updateCharacterLevel,
     resetCharacter,
     updateActiveEssence,
-    getPathPassiveReduction,
     setCharacterState
   } = useEssenceAllocation({
     initialLevel: 5, // Start at level 5 as default
@@ -229,8 +223,7 @@ const EssenceTalentTree: React.FC = () => {
                   character,
                   abilities,
                   cantrips,
-                  spells,
-                  availablePoints
+                  spells
                 );
                 
                 return (

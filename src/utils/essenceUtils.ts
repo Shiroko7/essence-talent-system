@@ -144,7 +144,6 @@ export function calculatePathEssenceStatus(
   allAbilities: Record<EssencePathId, Ability[]>,
   cantrips: Record<EssencePathId, Ability[]>,
   spells: Record<EssencePathId, Ability[]>,
-  totalAvailablePoints: number
 ): { spent: number; available: number; max: number; passiveReduction: number; } {
   const { selectedAbilities, activeEssenceByPath } = character;
   

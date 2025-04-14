@@ -1,9 +1,9 @@
 import React from 'react';
-import { FilterPill, FILTER_PILLS } from '../../types/essence';
+import { FILTER_PILLS, FilterType } from '../../types/essence';
 
 interface FilterPillsProps {
-  selectedFilter: string;
-  onFilterChange: (filter: string) => void;
+  selectedFilter: FilterType;
+  onFilterChange: (filter: FilterType) => void;
 }
 
 const FilterPills: React.FC<FilterPillsProps> = ({ selectedFilter, onFilterChange }) => {
