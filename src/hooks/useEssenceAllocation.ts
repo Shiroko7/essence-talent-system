@@ -100,44 +100,13 @@ const useEssenceAllocation = ({
       return;
     }
     
-    // For selection logic, we need to check tier requirements and essence availability
-    // For passive and cantrip abilities
-    if (ability.isPassive || ability.isCantrip) {
-      // Calculate active points spent (only points spent on actives, not passives)
-      const activePointsSpent = character.selectedAbilities.reduce((total, abilityId) => {
-        const selectedAbility = allAbilitiesList.find(a => a.id === abilityId);
-        if (!selectedAbility) return total;
-        
-        if (selectedAbility.isActive || selectedAbility.isSpell) {
-          return total + getTierCost(selectedAbility.tier);
-        }
-        return total;
-      }, 0);
-      
-      // Check if we have enough total essence points (not currently spent)
-      const potentialMaxReduction = calculateEffectiveMaxPoints(
-        character.level, 
-        [...character.selectedAbilities, ability.id], 
-        allAbilitiesList
-      );
-      
-      // If adding this passive/cantrip would reduce max essence below what's already spent on actives, block it
-      if (potentialMaxReduction < activePointsSpent) {
-        alert("Adding this passive/cantrip would reduce your maximum essence below what you've already spent!");
-        return;
-      }
-    } 
-    // For active abilities and spells
-    else if (ability.isActive || ability.isSpell) {
-      // Check available points
-      const cost = getTierCost(ability.tier);
-      
-      if (cost > availablePoints) {
-        alert("Not enough essence points available!");
-        return;
-      }
+    // Check available points
+    const cost = getTierCost(ability.tier);
+  
+    if (cost > totalEssencePoints) {
+      alert("Not enough essence points available!");
+      return;
     }
-    
     // Add the ability
     setCharacter(prev => ({
       ...prev,
