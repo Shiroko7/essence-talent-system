@@ -103,7 +103,7 @@ const useEssenceAllocation = ({
     // Check available points
     const cost = getTierCost(ability.tier);
   
-    if (cost > totalEssencePoints) {
+    if (cost + totalPointsSpent > totalEssencePoints) {
       alert("Not enough essence points available!");
       return;
     }
