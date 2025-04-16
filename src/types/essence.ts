@@ -108,6 +108,7 @@ export function calculateEssencePoints(level: number): number {
   let points = level; // Base points equal to level
   
   // Add bonus points at tier thresholds
+  if (level >= 1) points += 4;
   if (level >= 5) points += 4;
   if (level >= 9) points += 4;
   if (level >= 13) points += 4;
