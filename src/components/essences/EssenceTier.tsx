@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { Ability, EssencePath, Tier } from '../../types/essence';
 import AbilityCard from './AbilityCard';
+import AbilityDetails from './AbilityDetails';
 
 interface EssenceTierProps {
   tier: Tier;
@@ -20,6 +21,12 @@ const EssenceTier: React.FC<EssenceTierProps> = ({
   selectedAbilities,
   onToggleAbility
 }) => {
+  const [selectedAbilityForDetails, setSelectedAbilityForDetails] = useState<Ability | null>(null);
+
+  const handleShowDetails = (ability: Ability) => {
+    setSelectedAbilityForDetails(ability);
+  };
+
   return (
     <div className={`p-4 rounded-lg relative border ${isUnlocked ? 'border-gray-600' : 'border-gray-700 opacity-70'}`}>
       <div className="flex justify-between mb-3">
@@ -53,6 +60,7 @@ const EssenceTier: React.FC<EssenceTierProps> = ({
               isSelected={selectedAbilities.includes(ability.id)}
               isLocked={!isUnlocked}
               onToggle={() => onToggleAbility(ability)}
+              onShowDetails={() => handleShowDetails(ability)}
             />
           ))
         ) : (
@@ -61,6 +69,20 @@ const EssenceTier: React.FC<EssenceTierProps> = ({
           </div>
         )}
       </div>
+
+      {/* Ability Details Modal */}
+      {selectedAbilityForDetails && (
+        <AbilityDetails
+          ability={selectedAbilityForDetails}
+          path={path}
+          isSelected={selectedAbilities.includes(selectedAbilityForDetails.id)}
+          isLocked={!isUnlocked}
+          onToggle={() => {
+            onToggleAbility(selectedAbilityForDetails);
+          }}
+          onClose={() => setSelectedAbilityForDetails(null)}
+        />
+      )}
     </div>
   );
 };

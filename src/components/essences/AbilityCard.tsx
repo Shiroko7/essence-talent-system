@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Info } from 'lucide-react';
 import { Ability, EssencePath, getTierCost } from '../../types/essence';
 
 interface AbilityCardProps {
@@ -7,14 +8,41 @@ interface AbilityCardProps {
   isSelected: boolean;
   isLocked: boolean;
   onToggle: () => void;
+  onShowDetails: () => void;
 }
+
+// Helper function to format description text
+const formatDescription = (description: string): React.ReactNode => {
+  // Check if it's a URL (for spells)
+  if (description.startsWith('http')) {
+    return (
+      <a 
+        href={description} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-blue-300 underline"
+        onClick={(e) => e.stopPropagation()}
+      >
+        View spell details
+      </a>
+    );
+  }
+  
+  // Get a shortened preview (first 150 chars)
+  const preview = description.length > 150 
+    ? description.substring(0, 150) + '...' 
+    : description;
+    
+  return <p>{preview}</p>;
+};
 
 const AbilityCard: React.FC<AbilityCardProps> = ({
   ability,
   path,
   isSelected,
   isLocked,
-  onToggle
+  onToggle,
+  onShowDetails
 }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const cost = getTierCost(ability.tier);
@@ -60,18 +88,35 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
         </span>
       </div>
       
-      {/* Tooltip */}
+      {/* Info icon for details */}
+      <button 
+        className="absolute bottom-1 right-1 text-gray-400 hover:text-white"
+        onClick={(e) => {
+          e.stopPropagation(); // Prevent toggling the ability
+          onShowDetails();
+        }}
+        aria-label="Show ability details"
+      >
+        <Info size={16} />
+      </button>
+      
+      {/* Enhanced Tooltip */}
       {showTooltip && (
-        <div className="absolute z-10 bottom-full left-0 mb-2 w-64 p-3 bg-gray-900 border border-gray-600 rounded shadow-lg">
-          <h4 className="font-bold">{ability.name}</h4>
-          <p className="text-sm text-gray-300 mt-1">{ability.description}</p>
-          <div className="mt-2 flex justify-between text-xs">
+        <div className="absolute z-10 bottom-full left-0 mb-2 w-72 p-3 bg-gray-900 border border-gray-600 rounded shadow-lg">
+          <h4 className="font-bold text-sm">{ability.name}</h4>
+          <div className="text-xs text-gray-300 mt-1 leading-relaxed max-h-48 overflow-y-auto">
+            {formatDescription(ability.description)}
+          </div>
+          <div className="mt-2 flex justify-between text-xs text-gray-400">
             <span>Tier: {ability.tier}</span>
             <span>
               {ability.isPassive || ability.isCantrip
                 ? `Reduces max essence by ${cost}`
                 : `Costs ${cost} essence to use`}
             </span>
+          </div>
+          <div className="mt-2 text-xs text-blue-300 text-center italic">
+            Click the info icon for full details
           </div>
         </div>
       )}
