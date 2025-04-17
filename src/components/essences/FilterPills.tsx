@@ -8,7 +8,7 @@ interface FilterPillsProps {
 
 const FilterPills: React.FC<FilterPillsProps> = ({ selectedFilter, onFilterChange }) => {
   return (
-    <div className="flex flex-wrap gap-2 mb-4">
+    <div className="flex flex-wrap gap-2">
       {FILTER_PILLS.map((pill) => (
         <button
           key={pill.id}

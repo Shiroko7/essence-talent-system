@@ -9,6 +9,7 @@ import CharacterControls from './CharacterControls';
 import FilterPills from './FilterPills';
 import EssencePath from './EssencePath';
 import EssenceTrackingBar from './EssenceTrackingBar';
+import AbilitySummary from './AbilitySummary';
 import useEssenceAllocation from '../../hooks/useEssenceAllocation';
 import { 
   calculatePathEssenceStatus,
@@ -37,6 +38,7 @@ const EssenceTalentTree: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<FilterType>('all');
   const [selectedPath, setSelectedPath] = useState<EssencePathId>('water');
   const [showLegend, setShowLegend] = useState<boolean>(false);
+  const [viewMode, setViewMode] = useState<'tree' | 'summary'>('tree');
   
   // Set up essence allocation hook
   const {
@@ -58,6 +60,11 @@ const EssenceTalentTree: React.FC = () => {
   // Handle filter change
   const handleFilterChange = (filter: FilterType) => {
     setSelectedFilter(filter);
+  };
+  
+  // Toggle view mode
+  const toggleViewMode = () => {
+    setViewMode(viewMode === 'tree' ? 'summary' : 'tree');
   };
   
   // Get all abilities for the current path
@@ -243,57 +250,77 @@ const EssenceTalentTree: React.FC = () => {
           </div>
         )}
 
-        {/* Content area with sidebar and talent tree */}
-        <div className="flex flex-col md:flex-row gap-4">
-          {/* Sidebar - Essence Paths */}
-          <aside className="w-full md:w-48 bg-gray-800 rounded p-2">
-            <h2 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2">Essence Paths</h2>
-            <ul className="space-y-1">
-              {ESSENCE_PATHS.map(path => (
-                <li key={path.id}>
-                  <button
-                    className={`w-full text-left px-3 py-2 rounded flex items-center gap-2
-                      ${selectedPath === path.id ? 'bg-gray-700' : 'hover:bg-gray-700'}`}
-                    onClick={() => setSelectedPath(path.id)}
-                  >
-                    <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
-                    {path.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </aside>
-          
-          {/* Main Panel - Talent Tree */}
-          <div className="flex-1 bg-gray-800 rounded p-4">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-              
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-                <FilterPills 
-                  selectedFilter={selectedFilter} 
-                  onFilterChange={handleFilterChange} 
-                />
+        {/* Summary View */}
+        {viewMode === 'summary' && (
+          <AbilitySummary
+            allAbilities={abilities}
+            cantrips={cantrips}
+            spells={spells}
+            selectedAbilities={character.selectedAbilities}
+            onToggleView={toggleViewMode}
+          />
+        )}
+
+        {/* Tree View */}
+        {viewMode === 'tree' && (
+          <div className="flex flex-col md:flex-row gap-4">
+            {/* Sidebar - Essence Paths */}
+            <aside className="w-full md:w-48 bg-gray-800 rounded p-2">
+              <h2 className="text-lg font-bold border-b border-gray-700 pb-2">Essence Paths</h2>
+              <ul className="space-y-1">
+                {ESSENCE_PATHS.map(path => (
+                  <li key={path.id}>
+                    <button
+                      className={`w-full text-left px-3 py-2 rounded flex items-center gap-2
+                        ${selectedPath === path.id ? 'bg-gray-700' : 'hover:bg-gray-700'}`}
+                      onClick={() => setSelectedPath(path.id)}
+                    >
+                      <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
+                      {path.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+            
+            {/* Main Panel - Talent Tree */}
+            <div className="flex-1 bg-gray-800 rounded p-4">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                 
-                <div className="flex items-center gap-2">
-                  <div className="text-sm text-gray-400">Essence Points Spent:</div>
-                  <div className="px-3 py-1 bg-indigo-900 rounded-md font-medium">
-                    {totalPointsSpent} / {totalEssencePoints}
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+                  <FilterPills 
+                    selectedFilter={selectedFilter} 
+                    onFilterChange={handleFilterChange} 
+                  />
+                  
+                  <div className="flex items-center gap-2">
+                    <div className="text-sm text-gray-400">Essence Points Spent:</div>
+                    <div className="px-3 py-1 bg-indigo-900 rounded-md font-medium">
+                      {totalPointsSpent} / {totalEssencePoints}
+                    </div>
                   </div>
                 </div>
+                
+                <button
+                  onClick={toggleViewMode}
+                  className="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium"
+                >
+                  {viewMode === 'tree' ? 'Switch to Summary' : 'Switch to Tree'}
+                </button>
               </div>
+              
+              {/* Render the selected path */}
+              <EssencePath
+                path={ESSENCE_PATHS.find(p => p.id === selectedPath)!}
+                abilities={getAllPathAbilities(selectedPath)}
+                selectedAbilities={character.selectedAbilities}
+                characterLevel={character.level}
+                activeFilter={selectedFilter}
+                onToggleAbility={(ability) => toggleAbility(ability, selectedPath)}
+              />
             </div>
-            
-            {/* Render the selected path */}
-            <EssencePath
-              path={ESSENCE_PATHS.find(p => p.id === selectedPath)!}
-              abilities={getAllPathAbilities(selectedPath)}
-              selectedAbilities={character.selectedAbilities}
-              characterLevel={character.level}
-              activeFilter={selectedFilter}
-              onToggleAbility={(ability) => toggleAbility(ability, selectedPath)}
-            />
           </div>
-        </div>
+        )}
       </div>
     </Layout>
   );
