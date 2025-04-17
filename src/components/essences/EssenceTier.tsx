@@ -50,7 +50,8 @@ const EssenceTier: React.FC<EssenceTierProps> = ({
         </div>
       )}
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      {/* Updated grid layout with fewer columns and more space */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {abilities.length > 0 ? (
           abilities.map((ability) => (
             <AbilityCard

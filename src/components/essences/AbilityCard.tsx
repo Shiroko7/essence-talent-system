@@ -16,21 +16,13 @@ const formatDescription = (description: string): React.ReactNode => {
   // Check if it's a URL (for spells)
   if (description.startsWith('http')) {
     return (
-      <a 
-        href={description} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="text-blue-300 underline"
-        onClick={(e) => e.stopPropagation()}
-      >
-        View spell details
-      </a>
+        <></>
     );
   }
   
-  // Get a shortened preview (first 150 chars)
-  const preview = description.length > 150 
-    ? description.substring(0, 150) + '...' 
+  // Get a shortened preview (first 120 chars)
+  const preview = description.length > 120 
+    ? description.substring(0, 120) + '...' 
     : description;
     
   return <p>{preview}</p>;
@@ -68,7 +60,7 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
   return (
     <div 
       className={`
-        relative border rounded p-3 cursor-pointer transition-all duration-150
+        relative border rounded h-16 p-5 transition-all duration-150 flex flex-col
         ${isLocked ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
         ${isSelected 
           ? `border-${path.color.split('-')[1]}-500 bg-gray-700` 
@@ -82,7 +74,7 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
       <div className="text-sm font-medium">{ability.name}</div>
       
       {/* Type indicator */}
-      <div className="absolute top-1 right-1">
+      <div className="absolute top-2 right-2">
         <span className={`text-xs px-1.5 py-0.5 rounded-full ${typeBgColor}`}>
           {typeLabel}
         </span>
@@ -90,7 +82,7 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
       
       {/* Info icon for details */}
       <button 
-        className="absolute bottom-1 right-1 text-gray-400 hover:text-white"
+        className="absolute bottom-2 right-2 text-gray-400 hover:text-white"
         onClick={(e) => {
           e.stopPropagation(); // Prevent toggling the ability
           onShowDetails();
