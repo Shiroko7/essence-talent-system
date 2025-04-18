@@ -82,7 +82,7 @@ export const fireAbilities = [
     {
       id: 'fire_adept_embers_resilience',
       name: 'Ember\'s Resilience',
-      description: 'When you fail a saving throw, you can use your reaction to choose to reroll the dice, instead taking 2d6 fire damage.',
+      description: 'As a reaction when you fail a saving throw, you can reroll the saving throw die. If you do so, you take 2d6 fire damage.',
       tier: 'adept',
       isActive: true,
       isPassive: false,
