@@ -133,7 +133,7 @@ export const waterAbilities = [
     {
       id: 'water_adept_tides_reflection_art_ii',
       name: 'Tide’s Reflection Art II (Thalassios)',
-      description: 'As a reaction, you can cause your one of your Water Clones to detonate, dealing cold damage equal to its maximum hit points in a 10-foot radius. Creatures in range must succeed on a Dexterity saving throw or take full damage, or half as much on a success. You can now summon two Water Clones at the same time, increasing the damage by one damage dice.',
+      description: 'As a reaction, you can cause your one of your Water Clones to detonate, dealing cold damage equal to half of its maximum hit points in a 10-foot radius. Creatures in range must succeed on a Dexterity saving throw or take full damage, or half as much on a success. You can now summon two Water Clones at the same time, increasing the damage by one damage dice when they attack together.',
       tier: 'adept',
       isActive: false,
       isPassive: true,
