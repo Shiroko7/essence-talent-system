@@ -16,19 +16,22 @@ export function isTierUnlocked(
   characterLevel: number
 ): boolean {
   // Cantrips and 1st level spells are always available
-  if (tier === 'cantrip' || tier === '1st') {
+  if (tier === 'cantrip' || tier === '1st' || tier === '2nd') {
     return true;
   }
 
   // For spells 2nd level and above, check for tier requirements
-  if (tier === '2nd') {
+  if (tier === '3rd' || tier === '4th') {
     return characterLevel >= 5;
   }
-  if (tier === '3rd') {
+  if (tier === '5th' || tier === '6th') {
     return characterLevel >= 9;
   }
-  if (tier === '4th') {
+  if (tier === '7th' || tier === '8th') {
     return characterLevel >= 13;
+  }
+  if (tier === '9th') {
+    return characterLevel >= 17;
   }
 
   // For tier-based abilities
