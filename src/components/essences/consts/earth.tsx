@@ -30,6 +30,16 @@ export const earthAbilities = [
       isCantrip: false,
     },
     {
+      id: 'earth_active_earthen_ward',
+      name: 'Earthen Ward',
+      description: 'As a reaction, a surge of earth magic momentarily hardens your form. You gain temporary hit points equal to 1d10 + your Constitution modifier.',
+      tier: 'active',
+      isActive: true,
+      isPassive: false,
+      isSpell: false,
+      isCantrip: false,
+    },
+    {
       id: 'earth_initiate_earth_sense',
       name: 'Earth Sense',
       description: 'You have advantage on Survival and Perception checks to navigate underground or in rocky terrain.',
@@ -102,7 +112,7 @@ export const earthAbilities = [
     {
       id: 'earth_adept_stone_armor',
       name: 'Stone Armor',
-      description: 'As a bonus action, you can encase yourself in a layer of stone, granting you resistance to bludgeoning, piercing, and slashing damage for 10 minutes.',
+      description: 'As a bonus action, you can encase yourself in a layer of stone, granting you resistance to bludgeoning, piercing, and slashing damage for 1 minute.',
       tier: 'adept',
       isActive: true,
       isPassive: false,
@@ -110,10 +120,10 @@ export const earthAbilities = [
       isCantrip: false,
     },
     {
-      id: 'earth_initiate_stone_fist_2',
+      id: 'earth_adept_stone_fist_2',
       name: 'Stone Fist II',
       description: 'Your unarmed strikes deal 1d8 bludgeoning damage and count as magical for overcoming resistance and immunity.',
-      tier: 'initiate',
+      tier: 'adept',
       isActive: false,
       isPassive: true,
       isSpell: false,
@@ -124,6 +134,9 @@ export const earthAbilities = [
       name: 'Sandstorm',
       description: 'As an action, you create a swirling storm of sand in a 20-foot radius centred on you. Each creature in the area must make a Constitution saving throw, taking 3d6 slashing damage on a failed save and becoming blinded until the end of their next turn, or half as much damage on a successful save. The storm lasts for 1 minute. The area is difficult terrain, any creature that starts its turn within the storm takes 1d6 damage.’',
       tier: 'adept',
+      isActive: true,
+      isPassive: false,
+      isSpell: false,
       isCantrip: false,
     },
    ];

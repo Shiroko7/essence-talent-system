@@ -109,6 +109,16 @@ export const lightningAbilities = [
         isSpell: false,
         isCantrip: false,
       },
+      {
+        id: 'lightning_adept_lightning_javelin',
+        name: 'Lightning Javelin',
+        description: 'You hurl a javelin of lightning at a target within 60 feet. Make a ranged spell attack. On hit: 5d12 lightning damage and the target can\'t take reactions until the start of its next turn.',
+        tier: 'adept',
+        isActive: true,
+        isPassive: false,
+        isSpell: false,
+        isCantrip: false,
+      },
    ];
   
    export const lightningCantrips = [
