@@ -16,7 +16,7 @@ const formatDescription = (description: string): React.ReactNode => {
   // Check if it's a URL (for spells)
   if (description.startsWith('http')) {
     return (
-      <div>
+      <div className="text-left">
         <p className="mb-2">This ability references an external spell. For detailed information:</p>
         <a 
           href={description} 
@@ -47,7 +47,7 @@ const formatDescription = (description: string): React.ReactNode => {
   });
   
   return paragraphs.map((paragraph, index) => (
-    <p key={index} className={index > 0 ? "mt-2" : ""}>
+    <p key={index} className={index > 0 ? "mt-2 text-left" : "text-left"}>
       {paragraph}
     </p>
   ));

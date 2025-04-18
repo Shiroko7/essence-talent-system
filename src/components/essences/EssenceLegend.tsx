@@ -48,7 +48,7 @@ const EssenceLegend: React.FC<EssenceLegendProps> = ({ isOpen = false, onToggle 
         </div>
       </div>
       
-      <div className="mt-3 text-gray-400 italic">
+      <div className="mt-3 text-gray-400 italic text-left">
         Example: A bar showing "─────■■■" means you have some spent essence (blue),
         some available essence (dark blue), and some essence reduction from passives (gray).
       </div>

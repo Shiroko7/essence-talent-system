@@ -92,11 +92,11 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
         <Info size={16} />
       </button>
       
-      {/* Enhanced Tooltip */}
+      {/* Enhanced Tooltip - Now with left-aligned text */}
       {showTooltip && (
         <div className="absolute z-10 bottom-full left-0 mb-2 w-72 p-3 bg-gray-900 border border-gray-600 rounded shadow-lg">
           <h4 className="font-bold text-sm">{ability.name}</h4>
-          <div className="text-xs text-gray-300 mt-1 leading-relaxed max-h-48 overflow-y-auto">
+          <div className="text-xs text-gray-300 mt-1 leading-relaxed max-h-48 overflow-y-auto text-left">
             {formatDescription(ability.description)}
           </div>
           <div className="mt-2 flex justify-between text-xs text-gray-400">
@@ -107,7 +107,7 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
                 : `Costs ${cost} essence to use`}
             </span>
           </div>
-          <div className="mt-2 text-xs text-blue-300 text-center italic">
+          <div className="mt-2 text-xs text-blue-300 text-left italic">
             Click the info icon for full details
           </div>
         </div>

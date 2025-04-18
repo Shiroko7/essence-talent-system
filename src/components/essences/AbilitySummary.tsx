@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Check, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { 
   Ability, 
   EssencePathId, 
@@ -281,7 +281,7 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                   
                   <div className="bg-gray-700 p-4 rounded-lg mt-3">
                     <h4 className="text-sm font-medium mb-2">Description</h4>
-                    <div className="text-gray-300 leading-relaxed">
+                    <div className="text-gray-300 leading-relaxed text-left">
                       {formatDescription(ability.description)}
                     </div>
                   </div>
