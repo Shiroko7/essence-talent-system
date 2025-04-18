@@ -2,7 +2,7 @@ export const poisonAbilities = [
     {
       id: 'poison_initiate_venomous_touch',
       name: 'Venomous Touch',
-      description: 'As an action, you can imbue your touch with a mild poison. A creature you touch must make a Constitution saving throw against your spell save DC or become poisoned for 1 minute. While poisoned this way, the creature takes 1d4 poison damage at the start of each of its turns until it succeeds a saving throw. The poison ends early if the creature receives any kind of healing. This ability’s damage increases by 1d4 when you reach 5th Adept level (2d4), 9th Master level (3d4), 13th Grandmaster level (4d4), and 17th Great-grandmaster level (5d4).',
+      description: 'As an action, you can imbue your touch with a mild poison. A creature you touch must make a Constitution saving throw against your spell save DC or become poisoned for 1 minute. While poisoned this way, the creature takes 1d6 poison damage at the start of each of its turns until it succeeds a saving throw. The poison ends early if the creature receives any kind of healing.',
       tier: 'initiate',
       isActive: true,
       isPassive: false,
@@ -20,19 +20,9 @@ export const poisonAbilities = [
       isCantrip: false,
     },
     {
-      id: 'poison_initiate_elixir_of_vitality',
-      name: 'Elixir of Vitality',
-      description: 'As a bonus action, you can consume a special elixir to regain hit dice. You regain a number of hit dice equal to half your proficiency bonus (minimum of one).',
-      tier: 'initiate',
-      isActive: true,
-      isPassive: false,
-      isSpell: false,
-      isCantrip: false,
-    },
-    {
       id: 'poison_initiate_strength_booster',
       name: 'Strength Booster',
-      description: 'As a bonus action, you can drink a mutagen to gain advantage on Strength-based ability checks and saving throws for 10 minutes. Additionally, you gain a +2 bonus to Strength-based attack rolls during this time.',
+      description: 'As a bonus action, you can drink a mutagen to gain advantage on Strength-based ability checks for 10 minutes. Additionally, you gain a +2 bonus to Strength-based attack rolls during this time.',
       tier: 'initiate',
       isActive: true,
       isPassive: false,
@@ -42,7 +32,7 @@ export const poisonAbilities = [
     {
       id: 'poison_initiate_quickening_draught',
       name: 'Quickening Draught',
-      description: 'As a bonus action, by drinking a specially prepared potion, you gain an additional 10 feet of movement speed for 1 hour and advantage on Dexterity-based ability checks.',
+      description: 'As a bonus action, by drinking a specially prepared potion, you gain an additional 10 feet of movement speed for 10 minutes and advantage on Dexterity-based ability checks.',
       tier: 'initiate',
       isActive: true,
       isPassive: false,
@@ -82,7 +72,7 @@ export const poisonAbilities = [
     {
       id: 'poison_adept_venomous_strike',
       name: 'Venomous Strike',
-      description: 'As a bonus action, you can coat a weapon with a potent poison. The next attack you make with that weapon deals an additional 2d6 poison damage on a hit. The target must also succeed on a Constitution saving throw or be poisoned for 1 minute.',
+      description: 'As a bonus action, you can coat a weapon with a potent poison. The next attack you make with that weapon deals an additional 3d6 poison damage on a hit. The target must also succeed on a Constitution saving throw or be poisoned for 1 minute.',
       tier: 'adept',
       isActive: true,
       isPassive: false,
@@ -112,7 +102,7 @@ export const poisonAbilities = [
     {
       id: 'poison_adept_pill_of_focus',
       name: 'Pill of Focus',
-      description: 'As a bonus action, you can consume a pill to gain advantage on concentration checks for the next hour. Additionally, you can maintain concentration on up to one additional poison spell or ability for the duration.',
+      description: 'As a bonus action, you can consume a pill to gain advantage on concentration checks for the next hour.',
       tier: 'adept',
       isActive: true,
       isPassive: false,
@@ -122,7 +112,7 @@ export const poisonAbilities = [
     {
       id: 'poison_adept_venomous_precision',
       name: 'Venomous Precision',
-      description: 'When attacking a creature that is poisoned, you have advantage on attack rolls against that creature. Starting at 9th Master level, when you hit a poisoned creature with a weapon attack, you deal an extra 1d6 poison damage. This bonus damage increases to 2d6 at 13th Grandmaster level and 3d6 at 17th Great-grandmaster level.',
+      description: 'When attacking a creature that is poisoned, you have advantage on attack rolls against that creature.',
       tier: 'adept',
       isActive: true,
       isPassive: false,

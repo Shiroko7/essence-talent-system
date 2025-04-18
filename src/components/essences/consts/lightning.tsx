@@ -1,15 +1,5 @@
 export const lightningAbilities = [
     {
-      id: 'lightning_initiate_thunderous_strike',
-      name: 'Thunderous Strike',
-      description: 'When you hit a creature with a melee weapon attack, you can channel the force of a thunderstorm into your strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn. This ability can only be used once per turn, and once a creature is stunned by this ability, it cannot be stunned again by it for 1 minute.',
-      tier: 'initiate',
-      isActive: true,
-      isPassive: false,
-      isSpell: false,
-      isCantrip: false,
-    },
-    {
       id: 'lightning_initiate_static_reflexes',
       name: 'Static Reflexes',
       description: 'You gain advantage on Dexterity saving throws against effects that deal lightning damage or require quick reflexes, such as traps or spells.',
@@ -72,7 +62,7 @@ export const lightningAbilities = [
       {
         id: 'lightning_adept_conductive_touch',
         name: 'Conductive Touch',
-        description: 'When you hit a creature with a melee attack, you can choose to deal an extra 2d6 lightning damage.',
+        description: 'When you hit a creature with a melee attack, you can choose to deal an extra 2d12 lightning damage.',
         tier: 'adept',
         isActive: true,
         isPassive: false,
@@ -103,6 +93,16 @@ export const lightningAbilities = [
         id: 'lightning_adept_thunderous_entrance',
         name: 'Thunderous Entrance',
         description: 'You can make a dramatic entrance by creating a booming thunderclap that announces your presence. This effect grants you advantage on Charisma (Performance) checks to make a memorable first impression.',
+        tier: 'adept',
+        isActive: true,
+        isPassive: false,
+        isSpell: false,
+        isCantrip: false,
+      },
+      {
+        id: 'lightning_adept_thunderous_strike',
+        name: 'Thunderous Strike',
+        description: 'When you hit a creature with a melee weapon attack, you can channel the force of a thunderstorm into your strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn. This ability can only be used once per turn, and once a creature is stunned by this ability, it cannot be stunned again by it for 1 minute.',
         tier: 'adept',
         isActive: true,
         isPassive: false,

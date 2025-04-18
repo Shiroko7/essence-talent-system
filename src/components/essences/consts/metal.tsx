@@ -72,7 +72,7 @@ export const metalAbilities = [
     {
       id: 'metal_adept_magnetic_manipulation',
       name: 'Magnetic Manipulation',
-      description: 'You can use an action to exert magnetic force on a metal object or creature within 30 feet. You can move the object or creature up to 10 feet in any direction, or cause the object to be attracted or repelled by a metal surface.',
+      description: 'You can use an action to exert magnetic force on a metal object or creature within 60 feet. You can move the object or creature up to 10 feet in any direction, or cause the object to be attracted or repelled by a metal surface.',
       tier: 'adept',
       isActive: true,
       isPassive: false,
@@ -102,7 +102,7 @@ export const metalAbilities = [
     {
       id: 'metal_adept_steel_tornado',
       name: 'Steel Tornado',
-      description: 'As an action, you can create a whirlwind of metallic shards in a 10-foot radius and 30-foot tall cylinder centered on you. Creatures within the cylinder must make a Dexterity saving throw. On a failed save, a creature takes 2d6 slashing damage, or half as much damage on a successful save. The damage increases to 3d6 at 9th Master level, 4d6 at 13th Grandmaster level, and 5d6 at Great-grandmaster 17th level.',
+      description: 'As an action, you can create a whirlwind of metallic shards in a 30-foot radius around you. Creatures within the cylinder must make a Dexterity saving throw. On a failed save, a creature takes 7d6 slashing damage, or half as much damage on a successful save.',
       tier: 'adept',
       isActive: true,
       isPassive: false,
