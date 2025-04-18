@@ -3,8 +3,11 @@ import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { 
   Ability, 
   EssencePathId, 
-  ESSENCE_PATHS, 
-  FilterType
+  ESSENCE_PATHS,
+  TIERS,
+  FilterType,
+  TierId,
+  SpellLevel
 } from '../../types/essence';
 import FilterPills from './FilterPills';
 import { getFilteredAbilities } from '../../utils/essenceUtils';
@@ -16,6 +19,71 @@ interface AbilitySummaryProps {
   selectedAbilities: string[];
   onToggleView: () => void;
 }
+
+// Helper function to get which character tier a spell belongs to
+const getSpellCharacterTier = (spellLevel: SpellLevel): TierId => {
+  if (spellLevel === 'cantrip' || spellLevel === '1st' || spellLevel === '2nd') {
+    return 'initiate';
+  } else if (spellLevel === '3rd' || spellLevel === '4th') {
+    return 'adept';
+  } else if (spellLevel === '5th' || spellLevel === '6th') {
+    return 'master';
+  } else if (spellLevel === '7th' || spellLevel === '8th') {
+    return 'grandmaster';
+  } else if (spellLevel === '9th') {
+    return 'greatgrandmaster';
+  }
+  return 'initiate'; // Default fallback
+};
+
+// Helper function to get sort priority for abilities (inverse of EssencePath sorting)
+const getAbilitySortPriority = (ability: Ability): number => {
+  // Create a map for the inverse spell level priority
+  const spellLevelMap: Record<string, number> = {
+    '9th': 0,
+    '8th': 1,
+    '7th': 2,
+    '6th': 3,
+    '5th': 4,
+    '4th': 5,
+    '3rd': 6,
+    '2nd': 7,
+    '1st': 8,
+    'cantrip': 9,
+  };
+
+  if (ability.isSpell) {
+    return (spellLevelMap[ability.tier.toString()] || 10);
+  }
+  if (ability.isCantrip) return 11;
+  if (ability.isActive) return 12;
+  if (ability.isPassive) return 13;
+  return 14; // Fallback for any unclassified abilities
+};
+
+// Helper function to get tier priority (highest first)
+const getTierPriority = (tier: TierId): number => {
+  const tierMap: Record<string, number> = {
+    'greatgrandmaster': 0,
+    'grandmaster': 1,
+    'master': 2,
+    'adept': 3,
+    'initiate': 4
+  };
+  return tierMap[tier] || 10;
+};
+
+// Helper function to get tier display name
+const getTierDisplayName = (tier: TierId): string => {
+  const displayNames: Record<string, string> = {
+    'greatgrandmaster': 'Great Grandmaster',
+    'grandmaster': 'Grandmaster',
+    'master': 'Master',
+    'adept': 'Adept',
+    'initiate': 'Initiate'
+  };
+  return displayNames[tier] || tier.toString();
+};
 
 const AbilitySummary: React.FC<AbilitySummaryProps> = ({
   allAbilities,
@@ -62,20 +130,50 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
     return getFilteredAbilities(result, selectedFilter);
   }, [allAbilitiesList, selectedPaths, selectedFilter]);
   
-  // Sort abilities by path and name
-  const sortedAbilities = useMemo(() => {
-    return [...filteredAbilities].sort((a, b) => {
-      // First sort by path
-      const pathA = a.id.split('_')[0];
-      const pathB = b.id.split('_')[0];
+  // Group abilities by character tier and sort within tiers in inverse order
+  const groupedAbilities = useMemo(() => {
+    const tierGroups = new Map<TierId, Ability[]>();
+    
+    // Initialize tier groups
+    TIERS.forEach(tier => {
+      tierGroups.set(tier.id, []);
+    });
+    
+    // Group abilities by character tier
+    filteredAbilities.forEach(ability => {
+      let characterTier: TierId;
       
-      if (pathA !== pathB) {
-        return pathA.localeCompare(pathB);
+      if (ability.isSpell || ability.isCantrip) {
+        // Map spell levels to character tiers
+        characterTier = getSpellCharacterTier(ability.tier as SpellLevel);
+      } else {
+        // Use the tier directly for regular abilities
+        characterTier = ability.tier as TierId;
       }
       
-      // Then by name
-      return a.name.localeCompare(b.name);
+      tierGroups.get(characterTier)?.push(ability);
     });
+    
+    // Sort abilities within each tier (inverse order)
+    tierGroups.forEach(abilities => {
+      abilities.sort((a, b) => {
+        return getAbilitySortPriority(a) - getAbilitySortPriority(b);
+      });
+    });
+    
+    // Convert to array and sort tiers by priority (highest first)
+    const result = Array.from(tierGroups.entries())
+      .filter(([_, abilities]) => abilities.length > 0) // Only include tiers with abilities
+      .map(([tier, abilities]) => ({
+        tier: tier as TierId,
+        abilities
+      }));
+    
+    result.sort((a, b) => {
+      return getTierPriority(a.tier) - getTierPriority(b.tier);
+    });
+    
+    return result;
   }, [filteredAbilities]);
   
   // Toggle a path selection
@@ -247,47 +345,57 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
       <div className="mt-4 space-y-6">
         <h2 className="text-xl font-bold border-b border-gray-700 pb-2">Selected Abilities Summary</h2>
         
-        {sortedAbilities.length === 0 ? (
+        {groupedAbilities.length === 0 ? (
           <div className="p-6 text-center text-gray-400">
             <p>No abilities selected or no matches found with the current filters.</p>
             <p className="mt-2 text-sm">Select abilities from the Tree View or adjust your filters.</p>
           </div>
         ) : (
-          <div className="space-y-6">
-            {sortedAbilities.map(ability => {
-              const pathColor = getPathColor(ability.id);
-              const pathName = getPathName(ability.id);
-              const { label: typeLabel, color: typeColor } = getAbilityTypeInfo(ability);
-              
-              return (
-                <div 
-                  key={ability.id} 
-                  className="p-4 border border-gray-700 rounded-lg"
-                >
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <h3 className="text-lg font-bold flex items-center gap-2">
-                        <div className={`w-3 h-3 rounded-full ${pathColor}`}></div>
-                        {ability.name}
-                      </h3>
-                      <div className="text-sm text-gray-400 mt-1">
-                        {pathName} Path • {ability.tier.toString().charAt(0).toUpperCase() + ability.tier.toString().slice(1)} Tier
+          <div className="space-y-10">
+            {groupedAbilities.map(({ tier, abilities }) => (
+              <div key={tier} className="space-y-6">
+                <h3 className="text-lg font-bold text-left border-b border-gray-700 pb-2">
+                  {getTierDisplayName(tier)}
+                </h3>
+                
+                <div className="space-y-6">
+                  {abilities.map(ability => {
+                    const pathColor = getPathColor(ability.id);
+                    const pathName = getPathName(ability.id);
+                    const { label: typeLabel, color: typeColor } = getAbilityTypeInfo(ability);
+                    
+                    return (
+                      <div 
+                        key={ability.id} 
+                        className="p-4 border border-gray-700 rounded-lg"
+                      >
+                        <div className="flex justify-between items-start mb-3">
+                          <div>
+                            <h3 className="text-lg font-bold flex items-center gap-2">
+                              <div className={`w-3 h-3 rounded-full ${pathColor}`}></div>
+                              {ability.name}
+                            </h3>
+                            <div className="text-sm text-gray-400 mt-1">
+                              {pathName} Path • {ability.tier.toString().charAt(0).toUpperCase() + ability.tier.toString().slice(1)}
+                            </div>
+                          </div>
+                          <span className={`text-xs px-2 py-1 rounded-full ${typeColor}`}>
+                            {typeLabel}
+                          </span>
+                        </div>
+                        
+                        <div className="bg-gray-700 p-4 rounded-lg mt-3">
+                          <h4 className="text-sm font-medium mb-2">Description</h4>
+                          <div className="text-gray-300 leading-relaxed text-left">
+                            {formatDescription(ability.description)}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <span className={`text-xs px-2 py-1 rounded-full ${typeColor}`}>
-                      {typeLabel}
-                    </span>
-                  </div>
-                  
-                  <div className="bg-gray-700 p-4 rounded-lg mt-3">
-                    <h4 className="text-sm font-medium mb-2">Description</h4>
-                    <div className="text-gray-300 leading-relaxed text-left">
-                      {formatDescription(ability.description)}
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         )}
       </div>

@@ -12,6 +12,30 @@ interface EssencePathProps {
   onToggleAbility: (ability: Ability) => void;
 }
 
+// Helper function to get sort priority for abilities
+const getAbilitySortPriority = (ability: Ability): number => {
+  if (ability.isPassive) return 0;
+  if (ability.isActive) return 1;
+  if (ability.isCantrip) return 2;
+  if (ability.isSpell) {
+    // Sort spells by level - convert '1st', '2nd', etc. to numeric values
+    const spellLevelMap: Record<string, number> = {
+      'cantrip': 0,
+      '1st': 1,
+      '2nd': 2,
+      '3rd': 3,
+      '4th': 4,
+      '5th': 5,
+      '6th': 6,
+      '7th': 7,
+      '8th': 8,
+      '9th': 9,
+    };
+    return 3 + (spellLevelMap[ability.tier.toString()] || 0);
+  }
+  return 10; // Fallback for any unclassified abilities
+};
+
 const EssencePath: React.FC<EssencePathProps> = ({
   path,
   abilities,
@@ -60,6 +84,12 @@ const EssencePath: React.FC<EssencePathProps> = ({
         tierAbilities = tierAbilities.filter(a => a.isSpell);
       }
     }
+    
+    // Sort abilities within the tier based on the requested order:
+    // passive > active > cantrip > spell levels (increasing order)
+    tierAbilities.sort((a, b) => {
+      return getAbilitySortPriority(a) - getAbilitySortPriority(b);
+    });
     
     const unlocked = isTierUnlocked(tier.id, selectedAbilities, abilities, characterLevel);
     

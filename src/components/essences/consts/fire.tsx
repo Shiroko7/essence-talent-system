@@ -82,7 +82,7 @@ export const fireAbilities = [
     {
       id: 'fire_adept_embers_resilience',
       name: 'Ember\'s Resilience',
-      description: 'When you fail a saving throw, you can choose to reroll the dice, instead taking 2d6 fire damage.',
+      description: 'When you fail a saving throw, you can use your reaction to choose to reroll the dice, instead taking 2d6 fire damage.',
       tier: 'adept',
       isActive: true,
       isPassive: false,
@@ -112,7 +112,7 @@ export const fireAbilities = [
     {
       id: 'fire_adept_burning_fury',
       name: 'Burning Fury',
-      description: 'Immediately after you take fire damage, you can spend your reaction to gain advantage on attack rolls made before the end of your next turn.',
+      description: 'Immediately after you take fire damage, you gain advantage on attack rolls made before the end of your next turn.',
       tier: 'adept',
       isActive: false,
       isPassive: true,
