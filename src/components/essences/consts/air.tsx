@@ -1,15 +1,5 @@
 export const airAbilities = [
   {
-    id: 'air_initiate_gale_force_strike',
-    name: 'Gale Force Strike',
-    description: 'When you hit a creature of your size or smaller, or any creature one size category larger than you, with a weapon attack, you can create a gust of wind that forces the creature to make a Strength saving throw. On a failed save, the creature is pushed 10 feet away from you.',
-    tier: 'initiate',
-    isActive: true,
-    isPassive: false,
-    isSpell: false,
-    isCantrip: false,
-  },
-  {
     id: 'air_initiate_mistbound_step',
     name: 'Mistbound Step',
     description: 'The Misty Step spell does not consume a spell slot if you begin or end your movement in a heavily obscured area.',
@@ -136,6 +126,16 @@ export const airAbilities = [
     tier: 'adept',
     isActive: false,
     isPassive: true,
+    isSpell: false,
+    isCantrip: false,
+  },
+  {
+    id: 'air_adept_gale_force_strike',
+    name: 'Gale Force Strike',
+    description: 'When you hit a creature of your size or smaller, or any creature one size category larger than you, with a weapon attack, you can create a gust of wind that forces the creature to make a Strength saving throw. On a failed save, the creature is pushed 10 feet away from you.',
+    tier: 'adept',
+    isActive: true,
+    isPassive: false,
     isSpell: false,
     isCantrip: false,
   },
