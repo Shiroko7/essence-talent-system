@@ -10,6 +10,8 @@ import FilterPills from './FilterPills';
 import EssencePath from './EssencePath';
 import EssenceTrackingBar from './EssenceTrackingBar';
 import AbilitySummary from './AbilitySummary';
+import ConfirmDialog from './ConfirmDialog';
+import EssenceErrorDialog from './EssenceErrorDialog';
 import useEssenceAllocation from '../../hooks/useEssenceAllocation';
 import { 
   calculatePathEssenceStatus,
@@ -39,6 +41,7 @@ const EssenceTalentTree: React.FC = () => {
   const [selectedPath, setSelectedPath] = useState<EssencePathId>('water');
   const [showLegend, setShowLegend] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<'tree' | 'summary'>('tree');
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
   
   // Set up essence allocation hook
   const {
@@ -49,7 +52,9 @@ const EssenceTalentTree: React.FC = () => {
     updateCharacterLevel,
     resetCharacter,
     updateActiveEssence,
-    setCharacterState
+    setCharacterState,
+    currentAbilityError,
+    clearAbilityError
   } = useEssenceAllocation({
     initialLevel: 5, // Start at level 5 as default
     allAbilities: abilities,
@@ -86,6 +91,20 @@ const EssenceTalentTree: React.FC = () => {
       spells
     )
   );
+
+  // Handle reset with confirmation
+  const handleReset = () => {
+    setShowResetConfirm(true);
+  };
+
+  const confirmReset = () => {
+    resetCharacter();
+    setShowResetConfirm(false);
+  };
+
+  const cancelReset = () => {
+    setShowResetConfirm(false);
+  };
 
   // Save configuration
   const handleSaveConfig = () => {
@@ -163,7 +182,7 @@ const EssenceTalentTree: React.FC = () => {
           <CharacterControls
             level={character.level}
             onLevelChange={updateCharacterLevel}
-            onReset={resetCharacter}
+            onReset={handleReset}
             onSaveConfig={handleSaveConfig}
             onLoadConfig={handleLoadConfig}
           />
@@ -201,12 +220,12 @@ const EssenceTalentTree: React.FC = () => {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-4 bg-blue-600"></div>
-                      <span>Spent essence (active abilities currently using essence)</span>
+                      <span>Available essence (can be spent on active abilities)</span>
                     </div>
                     
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-4 bg-blue-900"></div>
-                      <span>Available essence (can be spent on active abilities)</span>
+                      <span>Spent essence (active abilities currently using essence)</span>
                     </div>
                     
                     <div className="flex items-center gap-2">
@@ -320,6 +339,28 @@ const EssenceTalentTree: React.FC = () => {
               />
             </div>
           </div>
+        )}
+
+        {/* Reset Confirmation Dialog */}
+        {showResetConfirm && (
+          <ConfirmDialog
+            title="Reset Character"
+            message="Are you sure you want to reset your character? This will remove all selected abilities and reset your essence allocation."
+            confirmText="Reset"
+            cancelText="Cancel"
+            onConfirm={confirmReset}
+            onCancel={cancelReset}
+          />
+        )}
+
+        {/* Essence Error Dialog */}
+        {currentAbilityError && (
+          <EssenceErrorDialog
+            ability={currentAbilityError}
+            currentPoints={totalPointsSpent}
+            totalPoints={totalEssencePoints}
+            onClose={clearAbilityError}
+          />
         )}
       </div>
     </Layout>

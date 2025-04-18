@@ -14,6 +14,9 @@ import {
   shouldUnallocateAbility
 } from '../utils/essenceUtils';
 
+// Create storage keys
+const STORAGE_KEY_CHARACTER = 'essence-talent-system-character';
+
 interface EssenceAllocationProps {
   initialLevel?: number;
   initialSelectedAbilities?: string[];
@@ -29,14 +32,40 @@ const useEssenceAllocation = ({
   cantrips,
   spells
 }: EssenceAllocationProps) => {
-  const [character, setCharacter] = useState<Character>({
-    level: initialLevel,
-    selectedAbilities: initialSelectedAbilities,
-    activeEssenceByPath: ESSENCE_PATHS.reduce((acc, path) => ({
-      ...acc,
-      [path.id]: 0
-    }), {} as Record<EssencePathId, number>)
-  });
+  // Try to load character from localStorage or use default
+  const loadCharacterFromStorage = (): Character => {
+    try {
+      const savedData = localStorage.getItem(STORAGE_KEY_CHARACTER);
+      if (savedData) {
+        const parsedData = JSON.parse(savedData) as Character;
+        return parsedData;
+      }
+    } catch (error) {
+      console.error('Error loading data from localStorage:', error);
+    }
+
+    // Return default character if nothing in storage or error
+    return {
+      level: initialLevel,
+      selectedAbilities: initialSelectedAbilities,
+      activeEssenceByPath: ESSENCE_PATHS.reduce((acc, path) => ({
+        ...acc,
+        [path.id]: 0
+      }), {} as Record<EssencePathId, number>)
+    };
+  };
+
+  const [character, setCharacter] = useState<Character>(loadCharacterFromStorage);
+  const [currentAbilityError, setCurrentAbilityError] = useState<Ability | null>(null);
+
+  // Save character to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY_CHARACTER, JSON.stringify(character));
+    } catch (error) {
+      console.error('Error saving data to localStorage:', error);
+    }
+  }, [character]);
 
   // Derived states
   const allAbilitiesList = Object.values(allAbilities).flat().concat(
@@ -104,14 +133,21 @@ const useEssenceAllocation = ({
     const cost = getTierCost(ability.tier);
   
     if (cost + totalPointsSpent > totalEssencePoints) {
-      alert("Not enough essence points available!");
+      // Instead of alert, set the current ability with error
+      setCurrentAbilityError(ability);
       return;
     }
+    
     // Add the ability
     setCharacter(prev => ({
       ...prev,
       selectedAbilities: [...prev.selectedAbilities, ability.id]
     }));
+  };
+
+  // Function to clear the ability error
+  const clearAbilityError = () => {
+    setCurrentAbilityError(null);
   };
 
   // Function to update character level
@@ -124,14 +160,23 @@ const useEssenceAllocation = ({
 
   // Function to reset character
   const resetCharacter = () => {
-    setCharacter({
+    const newCharacter = {
       level: initialLevel,
       selectedAbilities: [],
       activeEssenceByPath: ESSENCE_PATHS.reduce((acc, path) => ({
         ...acc,
         [path.id]: 0
       }), {} as Record<EssencePathId, number>)
-    });
+    };
+    
+    setCharacter(newCharacter);
+    
+    // Also clear localStorage
+    try {
+      localStorage.removeItem(STORAGE_KEY_CHARACTER);
+    } catch (error) {
+      console.error('Error clearing localStorage:', error);
+    }
   };
 
   // Function to set the entire character state (used for loading saved configs)
@@ -220,7 +265,9 @@ const useEssenceAllocation = ({
     resetCharacter,
     updateActiveEssence,
     getPathPassiveReduction,
-    setCharacterState
+    setCharacterState,
+    currentAbilityError,
+    clearAbilityError
   };
 };
 
