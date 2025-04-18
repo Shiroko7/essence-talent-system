@@ -110,10 +110,10 @@ export const airAbilities = [
     isCantrip: false,
   },
   {
-    id: 'air_initiate_wind_sprint',
+    id: 'air_adept_wind_sprint',
     name: 'Wind Sprint',
     description: 'You can double your movement speed for a number of rounds equal to your total of wind essences.',
-    tier: 'initiate',
+    tier: 'adept',
     isActive: true,
     isPassive: false,
     isSpell: false,
