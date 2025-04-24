@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Info } from 'lucide-react';
 import { 
   ESSENCE_PATHS, 
@@ -10,14 +10,14 @@ import FilterPills from './FilterPills';
 import EssencePath from './EssencePath';
 import EssenceTrackingBar from './EssenceTrackingBar';
 import AbilitySummary from './AbilitySummary';
-import ConfirmDialog from './ConfirmDialog';
-import EssenceErrorDialog from './EssenceErrorDialog';
 import useEssenceAllocation from '../../hooks/useEssenceAllocation';
 import { 
   calculatePathEssenceStatus,
   pathHasActiveAbilities 
 } from '../../utils/essenceUtils';
 import { importEssenceData } from '../../utils/essenceData';
+import { fuzzySearch } from '../../utils/fuzzySearch';
+import SearchInput from './SearchInput';
 import Layout from '../layout/Layout';
 
 // Type for saved configuration
@@ -41,7 +41,7 @@ const EssenceTalentTree: React.FC = () => {
   const [selectedPath, setSelectedPath] = useState<EssencePathId>('water');
   const [showLegend, setShowLegend] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<'tree' | 'summary'>('tree');
-  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [searchTerm, setSearchTerm] = useState<string>('');
   
   // Set up essence allocation hook
   const {
@@ -52,9 +52,7 @@ const EssenceTalentTree: React.FC = () => {
     updateCharacterLevel,
     resetCharacter,
     updateActiveEssence,
-    setCharacterState,
-    currentAbilityError,
-    clearAbilityError
+    setCharacterState
   } = useEssenceAllocation({
     initialLevel: 5, // Start at level 5 as default
     allAbilities: abilities,
@@ -81,6 +79,12 @@ const EssenceTalentTree: React.FC = () => {
     ];
   };
   
+  // Get filtered abilities for the current path with search applied
+  const getFilteredPathAbilities = (pathId: EssencePathId) => {
+    const allPathAbilities = getAllPathAbilities(pathId);
+    return fuzzySearch(allPathAbilities, searchTerm);
+  };
+  
   // Get paths that have active abilities or spells allocated
   const pathsWithActiveAbilities = ESSENCE_PATHS.filter(path => 
     pathHasActiveAbilities(
@@ -92,20 +96,11 @@ const EssenceTalentTree: React.FC = () => {
     )
   );
 
-  // Handle reset with confirmation
-  const handleReset = () => {
-    setShowResetConfirm(true);
-  };
-
-  const confirmReset = () => {
-    resetCharacter();
-    setShowResetConfirm(false);
-  };
-
-  const cancelReset = () => {
-    setShowResetConfirm(false);
-  };
-
+  // Reset search when changing view mode
+  useEffect(() => {
+    setSearchTerm('');
+  }, [viewMode]);
+  
   // Save configuration
   const handleSaveConfig = () => {
     // Create configuration object
@@ -182,7 +177,7 @@ const EssenceTalentTree: React.FC = () => {
           <CharacterControls
             level={character.level}
             onLevelChange={updateCharacterLevel}
-            onReset={handleReset}
+            onReset={resetCharacter}
             onSaveConfig={handleSaveConfig}
             onLoadConfig={handleLoadConfig}
           />
@@ -220,12 +215,12 @@ const EssenceTalentTree: React.FC = () => {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-4 bg-blue-600"></div>
-                      <span>Available essence (can be spent on active abilities)</span>
+                      <span>Spent essence (active abilities currently using essence)</span>
                     </div>
                     
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-4 bg-blue-900"></div>
-                      <span>Spent essence (active abilities currently using essence)</span>
+                      <span>Available essence (can be spent on active abilities)</span>
                     </div>
                     
                     <div className="flex items-center gap-2">
@@ -277,6 +272,8 @@ const EssenceTalentTree: React.FC = () => {
             spells={spells}
             selectedAbilities={character.selectedAbilities}
             onToggleView={toggleViewMode}
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
           />
         )}
 
@@ -306,32 +303,44 @@ const EssenceTalentTree: React.FC = () => {
             <div className="flex-1 bg-gray-800 rounded p-4">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                 
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-                  <FilterPills 
-                    selectedFilter={selectedFilter} 
-                    onFilterChange={handleFilterChange} 
-                  />
-                  
-                  <div className="flex items-center gap-2">
-                    <div className="text-sm text-gray-400">Essence Points Spent:</div>
-                    <div className="px-3 py-1 bg-indigo-900 rounded-md font-medium">
-                      {totalPointsSpent} / {totalEssencePoints}
+                <div className="flex flex-col w-full gap-4">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 w-full">
+                    <FilterPills 
+                      selectedFilter={selectedFilter} 
+                      onFilterChange={handleFilterChange}
+                    />
+                    
+                    <div className="w-full max-w-md ml-auto">
+                      <SearchInput 
+                        searchTerm={searchTerm}
+                        onSearchChange={setSearchTerm}
+                        placeholder="Search abilities by name or description..."
+                      />
                     </div>
                   </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <div className="text-sm text-gray-400">Essence Points Spent:</div>
+                      <div className="px-3 py-1 bg-indigo-900 rounded-md font-medium">
+                        {totalPointsSpent} / {totalEssencePoints}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={toggleViewMode}
+                      className="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium"
+                    >
+                      Switch to Summary
+                    </button>
+                  </div>
                 </div>
-                
-                <button
-                  onClick={toggleViewMode}
-                  className="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium"
-                >
-                  {viewMode === 'tree' ? 'Switch to Summary' : 'Switch to Tree'}
-                </button>
               </div>
               
               {/* Render the selected path */}
               <EssencePath
                 path={ESSENCE_PATHS.find(p => p.id === selectedPath)!}
-                abilities={getAllPathAbilities(selectedPath)}
+                abilities={getFilteredPathAbilities(selectedPath)}
                 selectedAbilities={character.selectedAbilities}
                 characterLevel={character.level}
                 activeFilter={selectedFilter}
@@ -339,28 +348,6 @@ const EssenceTalentTree: React.FC = () => {
               />
             </div>
           </div>
-        )}
-
-        {/* Reset Confirmation Dialog */}
-        {showResetConfirm && (
-          <ConfirmDialog
-            title="Reset Character"
-            message="Are you sure you want to reset your character? This will remove all selected abilities and reset your essence allocation."
-            confirmText="Reset"
-            cancelText="Cancel"
-            onConfirm={confirmReset}
-            onCancel={cancelReset}
-          />
-        )}
-
-        {/* Essence Error Dialog */}
-        {currentAbilityError && (
-          <EssenceErrorDialog
-            ability={currentAbilityError}
-            currentPoints={totalPointsSpent}
-            totalPoints={totalEssencePoints}
-            onClose={clearAbilityError}
-          />
         )}
       </div>
     </Layout>

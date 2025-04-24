@@ -10,7 +10,9 @@ import {
   SpellLevel
 } from '../../types/essence';
 import FilterPills from './FilterPills';
+import SearchInput from './SearchInput';
 import { getFilteredAbilities } from '../../utils/essenceUtils';
+import { fuzzySearch } from '../../utils/fuzzySearch';
 
 interface AbilitySummaryProps {
   allAbilities: Record<EssencePathId, Ability[]>;
@@ -18,6 +20,8 @@ interface AbilitySummaryProps {
   spells: Record<EssencePathId, Ability[]>;
   selectedAbilities: string[];
   onToggleView: () => void;
+  searchTerm?: string;
+  onSearchChange?: (term: string) => void;
 }
 
 // Helper function to get which character tier a spell belongs to
@@ -90,7 +94,9 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
   cantrips,
   spells,
   selectedAbilities,
-  onToggleView
+  onToggleView,
+  searchTerm = '',
+  onSearchChange = () => {}
 }) => {
   const [selectedFilter, setSelectedFilter] = useState<FilterType>('all');
   const [selectedPaths, setSelectedPaths] = useState<EssencePathId[]>([]);
@@ -114,7 +120,7 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
     return result;
   }, [allAbilities, cantrips, spells, selectedAbilities]);
   
-  // Apply filters
+  // Apply filters and search
   const filteredAbilities = useMemo(() => {
     let result = allAbilitiesList;
     
@@ -127,8 +133,15 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
     }
     
     // Apply type filter
-    return getFilteredAbilities(result, selectedFilter);
-  }, [allAbilitiesList, selectedPaths, selectedFilter]);
+    result = getFilteredAbilities(result, selectedFilter);
+    
+    // Apply search filter
+    if (searchTerm) {
+      result = fuzzySearch(result, searchTerm);
+    }
+    
+    return result;
+  }, [allAbilitiesList, selectedPaths, selectedFilter, searchTerm]);
   
   // Group abilities by character tier and sort within tiers in inverse order
   const groupedAbilities = useMemo(() => {
@@ -264,16 +277,50 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
     ));
   };
   
+  // Highlight matched text in a string
+  const highlightText = (text: string, term: string) => {
+    if (!term.trim()) {
+      return text;
+    }
+    
+    const parts = text.split(new RegExp(`(${term})`, 'gi'));
+    
+    return (
+      <>
+        {parts.map((part, i) => 
+          part.toLowerCase() === term.toLowerCase() 
+            ? <span key={i} className="bg-yellow-800 text-white px-1 rounded">{part}</span> 
+            : part
+        )}
+      </>
+    );
+  };
+  
   return (
     <div className="w-full bg-gray-800 rounded-lg p-4">
       <div className="mb-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+          <div className="flex flex-col w-full md:flex-row items-start md:items-center gap-4 md:gap-6">
             <FilterPills 
               selectedFilter={selectedFilter} 
-              onFilterChange={(filter) => setSelectedFilter(filter)} 
+              onFilterChange={(filter) => setSelectedFilter(filter)}
             />
             
+            <div className="w-full max-w-md ml-auto">
+              <SearchInput 
+                searchTerm={searchTerm}
+                onSearchChange={onSearchChange}
+                placeholder="Search selected abilities..."
+              />
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+          <div className="flex justify-between items-center">
+
             {/* Multi-select dropdown for path filter */}
             <div className="relative">
               <button
@@ -329,9 +376,7 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                 </div>
               )}
             </div>
-          </div>
-          
-          <div className="flex items-center gap-2">
+
             <button
               onClick={onToggleView}
               className="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium"
@@ -339,9 +384,8 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
               Switch to Tree View
             </button>
           </div>
-        </div>
-      </div>
-      
+
+
       <div className="mt-4 space-y-6">
         <h2 className="text-xl font-bold border-b border-gray-700 pb-2">Selected Abilities Summary</h2>
         
@@ -349,6 +393,9 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
           <div className="p-6 text-center text-gray-400">
             <p>No abilities selected or no matches found with the current filters.</p>
             <p className="mt-2 text-sm">Select abilities from the Tree View or adjust your filters.</p>
+            {searchTerm && (
+              <p className="mt-2 text-sm">Your search for "{searchTerm}" returned no results.</p>
+            )}
           </div>
         ) : (
           <div className="space-y-10">
@@ -373,7 +420,7 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                           <div>
                             <h3 className="text-lg font-bold flex items-center gap-2">
                               <div className={`w-3 h-3 rounded-full ${pathColor}`}></div>
-                              {ability.name}
+                              {searchTerm ? highlightText(ability.name, searchTerm) : ability.name}
                             </h3>
                             <div className="text-sm text-gray-400 mt-1">
                               {pathName} Path • {ability.tier.toString().charAt(0).toUpperCase() + ability.tier.toString().slice(1)}
@@ -387,7 +434,12 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                         <div className="bg-gray-700 p-4 rounded-lg mt-3">
                           <h4 className="text-sm font-medium mb-2">Description</h4>
                           <div className="text-gray-300 leading-relaxed text-left">
-                            {formatDescription(ability.description)}
+                            {ability.description.startsWith('http') 
+                              ? formatDescription(ability.description)
+                              : searchTerm 
+                                ? highlightText(ability.description, searchTerm) 
+                                : formatDescription(ability.description)
+                            }
                           </div>
                         </div>
                       </div>

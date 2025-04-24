@@ -67,6 +67,9 @@ const EssencePath: React.FC<EssencePathProps> = ({
         if (tier.id === 'grandmaster' && (ability.tier === '7th' || ability.tier === '8th')) {
           return true;
         }
+        if (tier.id === 'greatgrandmaster' && (ability.tier === '9th')) {
+          return true;
+        }
       }
       
       return false;

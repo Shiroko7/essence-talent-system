@@ -66,6 +66,9 @@ export function isTierUnlocked(
       if (prevTier === 'grandmaster' && spellTier === '7th' || spellTier === '8th') {
         return true;
       }
+      if (prevTier === 'greatgrandmaster' && spellTier === '9th') {
+        return true;
+      }
       return false;
     }
     
