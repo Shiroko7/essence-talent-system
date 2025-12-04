@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Generated essence files (auto-generated from markdown)
+src/components/essences/consts/*.tsx
