@@ -21,7 +21,10 @@
       "Bash(grep:*)",
       "Bash(for file in data/essences/*.md)",
       "Bash(do sed -i 's/### \\(.*\\) ([0-9][a-z]*[[:space:]]*Level)/### \\1/g' \"$file\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(node -e:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

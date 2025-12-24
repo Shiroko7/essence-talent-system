@@ -88,7 +88,7 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
   };
 
   return (
-    <div className="space-y-3 mb-6">
+    <div className="space-y-3 mb-6 relative z-50">
       {/* Row 1: Search + Updated Date */}
       <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
         {/* Search Input */}
@@ -135,7 +135,7 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
               <ChevronDown size={14} className={`transition-transform ${essenceDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             {essenceDropdownOpen && (
-              <div className="absolute top-full left-0 mt-1 bg-gray-700 border border-gray-600 rounded-md shadow-lg z-10 min-w-[160px]">
+              <div className="absolute top-full left-0 mt-1 bg-gray-700 border border-gray-600 rounded-md shadow-lg z-100 min-w-[160px]">
                 {ESSENCE_PATHS.filter(e => !selectedEssences.includes(e.id)).map((essence) => (
                   <button
                     key={essence.id}
