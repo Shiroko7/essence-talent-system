@@ -12,7 +12,7 @@ export const fireAbilities = [
   {
     id: "fire_initiate_searing_gaze",
     name: "Searing Gaze",
-    description: "When you focus intently on a creature for 1 minute, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 hour.",
+    description: "As a bonus action, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 minute.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -32,7 +32,7 @@ export const fireAbilities = [
   {
     id: "fire_initiate_ember_strike",
     name: "Ember Strike",
-    description: "When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended.",
+    description: "When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended. Additionaly, the target must also succeed on a Wisdom saving throw against your Spell Save DC or become frightened of you until the end of its next turn.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -52,7 +52,7 @@ export const fireAbilities = [
   {
     id: "fire_initiate_inferno_disengage",
     name: "Inferno Disengage",
-    description: "When you use the Disengage action, you create a burst of fire around you. Each creature within 5 feet of you must make a Dexterity saving throw. On a failed save, a creature takes 2d6 fire damage and catches fire. On a successful save, a creature takes half damage.",
+    description: "When you use the Disengage action, you create a burst of fire around you. Each creature within 5 feet of you takes 2d6 fire damage.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -118,6 +118,36 @@ export const fireAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+  },
+  {
+    id: "fire_adept_frightful_pursuit",
+    name: "Frightful Pursuit",
+    description: "You have advantage on attack rolls against any creature that is currently frightened.",
+    tier: "adept",
+    isActive: false,
+    isPassive: true,
+    isSpell: false,
+    isCantrip: false,
+  },
+  {
+    id: "fire_essence_martyrs_flame_aura",
+    name: "Martyr’s Flame Aura",
+    description: "You wreathe yourself in holy fire for 1 minute (concentration), creating a 30-foot aura that grants allies fire resistance. When an ally enters the aura or starts their turn inside it, they gain temporary hit points equal to 2d6 + your Charisma modifier. The flames warm and protect, never harm.",
+    tier: "master",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+  },
+  {
+    id: "fire_master_essence_shadowflame_dream",
+    name: "Shadowflame Dream",
+    description: "As an Action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC. On a failed save, the creature takes 5d10 Fire damage and 5d10 Necrotic damage and falls Unconscious until the start of your next turn. On a successful save, the target only takes the fire damage and is not affected by the unconscious condition.",
+    tier: "master",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
   }
 ];
 
@@ -177,7 +207,7 @@ export const fireCantrips = [
 export const fireSpells = [
   {
     id: "fire_1st_level_burning_hands",
-    name: "Burning Hands (1st Level)",
+    name: "Burning Hands",
     description: "https://5e.tools/spells.html#burning%20hands_xphb",
     tier: "1st",
     isActive: false,
@@ -187,7 +217,7 @@ export const fireSpells = [
   },
   {
     id: "fire_1st_level_hellish_rebuke",
-    name: "Hellish Rebuke (1st Level)",
+    name: "Hellish Rebuke",
     description: "https://5e.tools/spells.html#hellish%20rebuke_xphb",
     tier: "1st",
     isActive: false,
@@ -197,7 +227,7 @@ export const fireSpells = [
   },
   {
     id: "fire_2nd_level_aganazzars_scorcher",
-    name: "Aganazzar's Scorcher (2nd Level)",
+    name: "Aganazzar's Scorcher",
     description: "https://5e.tools/spells.html#aganazzar's%20scorcher_xge",
     tier: "2nd",
     isActive: false,
@@ -207,7 +237,7 @@ export const fireSpells = [
   },
   {
     id: "fire_2nd_level_continual_flame",
-    name: "Continual Flame (2nd Level)",
+    name: "Continual Flame",
     description: "https://5e.tools/spells.html#continual%20flame_xphb",
     tier: "2nd",
     isActive: false,
@@ -217,7 +247,7 @@ export const fireSpells = [
   },
   {
     id: "fire_2nd_level_flame_blade",
-    name: "Flame Blade (2nd Level)",
+    name: "Flame Blade",
     description: "https://5e.tools/spells.html#flame%20blade_xphb",
     tier: "2nd",
     isActive: false,
@@ -227,7 +257,7 @@ export const fireSpells = [
   },
   {
     id: "fire_2nd_level_flaming_sphere",
-    name: "Flaming Sphere (2nd Level)",
+    name: "Flaming Sphere",
     description: "https://5e.tools/spells.html#flaming%20sphere_xphb",
     tier: "2nd",
     isActive: false,
@@ -237,7 +267,7 @@ export const fireSpells = [
   },
   {
     id: "fire_2nd_level_scorching_ray",
-    name: "Scorching Ray (2nd Level)",
+    name: "Scorching Ray",
     description: "https://5e.tools/spells.html#scorching%20ray_xphb",
     tier: "2nd",
     isActive: false,
@@ -247,7 +277,7 @@ export const fireSpells = [
   },
   {
     id: "fire_3rd_level_fireball",
-    name: "Fireball (3rd Level)",
+    name: "Fireball",
     description: "https://5e.tools/spells.html#fireball_xphb",
     tier: "3rd",
     isActive: false,
@@ -257,7 +287,7 @@ export const fireSpells = [
   },
   {
     id: "fire_3rd_level_flame_arrows",
-    name: "Flame Arrows (3rd Level)",
+    name: "Flame Arrows",
     description: "https://5e.tools/spells.html#flame%20arrows_xge",
     tier: "3rd",
     isActive: false,
@@ -267,7 +297,7 @@ export const fireSpells = [
   },
   {
     id: "fire_4th_level_fire_shield",
-    name: "Fire Shield (4th Level)",
+    name: "Fire Shield",
     description: "https://5e.tools/spells.html#fire%20shield_xphb",
     tier: "4th",
     isActive: false,
@@ -277,7 +307,7 @@ export const fireSpells = [
   },
   {
     id: "fire_4th_level_wall_of_fire",
-    name: "Wall of Fire (4th Level)",
+    name: "Wall of Fire",
     description: "https://5e.tools/spells.html#wall%20of%20fire_xphb",
     tier: "4th",
     isActive: false,
@@ -287,7 +317,7 @@ export const fireSpells = [
   },
   {
     id: "fire_5th_level_flame_strike",
-    name: "Flame Strike (5th Level)",
+    name: "Flame Strike",
     description: "https://5e.tools/spells.html#flame%20strike_xphb",
     tier: "5th",
     isActive: false,
@@ -297,7 +327,7 @@ export const fireSpells = [
   },
   {
     id: "fire_5th_level_immolation",
-    name: "Immolation (5th Level)",
+    name: "Immolation",
     description: "https://5e.tools/spells.html#immolation_xge",
     tier: "5th",
     isActive: false,
@@ -307,7 +337,7 @@ export const fireSpells = [
   },
   {
     id: "fire_6th_level_investiture_of_flame",
-    name: "Investiture of Flame (6th Level)",
+    name: "Investiture of Flame",
     description: "https://5e.tools/spells.html#investiture%20of%20flame_xge",
     tier: "6th",
     isActive: false,
@@ -317,7 +347,7 @@ export const fireSpells = [
   },
   {
     id: "fire_7th_level_delayed_blast_fireball",
-    name: "Delayed Blast Fireball (7th Level)",
+    name: "Delayed Blast Fireball",
     description: "https://5e.tools/spells.html#delayed%20blast%20fireball_xphb",
     tier: "7th",
     isActive: false,
@@ -327,7 +357,7 @@ export const fireSpells = [
   },
   {
     id: "fire_7th_level_fire_storm",
-    name: "Fire Storm (7th Level)",
+    name: "Fire Storm",
     description: "https://5e.tools/spells.html#fire%20storm_xphb",
     tier: "7th",
     isActive: false,
@@ -337,7 +367,7 @@ export const fireSpells = [
   },
   {
     id: "fire_8th_level_incendiary_cloud",
-    name: "Incendiary Cloud (8th Level)",
+    name: "Incendiary Cloud",
     description: "https://5e.tools/spells.html#incendiary%20cloud_xphb",
     tier: "8th",
     isActive: false,
@@ -347,9 +377,49 @@ export const fireSpells = [
   },
   {
     id: "fire_9th_level_meteor_swarm",
-    name: "Meteor Swarm (9th Level)",
+    name: "Meteor Swarm",
     description: "https://5e.tools/spells.html#meteor%20swarm_xphb",
     tier: "9th",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+  },
+  {
+    id: "fire_1st_level_spellfire_flare",
+    name: "Spellfire Flare",
+    description: "https://5e.tools/spells.html#spellfire%20flare_frhof",
+    tier: "1st",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+  },
+  {
+    id: "fire_2nd_level_ember_belly",
+    name: "Ember Belly",
+    description: "https://5e.tools/spells.html#ember%20belly_obojimatallgrass",
+    tier: "2nd",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+  },
+  {
+    id: "fire_3rd_level_ashardalons_stride",
+    name: "Ashardalon's Stride",
+    description: "https://5e.tools/spells.html#ashardalon's%20stride_ftd",
+    tier: "3rd",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+  },
+  {
+    id: "fire_4th_level_spellfire_storm",
+    name: "Spellfire Storm",
+    description: "https://5e.tools/spells.html#spellfire%20storm_frhof",
+    tier: "4th",
     isActive: false,
     isPassive: false,
     isSpell: true,

@@ -3,6 +3,7 @@
 ## Initiate Tier
 
 ### Flame Ward
+
 ```yaml
 id: fire_initiate_flame_ward
 tier: initiate
@@ -17,6 +18,7 @@ You have advantage on saving throws against being frightened or charmed while wi
 ---
 
 ### Searing Gaze
+
 ```yaml
 id: fire_initiate_searing_gaze
 tier: initiate
@@ -26,11 +28,12 @@ isSpell: false
 isCantrip: false
 ```
 
-When you focus intently on a creature for 1 minute, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 hour.
+As a bonus action, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 minute.
 
 ---
 
 ### Flame Kinship
+
 ```yaml
 id: fire_initiate_flame_kinship
 tier: initiate
@@ -45,6 +48,7 @@ You gain the ability to communicate with creatures of fire, such as Fire Element
 ---
 
 ### Ember Strike
+
 ```yaml
 id: fire_initiate_ember_strike
 tier: initiate
@@ -54,11 +58,12 @@ isSpell: false
 isCantrip: false
 ```
 
-When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended.
+When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended. Additionaly, the target must also succeed on a Wisdom saving throw against your Spell Save DC or become frightened of you until the end of its next turn.
 
 ---
 
 ### Flame Lash
+
 ```yaml
 id: fire_initiate_flame_lash
 tier: initiate
@@ -73,6 +78,7 @@ You can use your action to create a whip-like tendril of fire that extends up to
 ---
 
 ### Inferno Disengage
+
 ```yaml
 id: fire_initiate_inferno_disengage
 tier: initiate
@@ -82,11 +88,12 @@ isSpell: false
 isCantrip: false
 ```
 
-When you use the Disengage action, you create a burst of fire around you. Each creature within 5 feet of you must make a Dexterity saving throw. On a failed save, a creature takes 2d6 fire damage and catches fire. On a successful save, a creature takes half damage.
+When you use the Disengage action, you create a burst of fire around you. Each creature within 5 feet of you takes 2d6 fire damage.
 
 ---
 
 ### Heart Crusher Grip (Nilo)
+
 ```yaml
 id: fire_initiate_heart_crusher_grip
 tier: initiate
@@ -103,6 +110,7 @@ As an action, you can target one bloodied creature you can see within 15 feet of
 ## Adept Tier
 
 ### Blazing Presence
+
 ```yaml
 id: fire_adept_blazing_presence
 tier: adept
@@ -117,6 +125,7 @@ Your fiery aura gives you a commanding presence. You can use your action to crea
 ---
 
 ### Ember's Resilience
+
 ```yaml
 id: fire_adept_embers_resilience
 tier: adept
@@ -131,6 +140,7 @@ As a reaction when you fail a saving throw, you can reroll the saving throw die.
 ---
 
 ### Blazing Trail
+
 ```yaml
 id: fire_adept_blazing_trail
 tier: adept
@@ -145,6 +155,7 @@ When you take the Dash action, you can leave a trail of fire in your wake. For t
 ---
 
 ### Scorched Ground
+
 ```yaml
 id: fire_adept_scorched_ground
 tier: adept
@@ -159,6 +170,7 @@ As an action, you can cause a 20-foot radius area on the ground to become superh
 ---
 
 ### Burning Fury
+
 ```yaml
 id: fire_adept_burning_fury
 tier: adept
@@ -172,9 +184,58 @@ Immediately after you take fire damage, you gain advantage on attack rolls made 
 
 ---
 
+### Frightful Pursuit
+
+```yaml
+id: fire_adept_frightful_pursuit
+tier: adept
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+```
+
+You have advantage on attack rolls against any creature that is currently frightened.
+
+---
+
+## Master Tier
+
+### Martyr’s Flame Aura
+
+```yaml
+id: fire_essence_martyrs_flame_aura
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+```
+
+You wreathe yourself in holy fire for 1 minute (concentration), creating a 30-foot aura that grants allies fire resistance. When an ally enters the aura or starts their turn inside it, they gain temporary hit points equal to 2d6 + your Charisma modifier. The flames warm and protect, never harm.
+
+---
+
+### Shadowflame Dream
+
+```yaml
+id: fire_master_essence_shadowflame_dream
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+```
+
+As an Action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC. On a failed save, the creature takes 5d10 Fire damage and 5d10 Necrotic damage and falls Unconscious until the start of your next turn. On a successful save, the target only takes the fire damage and is not affected by the unconscious condition.
+
+---
+
+
 ## Cantrips
 
 ### Control Flames
+
 ```yaml
 id: fire_cantrip_control_flames
 tier: cantrip
@@ -189,6 +250,7 @@ https://5e.tools/spells.html#control%20flames_xge
 ---
 
 ### Create Bonfire
+
 ```yaml
 id: fire_cantrip_create_bonfire
 tier: cantrip
@@ -203,6 +265,7 @@ https://5e.tools/spells.html#create%20bonfire_xge
 ---
 
 ### Fire Bolt
+
 ```yaml
 id: fire_cantrip_fire_bolt
 tier: cantrip
@@ -217,6 +280,7 @@ https://5e.tools/spells.html#fire%20bolt_xphb
 ---
 
 ### Green-Flame Blade
+
 ```yaml
 id: fire_cantrip_green_flame_blade
 tier: cantrip
@@ -231,6 +295,7 @@ https://5e.tools/spells.html#green-flame%20blade_tce
 ---
 
 ### Produce Flame
+
 ```yaml
 id: fire_cantrip_produce_flame
 tier: cantrip
@@ -246,7 +311,8 @@ https://5e.tools/spells.html#produce%20flame_xphb
 
 ## Spells
 
-### Burning Hands (1st Level)
+### Burning Hands
+
 ```yaml
 id: fire_1st_level_burning_hands
 tier: 1st
@@ -260,7 +326,8 @@ https://5e.tools/spells.html#burning%20hands_xphb
 
 ---
 
-### Hellish Rebuke (1st Level)
+### Hellish Rebuke
+
 ```yaml
 id: fire_1st_level_hellish_rebuke
 tier: 1st
@@ -274,7 +341,8 @@ https://5e.tools/spells.html#hellish%20rebuke_xphb
 
 ---
 
-### Aganazzar's Scorcher (2nd Level)
+### Aganazzar's Scorcher
+
 ```yaml
 id: fire_2nd_level_aganazzars_scorcher
 tier: 2nd
@@ -288,7 +356,8 @@ https://5e.tools/spells.html#aganazzar's%20scorcher_xge
 
 ---
 
-### Continual Flame (2nd Level)
+### Continual Flame
+
 ```yaml
 id: fire_2nd_level_continual_flame
 tier: 2nd
@@ -302,7 +371,8 @@ https://5e.tools/spells.html#continual%20flame_xphb
 
 ---
 
-### Flame Blade (2nd Level)
+### Flame Blade
+
 ```yaml
 id: fire_2nd_level_flame_blade
 tier: 2nd
@@ -316,7 +386,8 @@ https://5e.tools/spells.html#flame%20blade_xphb
 
 ---
 
-### Flaming Sphere (2nd Level)
+### Flaming Sphere
+
 ```yaml
 id: fire_2nd_level_flaming_sphere
 tier: 2nd
@@ -330,7 +401,8 @@ https://5e.tools/spells.html#flaming%20sphere_xphb
 
 ---
 
-### Scorching Ray (2nd Level)
+### Scorching Ray
+
 ```yaml
 id: fire_2nd_level_scorching_ray
 tier: 2nd
@@ -344,7 +416,8 @@ https://5e.tools/spells.html#scorching%20ray_xphb
 
 ---
 
-### Fireball (3rd Level)
+### Fireball
+
 ```yaml
 id: fire_3rd_level_fireball
 tier: 3rd
@@ -358,7 +431,8 @@ https://5e.tools/spells.html#fireball_xphb
 
 ---
 
-### Flame Arrows (3rd Level)
+### Flame Arrows
+
 ```yaml
 id: fire_3rd_level_flame_arrows
 tier: 3rd
@@ -372,7 +446,8 @@ https://5e.tools/spells.html#flame%20arrows_xge
 
 ---
 
-### Fire Shield (4th Level)
+### Fire Shield
+
 ```yaml
 id: fire_4th_level_fire_shield
 tier: 4th
@@ -386,7 +461,8 @@ https://5e.tools/spells.html#fire%20shield_xphb
 
 ---
 
-### Wall of Fire (4th Level)
+### Wall of Fire
+
 ```yaml
 id: fire_4th_level_wall_of_fire
 tier: 4th
@@ -400,7 +476,8 @@ https://5e.tools/spells.html#wall%20of%20fire_xphb
 
 ---
 
-### Flame Strike (5th Level)
+### Flame Strike
+
 ```yaml
 id: fire_5th_level_flame_strike
 tier: 5th
@@ -414,7 +491,8 @@ https://5e.tools/spells.html#flame%20strike_xphb
 
 ---
 
-### Immolation (5th Level)
+### Immolation
+
 ```yaml
 id: fire_5th_level_immolation
 tier: 5th
@@ -428,7 +506,8 @@ https://5e.tools/spells.html#immolation_xge
 
 ---
 
-### Investiture of Flame (6th Level)
+### Investiture of Flame
+
 ```yaml
 id: fire_6th_level_investiture_of_flame
 tier: 6th
@@ -442,7 +521,8 @@ https://5e.tools/spells.html#investiture%20of%20flame_xge
 
 ---
 
-### Delayed Blast Fireball (7th Level)
+### Delayed Blast Fireball
+
 ```yaml
 id: fire_7th_level_delayed_blast_fireball
 tier: 7th
@@ -456,7 +536,8 @@ https://5e.tools/spells.html#delayed%20blast%20fireball_xphb
 
 ---
 
-### Fire Storm (7th Level)
+### Fire Storm
+
 ```yaml
 id: fire_7th_level_fire_storm
 tier: 7th
@@ -470,7 +551,8 @@ https://5e.tools/spells.html#fire%20storm_xphb
 
 ---
 
-### Incendiary Cloud (8th Level)
+### Incendiary Cloud
+
 ```yaml
 id: fire_8th_level_incendiary_cloud
 tier: 8th
@@ -484,7 +566,8 @@ https://5e.tools/spells.html#incendiary%20cloud_xphb
 
 ---
 
-### Meteor Swarm (9th Level)
+### Meteor Swarm
+
 ```yaml
 id: fire_9th_level_meteor_swarm
 tier: 9th
@@ -495,3 +578,63 @@ isCantrip: false
 ```
 
 https://5e.tools/spells.html#meteor%20swarm_xphb
+
+---
+
+### Spellfire Flare
+
+```yaml
+id: fire_1st_level_spellfire_flare
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+```
+
+https://5e.tools/spells.html#spellfire%20flare_frhof
+
+---
+
+### Ember Belly
+
+```yaml
+id: fire_2nd_level_ember_belly
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+```
+
+https://5e.tools/spells.html#ember%20belly_obojimatallgrass
+
+---
+
+### Ashardalon's Stride
+
+```yaml
+id: fire_3rd_level_ashardalons_stride
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+```
+
+https://5e.tools/spells.html#ashardalon's%20stride_ftd
+
+---
+
+### Spellfire Storm
+
+```yaml
+id: fire_4th_level_spellfire_storm
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+```
+
+https://5e.tools/spells.html#spellfire%20storm_frhof
