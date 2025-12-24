@@ -1,5 +1,6 @@
 import React from 'react';
-import { Ability, EssencePath as EssencePathType, TIERS } from '../../types/essence';
+import { Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind } from 'lucide-react';
+import { Ability, EssencePath as EssencePathType, EssencePathId, TIERS } from '../../types/essence';
 import EssenceTier from './EssenceTier';
 import { isTierUnlocked } from '../../utils/essenceUtils';
 
@@ -44,6 +45,22 @@ const EssencePath: React.FC<EssencePathProps> = ({
   activeFilter,
   onToggleAbility
 }) => {
+  const getEssenceIcon = (id: EssencePathId) => {
+    const iconProps = { size: 16, className: "inline" };
+    switch (id) {
+      case 'water': return <Droplet {...iconProps} />;
+      case 'fire': return <Flame {...iconProps} />;
+      case 'earth': return <Mountain {...iconProps} />;
+      case 'metal': return <Sword {...iconProps} />;
+      case 'wood': return <TreeDeciduous {...iconProps} />;
+      case 'poison': return <Skull {...iconProps} />;
+      case 'acid': return <FlaskConical {...iconProps} />;
+      case 'lightning': return <Zap {...iconProps} />;
+      case 'wind': return <Wind {...iconProps} />;
+      default: return null;
+    }
+  };
+
   // Group abilities by tier
   const abilitiesByTier = TIERS.map(tier => {
     // Filter abilities by tier and apply active filter
@@ -106,7 +123,9 @@ const EssencePath: React.FC<EssencePathProps> = ({
   return (
     <div className="space-y-6">
       <h2 className="text-xl font-bold flex items-center gap-2">
-        <div className={`w-4 h-4 rounded-full ${path.color}`}></div>
+        <div className={`w-6 h-6 rounded-full ${path.color} flex items-center justify-center text-white`}>
+          {getEssenceIcon(path.id)}
+        </div>
         {path.name} Path
       </h2>
       

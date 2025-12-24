@@ -12,6 +12,9 @@ const Header: React.FC = () => {
               <Link to="/" className="hover:text-blue-400">Home</Link>
             </li>
             <li>
+              <Link to="/changelog" className="hover:text-blue-400">Changelog</Link>
+            </li>
+            <li>
               <a href="https://github.com/shiroko7/essence-talent-system" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                 GitHub
               </a>

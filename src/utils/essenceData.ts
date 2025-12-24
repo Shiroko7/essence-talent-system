@@ -10,7 +10,7 @@ import { woodAbilities, woodCantrips, woodSpells } from '../components/essences/
 import { poisonAbilities, poisonCantrips, poisonSpells } from '../components/essences/consts/poison';
 import { acidAbilities, acidCantrips, acidSpells } from '../components/essences/consts/acid';
 import { lightningAbilities, lightningCantrips, lightningSpells } from '../components/essences/consts/lightning';
-import { airAbilities, airCantrips, airSpells } from '../components/essences/consts/air';
+import { airAbilities as windAbilities, airCantrips as windCantrips, airSpells as windSpells } from '../components/essences/consts/air';
 
 /**
  * Converts a raw ability object to a standardized Ability type with proper typing.
@@ -22,12 +22,12 @@ function convertRawAbility(rawAbility: any): Ability {
     'initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster',
     'cantrip', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'
   ];
-  
+
   // Ensure tier is a valid value
-  const tier = validTiers.includes(rawAbility.tier as any) 
+  const tier = validTiers.includes(rawAbility.tier as any)
     ? (rawAbility.tier as TierId | SpellLevel)
     : 'initiate'; // Default to initiate if invalid
-  
+
   return {
     id: rawAbility.id || '',
     name: rawAbility.name || '',
@@ -71,7 +71,7 @@ export function importEssenceData(): {
       poison: convertRawAbilities(poisonAbilities),
       acid: convertRawAbilities(acidAbilities),
       lightning: convertRawAbilities(lightningAbilities),
-      wind: convertRawAbilities(airAbilities), // Note: using 'wind' key to match EssencePathId
+      wind: convertRawAbilities(windAbilities),
     },
     cantrips: {
       fire: convertRawAbilities(fireCantrips),
@@ -82,7 +82,7 @@ export function importEssenceData(): {
       poison: convertRawAbilities(poisonCantrips),
       acid: convertRawAbilities(acidCantrips),
       lightning: convertRawAbilities(lightningCantrips),
-      wind: convertRawAbilities(airCantrips),
+      wind: convertRawAbilities(windCantrips),
     },
     spells: {
       fire: convertRawAbilities(fireSpells),
@@ -93,7 +93,7 @@ export function importEssenceData(): {
       poison: convertRawAbilities(poisonSpells),
       acid: convertRawAbilities(acidSpells),
       lightning: convertRawAbilities(lightningSpells),
-      wind: convertRawAbilities(airSpells),
+      wind: convertRawAbilities(windSpells),
     }
   };
 }

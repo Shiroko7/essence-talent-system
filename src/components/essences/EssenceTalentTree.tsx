@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Info } from 'lucide-react';
-import { 
-  ESSENCE_PATHS, 
+import { Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind } from 'lucide-react';
+import {
+  ESSENCE_PATHS,
   EssencePathId,
   FilterType,
 } from '../../types/essence';
@@ -33,15 +33,31 @@ const EssenceTalentTree: React.FC = () => {
   const [essenceData] = useState(() => {
     return importEssenceData();
   });
-  
+
   const { abilities, cantrips, spells } = essenceData;
-  
+
   // Set up filter state
   const [selectedFilter, setSelectedFilter] = useState<FilterType>('all');
   const [selectedPath, setSelectedPath] = useState<EssencePathId>('water');
-  const [showLegend, setShowLegend] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<'tree' | 'summary'>('tree');
   const [searchTerm, setSearchTerm] = useState<string>('');
+
+  // Get icon for essence path
+  const getEssenceIcon = (id: EssencePathId) => {
+    const iconProps = { size: 16, className: "inline" };
+    switch (id) {
+      case 'water': return <Droplet {...iconProps} />;
+      case 'fire': return <Flame {...iconProps} />;
+      case 'earth': return <Mountain {...iconProps} />;
+      case 'metal': return <Sword {...iconProps} />;
+      case 'wood': return <TreeDeciduous {...iconProps} />;
+      case 'poison': return <Skull {...iconProps} />;
+      case 'acid': return <FlaskConical {...iconProps} />;
+      case 'lightning': return <Zap {...iconProps} />;
+      case 'wind': return <Wind {...iconProps} />;
+      default: return null;
+    }
+  };
   
   // Set up essence allocation hook
   const {
@@ -54,7 +70,7 @@ const EssenceTalentTree: React.FC = () => {
     updateActiveEssence,
     setCharacterState
   } = useEssenceAllocation({
-    initialLevel: 5, // Start at level 5 as default
+    initialLevel: 9, // Start at level 9 as default
     allAbilities: abilities,
     cantrips,
     spells
@@ -186,58 +202,11 @@ const EssenceTalentTree: React.FC = () => {
         {/* Essence Tracking Bars Section */}
         {pathsWithActiveAbilities.length > 0 && (
           <div className="w-full bg-gray-800 rounded-lg p-4 mb-4">
-            <div className="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
-              <h2 className="text-lg font-bold">
-                Active Essence
-              </h2>
-              <button 
-                onClick={() => setShowLegend(!showLegend)}
-                className="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-200"
-              >
-                <Info size={14} />
-                <span>{showLegend ? 'Hide' : 'Show'} Legend</span>
-              </button>
-            </div>
+            <h2 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2">
+              Active Essence
+            </h2>
             
-            {showLegend && (
-              <div className="mb-4">
-                <div className="rounded bg-gray-700 p-3 text-sm">
-                  <div className="flex justify-between items-center mb-2">
-                    <h4 className="font-bold">Essence Bar Legend</h4>
-                    <button 
-                      onClick={() => setShowLegend(false)}
-                      className="text-gray-400 hover:text-gray-200"
-                    >
-                      Close
-                    </button>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-4 bg-blue-600"></div>
-                      <span>Spent essence (active abilities currently using essence)</span>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-4 bg-blue-900"></div>
-                      <span>Available essence (can be spent on active abilities)</span>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-4 bg-gray-800"></div>
-                      <span>Reduced essence (from passive abilities and cantrips)</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-3 text-gray-400 italic">
-                    Example: A bar showing "─────■■■" means you have some spent essence (blue),
-                    some available essence (dark blue), and some essence reduction from passives (gray).
-                  </div>
-                </div>
-              </div>
-            )}
-            
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               {pathsWithActiveAbilities.map(path => {
                 const { spent, available, max, passiveReduction } = calculatePathEssenceStatus(
                   path.id,
@@ -246,7 +215,7 @@ const EssenceTalentTree: React.FC = () => {
                   cantrips,
                   spells
                 );
-                
+
                 return (
                   <EssenceTrackingBar
                     key={path.id}
@@ -260,6 +229,49 @@ const EssenceTalentTree: React.FC = () => {
                   />
                 );
               })}
+            </div>
+
+            {/* Quick Actions */}
+            <div className="mt-6 flex gap-4">
+              <button
+                onClick={() => {
+                  // Set all active essence to max available
+                  const newActiveEssence = { ...character.activeEssenceByPath };
+                  pathsWithActiveAbilities.forEach(path => {
+                    const { available } = calculatePathEssenceStatus(
+                      path.id,
+                      character,
+                      abilities,
+                      cantrips,
+                      spells
+                    );
+                    newActiveEssence[path.id] = available;
+                  });
+                  setCharacterState({
+                    ...character,
+                    activeEssenceByPath: newActiveEssence
+                  });
+                }}
+                className="flex-1 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-lg transition-colors"
+              >
+                Full Rest (Restore All)
+              </button>
+              <button
+                onClick={() => {
+                  // Set all active essence to 0
+                  const newActiveEssence = { ...character.activeEssenceByPath };
+                  pathsWithActiveAbilities.forEach(path => {
+                    newActiveEssence[path.id] = 0;
+                  });
+                  setCharacterState({
+                    ...character,
+                    activeEssenceByPath: newActiveEssence
+                  });
+                }}
+                className="flex-1 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors"
+              >
+                Clear All
+              </button>
             </div>
           </div>
         )}
@@ -291,7 +303,9 @@ const EssenceTalentTree: React.FC = () => {
                         ${selectedPath === path.id ? 'bg-gray-700' : 'hover:bg-gray-700'}`}
                       onClick={() => setSelectedPath(path.id)}
                     >
-                      <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
+                      <div className={`w-6 h-6 rounded-full ${path.color} flex items-center justify-center text-white`}>
+                        {getEssenceIcon(path.id)}
+                      </div>
                       {path.name}
                     </button>
                   </li>

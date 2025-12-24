@@ -152,16 +152,16 @@ export function calculatePathEssenceStatus(
   spells: Record<EssencePathId, Ability[]>,
 ): { spent: number; available: number; max: number; passiveReduction: number; } {
   const { selectedAbilities, activeEssenceByPath } = character;
-  
+
   // Get all abilities for this path
   const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells);
-  
+
   // Calculate passive reduction specifically for this path
   const passiveReduction = selectedAbilities.reduce((total, abilityId) => {
     const ability = pathAbilities.find(a => a.id === abilityId);
-    
+
     if (!ability) return total;
-    
+
     // Only passive abilities and cantrips reduce maximum essence
     if (ability.isPassive || ability.isCantrip) {
       return total + getTierCost(ability.tier);
@@ -171,24 +171,24 @@ export function calculatePathEssenceStatus(
   
   // Calculate the essence currently spent on this path
   const spent = activeEssenceByPath[pathId] || 0;
-  
+
   // Calculate the total amount that could potentially be spent on this path
   // (i.e., the sum of costs for all active abilities and spells)
-  const activePathAbilities = pathAbilities.filter(ability => 
+  const activePathAbilities = pathAbilities.filter(ability =>
     selectedAbilities.includes(ability.id) && (ability.isActive || ability.isSpell)
   );
-  
-  const potentialActiveTotal = activePathAbilities.reduce((total, ability) => 
+
+  const available = activePathAbilities.reduce((total, ability) =>
     total + getTierCost(ability.tier), 0
   );
-  
-  // Calculate available essence points
-  const available =  potentialActiveTotal - spent;
-  
+
+  // Max is the total pool (available + reduction)
+  const max = available + passiveReduction;
+
   return {
     spent,
     available,
-    max: potentialActiveTotal, // This is the maximum that can be spent on actives
+    max, // Total pool (available + passiveReduction)
     passiveReduction // This is the amount reduced by passives and cantrips
   };
 }

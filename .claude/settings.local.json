@@ -10,7 +10,18 @@
       "Bash(timeout /t 5)",
       "Bash(powershell -Command:*)",
       "Bash(node scripts/fix-apostrophes.js:*)",
-      "Bash(npm install)"
+      "Bash(npm install)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(npm run generate:changelog:*)",
+      "Bash(%ai)",
+      "Bash(%s -- data/essences/*.md)",
+      "Bash(cat:*)",
+      "Bash(findstr:*)",
+      "Bash(grep:*)",
+      "Bash(for file in data/essences/*.md)",
+      "Bash(do sed -i 's/### \\(.*\\) ([0-9][a-z]*[[:space:]]*Level)/### \\1/g' \"$file\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

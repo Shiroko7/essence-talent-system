@@ -103,29 +103,44 @@ const useEssenceAllocation = ({
     if (isSelected) {
       // Create a copy of selectedAbilities without this ability
       const newSelectedAbilities = character.selectedAbilities.filter(id => id !== ability.id);
-      
+
       // Check if removing this ability would require unallocating higher tier abilities
       const abilitiesToUnallocate = pathAbilities
-        .filter(a => 
-          character.selectedAbilities.includes(a.id) && 
+        .filter(a =>
+          character.selectedAbilities.includes(a.id) &&
           shouldUnallocateAbility(a, newSelectedAbilities, pathAbilities, character.level)
         )
         .map(a => a.id);
-      
+
       // Combine the ability being removed with any that must be unallocated
       const allToRemove = [ability.id, ...abilitiesToUnallocate];
-      
+
+      // Calculate how much essence to deallocate from this path
+      let essenceToRemove = 0;
+      if (ability.isActive || ability.isSpell) {
+        // For the ability being removed
+        essenceToRemove += getTierCost(ability.tier);
+
+        // For any active abilities that are being unallocated
+        abilitiesToUnallocate.forEach(abilityId => {
+          const unallocatedAbility = pathAbilities.find(a => a.id === abilityId);
+          if (unallocatedAbility && (unallocatedAbility.isActive || unallocatedAbility.isSpell)) {
+            essenceToRemove += getTierCost(unallocatedAbility.tier);
+          }
+        });
+      }
+
       // Update character state
       setCharacter(prev => ({
         ...prev,
         selectedAbilities: prev.selectedAbilities.filter(id => !allToRemove.includes(id)),
-        // Reset active essence for this path if there are no active abilities left
+        // Decrease active essence for this path
         activeEssenceByPath: {
           ...prev.activeEssenceByPath,
-          [pathId]: 0
+          [pathId]: Math.max(0, (prev.activeEssenceByPath[pathId] || 0) - essenceToRemove)
         }
       }));
-      
+
       return;
     }
     
@@ -139,10 +154,19 @@ const useEssenceAllocation = ({
     }
     
     // Add the ability
-    setCharacter(prev => ({
-      ...prev,
-      selectedAbilities: [...prev.selectedAbilities, ability.id]
-    }));
+    setCharacter(prev => {
+      // If it's an active ability or spell, auto-allocate its essence
+      const essenceToAdd = (ability.isActive || ability.isSpell) ? getTierCost(ability.tier) : 0;
+
+      return {
+        ...prev,
+        selectedAbilities: [...prev.selectedAbilities, ability.id],
+        activeEssenceByPath: {
+          ...prev.activeEssenceByPath,
+          [pathId]: (prev.activeEssenceByPath[pathId] || 0) + essenceToAdd
+        }
+      };
+    });
   };
 
   // Function to clear the ability error
@@ -190,21 +214,22 @@ const useEssenceAllocation = ({
       // Calculate the new amount, ensuring it's within bounds
       const currentSpent = prev.activeEssenceByPath[pathId] || 0;
       const newAmount = Math.max(0, currentSpent + amount);
-      
+
       // Calculate the maximum that can be spent on this path
+      // (sum of costs for all selected active abilities and spells in this path)
       const pathAbilities = getPathAbilities(pathId, allAbilities, cantrips, spells)
-        .filter(ability => 
-          prev.selectedAbilities.includes(ability.id) && 
+        .filter(ability =>
+          prev.selectedAbilities.includes(ability.id) &&
           (ability.isActive || ability.isSpell)
         );
-        
+
       const maxForPath = pathAbilities.reduce((total, ability) => {
         return total + getTierCost(ability.tier);
       }, 0);
-      
-      // Ensure we don't exceed the maximum for this path or the total available
-      const finalAmount = Math.min(newAmount, maxForPath, availablePoints + currentSpent);
-      
+
+      // Ensure we don't exceed the maximum for this path
+      const finalAmount = Math.min(newAmount, maxForPath);
+
       return {
         ...prev,
         activeEssenceByPath: {

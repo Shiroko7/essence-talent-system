@@ -1,6 +1,6 @@
 import React from 'react';
-import { X } from 'lucide-react';
-import { Ability, EssencePath, getTierCost } from '../../types/essence';
+import { X, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind } from 'lucide-react';
+import { Ability, EssencePath, EssencePathId, getTierCost } from '../../types/essence';
 
 interface AbilityDetailsProps {
   ability: Ability;
@@ -61,6 +61,22 @@ const AbilityDetails: React.FC<AbilityDetailsProps> = ({
   isLocked,
   onToggle
 }) => {
+  const getEssenceIcon = (id: EssencePathId) => {
+    const iconProps = { size: 12, className: "inline" };
+    switch (id) {
+      case 'water': return <Droplet {...iconProps} />;
+      case 'fire': return <Flame {...iconProps} />;
+      case 'earth': return <Mountain {...iconProps} />;
+      case 'metal': return <Sword {...iconProps} />;
+      case 'wood': return <TreeDeciduous {...iconProps} />;
+      case 'poison': return <Skull {...iconProps} />;
+      case 'acid': return <FlaskConical {...iconProps} />;
+      case 'lightning': return <Zap {...iconProps} />;
+      case 'wind': return <Wind {...iconProps} />;
+      default: return null;
+    }
+  };
+
   const cost = getTierCost(ability.tier);
   
   let abilityType = '';
@@ -95,8 +111,10 @@ const AbilityDetails: React.FC<AbilityDetailsProps> = ({
         
         <div className="p-4">
           <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center">
-              <div className={`w-3 h-3 rounded-full ${path.color} mr-2`}></div>
+            <div className="flex items-center gap-2">
+              <div className={`w-5 h-5 rounded-full ${path.color} flex items-center justify-center text-white`}>
+                {getEssenceIcon(path.id)}
+              </div>
               <span>{path.name} Path</span>
             </div>
             

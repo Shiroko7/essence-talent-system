@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { Check, ChevronDown, ChevronUp } from 'lucide-react';
-import { 
-  Ability, 
-  EssencePathId, 
+import { Check, ChevronDown, ChevronUp, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind } from 'lucide-react';
+import {
+  Ability,
+  EssencePathId,
   ESSENCE_PATHS,
   TIERS,
   FilterType,
@@ -98,6 +98,22 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
   searchTerm = '',
   onSearchChange = () => {}
 }) => {
+  const getEssenceIcon = (id: EssencePathId) => {
+    const iconProps = { size: 12, className: "inline" };
+    switch (id) {
+      case 'water': return <Droplet {...iconProps} />;
+      case 'fire': return <Flame {...iconProps} />;
+      case 'earth': return <Mountain {...iconProps} />;
+      case 'metal': return <Sword {...iconProps} />;
+      case 'wood': return <TreeDeciduous {...iconProps} />;
+      case 'poison': return <Skull {...iconProps} />;
+      case 'acid': return <FlaskConical {...iconProps} />;
+      case 'lightning': return <Zap {...iconProps} />;
+      case 'wind': return <Wind {...iconProps} />;
+      default: return null;
+    }
+  };
+
   const [selectedFilter, setSelectedFilter] = useState<FilterType>('all');
   const [selectedPaths, setSelectedPaths] = useState<EssencePathId[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -357,7 +373,9 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                         className="flex items-center justify-between w-full px-3 py-1.5 text-sm hover:bg-gray-600"
                       >
                         <div className="flex items-center gap-2">
-                          <div className={`w-3 h-3 rounded-full ${path.color}`}></div>
+                          <div className={`w-5 h-5 rounded-full ${path.color} flex items-center justify-center text-white`}>
+                            {getEssenceIcon(path.id)}
+                          </div>
                           <span>{path.name}</span>
                         </div>
                         {selectedPaths.includes(path.id) && <Check size={16} />}
@@ -407,22 +425,25 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                 
                 <div className="space-y-6">
                   {abilities.map(ability => {
+                    const pathId = ability.id.split('_')[0] as EssencePathId;
                     const pathColor = getPathColor(ability.id);
                     const pathName = getPathName(ability.id);
                     const { label: typeLabel, color: typeColor } = getAbilityTypeInfo(ability);
-                    
+
                     return (
-                      <div 
-                        key={ability.id} 
+                      <div
+                        key={ability.id}
                         className="p-4 border border-gray-700 rounded-lg"
                       >
                         <div className="flex justify-between items-start mb-3">
                           <div>
                             <h3 className="text-lg font-bold flex items-center gap-2">
-                              <div className={`w-3 h-3 rounded-full ${pathColor}`}></div>
+                              <div className={`w-5 h-5 rounded-full ${pathColor} flex items-center justify-center text-white`}>
+                                {getEssenceIcon(pathId)}
+                              </div>
                               {searchTerm ? highlightText(ability.name, searchTerm) : ability.name}
                             </h3>
-                            <div className="text-sm text-gray-400 mt-1">
+                            <div className="text-sm text-gray-400 mt-1 flex items-center gap-1">
                               {pathName} Path • {ability.tier.toString().charAt(0).toUpperCase() + ability.tier.toString().slice(1)}
                             </div>
                           </div>
