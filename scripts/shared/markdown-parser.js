@@ -24,7 +24,8 @@ export function parseMarkdownFile(content, essenceName) {
   content = content.replace(/\r\n/g, '\n');
 
   // Split by horizontal rules (---) which separate abilities
-  const sections = content.split(/\n---\n/);
+  // Be forgiving of trailing whitespace after the separator
+  const sections = content.split(/\n---\s*\n/);
 
   for (const section of sections) {
     // Skip empty sections or sections without YAML
@@ -55,7 +56,11 @@ export function parseMarkdownFile(content, essenceName) {
 
     // Extract description (everything after the YAML block)
     const descriptionMatch = section.match(/```yaml[\s\S]*?```\s*\n\s*\n([\s\S]+)/);
-    const description = descriptionMatch ? descriptionMatch[1].trim() : '';
+    let description = descriptionMatch ? descriptionMatch[1].trim() : '';
+
+    // Remove any trailing separator that might have been included
+    // (can happen with entries that only have a URL and blank line before separator)
+    description = description.replace(/\n+---\s*$/, '').trim();
 
     // Create ability object
     const ability = {

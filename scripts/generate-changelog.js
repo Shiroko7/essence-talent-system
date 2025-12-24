@@ -77,7 +77,14 @@ function getAffectedFiles(commitHash, filePattern) {
 function compareAbilities(oldAbility, newAbility) {
   const changes = [];
 
-  if (oldAbility.name !== newAbility.name) {
+  // Don't track ID changes - they're internal and not interesting to users
+
+  // Normalize names before comparing to handle level suffix changes
+  const oldNameNormalized = normalizeAbilityName(oldAbility.name);
+  const newNameNormalized = normalizeAbilityName(newAbility.name);
+
+  // Only track name changes if the normalized names are different
+  if (oldNameNormalized !== newNameNormalized) {
     changes.push({ field: 'name', oldValue: oldAbility.name, newValue: newAbility.name });
   }
 
@@ -100,14 +107,34 @@ function compareAbilities(oldAbility, newAbility) {
 }
 
 /**
+ * Normalize an ability name by removing level suffixes
+ */
+function normalizeAbilityName(name) {
+  // Remove level suffixes like " (1st Level)", " (2nd Level)", etc.
+  // These were removed from spell names in recent commits
+  return name.replace(/\s*\([0-9]+(st|nd|rd|th)\s+Level\)\s*$/i, '').trim();
+}
+
+/**
+ * Generate a stable key for an ability based on name and tier
+ */
+function getAbilityKey(ability) {
+  // Use normalized name + tier as the key since these are more stable than ID
+  // IDs can change (e.g., air_* -> wind_*) and names can have level suffixes removed
+  const normalizedName = normalizeAbilityName(ability.name);
+  return `${normalizedName}||${ability.tier}`;
+}
+
+/**
  * Detect changes between two sets of abilities
  */
 function detectChanges(oldAbilities, newAbilities, commit, essenceName) {
   const changes = [];
 
-  // Build ID maps
-  const oldMap = new Map(oldAbilities.map(a => [a.id, a]));
-  const newMap = new Map(newAbilities.map(a => [a.id, a]));
+  // Build maps using name+tier as key instead of just ID
+  // This way we can detect modifications even if the ID changes
+  const oldMap = new Map(oldAbilities.map(a => [getAbilityKey(a), a]));
+  const newMap = new Map(newAbilities.map(a => [getAbilityKey(a), a]));
 
   // Detect additions
   for (const [id, ability] of newMap) {
@@ -253,6 +280,14 @@ function processTypeScriptHistory() {
     const commit = commits[i];
     const prevCommit = i > 0 ? commits[i - 1] : null;
 
+    // Skip processing TypeScript files if markdown files exist in this commit
+    // (markdown files are the source of truth after they were introduced)
+    const markdownFiles = getAffectedFiles(commit.hash, 'data/essences/*.md');
+    if (markdownFiles.length > 0) {
+      console.log(`   ⏭️  Skipping TypeScript in ${commit.hash.substring(0, 7)} (markdown files present)`);
+      continue;
+    }
+
     const affectedFiles = getAffectedFiles(commit.hash, 'src/components/essences/consts/*.tsx');
 
     for (const file of affectedFiles) {
@@ -315,11 +350,28 @@ function main() {
   // Sort by date descending (newest first)
   allEntries.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  // Deduplicate entries - same commit can affect both .md and .tsx files
+  // Keep only unique entries based on id (which is commitHash + ability key)
+  const uniqueEntries = [];
+  const seen = new Set();
+
+  for (const entry of allEntries) {
+    // Create a unique key that includes changeType to distinguish added/removed/modified
+    const uniqueKey = `${entry.id}::${entry.changeType}`;
+
+    if (!seen.has(uniqueKey)) {
+      seen.add(uniqueKey);
+      uniqueEntries.push(entry);
+    }
+  }
+
+  console.log(`\n🧹 Removed ${allEntries.length - uniqueEntries.length} duplicate entries`);
+
   // Create changelog data
   const changelog = {
     version: '1.0.0',
     generatedAt: new Date().toISOString(),
-    entries: allEntries
+    entries: uniqueEntries
   };
 
   // Ensure output directory exists
@@ -332,7 +384,7 @@ function main() {
   const outputPath = path.join(outputDir, 'changelog.json');
   fs.writeFileSync(outputPath, JSON.stringify(changelog, null, 2), 'utf-8');
 
-  console.log(`\n✨ Generated ${allEntries.length} changelog entries!`);
+  console.log(`\n✨ Generated ${uniqueEntries.length} changelog entries!`);
   console.log(`📄 Output: ${outputPath}`);
 }
 
