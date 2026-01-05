@@ -1,0 +1,732 @@
+{
+  "merchantId": "forge-of-seoul",
+  "lastUpdated": "2026-01-03",
+  "items": [
+    {
+      "id": "blue-dragon-scale-mail",
+      "name": "Blue Dragon Scale Mail",
+      "rarity": "very rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "medium armor"
+      },
+      "toolsUrl": "https://5e.tools/items.html#blue%20dragon%20scale%20mail_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to lightning damage.",
+          "Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest blue dragon within 30 miles of you. This special action can't be used again until the next dawn."
+        ],
+        "ac": 14,
+        "bonusAc": "+1",
+        "resist": [
+          "lightning"
+        ],
+        "stealth": true
+      }
+    },
+    {
+      "id": "bronze-dragon-scale-mail",
+      "name": "Bronze Dragon Scale Mail",
+      "rarity": "very rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "medium armor"
+      },
+      "toolsUrl": "https://5e.tools/items.html#bronze%20dragon%20scale%20mail_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to lightning damage.",
+          "Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest bronze dragon within 30 miles of you. This special action can't be used again until the next dawn."
+        ],
+        "ac": 14,
+        "bonusAc": "+1",
+        "resist": [
+          "lightning"
+        ],
+        "stealth": true
+      }
+    },
+    {
+      "id": "canian-fork",
+      "name": "Canian Fork",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "trident"
+      },
+      "toolsUrl": "https://5e.tools/items.html#canian%20fork_coa",
+      "source": "CoA",
+      "detailedData": {
+        "entries": [
+          "You have a +3 bonus to attack and damage rolls made with this magic weapon. In addition, you can make one additional attack with it as a bonus action on each of your turns.",
+          {
+            "type": "entries",
+            "name": "Curse",
+            "entries": [
+              "You're unwilling to part with this weapon while attuned to it. You're also vulnerable to radiant damage and each time you receive magical healing, you must make a {@dc 15} Constitution saving throw.",
+              "On a failed save, the healing has no effect. Only the {@spell Remove Curse} spell allows you to end attunement to this item."
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Corrupting",
+            "entries": [
+              "This item corrupts. See the \"{@adventure Infernal Item Corruption|CoA|16|Infernal Item Corruption}\" section."
+            ]
+          }
+        ],
+        "dmg1": "1d6",
+        "dmg2": "1d8",
+        "dmgType": "P",
+        "range": "20/60",
+        "bonusWeapon": "+3"
+      }
+    },
+    {
+      "id": "charged-rapier",
+      "name": "Charged Rapier",
+      "rarity": "very rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "rapier",
+        "properties": [
+          "finesse"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#charged%20rapier_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This blade snaps and crackles with electrical power as it's waved through the air. While holding the rapier, you have resistance to lightning damage. You gain a +1 bonus to attack and damage rolls made with this magic weapon, and it deals an extra {@damage 1d4} lightning damage to any target it hits.",
+          {
+            "type": "entries",
+            "name": "Electric Charge",
+            "entries": [
+              "If you are proficient with this weapon, when you move at least 20 feet in a straight line on your turn while holding this rapier, you can speak its command word as a bonus action to briefly disappear and transform into a bolt of lightning. When you do, choose an unoccupied space you can see within 20 feet of you that's along the same straight line and in the same direction in which you're moving. You form a 5-foot-wide line of lightning originating from yourself that extends to the unoccupied space. You reappear in that space as the bolt of lightning passes through anything in its path.",
+              "If there are any creatures in the line of lightning, roll a {@dice d20} and add 9 to the roll. If the total of the roll meets or exceeds the AC of any creature in the line, that creature takes {@damage 1d4 + 1} lightning damage as you pierce through it as the bolt of lightning."
+            ]
+          }
+        ],
+        "dmg1": "1d8",
+        "dmgType": "P",
+        "bonusWeapon": "+1",
+        "resist": [
+          "lightning"
+        ]
+      }
+    },
+    {
+      "id": "covolt-scythe",
+      "name": "Covolt Scythe",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "glaive",
+        "properties": [
+          "two-handed"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#covolt%20scythe_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This jagged scythe is forged with covolt, an elemental blue metal that carries storm-like properties. When you hit a creature with an attack using this magic weapon, it takes an extra {@damage 1d8} lightning damage. Once on each of your turns when you hit a creature with this weapon, you can choose a different creature within 10 feet of the target. That creature must succeed on a DC 15 Dexterity saving throw or take {@damage 1d8} lightning damage as an arc of electricity lashes out at it from the original target."
+        ],
+        "dmg1": "1d10",
+        "dmgType": "S"
+      }
+    },
+    {
+      "id": "dagger-of-first-light",
+      "name": "Dagger of First Light",
+      "rarity": "uncommon",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "dagger"
+      },
+      "toolsUrl": "https://5e.tools/items.html#dagger%20of%20first%20light_griffonssaddlebag2",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "A silvered dagger that shines with pure white light. When you hit with an attack using this dagger, the target takes an extra 1d4 radiant damage. The dagger emits bright light in a 15-foot radius and dim light for an additional 15 feet."
+        ],
+        "bonusWeapon": "+1",
+        "dmg": "1d4"
+      }
+    },
+    {
+      "id": "dawn-and-dusk",
+      "name": "Dawn and Dusk",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "mace"
+      },
+      "toolsUrl": "https://5e.tools/items.html#dawn%20and%20dusk_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "You gain a +1 bonus to attack and damage rolls made with this magic weapon, which also has the light property. The weapon transforms at different times of the day. At dawn, the weapon's form becomes a {@item mace|PHB}, whose head is ringed with a line of radiating spikes. At dusk, it becomes a {@item sickle|PHB} with star designs along its crescent edge. A target hit with the mace takes an extra {@damage 1d4} radiant damage. A target hit with the sickle takes an extra {@damage 1d6} necrotic damage."
+        ],
+        "bonusWeapon": "+1"
+      }
+    },
+    {
+      "id": "devotees-censer",
+      "name": "Devotee's Censer",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "flail"
+      },
+      "toolsUrl": "https://5e.tools/items.html#devotee's%20censer_tce",
+      "source": "TCE",
+      "detailedData": {
+        "entries": [
+          "The rounded head of this flail is perforated with tiny holes, arranged in symbols and patterns. The flail counts as a holy symbol for you. When you hit with an attack using this magic flail, the target takes an extra {@damage 1d8} radiant damage.",
+          "As a bonus action, you can speak the command word to cause the flail to emanate a thin cloud of incense out to 10 feet for 1 minute. At the start of each of your turns, you and any other creatures in the incense each regain {@dice 1d4} hit points. This property can't be used again until the next dawn."
+        ],
+        "dmg1": "1d8",
+        "dmgType": "B"
+      }
+    },
+    {
+      "id": "dusk-cleaver",
+      "name": "Dusk Cleaver",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "handaxe",
+        "properties": [
+          "two-handed"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#dusk%20cleaver_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This dark iron axe head is shaped like a crescent moon. You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
+          "You can use an action to swing the axe at an area of magical darkness within 5 feet of you, making an attack roll against the darkness (AC 10). If the magical darkness was created by a spell, add the spell's level to its AC. If you're inside the area of magical darkness, you ignore the disadvantage normally imposed on this attack roll as a result of not being able to see. On a hit, the darkness is dispelled. If the darkness fills a space that's larger than 60 feet on a side, the darkness in a 60-foot cube originating from you is dispelled instead. Once this property has been used, it can't be used again until the next dusk."
+        ],
+        "dmg1": "1d6",
+        "dmgType": "S",
+        "range": "20/60",
+        "bonusWeapon": "+1"
+      }
+    },
+    {
+      "id": "dusk-dagger-rare",
+      "name": "Dusk Dagger (Rare)",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "dagger",
+        "properties": [
+          "finesse",
+          "light",
+          "thrown"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#dusk%20dagger%20(rare)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This delicately curved dagger is ornamented with several crescent moon designs. When you hit a creature who is completely in dim light or darkness with this magic weapon, that creature takes an extra {@damage 1d8} psychic damage."
+        ],
+        "dmg1": "1d4",
+        "dmgType": "P",
+        "range": "20/60"
+      }
+    },
+    {
+      "id": "dusk-dagger-very-rare",
+      "name": "Dusk Dagger (Very Rare)",
+      "rarity": "very rare",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "dagger",
+        "properties": [
+          "finesse",
+          "light",
+          "thrown"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#dusk%20dagger%20(very%20rare)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This delicately curved dagger is ornamented with several crescent moon designs. When you hit a creature who is completely in dim light or darkness with this magic weapon, that creature takes an extra {@damage 1d12} psychic damage."
+        ],
+        "dmg1": "1d4",
+        "dmgType": "P",
+        "range": "20/60"
+      }
+    },
+    {
+      "id": "eclipse-spear",
+      "name": "Eclipse Spear",
+      "rarity": "uncommon",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "spear",
+        "properties": [
+          "thrown",
+          "versatile"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#eclipse%20spear_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "When in moonlight, this magic spear casts bright light in a 15-foot radius and dim light for an additional 15 feet. This spear pierces through darkness to find its marks, allowing the attacks you make with it against targets obscured by magical darkness to be made without the disadvantage normally imposed by magical darkness. Attacks made with this weapon deal either piercing or slashing damage (your choice).",
+          "In addition, while holding the spear, you can use a bonus action to cast the {@spell branding smite|PHB} spell from it. Once cast in this way, this property can't be used again until the next dusk."
+        ],
+        "dmg1": "1d6",
+        "dmg2": "1d8",
+        "dmgType": "P",
+        "range": "20/60",
+        "recharge": "dusk"
+      }
+    },
+    {
+      "id": "glass-carver",
+      "name": "Glass Carver",
+      "rarity": "uncommon",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "dagger"
+      },
+      "toolsUrl": "https://5e.tools/items.html#glass%20carver_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This magic dagger's edge is lined with a sharp, enchanted crystal that magically pierces through glass. While holding the dagger, you can use an action to cut a straight line up to 1 foot long into a piece of nonmagical glass no more than 1 inch thick. Each line emits a faint glow, allowing you to see any lines you've made. Making these lines requires you to focus, as if concentrating on a spell. Your concentration ends early if you are no longer holding the dagger or aren't within reach of the glass. When your concentration ends, any line you made with the dagger magically vanishes and repairs itself.",
+          "You can connect these lines to form a cutout shape in the glass. As part of the action to complete this shape, make a Dexterity ({@skill Sleight of Hand}) check. The DC for this check is equal to 8 plus half the number of actions it took to form the shape. On a success, you silently remove the cutout glass shape. On a failure, the cutout glass shatters. Once the shape is removed in this way, either in one piece or as shattered glass, your concentration ends without repairing the glass.",
+          "If the original glass shape is returned to the hole, you can spend 1 minute retracing the cuts made to the glass with the dagger to seamlessly repair the damage done to it, as if by the {@spell mending} spell."
+        ],
+        "dmg1": "1d4",
+        "dmgType": "P",
+        "range": "20/60"
+      }
+    },
+    {
+      "id": "javelin-of-lightning",
+      "name": "Javelin of Lightning",
+      "rarity": "uncommon",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "javelin",
+        "properties": [
+          "thrown"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#javelin%20of%20lightning_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "This javelin is a magic weapon. When you hurl it and speak its command word, it transforms into a bolt of lightning, forming a line 5 feet wide that extends out from you to a target within 120 feet. Each creature in the line excluding you and the target must make a {@dc 13} Dexterity saving throw, taking {@damage 4d6} lightning damage on a failed save, and half as much damage on a successful one. The lightning bolt turns back into a javelin when it reaches the target. Make a ranged weapon attack against the target. On a hit, the target takes damage from the javelin plus {@damage 4d6} lightning damage.",
+          "The javelin's property can't be used again until the next dawn. In the meantime, the javelin can still be used as a magic weapon."
+        ],
+        "dmg1": "1d6",
+        "dmgType": "P",
+        "range": "30/120"
+      }
+    },
+    {
+      "id": "lightning-khopesh",
+      "name": "Lightning Khopesh",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "scimitar"
+      },
+      "toolsUrl": "https://5e.tools/items.html#lightning%20khopesh_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This bolt-like blade crackles with electric energy. When you hit with an attack using this magic weapon, the target takes an extra {@damage 1d6} lightning damage. In addition, the first time you have advantage on an attack roll and miss using this weapon on each of your turns, the target takes {@damage 1d6} lightning damage as stray sparks leap from the blade to shock the target."
+        ],
+        "dmg1": "1d6",
+        "dmgType": "S"
+      }
+    },
+    {
+      "id": "nightstalkers-armor-of-the-northeastern-wind",
+      "name": "Nightstalker's Armor of the Northeastern Wind",
+      "rarity": "rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "heavy armor"
+      },
+      "toolsUrl": "https://5e.tools/items.html#nightstalker's%20armor%20of%20the%20northeastern%20wind_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This unusual armor is composed of blue metal plates with a horned helm, and was tempered by the frigid breath of an oni.",
+          {
+            "type": "entries",
+            "name": "Retributive Cold",
+            "entries": [
+              "When you take damage from a creature that is within 5 feet of you while wearing this armor, you can use your reaction to deal {@damage 1d6} cold damage to that creature."
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Freezing Fog",
+            "entries": [
+              "While wearing this armor, you can use a bonus action to speak its command word to cast the {@spell gaseous form} spell from it, targeting only yourself, with the following changes:",
+              {
+                "type": "list",
+                "items": [
+                  "You take the form of a frigid cloud of fog, creating illusory frost on objects you touch.",
+                  "You can take the {@action Attack} action while in this form. When you do, your attacks are unarmed strikes that deal {@damage 1d6} cold damage, instead of their normal damage.",
+                  "You can use the armor's Retributive Cold property.",
+                  "The spell has a duration of 1 minute."
+                ]
+              },
+              "Once this property has been used, it can't be used again until the next dusk."
+            ]
+          }
+        ],
+        "ac": 18,
+        "recharge": "dusk",
+        "stealth": true
+      }
+    },
+    {
+      "id": "prototype-thunderberd",
+      "name": "Prototype Thunderberd",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "halberd"
+      },
+      "toolsUrl": "https://5e.tools/items.html#prototype%20thunderberd_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This halberd is a long-lost prototype from a nowdissolved military research facility. Electricity magically courses through the weapon along specially channeled grooves in its hollow haft. When you hit with an attack using this halberd, the target takes an extra {@damage 1d6} lightning damage.",
+          "This halberd has 10 charges and regains {@dice 1d6 + 4} expended charges daily at dawn. While the weapon has at least 1 charge, you can use an action to load a {@item crossbow bolt|PHB} into its haft toward the bottom of the weapon. Powerful magnetic forces inside the hollow weapon stabilize the bolt and charge it with electricity. When you take the {@action Attack} action while holding this loaded weapon, you can expend 1 or more of its charges to make a special ranged attack with it by leveling and firing the halberd as if it were a crossbow. When you do, you don't make an attack roll for the attack, and the bolt is magically launched forward from the weapon in a 1-foot-wide line that's 10 feet long, plus an extra 10 feet for each charge you expend. Each creature in the line must succeed on a DC 15 Dexterity saving throw or take {@damage 1d6} piercing damage, plus {@damage 1d6} lightning damage for each charge you expend. On a successful save, a creature takes half as much piercing and lightning damage. After the attack, the bolt is destroyed.",
+          "If you expend the halberd's last charge, roll a {@dice d20}. On a 1, the weapon becomes overcharged and splinters into an explosion of shrapnel, destroying the halberd. Each creature within 10 feet of the weapon must make a DC 15 Dexterity saving throw. On a failed save, a creature takes {@damage 10d6} piercing damage, or half as much damage on a successful one."
+        ],
+        "dmg1": "1d10",
+        "dmgType": "S",
+        "charges": 10,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "radiant-war-pick",
+      "name": "Radiant War Pick",
+      "rarity": "very rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "war pick"
+      },
+      "toolsUrl": "https://5e.tools/items.html#radiant%20war%20pick_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This silver and golden weapon is wrapped in fragments of holy vestments and glimmers spectacularly in sun and moonlight. You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit with an attack using this war pick, the target takes an extra {@damage 1d8} radiant damage. If the target is a shapechanger or undead, this radiant damage is maximized.",
+          "In addition, while holding the war pick, you can use an action to expend a use of your Channel Divinity to cast the {@spell moonbeam} (6th-level version) or {@spell sunbeam} spell from it (save DC 16). Once this property of the weapon has been used, it can't be used again until the next dawn.",
+          "You can use an action to speak the war pick's command word to cause it to shed bright light in a 20-foot radius and dim light for an additional 20 feet. Speaking the command word again puts out the light."
+        ],
+        "dmg1": "1d8",
+        "dmgType": "P",
+        "bonusWeapon": "+1"
+      }
+    },
+    {
+      "id": "scorned-heart-breastplate",
+      "name": "Scorned Heart Breastplate",
+      "rarity": "rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "medium armor"
+      },
+      "toolsUrl": "https://5e.tools/items.html#scorned%20heart%20breastplate_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This brass breastplate is torn apart in its center by a crimson gemstone. You gain a +1 bonus to AC for every two allies within 10 feet of you (up to a maximum of +2) while you wear this armor. In addition, while wearing this armor, you can cast {@spell hellish rebuke} (save DC 15) as a 3rd-level spell from it, using your reaction. Once the armor has been used to cast this spell, it can't do so again until the next dawn.",
+          {
+            "type": "entries",
+            "name": "Curse",
+            "page": 0,
+            "entries": [
+              "This armor is cursed. Attuning to the armor curses you until you are targeted by the {@spell remove curse} spell or similar magic; removing the armor fails to end the curse. While cursed, you have disadvantage on saving throws to resist becoming charmed, and you have disadvantage on Charisma checks to interact with any creature you find attractive."
+            ]
+          }
+        ],
+        "ac": 14,
+        "bonusAc": "+2",
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "seeker-dart",
+      "name": "Seeker Dart",
+      "rarity": "uncommon",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "dart",
+        "properties": [
+          "thrown"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#seeker%20dart_pota",
+      "source": "PotA",
+      "detailedData": {
+        "entries": [
+          "This small dart is decorated with designs like windy spirals that span the length of its shaft.",
+          "When you whisper the word \"seek\" and hurl this dart, it seeks out a target of your choice within 120 feet of you. You must have seen the target before, but you don't need to see it now. If the target isn't within range or if there is no clear path to it, the dart falls to the ground, its magic spent and wasted. Otherwise, elemental winds guide the dart instantly through the air to the target. The dart can pass though openings as narrow as 1 inch wide and can change direction to fly around corners.",
+          "When the dart reaches its target, the target must succeed on a {@dc 16} Dexterity saving throw or take {@damage 1d4} piercing damage and {@damage 3d4} lightning damage. The dart's magic is then spent, and it becomes an ordinary dart."
+        ],
+        "dmg1": "1d4",
+        "dmgType": "P",
+        "range": "20/60"
+      }
+    },
+    {
+      "id": "seraphims-stiletto",
+      "name": "Seraphim's Stiletto",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "dagger",
+        "properties": [
+          "finesse",
+          "light"
+        ]
+      },
+      "toolsUrl": "https://5e.tools/items.html#seraphim's%20stiletto_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This magic dagger is made from elven gold and a fine sliver of unicorn horn. The dagger has a pool of 20 hit points that replenishes daily at dawn. As an action, you can touch this dagger to a creature you can see within 5 feet of you and speak its command word. When you do, you can restore a number of hit points to that creature from the pool, up to the maximum amount remaining in the pool.",
+          "When you hit an undead creature with a melee attack using this dagger, you can expend a number of hit points from the pool, up to the maximum amount remaining, as part of the attack. When you do, you deal extra radiant damage to that creature equal to twice the number of hit points you expend in this way."
+        ],
+        "dmg1": "1d4",
+        "dmgType": "P",
+        "range": "20/60"
+      }
+    },
+    {
+      "id": "shield-of-the-uven-rune",
+      "name": "Shield of the Uven Rune",
+      "rarity": "very rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "shield"
+      },
+      "toolsUrl": "https://5e.tools/items.html#shield%20of%20the%20uven%20rune_wdmm",
+      "source": "WDMM",
+      "detailedData": {
+        "entries": [
+          "This shield is made from the scale of an ancient white dragon. It has a rune burned into its outward-facing side. A character who examines the rune and succeeds on a {@dc 20} Intelligence ({@skill History}) check recognizes it as an uven (\"enemy\" in Giant) rune that confers great power.",
+          "While holding the shield, you benefit from the following properties.",
+          {
+            "type": "entries",
+            "name": "Winter's Friend",
+            "entries": [
+              "You are immune to cold damage."
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Deadly Rebuke",
+            "entries": [
+              "Immediately after a creature hits you with a melee attack, you can use your reaction to deal {@damage 3d6} necrotic damage to that creature."
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Bane",
+            "entries": [
+              "You can cast the {@spell bane} spell from the shield (save {@dc 17}). The spell does not require {@status concentration} and lasts for 1 minute. Once you cast the spell from the shield, you can't do so again until you finish a short or long rest."
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Gift of Vengeance",
+            "entries": [
+              "You can transfer the shield's magic to a nonmagical weapon by tracing the uven rune on the weapon with one finger. The transfer takes 8 hours of work that requires the two items to be within 5 feet of each other. At the end, the shield is destroyed, and the rune is etched or burned into the chosen weapon. This weapon becomes a rare magic item that requires attunement. It has the properties of a +1 weapon. The bonus increases to +3 when the weapon is used against one of the following creature types, chosen by you at the time of the magic weapon's creation: aberrations, celestials, constructs, dragons, elementals, fey, fiends, giants, or undead."
+            ]
+          }
+        ],
+        "ac": 2,
+        "bonusWeapon": "+1",
+        "immune": [
+          "cold"
+        ]
+      }
+    },
+    {
+      "id": "shooting-star",
+      "name": "Shooting Star",
+      "rarity": "very rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "longsword"
+      },
+      "toolsUrl": "https://5e.tools/items.html#shooting%20star_griffonssaddlebag2",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "This starlight longsword glows faintly with an otherworldly light. You gain a +2 bonus to attack and damage rolls made with this weapon. When you hit with this sword, the target takes an extra 1d8 radiant damage. As a bonus action, you can throw this sword up to 30 feet. It deals 2d8 radiant damage to each creature it passes through. The sword then returns to your hand."
+        ],
+        "bonusWeapon": "+2",
+        "dmgBonus": "+2",
+        "dmg": "1d8",
+        "dmgType": "radiant"
+      }
+    },
+    {
+      "id": "silver-dragon-scale-mail",
+      "name": "Silver Dragon Scale Mail",
+      "rarity": "very rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "medium armor"
+      },
+      "toolsUrl": "https://5e.tools/items.html#silver%20dragon%20scale%20mail_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to cold damage.",
+          "Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest silver dragon within 30 miles of you. This special action can't be used again until the next dawn."
+        ],
+        "ac": 14,
+        "bonusAc": "+1",
+        "resist": [
+          "cold"
+        ],
+        "stealth": true
+      }
+    },
+    {
+      "id": "storms-eye-shield",
+      "name": "Storm's Eye Shield",
+      "rarity": "rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "shield"
+      },
+      "toolsUrl": "https://5e.tools/items.html#storm's%20eye%20shield_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "Emblazoned on the face of this round shield is a cyclone design that magically swirls based on the likelihood and proximity of thunderstorms. While holding this shield, you have resistance to lightning damage. When you take lightning damage from a hostile source while holding this shield, you can use your reaction to cast the {@spell thunderwave} spell (save DC 15) from it. This property can't be used again until the next dawn.",
+          "In addition, while the shield is flat on the ground, you can perform a 1 minute ritual to cast the {@spell augury} spell from it. When you do, the omens are represented by how the cyclone's design changes:",
+          {
+            "type": "list",
+            "items": [
+              "{@b Calm clouds,} for good results",
+              "{@b Roiling clouds,} for bad results",
+              "{@b A flash of lightning,} for both good and bad results",
+              "{@b Nothing,} for results that aren't especially good or bad"
+            ]
+          },
+          "Once this property of the shield has been used, it can't be used again until it's been in the presence of another thunderstorm for at least 1 hour."
+        ],
+        "ac": 2,
+        "resist": [
+          "lightning"
+        ]
+      }
+    },
+    {
+      "id": "sun-blade",
+      "name": "Sun Blade",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "longsword"
+      },
+      "toolsUrl": "https://5e.tools/items.html#sun%20blade_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "This item appears to be a longsword hilt with no blade, until you use an action to make the blade appear. The blade shines like sunlight. While the blade exists, this magic weapon has the finesse property. If you are proficient with shortswords or longswords, you are proficient with the sun blade.",
+          "You gain a +2 bonus to attack rolls and damage rolls made with this weapon, and when you hit with it, the target takes an extra 3 (1d6) radiant damage."
+        ],
+        "bonusWeapon": "+2",
+        "dmgBonus": "+2",
+        "dmg": "1d6",
+        "dmgType": "radiant"
+      }
+    },
+    {
+      "id": "wars-wager",
+      "name": "War's Wager",
+      "rarity": "very rare",
+      "type": "weapon",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "greataxe"
+      },
+      "toolsUrl": "https://5e.tools/items.html#war's%20wager_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This golden axe is enchanted with haphazard divination magic. Its split blade features a spade, club, heart, and diamond on each of its four faces. You gain a +1 bonus to attack and damage rolls made with this magic weapon. When you hit a target with this weapon, you can choose to roll a second {@dice d20} before calculating the weapon's damage. If you roll an 11 or higher on the second {@dice d20}, the blade magically seeks out and hits the weakest point of the target, turning the attack into a critical hit. On a roll of 10 or lower, the blade ricochets harmlessly off the original target and scores a critical hit against you, instead. When the axe hits you in this way, its damage ignores resistances and immunity."
+        ],
+        "dmg1": "1d12",
+        "dmgType": "S",
+        "bonusWeapon": "+1"
+      }
+    },
+    {
+      "id": "white-dragon-scale-mail",
+      "name": "White Dragon Scale Mail",
+      "rarity": "very rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "medium armor"
+      },
+      "toolsUrl": "https://5e.tools/items.html#white%20dragon%20scale%20mail_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to cold damage.",
+          "Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest white dragon within 30 miles of you. This special action can't be used again until the next dawn."
+        ],
+        "ac": 14,
+        "bonusAc": "+1",
+        "resist": [
+          "cold"
+        ],
+        "stealth": true
+      }
+    }
+  ]
+}

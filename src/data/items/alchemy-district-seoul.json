@@ -1,0 +1,254 @@
+{
+  "merchantId": "alchemy-district-seoul",
+  "lastUpdated": "2026-01-03",
+  "items": [
+    {
+      "id": "bottled-breath",
+      "name": "Bottled Breath",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#bottled%20breath_pota",
+      "source": "PotA",
+      "detailedData": {
+        "entries": [
+          "This bottle contains a breath of elemental air. When you inhale it, you either exhale it or hold it.",
+          "If you exhale the breath, you gain the effect of the {@spell gust of wind} spell. If you hold the breath, you don't need to breathe for 1 hour, though you can end this benefit early (for example, to speak). Ending it early doesn't give you the benefit of exhaling the breath."
+        ]
+      }
+    },
+    {
+      "id": "celestial-sunrise-uncommon",
+      "name": "Celestial Sunrise (Uncommon)",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#celestial%20sunrise%20(uncommon)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "The following {@item celestial sunrise|GriffonsSaddlebag2} is an uncommon variant with additional properties. It also tastes better.",
+          "When you drink this potion, you can see normally in darkness, both magical and nonmagical, for the next 8 hours. In addition, the light cast from your mouth due to the potion's common effects increases, casting bright light out to 40 feet and dim light for an additional 40 feet instead."
+        ]
+      }
+    },
+    {
+      "id": "chi-balancing-tea",
+      "name": "Chi-Balancing Tea",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#chi-balancing%20tea_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This potion is specially brewed by the monks of Durheim using a unique leaf found only in their gardens. The tea remains magically warm while inside its traditional porcelain bottle. The potion's flavor is deep and smoky, and leaves a sour aftertaste like the air after a storm.",
+          "When you drink this potion, it cures any short-term madness afflicting you, and if you are {@condition charmed} or {@condition frightened}, it ends those conditions. In addition, if you have 2 or more levels in the monk class, you regain {@dice 1d4 + 1} expended ki points."
+        ]
+      }
+    },
+    {
+      "id": "djinn-and-tonic-common",
+      "name": "Djinn and Tonic (Common)",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#djinn%20and%20tonic%20(common)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "The typical {@item djinn and tonic|GriffonsSaddlebag2}, a common potion, is a specialty alcoholic beverage that causes a magical wind to tussle your hair, cloak, or other clothing dramatically for 1 hour after you drink it. A small mote of mist dances above the potion's liquid and gently stirs it. The beverage is smooth, bubbly, and very refreshing with notes of juniper, elderberries, white peach, and lavender. Due to its magical nature, the alcohol within this potion affects a creature twice as much as the alcohol within a nonmagical beverage."
+        ]
+      }
+    },
+    {
+      "id": "orostead-iced-tea-common",
+      "name": "Orostead Iced Tea (Common)",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#orostead%20iced%20tea%20(common)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "The typical {@item Orostead iced tea|GriffonsSaddlebag2}, a common potion, is a specialty alcoholic beverage that creates harmless sensory effects with each sip. When made, a tea has enough for {@dice 6 + 1d4} sips before it's used up, instead of a single use. You can take a sip as an action. When you drink this potion, roll on the table below to determine which one of the following effects occur:",
+          {
+            "type": "table",
+            "colLabels": [
+              "d8",
+              "Common Effect"
+            ],
+            "colStyles": [
+              "col-1-5 text-center",
+              "col-10-5 text-left"
+            ],
+            "rows": [
+              [
+                "1",
+                "You suddenly become drenched with illusory salt water. After 1 minute, it dries."
+              ],
+              [
+                "2",
+                "You're suddenly overwhelmingly warm ({@chance 50|50%}) or cold ({@chance 50|50%}) for 1 minute."
+              ],
+              [
+                "3",
+                "You remain frozen in place for 1 second, as if briefly removed from time."
+              ],
+              [
+                "4",
+                "You gain the effect of the {@spell speak with animals} spell for 1 minute."
+              ],
+              [
+                "5",
+                "You suddenly teleport 5 feet into an unoccupied space next to you."
+              ],
+              [
+                "6",
+                "Any clothing you wear becomes various shades of gray for 1 minute."
+              ],
+              [
+                "7",
+                "Static charge builds up on you. Touching or being touched by anything for the next minute causes a sharp shock of electricity to leap between you."
+              ],
+              [
+                "8",
+                "Your skin, hair, and eye colors are inverted. In addition, roll a {@dice d12}. You grow or shrink a number of inches equal to the result of the die, shrinking by odd numbers or growing by even ones. After 1 minute, your appearance returns to normal."
+              ]
+            ]
+          },
+          "The drink is incredibly refreshing with notes of lemon, tea, and cherry, and has virtually no alcoholic bite to it. Regardless, due to its magical nature, the alcohol within this potion affects a creature twice as much as the alcohol within a nonmagical beverage."
+        ]
+      }
+    },
+    {
+      "id": "philter-of-love",
+      "name": "Philter of Love",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#philter%20of%20love_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "The next time you see a creature within 10 minutes after drinking this philter, you become {@condition charmed} by that creature for 1 hour. If the creature is of a species and gender you are normally attracted to, you regard it as your true love while you are {@condition charmed}. This potion's rose-hued, effervescent liquid contains one easy-to-miss bubble shaped like a heart."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-cold-resistance",
+      "name": "Potion of Cold Resistance",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20cold%20resistance_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "{#itemEntry Potion of Resistance}"
+        ],
+        "resist": [
+          "cold"
+        ]
+      }
+    },
+    {
+      "id": "potion-of-frost-giant-strength",
+      "name": "Potion of Frost Giant Strength",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20frost%20giant%20strength_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, your Strength score changes to 23 for 1 hour. The potion has no effect on you if your Strength is equal to or greater than that score.",
+          "This potion's transparent liquid has floating in it a sliver of fingernail from a {@creature frost giant}."
+        ],
+        "ability": {
+          "static": {
+            "str": 23
+          }
+        }
+      }
+    },
+    {
+      "id": "potion-of-lightning-resistance",
+      "name": "Potion of Lightning Resistance",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20lightning%20resistance_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "{#itemEntry Potion of Resistance}"
+        ],
+        "resist": [
+          "lightning"
+        ]
+      }
+    },
+    {
+      "id": "potion-of-longevity",
+      "name": "Potion of Longevity",
+      "rarity": "very rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20longevity_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, your physical age is reduced by {@dice 1d6 + 6} years, to a minimum of 13 years. Each time you subsequently drink a potion of longevity, there is a {@chance 10|10 percent||You grow older!|You become younger} cumulative chance that you instead age by {@dice 1d6 + 6} years. Suspended in this amber liquid are a scorpion's tail, an adder's fang, a dead spider, and a tiny heart that, against all reason, is still beating. These ingredients vanish when the potion is opened."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-radiant-resistance",
+      "name": "Potion of Radiant Resistance",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20radiant%20resistance_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "{#itemEntry Potion of Resistance}"
+        ],
+        "resist": [
+          "radiant"
+        ]
+      }
+    },
+    {
+      "id": "shifters-shine-common",
+      "name": "Shifter's Shine (Common)",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#shifter's%20shine%20(common)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "The typical {@item shifter's shine|GriffonsSaddlebag2}, a common potion, is a specialty alcoholic beverage that causes your face to appear more glamorous. For 1 hour after drinking this potion, your skin's complexion clears, appears healthier, and grows more taut. Your face, while largely unchanged, is distinctly more attractive and exudes a weak aura of enchantment magic. When you make a Charisma check while under the effects of this potion, you can choose to forgo rolling the {@dice d20} to get a 10 on the die. Once you use this property, you can't use it again for the remainder of the potion's duration. The potion is a rich honey color and swirls lazily around, regardless of how it's handled. It can be found in any sort of vessel, though it is usually found in glass jars. The eye of a shapeshifter drifts along the potion's bottom, making it a daunting beverage for the average taverngoer to order. It has an extremely strong alcoholic taste with a hint of caramel. Due to its magical nature, the alcohol within this potion affects a creature twice as much as the alcohol within a nonmagical beverage."
+        ]
+      }
+    },
+    {
+      "id": "shifters-shine-uncommon",
+      "name": "Shifter's Shine (Uncommon)",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#shifter's%20shine%20(uncommon)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "The typical {@item shifter's shine|GriffonsSaddlebag2}, a common potion, is a specialty alcoholic beverage that causes your face to appear more glamorous. For 1 hour after drinking this potion, your skin's complexion clears, appears healthier, and grows more taut. Your face, while largely unchanged, is distinctly more attractive and exudes a weak aura of enchantment magic. When you make a Charisma check while under the effects of this potion, you can choose to forgo rolling the {@dice d20} to get a 10 on the die. Once you use this property, you can't use it again for the remainder of the potion's duration. The potion is a rich honey color and swirls lazily around, regardless of how it's handled. It can be found in any sort of vessel, though it is usually found in glass jars. The eye of a shapeshifter drifts along the potion's bottom, making it a daunting beverage for the average taverngoer to order. It has an extremely strong alcoholic taste with a hint of caramel. Due to its magical nature, the alcohol within this potion affects a creature twice as much as the alcohol within a nonmagical beverage.",
+          "The following {@item shifter's shine|GriffonsSaddlebag2} is an uncommon variant with additional properties. It also tastes better.",
+          "When you drink this potion, you gain the effects of the {@spell alter self} spell for 1 hour (no concentration required) or until you end the effect as a bonus action."
+        ]
+      }
+    }
+  ]
+}

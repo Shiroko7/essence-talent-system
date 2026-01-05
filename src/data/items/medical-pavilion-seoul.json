@@ -1,0 +1,62 @@
+{
+  "merchantId": "medical-pavilion-seoul",
+  "lastUpdated": "2026-01-03",
+  "items": [
+    {
+      "id": "potion-of-healing",
+      "name": "Potion of Healing",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20healing_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "You regain {@dice 2d4 + 2} hit points when you drink this potion. The potion's red liquid glimmers when agitated."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-greater-healing",
+      "name": "Potion of Greater Healing",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20greater%20healing_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "You regain {@dice 4d4 + 4} hit points when you drink this potion. The potion's red liquid glimmers when agitated."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-superior-healing",
+      "name": "Potion of Superior Healing",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20superior%20healing_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "You regain {@dice 8d4 + 8} hit points when you drink this potion. The potion's red liquid glimmers when agitated."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-supreme-healing",
+      "name": "Potion of Supreme Healing",
+      "rarity": "very rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20supreme%20healing_xdmg",
+      "source": "DMG",
+      "detailedData": {
+        "entries": [
+          "You regain {@dice 10d4 + 20} hit points when you drink this potion. The potion's red liquid glimmers when agitated."
+        ]
+      }
+    }
+  ]
+}

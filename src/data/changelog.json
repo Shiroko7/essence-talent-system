@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-24T14:27:25.447Z",
+  "generatedAt": "2026-01-05T00:11:48.813Z",
   "entries": [
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Extended Reach||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Extended Reach||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -21,9 +21,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Seven-Color Elixir||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Seven-Color Elixir||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -39,9 +39,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Erosion of Being||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Erosion of Being||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -57,9 +57,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Elminster's Elusion||2nd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Elminster's Elusion||2nd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -75,9 +75,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Elemental Exhalation||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Elemental Exhalation||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -93,9 +93,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Primordial Power||4th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Primordial Power||4th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -111,9 +111,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Magic Mirror||5th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Magic Mirror||5th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -129,9 +129,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Songal's Elemental Suffusion||5th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Songal's Elemental Suffusion||5th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -147,9 +147,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Draconic Transformation||7th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Draconic Transformation||7th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "added",
@@ -165,9 +165,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Chaos Manipulation||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Chaos Manipulation||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "removed",
@@ -183,9 +183,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Expanded Explosion||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Expanded Explosion||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "acid",
       "changeType": "modified",
@@ -203,9 +203,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Fortune Favors the Swift||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Fortune Favors the Swift||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -221,9 +221,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Liberation’s Gale||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Liberation’s Gale||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -239,9 +239,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Just Passing By||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Just Passing By||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -257,9 +257,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Lunar Wind Spiral||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Lunar Wind Spiral||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -275,9 +275,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Waning Moon Sabers||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Waning Moon Sabers||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -293,9 +293,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Air Bubble||cantrip",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Air Bubble||cantrip",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -311,9 +311,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Retrieve||cantrip",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Retrieve||cantrip",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -329,9 +329,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Cacophonic Shield||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Cacophonic Shield||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -347,9 +347,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Freedom of the Winds||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Freedom of the Winds||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -365,9 +365,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Mass Levitate||5th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Mass Levitate||5th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "added",
@@ -383,9 +383,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Misty Veil||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Misty Veil||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "removed",
@@ -401,9 +401,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Echoing Footsteps||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Echoing Footsteps||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "modified",
@@ -421,9 +421,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Wind Barrier||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Wind Barrier||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "modified",
@@ -441,9 +441,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Cyclone Step||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Cyclone Step||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "modified",
@@ -461,9 +461,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Gale Force Strike||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Gale Force Strike||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "modified",
@@ -481,9 +481,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Whirlwind||7th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Whirlwind||7th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "air",
       "changeType": "modified",
@@ -501,9 +501,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Immovable Mountain||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Immovable Mountain||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "added",
@@ -519,9 +519,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Stone Fist III||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Stone Fist III||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "added",
@@ -537,9 +537,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Foolish Old Man Moves Mountains||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Foolish Old Man Moves Mountains||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "added",
@@ -555,9 +555,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Tremor||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Tremor||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "added",
@@ -573,9 +573,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Earth Worm||6th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Earth Worm||6th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "added",
@@ -591,9 +591,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Stonecunning||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Stonecunning||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "modified",
@@ -611,9 +611,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Terramancer||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Terramancer||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "modified",
@@ -631,9 +631,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Stone Camouflage||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Stone Camouflage||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "earth",
       "changeType": "modified",
@@ -651,9 +651,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Frightful Pursuit||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Frightful Pursuit||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "added",
@@ -669,9 +669,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Martyr’s Flame Aura||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Martyr’s Flame Aura||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "added",
@@ -687,9 +687,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Shadowflame Dream||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Shadowflame Dream||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "added",
@@ -705,9 +705,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Spellfire Flare||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Spellfire Flare||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "added",
@@ -723,9 +723,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Ember Belly||2nd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Ember Belly||2nd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "added",
@@ -741,9 +741,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Ashardalon's Stride||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Ashardalon's Stride||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "added",
@@ -759,9 +759,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Spellfire Storm||4th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Spellfire Storm||4th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "added",
@@ -777,9 +777,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Searing Gaze||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Searing Gaze||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "modified",
@@ -797,9 +797,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Ember Strike||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Ember Strike||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "modified",
@@ -817,9 +817,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Inferno Disengage||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Inferno Disengage||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "fire",
       "changeType": "modified",
@@ -837,9 +837,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Arc Chain||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Arc Chain||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "added",
@@ -855,9 +855,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Lightning Cage||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Lightning Cage||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "added",
@@ -873,9 +873,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Extinguishing Lightning||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Extinguishing Lightning||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "added",
@@ -891,9 +891,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Ride the Lightning||5th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Ride the Lightning||5th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "added",
@@ -909,9 +909,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Electrostatic Charm||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Electrostatic Charm||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "removed",
@@ -927,9 +927,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Thunderous Entrance||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Thunderous Entrance||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -947,9 +947,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Lightning Lure||cantrip",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Lightning Lure||cantrip",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -967,9 +967,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Shocking Grasp||cantrip",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Shocking Grasp||cantrip",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -987,9 +987,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Witch Bolt||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Witch Bolt||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -1007,9 +1007,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Weight of Lives||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Weight of Lives||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "added",
@@ -1025,9 +1025,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Arcane Aegis||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Arcane Aegis||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "added",
@@ -1043,9 +1043,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Whelm Weapon||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Whelm Weapon||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "added",
@@ -1061,9 +1061,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Enspelled Armament||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Enspelled Armament||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "added",
@@ -1079,9 +1079,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Pillar of Force||5th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Pillar of Force||5th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "added",
@@ -1097,9 +1097,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Pogmo's Pot||9th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Pogmo's Pot||9th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "added",
@@ -1115,9 +1115,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Magnetic Manipulation||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Magnetic Manipulation||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "removed",
@@ -1133,9 +1133,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Metalcrafting||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Metalcrafting||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "modified",
@@ -1153,9 +1153,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Magnetic Attraction||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Magnetic Attraction||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "modified",
@@ -1173,9 +1173,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Keen Edge||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Keen Edge||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "modified",
@@ -1193,9 +1193,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Magnetic Focus||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Magnetic Focus||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "modified",
@@ -1213,9 +1213,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Gemsight||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Gemsight||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "metal",
       "changeType": "modified",
@@ -1233,9 +1233,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Toxic Skin Secretion I||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Toxic Skin Secretion I||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1251,9 +1251,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Vestibular Trance||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Vestibular Trance||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1269,9 +1269,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Mutagen Formula (Strength)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Mutagen Formula (Strength)||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1287,9 +1287,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Mutagen Formula (Dexterity)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Mutagen Formula (Dexterity)||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1305,9 +1305,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Mutagen Formula (Constitution)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Mutagen Formula (Constitution)||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1323,9 +1323,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Mutagen Formula (Intelligence)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Mutagen Formula (Intelligence)||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1341,9 +1341,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Mutagen Formula (Wisdom)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Mutagen Formula (Wisdom)||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1359,9 +1359,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Mutagen Formula (Charisma)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Mutagen Formula (Charisma)||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1377,9 +1377,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Moonlit Verdant Beam||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Moonlit Verdant Beam||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1395,9 +1395,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Toxic Skin Secretion II||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Toxic Skin Secretion II||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1413,9 +1413,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Toxic Skin Secretion III||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Toxic Skin Secretion III||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1431,16 +1431,16 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Vital Essence Sublimation III (Nilo)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Vital Essence Sublimation III (Nilo)||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
       "ability": {
         "id": "poison_master_vital_essence_sublimation_iii",
         "name": "Vital Essence Sublimation III (Nilo)",
-        "tier": "adept",
+        "tier": "master",
         "description": "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.",
         "isActive": false,
         "isPassive": true,
@@ -1449,9 +1449,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Apex Toxinator||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Apex Toxinator||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1459,7 +1459,7 @@
         "id": "poison_master_essence_snake_horror",
         "name": "Apex Toxinator",
         "tier": "master",
-        "description": "As an Action, you channel the pure essence of poison to conjure a monstrous, hissing Snake Horror in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.\nYou can now hold up to three distilled essences at a time.",
+        "description": "As an Action, you channel the pure essence of poison to conjure a monstrous, hissing Snake Horror in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.",
         "isActive": true,
         "isPassive": false,
         "isSpell": false,
@@ -1467,9 +1467,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Swallow Magic||2nd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Swallow Magic||2nd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1485,9 +1485,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Syluné's Viper||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Syluné's Viper||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1503,9 +1503,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Investiture of Venom||6th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Investiture of Venom||6th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "added",
@@ -1521,9 +1521,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Enhanced Mutagen||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Enhanced Mutagen||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "removed",
@@ -1539,9 +1539,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Strength Booster||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Strength Booster||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "modified",
@@ -1559,9 +1559,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Quickening Draught||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Quickening Draught||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "modified",
@@ -1579,9 +1579,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Enchanting Perfume||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Enchanting Perfume||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "modified",
@@ -1599,9 +1599,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Vital Essence Sublimation I (Nilo)||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Vital Essence Sublimation I (Nilo)||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "modified",
@@ -1619,9 +1619,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Venomous Strike||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Venomous Strike||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "modified",
@@ -1639,9 +1639,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Hallucinogenic Trance||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Hallucinogenic Trance||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "modified",
@@ -1659,9 +1659,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Vital Essence Sublimation II (Nilo)||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Vital Essence Sublimation II (Nilo)||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "poison",
       "changeType": "modified",
@@ -1679,9 +1679,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Draconic Regeneration of the Emerald Moon||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Draconic Regeneration of the Emerald Moon||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1697,9 +1697,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Tide's Reflection Art III (Thalassios)||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Tide's Reflection Art III (Thalassios)||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1715,9 +1715,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Lunar Tide||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Lunar Tide||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1733,9 +1733,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Moonfall Condemnation||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Moonfall Condemnation||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1751,9 +1751,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Bubble Lift||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Bubble Lift||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1769,9 +1769,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Frost Fingers||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Frost Fingers||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1787,9 +1787,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Water Bullet||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Water Bullet||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1805,9 +1805,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Rime's Binding Ice||2nd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Rime's Binding Ice||2nd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1823,9 +1823,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Conjure Ocean||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Conjure Ocean||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1841,9 +1841,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Freedom of the Waves||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Freedom of the Waves||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1859,9 +1859,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Alustriel's Mooncloak||5th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Alustriel's Mooncloak||5th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1877,9 +1877,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Crustacean Form||6th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Crustacean Form||6th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "added",
@@ -1895,9 +1895,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Surface Strider||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Surface Strider||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "removed",
@@ -1913,9 +1913,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Raincaller||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Raincaller||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "modified",
@@ -1933,9 +1933,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Glacial Shield||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Glacial Shield||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "water",
       "changeType": "modified",
@@ -1953,9 +1953,9 @@
       ]
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Entangling Reach||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Entangling Reach||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -1971,9 +1971,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Coiling Resilience||initiate",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Coiling Resilience||initiate",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -1989,9 +1989,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Heart Exchange||master",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Heart Exchange||master",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2007,9 +2007,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Root Grab||cantrip",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Root Grab||cantrip",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2025,9 +2025,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Ensnaring Strike||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Ensnaring Strike||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2043,9 +2043,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Forest Guard||1st",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Forest Guard||1st",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2061,9 +2061,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Sprout Foliage||2nd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Sprout Foliage||2nd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2079,9 +2079,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Thorn Armor||3rd",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Thorn Armor||3rd",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2097,9 +2097,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Summon Plant||4th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Summon Plant||4th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2115,9 +2115,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Tree||6th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Tree||6th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "added",
@@ -2133,9 +2133,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Faithful hound||4th",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Faithful hound||4th",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "removed",
@@ -2151,9 +2151,9 @@
       }
     },
     {
-      "id": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b-Tree Form||adept",
+      "id": "cf61250e037e8df2129b660aee374b408580cf58-Tree Form||adept",
       "date": "2025-12-24 10:08:19 -0300",
-      "commitHash": "0decac8a006819c7a7c89f5d1154867b5f8a4d1b",
+      "commitHash": "cf61250e037e8df2129b660aee374b408580cf58",
       "commitMessage": "Balance patch master level",
       "essenceType": "wood",
       "changeType": "modified",

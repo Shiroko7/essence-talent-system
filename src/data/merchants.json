@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "merchants": [
+    {
+      "id": "forge-of-seoul",
+      "name": "Forge of Seoul",
+      "description": "A legendary forge that crafts wondrous magical items from across the multiverse.",
+      "location": "Seoul, Capital of Sirius",
+      "region": "Sirius",
+      "isAvailable": true,
+      "inventoryFile": "forge-of-seoul.json",
+      "pricing": {
+        "currency": "electrum",
+        "priceByRarity": {
+          "common": 200,
+          "uncommon": 800,
+          "rare": 8000,
+          "very rare": 80000,
+          "legendary": 400000,
+          "artifact": 400000
+        }
+      }
+    },
+    {
+      "id": "alchemy-district-seoul",
+      "name": "Alchemy District of Seoul",
+      "description": "A vibrant marketplace where alchemists brew potions, elixirs, and magical concoctions from rare ingredients.",
+      "location": "Seoul, Capital of Sirius",
+      "region": "Sirius",
+      "isAvailable": true,
+      "inventoryFile": "alchemy-district-seoul.json",
+      "pricing": {
+        "currency": "electrum",
+        "priceByRarity": {
+          "common": 100,
+          "uncommon": 400,
+          "rare": 4000,
+          "very rare": 40000,
+          "legendary": 200000,
+          "artifact": 200000
+        }
+      }
+    },
+    {
+      "id": "medical-pavilion-seoul",
+      "name": "Medical Pavilion",
+      "description": "A serene healing sanctuary staffed by skilled clerics and herbalists offering restorative potions and healing supplies.",
+      "location": "Seoul, Capital of Sirius",
+      "region": "Sirius",
+      "isAvailable": true,
+      "inventoryFile": "medical-pavilion-seoul.json",
+      "pricing": {
+        "currency": "electrum",
+        "priceByRarity": {
+          "common": 50,
+          "uncommon": 200,
+          "rare": 2000,
+          "very rare": 20000,
+          "legendary": 20000,
+          "artifact": 20000
+        }
+      }
+    },
+    {
+      "id": "grand-bazaar-seoul",
+      "name": "Grand Bazaar",
+      "description": "A sprawling marketplace filled with exotic wonders, magical trinkets, and rare curiosities from across the planes.",
+      "location": "Seoul, Capital of Sirius",
+      "region": "Sirius",
+      "isAvailable": true,
+      "inventoryFile": "grand-bazaar-seoul.json",
+      "pricing": {
+        "currency": "electrum",
+        "priceByRarity": {
+          "common": 200,
+          "uncommon": 800,
+          "rare": 8000,
+          "very rare": 80000,
+          "legendary": 80000,
+          "artifact": 80000
+        }
+      }
+    }
+  ]
+}

@@ -25,3 +25,6 @@ dist-ssr
 
 # Generated essence files (auto-generated from markdown)
 src/components/essences/consts/*.tsx
+
+# 5etools reference data (large JSON files)
+scripts/5etools-data/

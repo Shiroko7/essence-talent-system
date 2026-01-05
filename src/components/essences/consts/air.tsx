@@ -458,7 +458,7 @@ export const airSpells = [
   {
     id: "wind_7th_level_whirlwind",
     name: "Whirlwind",
-    description: "https://www.dandwiki.com/wiki/Whirlwind_(5e_Spell)",
+    description: "https://5e.tools/spells.html#whirlwind_xge",
     tier: "7th",
     isActive: false,
     isPassive: false,

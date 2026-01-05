@@ -233,7 +233,7 @@ export const poisonAbilities = [
     id: "poison_master_vital_essence_sublimation_iii",
     name: "Vital Essence Sublimation III (Nilo)",
     description: "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.",
-    tier: "adept",
+    tier: "master",
     isActive: false,
     isPassive: true,
     isSpell: false,
@@ -242,7 +242,7 @@ export const poisonAbilities = [
   {
     id: "poison_master_essence_snake_horror",
     name: "Apex Toxinator",
-    description: "As an Action, you channel the pure essence of poison to conjure a monstrous, hissing Snake Horror in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.\nYou can now hold up to three distilled essences at a time.",
+    description: "As an Action, you channel the pure essence of poison to conjure a monstrous, hissing Snake Horror in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -252,6 +252,16 @@ export const poisonAbilities = [
 ];
 
 export const poisonCantrips = [
+  {
+    id: "poison_cantrip_poison_spray",
+    name: "Poison Spray",
+    description: "https://5e.tools/spells.html#poison%20spray_xphb",
+    tier: "cantrip",
+    isActive: false,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: true,
+  },
   {
     id: "poison_cantrip_infestation",
     name: "Infestation",

@@ -145,7 +145,7 @@ export const lightningCantrips = [
   {
     id: "lightning_cantrip_lightning_lure",
     name: "Lightning Lure",
-    description: "https://www.dandwiki.com/wiki/Lightning_Lure_(5e_Spell) \\\"Lightning Lure (5e Spell)\\",
+    description: "https://5e.tools/spells.html#lightning%20lure_tce",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
@@ -155,7 +155,7 @@ export const lightningCantrips = [
   {
     id: "lightning_cantrip_shocking_grasp",
     name: "Shocking Grasp",
-    description: "https://www.dandwiki.com/wiki/Shocking_Grasp_(5e_Spell) \\\"Shocking Grasp (5e Spell)\\",
+    description: "https://5e.tools/spells.html#shocking%20grasp_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
@@ -168,7 +168,7 @@ export const lightningSpells = [
   {
     id: "lightning_1st_level_witch_bolt",
     name: "Witch Bolt",
-    description: "https://www.dandwiki.com/wiki/Witch_Bolt_(5e_Spell)",
+    description: "https://5e.tools/spells.html#witch%20bolt_xphb",
     tier: "1st",
     isActive: false,
     isPassive: false,

@@ -406,16 +406,6 @@ export const woodSpells = [
     isCantrip: false,
   },
   {
-    id: "wood_4th_level_faithful_hound",
-    name: "Faithful hound",
-    description: "https://www.dandwiki.com/wiki/Faithful_Hound_(5e_Spell)",
-    tier: "4th",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-  },
-  {
     id: "wood_4th_level_grasping_vine",
     name: "Grasping Vine",
     description: "https://5e.tools/spells.html#grasping%20vine_xphb",
