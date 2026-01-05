@@ -34,7 +34,7 @@ const MerchantCatalogPage: React.FC = () => {
   useEffect(() => {
     if (merchant) {
       setIsLoading(true);
-      import(`../data/items/${merchant.inventoryFile}`)
+      import(`../data/items/${merchant.inventoryFile}.json`)
         .then(module => {
           setItems(module.default.items);
           setIsLoading(false);

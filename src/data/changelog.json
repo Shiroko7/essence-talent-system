@@ -1,7 +1,179 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-05T00:11:48.813Z",
+  "generatedAt": "2026-01-05T01:31:54.634Z",
   "entries": [
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Whirlwind||7th",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "air",
+      "changeType": "modified",
+      "ability": {
+        "id": "wind_7th_level_whirlwind",
+        "name": "Whirlwind",
+        "tier": "7th"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "https://www.dandwiki.com/wiki/Whirlwind_(5e_Spell)",
+          "newValue": "https://5e.tools/spells.html#whirlwind_xge"
+        }
+      ]
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Lightning Lure||cantrip",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "lightning",
+      "changeType": "modified",
+      "ability": {
+        "id": "lightning_cantrip_lightning_lure",
+        "name": "Lightning Lure",
+        "tier": "cantrip"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "https://www.dandwiki.com/wiki/Lightning_Lure_(5e_Spell) \\\\\\\"Lightning Lure (5e Spell)\\\\",
+          "newValue": "https://5e.tools/spells.html#lightning%20lure_tce"
+        }
+      ]
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Shocking Grasp||cantrip",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "lightning",
+      "changeType": "modified",
+      "ability": {
+        "id": "lightning_cantrip_shocking_grasp",
+        "name": "Shocking Grasp",
+        "tier": "cantrip"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "https://www.dandwiki.com/wiki/Shocking_Grasp_(5e_Spell) \\\\\\\"Shocking Grasp (5e Spell)\\\\",
+          "newValue": "https://5e.tools/spells.html#shocking%20grasp_xphb"
+        }
+      ]
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Witch Bolt||1st",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "lightning",
+      "changeType": "modified",
+      "ability": {
+        "id": "lightning_1st_level_witch_bolt",
+        "name": "Witch Bolt",
+        "tier": "1st"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "https://www.dandwiki.com/wiki/Witch_Bolt_(5e_Spell)",
+          "newValue": "https://5e.tools/spells.html#witch%20bolt_xphb"
+        }
+      ]
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Vital Essence Sublimation III (Nilo)||master",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "poison",
+      "changeType": "added",
+      "ability": {
+        "id": "poison_master_vital_essence_sublimation_iii",
+        "name": "Vital Essence Sublimation III (Nilo)",
+        "tier": "master",
+        "description": "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\\nYou can now hold up to three distilled essences at a time.",
+        "isActive": false,
+        "isPassive": true,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Poison Spray||cantrip",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "poison",
+      "changeType": "added",
+      "ability": {
+        "id": "poison_cantrip_poison_spray",
+        "name": "Poison Spray",
+        "tier": "cantrip",
+        "description": "https://5e.tools/spells.html#poison%20spray_xphb",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": true
+      }
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Vital Essence Sublimation III (Nilo)||adept",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "poison",
+      "changeType": "removed",
+      "ability": {
+        "id": "poison_master_vital_essence_sublimation_iii",
+        "name": "Vital Essence Sublimation III (Nilo)",
+        "tier": "adept",
+        "description": "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\\nYou can now hold up to three distilled essences at a time.",
+        "isActive": false,
+        "isPassive": true,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Apex Toxinator||master",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "poison",
+      "changeType": "modified",
+      "ability": {
+        "id": "poison_master_essence_snake_horror",
+        "name": "Apex Toxinator",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an Action, you channel the pure essence of poison to conjure a monstrous, hissing Snake Horror in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.\\nYou can now hold up to three distilled essences at a time.",
+          "newValue": "As an Action, you channel the pure essence of poison to conjure a monstrous, hissing Snake Horror in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action."
+        }
+      ]
+    },
+    {
+      "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Faithful hound||4th",
+      "date": "2026-01-04 22:11:46 -0300",
+      "commitHash": "c8cc5d8f826477683091c2fadf77644fc6fd600f",
+      "commitMessage": "add merchants",
+      "essenceType": "wood",
+      "changeType": "removed",
+      "ability": {
+        "id": "wood_4th_level_faithful_hound",
+        "name": "Faithful hound",
+        "tier": "4th",
+        "description": "https://www.dandwiki.com/wiki/Faithful_Hound_(5e_Spell)",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": true,
+        "isCantrip": false
+      }
+    },
     {
       "id": "cf61250e037e8df2129b660aee374b408580cf58-Extended Reach||adept",
       "date": "2025-12-24 10:08:19 -0300",

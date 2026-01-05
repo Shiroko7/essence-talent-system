@@ -8,7 +8,7 @@
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
       "isAvailable": true,
-      "inventoryFile": "forge-of-seoul.json",
+      "inventoryFile": "forge-of-seoul",
       "pricing": {
         "currency": "electrum",
         "priceByRarity": {
@@ -28,7 +28,7 @@
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
       "isAvailable": true,
-      "inventoryFile": "alchemy-district-seoul.json",
+      "inventoryFile": "alchemy-district-seoul",
       "pricing": {
         "currency": "electrum",
         "priceByRarity": {
@@ -48,7 +48,7 @@
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
       "isAvailable": true,
-      "inventoryFile": "medical-pavilion-seoul.json",
+      "inventoryFile": "medical-pavilion-seoul",
       "pricing": {
         "currency": "electrum",
         "priceByRarity": {
@@ -68,7 +68,7 @@
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
       "isAvailable": true,
-      "inventoryFile": "grand-bazaar-seoul.json",
+      "inventoryFile": "grand-bazaar-seoul",
       "pricing": {
         "currency": "electrum",
         "priceByRarity": {
