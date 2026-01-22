@@ -44,7 +44,11 @@
       "Bash(for file in src/data/items/*.json)",
       "Bash(do jq '.items[]?.properties?.weaponType' \"$file\" jq '.items[]?.properties?.armorType' \"$file\" done)",
       "Bash(jq:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(bun install)",
+      "Bash(bun run build)",
+      "Bash(del package-lock.json)",
+      "Bash(bun:*)"
     ],
     "deny": [],
     "ask": []

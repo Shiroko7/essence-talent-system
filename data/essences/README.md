@@ -5,7 +5,7 @@ This directory contains the markdown files that serve as the **single source of 
 ## How It Works
 
 1. **Edit markdown files** in this directory (e.g., `fire.md`, `water.md`)
-2. **Run the generator**: `npm run generate:essences`
+2. **Run the generator**: `bun run generate:essences`
 3. TypeScript files are auto-generated in `src/components/essences/consts/`
 4. The generated `.tsx` files are ignored by git (they're build artifacts)
 
@@ -51,21 +51,21 @@ Each essence has its own markdown file:
 1. Open the appropriate essence file (e.g., `fire.md`)
 2. Add a new section under the appropriate tier heading
 3. Follow the format above
-4. Run `npm run generate:essences`
+4. Run `bun run generate:essences`
 5. Test your changes
 
 ### Rebalancing abilities
 
 1. Edit the description or metadata in the markdown file
-2. Run `npm run generate:essences`
+2. Run `bun run generate:essences`
 3. The TypeScript files will be regenerated
 
 ### Build Process
 
-The generation script runs automatically during `npm run build`, so you don't need to remember to run it before building. However, you should run it manually during development:
+The generation script runs automatically during `bun run build`, so you don't need to remember to run it before building. However, you should run it manually during development:
 
 ```bash
-npm run generate:essences
+bun run generate:essences
 ```
 
 ## Benefits

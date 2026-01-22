@@ -27,7 +27,7 @@ The merchant system supports two levels of item information:
 
 ### Option 2: Create a Fetch Script
 
-You can create a Node.js script to fetch and match items:
+You can create a Bun script to fetch and match items:
 
 ```javascript
 // scripts/fetch-5etools-data.js

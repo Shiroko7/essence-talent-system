@@ -26,7 +26,7 @@ curl -o scripts/5etools-data/griffon-book2.json "https://raw.githubusercontent.c
 #### 2. Match Items with 5e.tools Data
 
 ```bash
-node scripts/update-items-data.cjs
+bun scripts/update-items-data.cjs
 ```
 
 This script will:

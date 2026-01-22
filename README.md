@@ -1,54 +1,84 @@
-# React + TypeScript + Vite
+# Essence Talent System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite application for managing essence-based talents and abilities.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Runtime**: [Bun](https://bun.sh) v1.3.6
+- **Framework**: React 19 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Deployment**: Netlify
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Install Bun:
+```bash
+# Windows (PowerShell)
+powershell -c "irm bun.sh/install.ps1|iex"
+
+# macOS/Linux
+curl -fsSL https://bun.sh/install | bash
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Install dependencies
+bun install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# Start development server
+bun run dev
+
+# Build for production
+bun run build
 ```
+
+## Available Scripts
+
+```bash
+# Development server
+bun run dev
+
+# Production build (generates essences + changelog, then builds)
+bun run build
+
+# Preview production build
+bun run preview
+
+# Lint code
+bun run lint
+
+# Generate essence files from markdown
+bun run generate:essences
+
+# Generate changelog from git history
+bun run generate:changelog
+
+# Generate all (essences + changelog)
+bun run generate:all
+```
+
+## Project Structure
+
+```
+essence-talent-system/
+├── data/essences/          # Markdown source files for essences
+├── scripts/                # Build and data management scripts
+├── src/
+│   ├── components/
+│   │   └── essences/
+│   │       └── consts/     # Auto-generated from markdown
+│   ├── data/              # JSON data files
+│   └── ...
+└── ...
+```
+
+## Deployment
+
+This project deploys to Netlify using Bun:
+- Build command: `bun run build`
+- Publish directory: `dist`
+- Bun version: 1.3.6

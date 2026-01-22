@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:all && tsc -b && vite build",
+    "build": "bun run generate:all && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:essences": "node scripts/generate-essences.js",
-    "generate:changelog": "node scripts/generate-changelog.js",
-    "generate:all": "npm run generate:essences && npm run generate:changelog"
+    "generate:essences": "bun scripts/generate-essences.js",
+    "generate:changelog": "bun scripts/generate-changelog.js",
+    "generate:all": "bun run generate:essences && bun run generate:changelog"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.74.0",
