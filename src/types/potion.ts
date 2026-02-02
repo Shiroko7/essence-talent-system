@@ -54,11 +54,11 @@ export function getPotionRarityColor(rarity: PotionRarity): string {
 
 // Crafting cost in gold (half of base item cost)
 const CRAFTING_COST_GP: Record<PotionRarity, number> = {
-  'common': 50,
-  'uncommon': 200,
-  'rare': 2000,
-  'very rare': 20000,
-  'legendary': 100000,
+  'common': 25,
+  'uncommon': 100,
+  'rare': 1000,
+  'very rare': 10000,
+  'legendary': 50000,
 };
 
 export interface CraftingCost {

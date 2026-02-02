@@ -198,7 +198,7 @@ const EssenceTalentTree: React.FC = () => {
             onLoadConfig={handleLoadConfig}
           />
         </div>
-        
+
         {/* Essence Tracking Bars Section */}
         {pathsWithActiveAbilities.length > 0 && (
           <div className="w-full bg-gray-800 rounded-lg p-4 mb-4">

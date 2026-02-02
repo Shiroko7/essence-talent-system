@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { FlaskConical } from 'lucide-react';
+import { FlaskConical, Coins } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import PotionCard from '../components/potions/PotionCard';
 import PotionDetailPanel from '../components/potions/PotionDetailPanel';
@@ -67,6 +67,36 @@ const PotionsPage: React.FC = () => {
           <p className="text-gray-400 text-lg">
             Browse and search through all available potions, elixirs, poisons, and medicines.
           </p>
+        </div>
+
+        {/* Crafting Cost Guideline */}
+        <div className="bg-gray-800 rounded-lg p-4 mb-6">
+          <h2 className="text-lg font-bold mb-3 flex items-center gap-2">
+            <Coins size={20} className="text-amber-400" />
+            Crafting Cost Guideline
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div className="bg-gray-700 rounded-lg p-3 text-center">
+              <div className="text-gray-400 text-sm mb-1">Common</div>
+              <div className="text-amber-400 font-semibold">25 gp</div>
+            </div>
+            <div className="bg-gray-700 rounded-lg p-3 text-center">
+              <div className="text-green-400 text-sm mb-1">Uncommon</div>
+              <div className="text-amber-400 font-semibold">100 gp</div>
+            </div>
+            <div className="bg-gray-700 rounded-lg p-3 text-center">
+              <div className="text-blue-400 text-sm mb-1">Rare</div>
+              <div className="text-amber-400 font-semibold">1,000 gp</div>
+            </div>
+            <div className="bg-gray-700 rounded-lg p-3 text-center">
+              <div className="text-purple-400 text-sm mb-1">Very Rare</div>
+              <div className="text-amber-400 font-semibold">10,000 gp</div>
+            </div>
+            <div className="bg-gray-700 rounded-lg p-3 text-center">
+              <div className="text-orange-400 text-sm mb-1">Legendary</div>
+              <div className="text-amber-400 font-semibold">50,000 gp</div>
+            </div>
+          </div>
         </div>
 
         {/* Filters */}
