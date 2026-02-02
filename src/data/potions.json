@@ -1,0 +1,125 @@
+{
+  "potions": [
+    {
+      "id": "healing-potion",
+      "name": "Healing Potion",
+      "rarity": "common",
+      "category": "potion",
+      "effect": "You regain 2d4 + 2 hit points when you drink this potion."
+    },
+    {
+      "id": "potion-of-poison-resistance",
+      "name": "Potion of Poison Resistance",
+      "rarity": "common",
+      "category": "potion",
+      "effect": "When you drink this potion, you gain resistance to poison damage for 1 hour.",
+      "duration": "1 hour"
+    },
+    {
+      "id": "elixir-of-spare-the-dying",
+      "name": "Elixir of Spare the Dying",
+      "rarity": "common",
+      "category": "elixir",
+      "effect": "The target gains the effects of the Spare the Dying cantrip."
+    },
+    {
+      "id": "elixir-of-mending",
+      "name": "Elixir of Mending",
+      "rarity": "common",
+      "category": "elixir",
+      "effect": "The target gains the effects of the Mending cantrip."
+    },
+    {
+      "id": "elixir-of-guidance",
+      "name": "Elixir of Guidance",
+      "rarity": "common",
+      "category": "elixir",
+      "effect": "The target gains the effects of the Guidance cantrip."
+    },
+    {
+      "id": "elixir-of-resistance",
+      "name": "Elixir of Resistance",
+      "rarity": "common",
+      "category": "elixir",
+      "effect": "The target gains resistance to one damage type of the poisoner's choice for the duration, as per the Resistance cantrip."
+    },
+    {
+      "id": "elixir-of-prestidigitation",
+      "name": "Elixir of Prestidigitation",
+      "rarity": "common",
+      "category": "elixir",
+      "effect": "The target gains the effects of the Prestidigitation cantrip."
+    },
+    {
+      "id": "elixir-of-enlarge-reduce",
+      "name": "Elixir of Enlarge or Reduce",
+      "rarity": "uncommon",
+      "category": "elixir",
+      "effect": "The target gains the effects of the Enlarge/Reduce spell. If the target is unwilling, it must succeed on a Constitution saving throw against the poisoner's DC.",
+      "savingThrow": "Constitution"
+    },
+    {
+      "id": "elixir-of-confusion",
+      "name": "Elixir of Confusion",
+      "rarity": "rare",
+      "category": "elixir",
+      "effect": "The target must succeed on a Wisdom saving throw against the poisoner's DC or suffer the effects of the Confusion spell.",
+      "savingThrow": "Wisdom"
+    },
+    {
+      "id": "poison-of-weakness",
+      "name": "Poison of Weakness",
+      "rarity": "common",
+      "category": "poison",
+      "effect": "The victim must succeed on a Constitution saving throw against the poisoner's DC or be poisoned and have disadvantage on Strength-based checks and saving throws for 1 hour.",
+      "savingThrow": "Constitution",
+      "duration": "1 hour"
+    },
+    {
+      "id": "poison-of-dullness",
+      "name": "Poison of Dullness",
+      "rarity": "common",
+      "category": "poison",
+      "effect": "The victim must succeed on a Wisdom saving throw against the poisoner's DC or be poisoned and have disadvantage on Wisdom-based checks and saving throws for 1 hour.",
+      "savingThrow": "Wisdom",
+      "duration": "1 hour"
+    },
+    {
+      "id": "poison-of-sluggishness",
+      "name": "Poison of Sluggishness",
+      "rarity": "uncommon",
+      "category": "poison",
+      "effect": "The victim must succeed on a Constitution saving throw against the poisoner's DC or be poisoned, have their speed reduced by 10 feet, and have disadvantage on Dexterity-based checks and saving throws for 1 hour.",
+      "savingThrow": "Constitution",
+      "duration": "1 hour"
+    },
+    {
+      "id": "passions-sting",
+      "name": "Passion's Sting (Numbing Aphrodisiac)",
+      "rarity": "uncommon",
+      "category": "poison",
+      "effect": "The victim must succeed on a Constitution saving throw against the poisoner's DC or have their blood rush intensely to their extremities and erogenous zones for 1 hour. While affected: The creature is poisoned, resulting in a state of intense and uncomfortable pelvic engorgement. Speed reduced by 10 feet (movement becomes awkward and painful). Disadvantage on Dexterity checks and saving throws.",
+      "savingThrow": "Constitution",
+      "duration": "1 hour"
+    },
+    {
+      "id": "haze-of-heat",
+      "name": "Haze of Heat (Euphoric Aphrodisiac)",
+      "rarity": "rare",
+      "category": "poison",
+      "effect": "The victim must succeed on a Wisdom saving throw against the poisoner's DC or become poisoned for 1 hour. While poisoned this way, the creature enters a state resembling animalistic heat: Disadvantage on all Intelligence and Wisdom checks and saving throws. Immune to the frightened condition. The creature must use its movement and action to move toward and grapple, then restrain, the nearest creature in sight; it can only take hostile actions against the entwined creature if that creature resists.",
+      "savingThrow": "Wisdom",
+      "duration": "1 hour",
+      "isAddictive": true
+    },
+    {
+      "id": "hemostatic-salve",
+      "name": "Hemostatic Salve (Coagulant Medicine)",
+      "rarity": "uncommon",
+      "category": "medicine",
+      "effect": "This medicine causes rapid blood clotting when applied to a wound or delivered into the bloodstream. A creature affected by this salve gains the following benefits for 1 minute: The creature cannot bleed, they automatically stabilize if reduced to 0 hit points and are immune to effects that cause ongoing bleed damage. The creature's speed is reduced by 10 feet as their blood thickens.",
+      "duration": "1 minute",
+      "overdoseEffect": "The creature must succeed on a Constitution saving throw against the poisoner's DC or suffer the following effects: The creature becomes poisoned. At the start of each of their turns, the creature takes 1d6 necrotic damage as internal clotting causes damage."
+    }
+  ]
+}

@@ -18,6 +18,9 @@ const Header: React.FC = () => {
               <Link to="/merchants" className="hover:text-blue-400">Merchants</Link>
             </li>
             <li>
+              <Link to="/potions" className="hover:text-blue-400">Potions</Link>
+            </li>
+            <li>
               <a href="https://github.com/shiroko7/essence-talent-system" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                 GitHub
               </a>

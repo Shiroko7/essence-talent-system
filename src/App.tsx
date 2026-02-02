@@ -4,6 +4,7 @@ import EssenceTalentTree from './components/essences/EssenceTalentTree';
 import ChangelogPage from './pages/ChangelogPage';
 import MerchantsPage from './pages/MerchantsPage';
 import MerchantCatalogPage from './pages/MerchantCatalogPage';
+import PotionsPage from './pages/PotionsPage';
 import './App.css';
 
 // Create a client for React Query
@@ -18,6 +19,7 @@ function App() {
           <Route path="/changelog" element={<ChangelogPage />} />
           <Route path="/merchants" element={<MerchantsPage />} />
           <Route path="/merchants/:merchantId" element={<MerchantCatalogPage />} />
+          <Route path="/potions" element={<PotionsPage />} />
         </Routes>
       </Router>
     </QueryClientProvider>

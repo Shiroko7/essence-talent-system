@@ -48,7 +48,9 @@
       "Bash(bun install)",
       "Bash(bun run build)",
       "Bash(del package-lock.json)",
-      "Bash(bun:*)"
+      "Bash(bun:*)",
+      "Bash(dir:*)",
+      "Bash(npx tsc --noEmit)"
     ],
     "deny": [],
     "ask": []
