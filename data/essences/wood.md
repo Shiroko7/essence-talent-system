@@ -430,21 +430,6 @@ https://5e.tools/spells.html#barkskin_xphb
 
 ---
 
-### Barkskin
-
-```yaml
-id: wood_2nd_level_barkskin_repeat
-tier: 2nd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-```
-
-https://5e.tools/spells.html#barkskin_xphb
-
----
-
 ### Locate Animals or Plants
 
 ```yaml
@@ -928,8 +913,8 @@ https://5e.tools/spells.html#forest%20guard_obojimatallgrass
 ### Sprout Foliage
 
 ```yaml
-id: wood_2nd_level_sprout_foliage
-tier: 2nd
+id: wood_1st_level_sprout_foliage
+tier: 1st
 isActive: false
 isPassive: false
 isSpell: true

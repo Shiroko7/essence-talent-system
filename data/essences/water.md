@@ -244,7 +244,7 @@ isSpell: false
 isCantrip: false
 ```
 
-As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additinonally, you can now summon three Water Clones at the same time, and they last for 10 minutes.
+As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additionally, you can now summon three Water Clones at the same time, and they last for 10 minutes. Your Water Clones now emit dim moonlight in a 60-foot radius around them.
 
 ---
 
