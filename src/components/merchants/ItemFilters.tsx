@@ -57,25 +57,25 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
   const showArmorFilters = filterState.type.includes('armor');
 
   return (
-    <div className="space-y-2 mb-6">
+    <div className="space-y-3 mb-6">
       {/* Row 1: Search + Filters + Sort */}
       <div className="flex flex-wrap items-center gap-3">
         {/* Search Input */}
-        <div className="relative w-full sm:w-auto sm:flex-1 sm:max-w-md">
+        <div className="relative w-full sm:w-auto sm:flex-1 sm:max-w-md group">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search size={16} className="text-gray-400" />
+            <Search size={16} className="text-mist group-focus-within:text-gold transition-colors" />
           </div>
           <input
             type="text"
             value={filterState.search}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md pl-10 pr-10 py-2 w-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="arcane-input w-full pl-12 pr-10 py-2 text-sm"
             placeholder="Search items..."
           />
           {filterState.search && (
             <button
               onClick={() => onSearchChange('')}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-mist hover:text-parchment transition-colors"
               aria-label="Clear search"
             >
               <X size={16} />
@@ -84,7 +84,7 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
         </div>
 
         {/* Filter Controls */}
-        <span className="hidden sm:inline text-sm text-gray-400 font-medium">Filters:</span>
+        <span className="hidden sm:inline font-display text-xs tracking-wider text-mist uppercase">Filters:</span>
 
         {/* Rarity Dropdown */}
         <select
@@ -95,12 +95,12 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
               e.target.value = '';
             }
           }}
-          className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer"
           value=""
         >
-          <option value="">+ Rarity</option>
+          <option value="" className="bg-obsidian">+ Rarity</option>
           {ITEM_RARITIES.filter(r => !filterState.rarity.includes(r.id)).map((rarity) => (
-            <option key={rarity.id} value={rarity.id}>
+            <option key={rarity.id} value={rarity.id} className="bg-obsidian">
               {rarity.label}
             </option>
           ))}
@@ -115,12 +115,12 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
               e.target.value = '';
             }
           }}
-          className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer"
           value=""
         >
-          <option value="">+ Type</option>
+          <option value="" className="bg-obsidian">+ Type</option>
           {ITEM_TYPES.filter(t => !filterState.type.includes(t.id)).map((type) => (
-            <option key={type.id} value={type.id}>
+            <option key={type.id} value={type.id} className="bg-obsidian">
               {type.label}
             </option>
           ))}
@@ -130,30 +130,30 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
         <div className="flex gap-1">
           <button
             onClick={() => onAttunementChange(null)}
-            className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
+            className={`px-3 py-1.5 text-sm rounded font-display tracking-wide transition-colors ${
               filterState.requiresAttunement === null
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                ? 'bg-gold/20 text-gold border border-gold/40'
+                : 'bg-charcoal text-mist border border-gold-subtle hover:border-gold/30'
             }`}
           >
             All
           </button>
           <button
             onClick={() => onAttunementChange(true)}
-            className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
+            className={`px-3 py-1.5 text-sm rounded font-display tracking-wide transition-colors ${
               filterState.requiresAttunement === true
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                ? 'bg-gold/20 text-gold border border-gold/40'
+                : 'bg-charcoal text-mist border border-gold-subtle hover:border-gold/30'
             }`}
           >
             Attunement
           </button>
           <button
             onClick={() => onAttunementChange(false)}
-            className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
+            className={`px-3 py-1.5 text-sm rounded font-display tracking-wide transition-colors ${
               filterState.requiresAttunement === false
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                ? 'bg-gold/20 text-gold border border-gold/40'
+                : 'bg-charcoal text-mist border border-gold-subtle hover:border-gold/30'
             }`}
           >
             No Attunement
@@ -170,20 +170,19 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
                 e.target.value = '';
               }
             }}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer"
             value=""
           >
-            <option value="">+ Weapon</option>
-            {/* Group by category */}
+            <option value="" className="bg-obsidian">+ Weapon</option>
             {['Simple Melee', 'Martial Melee', 'Simple Ranged', 'Martial Ranged'].map(category => {
               const categoryWeapons = WEAPON_TYPES.filter(w =>
                 w.category === category && !filterState.weaponType.includes(w.id)
               );
               if (categoryWeapons.length === 0) return null;
               return (
-                <optgroup key={category} label={category}>
+                <optgroup key={category} label={category} className="bg-obsidian">
                   {categoryWeapons.map((weaponType) => (
-                    <option key={weaponType.id} value={weaponType.id}>
+                    <option key={weaponType.id} value={weaponType.id} className="bg-obsidian">
                       {weaponType.label}
                     </option>
                   ))}
@@ -203,35 +202,35 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
                 e.target.value = '';
               }
             }}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer"
             value=""
           >
-            <option value="">+ Armor</option>
+            <option value="" className="bg-obsidian">+ Armor</option>
             {ARMOR_TYPES.filter(a => !filterState.armorType.includes(a.id)).map((armorType) => (
-              <option key={armorType.id} value={armorType.id}>
+              <option key={armorType.id} value={armorType.id} className="bg-obsidian">
                 {armorType.label}
               </option>
             ))}
           </select>
         )}
 
-        {/* Sort Controls - pushed to right */}
+        {/* Sort Controls */}
         <div className="flex items-center gap-2 ml-auto">
-          <label htmlFor="sort" className="text-sm text-gray-400">Sort:</label>
+          <label htmlFor="sort" className="font-display text-xs tracking-wider text-mist uppercase">Sort:</label>
           <select
             id="sort"
             value={sortBy}
             onChange={(e) => onSortChange(e.target.value as 'name' | 'rarity' | 'type' | 'price')}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer"
           >
-            <option value="name">Name</option>
-            <option value="price">Price</option>
-            <option value="rarity">Rarity</option>
-            <option value="type">Type</option>
+            <option value="name" className="bg-obsidian">Name</option>
+            <option value="price" className="bg-obsidian">Price</option>
+            <option value="rarity" className="bg-obsidian">Rarity</option>
+            <option value="type" className="bg-obsidian">Type</option>
           </select>
           <button
             onClick={onSortDirectionToggle}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 hover:bg-gray-600 transition-colors"
+            className="arcane-btn p-1.5"
             title={sortDirection === 'asc' ? 'Ascending' : 'Descending'}
           >
             {sortDirection === 'asc' ? <ArrowUp size={16} /> : <ArrowDown size={16} />}
@@ -242,7 +241,7 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
         {hasFilters && (
           <button
             onClick={onClearAll}
-            className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+            className="font-display text-xs tracking-wider text-gold hover:text-gold-bright transition-colors"
           >
             Clear all
           </button>
@@ -257,7 +256,7 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
             <button
               key={rarity}
               onClick={() => onRarityToggle(rarity)}
-              className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium transition-colors hover:opacity-80 ${getRarityColor(rarity)}`}
+              className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-display tracking-wide transition-colors hover:opacity-80 ${getRarityColor(rarity)}`}
             >
               {rarity.charAt(0).toUpperCase() + rarity.slice(1)}
               <X size={12} />
@@ -269,7 +268,7 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
             <button
               key={type}
               onClick={() => onTypeToggle(type)}
-              className="flex items-center gap-1 px-2 py-1 bg-indigo-600 hover:bg-indigo-500 rounded-full text-xs font-medium text-white transition-colors"
+              className="flex items-center gap-1 px-2.5 py-1 bg-gold/20 text-gold border border-gold/30 rounded text-xs font-display tracking-wide transition-colors hover:opacity-80"
             >
               {type.charAt(0).toUpperCase() + type.slice(1)}
               <X size={12} />
@@ -281,7 +280,7 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
             <button
               key={weaponType}
               onClick={() => onWeaponTypeToggle(weaponType)}
-              className="flex items-center gap-1 px-2 py-1 bg-indigo-600 hover:bg-indigo-500 rounded-full text-xs font-medium text-white transition-colors"
+              className="flex items-center gap-1 px-2.5 py-1 bg-gold/20 text-gold border border-gold/30 rounded text-xs font-display tracking-wide transition-colors hover:opacity-80"
             >
               {weaponType.charAt(0).toUpperCase() + weaponType.slice(1)}
               <X size={12} />
@@ -293,7 +292,7 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
             <button
               key={armorType}
               onClick={() => onArmorTypeToggle(armorType)}
-              className="flex items-center gap-1 px-2 py-1 bg-indigo-600 hover:bg-indigo-500 rounded-full text-xs font-medium text-white transition-colors"
+              className="flex items-center gap-1 px-2.5 py-1 bg-gold/20 text-gold border border-gold/30 rounded text-xs font-display tracking-wide transition-colors hover:opacity-80"
             >
               {armorType.charAt(0).toUpperCase() + armorType.slice(1)}
               <X size={12} />
@@ -304,8 +303,8 @@ const ItemFilters: React.FC<ItemFiltersProps> = ({
 
       {/* Row 3: Item Count */}
       <div className="flex items-center">
-        <span className="text-sm text-gray-400">
-          Showing {filteredItems} of {totalItems} items
+        <span className="text-sm text-mist font-body">
+          Showing <span className="text-parchment">{filteredItems}</span> of <span className="text-parchment">{totalItems}</span> items
         </span>
       </div>
     </div>

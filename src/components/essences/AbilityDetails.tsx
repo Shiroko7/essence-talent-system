@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind } from 'lucide-react';
+import { X, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind, ExternalLink } from 'lucide-react';
 import { Ability, EssencePath, EssencePathId, getTierCost } from '../../types/essence';
 
 interface AbilityDetailsProps {
@@ -11,43 +11,51 @@ interface AbilityDetailsProps {
   onToggle: () => void;
 }
 
-// Helper function to format description text
+const ESSENCE_ICON_COLORS: Record<EssencePathId, string> = {
+  water: '#4a9eff',
+  fire: '#ff6b4a',
+  earth: '#c49a6c',
+  metal: '#a8b4c4',
+  wood: '#5dba6f',
+  poison: '#9b4dca',
+  acid: '#a8e04a',
+  lightning: '#c084fc',
+  wind: '#7dd3fc',
+};
+
 const formatDescription = (description: string): React.ReactNode => {
-  // Check if it's a URL (for spells)
   if (description.startsWith('http')) {
     return (
       <div className="text-left">
-        <p className="mb-2">This ability references an external spell. For detailed information:</p>
-        <a 
-          href={description} 
-          target="_blank" 
+        <p className="mb-3 text-fog">This ability references an external spell. For detailed information:</p>
+        <a
+          href={description}
+          target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-300 underline"
+          className="inline-flex items-center gap-2 text-gold hover:text-gold-bright transition-colors"
         >
+          <ExternalLink size={14} />
           View spell details
         </a>
       </div>
     );
   }
-  
-  // Format normal text descriptions with proper paragraphs
-  // Split by sentences and create logical paragraphs
+
   const sentences = description.split(/(?<=[.!?])\s+/g);
   const paragraphs: string[] = [];
   let currentParagraph = '';
-  
+
   sentences.forEach((sentence, index) => {
     currentParagraph += sentence + (index < sentences.length - 1 ? ' ' : '');
-    
-    // Create paragraphs after roughly 150 characters or at explicit line breaks
+
     if (currentParagraph.length > 150 || sentence.includes('\n') || index === sentences.length - 1) {
       paragraphs.push(currentParagraph.trim());
       currentParagraph = '';
     }
   });
-  
+
   return paragraphs.map((paragraph, index) => (
-    <p key={index} className={index > 0 ? "mt-2 text-left" : "text-left"}>
+    <p key={index} className={index > 0 ? "mt-3 text-left" : "text-left"}>
       {paragraph}
     </p>
   ));
@@ -62,7 +70,7 @@ const AbilityDetails: React.FC<AbilityDetailsProps> = ({
   onToggle
 }) => {
   const getEssenceIcon = (id: EssencePathId) => {
-    const iconProps = { size: 12, className: "inline" };
+    const iconProps = { size: 16, style: { color: ESSENCE_ICON_COLORS[id] } };
     switch (id) {
       case 'water': return <Droplet {...iconProps} />;
       case 'fire': return <Flame {...iconProps} />;
@@ -78,92 +86,107 @@ const AbilityDetails: React.FC<AbilityDetailsProps> = ({
   };
 
   const cost = getTierCost(ability.tier);
-  
+
   let abilityType = '';
-  let typeColor = '';
-  
+  let typeColorClass = '';
+
   if (ability.isPassive) {
     abilityType = 'Passive Ability';
-    typeColor = 'text-yellow-300';
+    typeColorClass = 'text-type-passive';
   } else if (ability.isActive) {
     abilityType = 'Active Ability';
-    typeColor = 'text-blue-300';
+    typeColorClass = 'text-type-active';
   } else if (ability.isCantrip) {
     abilityType = 'Cantrip Spell';
-    typeColor = 'text-purple-300';
+    typeColorClass = 'text-type-cantrip';
   } else if (ability.isSpell) {
     abilityType = `${ability.tier} Level Spell`;
-    typeColor = 'text-green-300';
+    typeColorClass = 'text-type-spell';
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={onClose}>
-      <div className="bg-gray-800 border border-gray-600 rounded-lg max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-        <div className="sticky top-0 bg-gray-800 p-4 border-b border-gray-600 flex justify-between items-center">
-          <h2 className="text-xl font-bold">{ability.name}</h2>
-          <button 
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-void/80 backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
+      <div
+        className="arcane-panel max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col animate-fade-in"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="sticky top-0 bg-slate p-5 border-b border-gold-subtle flex justify-between items-center">
+          <h2 className="font-display text-xl tracking-wide text-ivory">{ability.name}</h2>
+          <button
             onClick={onClose}
-            className="p-1 hover:bg-gray-700 rounded-full"
+            className="p-2 text-mist hover:text-parchment hover:bg-charcoal rounded transition-colors"
           >
             <X size={20} />
           </button>
         </div>
-        
-        <div className="p-4">
-          <div className="flex justify-between items-center mb-4">
+
+        {/* Content */}
+        <div className="p-5 overflow-y-auto flex-1">
+          {/* Meta info */}
+          <div className="flex justify-between items-center mb-5">
             <div className="flex items-center gap-2">
-              <div className={`w-5 h-5 rounded-full ${path.color} flex items-center justify-center text-white`}>
+              <div className={`w-6 h-6 rounded ${path.color} flex items-center justify-center ${path.glowClass}`}>
                 {getEssenceIcon(path.id)}
               </div>
-              <span>{path.name} Path</span>
+              <span className={`font-display text-sm tracking-wide ${path.textColor}`}>
+                {path.name} Path
+              </span>
             </div>
-            
-            <div className={`${typeColor} font-medium`}>
+
+            <span className={`font-display text-sm tracking-wider ${typeColorClass}`}>
               {abilityType}
-            </div>
+            </span>
           </div>
-          
-          <div className="bg-gray-700 p-4 rounded-lg mb-4">
-            <h3 className="text-lg font-medium mb-2">Description</h3>
-            <div className="text-gray-300 leading-relaxed">
+
+          {/* Description */}
+          <div className="arcane-card p-5 mb-5">
+            <h3 className="font-display text-sm tracking-wider text-gold mb-3">Description</h3>
+            <div className="text-parchment/90 leading-relaxed font-body">
               {formatDescription(ability.description)}
             </div>
           </div>
-          
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="bg-gray-700 p-3 rounded-lg">
-              <h3 className="text-sm font-medium mb-1">Tier</h3>
-              <div className="text-gray-300">
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-4 mb-5">
+            <div className="arcane-card p-4">
+              <h3 className="font-display text-xs tracking-wider text-mist mb-1">Tier</h3>
+              <div className="font-display text-sm text-ivory">
                 {ability.tier.toString().charAt(0).toUpperCase() + ability.tier.toString().slice(1)}
               </div>
             </div>
-            
-            <div className="bg-gray-700 p-3 rounded-lg">
-              <h3 className="text-sm font-medium mb-1">Essence Cost</h3>
-              <div className="text-gray-300">
+
+            <div className="arcane-card p-4">
+              <h3 className="font-display text-xs tracking-wider text-mist mb-1">Essence Cost</h3>
+              <div className="font-body text-sm">
                 {ability.isPassive || ability.isCantrip
-                  ? `Reduces max essence by ${cost}`
-                  : `Costs ${cost} essence to use`}
+                  ? <span className="text-essence-fire">Reduces max by {cost}</span>
+                  : <span className="text-essence-water">Costs {cost} to use</span>
+                }
               </div>
             </div>
           </div>
-          
-          <div className="flex justify-end">
-            {!isLocked && (
+
+          {/* Action Button */}
+          {!isLocked && (
+            <div className="flex justify-end">
               <button
                 onClick={onToggle}
                 className={`
-                  px-4 py-2 rounded font-medium
+                  arcane-btn-primary px-5 py-2.5 font-display text-sm tracking-wider
                   ${isSelected
-                    ? 'bg-red-600 hover:bg-red-500'
-                    : 'bg-blue-600 hover:bg-blue-500'
+                    ? '!text-essence-fire !border-essence-fire hover:!shadow-glow-fire'
+                    : '!text-essence-water !border-essence-water hover:!shadow-glow-water'
                   }
                 `}
               >
                 {isSelected ? 'Remove Ability' : 'Select Ability'}
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

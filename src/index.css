@@ -2,28 +2,599 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================================================
+   ARCANE GRIMOIRE - Design System
+   A mystical spellbook aesthetic for D&D campaigns
+   ================================================ */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* Typography */
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Crimson Pro', serif;
+
+  /* Core Colors - Obsidian & Parchment (improved contrast) */
+  --color-void: #0d0d14;
+  --color-obsidian: #151520;
+  --color-slate: #1e1e2a;
+  --color-charcoal: #2a2a3a;
+  --color-ash: #454558;
+  --color-mist: #8888a0;
+  --color-fog: #b0b0c0;
+  --color-parchment: #f0ece0;
+  --color-ivory: #faf8f2;
+
+  /* Accent - Arcane Gold */
+  --color-gold-dim: #8b7355;
+  --color-gold: #c9a959;
+  --color-gold-bright: #f4d47c;
+  --color-gold-glow: rgba(201, 169, 89, 0.4);
+
+  /* Essence Colors - Jewel Tones */
+  --essence-water: #4a9eff;
+  --essence-water-dim: #2d5a8a;
+  --essence-water-glow: rgba(74, 158, 255, 0.3);
+
+  --essence-fire: #ff6b4a;
+  --essence-fire-dim: #8a3d2d;
+  --essence-fire-glow: rgba(255, 107, 74, 0.3);
+
+  --essence-earth: #c49a6c;
+  --essence-earth-dim: #6b5340;
+  --essence-earth-glow: rgba(196, 154, 108, 0.3);
+
+  --essence-metal: #a8b4c4;
+  --essence-metal-dim: #5a6270;
+  --essence-metal-glow: rgba(168, 180, 196, 0.3);
+
+  --essence-wood: #5dba6f;
+  --essence-wood-dim: #2d5a35;
+  --essence-wood-glow: rgba(93, 186, 111, 0.3);
+
+  --essence-poison: #9b4dca;
+  --essence-poison-dim: #4d2665;
+  --essence-poison-glow: rgba(155, 77, 202, 0.3);
+
+  --essence-acid: #a8e04a;
+  --essence-acid-dim: #546a25;
+  --essence-acid-glow: rgba(168, 224, 74, 0.3);
+
+  --essence-lightning: #c084fc;
+  --essence-lightning-dim: #5a3d7a;
+  --essence-lightning-glow: rgba(192, 132, 252, 0.3);
+
+  --essence-wind: #7dd3fc;
+  --essence-wind-dim: #3d6a7a;
+  --essence-wind-glow: rgba(125, 211, 252, 0.3);
+
+  /* Rarity Colors */
+  --rarity-common: #9ca3af;
+  --rarity-uncommon: #4ade80;
+  --rarity-rare: #60a5fa;
+  --rarity-very-rare: #c084fc;
+  --rarity-legendary: #fb923c;
+
+  /* Ability Type Colors */
+  --type-passive: #c49a6c;
+  --type-active: #4a9eff;
+  --type-cantrip: #c084fc;
+  --type-spell: #4ade80;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-glow-gold: 0 0 20px var(--color-gold-glow), 0 0 40px rgba(201, 169, 89, 0.2);
+
+  /* Borders */
+  --border-subtle: 1px solid rgba(201, 169, 89, 0.15);
+  --border-accent: 1px solid rgba(201, 169, 89, 0.3);
+  --border-strong: 2px solid var(--color-gold);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Base Styling */
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
   font-weight: 400;
-
   color-scheme: dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: var(--color-parchment);
+  background-color: var(--color-void);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ================================================
+   BASE STYLES
+   ================================================ */
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201, 169, 89, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(74, 158, 255, 0.02) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 100%, rgba(155, 77, 202, 0.02) 0%, transparent 40%),
+    var(--color-void);
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+}
+
+/* ================================================
+   TYPOGRAPHY UTILITIES
+   ================================================ */
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  color: var(--color-ivory);
+}
+
+/* ================================================
+   ARCANE CARD STYLES
+   ================================================ */
+
+.arcane-card {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 36, 0.95) 0%,
+    rgba(18, 18, 26, 0.98) 100%
+  );
+  border: 1px solid rgba(201, 169, 89, 0.2);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.arcane-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 169, 89, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+.arcane-card-hover {
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.arcane-card-hover:hover {
+  border-color: rgba(201, 169, 89, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    var(--shadow-lg),
+    0 0 30px rgba(201, 169, 89, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ================================================
+   ARCANE PANEL (Larger containers)
+   ================================================ */
+
+.arcane-panel {
+  background:
+    linear-gradient(180deg, rgba(26, 26, 36, 0.9) 0%, rgba(18, 18, 26, 0.95) 100%);
+  border: 1px solid rgba(201, 169, 89, 0.15);
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.arcane-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 89, 0.3) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(201, 169, 89, 0.15) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ================================================
+   ORNATE DECORATIONS
+   ================================================ */
+
+.ornate-corners {
+  position: relative;
+}
+
+.ornate-corners::before,
+.ornate-corners::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--color-gold);
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.ornate-corners::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+  border-radius: 4px 0 0 0;
+}
+
+.ornate-corners::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 4px 0;
+}
+
+/* ================================================
+   BUTTONS
+   ================================================ */
+
+.arcane-btn {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding: 0.625rem 1.25rem;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 169, 89, 0.3);
+  background: linear-gradient(
+    180deg,
+    rgba(201, 169, 89, 0.1) 0%,
+    rgba(201, 169, 89, 0.05) 100%
+  );
+  color: var(--color-gold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.arcane-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(201, 169, 89, 0.2) 0%,
+    rgba(201, 169, 89, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.arcane-btn:hover::before {
+  opacity: 1;
+}
+
+.arcane-btn:hover {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-glow-gold);
+  color: var(--color-gold-bright);
+}
+
+.arcane-btn-primary {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 169, 89, 0.25) 0%,
+    rgba(139, 115, 85, 0.3) 100%
+  );
+  border-color: var(--color-gold);
+}
+
+.arcane-btn-primary:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 169, 89, 0.4) 0%,
+    rgba(201, 169, 89, 0.25) 100%
+  );
+}
+
+/* ================================================
+   FORM INPUTS
+   ================================================ */
+
+.arcane-input {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  /* padding controlled by Tailwind utilities */
+  border-radius: 4px;
+  border: 1px solid rgba(201, 169, 89, 0.2);
+  background: rgba(10, 10, 15, 0.8);
+  color: var(--color-parchment);
+  transition: all var(--transition-base);
+}
+
+.arcane-input::placeholder {
+  color: var(--color-mist);
+}
+
+.arcane-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 169, 89, 0.15);
+}
+
+/* ================================================
+   SCROLLBAR STYLING
+   ================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--color-ash) 0%,
+    var(--color-charcoal) 100%
+  );
+  border-radius: 4px;
+  border: 1px solid rgba(201, 169, 89, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-mist) 0%,
+    var(--color-ash) 100%
+  );
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--color-gold-glow);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--color-gold-glow), 0 0 40px rgba(201, 169, 89, 0.2);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes essence-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 169, 89, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ================================================
+   ESSENCE-SPECIFIC GLOWS
+   ================================================ */
+
+.glow-water { box-shadow: 0 0 20px var(--essence-water-glow); }
+.glow-fire { box-shadow: 0 0 20px var(--essence-fire-glow); }
+.glow-earth { box-shadow: 0 0 20px var(--essence-earth-glow); }
+.glow-metal { box-shadow: 0 0 20px var(--essence-metal-glow); }
+.glow-wood { box-shadow: 0 0 20px var(--essence-wood-glow); }
+.glow-poison { box-shadow: 0 0 20px var(--essence-poison-glow); }
+.glow-acid { box-shadow: 0 0 20px var(--essence-acid-glow); }
+.glow-lightning { box-shadow: 0 0 20px var(--essence-lightning-glow); }
+.glow-wind { box-shadow: 0 0 20px var(--essence-wind-glow); }
+
+/* ================================================
+   TOOLTIP STYLING
+   ================================================ */
+
+.arcane-tooltip {
+  background: linear-gradient(
+    135deg,
+    rgba(18, 18, 26, 0.98) 0%,
+    rgba(10, 10, 15, 0.98) 100%
+  );
+  border: 1px solid rgba(201, 169, 89, 0.3);
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+/* ================================================
+   BADGE STYLES
+   ================================================ */
+
+.arcane-badge {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-mist);
+}
+
+/* ================================================
+   SELECTED STATE STYLES
+   ================================================ */
+
+.ability-selected {
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 89, 0.15) 0%,
+    rgba(201, 169, 89, 0.08) 100%
+  ) !important;
+  border-color: var(--color-gold) !important;
+  box-shadow:
+    0 0 0 1px var(--color-gold),
+    0 0 20px rgba(201, 169, 89, 0.3),
+    inset 0 0 30px rgba(201, 169, 89, 0.1) !important;
+}
+
+.ability-selected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 89, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* ================================================
+   DIVIDER STYLES
+   ================================================ */
+
+.arcane-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 169, 89, 0.3) 20%,
+    rgba(201, 169, 89, 0.5) 50%,
+    rgba(201, 169, 89, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+.arcane-divider-vertical {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(201, 169, 89, 0.3) 20%,
+    rgba(201, 169, 89, 0.5) 50%,
+    rgba(201, 169, 89, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+/* ================================================
+   SELECTION STYLING
+   ================================================ */
+
+::selection {
+  background: rgba(201, 169, 89, 0.3);
+  color: var(--color-ivory);
+}
+
+/* ================================================
+   FOCUS STATES
+   ================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ================================================
+   LINK STYLING
+   ================================================ */
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-gold-bright);
 }

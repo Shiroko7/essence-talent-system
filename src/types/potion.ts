@@ -13,8 +13,8 @@ export interface Potion {
   effect: string;
   isAddictive?: boolean;
   overdoseEffect?: string;
-  savingThrow?: string; // e.g., "Constitution", "Wisdom"
-  duration?: string; // e.g., "1 hour", "1 minute"
+  savingThrow?: string;
+  duration?: string;
 }
 
 // Filter state for potions
@@ -40,14 +40,26 @@ export const POTION_CATEGORIES: Array<{ id: PotionCategory; label: string }> = [
   { id: 'medicine', label: 'Medicine' },
 ];
 
-// Helper function to get rarity color
+// Updated rarity colors for Arcane Grimoire theme
 export function getPotionRarityColor(rarity: PotionRarity): string {
   const colors: Record<PotionRarity, string> = {
-    'common': 'bg-gray-600 text-gray-200',
-    'uncommon': 'bg-green-600 text-green-200',
-    'rare': 'bg-blue-600 text-blue-200',
-    'very rare': 'bg-purple-600 text-purple-200',
-    'legendary': 'bg-orange-600 text-orange-200',
+    'common': 'bg-rarity-common/20 text-rarity-common border border-rarity-common/30',
+    'uncommon': 'bg-rarity-uncommon/20 text-rarity-uncommon border border-rarity-uncommon/30',
+    'rare': 'bg-rarity-rare/20 text-rarity-rare border border-rarity-rare/30',
+    'very rare': 'bg-rarity-very-rare/20 text-rarity-very-rare border border-rarity-very-rare/30',
+    'legendary': 'bg-rarity-legendary/20 text-rarity-legendary border border-rarity-legendary/30',
+  };
+  return colors[rarity];
+}
+
+// Get text color class for rarity
+export function getRarityTextColor(rarity: PotionRarity): string {
+  const colors: Record<PotionRarity, string> = {
+    'common': 'text-rarity-common',
+    'uncommon': 'text-rarity-uncommon',
+    'rare': 'text-rarity-rare',
+    'very rare': 'text-rarity-very-rare',
+    'legendary': 'text-rarity-legendary',
   };
   return colors[rarity];
 }
@@ -80,4 +92,3 @@ export function getCraftingCost(rarity: PotionRarity): CraftingCost {
     pp: gp / 10,
   };
 }
-

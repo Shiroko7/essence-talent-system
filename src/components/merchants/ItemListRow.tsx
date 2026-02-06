@@ -13,7 +13,6 @@ const ItemListRow: React.FC<ItemListRowProps> = ({ item, pricing, isSelected, on
   const priceFormatted = formatPrice(price, pricing.currency);
   const rarityColor = getRarityColor(item.rarity);
 
-  // Get specific weapon/armor type or fall back to generic type
   const getItemTypeDisplay = () => {
     if (item.type === 'weapon' && item.properties?.weaponType) {
       return item.properties.weaponType.charAt(0).toUpperCase() + item.properties.weaponType.slice(1);
@@ -25,29 +24,34 @@ const ItemListRow: React.FC<ItemListRowProps> = ({ item, pricing, isSelected, on
   };
 
   return (
-    <div
+    <button
       onClick={onClick}
       className={`
-        p-3 border-b border-gray-700 cursor-pointer transition-colors
-        ${isSelected ? 'bg-blue-900 border-blue-600' : 'hover:bg-gray-700'}
+        w-full text-left p-4 border-b border-gold-subtle transition-all duration-200
+        ${isSelected
+          ? 'bg-gold/10 border-l-2 border-l-gold'
+          : 'hover:bg-charcoal/50 border-l-2 border-l-transparent'
+        }
       `}
     >
-      {/* Title row - left aligned */}
-      <h3 className="text-sm font-medium text-white text-left mb-2">{item.name}</h3>
+      {/* Title row */}
+      <h3 className={`font-display text-sm tracking-wide mb-2 ${isSelected ? 'text-gold-bright' : 'text-ivory'}`}>
+        {item.name}
+      </h3>
 
       {/* Badges and price row */}
       <div className="flex justify-between items-center gap-3">
         <div className="flex gap-2">
-          <span className={`text-xs px-1.5 py-0.5 rounded ${rarityColor}`}>
+          <span className={`px-2 py-0.5 rounded text-xs font-display tracking-wide ${rarityColor}`}>
             {item.rarity.charAt(0).toUpperCase() + item.rarity.slice(1)}
           </span>
-          <span className="text-xs text-gray-400">
+          <span className="text-xs text-mist font-body">
             {getItemTypeDisplay()}
           </span>
         </div>
-        <p className="text-sm font-bold text-green-400">{priceFormatted}</p>
+        <p className="text-sm font-display text-type-spell">{priceFormatted}</p>
       </div>
-    </div>
+    </button>
   );
 };
 

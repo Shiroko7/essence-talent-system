@@ -1,7 +1,63 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-22T22:31:53.418Z",
+  "generatedAt": "2026-02-05T23:09:13.247Z",
   "entries": [
+    {
+      "id": "2ad0716f6bacc12b54888de10978abcf608a43ec-Tide's Reflection Art III (Thalassios)||master",
+      "date": "2026-02-05 10:02:20 -0300",
+      "commitHash": "2ad0716f6bacc12b54888de10978abcf608a43ec",
+      "commitMessage": "patch fix",
+      "essenceType": "water",
+      "changeType": "modified",
+      "ability": {
+        "id": "water_adept_tides_reflection_art_iii",
+        "name": "Tide's Reflection Art III (Thalassios)",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additinonally, you can now summon three Water Clones at the same time, and they last for 10 minutes.",
+          "newValue": "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additionally, you can now summon three Water Clones at the same time, and they last for 10 minutes. Your Water Clones now emit dim moonlight in a 60-foot radius around them."
+        }
+      ]
+    },
+    {
+      "id": "2ad0716f6bacc12b54888de10978abcf608a43ec-Sprout Foliage||1st",
+      "date": "2026-02-05 10:02:20 -0300",
+      "commitHash": "2ad0716f6bacc12b54888de10978abcf608a43ec",
+      "commitMessage": "patch fix",
+      "essenceType": "wood",
+      "changeType": "added",
+      "ability": {
+        "id": "wood_1st_level_sprout_foliage",
+        "name": "Sprout Foliage",
+        "tier": "1st",
+        "description": "https://5e.tools/spells.html#sprout%20foliage_obojimatallgrass",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": true,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "2ad0716f6bacc12b54888de10978abcf608a43ec-Sprout Foliage||2nd",
+      "date": "2026-02-05 10:02:20 -0300",
+      "commitHash": "2ad0716f6bacc12b54888de10978abcf608a43ec",
+      "commitMessage": "patch fix",
+      "essenceType": "wood",
+      "changeType": "removed",
+      "ability": {
+        "id": "wood_2nd_level_sprout_foliage",
+        "name": "Sprout Foliage",
+        "tier": "2nd",
+        "description": "https://5e.tools/spells.html#sprout%20foliage_obojimatallgrass",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": true,
+        "isCantrip": false
+      }
+    },
     {
       "id": "c8cc5d8f826477683091c2fadf77644fc6fd600f-Whirlwind||7th",
       "date": "2026-01-04 22:11:46 -0300",

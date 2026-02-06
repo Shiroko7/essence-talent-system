@@ -74,9 +74,19 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
     return ESSENCE_PATHS.find(e => e.id === id)?.name || id;
   };
 
-  const getEssenceColor = (id: EssencePathId): string => {
-    const path = ESSENCE_PATHS.find(e => e.id === id);
-    return path?.color || 'bg-gray-600';
+  const getEssenceStyles = (id: EssencePathId): string => {
+    const styles: Record<EssencePathId, string> = {
+      water: 'bg-essence-water/20 text-essence-water border border-essence-water/30',
+      fire: 'bg-essence-fire/20 text-essence-fire border border-essence-fire/30',
+      earth: 'bg-essence-earth/20 text-essence-earth border border-essence-earth/30',
+      metal: 'bg-essence-metal/20 text-essence-metal border border-essence-metal/30',
+      wood: 'bg-essence-wood/20 text-essence-wood border border-essence-wood/30',
+      poison: 'bg-essence-poison/20 text-essence-poison border border-essence-poison/30',
+      acid: 'bg-essence-acid/20 text-essence-acid border border-essence-acid/30',
+      lightning: 'bg-essence-lightning/20 text-essence-lightning border border-essence-lightning/30',
+      wind: 'bg-essence-wind/20 text-essence-wind border border-essence-wind/30',
+    };
+    return styles[id] || 'bg-charcoal text-mist border border-gold-subtle';
   };
 
   const getAbilityTypeName = (id: FilterType) => {
@@ -87,26 +97,28 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
     return CHANGE_TYPES.find(c => c.id === id)?.label || id;
   };
 
+  const hasFilters = selectedEssences.length > 0 || selectedChangeTypes.length > 0 || selectedAbilityTypes.length > 0;
+
   return (
     <div className="space-y-3 mb-6 relative z-50">
       {/* Row 1: Search + Updated Date */}
       <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
         {/* Search Input */}
-        <div className="relative w-full sm:flex-1 sm:max-w-md">
+        <div className="relative w-full sm:flex-1 sm:max-w-md group">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search size={16} className="text-gray-400" />
+            <Search size={16} className="text-mist group-focus-within:text-gold transition-colors" />
           </div>
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md pl-10 pr-10 py-2 w-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="arcane-input w-full pl-12 pr-10 py-2 text-sm"
             placeholder="Search abilities..."
           />
           {searchTerm && (
             <button
               onClick={() => onSearchChange('')}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-mist hover:text-parchment transition-colors"
               aria-label="Clear search"
             >
               <X size={16} />
@@ -115,27 +127,28 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
         </div>
 
         {/* Updated Date */}
-        <span className="text-sm text-gray-400">
-          Updated: {formatDate(lastUpdated)}
+        <span className="text-sm text-mist font-body">
+          <span className="font-display text-xs tracking-wider uppercase text-gold/60">Updated:</span>{' '}
+          <span className="text-parchment">{formatDate(lastUpdated)}</span>
         </span>
       </div>
 
       {/* Row 2: Filters Dropdowns + Clear All */}
       <div className="flex flex-col gap-2">
         <div className="flex flex-wrap items-center gap-3">
-          <span className="text-sm text-gray-400 font-medium">Filters:</span>
+          <span className="font-display text-xs tracking-wider text-mist uppercase">Filters:</span>
 
           {/* Essence Dropdown */}
           <div className="relative" ref={essenceDropdownRef}>
             <button
               onClick={() => setEssenceDropdownOpen(!essenceDropdownOpen)}
-              className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent flex items-center gap-2 hover:bg-gray-600 transition-colors"
+              className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer flex items-center gap-2 hover:border-gold/50 transition-colors"
             >
               + Essence
               <ChevronDown size={14} className={`transition-transform ${essenceDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             {essenceDropdownOpen && (
-              <div className="absolute top-full left-0 mt-1 bg-gray-700 border border-gray-600 rounded-md shadow-lg z-100 min-w-[160px]">
+              <div className="absolute top-full left-0 mt-1 bg-obsidian border border-gold-subtle rounded-md shadow-lg z-[100] min-w-[160px] overflow-hidden">
                 {ESSENCE_PATHS.filter(e => !selectedEssences.includes(e.id)).map((essence) => (
                   <button
                     key={essence.id}
@@ -143,9 +156,9 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
                       onEssenceToggle(essence.id);
                       setEssenceDropdownOpen(false);
                     }}
-                    className="w-full px-3 py-2 text-sm text-left hover:bg-gray-600 transition-colors flex items-center gap-2 text-white"
+                    className="w-full px-3 py-2 text-sm text-left hover:bg-charcoal transition-colors flex items-center gap-2 text-parchment font-body"
                   >
-                    {getEssenceIcon(essence.id)}
+                    <span className={`text-essence-${essence.id}`}>{getEssenceIcon(essence.id)}</span>
                     {essence.name}
                   </button>
                 ))}
@@ -162,12 +175,12 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
                 e.target.value = '';
               }
             }}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer"
             value=""
           >
-            <option value="">+ Type</option>
+            <option value="" className="bg-obsidian">+ Type</option>
             {FILTER_PILLS.filter(p => p.id !== 'all' && !selectedAbilityTypes.includes(p.id)).map((pill) => (
-              <option key={pill.id} value={pill.id}>
+              <option key={pill.id} value={pill.id} className="bg-obsidian">
                 {pill.label}
               </option>
             ))}
@@ -182,22 +195,22 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
                 e.target.value = '';
               }
             }}
-            className="bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="arcane-input py-1.5 px-3 text-sm font-display tracking-wide cursor-pointer"
             value=""
           >
-            <option value="">+ Change</option>
+            <option value="" className="bg-obsidian">+ Change</option>
             {CHANGE_TYPES.filter(c => c.id !== 'all' && !selectedChangeTypes.includes(c.id)).map((changeType) => (
-              <option key={changeType.id} value={changeType.id}>
+              <option key={changeType.id} value={changeType.id} className="bg-obsidian">
                 {changeType.label}
               </option>
             ))}
           </select>
 
           {/* Clear All Button */}
-          {(selectedEssences.length > 0 || selectedChangeTypes.length > 0 || selectedAbilityTypes.length > 0) && (
+          {hasFilters && (
             <button
               onClick={onClearAll}
-              className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors ml-auto"
+              className="font-display text-xs tracking-wider text-gold hover:text-gold-bright transition-colors ml-auto"
             >
               Clear all
             </button>
@@ -205,14 +218,14 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
         </div>
 
         {/* Selected Filter Pills */}
-        {(selectedEssences.length > 0 || selectedChangeTypes.length > 0 || selectedAbilityTypes.length > 0) && (
+        {hasFilters && (
           <div className="flex flex-wrap gap-2">
             {/* Essence Pills */}
             {selectedEssences.map((essence) => (
               <button
                 key={essence}
                 onClick={() => onEssenceToggle(essence)}
-                className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium text-white transition-colors hover:opacity-80 ${getEssenceColor(essence)}`}
+                className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-display tracking-wide transition-colors hover:opacity-80 ${getEssenceStyles(essence)}`}
               >
                 {getEssenceIcon(essence)}
                 {getEssenceName(essence)}
@@ -225,7 +238,7 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
               <button
                 key={type}
                 onClick={() => onAbilityTypeToggle(type)}
-                className="flex items-center gap-1 px-2 py-1 bg-indigo-600 hover:bg-indigo-500 rounded-full text-xs font-medium text-white transition-colors"
+                className="flex items-center gap-1 px-2.5 py-1 bg-gold/20 text-gold border border-gold/30 rounded text-xs font-display tracking-wide transition-colors hover:opacity-80"
               >
                 {getAbilityTypeName(type)}
                 <X size={12} />
@@ -237,7 +250,7 @@ const ChangelogFilters: React.FC<ChangelogFiltersProps> = ({
               <button
                 key={changeType}
                 onClick={() => onChangeTypeToggle(changeType)}
-                className="flex items-center gap-1 px-2 py-1 bg-indigo-600 hover:bg-indigo-500 rounded-full text-xs font-medium text-white transition-colors"
+                className="flex items-center gap-1 px-2.5 py-1 bg-gold/20 text-gold border border-gold/30 rounded text-xs font-display tracking-wide transition-colors hover:opacity-80"
               >
                 {getChangeTypeName(changeType)}
                 <X size={12} />

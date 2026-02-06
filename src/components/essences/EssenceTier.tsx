@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlertCircle } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import { Ability, EssencePath, Tier } from '../../types/essence';
 import AbilityCard from './AbilityCard';
 import AbilityDetails from './AbilityDetails';
@@ -28,30 +28,39 @@ const EssenceTier: React.FC<EssenceTierProps> = ({
   };
 
   return (
-    <div className={`p-4 rounded-lg relative border ${isUnlocked ? 'border-gray-600' : 'border-gray-700 opacity-70'}`}>
-      <div className="flex justify-between mb-3">
-        <h3 className="text-lg font-bold flex items-center gap-2">
-          {tier.name} 
-          <span className="text-sm font-normal text-gray-400">
-            (Levels {tier.levels})
-          </span>
-        </h3>
-        <div className="text-sm">
-          Cost: <span className="font-medium">{tier.pointCost} essence {tier.pointCost === 1 ? 'point' : 'points'}</span>
+    <div className={`
+      arcane-panel p-5 relative
+      ${isUnlocked ? '' : 'opacity-60'}
+    `}>
+      {/* Tier Header */}
+      <div className="flex justify-between items-center mb-4 pb-3 border-b border-gold-subtle">
+        <div>
+          <h3 className="font-display text-base tracking-wide text-ivory flex items-center gap-2">
+            {tier.name}
+            <span className="text-xs font-body text-mist font-normal">
+              (Levels {tier.levels})
+            </span>
+          </h3>
+        </div>
+        <div className="font-display text-xs tracking-wider text-gold">
+          {tier.pointCost} {tier.pointCost === 1 ? 'Point' : 'Points'}
         </div>
       </div>
-      
+
+      {/* Lock Overlay */}
       {!isUnlocked && (
-        <div className="absolute inset-0 bg-black bg-opacity-30 rounded-lg flex items-center justify-center z-10">
-          <div className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded">
-            <AlertCircle size={18} />
-            <span>Unlock previous tier first</span>
+        <div className="absolute inset-0 bg-void/60 backdrop-blur-[2px] rounded-md flex items-center justify-center z-10">
+          <div className="arcane-card px-4 py-2 flex items-center gap-2">
+            <Lock size={16} className="text-gold" />
+            <span className="font-display text-sm tracking-wide text-fog">
+              Unlock previous tier first
+            </span>
           </div>
         </div>
       )}
-      
-      {/* Updated grid layout with fewer columns and more space */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      {/* Abilities Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {abilities.length > 0 ? (
           abilities.map((ability) => (
             <AbilityCard
@@ -65,7 +74,7 @@ const EssenceTier: React.FC<EssenceTierProps> = ({
             />
           ))
         ) : (
-          <div className="col-span-full text-gray-500 text-center py-4">
+          <div className="col-span-full text-center py-6 text-mist font-body italic">
             No abilities available for this tier
           </div>
         )}

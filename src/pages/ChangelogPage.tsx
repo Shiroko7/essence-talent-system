@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { ScrollText, ChevronDown, ChevronRight, History } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import ChangelogFilters from '../components/changelog/ChangelogFilters';
 import ChangelogTimeline from '../components/changelog/ChangelogTimeline';
@@ -19,14 +20,11 @@ const ChangelogPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showLegacy, setShowLegacy] = useState(false);
 
-  // Separate and filter entries
   const { currentEntries, legacyEntries } = useMemo(() => {
-    // First, filter out the migration commit entirely
     const nonMigrationEntries = changelogData.entries.filter(
       entry => entry.commitHash !== MIGRATION_COMMIT
     );
 
-    // Separate into legacy (before migration) and current (after migration)
     const legacy: typeof changelogData.entries = [];
     const current: typeof changelogData.entries = [];
 
@@ -39,23 +37,18 @@ const ChangelogPage: React.FC = () => {
       }
     });
 
-    // Apply filters to both
     const applyFilters = (entries: typeof changelogData.entries) => {
       return entries.filter(entry => {
-        // Map legacy 'air' essence type to 'wind'
         const normalizedEssenceType = entry.essenceType === 'air' ? 'wind' : entry.essenceType;
 
-        // Filter by essence type (OR logic - show if matches ANY selected essence)
         if (selectedEssences.length > 0 && !selectedEssences.includes(normalizedEssenceType as EssencePathId)) {
           return false;
         }
 
-        // Filter by change type (OR logic - show if matches ANY selected change type)
         if (selectedChangeTypes.length > 0 && !selectedChangeTypes.includes(entry.changeType as ChangeTypeFilter)) {
           return false;
         }
 
-        // Filter by ability type (OR logic - show if matches ANY selected ability type)
         if (selectedAbilityTypes.length > 0) {
           const matchesAny = selectedAbilityTypes.some(type => {
             if (type === 'active') return entry.ability.isActive;
@@ -67,32 +60,26 @@ const ChangelogPage: React.FC = () => {
           if (!matchesAny) return false;
         }
 
-        // Filter by search term (fuzzy search on ability name, description, and change values)
         if (searchTerm) {
           const lowercaseSearchTerm = searchTerm.toLowerCase().trim();
           let matchFound = false;
 
-          // Search in ability name
           if (entry.ability.name.toLowerCase().includes(lowercaseSearchTerm)) {
             matchFound = true;
           }
 
-          // Search in ability description (for added/removed entries)
           if (!matchFound && entry.ability.description &&
               entry.ability.description.toLowerCase().includes(lowercaseSearchTerm)) {
             matchFound = true;
           }
 
-          // Search in old/new values for modified entries
           if (!matchFound && entry.changes) {
             for (const change of entry.changes) {
-              // Search in old value
               if ('oldValue' in change && change.oldValue !== undefined &&
                   String(change.oldValue).toLowerCase().includes(lowercaseSearchTerm)) {
                 matchFound = true;
                 break;
               }
-              // Search in new value
               if ('newValue' in change && change.newValue !== undefined &&
                   String(change.newValue).toLowerCase().includes(lowercaseSearchTerm)) {
                 matchFound = true;
@@ -119,25 +106,19 @@ const ChangelogPage: React.FC = () => {
 
   const handleEssenceToggle = (essence: EssencePathId) => {
     setSelectedEssences(prev =>
-      prev.includes(essence)
-        ? prev.filter(e => e !== essence)
-        : [...prev, essence]
+      prev.includes(essence) ? prev.filter(e => e !== essence) : [...prev, essence]
     );
   };
 
   const handleChangeTypeToggle = (changeType: ChangeTypeFilter) => {
     setSelectedChangeTypes(prev =>
-      prev.includes(changeType)
-        ? prev.filter(c => c !== changeType)
-        : [...prev, changeType]
+      prev.includes(changeType) ? prev.filter(c => c !== changeType) : [...prev, changeType]
     );
   };
 
   const handleAbilityTypeToggle = (abilityType: FilterType) => {
     setSelectedAbilityTypes(prev =>
-      prev.includes(abilityType)
-        ? prev.filter(t => t !== abilityType)
-        : [...prev, abilityType]
+      prev.includes(abilityType) ? prev.filter(t => t !== abilityType) : [...prev, abilityType]
     );
   };
 
@@ -150,12 +131,17 @@ const ChangelogPage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Changelog</h1>
-          <p className="text-gray-400 text-lg">
-            Track all changes to essence abilities across commits
+          <div className="flex items-center gap-3 mb-3">
+            <ScrollText size={32} className="text-gold" />
+            <h1 className="font-display text-3xl md:text-4xl tracking-wide text-ivory">
+              Changelog
+            </h1>
+          </div>
+          <p className="text-fog text-lg font-body">
+            Track all changes to essence abilities across commits.
           </p>
         </div>
 
@@ -174,16 +160,17 @@ const ChangelogPage: React.FC = () => {
         />
 
         {/* Results Count */}
-        <div className="mb-4 text-sm text-gray-400">
-          Showing {totalFilteredCount} of {totalCount} changes
+        <div className="mb-4 text-sm text-mist font-body">
+          Showing <span className="text-parchment">{totalFilteredCount}</span> of <span className="text-parchment">{totalCount}</span> changes
         </div>
 
         {/* Current Changes */}
         {currentEntries.length > 0 ? (
           <ChangelogTimeline entries={currentEntries} />
         ) : (
-          <div className="text-center py-8 text-gray-500">
-            No current changes match your filters
+          <div className="arcane-panel p-8 text-center">
+            <History size={32} className="mx-auto mb-3 text-mist/30" />
+            <p className="text-fog font-body">No current changes match your filters</p>
           </div>
         )}
 
@@ -192,18 +179,19 @@ const ChangelogPage: React.FC = () => {
           <div className="mt-12">
             <button
               onClick={() => setShowLegacy(!showLegacy)}
-              className="w-full flex items-center justify-between p-4 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-750 transition-colors"
+              className="w-full arcane-card arcane-card-hover p-4 flex items-center justify-between"
             >
               <div className="flex items-center gap-3">
-                <span className="text-lg font-semibold text-white">
+                <History size={20} className="text-gold/60" />
+                <span className="font-display text-lg tracking-wide text-ivory">
                   Legacy Changes (Pre-Markdown Era)
                 </span>
-                <span className="px-2 py-1 bg-gray-700 text-gray-300 rounded text-sm">
+                <span className="arcane-badge bg-charcoal text-mist">
                   {legacyEntries.length} changes
                 </span>
               </div>
-              <div className="text-gray-400">
-                {showLegacy ? '▼ Hide' : '▶ Show'}
+              <div className="text-mist">
+                {showLegacy ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
               </div>
             </button>
 

@@ -16,61 +16,59 @@ const CharacterControls: React.FC<CharacterControlsProps> = ({
   onSaveConfig,
   onLoadConfig
 }) => {
-  // Create array of level options
   const levelOptions = Array.from({ length: 20 }, (_, i) => i + 1);
-  
-  // Reference for file input
   const fileInputRef = React.useRef<HTMLInputElement>(null);
-  
+
   return (
-    <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-      <div className="flex items-center gap-2">
-        <label htmlFor="character-level" className="text-sm font-medium">
-          Character Level:
+    <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+      {/* Level Selector */}
+      <div className="flex items-center gap-3">
+        <label htmlFor="character-level" className="font-display text-sm tracking-wide text-fog">
+          Character Level
         </label>
         <select
           id="character-level"
           value={level}
           onChange={(e) => onLevelChange(Number(e.target.value))}
-          className="bg-gray-700 border border-gray-600 rounded px-2 py-1 text-sm focus:ring-blue-500 focus:border-blue-500"
+          className="arcane-input py-1.5 px-3 pr-8 text-sm font-display tracking-wide cursor-pointer"
         >
           {levelOptions.map((lvl) => (
-            <option key={lvl} value={lvl}>
+            <option key={lvl} value={lvl} className="bg-obsidian">
               {lvl}
             </option>
           ))}
         </select>
       </div>
-      
+
+      {/* Action Buttons */}
       <div className="flex gap-2">
         <button
           onClick={onReset}
-          className="flex items-center gap-1 bg-red-700 hover:bg-red-600 px-3 py-1 rounded text-sm"
+          className="arcane-btn flex items-center gap-2 text-xs !text-essence-fire !border-essence-fire/30 hover:!border-essence-fire hover:!shadow-glow-fire"
           title="Reset all selected abilities"
         >
           <RefreshCw size={14} />
           <span>Reset</span>
         </button>
-        
+
         <button
           onClick={onSaveConfig}
-          className="flex items-center gap-1 bg-blue-700 hover:bg-blue-600 px-3 py-1 rounded text-sm"
+          className="arcane-btn flex items-center gap-2 text-xs !text-essence-water !border-essence-water/30 hover:!border-essence-water hover:!shadow-glow-water"
           title="Save configuration to file"
         >
           <Download size={14} />
           <span>Save</span>
         </button>
-        
+
         <button
           onClick={() => fileInputRef.current?.click()}
-          className="flex items-center gap-1 bg-green-700 hover:bg-green-600 px-3 py-1 rounded text-sm"
+          className="arcane-btn flex items-center gap-2 text-xs !text-essence-wood !border-essence-wood/30 hover:!border-essence-wood hover:!shadow-glow-wood"
           title="Load configuration from file"
         >
           <Upload size={14} />
           <span>Load</span>
         </button>
-        
-        {/* Hidden file input */}
+
         <input
           type="file"
           ref={fileInputRef}

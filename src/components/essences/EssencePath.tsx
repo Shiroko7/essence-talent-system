@@ -13,28 +13,31 @@ interface EssencePathProps {
   onToggleAbility: (ability: Ability) => void;
 }
 
-// Helper function to get sort priority for abilities
 const getAbilitySortPriority = (ability: Ability): number => {
   if (ability.isPassive) return 0;
   if (ability.isActive) return 1;
   if (ability.isCantrip) return 2;
   if (ability.isSpell) {
-    // Sort spells by level - convert '1st', '2nd', etc. to numeric values
     const spellLevelMap: Record<string, number> = {
-      'cantrip': 0,
-      '1st': 1,
-      '2nd': 2,
-      '3rd': 3,
-      '4th': 4,
-      '5th': 5,
-      '6th': 6,
-      '7th': 7,
-      '8th': 8,
-      '9th': 9,
+      'cantrip': 0, '1st': 1, '2nd': 2, '3rd': 3, '4th': 4,
+      '5th': 5, '6th': 6, '7th': 7, '8th': 8, '9th': 9,
     };
     return 3 + (spellLevelMap[ability.tier.toString()] || 0);
   }
-  return 10; // Fallback for any unclassified abilities
+  return 10;
+};
+
+// Essence color configurations for icons
+const ESSENCE_ICON_COLORS: Record<EssencePathId, string> = {
+  water: '#4a9eff',
+  fire: '#ff6b4a',
+  earth: '#c49a6c',
+  metal: '#a8b4c4',
+  wood: '#5dba6f',
+  poison: '#9b4dca',
+  acid: '#a8e04a',
+  lightning: '#c084fc',
+  wind: '#7dd3fc',
 };
 
 const EssencePath: React.FC<EssencePathProps> = ({
@@ -46,7 +49,7 @@ const EssencePath: React.FC<EssencePathProps> = ({
   onToggleAbility
 }) => {
   const getEssenceIcon = (id: EssencePathId) => {
-    const iconProps = { size: 16, className: "inline" };
+    const iconProps = { size: 20, style: { color: ESSENCE_ICON_COLORS[id] } };
     switch (id) {
       case 'water': return <Droplet {...iconProps} />;
       case 'fire': return <Flame {...iconProps} />;
@@ -61,74 +64,57 @@ const EssencePath: React.FC<EssencePathProps> = ({
     }
   };
 
-  // Group abilities by tier
   const abilitiesByTier = TIERS.map(tier => {
-    // Filter abilities by tier and apply active filter
     let tierAbilities = abilities.filter(ability => {
-      // For regular tier-based abilities
       if (['initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster'].includes(ability.tier)) {
         return ability.tier === tier.id;
       }
-      
-      // For spell levels, map them to tiers based on level requirement
+
       if (['cantrip', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'].includes(ability.tier)) {
-        if (tier.id === 'initiate' && (ability.tier === 'cantrip' || ability.tier === '1st' || ability.tier === '2nd')) {
-          return true;
-        }
-        if (tier.id === 'adept' && (ability.tier === '3rd' || ability.tier === '4th')) {
-          return true;
-        }
-        if (tier.id === 'master' && (ability.tier === '5th' || ability.tier === '6th')) {
-          return true;
-        }
-        if (tier.id === 'grandmaster' && (ability.tier === '7th' || ability.tier === '8th')) {
-          return true;
-        }
-        if (tier.id === 'greatgrandmaster' && (ability.tier === '9th')) {
-          return true;
-        }
+        if (tier.id === 'initiate' && (ability.tier === 'cantrip' || ability.tier === '1st' || ability.tier === '2nd')) return true;
+        if (tier.id === 'adept' && (ability.tier === '3rd' || ability.tier === '4th')) return true;
+        if (tier.id === 'master' && (ability.tier === '5th' || ability.tier === '6th')) return true;
+        if (tier.id === 'grandmaster' && (ability.tier === '7th' || ability.tier === '8th')) return true;
+        if (tier.id === 'greatgrandmaster' && (ability.tier === '9th')) return true;
       }
-      
+
       return false;
     });
-    
-    // Apply filter if needed
+
     if (activeFilter !== 'all') {
-      if (activeFilter === 'active') {
-        tierAbilities = tierAbilities.filter(a => a.isActive);
-      } else if (activeFilter === 'passive') {
-        tierAbilities = tierAbilities.filter(a => a.isPassive);
-      } else if (activeFilter === 'cantrip') {
-        tierAbilities = tierAbilities.filter(a => a.isCantrip);
-      } else if (activeFilter === 'spell') {
-        tierAbilities = tierAbilities.filter(a => a.isSpell);
-      }
+      if (activeFilter === 'active') tierAbilities = tierAbilities.filter(a => a.isActive);
+      else if (activeFilter === 'passive') tierAbilities = tierAbilities.filter(a => a.isPassive);
+      else if (activeFilter === 'cantrip') tierAbilities = tierAbilities.filter(a => a.isCantrip);
+      else if (activeFilter === 'spell') tierAbilities = tierAbilities.filter(a => a.isSpell);
     }
-    
-    // Sort abilities within the tier based on the requested order:
-    // passive > active > cantrip > spell levels (increasing order)
-    tierAbilities.sort((a, b) => {
-      return getAbilitySortPriority(a) - getAbilitySortPriority(b);
-    });
-    
+
+    tierAbilities.sort((a, b) => getAbilitySortPriority(a) - getAbilitySortPriority(b));
+
     const unlocked = isTierUnlocked(tier.id, selectedAbilities, abilities, characterLevel);
-    
-    return {
-      tier,
-      abilities: tierAbilities,
-      unlocked
-    };
+
+    return { tier, abilities: tierAbilities, unlocked };
   });
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold flex items-center gap-2">
-        <div className={`w-6 h-6 rounded-full ${path.color} flex items-center justify-center text-white`}>
+      {/* Path Header */}
+      <div className="flex items-center gap-3 pb-3 border-b border-gold-subtle">
+        <div
+          className={`w-10 h-10 rounded-lg bg-charcoal border border-gold-subtle flex items-center justify-center ${path.glowClass}`}
+        >
           {getEssenceIcon(path.id)}
         </div>
-        {path.name} Path
-      </h2>
-      
+        <div>
+          <h2 className="font-display text-xl tracking-wide text-ivory">
+            {path.name} Path
+          </h2>
+          <p className="text-xs text-mist font-body">
+            Essence of {path.name.toLowerCase()}
+          </p>
+        </div>
+      </div>
+
+      {/* Tiers */}
       {abilitiesByTier.map(({ tier, abilities, unlocked }) => (
         <EssenceTier
           key={tier.id}

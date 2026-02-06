@@ -152,7 +152,7 @@ export const waterAbilities = [
   {
     id: "water_adept_tides_reflection_art_iii",
     name: "Tide's Reflection Art III (Thalassios)",
-    description: "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additinonally, you can now summon three Water Clones at the same time, and they last for 10 minutes.",
+    description: "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additionally, you can now summon three Water Clones at the same time, and they last for 10 minutes. Your Water Clones now emit dim moonlight in a 60-foot radius around them.",
     tier: "master",
     isActive: false,
     isPassive: true,

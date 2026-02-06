@@ -1,13 +1,13 @@
 // Define the essence paths
-export type EssencePathId = 
-  | 'water' 
-  | 'fire' 
-  | 'earth' 
-  | 'metal' 
-  | 'wood' 
-  | 'poison' 
-  | 'acid' 
-  | 'lightning' 
+export type EssencePathId =
+  | 'water'
+  | 'fire'
+  | 'earth'
+  | 'metal'
+  | 'wood'
+  | 'poison'
+  | 'acid'
+  | 'lightning'
   | 'wind';
 
 // Define the tiers
@@ -21,6 +21,9 @@ export interface EssencePath {
   id: EssencePathId;
   name: string;
   color: string;
+  textColor: string;
+  borderColor: string;
+  glowClass: string;
 }
 
 export interface Tier {
@@ -49,17 +52,80 @@ export interface Character {
   activeEssenceByPath: Record<EssencePathId, number>;
 }
 
-// Define constants
+// Define constants with new Arcane Grimoire color palette
 export const ESSENCE_PATHS: EssencePath[] = [
-  { id: 'water', name: 'Water', color: 'bg-blue-500' },
-  { id: 'fire', name: 'Fire', color: 'bg-red-500' },
-  { id: 'earth', name: 'Earth', color: 'bg-yellow-800' },
-  { id: 'metal', name: 'Metal', color: 'bg-gray-500' },
-  { id: 'wood', name: 'Wood', color: 'bg-green-700' },
-  { id: 'poison', name: 'Poison', color: 'bg-purple-900' },
-  { id: 'acid', name: 'Acid', color: 'bg-lime-500' },
-  { id: 'lightning', name: 'Lightning', color: 'bg-purple-500' },
-  { id: 'wind', name: 'Wind', color: 'bg-sky-300' },
+  {
+    id: 'water',
+    name: 'Water',
+    color: 'bg-essence-water',
+    textColor: 'text-essence-water',
+    borderColor: 'border-essence-water',
+    glowClass: 'shadow-glow-water'
+  },
+  {
+    id: 'fire',
+    name: 'Fire',
+    color: 'bg-essence-fire',
+    textColor: 'text-essence-fire',
+    borderColor: 'border-essence-fire',
+    glowClass: 'shadow-glow-fire'
+  },
+  {
+    id: 'earth',
+    name: 'Earth',
+    color: 'bg-essence-earth',
+    textColor: 'text-essence-earth',
+    borderColor: 'border-essence-earth',
+    glowClass: 'shadow-glow-earth'
+  },
+  {
+    id: 'metal',
+    name: 'Metal',
+    color: 'bg-essence-metal',
+    textColor: 'text-essence-metal',
+    borderColor: 'border-essence-metal',
+    glowClass: 'shadow-glow-metal'
+  },
+  {
+    id: 'wood',
+    name: 'Wood',
+    color: 'bg-essence-wood',
+    textColor: 'text-essence-wood',
+    borderColor: 'border-essence-wood',
+    glowClass: 'shadow-glow-wood'
+  },
+  {
+    id: 'poison',
+    name: 'Poison',
+    color: 'bg-essence-poison',
+    textColor: 'text-essence-poison',
+    borderColor: 'border-essence-poison',
+    glowClass: 'shadow-glow-poison'
+  },
+  {
+    id: 'acid',
+    name: 'Acid',
+    color: 'bg-essence-acid',
+    textColor: 'text-essence-acid',
+    borderColor: 'border-essence-acid',
+    glowClass: 'shadow-glow-acid'
+  },
+  {
+    id: 'lightning',
+    name: 'Lightning',
+    color: 'bg-essence-lightning',
+    textColor: 'text-essence-lightning',
+    borderColor: 'border-essence-lightning',
+    glowClass: 'shadow-glow-lightning'
+  },
+  {
+    id: 'wind',
+    name: 'Wind',
+    color: 'bg-essence-wind',
+    textColor: 'text-essence-wind',
+    borderColor: 'border-essence-wind',
+    glowClass: 'shadow-glow-wind'
+  },
 ];
 
 export const TIERS: Tier[] = [
@@ -106,14 +172,18 @@ export function getTierCost(tier: TierId | SpellLevel): number {
 // Helper function to get essence points based on level
 export function calculateEssencePoints(level: number): number {
   let points = level; // Base points equal to level
-  
+
   // Add bonus points at tier thresholds
   if (level >= 1) points += 4;
   if (level >= 5) points += 4;
   if (level >= 9) points += 4;
   if (level >= 13) points += 4;
   if (level >= 17) points += 4;
-  
+
   return points;
 }
 
+// Helper to get essence path by ID
+export function getEssencePath(id: EssencePathId): EssencePath | undefined {
+  return ESSENCE_PATHS.find(path => path.id === id);
+}

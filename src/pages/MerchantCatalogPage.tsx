@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { MapPin } from 'lucide-react';
+import { MapPin, Package } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import ItemListRow from '../components/merchants/ItemListRow';
 import ItemDetailPanel from '../components/merchants/ItemDetailPanel';
@@ -27,10 +27,8 @@ const MerchantCatalogPage: React.FC = () => {
     armorType: []
   });
 
-  // Find merchant
   const merchant = merchantsData.merchants.find(m => m.id === merchantId);
 
-  // Load items dynamically
   useEffect(() => {
     if (merchant) {
       setIsLoading(true);
@@ -46,13 +44,11 @@ const MerchantCatalogPage: React.FC = () => {
     }
   }, [merchant]);
 
-  // Filter and sort items
   const processedItems = useMemo(() => {
     const filtered = filterItems(items, filterState);
     return sortItems(filtered, sortBy, merchant?.pricing, sortDirection);
   }, [items, filterState, sortBy, merchant?.pricing, sortDirection]);
 
-  // Filter handlers
   const handleRarityToggle = (rarity: ItemRarity) => {
     setFilterState(prev => ({
       ...prev,
@@ -100,21 +96,20 @@ const MerchantCatalogPage: React.FC = () => {
     });
   };
 
-  // Redirect if merchant not found
   if (!merchantId || !merchant) {
     return <Navigate to="/merchants" replace />;
   }
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Merchant Header */}
         <div className="mb-6">
-          <h1 className="text-4xl font-bold text-white mb-2">{merchant.name}</h1>
-          <p className="text-gray-400 text-lg">{merchant.description}</p>
+          <h1 className="font-display text-3xl md:text-4xl tracking-wide text-ivory mb-2">{merchant.name}</h1>
+          <p className="text-fog text-lg font-body">{merchant.description}</p>
           {merchant.location && (
-            <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
-              <MapPin size={16} />
+            <div className="flex items-center gap-2 text-mist text-sm mt-2 font-body">
+              <MapPin size={16} className="text-gold/60" />
               <span>{merchant.location}</span>
             </div>
           )}
@@ -140,20 +135,21 @@ const MerchantCatalogPage: React.FC = () => {
 
         {/* Loading State */}
         {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-gray-400 text-lg">Loading items...</p>
+          <div className="arcane-panel p-12 text-center">
+            <p className="text-fog text-lg font-body">Loading items...</p>
           </div>
         ) : (
           /* Split Layout */
-          <div className="flex gap-4 h-[calc(100vh-450px)]">
+          <div className="flex gap-4 h-[calc(100vh-420px)] min-h-[500px]">
             {/* Left: Item List */}
-            <div className="w-1/3 bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <div className="w-1/3 arcane-panel overflow-hidden">
               <div className="h-full overflow-y-auto">
                 {processedItems.length === 0 ? (
-                  <div className="p-8 text-center text-gray-400">
-                    <p>No items found</p>
+                  <div className="p-8 text-center">
+                    <Package size={32} className="mx-auto mb-3 text-mist/30" />
+                    <p className="text-fog font-body">No items found</p>
                     {filterState.search && (
-                      <p className="text-sm mt-2">Try adjusting your search or filters</p>
+                      <p className="text-sm text-mist mt-2">Try adjusting your search or filters</p>
                     )}
                   </div>
                 ) : (
@@ -171,7 +167,7 @@ const MerchantCatalogPage: React.FC = () => {
             </div>
 
             {/* Right: Detail Panel */}
-            <div className="flex-1 bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <div className="flex-1 arcane-panel overflow-hidden">
               <ItemDetailPanel item={selectedItem} pricing={merchant.pricing} />
             </div>
           </div>

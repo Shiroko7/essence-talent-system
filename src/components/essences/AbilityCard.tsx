@@ -11,26 +11,36 @@ interface AbilityCardProps {
   onShowDetails: () => void;
 }
 
-// Helper function to format description text
-const formatDescription = (description: string): React.ReactNode => {
-  // Check if it's a URL (for spells)
-  if (description.startsWith('http')) {
-    return (
-        <></>
-    );
+const getTypeStyles = (ability: Ability) => {
+  if (ability.isPassive) {
+    return {
+      label: 'Passive',
+      className: 'bg-type-passive text-void',
+    };
+  } else if (ability.isActive) {
+    return {
+      label: 'Active',
+      className: 'bg-type-active text-void',
+    };
+  } else if (ability.isCantrip) {
+    return {
+      label: 'Cantrip',
+      className: 'bg-type-cantrip text-void',
+    };
+  } else if (ability.isSpell) {
+    return {
+      label: `${ability.tier} Spell`,
+      className: 'bg-type-spell text-void',
+    };
   }
-  
-  // Get a shortened preview (first 120 chars)
-  const preview = description.length > 120 
-    ? description.substring(0, 120) + '...' 
-    : description;
-    
-  return <p>{preview}</p>;
+  return {
+    label: '',
+    className: '',
+  };
 };
 
 const AbilityCard: React.FC<AbilityCardProps> = ({
   ability,
-  path,
   isSelected,
   isLocked,
   onToggle,
@@ -38,78 +48,88 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
 }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const cost = getTierCost(ability.tier);
-  
-  // Determine the type of ability for the badge
-  let typeLabel = '';
-  let typeBgColor = '';
-  
-  if (ability.isPassive) {
-    typeLabel = 'Passive';
-    typeBgColor = 'bg-yellow-800 text-yellow-200';
-  } else if (ability.isActive) {
-    typeLabel = 'Active';
-    typeBgColor = 'bg-blue-800 text-blue-200';
-  } else if (ability.isCantrip) {
-    typeLabel = 'Cantrip';
-    typeBgColor = 'bg-purple-800 text-purple-200';
-  } else if (ability.isSpell) {
-    typeLabel = `${ability.tier} Spell`;
-    typeBgColor = 'bg-green-800 text-green-200';
-  }
+  const typeStyles = getTypeStyles(ability);
+
+  const handleCardClick = () => {
+    if (isLocked) return;
+    onToggle();
+  };
+
+  const handleInfoClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onShowDetails();
+  };
+
+  const formatDescription = (description: string): React.ReactNode => {
+    if (description.startsWith('http')) {
+      return null;
+    }
+    const preview = description.length > 120
+      ? description.substring(0, 120) + '...'
+      : description;
+    return <p className="text-parchment/80 text-sm leading-relaxed">{preview}</p>;
+  };
 
   return (
-    <div 
+    <div
       className={`
-        relative border rounded h-16 p-5 transition-all duration-150 flex flex-col
-        ${isLocked ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-        ${isSelected 
-          ? `border-${path.color.split('-')[1]}-500 bg-gray-700` 
-          : 'border-gray-600 hover:bg-gray-700'}
-        ${ability.isPassive || ability.isCantrip ? 'border-l-4' : ''}
+        relative arcane-card transition-all duration-200 cursor-pointer
+        ${isLocked ? 'opacity-40 cursor-not-allowed' : 'arcane-card-hover'}
+        ${isSelected ? 'ability-selected' : 'border-l-2 border-l-transparent'}
       `}
-      onClick={() => !isLocked && onToggle()}
+      onClick={handleCardClick}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
+      style={{ minHeight: '80px' }}
     >
-      <div className="text-sm font-medium">{ability.name}</div>
-      
-      {/* Type indicator */}
-      <div className="absolute top-2 right-2">
-        <span className={`text-xs px-1.5 py-0.5 rounded-full ${typeBgColor}`}>
-          {typeLabel}
+      {/* Top row: Name (left) and Type badge (right) */}
+      <div className="absolute top-3 left-4 right-4 flex items-start justify-between gap-3">
+        <h4 className={`font-display text-base tracking-wide ${isSelected ? 'text-gold-bright' : 'text-ivory'}`}>
+          {ability.name}
+        </h4>
+        <span className={`
+          px-2.5 py-1 rounded text-xs font-display tracking-wide flex-shrink-0 ${typeStyles.className}
+        `}>
+          {typeStyles.label}
         </span>
       </div>
-      
-      {/* Info icon for details */}
-      <button 
-        className="absolute bottom-2 right-2 text-gray-400 hover:text-white"
-        onClick={(e) => {
-          e.stopPropagation(); // Prevent toggling the ability
-          onShowDetails();
-        }}
+
+      {/* Bottom row: Info button (right) */}
+      <button
+        className="absolute bottom-3 right-3 text-mist hover:text-gold transition-colors p-1.5 rounded hover:bg-charcoal"
+        onClick={handleInfoClick}
         aria-label="Show ability details"
       >
-        <Info size={16} />
+        <Info size={18} />
       </button>
-      
-      {/* Enhanced Tooltip - Now with left-aligned text */}
-      {showTooltip && (
-        <div className="absolute z-10 bottom-full left-0 mb-2 w-72 p-3 bg-gray-900 border border-gray-600 rounded shadow-lg">
-          <h4 className="font-bold text-sm">{ability.name}</h4>
-          <div className="text-xs text-gray-300 mt-1 leading-relaxed max-h-48 overflow-y-auto text-left">
+
+      {/* Selected indicator line */}
+      {isSelected && (
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold/80 via-gold to-gold/80" />
+      )}
+
+      {/* Tooltip */}
+      {showTooltip && !isLocked && (
+        <div className="absolute z-50 bottom-full left-0 mb-2 w-80 p-4 arcane-tooltip pointer-events-none">
+          <h4 className="font-display text-base tracking-wide text-ivory mb-2">
+            {ability.name}
+          </h4>
+          <div className="text-sm leading-relaxed max-h-48 overflow-y-auto font-body text-parchment/90">
             {formatDescription(ability.description)}
           </div>
-          <div className="mt-2 flex justify-between text-xs text-gray-400">
-            <span>Tier: {ability.tier}</span>
+          <div className="arcane-divider my-3" />
+          <div className="flex justify-between text-sm text-fog font-body">
+            <span>Tier: <span className="text-gold">{ability.tier}</span></span>
             <span>
               {ability.isPassive || ability.isCantrip
-                ? `Reduces max essence by ${cost}`
-                : `Costs ${cost} essence to use`}
+                ? <span className="text-essence-fire">Reduces max by {cost}</span>
+                : <span className="text-essence-water">Costs {cost} essence</span>
+              }
             </span>
           </div>
-          <div className="mt-2 text-xs text-blue-300 text-left italic">
-            Click the info icon for full details
-          </div>
+          <p className="mt-2 text-xs text-mist">
+            Click info icon for full details
+          </p>
         </div>
       )}
     </div>

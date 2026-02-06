@@ -12,30 +12,17 @@ interface EssenceTrackingBarProps {
   onDecrement: () => void;
 }
 
-// Map essence IDs to hex colors for glow effects
-const getEssenceColorHex = (id: EssencePathId): { color: string; glowColor: string } => {
-  switch (id) {
-    case 'water':
-      return { color: '#3b82f6', glowColor: 'rgba(59, 130, 246, 0.4)' };
-    case 'fire':
-      return { color: '#ef4444', glowColor: 'rgba(239, 68, 68, 0.4)' };
-    case 'earth':
-      return { color: '#ca8a04', glowColor: 'rgba(202, 138, 4, 0.4)' };
-    case 'metal':
-      return { color: '#6b7280', glowColor: 'rgba(107, 114, 128, 0.4)' };
-    case 'wood':
-      return { color: '#15803d', glowColor: 'rgba(21, 128, 61, 0.4)' };
-    case 'poison':
-      return { color: '#581c87', glowColor: 'rgba(88, 28, 135, 0.4)' };
-    case 'acid':
-      return { color: '#84cc16', glowColor: 'rgba(132, 204, 22, 0.4)' };
-    case 'lightning':
-      return { color: '#a855f7', glowColor: 'rgba(168, 85, 247, 0.4)' };
-    case 'wind':
-      return { color: '#0ea5e9', glowColor: 'rgba(14, 165, 233, 0.4)' };
-    default:
-      return { color: '#6b7280', glowColor: 'rgba(107, 114, 128, 0.4)' };
-  }
+// Essence color configurations
+const ESSENCE_COLORS: Record<EssencePathId, { color: string; glow: string; cssVar: string }> = {
+  water: { color: '#4a9eff', glow: 'rgba(74, 158, 255, 0.4)', cssVar: 'var(--essence-water)' },
+  fire: { color: '#ff6b4a', glow: 'rgba(255, 107, 74, 0.4)', cssVar: 'var(--essence-fire)' },
+  earth: { color: '#c49a6c', glow: 'rgba(196, 154, 108, 0.4)', cssVar: 'var(--essence-earth)' },
+  metal: { color: '#a8b4c4', glow: 'rgba(168, 180, 196, 0.4)', cssVar: 'var(--essence-metal)' },
+  wood: { color: '#5dba6f', glow: 'rgba(93, 186, 111, 0.4)', cssVar: 'var(--essence-wood)' },
+  poison: { color: '#9b4dca', glow: 'rgba(155, 77, 202, 0.4)', cssVar: 'var(--essence-poison)' },
+  acid: { color: '#a8e04a', glow: 'rgba(168, 224, 74, 0.4)', cssVar: 'var(--essence-acid)' },
+  lightning: { color: '#c084fc', glow: 'rgba(192, 132, 252, 0.4)', cssVar: 'var(--essence-lightning)' },
+  wind: { color: '#7dd3fc', glow: 'rgba(125, 211, 252, 0.4)', cssVar: 'var(--essence-wind)' },
 };
 
 const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
@@ -48,7 +35,7 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
   onDecrement
 }) => {
   const getEssenceIcon = (id: EssencePathId) => {
-    const iconProps = { size: 20, style: { color: getEssenceColorHex(id).color } };
+    const iconProps = { size: 20, style: { color: ESSENCE_COLORS[id].color } };
     switch (id) {
       case 'water': return <Droplet {...iconProps} />;
       case 'fire': return <Flame {...iconProps} />;
@@ -63,54 +50,75 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
     }
   };
 
-  const { color, glowColor } = getEssenceColorHex(path.id);
-  const currentUsed = spent;
-
-  // Calculate percentages for the bar
-  const usedPercentage = (currentUsed / max) * 100;
+  const essenceColor = ESSENCE_COLORS[path.id];
+  const usedPercentage = (spent / max) * 100;
   const reducedPercentage = (passiveReduction / max) * 100;
 
   return (
-    <div className="bg-gray-800/50 backdrop-blur rounded-lg p-5 border border-gray-700/50 hover:border-gray-600/50 transition-all">
+    <div className="arcane-card p-5 transition-all duration-200 hover:border-gold-accent">
       {/* Header */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
+          {/* Essence Icon with glow */}
           <div
-            className="w-10 h-10 rounded-lg flex items-center justify-center"
+            className="w-10 h-10 rounded-lg flex items-center justify-center relative"
             style={{
-              backgroundColor: `${color}20`,
-              boxShadow: `0 0 20px ${glowColor}`
+              backgroundColor: `${essenceColor.color}15`,
+              boxShadow: `0 0 20px ${essenceColor.glow}`
             }}
           >
             {getEssenceIcon(path.id)}
+            <div
+              className="absolute inset-0 rounded-lg animate-essence-pulse"
+              style={{ boxShadow: `inset 0 0 15px ${essenceColor.glow}` }}
+            />
           </div>
-          <h3 className="text-lg font-semibold text-white">{path.name} Essence</h3>
+
+          <div>
+            <h3 className="font-display text-base tracking-wide text-ivory">{path.name}</h3>
+            <p className="text-xs text-mist font-body">Active Essence</p>
+          </div>
         </div>
 
+        {/* Stats and Controls */}
         <div className="flex items-center gap-4">
           <div className="text-right">
-            <span className="text-2xl font-bold text-white">
-              {currentUsed}/{available}
-            </span>
+            <div className="flex items-baseline gap-1">
+              <span
+                className="text-2xl font-display font-semibold"
+                style={{ color: essenceColor.color }}
+              >
+                {spent}
+              </span>
+              <span className="text-fog">/</span>
+              <span className="text-lg text-parchment">{available}</span>
+            </div>
             {passiveReduction > 0 && (
-              <span className="ml-2 text-sm text-red-400 font-medium">
-                (-{passiveReduction} reduced)
+              <span className="text-xs text-essence-fire">
+                -{passiveReduction} from passives
               </span>
             )}
           </div>
 
+          {/* Increment/Decrement Buttons */}
           <div className="flex gap-2">
             <button
               onClick={onDecrement}
-              disabled={currentUsed === 0}
-              className="w-8 h-8 rounded-full border-2 border-gray-600 text-gray-300 hover:border-red-500 hover:text-red-400 hover:bg-red-500/10 disabled:opacity-30 disabled:hover:border-gray-600 disabled:hover:text-gray-300 disabled:hover:bg-transparent transition-all flex items-center justify-center font-bold text-lg"
+              disabled={spent === 0}
+              className="w-8 h-8 rounded border border-gold-subtle text-fog
+                hover:border-essence-fire hover:text-essence-fire hover:shadow-glow-fire
+                disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-gold-subtle disabled:hover:text-fog disabled:hover:shadow-none
+                transition-all duration-200 flex items-center justify-center font-display text-lg"
             >
-              −
+              -
             </button>
             <button
               onClick={onIncrement}
-              disabled={currentUsed >= available}
-              className="w-8 h-8 rounded-full border-2 border-gray-600 text-gray-300 hover:border-green-500 hover:text-green-400 hover:bg-green-500/10 disabled:opacity-30 disabled:hover:border-gray-600 disabled:hover:text-gray-300 disabled:hover:bg-transparent transition-all flex items-center justify-center font-bold text-lg"
+              disabled={spent >= available}
+              className="w-8 h-8 rounded border border-gold-subtle text-fog
+                hover:border-essence-wood hover:text-essence-wood hover:shadow-glow-wood
+                disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-gold-subtle disabled:hover:text-fog disabled:hover:shadow-none
+                transition-all duration-200 flex items-center justify-center font-display text-lg"
             >
               +
             </button>
@@ -119,25 +127,37 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
       </div>
 
       {/* Progress Bar */}
-      <div className="relative h-3 bg-gray-700/50 rounded-full overflow-hidden">
+      <div className="relative h-3 bg-charcoal rounded-sm overflow-hidden border border-gold-subtle/50">
         {/* Reduced portion (darker, on the right) */}
         {passiveReduction > 0 && (
           <div
-            className="absolute right-0 top-0 h-full bg-gray-900/80 border-l-2 border-red-900/50"
-            style={{
-              width: `${reducedPercentage}%`,
-            }}
-          />
+            className="absolute right-0 top-0 h-full bg-void/80"
+            style={{ width: `${reducedPercentage}%` }}
+          >
+            {/* Diagonal stripes pattern */}
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                background: `repeating-linear-gradient(
+                  -45deg,
+                  transparent,
+                  transparent 3px,
+                  rgba(255, 107, 74, 0.3) 3px,
+                  rgba(255, 107, 74, 0.3) 6px
+                )`
+              }}
+            />
+          </div>
         )}
 
         {/* Active/Used portion (colored) */}
-        {currentUsed > 0 && (
+        {spent > 0 && (
           <div
-            className="absolute left-0 top-0 h-full transition-all duration-300 ease-out rounded-full"
+            className="absolute left-0 top-0 h-full transition-all duration-300 ease-out"
             style={{
               width: `${usedPercentage}%`,
-              backgroundColor: color,
-              boxShadow: `0 0 15px ${glowColor}, inset 0 1px 0 rgba(255,255,255,0.2)`
+              backgroundColor: essenceColor.color,
+              boxShadow: `0 0 10px ${essenceColor.glow}`
             }}
           >
             {/* Shine effect */}
@@ -150,7 +170,7 @@ const EssenceTrackingBar: React.FC<EssenceTrackingBarProps> = ({
           {Array.from({ length: max - 1 }).map((_, i) => (
             <div
               key={i}
-              className="flex-1 border-r border-gray-900/30"
+              className="flex-1 border-r border-void/50"
             />
           ))}
         </div>
