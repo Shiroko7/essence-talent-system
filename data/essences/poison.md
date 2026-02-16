@@ -374,6 +374,18 @@ isCantrip: false
 Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.
 You can now hold up to three distilled essences at a time.
 
+When you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:
+
+| Creature Tier | Essence Cost |
+|---|---|
+| Initiate | 1 |
+| Adept | 2 |
+| Master | 3 |
+| Grandmaster | 4 |
+| Great Grandmaster | 5 |
+
+If the creature dies from the triggering damage, the extraction costs no essence points.
+
 ---
 
 ### Apex Toxinator
