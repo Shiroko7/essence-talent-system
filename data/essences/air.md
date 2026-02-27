@@ -214,6 +214,21 @@ Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it t
 
 ---
 
+### Ascending Dragon Gale
+
+```yaml
+id: wind_adept_ascending_dragon_gale
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+```
+
+When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach. You can only use this ability once per turn. The target must make a Strength saving throw. On a failure, it takes 3d10 thunder damage, is launched 20 feet into the air, and is Restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing Prone.
+
+---
+
 ## Master Tier
 
 ### Liberation’s Gale
@@ -274,6 +289,21 @@ isCantrip: false
 ```
 
 As a bonus action, launch up to three crescent-shaped energy blades that travel 150 feet. Each saber makes a ranged spell attack for 1d4 + 1 Radiant damage. On a hit, the target must make a Constitution saving throw or be blinded until the end of their next turn as moonlight sears their vision. On a critical hit, the target automatically fails the saving throw. The sabers curve around cover, ignoring half and three-quarters cover.
+
+---
+
+### Sky-Piercing Execution
+
+```yaml
+id: wind_master_sky_piercing_execution
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+```
+
+As a reaction when a creature within 60 feet is airborne or suspended, teleport to an adjacent empty space in the air. Make one piercing melee weapon attack against it. On a hit, the target suffers the attack's normal damage plus an extra 4d10 thunder damage, and is instantly slammed [DESCRIPTION INCOMPLETE - please fill in the rest].
 
 ---
 

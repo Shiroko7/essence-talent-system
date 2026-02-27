@@ -232,7 +232,7 @@ export const poisonAbilities = [
   {
     id: "poison_master_vital_essence_sublimation_iii",
     name: "Vital Essence Sublimation III (Nilo)",
-    description: "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.",
+    description: "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.\n\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points.",
     tier: "master",
     isActive: false,
     isPassive: true,
