@@ -321,22 +321,7 @@ isSpell: true
 isCantrip: false
 ```
 
-https://5e.tools/spells.html#arcane%20aegis_obojimatallgrass
-
----
-
-### Whelm Weapon
-
-```yaml
-id: metal_1st_level_whelm_weapon
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-```
-
-https://5e.tools/spells.html#whelm%20weapon_obojimatallgrass
+https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24
 
 ---
 

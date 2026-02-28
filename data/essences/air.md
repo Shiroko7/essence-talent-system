@@ -342,30 +342,15 @@ https://5e.tools/spells.html#thunderclap_xge
 ### Air Bubble
 
 ```yaml
-id: wind_cantrip_air_bubble
-tier: cantrip
+id: wind_2nd_level_air_bubble
+tier: 2nd
 isActive: false
 isPassive: false
-isSpell: false
-isCantrip: true
+isSpell: true
+isCantrip: false
 ```
 
-https://5e.tools/spells.html#air%20bubble_eepc
-
----
-
-### Retrieve
-
-```yaml
-id: wind_cantrip_retrieve
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-```
-
-https://5e.tools/spells.html#retrieve_obojimatallgrass
+https://5e.tools/spells.html#air%20bubble_aag
 
 ---
 

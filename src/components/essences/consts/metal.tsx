@@ -208,17 +208,7 @@ export const metalSpells = [
   {
     id: "metal_1st_level_arcane_aegis",
     name: "Arcane Aegis",
-    description: "https://5e.tools/spells.html#arcane%20aegis_obojimatallgrass",
-    tier: "1st",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-  },
-  {
-    id: "metal_1st_level_whelm_weapon",
-    name: "Whelm Weapon",
-    description: "https://5e.tools/spells.html#whelm%20weapon_obojimatallgrass",
+    description: "https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24",
     tier: "1st",
     isActive: false,
     isPassive: false,

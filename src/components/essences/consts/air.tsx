@@ -231,30 +231,20 @@ export const airCantrips = [
     isPassive: false,
     isSpell: false,
     isCantrip: true,
-  },
-  {
-    id: "wind_cantrip_air_bubble",
-    name: "Air Bubble",
-    description: "https://5e.tools/spells.html#air%20bubble_eepc",
-    tier: "cantrip",
-    isActive: false,
-    isPassive: false,
-    isSpell: false,
-    isCantrip: true,
-  },
-  {
-    id: "wind_cantrip_retrieve",
-    name: "Retrieve",
-    description: "https://5e.tools/spells.html#retrieve_obojimatallgrass",
-    tier: "cantrip",
-    isActive: false,
-    isPassive: false,
-    isSpell: false,
-    isCantrip: true,
   }
 ];
 
 export const airSpells = [
+  {
+    id: "wind_2nd_level_air_bubble",
+    name: "Air Bubble",
+    description: "https://5e.tools/spells.html#air%20bubble_aag",
+    tier: "2nd",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+  },
   {
     id: "wind_1st_level_fog_cloud",
     name: "Fog Cloud",
