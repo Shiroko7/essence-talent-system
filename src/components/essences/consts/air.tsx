@@ -198,6 +198,16 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+  },
+  {
+    id: "wind_adept_cacophonic_shield",
+    name: "Cacophonic Shield",
+    description: "https://5e.tools/spells.html#cacophonic%20shield_frhof",
+    tier: "adept",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
   }
 ];
 
@@ -510,16 +520,6 @@ export const airSpells = [
     name: "Storm of Vengeance",
     description: "https://5e.tools/spells.html#storm%20of%20vengeance_xphb",
     tier: "9th",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-  },
-  {
-    id: "wind_1st_level_cacophonic_shield",
-    name: "Cacophonic Shield",
-    description: "https://5e.tools/spells.html#cacophonic%20shield_obojimatallgrass",
-    tier: "1st",
     isActive: false,
     isPassive: false,
     isSpell: true,

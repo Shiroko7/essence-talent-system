@@ -779,15 +779,15 @@ https://5e.tools/spells.html#storm%20of%20vengeance_xphb
 ### Cacophonic Shield
 
 ```yaml
-id: wind_1st_level_cacophonic_shield
-tier: 1st
-isActive: false
+id: wind_adept_cacophonic_shield
+tier: adept
+isActive: true
 isPassive: false
-isSpell: true
+isSpell: false
 isCantrip: false
 ```
 
-https://5e.tools/spells.html#cacophonic%20shield_obojimatallgrass
+https://5e.tools/spells.html#cacophonic%20shield_frhof
 
 ---
 
