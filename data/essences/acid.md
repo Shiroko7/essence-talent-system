@@ -194,6 +194,30 @@ As an action, target a creature within 60 feet to make a Constitution saving thr
 
 ---
 
+## Grandmaster Tier
+
+### Ethereal Phase Barrier
+
+```yaml
+id: acid_grandmaster_ethereal_phase_barrier
+tier: grandmaster
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+```
+
+When you cast wall of force, the wall manifests on the Ethereal Plane rather than the Material Plane, appearing as a shimmering, translucent membrane of acidic essence. The spell no longer requires concentration.
+
+The wall cannot be destroyed or dispelled by any attack, spell, or magical effect unless that effect originates from the Ethereal Plane or is capable of transcending planar boundaries.
+
+**Essence Refinement.** When you cast wall of force with this feature, you may imbue it with additional essences. For each essence spent, choose one of the following benefits:
+
+- Extend the wall's duration by 1 hour.
+- Increase the wall's size by an additional 10-foot radius (or equivalent panel area).
+
+---
+
 ## Cantrips
 
 ### Acid Splash
