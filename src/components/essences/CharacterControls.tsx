@@ -7,6 +7,7 @@ interface CharacterControlsProps {
   onReset: () => void;
   onUndo: () => void;
   canUndo: boolean;
+  hasSpentTalents: boolean;
   onSaveConfig: () => void;
   onLoadConfig: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -17,6 +18,7 @@ const CharacterControls: React.FC<CharacterControlsProps> = ({
   onReset,
   onUndo,
   canUndo,
+  hasSpentTalents,
   onSaveConfig,
   onLoadConfig
 }) => {
@@ -32,7 +34,7 @@ const CharacterControls: React.FC<CharacterControlsProps> = ({
   const handleCancelReset = () => setConfirmingReset(false);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+    <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center w-full">
       {/* Level Selector */}
       <div className="flex items-center gap-3">
         <label htmlFor="character-level" className="font-display text-sm tracking-wide text-fog">
@@ -52,50 +54,8 @@ const CharacterControls: React.FC<CharacterControlsProps> = ({
         </select>
       </div>
 
-      {/* Action Buttons */}
+      {/* Save / Load Buttons */}
       <div className="flex gap-2 flex-wrap items-center">
-        {confirmingReset ? (
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-fog font-display tracking-wide">Reset all?</span>
-            <button
-              onClick={handleConfirmReset}
-              className="arcane-btn flex items-center gap-1 text-xs !text-essence-fire !border-essence-fire/50 hover:!border-essence-fire hover:!shadow-glow-fire"
-              title="Confirm reset"
-            >
-              <Check size={13} />
-              <span>Yes</span>
-            </button>
-            <button
-              onClick={handleCancelReset}
-              className="arcane-btn flex items-center gap-1 text-xs"
-              title="Cancel reset"
-            >
-              <X size={13} />
-              <span>No</span>
-            </button>
-          </div>
-        ) : (
-          <button
-            onClick={handleResetClick}
-            className="arcane-btn flex items-center gap-2 text-xs !text-essence-fire !border-essence-fire/30 hover:!border-essence-fire hover:!shadow-glow-fire"
-            title="Reset all selected abilities"
-          >
-            <RefreshCw size={14} />
-            <span>Reset</span>
-          </button>
-        )}
-
-        {canUndo && !confirmingReset && (
-          <button
-            onClick={onUndo}
-            className="arcane-btn flex items-center gap-2 text-xs !text-gold !border-gold/30 hover:!border-gold hover:!shadow-glow-gold"
-            title="Undo last reset"
-          >
-            <RotateCcw size={14} />
-            <span>Undo</span>
-          </button>
-        )}
-
         <button
           onClick={onSaveConfig}
           className="arcane-btn flex items-center gap-2 text-xs !text-essence-water !border-essence-water/30 hover:!border-essence-water hover:!shadow-glow-water"
@@ -122,6 +82,53 @@ const CharacterControls: React.FC<CharacterControlsProps> = ({
           accept=".json"
         />
       </div>
+
+      {/* Undo + Reset — pushed to far right, only visible when talents are spent */}
+      {(hasSpentTalents || canUndo) && (
+        <div className="ml-auto flex items-center gap-2">
+          {canUndo && !confirmingReset && (
+            <button
+              onClick={onUndo}
+              className="arcane-btn flex items-center gap-2 text-xs !text-gold !border-gold/30 hover:!border-gold hover:!shadow-glow-gold"
+              title="Undo last reset"
+            >
+              <RotateCcw size={14} />
+              <span>Undo</span>
+            </button>
+          )}
+
+          {hasSpentTalents && (confirmingReset ? (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-fog font-display tracking-wide">Remove All Learned Essences?</span>
+              <button
+                onClick={handleConfirmReset}
+                className="arcane-btn flex items-center gap-1 text-xs !text-essence-fire !border-essence-fire/50 hover:!border-essence-fire hover:!shadow-glow-fire"
+                title="Confirm reset"
+              >
+                <Check size={13} />
+                <span>Yes</span>
+              </button>
+              <button
+                onClick={handleCancelReset}
+                className="arcane-btn flex items-center gap-1 text-xs"
+                title="Cancel reset"
+              >
+                <X size={13} />
+                <span>No</span>
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={handleResetClick}
+              className="arcane-btn flex items-center gap-2 text-xs !text-essence-fire !border-essence-fire/30 hover:!border-essence-fire hover:!shadow-glow-fire"
+              title="Reset all selected abilities"
+            >
+              <RefreshCw size={14} />
+              <span>Reset</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

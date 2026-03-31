@@ -171,6 +171,7 @@ const EssenceTalentTree: React.FC = () => {
             onReset={resetCharacter}
             onUndo={undoReset}
             canUndo={canUndo}
+            hasSpentTalents={character.selectedAbilities.length > 0}
             onSaveConfig={handleSaveConfig}
             onLoadConfig={handleLoadConfig}
           />
