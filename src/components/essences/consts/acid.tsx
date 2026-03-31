@@ -118,6 +118,16 @@ export const acidAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+  },
+  {
+    id: "acid_grandmaster_ethereal_phase_barrier",
+    name: "Ethereal Phase Barrier",
+    description: "When you cast wall of force, the wall manifests on the Ethereal Plane rather than the Material Plane, appearing as a shimmering, translucent membrane of acidic essence. The spell no longer requires concentration.\n\nThe wall cannot be destroyed or dispelled by any attack, spell, or magical effect unless that effect originates from the Ethereal Plane or is capable of transcending planar boundaries.\n\n**Essence Refinement.** When you cast wall of force with this feature, you may imbue it with additional essences. For each essence spent, choose one of the following benefits:\n\n- Extend the wall's duration by 1 hour.\n- Increase the wall's size by an additional 10-foot radius (or equivalent panel area).",
+    tier: "grandmaster",
+    isActive: false,
+    isPassive: true,
+    isSpell: false,
+    isCantrip: false,
   }
 ];
 
