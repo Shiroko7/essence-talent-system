@@ -56,6 +56,7 @@ const useEssenceAllocation = ({
   };
 
   const [character, setCharacter] = useState<Character>(loadCharacterFromStorage);
+  const [previousCharacter, setPreviousCharacter] = useState<Character | null>(null);
   const [currentAbilityError, setCurrentAbilityError] = useState<Ability | null>(null);
 
   // Save character to localStorage whenever it changes
@@ -184,6 +185,7 @@ const useEssenceAllocation = ({
 
   // Function to reset character
   const resetCharacter = () => {
+    setPreviousCharacter(character);
     const newCharacter = {
       level: initialLevel,
       selectedAbilities: [],
@@ -192,14 +194,22 @@ const useEssenceAllocation = ({
         [path.id]: 0
       }), {} as Record<EssencePathId, number>)
     };
-    
+
     setCharacter(newCharacter);
-    
+
     // Also clear localStorage
     try {
       localStorage.removeItem(STORAGE_KEY_CHARACTER);
     } catch (error) {
       console.error('Error clearing localStorage:', error);
+    }
+  };
+
+  // Function to undo the last reset
+  const undoReset = () => {
+    if (previousCharacter) {
+      setCharacter(previousCharacter);
+      setPreviousCharacter(null);
     }
   };
 
@@ -288,6 +298,8 @@ const useEssenceAllocation = ({
     toggleAbility,
     updateCharacterLevel,
     resetCharacter,
+    undoReset,
+    canUndo: previousCharacter !== null,
     updateActiveEssence,
     getPathPassiveReduction,
     setCharacterState,

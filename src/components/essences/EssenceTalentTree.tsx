@@ -72,6 +72,8 @@ const EssenceTalentTree: React.FC = () => {
     toggleAbility,
     updateCharacterLevel,
     resetCharacter,
+    undoReset,
+    canUndo,
     updateActiveEssence,
     setCharacterState
   } = useEssenceAllocation({
@@ -167,6 +169,8 @@ const EssenceTalentTree: React.FC = () => {
             level={character.level}
             onLevelChange={updateCharacterLevel}
             onReset={resetCharacter}
+            onUndo={undoReset}
+            canUndo={canUndo}
             onSaveConfig={handleSaveConfig}
             onLoadConfig={handleLoadConfig}
           />
