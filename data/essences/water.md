@@ -202,7 +202,7 @@ As a reaction, you can cause your one of your Water Clones to detonate, dealing 
 ### Moonlit Verdant Beam
 
 ```yaml
-id: poison_adept_moonlit_verdant_beam
+id: water_adept_moonlit_verdant_beam
 tier: adept
 isActive: true
 isPassive: false
@@ -221,7 +221,7 @@ As an action, you fire a beam of toxic moonlight at a creature within 60 feet. M
 ### Draconic Regeneration of the Emerald Moon
 
 ```yaml
-id: poison_adept_draconic_regeneration_emerald_moon
+id: water_master_draconic_regeneration_emerald_moon
 tier: master
 isActive: false
 isPassive: true

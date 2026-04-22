@@ -130,7 +130,7 @@ export const waterAbilities = [
     isCantrip: false,
   },
   {
-    id: "poison_adept_moonlit_verdant_beam",
+    id: "water_adept_moonlit_verdant_beam",
     name: "Moonlit Verdant Beam",
     description: "As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack. On a hit, the target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC. On a failed save, the target is blinded and poisoned until the end of your next turn.",
     tier: "adept",
@@ -140,7 +140,7 @@ export const waterAbilities = [
     isCantrip: false,
   },
   {
-    id: "poison_adept_draconic_regeneration_emerald_moon",
+    id: "water_master_draconic_regeneration_emerald_moon",
     name: "Draconic Regeneration of the Emerald Moon",
     description: "While under direct moonlight, you regain 1 hit point at the start of each of your turns. You can extend this regeneration to any creature within 60 feet by spending 1 essence point per creature at the start of your turn.",
     tier: "master",
