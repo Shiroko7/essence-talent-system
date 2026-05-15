@@ -29,3 +29,6 @@ src/components/essences/consts/*.tsx
 
 # 5etools reference data (large JSON files)
 scripts/5etools-data/
+
+# per-developer Claude Code settings
+.claude/settings.local.json
