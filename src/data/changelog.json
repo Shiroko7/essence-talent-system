@@ -1,11 +1,101 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-23T22:43:03.410Z",
+  "generatedAt": "2026-09-23T22:44:39.215Z",
   "entries": [
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Caustic Bomb||initiate",
+      "id": "70f8e100adf787e58b2cbd6024afead39e8fc1e7-Umbral Form||adept",
+      "date": "2026-09-23 19:30:21 -0300",
+      "commitHash": "70f8e100adf787e58b2cbd6024afead39e8fc1e7",
+      "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
+      "essenceType": "air",
+      "changeType": "added",
+      "ability": {
+        "id": "wind_adept_umbral_form",
+        "name": "Umbral Form",
+        "tier": "adept",
+        "description": "As a bonus action, you flatten and dissolve your physical form into a living shadow for up to 10 minutes. You can dismiss this effect at any time at will (no action required). The effect ends immediately if you make an attack roll or cast a spell.\n\nWhile in this form, you gain the following benefits:\n- **Shadow Invisibility:** While you are in dim light, darkness, or within the shadow cast by an object or creature of your size or larger, you are invisible. If you step into bright light (outside of a shadow), you are exposed and visible until you enter shadow again.\n- **Shadow Leap:** While in a shadow, you can use a bonus action to teleport up to 30 feet to an unoccupied space you can see that is also in dim light, darkness, or within the shadow of an object or creature of your size or larger. This teleport allows you to cross illuminated areas without being exposed.\n- **Fluid Silhouette:** You can move through spaces as narrow as 1 inch wide without squeezing, and you can move through the spaces of other creatures.",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "70f8e100adf787e58b2cbd6024afead39e8fc1e7-Static Slipstream||master",
+      "date": "2026-09-23 19:30:21 -0300",
+      "commitHash": "70f8e100adf787e58b2cbd6024afead39e8fc1e7",
+      "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
+      "essenceType": "air",
+      "changeType": "added",
+      "ability": {
+        "id": "wind_master_static_slipstream",
+        "name": "Static Slipstream",
+        "tier": "master",
+        "description": "As an action, you fold space around yourself to step into a static pocket dimension for up to 1 minute (requires concentration).\n\nWhen you use this ability, you can enter alone, or attempt to bring one other creature you can see within 60 feet with you (you cannot send another creature without entering yourself). If the target creature is unwilling, it must make a Charisma saving throw against your essence ability save DC:\n- **On a failed save:** The creature is pulled into the dimension alongside you.\n- **On a successful save:** The creature resists and remains in the physical world. Regardless of the creature's success or failure, you still enter the dimension.\n\n**Inside the Static Dimension:**\n- The dimension is a quiet, empty reflection of the physical world. Time continues normally in the outside world, but all external environmental hazards (such as avalanches, collapsing terrain, fires, rapids, or suspended projectiles) appear frozen in place and deal no damage.\n- Neither you nor any creature inside the dimension can interact with, target, or be targeted by anything on the outside plane.\n- You can move freely across the frozen terrain, ignoring difficult terrain and safely traversing terrain that would be hazardous or impassable in the physical world.\n\n**Ending the Effect:**\nYou can end this effect at any time at will (no action required). The effect also ends early if your concentration is broken, or if either creature inside drops to 0 hit points.\n\nWhen the dimension collapses, each creature inside immediately reappears in the physical world at the exact coordinates corresponding to its current position inside the dimension (or the nearest unoccupied space).",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "70f8e100adf787e58b2cbd6024afead39e8fc1e7-Gem Cocoon||adept",
+      "date": "2026-09-23 19:30:21 -0300",
+      "commitHash": "70f8e100adf787e58b2cbd6024afead39e8fc1e7",
+      "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
+      "essenceType": "metal",
+      "changeType": "added",
+      "ability": {
+        "id": "metal_adept_gem_cocoon",
+        "name": "Gem Cocoon",
+        "tier": "adept",
+        "description": "As an action, you lock yourself into an immovable, crystalline gem-like shell, gaining temporary hit points equal to 10 × your proficiency bonus + 10. While you possess any of these temporary hit points, your speed is 0, you cannot move or be moved by external forces, and you cannot take actions or reactions. You can dismiss this ability at will on your turn (no action required), losing any remaining temporary hit points. When this ability ends or when the temporary hit points are reduced to 0, you immediately regain normal movement and actions.",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "70f8e100adf787e58b2cbd6024afead39e8fc1e7-Black Tortoise Iron Bulwark||master",
+      "date": "2026-09-23 19:30:21 -0300",
+      "commitHash": "70f8e100adf787e58b2cbd6024afead39e8fc1e7",
+      "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
+      "essenceType": "metal",
+      "changeType": "added",
+      "ability": {
+        "id": "metal_master_black_tortoise_iron_bulwark",
+        "name": "Black Tortoise Iron Bulwark",
+        "tier": "master",
+        "description": "As an action, you touch a construct, object, structure, or magical wall or barrier (such as a door, vehicle, fortification, or a wall or barrier created by a spell). The target gains temporary hit points equal to 10 × your proficiency bonus + 10. While the target possesses any of these temporary hit points, it gains resistance to all damage.",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "70f8e100adf787e58b2cbd6024afead39e8fc1e7-Aura of the Deep Bulwark||master",
+      "date": "2026-09-23 19:30:21 -0300",
+      "commitHash": "70f8e100adf787e58b2cbd6024afead39e8fc1e7",
+      "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
+      "essenceType": "water",
+      "changeType": "added",
+      "ability": {
+        "id": "water_master_aura_of_the_deep_bulwark",
+        "name": "Aura of the Deep Bulwark",
+        "tier": "master",
+        "description": "As an action, you radiate a massive, pressurized sphere of dampening aqueous vapor extending from you in a 120-foot radius for 1 minute.\n\nWhile inside this aura, you and friendly creatures gain resistance to fire damage and force damage. In addition, affected creatures have advantage on saving throws against spells, traps, munitions, and hazards that produce an explosion or concussive blast (such as *Fireball*, *Shatter*, explosive barrels, or demolition charges).",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "538a3279395016be32741c177a89e658e45aa326-Caustic Bomb||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "acid",
       "changeType": "modified",
@@ -23,9 +113,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Acidic Embrace||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Acidic Embrace||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "acid",
       "changeType": "modified",
@@ -43,9 +133,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Seven-Color Elixir||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Seven-Color Elixir||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "acid",
       "changeType": "modified",
@@ -63,9 +153,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Erosion of Being||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Erosion of Being||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "acid",
       "changeType": "modified",
@@ -83,9 +173,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Ascending Dragon Gale||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Ascending Dragon Gale||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "air",
       "changeType": "modified",
@@ -103,9 +193,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Liberation’s Gale||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Liberation’s Gale||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "air",
       "changeType": "modified",
@@ -123,9 +213,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Lunar Wind Spiral||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Lunar Wind Spiral||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "air",
       "changeType": "modified",
@@ -143,9 +233,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Waning Moon Sabers||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Waning Moon Sabers||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "air",
       "changeType": "modified",
@@ -163,9 +253,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Pebble Barrage||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Pebble Barrage||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "earth",
       "changeType": "modified",
@@ -183,9 +273,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Earthen Grasp||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Earthen Grasp||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "earth",
       "changeType": "modified",
@@ -203,9 +293,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Sandstorm||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Sandstorm||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "earth",
       "changeType": "modified",
@@ -223,9 +313,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Immovable Mountain||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Immovable Mountain||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "earth",
       "changeType": "modified",
@@ -243,9 +333,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Foolish Old Man Moves Mountains||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Foolish Old Man Moves Mountains||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "earth",
       "changeType": "modified",
@@ -263,9 +353,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Ember Strike||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Ember Strike||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "fire",
       "changeType": "modified",
@@ -283,9 +373,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Heart Crusher Grip (Nilo)||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Heart Crusher Grip (Nilo)||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "fire",
       "changeType": "modified",
@@ -303,9 +393,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Martyr’s Flame Aura||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Martyr’s Flame Aura||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "fire",
       "changeType": "modified",
@@ -323,9 +413,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Shadowflame Dream||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Shadowflame Dream||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "fire",
       "changeType": "modified",
@@ -343,9 +433,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Lightning Javelin||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Lightning Javelin||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -363,9 +453,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Arc Chain||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Arc Chain||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -383,9 +473,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Lightning Cage||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Lightning Cage||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -403,9 +493,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Extinguishing Lightning||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Extinguishing Lightning||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "lightning",
       "changeType": "modified",
@@ -423,9 +513,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Magnetic Attraction||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Magnetic Attraction||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "metal",
       "changeType": "modified",
@@ -443,9 +533,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Steel Tornado||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Steel Tornado||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "metal",
       "changeType": "modified",
@@ -463,9 +553,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Weight of Lives||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Weight of Lives||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "metal",
       "changeType": "modified",
@@ -483,9 +573,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vital Essence Sublimation I (Nilo)||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Vital Essence Sublimation I (Nilo)||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "poison",
       "changeType": "modified",
@@ -503,9 +593,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Moonlit Verdant Beam||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Moonlit Verdant Beam||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "poison",
       "changeType": "modified",
@@ -523,9 +613,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vital Essence Sublimation II (Nilo)||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Vital Essence Sublimation II (Nilo)||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "poison",
       "changeType": "modified",
@@ -543,9 +633,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vital Essence Sublimation III (Nilo)||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Vital Essence Sublimation III (Nilo)||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "poison",
       "changeType": "modified",
@@ -563,9 +653,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tide's Reflection Art I (Thalassios)||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Tide's Reflection Art I (Thalassios)||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "water",
       "changeType": "modified",
@@ -583,9 +673,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tide's Reflection Art II (Thalassios)||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Tide's Reflection Art II (Thalassios)||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "water",
       "changeType": "modified",
@@ -603,9 +693,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tide's Reflection Art III (Thalassios)||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Tide's Reflection Art III (Thalassios)||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "water",
       "changeType": "modified",
@@ -623,9 +713,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Moonfall Condemnation||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Moonfall Condemnation||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "water",
       "changeType": "modified",
@@ -643,9 +733,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vine Manipulation||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Vine Manipulation||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "wood",
       "changeType": "modified",
@@ -663,9 +753,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Needle Barrage||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Needle Barrage||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "wood",
       "changeType": "modified",
@@ -683,9 +773,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tree Form||adept",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Tree Form||adept",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "wood",
       "changeType": "modified",
@@ -703,9 +793,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Coiling Resilience||initiate",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Coiling Resilience||initiate",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "wood",
       "changeType": "modified",
@@ -723,9 +813,9 @@
       ]
     },
     {
-      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Heart Exchange||master",
+      "id": "538a3279395016be32741c177a89e658e45aa326-Heart Exchange||master",
       "date": "2026-09-23 19:28:13 -0300",
-      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitHash": "538a3279395016be32741c177a89e658e45aa326",
       "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
       "essenceType": "wood",
       "changeType": "modified",

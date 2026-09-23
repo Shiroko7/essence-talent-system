@@ -322,6 +322,24 @@ As an action, you target one creature within 120 feet. A pillar of concentrated 
 If this damage reduces the target to 50 hit points or fewer, it must immediately make a Constitution saving throw against your essence ability save DC. On a failed save, the creature is petrified into moonstone.
 
 ---
+### Aura of the Deep Bulwark
+
+```yaml
+id: water_master_aura_of_the_deep_bulwark
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Kwon Jae-Hwan
+location: Sirius
+```
+
+As an action, you radiate a massive, pressurized sphere of dampening aqueous vapor extending from you in a 120-foot radius for 1 minute.
+
+While inside this aura, you and friendly creatures gain resistance to fire damage and force damage. In addition, affected creatures have advantage on saving throws against spells, traps, munitions, and hazards that produce an explosion or concussive blast (such as *Fireball*, *Shatter*, explosive barrels, or demolition charges).
+
+---
 ## Cantrips
 
 ### Frostbite
