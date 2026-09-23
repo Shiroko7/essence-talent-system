@@ -11,12 +11,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You have advantage on saving throws against being frightened or charmed while within 10 feet of a source of fire or heat.
 
 ---
-
 ### Searing Gaze
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 minute.
 
 ---
-
 ### Flame Kinship
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You gain the ability to communicate with creatures of fire, such as Fire Elementals and Magmin, as if you shared a common language. This does not grant you the ability to control or command them but allows for basic communication and understanding.
 
 ---
-
 ### Ember Strike
 
 ```yaml
@@ -56,12 +59,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended. Additionaly, the target must also succeed on a Wisdom saving throw against your Spell Save DC or become frightened of you until the end of its next turn.
 
 ---
-
 ### Flame Lash
 
 ```yaml
@@ -71,12 +75,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can use your action to create a whip-like tendril of fire that extends up to 15 feet. Make a melee spell attack against a creature within range. On a hit, the target takes fire damage equal to 4d6 + your spellcasting ability modifier. The intense heat also causes the target to become dazzled, giving them disadvantage on their next attack roll.
 
 ---
-
 ### Inferno Disengage
 
 ```yaml
@@ -86,12 +91,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you use the Disengage action, you create a burst of fire around you. Each creature within 5 feet of you takes 2d6 fire damage.
 
 ---
-
 ### Heart Crusher Grip (Nilo)
 
 ```yaml
@@ -101,12 +107,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Xu Ning (Lime's ancestor)
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you can target one bloodied creature you can see within 15 feet of you. The target must make a Constitution saving throw. On a failed save, the target takes 6d6 fire damage, or half as much damage on a successful save. If this damage reduces the target to 0 hit points, their heart is crushed and they die instantly.
 
 ---
-
 ## Adept Tier
 
 ### Blazing Presence
@@ -118,12 +125,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.
 
 ---
-
 ### Ember's Resilience
 
 ```yaml
@@ -133,12 +141,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a reaction when you fail a saving throw, you can reroll the saving throw die. If you do so, you take 2d6 fire damage.
 
 ---
-
 ### Blazing Trail
 
 ```yaml
@@ -148,12 +157,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you take the Dash action, you can leave a trail of fire in your wake. For the duration of your movement, any creature that enters or ends its turn within the 10-foot-wide line of fire you create takes fire damage equal to your total fire essences. The creature must make a Dexterity saving throw, taking half damage on a success. This trail lasts for 1 minute or until you choose to end it.
 
 ---
-
 ### Scorched Ground
 
 ```yaml
@@ -163,12 +173,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you can cause a 20-foot radius area on the ground to become superheated within 120 feet of you for 1 minute. Creatures that start their turn in this area take fire damage equal to 4d6 + your spellcasting ability modifier. The area is difficult terrain, and the fire persists even if you move away from it.
 
 ---
-
 ### Burning Fury
 
 ```yaml
@@ -178,12 +189,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Immediately after you take fire damage, you gain advantage on attack rolls made before the end of your next turn.
 
 ---
-
 ### Frightful Pursuit
 
 ```yaml
@@ -193,12 +205,12 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 You have advantage on attack rolls against any creature that is currently frightened.
 
 ---
-
 ## Master Tier
 
 ### Martyr’s Flame Aura
@@ -210,12 +222,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Mario (Ilmater's Chosen)
+location: Leatrux
 ```
 
 You wreathe yourself in holy fire for 1 minute (concentration), creating a 30-foot aura that grants allies fire resistance. When an ally enters the aura or starts their turn inside it, they gain temporary hit points equal to 2d6 + your Charisma modifier. The flames warm and protect, never harm.
 
 ---
-
 ### Shadowflame Dream
 
 ```yaml
@@ -225,13 +238,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Shadow Sect
+location: Sirius
 ```
 
 As an Action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC. On a failed save, the creature takes 5d10 Fire damage and 5d10 Necrotic damage and falls Unconscious until the start of your next turn. On a successful save, the target only takes the fire damage and is not affected by the unconscious condition.
 
 ---
-
-
 ## Cantrips
 
 ### Control Flames
@@ -248,7 +261,6 @@ isCantrip: true
 https://5e.tools/spells.html#control%20flames_xge
 
 ---
-
 ### Create Bonfire
 
 ```yaml
@@ -263,7 +275,6 @@ isCantrip: true
 https://5e.tools/spells.html#create%20bonfire_xge
 
 ---
-
 ### Fire Bolt
 
 ```yaml
@@ -278,7 +289,6 @@ isCantrip: true
 https://5e.tools/spells.html#fire%20bolt_xphb
 
 ---
-
 ### Green-Flame Blade
 
 ```yaml
@@ -293,7 +303,6 @@ isCantrip: true
 https://5e.tools/spells.html#green-flame%20blade_tce
 
 ---
-
 ### Produce Flame
 
 ```yaml
@@ -308,7 +317,6 @@ isCantrip: true
 https://5e.tools/spells.html#produce%20flame_xphb
 
 ---
-
 ## Spells
 
 ### Burning Hands
@@ -325,7 +333,6 @@ isCantrip: false
 https://5e.tools/spells.html#burning%20hands_xphb
 
 ---
-
 ### Hellish Rebuke
 
 ```yaml
@@ -340,7 +347,6 @@ isCantrip: false
 https://5e.tools/spells.html#hellish%20rebuke_xphb
 
 ---
-
 ### Aganazzar's Scorcher
 
 ```yaml
@@ -355,7 +361,6 @@ isCantrip: false
 https://5e.tools/spells.html#aganazzar's%20scorcher_xge
 
 ---
-
 ### Continual Flame
 
 ```yaml
@@ -370,7 +375,6 @@ isCantrip: false
 https://5e.tools/spells.html#continual%20flame_xphb
 
 ---
-
 ### Flame Blade
 
 ```yaml
@@ -385,7 +389,6 @@ isCantrip: false
 https://5e.tools/spells.html#flame%20blade_xphb
 
 ---
-
 ### Flaming Sphere
 
 ```yaml
@@ -400,7 +403,6 @@ isCantrip: false
 https://5e.tools/spells.html#flaming%20sphere_xphb
 
 ---
-
 ### Scorching Ray
 
 ```yaml
@@ -415,7 +417,6 @@ isCantrip: false
 https://5e.tools/spells.html#scorching%20ray_xphb
 
 ---
-
 ### Fireball
 
 ```yaml
@@ -430,7 +431,6 @@ isCantrip: false
 https://5e.tools/spells.html#fireball_xphb
 
 ---
-
 ### Flame Arrows
 
 ```yaml
@@ -445,7 +445,6 @@ isCantrip: false
 https://5e.tools/spells.html#flame%20arrows_xge
 
 ---
-
 ### Fire Shield
 
 ```yaml
@@ -460,7 +459,6 @@ isCantrip: false
 https://5e.tools/spells.html#fire%20shield_xphb
 
 ---
-
 ### Wall of Fire
 
 ```yaml
@@ -475,7 +473,6 @@ isCantrip: false
 https://5e.tools/spells.html#wall%20of%20fire_xphb
 
 ---
-
 ### Flame Strike
 
 ```yaml
@@ -490,7 +487,6 @@ isCantrip: false
 https://5e.tools/spells.html#flame%20strike_xphb
 
 ---
-
 ### Immolation
 
 ```yaml
@@ -505,7 +501,6 @@ isCantrip: false
 https://5e.tools/spells.html#immolation_xge
 
 ---
-
 ### Investiture of Flame
 
 ```yaml
@@ -520,7 +515,6 @@ isCantrip: false
 https://5e.tools/spells.html#investiture%20of%20flame_xge
 
 ---
-
 ### Delayed Blast Fireball
 
 ```yaml
@@ -535,7 +529,6 @@ isCantrip: false
 https://5e.tools/spells.html#delayed%20blast%20fireball_xphb
 
 ---
-
 ### Fire Storm
 
 ```yaml
@@ -550,7 +543,6 @@ isCantrip: false
 https://5e.tools/spells.html#fire%20storm_xphb
 
 ---
-
 ### Incendiary Cloud
 
 ```yaml
@@ -565,7 +557,6 @@ isCantrip: false
 https://5e.tools/spells.html#incendiary%20cloud_xphb
 
 ---
-
 ### Meteor Swarm
 
 ```yaml
@@ -580,7 +571,6 @@ isCantrip: false
 https://5e.tools/spells.html#meteor%20swarm_xphb
 
 ---
-
 ### Spellfire Flare
 
 ```yaml
@@ -595,7 +585,6 @@ isCantrip: false
 https://5e.tools/spells.html#spellfire%20flare_frhof
 
 ---
-
 ### Ember Belly
 
 ```yaml
@@ -610,7 +599,6 @@ isCantrip: false
 https://5e.tools/spells.html#ember%20belly_obojimatallgrass
 
 ---
-
 ### Ashardalon's Stride
 
 ```yaml
@@ -625,7 +613,6 @@ isCantrip: false
 https://5e.tools/spells.html#ashardalon's%20stride_ftd
 
 ---
-
 ### Spellfire Storm
 
 ```yaml

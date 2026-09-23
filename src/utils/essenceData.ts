@@ -36,7 +36,10 @@ function convertRawAbility(rawAbility: any): Ability {
     isActive: !!rawAbility.isActive,
     isPassive: !!rawAbility.isPassive,
     isSpell: !!rawAbility.isSpell,
-    isCantrip: !!rawAbility.isCantrip
+    isCantrip: !!rawAbility.isCantrip,
+    author: rawAbility.author || rawAbility.source,
+    location: rawAbility.location,
+    source: rawAbility.source || rawAbility.author,
   };
 }
 

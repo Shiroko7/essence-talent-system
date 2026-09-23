@@ -11,12 +11,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 You gain advantage on Dexterity saving throws against effects that deal lightning damage or require quick reflexes, such as traps or spells.
 
 ---
-
 ### Lightning Step
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can harness the power of lightning to enhance your movement. Your jump distance is tripled, and your movement does not provoke opportunity attacks until the end of your turn.
 
 ---
-
 ### Stormborn Presence
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 When you make a Charisma (Persuasion) or Charisma (Intimidation) check to influence a group of people, you can invoke your stormy presence to gain advantage on the roll.
 
 ---
-
 ### Storm Navigator
 
 ```yaml
@@ -56,12 +59,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 Your understanding of storms helps you predict their patterns and avoid hazards. You gain proficiency in Navigator’s Tools and have advantage on Wisdom (Survival) checks made to navigate or map out sea routes in stormy weather.
 
 ---
-
 ### Lightning Insight
 
 ```yaml
@@ -71,12 +75,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 When on or near water, you can use your connection to lightning to sense changes in weather. You can use a bonus action to gain advantage on Wisdom (Perception) checks to spot distant ships, landmarks, or other navigation hazards.
 
 ---
-
 ## Adept Tier
 
 ### Thunderous Speed
@@ -88,12 +93,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 Your movement speed increases by 10 feet. Additionally, you can take the Dash action as a bonus action.
 
 ---
-
 ### Conductive Touch
 
 ```yaml
@@ -103,12 +109,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 When you hit a creature with a melee attack, you can choose to deal an extra 2d12 lightning damage.
 
 ---
-
 ### Lightning Sense
 
 ```yaml
@@ -118,12 +125,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 You have developed a heightened sense of awareness in stormy or electrically charged environments. You gain advantage on Wisdom (Perception) checks to notice hidden details or track creatures in such conditions.
 
 ---
-
 ### Thunderous Entrance
 
 ```yaml
@@ -133,12 +141,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 You can make a dramatic entrance by creating a booming thunderclap that announces your presence. This effect grants you expertise on Charisma (Performance) checks to make a memorable first impression.
 
 ---
-
 ### Thunderous Strike
 
 ```yaml
@@ -148,12 +157,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 When you hit a creature with a melee weapon attack, you can channel the force of a thunderstorm into your strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn. This ability can only be used once per turn, and once a creature is stunned by this ability, it cannot be stunned again by it for 1 minute.
 
 ---
-
 ### Lightning Javelin
 
 ```yaml
@@ -163,12 +173,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
 ```
 
 You hurl a javelin of lightning at a target within 60 feet. Make a ranged spell attack. On hit: 5d12 lightning damage and the target can't take reactions until the start of its next turn.
 
 ---
-
 ### Arc Chain
 
 ```yaml
@@ -178,12 +189,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Nethan (Nilo's Father)
+location: Leatrux
 ```
 
 Choose a creature within 120 feet. It makes a Dexterity saving throw, taking 3d8 lightning damage on a failure or half on a success. If it fails, the bolt leaps to another creature within 30 feet that hasn’t been hit yet, forcing the same save. The chain continues jumping to new creatures until one succeeds on its save or no valid targets remain.
 
 ---
-
 ## Master Tier
 
 ### Lightning Cage
@@ -195,12 +207,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Nethan (Nilo's Father)
+location: Leatrux
 ```
 
 You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting 1 minute. Creatures inside have their speed halved and can’t take reactions. Any creature that touches the cage’s edge takes 4d10 lightning damage. A creature inside may use its action to attempt a Strength save to break through: on a failure, it remains trapped and takes 4d10 lightning damage; on a success, it escapes and takes half the damage.
 
 ---
-
 ### Extinguishing Lightning
 
 ```yaml
@@ -210,12 +223,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Nethan (Nilo's Father)
+location: Leatrux
 ```
 
 As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save or half as much on a success. Creatures that fail also have one ongoing magical effect on them immediately end (your choice).
 
 ---
-
 ## Cantrips
 
 ### Lightning Lure
@@ -232,7 +246,6 @@ isCantrip: true
 https://5e.tools/spells.html#lightning%20lure_tce
 
 ---
-
 ### Shocking Grasp
 
 ```yaml
@@ -247,7 +260,6 @@ isCantrip: true
 https://5e.tools/spells.html#shocking%20grasp_xphb
 
 ---
-
 ## Spells
 
 ### Witch Bolt
@@ -264,7 +276,6 @@ isCantrip: false
 https://5e.tools/spells.html#witch%20bolt_xphb
 
 ---
-
 ### Call Lightning
 
 ```yaml
@@ -279,7 +290,6 @@ isCantrip: false
 https://5e.tools/spells.html#call%20lightning_phb
 
 ---
-
 ### Lightning Arrow
 
 ```yaml
@@ -294,7 +304,6 @@ isCantrip: false
 https://5e.tools/spells.html#lightning%20arrow_phb
 
 ---
-
 ### Lightning Bolt
 
 ```yaml
@@ -309,7 +318,6 @@ isCantrip: false
 https://5e.tools/spells.html#lightning%20bolt_phb
 
 ---
-
 ### Storm Sphere
 
 ```yaml
@@ -324,7 +332,6 @@ isCantrip: false
 https://5e.tools/spells.html#storm%20sphere_xge
 
 ---
-
 ### Chain Lightning
 
 ```yaml
@@ -339,7 +346,6 @@ isCantrip: false
 https://5e.tools/spells.html#chain%20lightning_xphb
 
 ---
-
 ### Teleport
 
 ```yaml
@@ -354,7 +360,6 @@ isCantrip: false
 https://5e.tools/spells.html#teleport_xphb
 
 ---
-
 ### Control Weather
 
 ```yaml
@@ -369,7 +374,6 @@ isCantrip: false
 https://5e.tools/spells.html#control%20weather_xphb
 
 ---
-
 ### Storm of Vengeance
 
 ```yaml
@@ -384,7 +388,6 @@ isCantrip: false
 https://5e.tools/spells.html#storm%20of%20vengeance_xphb
 
 ---
-
 ### Ride the Lightning
 
 ```yaml

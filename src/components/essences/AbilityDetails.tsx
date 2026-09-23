@@ -115,7 +115,16 @@ const AbilityDetails: React.FC<AbilityDetailsProps> = ({
       >
         {/* Header */}
         <div className="sticky top-0 bg-slate p-5 border-b border-gold-subtle flex justify-between items-center">
-          <h2 className="font-display text-xl tracking-wide text-ivory">{ability.name}</h2>
+          <div>
+            <h2 className="font-display text-xl tracking-wide text-ivory">{ability.name}</h2>
+            {(ability.author || ability.location) && (
+              <div className="text-xs text-gold/85 mt-1 font-body flex items-center gap-1.5">
+                {ability.author && <span className="font-medium">{ability.author}</span>}
+                {ability.author && ability.location && <span className="text-mist/50">•</span>}
+                {ability.location && <span className="text-mist">{ability.location}</span>}
+              </div>
+            )}
+          </div>
           <button
             onClick={onClose}
             className="p-2 text-mist hover:text-parchment hover:bg-charcoal rounded transition-colors"
@@ -169,6 +178,28 @@ const AbilityDetails: React.FC<AbilityDetailsProps> = ({
               </div>
             </div>
           </div>
+
+          {/* Origin / Source */}
+          {(ability.author || ability.location) && (
+            <div className={`grid ${ability.author && ability.location ? 'grid-cols-2' : 'grid-cols-1'} gap-4 mb-5`}>
+              {ability.author && (
+                <div className="arcane-card p-4">
+                  <h3 className="font-display text-xs tracking-wider text-gold mb-1">Source / Author</h3>
+                  <div className="font-display text-sm text-ivory">
+                    {ability.author}
+                  </div>
+                </div>
+              )}
+              {ability.location && (
+                <div className="arcane-card p-4">
+                  <h3 className="font-display text-xs tracking-wider text-mist mb-1">Origin / Location</h3>
+                  <div className="font-display text-sm text-ivory">
+                    {ability.location}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Action Button */}
           {!isLocked && (

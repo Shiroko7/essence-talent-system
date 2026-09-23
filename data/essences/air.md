@@ -11,12 +11,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 The Misty Step spell does not consume a spell slot if you begin or end your movement in a heavily obscured area.
 
 ---
-
 ### Thunderous Roar
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can let out a powerful roar that creates a shockwave, forcing all creatures within 10 feet to make a Constitution saving throw or be pushed 10 feet away from you and become deafened for 1 minute.
 
 ---
-
 ### Whispers of the Gale (Laura)
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Faelara Rest of the Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you miss with a ranged attack roll (including spell attacks), you can use your reaction and expend a spell slot of 1st level or higher to reroll the attack. You must use the new roll, and the spell slot is expended regardless of the outcome.
 
 ---
-
 ## Adept Tier
 
 ### Echoing Footsteps
@@ -58,12 +61,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 100 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.
 
 ---
-
 ### Thunderstep
 
 ```yaml
@@ -73,12 +77,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can use an action to make a sudden, loud noise, creating a brief but intense thunderclap that can be heard up to 300 feet away. Creatures within 30 feet of you must make a Constitution saving throw or be stunned until the end of your next turn.
 
 ---
-
 ### Calm Breeze
 
 ```yaml
@@ -88,12 +93,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can use a bonus action to create a soothing breeze that relaxes and calms creatures within a 30-foot radius, providing them with advantage on saving throws against being frightened or charmed. This effect lasts for 10 minutes.
 
 ---
-
 ### Misty Escape
 
 ```yaml
@@ -103,12 +109,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you take damage, you can use your reaction to turn into a cloud of mist, causing the attack to miss. You must spend a spell slot of 1st level or higher to use this ability.
 
 ---
-
 ### Whispering Winds
 
 ```yaml
@@ -118,12 +125,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can use your action to send a message carried by the wind to any creature within 1 mile of you. The message is heard as a whisper by the intended recipient. This ability allows for secret communications or covert information exchange.
 
 ---
-
 ### Wind Barrier
 
 ```yaml
@@ -133,12 +141,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a reaction to being targeted by an attack or harmful spell, you can summon a barrier of wind around you. You gain a +2 bonus to AC and saving throws until the start of your next turn. Additionally, attacks against you have disadvantage.
 
 ---
-
 ### Cyclone Step
 
 ```yaml
@@ -148,12 +157,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you use the Dash action, you can create a swirling vortex of wind around you. Creatures within 10 feet of your path must make a Strength saving throw or be knocked prone. The wind dissipates at the end of your movement.
 
 ---
-
 ### Wind Sprint
 
 ```yaml
@@ -163,12 +173,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can double your movement speed for a number of rounds equal to your total of wind essences.
 
 ---
-
 ### Sound Analysis
 
 ```yaml
@@ -178,12 +189,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can accurately determine the source and direction of any sound within 300 feet of you. This ability can be used to track creatures or detect hidden enemies. It provides you advantage on Wisdom (Perception) checks related to sound.
 
 ---
-
 ### Gale Force Strike
 
 ```yaml
@@ -193,12 +205,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you hit a creature of your size or smaller, or any creature one size category larger than you, with an attack or spell, you can create a gust of wind that forces the creature to make a Strength saving throw. On a failed save, the creature is pushed 10 feet in any direction you choose.
 
 ---
-
 ### Fortune Favors the Swift
 
 ```yaml
@@ -208,12 +221,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Wang Dabao
+location: Phudara / Isle of Whispers
 ```
 
 Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it to one d20 roll before the end of your next turn.
 
 ---
-
 ### Ascending Dragon Gale
 
 ```yaml
@@ -223,12 +237,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Yoo Tae-yang
+location: Sirius
 ```
 
 When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach. You can only use this ability once per turn. The target must make a Strength saving throw. On a failure, it takes 3d10 thunder damage, is launched 20 feet into the air, and is Restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing Prone.
 
 ---
-
 ## Master Tier
 
 ### Liberation’s Gale
@@ -240,12 +255,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Mario (Ilmater's Chosen)
+location: Leatrux
 ```
 
 A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets; each immediately ends one of the following conditions: Blinded, Charmed, Deafened, Frightened, Grappled, Paralyzed, Petrified, Poisoned, Restrained, or Stunned. For 1 minute, those creatures also have advantage on saves against those same conditions.For 1 minute, you become an unyielding force. You can’t be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will. Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone. The ground cracks beneath your steady steps.
 
 ---
-
 ### Just Passing By
 
 ```yaml
@@ -255,13 +271,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Wang Tianbao (Shadow Sect)
+location: Sirius
 ```
 
 As a reaction, you dissolve into wind until the start of your next turn, passing through solid objects, becoming immune to nonmagical slashing, piercing, and bludgeoning damage and resistant to magical slashing, piercing, and bludgeoning damage.
 
 ---
-
-
 ### Lunar Wind Spiral
 
 ```yaml
@@ -271,12 +287,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Yuji (Shadow Sect)
+location: Leatrux
 ```
 
 As an Action, you target a point within 150 feet; a cylinder of swirling, moonlight-infused winds erupts in a 30-foot radius and 60-foot height. When the spiral appears, each creature in the area must make a Constitution saving throw against your essence ability save DC, taking 6d8 Radiant damage on a failed save and being lifted 20 feet into the air until the start of its next turn. On a successful save, they take half damage and are not lifted. The effect lasts for 1 minute. Any creature that starts its turn in the area or enters it for the first time on a turn must make the saving throw, taking 3d6 Radiant damage on a failed save, or half on a successful one, but it is not lifted. You can use a Bonus Action on a subsequent turn to move the area of effect by up to 30 feet.
 
 ---
-
 ### Waning Moon Sabers
 
 ```yaml
@@ -286,12 +303,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Yuji (Shadow Sect)
+location: Leatrux
 ```
 
 As a bonus action, launch up to three crescent-shaped energy blades that travel 150 feet. Each saber makes a ranged spell attack for 1d4 + 1 Radiant damage. On a hit, the target must make a Constitution saving throw or be blinded until the end of their next turn as moonlight sears their vision. On a critical hit, the target automatically fails the saving throw. The sabers curve around cover, ignoring half and three-quarters cover.
 
 ---
-
 ### Sky-Piercing Execution
 
 ```yaml
@@ -301,12 +319,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Yoo Tae-yang
+location: Sirius
 ```
 
 As a reaction when a creature within 60 feet is airborne or suspended, teleport to an adjacent empty space in the air. Make one piercing melee weapon attack against it. On a hit, the target suffers the attack's normal damage plus an extra 4d10 thunder damage, and is instantly slammed [DESCRIPTION INCOMPLETE - please fill in the rest].
 
 ---
-
 ## Cantrips
 
 ### Gust
@@ -323,7 +342,6 @@ isCantrip: true
 https://5e.tools/spells.html#gust_xge
 
 ---
-
 ### Thunderclap
 
 ```yaml
@@ -338,7 +356,6 @@ isCantrip: true
 https://5e.tools/spells.html#thunderclap_xge
 
 ---
-
 ### Air Bubble
 
 ```yaml
@@ -353,7 +370,6 @@ isCantrip: false
 https://5e.tools/spells.html#air%20bubble_aag
 
 ---
-
 ## Spells
 
 ### Fog Cloud
@@ -370,7 +386,6 @@ isCantrip: false
 https://5e.tools/spells.html#fog%20cloud_xphb
 
 ---
-
 ### Feather Fall
 
 ```yaml
@@ -385,7 +400,6 @@ isCantrip: false
 https://5e.tools/spells.html#feather%20fall_xphb
 
 ---
-
 ### Jump
 
 ```yaml
@@ -400,7 +414,6 @@ isCantrip: false
 https://5e.tools/spells.html#jump_xphb
 
 ---
-
 ### Thunderwave
 
 ```yaml
@@ -415,7 +428,6 @@ isCantrip: false
 https://5e.tools/spells.html#thunderwave_xphb
 
 ---
-
 ### Warding Wind
 
 ```yaml
@@ -430,7 +442,6 @@ isCantrip: false
 https://5e.tools/spells.html#warding%20wind_xge
 
 ---
-
 ### Misty Step
 
 ```yaml
@@ -445,7 +456,6 @@ isCantrip: false
 https://5e.tools/spells.html#misty%20step_xphb
 
 ---
-
 ### Dust Devil
 
 ```yaml
@@ -460,7 +470,6 @@ isCantrip: false
 https://5e.tools/spells.html#dust%20devil_xge
 
 ---
-
 ### Gust of Wind
 
 ```yaml
@@ -475,7 +484,6 @@ isCantrip: false
 https://5e.tools/spells.html#gust%20of%20wind_xphb
 
 ---
-
 ### Shatter
 
 ```yaml
@@ -490,7 +498,6 @@ isCantrip: false
 https://5e.tools/spells.html#shatter_xphb
 
 ---
-
 ### Silence
 
 ```yaml
@@ -505,7 +512,6 @@ isCantrip: false
 https://5e.tools/spells.html#silence_xphb
 
 ---
-
 ### Fly
 
 ```yaml
@@ -520,7 +526,6 @@ isCantrip: false
 https://5e.tools/spells.html#fly_xphb
 
 ---
-
 ### Gaseous Form
 
 ```yaml
@@ -535,7 +540,6 @@ isCantrip: false
 https://5e.tools/spells.html#gaseous%20form_xphb
 
 ---
-
 ### Stinking Cloud
 
 ```yaml
@@ -550,7 +554,6 @@ isCantrip: false
 https://5e.tools/spells.html#stinking%20cloud_xphb
 
 ---
-
 ### Wind Wall
 
 ```yaml
@@ -565,7 +568,6 @@ isCantrip: false
 https://5e.tools/spells.html#wind%20wall_xphb
 
 ---
-
 ### Haste
 
 ```yaml
@@ -580,7 +582,6 @@ isCantrip: false
 https://5e.tools/spells.html#haste_xphb
 
 ---
-
 ### Cloudkill
 
 ```yaml
@@ -595,7 +596,6 @@ isCantrip: false
 https://5e.tools/spells.html#cloudkill_xphb
 
 ---
-
 ### Cone of Cold
 
 ```yaml
@@ -610,7 +610,6 @@ isCantrip: false
 https://5e.tools/spells.html#cone%20of%20cold_xphb
 
 ---
-
 ### Control Winds
 
 ```yaml
@@ -625,7 +624,6 @@ isCantrip: false
 https://5e.tools/spells.html#control%20winds_xge
 
 ---
-
 ### Investiture of Wind
 
 ```yaml
@@ -640,7 +638,6 @@ isCantrip: false
 https://5e.tools/spells.html#investiture%20of%20wind_xge
 
 ---
-
 ### Otiluke's Freezing Sphere
 
 ```yaml
@@ -655,7 +652,6 @@ isCantrip: false
 https://5e.tools/spells.html#otiluke's%20freezing%20sphere_xphb
 
 ---
-
 ### Wind Walk
 
 ```yaml
@@ -670,7 +666,6 @@ isCantrip: false
 https://5e.tools/spells.html#wind%20walk_xphb
 
 ---
-
 ### Etherealness
 
 ```yaml
@@ -685,7 +680,6 @@ isCantrip: false
 https://5e.tools/spells.html#etherealness_xphb
 
 ---
-
 ### Reverse Gravity
 
 ```yaml
@@ -700,7 +694,6 @@ isCantrip: false
 https://5e.tools/spells.html#reverse%20gravity_xphb
 
 ---
-
 ### Whirlwind
 
 ```yaml
@@ -715,7 +708,6 @@ isCantrip: false
 https://5e.tools/spells.html#whirlwind_xge
 
 ---
-
 ### Incendiary Cloud
 
 ```yaml
@@ -730,7 +722,6 @@ isCantrip: false
 https://5e.tools/spells.html#incendiary%20cloud_xphb
 
 ---
-
 ### Control Weather
 
 ```yaml
@@ -745,7 +736,6 @@ isCantrip: false
 https://5e.tools/spells.html#control%20weather_xphb
 
 ---
-
 ### Storm of Vengeance
 
 ```yaml
@@ -760,22 +750,20 @@ isCantrip: false
 https://5e.tools/spells.html#storm%20of%20vengeance_xphb
 
 ---
-
 ### Cacophonic Shield
 
 ```yaml
-id: wind_adept_cacophonic_shield
-tier: adept
-isActive: true
+id: wind_3rd_level_cacophonic_shield
+tier: 3rd
+isActive: false
 isPassive: false
-isSpell: false
+isSpell: true
 isCantrip: false
 ```
 
 https://5e.tools/spells.html#cacophonic%20shield_frhof
 
 ---
-
 ### Freedom of the Winds
 
 ```yaml
@@ -790,7 +778,6 @@ isCantrip: false
 https://5e.tools/spells.html#freedom%20of%20the%20winds_tdcsr
 
 ---
-
 ### Mass Levitate
 
 ```yaml

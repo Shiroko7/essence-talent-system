@@ -8,6 +8,8 @@ export const acidAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_initiate_alchemy_proficiency",
@@ -18,6 +20,8 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_initiate_acidic_insight",
@@ -28,6 +32,8 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_initiate_acidic_precision",
@@ -38,6 +44,8 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_adept_chemical_expertise",
@@ -48,6 +56,8 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_adept_explosive_savant",
@@ -58,6 +68,8 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_adept_miasmic_cloud",
@@ -68,6 +80,8 @@ export const acidAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_adept_acidic_embrace",
@@ -78,6 +92,8 @@ export const acidAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_adept_expanded_explosion",
@@ -88,6 +104,8 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_adept_extended_reach",
@@ -98,6 +116,7 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "acid_seven_color_elixir",
@@ -108,6 +127,8 @@ export const acidAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Fendral",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "acid_master_erosion_of_being",
@@ -118,6 +139,8 @@ export const acidAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Shadow Sect",
+    location: "Sirius",
   },
   {
     id: "acid_grandmaster_ethereal_phase_barrier",
@@ -128,6 +151,8 @@ export const acidAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Malzareth (Dryad Cyric Cultist)",
+    location: "Sirius",
   }
 ];
 

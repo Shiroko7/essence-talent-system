@@ -8,6 +8,8 @@ export const woodAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_initiate_fertile_ground_resilience",
@@ -18,6 +20,8 @@ export const woodAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_initiate_thorny_defence",
@@ -28,6 +32,8 @@ export const woodAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_initiate_woodcraft",
@@ -38,6 +44,8 @@ export const woodAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_adept_plant_bond",
@@ -48,6 +56,8 @@ export const woodAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_adept_woodland_stride",
@@ -58,6 +68,8 @@ export const woodAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_adept_natures_insight",
@@ -68,6 +80,8 @@ export const woodAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_adept_verdant_armor",
@@ -78,6 +92,8 @@ export const woodAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_adept_needle_barrage",
@@ -88,6 +104,8 @@ export const woodAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wood_adept_tree_form",
@@ -98,6 +116,8 @@ export const woodAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "vine_master_entangling_reach",
@@ -108,6 +128,7 @@ export const woodAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "vine_master_coiling_resilience",
@@ -118,6 +139,7 @@ export const woodAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "wood_master_heart_exchange",
@@ -128,6 +150,7 @@ export const woodAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   }
 ];
 
