@@ -2,7 +2,7 @@ export const acidAbilities = [
   {
     id: "acid_initiate_caustic_bomb",
     name: "Caustic Bomb",
-    description: "As an action, you can create a powerful, improvised explosive from available materials. It deals 4d6 acid damage in a 10-foot radius on a failed Dexterity saving throw, or half as much on a successful save.",
+    description: "As an action, you can create a powerful, improvised explosive from available materials. Each creature in a 10-foot radius must make a Dexterity saving throw, taking 4d6 acid damage on a failed save, or half as much on a successful save.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -86,7 +86,7 @@ export const acidAbilities = [
   {
     id: "acid_adept_acidic_embrace",
     name: "Acidic Embrace",
-    description: "You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute",
+    description: "You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -121,7 +121,7 @@ export const acidAbilities = [
   {
     id: "acid_seven_color_elixir",
     name: "Seven-Color Elixir",
-    description: "As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven.\n\n    1. Crimson Veil — Greater invisibility for 1 minute.\n    2. Azure Sight — True seeing for 10 minutes.\n    3. Golden Mirage — Four illusory duplicates (mirror image).\n    4. Emerald Phantasm — Hallucinatory terrain in a 150-foot radius.\n    5. Violet Confusion — Confusion affecting all creatures within 30 feet.\n    6. Silver Displacement — Mislead effect.\n    7.Obsidian Terror — Fear in a 30-foot cone.",
+    description: "As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven:\n\n1. **Crimson Veil** — *Greater Invisibility* for 1 minute.\n2. **Azure Sight** — *True Seeing* for 10 minutes.\n3. **Golden Mirage** — Four illusory duplicates (*Mirror Image*).\n4. **Emerald Phantasm** — *Hallucinatory Terrain* in a 150-foot radius.\n5. **Violet Confusion** — *Confusion* affecting all creatures within 30 feet.\n6. **Silver Displacement** — *Mislead* effect.\n7. **Obsidian Terror** — *Fear* in a 30-foot cone.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -133,7 +133,7 @@ export const acidAbilities = [
   {
     id: "acid_master_erosion_of_being",
     name: "Erosion of Being",
-    description: "As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success. On a failed save, the creature begins dissolving into nothingness and is banished to a harmless demiplane for 1 minute. If reduced to 0 hit points by this damage, it dissolves completely and is permanently destroyed (no resurrection except by Wish). At the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success.",
+    description: "As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success.\n\nOn a failed save, the creature begins dissolving into nothingness and is banished to a harmless demiplane for 1 minute. If reduced to 0 hit points by this damage, it dissolves completely and is permanently destroyed (no resurrection except by *Wish*).\n\nAt the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success.",
     tier: "master",
     isActive: true,
     isPassive: false,

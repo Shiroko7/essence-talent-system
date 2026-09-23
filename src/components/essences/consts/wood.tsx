@@ -2,7 +2,7 @@ export const woodAbilities = [
   {
     id: "wood_initiate_vine_manipulation",
     name: "Vine Manipulation",
-    description: "You gain the ability to manipulate vines and roots within 30 feet of you. As an action, you can cause vines to emerge from the ground or surrounding vegetation to ensnare a creature or create barriers. The vines can grapple or restrain a creature (Strength saving throw) or create difficult terrain in a 10-foot square area for 1 minute.",
+    description: "You gain the ability to manipulate vines and roots within 30 feet of you.\n\nAs an action, you can cause vines to emerge from the ground or surrounding vegetation to ensnare a creature or create barriers:\n- **Ensnare:** Force a creature to make a Strength saving throw; on a failed save, the creature is grappled or restrained (your choice) by the vines.\n- **Barriers:** Create difficult terrain in a 10-foot square area for 1 minute.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -98,7 +98,7 @@ export const woodAbilities = [
   {
     id: "wood_adept_needle_barrage",
     name: "Needle Barrage",
-    description: "You unleash a torrent of wooden needles that streak toward one creature you can see within range. The target makes a Dexterity saving throw. On a failure: 8d4 piercing damage and is riddled with needles, reducing its speed by half until the end of your next turn. On a success: half damage and no speed reduction.",
+    description: "You unleash a torrent of wooden needles that streak toward one creature you can see within range. The target must make a Dexterity saving throw:\n- **On a failed save:** The target takes 8d4 piercing damage and is riddled with needles, reducing its speed by half until the end of your next turn.\n- **On a successful save:** The target takes half damage and suffers no speed reduction.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const woodAbilities = [
   {
     id: "wood_adept_tree_form",
     name: "Tree Form",
-    description: "You can use your action to transform into a treelike creature. While in this form, you gain the following benefits: - AC 17: Your skin becomes as tough as bark. - Hit Points: You gain temporary hit points equal to twice your level. - Attacks: You can make a slam attack with +6 to hit, dealing 2d6+4 bludgeoning damage. - Rooted: You can root yourself to the ground. While rooted, you cannot move, but you have advantage on Strength and Constitution saving throws, and any creature that starts its turn within 5 feet of you takes 1d6 bludgeoning damage. - This form lasts for 1 minute or until you use your action to revert to your normal form. You can use this feature once per long rest.",
+    description: "You can use your action to transform into a treelike creature for 1 minute or until you use your action to revert to your normal form (usable once per long rest).\n\nWhile in this form, you gain the following benefits:\n- **Armor Class:** Your AC becomes 17 as your skin becomes as tough as bark.\n- **Hit Points:** You gain temporary hit points equal to twice your character level.\n- **Slam Attack:** You can make a slam melee attack with a +6 bonus to hit, dealing 2d6 + 4 bludgeoning damage.\n- **Rooted Stance:** You can root yourself to the ground. While rooted, you cannot move, but you have advantage on Strength and Constitution saving throws, and any creature that starts its turn within 5 feet of you takes 1d6 bludgeoning damage.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -133,7 +133,7 @@ export const woodAbilities = [
   {
     id: "vine_master_coiling_resilience",
     name: "Coiling Resilience",
-    description: "You gain a +1 bonus to all saving throws for each creature you currently have grappled",
+    description: "You gain a +1 bonus to all saving throws for each creature you currently have grappled.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -144,7 +144,7 @@ export const woodAbilities = [
   {
     id: "wood_master_heart_exchange",
     name: "Heart Exchange",
-    description: "As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude. For the next hour, whenever one of you takes damage, both take half that damage. Whenever one regains hit points, both regain the same amount. You both gain advantage on all saving throws. This bond is unbreakable and lasts the full duration regardless of distance or conditions. You can maintain only one heart exchange at a time.",
+    description: "As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude.\n\nFor the next hour, you and the target share an unbreakable bond regardless of distance:\n- Whenever one of you takes damage, both take half that damage.\n- Whenever one regains hit points, both regain the same amount.\n- You both gain advantage on all saving throws.\n\nYou can maintain only one heart exchange at a time.",
     tier: "master",
     isActive: true,
     isPassive: false,

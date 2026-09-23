@@ -38,7 +38,7 @@ export const fireAbilities = [
   {
     id: "fire_initiate_ember_strike",
     name: "Ember Strike",
-    description: "When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended. Additionaly, the target must also succeed on a Wisdom saving throw against your Spell Save DC or become frightened of you until the end of its next turn.",
+    description: "When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended. Additionally, the target must succeed on a Wisdom saving throw against your spell save DC or become frightened of you until the end of its next turn.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -74,7 +74,7 @@ export const fireAbilities = [
   {
     id: "fire_initiate_heart_crusher_grip",
     name: "Heart Crusher Grip (Nilo)",
-    description: "As an action, you can target one bloodied creature you can see within 15 feet of you. The target must make a Constitution saving throw. On a failed save, the target takes 6d6 fire damage, or half as much damage on a successful save. If this damage reduces the target to 0 hit points, their heart is crushed and they die instantly.",
+    description: "As an action, you can target one bloodied creature you can see within 15 feet of you. The target must make a Constitution saving throw, taking 6d6 fire damage on a failed save, or half as much damage on a successful one. If this damage reduces the target to 0 hit points, its heart is crushed and it dies instantly.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -157,7 +157,7 @@ export const fireAbilities = [
   {
     id: "fire_essence_martyrs_flame_aura",
     name: "Martyr’s Flame Aura",
-    description: "You wreathe yourself in holy fire for 1 minute (concentration), creating a 30-foot aura that grants allies fire resistance. When an ally enters the aura or starts their turn inside it, they gain temporary hit points equal to 2d6 + your Charisma modifier. The flames warm and protect, never harm.",
+    description: "You wreathe yourself in holy fire for up to 1 minute (requires concentration), creating a 30-foot protective aura centered on you:\n- Friendly creatures within the aura gain resistance to fire damage.\n- When an ally enters the aura or starts its turn inside it, it gains temporary hit points equal to 2d6 + your Charisma modifier.\n\nThe flames warm and protect, never harming your allies.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -169,7 +169,7 @@ export const fireAbilities = [
   {
     id: "fire_master_essence_shadowflame_dream",
     name: "Shadowflame Dream",
-    description: "As an Action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC. On a failed save, the creature takes 5d10 Fire damage and 5d10 Necrotic damage and falls Unconscious until the start of your next turn. On a successful save, the target only takes the fire damage and is not affected by the unconscious condition.",
+    description: "As an action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC:\n- **On a failed save:** The creature takes 5d10 fire damage and 5d10 necrotic damage, and falls unconscious until the start of your next turn.\n- **On a successful save:** The target takes only the fire damage and is not affected by the unconscious condition.",
     tier: "master",
     isActive: true,
     isPassive: false,

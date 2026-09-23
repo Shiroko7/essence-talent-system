@@ -15,7 +15,7 @@ author: Espora Tribe
 location: Phudara / Isle of Whispers
 ```
 
-As an action, you can create a powerful, improvised explosive from available materials. It deals 4d6 acid damage in a 10-foot radius on a failed Dexterity saving throw, or half as much on a successful save.
+As an action, you can create a powerful, improvised explosive from available materials. Each creature in a 10-foot radius must make a Dexterity saving throw, taking 4d6 acid damage on a failed save, or half as much on a successful save.
 
 ---
 ### Alchemy Proficiency
@@ -129,7 +129,7 @@ author: Espora Tribe
 location: Phudara / Isle of Whispers
 ```
 
-You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute
+You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute.
 
 ---
 ### Expanded Explosion
@@ -178,15 +178,15 @@ author: Fendral
 location: Phudara / Isle of Whispers
 ```
 
-As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven.
+As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven:
 
-    1. Crimson Veil — Greater invisibility for 1 minute.
-    2. Azure Sight — True seeing for 10 minutes.
-    3. Golden Mirage — Four illusory duplicates (mirror image).
-    4. Emerald Phantasm — Hallucinatory terrain in a 150-foot radius.
-    5. Violet Confusion — Confusion affecting all creatures within 30 feet.
-    6. Silver Displacement — Mislead effect.
-    7.Obsidian Terror — Fear in a 30-foot cone.
+1. **Crimson Veil** — *Greater Invisibility* for 1 minute.
+2. **Azure Sight** — *True Seeing* for 10 minutes.
+3. **Golden Mirage** — Four illusory duplicates (*Mirror Image*).
+4. **Emerald Phantasm** — *Hallucinatory Terrain* in a 150-foot radius.
+5. **Violet Confusion** — *Confusion* affecting all creatures within 30 feet.
+6. **Silver Displacement** — *Mislead* effect.
+7. **Obsidian Terror** — *Fear* in a 30-foot cone.
 
 ---
 ### Erosion of Being
@@ -202,7 +202,11 @@ author: Shadow Sect
 location: Sirius
 ```
 
-As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success. On a failed save, the creature begins dissolving into nothingness and is banished to a harmless demiplane for 1 minute. If reduced to 0 hit points by this damage, it dissolves completely and is permanently destroyed (no resurrection except by Wish). At the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success.
+As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success.
+
+On a failed save, the creature begins dissolving into nothingness and is banished to a harmless demiplane for 1 minute. If reduced to 0 hit points by this damage, it dissolves completely and is permanently destroyed (no resurrection except by *Wish*).
+
+At the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success.
 
 ---
 ## Grandmaster Tier

@@ -95,7 +95,21 @@ author: Selune
 location: Phudara / Isle of Whispers
 ```
 
-As a bonus action, you summon a Water Clone in an unoccupied space you can see within 30 feet. The clone lasts for 1 minute or until destroyed. The clone is linked to your senses, allowing you to cast spells through it as if you were in its space. The clone has the following stats: Armor Class: Your spell save DC (8 + proficiency bonus + spellcasting modifier). Hit Points: Equal to half your hit point maximum. Speed: Equal to your swimming speed. Immunity: Cold damage. Resistance: Fire damage. Vulnerability: Lightning damage. As a bonus action, you can command the clone to move and take one of the following actions: Melee Spell Attack: Range 10 feet, dealing 1d8 + your spellcasting modifier cold damage. Ranged Spell Attack: Range 60 feet, dealing 1d6 + your spellcasting modifier cold damage. Take the Dash, Dodge, or Disengage action.
+As a bonus action, you summon a Water Clone in an unoccupied space you can see within 30 feet. The clone lasts for 1 minute or until destroyed. The clone is linked to your senses, allowing you to cast spells through it as if you were in its space.
+
+**Clone Statistics:**
+- **Armor Class:** Your spell save DC (8 + proficiency bonus + spellcasting modifier)
+- **Hit Points:** Equal to half your hit point maximum
+- **Speed:** Equal to your swimming speed
+- **Damage Resistances:** Fire
+- **Damage Immunities:** Cold
+- **Damage Vulnerabilities:** Lightning
+
+**Commanding the Clone:**
+As a bonus action, you can command the clone to move and take one of the following actions:
+- **Melee Spell Attack:** Reach 10 ft., dealing 1d8 + your spellcasting modifier cold damage.
+- **Ranged Spell Attack:** Range 60 ft., dealing 1d6 + your spellcasting modifier cold damage.
+- **Utility:** Take the Dash, Dodge, or Disengage action.
 
 ---
 ## Adept Tier
@@ -209,7 +223,9 @@ author: Selune
 location: Phudara / Isle of Whispers
 ```
 
-As a reaction, you can cause your one of your Water Clones to detonate, dealing cold damage equal to half of its maximum hit points in a 10-foot radius. Creatures in range must succeed on a Dexterity saving throw or take full damage, or half as much on a success. You can now summon two Water Clones at the same time, increasing the damage by one damage dice when they attack together.
+As a reaction, you can cause one of your Water Clones to detonate in a 10-foot radius burst of frigid water. Each creature in range must make a Dexterity saving throw, taking cold damage equal to half the clone's maximum hit points on a failed save, or half as much on a successful one.
+
+In addition, you can now summon up to two Water Clones simultaneously. When they attack together, their attack damage increases by one damage die.
 
 ---
 ### Moonlit Verdant Beam
@@ -225,12 +241,13 @@ author: Lesbian Dragons
 location: Leatrux
 ```
 
-As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack. On a hit, the target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC. On a failed save, the target is blinded and poisoned until the end of your next turn.
+As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack:
+- **On a hit:** The target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC.
+- **On a failed save:** The target is blinded and poisoned until the end of your next turn.
 
 ---
 ## Master Tier
 
----
 ### Draconic Regeneration of the Emerald Moon
 
 ```yaml
@@ -260,7 +277,12 @@ author: Selune
 location: Phudara / Isle of Whispers
 ```
 
-As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additionally, you can now summon three Water Clones at the same time, and they last for 10 minutes. Your Water Clones now emit dim moonlight in a 60-foot radius around them.
+As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks.
+
+In addition, your mastery deepens:
+- You can now summon up to three Water Clones simultaneously.
+- Your Water Clones last for 10 minutes.
+- Your Water Clones emit dim moonlight in a 60-foot radius around them.
 
 ---
 ### Lunar Tide
@@ -292,7 +314,12 @@ author: Yuji (Shadow Sect)
 location: Leatrux
 ```
 
-As an Action, you target one creature within 120 feet. A pillar of concentrated moonlight descends, requiring a Dexterity saving throw against your essence ability save DC. On a failed save, the target takes 6d8 Radiant damage and 3d8 Cold damage, and is Restrained until the end of their next turn as lunar energy begins to calcify their limbs. On a successful save, they take half damage and are not Restrained. If this damage reduces the target to 50 hit points or fewer, they must immediately make a Constitution saving throw against your essence ability save DC. On a failed Constitution save, the creature is Petrified into moonstone
+As an action, you target one creature within 120 feet. A pillar of concentrated moonlight descends, requiring a Dexterity saving throw against your essence ability save DC:
+- **On a failed save:** The target takes 6d8 radiant damage and 3d8 cold damage, and is restrained until the end of its next turn as lunar energy begins to calcify its limbs.
+- **On a successful save:** The target takes half damage and is not restrained.
+
+**Lunar Petrification:**
+If this damage reduces the target to 50 hit points or fewer, it must immediately make a Constitution saving throw against your essence ability save DC. On a failed save, the creature is petrified into moonstone.
 
 ---
 ## Cantrips

@@ -31,7 +31,9 @@ author: Llamarada Tribe
 location: Phudara / Isle of Whispers
 ```
 
-As a bonus action, you can pull or push a metal object weighing up to 10 pounds within 60 feet, moving it up to 10 feet toward or away from you. If the object is carried or worn by a creature, that creature must succeed on a Strength saving throw against your spell save DC. On a failed save, you can choose to either move the creature along with the object or detach the object from the creature. For objects heavier or larger than the base limit, you can attempt to move them by making an Intelligence (Arcana) check against a DC determined by the object’s weight and size. Objects far beyond your power are immovable.
+As a bonus action, you can pull or push a metal object weighing up to 10 pounds within 60 feet, moving it up to 10 feet toward or away from you:
+- If the object is carried or worn by a creature, that creature must succeed on a Strength saving throw against your spell save DC. On a failed save, you can choose to either move the creature along with the object or detach the object from the creature.
+- For objects heavier or larger than 10 pounds, you can attempt to move them by making an Intelligence (Arcana) check against a DC determined by the object’s weight and size. Objects far beyond your power remain immovable.
 
 ---
 ### Metal Sense
@@ -161,7 +163,7 @@ author: Llamarada Tribe
 location: Phudara / Isle of Whispers
 ```
 
-As an action, you can create a whirlwind of metallic shards in a 30-foot radius around you. Creatures within the cylinder must make a Dexterity saving throw. On a failed save, a creature takes 7d6 slashing damage, or half as much damage on a successful save.
+As an action, you can create a whirlwind of metallic shards in a 30-foot radius around you. Each creature within the area must make a Dexterity saving throw, taking 7d6 slashing damage on a failed save, or half as much damage on a successful one.
 
 ---
 ## Master
@@ -179,7 +181,11 @@ author: Shadow Sect
 location: Sirius
 ```
 
-As an action, target a creature within 60 feet to make a Charisma saving throw. They take 2d8 force damage per karmic debt you discern (up to 18d8). On a failed save, they're restrained for rounds equal to debts discerned. On a success, they take half damage, have speed halved, and you gain temporary hit points equal to damage dealt.
+As an action, target a creature within 60 feet to make a Charisma saving throw. The creature takes 2d8 force damage per karmic debt you discern (up to a maximum of 18d8):
+- **On a failed save:** The creature is restrained for a number of rounds equal to the debts discerned.
+- **On a successful save:** The creature takes half damage, and its speed is halved for 1 round.
+
+Regardless of the outcome, you gain temporary hit points equal to the total force damage dealt.
 
 ---
 ## Cantrips

@@ -177,7 +177,8 @@ author: Lei Zhen
 location: Phudara / Isle of Whispers
 ```
 
-You hurl a javelin of lightning at a target within 60 feet. Make a ranged spell attack. On hit: 5d12 lightning damage and the target can't take reactions until the start of its next turn.
+You hurl a javelin of pure lightning at a target within 60 feet. Make a ranged spell attack:
+- **On a hit:** The target takes 5d12 lightning damage and cannot take reactions until the start of its next turn.
 
 ---
 ### Arc Chain
@@ -193,7 +194,9 @@ author: Nethan (Nilo's Father)
 location: Leatrux
 ```
 
-Choose a creature within 120 feet. It makes a Dexterity saving throw, taking 3d8 lightning damage on a failure or half on a success. If it fails, the bolt leaps to another creature within 30 feet that hasn’t been hit yet, forcing the same save. The chain continues jumping to new creatures until one succeeds on its save or no valid targets remain.
+Choose a creature within 120 feet. The target must make a Dexterity saving throw, taking 3d8 lightning damage on a failed save, or half as much on a successful one.
+
+If the target fails its saving throw, the arc leaps to another creature within 30 feet of it that hasn’t been struck yet, forcing the same saving throw. The chain continues jumping to new creatures until a target succeeds on its save or no valid targets remain within range.
 
 ---
 ## Master Tier
@@ -211,7 +214,10 @@ author: Nethan (Nilo's Father)
 location: Leatrux
 ```
 
-You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting 1 minute. Creatures inside have their speed halved and can’t take reactions. Any creature that touches the cage’s edge takes 4d10 lightning damage. A creature inside may use its action to attempt a Strength save to break through: on a failure, it remains trapped and takes 4d10 lightning damage; on a success, it escapes and takes half the damage.
+You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting for 1 minute:
+- Creatures inside have their speed halved and cannot take reactions.
+- Any creature that touches or attempts to pass through the cage's perimeter takes 4d10 lightning damage.
+- A creature trapped inside can use an action to make a Strength saving throw to break through: on a failed save, it remains trapped and takes 4d10 lightning damage; on a successful save, it escapes and takes half damage.
 
 ---
 ### Extinguishing Lightning
@@ -227,7 +233,9 @@ author: Nethan (Nilo's Father)
 location: Leatrux
 ```
 
-As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save or half as much on a success. Creatures that fail also have one ongoing magical effect on them immediately end (your choice).
+As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save, or half as much on a successful one.
+
+On a failed save, one ongoing magical effect or spell on the creature immediately ends (your choice).
 
 ---
 ## Cantrips

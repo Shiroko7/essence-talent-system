@@ -13,6 +13,7 @@ import FilterPills from './FilterPills';
 import SearchInput from './SearchInput';
 import { getFilteredAbilities } from '../../utils/essenceUtils';
 import { fuzzySearch } from '../../utils/fuzzySearch';
+import AbilityMarkdown from './AbilityMarkdown';
 
 interface AbilitySummaryProps {
   allAbilities: Record<EssencePathId, Ability[]>;
@@ -212,42 +213,6 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
     return { label: 'Unknown', className: 'bg-charcoal text-mist' };
   };
 
-  const formatDescription = (description: string) => {
-    if (description.startsWith('http')) {
-      return (
-        <div>
-          <p className="mb-2 text-parchment/80">This ability references an external spell. For detailed information:</p>
-          <a
-            href={description}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gold hover:text-gold-bright"
-          >
-            View spell details
-          </a>
-        </div>
-      );
-    }
-
-    const sentences = description.split(/(?<=[.!?])\s+/g);
-    const paragraphs: string[] = [];
-    let currentParagraph = '';
-
-    sentences.forEach((sentence, index) => {
-      currentParagraph += sentence + (index < sentences.length - 1 ? ' ' : '');
-
-      if (currentParagraph.length > 150 || sentence.includes('\n') || index === sentences.length - 1) {
-        paragraphs.push(currentParagraph.trim());
-        currentParagraph = '';
-      }
-    });
-
-    return paragraphs.map((paragraph, index) => (
-      <p key={index} className={index > 0 ? "mt-3" : ""}>
-        {paragraph}
-      </p>
-    ));
-  };
 
   const highlightText = (text: string, term: string) => {
     if (!term.trim()) {
@@ -402,14 +367,7 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
 
                         <div className="arcane-card p-4">
                           <h5 className="font-display text-xs tracking-wider text-gold uppercase mb-3">Description</h5>
-                          <div className="text-parchment/90 leading-relaxed text-left font-body">
-                            {ability.description.startsWith('http')
-                              ? formatDescription(ability.description)
-                              : searchTerm
-                                ? highlightText(ability.description, searchTerm)
-                                : formatDescription(ability.description)
-                            }
-                          </div>
+                          <AbilityMarkdown content={ability.description} searchTerm={searchTerm} />
                         </div>
 
                         {(ability.author || ability.location) && (

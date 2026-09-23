@@ -1,7 +1,783 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-23T22:24:36.611Z",
+  "generatedAt": "2026-09-23T22:43:03.410Z",
   "entries": [
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Caustic Bomb||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "acid",
+      "changeType": "modified",
+      "ability": {
+        "id": "acid_initiate_caustic_bomb",
+        "name": "Caustic Bomb",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, you can create a powerful, improvised explosive from available materials. It deals 4d6 acid damage in a 10-foot radius on a failed Dexterity saving throw, or half as much on a successful save.",
+          "newValue": "As an action, you can create a powerful, improvised explosive from available materials. Each creature in a 10-foot radius must make a Dexterity saving throw, taking 4d6 acid damage on a failed save, or half as much on a successful save."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Acidic Embrace||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "acid",
+      "changeType": "modified",
+      "ability": {
+        "id": "acid_adept_acidic_embrace",
+        "name": "Acidic Embrace",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute",
+          "newValue": "You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Seven-Color Elixir||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "acid",
+      "changeType": "modified",
+      "ability": {
+        "id": "acid_seven_color_elixir",
+        "name": "Seven-Color Elixir",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven.\n\n    1. Crimson Veil — Greater invisibility for 1 minute.\n    2. Azure Sight — True seeing for 10 minutes.\n    3. Golden Mirage — Four illusory duplicates (mirror image).\n    4. Emerald Phantasm — Hallucinatory terrain in a 150-foot radius.\n    5. Violet Confusion — Confusion affecting all creatures within 30 feet.\n    6. Silver Displacement — Mislead effect.\n    7.Obsidian Terror — Fear in a 30-foot cone.",
+          "newValue": "As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven:\n\n1. **Crimson Veil** — *Greater Invisibility* for 1 minute.\n2. **Azure Sight** — *True Seeing* for 10 minutes.\n3. **Golden Mirage** — Four illusory duplicates (*Mirror Image*).\n4. **Emerald Phantasm** — *Hallucinatory Terrain* in a 150-foot radius.\n5. **Violet Confusion** — *Confusion* affecting all creatures within 30 feet.\n6. **Silver Displacement** — *Mislead* effect.\n7. **Obsidian Terror** — *Fear* in a 30-foot cone."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Erosion of Being||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "acid",
+      "changeType": "modified",
+      "ability": {
+        "id": "acid_master_erosion_of_being",
+        "name": "Erosion of Being",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success. On a failed save, the creature begins dissolving into nothingness and is banished to a harmless demiplane for 1 minute. If reduced to 0 hit points by this damage, it dissolves completely and is permanently destroyed (no resurrection except by Wish). At the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success.",
+          "newValue": "As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success.\n\nOn a failed save, the creature begins dissolving into nothingness and is banished to a harmless demiplane for 1 minute. If reduced to 0 hit points by this damage, it dissolves completely and is permanently destroyed (no resurrection except by *Wish*).\n\nAt the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Ascending Dragon Gale||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "air",
+      "changeType": "modified",
+      "ability": {
+        "id": "wind_adept_ascending_dragon_gale",
+        "name": "Ascending Dragon Gale",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach. You can only use this ability once per turn. The target must make a Strength saving throw. On a failure, it takes 3d10 thunder damage, is launched 20 feet into the air, and is Restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing Prone.",
+          "newValue": "When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach (usable once per turn).\n\nThe target must make a Strength saving throw. On a failed save, it takes 3d10 thunder damage, is launched 20 feet into the air, and is restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing prone."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Liberation’s Gale||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "air",
+      "changeType": "modified",
+      "ability": {
+        "id": "wind_master_essence_liberations_gale",
+        "name": "Liberation’s Gale",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets; each immediately ends one of the following conditions: Blinded, Charmed, Deafened, Frightened, Grappled, Paralyzed, Petrified, Poisoned, Restrained, or Stunned. For 1 minute, those creatures also have advantage on saves against those same conditions.For 1 minute, you become an unyielding force. You can’t be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will. Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone. The ground cracks beneath your steady steps.",
+          "newValue": "A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets:\n- Each target immediately ends one of the following conditions affecting it: **Blinded**, **Charmed**, **Deafened**, **Frightened**, **Grappled**, **Paralyzed**, **Petrified**, **Poisoned**, **Restrained**, or **Stunned**.\n- For 1 minute, those creatures also have advantage on saving throws against those same conditions.\n\nIn addition, for 1 minute, you become an unyielding force:\n- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.\n- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Lunar Wind Spiral||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "air",
+      "changeType": "modified",
+      "ability": {
+        "id": "wind_master_essence_lunar_wind_spiral",
+        "name": "Lunar Wind Spiral",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an Action, you target a point within 150 feet; a cylinder of swirling, moonlight-infused winds erupts in a 30-foot radius and 60-foot height. When the spiral appears, each creature in the area must make a Constitution saving throw against your essence ability save DC, taking 6d8 Radiant damage on a failed save and being lifted 20 feet into the air until the start of its next turn. On a successful save, they take half damage and are not lifted. The effect lasts for 1 minute. Any creature that starts its turn in the area or enters it for the first time on a turn must make the saving throw, taking 3d6 Radiant damage on a failed save, or half on a successful one, but it is not lifted. You can use a Bonus Action on a subsequent turn to move the area of effect by up to 30 feet.",
+          "newValue": "As an action, you target a point within 150 feet. A cylinder of swirling, moonlight-infused winds erupts in a 30-foot radius and 60-foot height for 1 minute.\n\n**Initial Eruption:**\nWhen the spiral appears, each creature in the area must make a Constitution saving throw against your essence ability save DC:\n- **On a failed save:** The creature takes 6d8 radiant damage and is lifted 20 feet into the air until the start of its next turn.\n- **On a successful save:** The creature takes half damage and is not lifted.\n\n**Ongoing Hazard:**\nAny creature that starts its turn in the area or enters it for the first time on a turn must make a Constitution saving throw, taking 3d6 radiant damage on a failed save, or half as much on a successful one (it is not lifted).\n\n**Repositioning:**\nYou can use a bonus action on a subsequent turn to move the cylinder up to 30 feet."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Waning Moon Sabers||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "air",
+      "changeType": "modified",
+      "ability": {
+        "id": "wind_master_essence_waning_moon_sabers",
+        "name": "Waning Moon Sabers",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, launch up to three crescent-shaped energy blades that travel 150 feet. Each saber makes a ranged spell attack for 1d4 + 1 Radiant damage. On a hit, the target must make a Constitution saving throw or be blinded until the end of their next turn as moonlight sears their vision. On a critical hit, the target automatically fails the saving throw. The sabers curve around cover, ignoring half and three-quarters cover.",
+          "newValue": "As a bonus action, launch up to three crescent-shaped energy blades that travel up to 150 feet. The sabers curve around cover, ignoring half and three-quarters cover.\n\nMake a ranged spell attack for each saber:\n- **On a hit:** The target takes 1d4 + 1 radiant damage and must make a Constitution saving throw or be blinded until the end of its next turn as moonlight sears its vision.\n- **Critical Hit:** The target automatically fails the saving throw."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Pebble Barrage||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "earth",
+      "changeType": "modified",
+      "ability": {
+        "id": "earth_initiate_pebble_barrage",
+        "name": "Pebble Barrage",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw or be knocked prone and take 4d4 bludgeoning damage.",
+          "newValue": "As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw. On a failed save, the creature takes 4d4 bludgeoning damage and is knocked prone."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Earthen Grasp||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "earth",
+      "changeType": "modified",
+      "ability": {
+        "id": "earth_adept_earthen_grasp",
+        "name": "Earthen Grasp",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, you can cause the ground to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns to break free.",
+          "newValue": "As a bonus action, you cause hands of compacted earth to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns, ending the effect on a success."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Sandstorm||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "earth",
+      "changeType": "modified",
+      "ability": {
+        "id": "earth_adept_sandstorm",
+        "name": "Sandstorm",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, you create a swirling storm of sand in a 20-foot radius centred on you. Each creature in the area must make a Constitution saving throw, taking 3d6 slashing damage on a failed save and becoming blinded until the end of their next turn, or half as much damage on a successful save. The storm lasts for 1 minute. The area is difficult terrain, any creature that starts its turn within the storm takes 1d6 damage.’",
+          "newValue": "As an action, you create a swirling storm of sand in a 20-foot radius centered on you that lasts for 1 minute.\n\nEach creature in the area must make a Constitution saving throw, taking 3d6 slashing damage and becoming blinded until the end of its next turn on a failed save, or half as much damage on a successful one.\n\nThe area is difficult terrain, and any creature that starts its turn within the storm takes 1d6 slashing damage."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Immovable Mountain||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "earth",
+      "changeType": "modified",
+      "ability": {
+        "id": "earth_essence_immovable_mountain",
+        "name": "Immovable Mountain",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "For 1 minute, you become an unyielding force. You can’t be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will. Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone. The ground cracks beneath your steady steps.",
+          "newValue": "For 1 minute, you become an unyielding force:\n- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.\n- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.\n- The ground cracks beneath your steady steps."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Foolish Old Man Moves Mountains||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "earth",
+      "changeType": "modified",
+      "ability": {
+        "id": "earth_master_essence_moves_mountains",
+        "name": "Foolish Old Man Moves Mountains",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "Each time you fail a saving throw against a hostile creature’s effect, your abilities DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.",
+          "newValue": "Each time you fail a saving throw against a hostile creature’s effect, your essence ability save DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Ember Strike||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "fire",
+      "changeType": "modified",
+      "ability": {
+        "id": "fire_initiate_ember_strike",
+        "name": "Ember Strike",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended. Additionaly, the target must also succeed on a Wisdom saving throw against your Spell Save DC or become frightened of you until the end of its next turn.",
+          "newValue": "When you hit a creature with a weapon attack, you can expend a spell slot to deal an additional 1d12 fire damage per level of the spell slot expended. Additionally, the target must succeed on a Wisdom saving throw against your spell save DC or become frightened of you until the end of its next turn."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Heart Crusher Grip (Nilo)||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "fire",
+      "changeType": "modified",
+      "ability": {
+        "id": "fire_initiate_heart_crusher_grip",
+        "name": "Heart Crusher Grip (Nilo)",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, you can target one bloodied creature you can see within 15 feet of you. The target must make a Constitution saving throw. On a failed save, the target takes 6d6 fire damage, or half as much damage on a successful save. If this damage reduces the target to 0 hit points, their heart is crushed and they die instantly.",
+          "newValue": "As an action, you can target one bloodied creature you can see within 15 feet of you. The target must make a Constitution saving throw, taking 6d6 fire damage on a failed save, or half as much damage on a successful one. If this damage reduces the target to 0 hit points, its heart is crushed and it dies instantly."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Martyr’s Flame Aura||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "fire",
+      "changeType": "modified",
+      "ability": {
+        "id": "fire_essence_martyrs_flame_aura",
+        "name": "Martyr’s Flame Aura",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You wreathe yourself in holy fire for 1 minute (concentration), creating a 30-foot aura that grants allies fire resistance. When an ally enters the aura or starts their turn inside it, they gain temporary hit points equal to 2d6 + your Charisma modifier. The flames warm and protect, never harm.",
+          "newValue": "You wreathe yourself in holy fire for up to 1 minute (requires concentration), creating a 30-foot protective aura centered on you:\n- Friendly creatures within the aura gain resistance to fire damage.\n- When an ally enters the aura or starts its turn inside it, it gains temporary hit points equal to 2d6 + your Charisma modifier.\n\nThe flames warm and protect, never harming your allies."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Shadowflame Dream||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "fire",
+      "changeType": "modified",
+      "ability": {
+        "id": "fire_master_essence_shadowflame_dream",
+        "name": "Shadowflame Dream",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an Action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC. On a failed save, the creature takes 5d10 Fire damage and 5d10 Necrotic damage and falls Unconscious until the start of your next turn. On a successful save, the target only takes the fire damage and is not affected by the unconscious condition.",
+          "newValue": "As an action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC:\n- **On a failed save:** The creature takes 5d10 fire damage and 5d10 necrotic damage, and falls unconscious until the start of your next turn.\n- **On a successful save:** The target takes only the fire damage and is not affected by the unconscious condition."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Lightning Javelin||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "lightning",
+      "changeType": "modified",
+      "ability": {
+        "id": "lightning_adept_lightning_javelin",
+        "name": "Lightning Javelin",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You hurl a javelin of lightning at a target within 60 feet. Make a ranged spell attack. On hit: 5d12 lightning damage and the target can't take reactions until the start of its next turn.",
+          "newValue": "You hurl a javelin of pure lightning at a target within 60 feet. Make a ranged spell attack:\n- **On a hit:** The target takes 5d12 lightning damage and cannot take reactions until the start of its next turn."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Arc Chain||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "lightning",
+      "changeType": "modified",
+      "ability": {
+        "id": "lightning_essence_arc_chain",
+        "name": "Arc Chain",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "Choose a creature within 120 feet. It makes a Dexterity saving throw, taking 3d8 lightning damage on a failure or half on a success. If it fails, the bolt leaps to another creature within 30 feet that hasn’t been hit yet, forcing the same save. The chain continues jumping to new creatures until one succeeds on its save or no valid targets remain.",
+          "newValue": "Choose a creature within 120 feet. The target must make a Dexterity saving throw, taking 3d8 lightning damage on a failed save, or half as much on a successful one.\n\nIf the target fails its saving throw, the arc leaps to another creature within 30 feet of it that hasn’t been struck yet, forcing the same saving throw. The chain continues jumping to new creatures until a target succeeds on its save or no valid targets remain within range."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Lightning Cage||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "lightning",
+      "changeType": "modified",
+      "ability": {
+        "id": "lightning_essence_lightning_cage",
+        "name": "Lightning Cage",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting 1 minute. Creatures inside have their speed halved and can’t take reactions. Any creature that touches the cage’s edge takes 4d10 lightning damage. A creature inside may use its action to attempt a Strength save to break through: on a failure, it remains trapped and takes 4d10 lightning damage; on a success, it escapes and takes half the damage.",
+          "newValue": "You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting for 1 minute:\n- Creatures inside have their speed halved and cannot take reactions.\n- Any creature that touches or attempts to pass through the cage's perimeter takes 4d10 lightning damage.\n- A creature trapped inside can use an action to make a Strength saving throw to break through: on a failed save, it remains trapped and takes 4d10 lightning damage; on a successful save, it escapes and takes half damage."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Extinguishing Lightning||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "lightning",
+      "changeType": "modified",
+      "ability": {
+        "id": "lightning_essence_extinguishing_lightning",
+        "name": "Extinguishing Lightning",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save or half as much on a success. Creatures that fail also have one ongoing magical effect on them immediately end (your choice).",
+          "newValue": "As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save, or half as much on a successful one.\n\nOn a failed save, one ongoing magical effect or spell on the creature immediately ends (your choice)."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Magnetic Attraction||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "metal",
+      "changeType": "modified",
+      "ability": {
+        "id": "metal_initiate_magnetic_attraction",
+        "name": "Magnetic Attraction",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, you can pull or push a metal object weighing up to 10 pounds within 60 feet, moving it up to 10 feet toward or away from you. If the object is carried or worn by a creature, that creature must succeed on a Strength saving throw against your spell save DC. On a failed save, you can choose to either move the creature along with the object or detach the object from the creature. For objects heavier or larger than the base limit, you can attempt to move them by making an Intelligence (Arcana) check against a DC determined by the object’s weight and size. Objects far beyond your power are immovable.",
+          "newValue": "As a bonus action, you can pull or push a metal object weighing up to 10 pounds within 60 feet, moving it up to 10 feet toward or away from you:\n- If the object is carried or worn by a creature, that creature must succeed on a Strength saving throw against your spell save DC. On a failed save, you can choose to either move the creature along with the object or detach the object from the creature.\n- For objects heavier or larger than 10 pounds, you can attempt to move them by making an Intelligence (Arcana) check against a DC determined by the object’s weight and size. Objects far beyond your power remain immovable."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Steel Tornado||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "metal",
+      "changeType": "modified",
+      "ability": {
+        "id": "metal_adept_steel_tornado",
+        "name": "Steel Tornado",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, you can create a whirlwind of metallic shards in a 30-foot radius around you. Creatures within the cylinder must make a Dexterity saving throw. On a failed save, a creature takes 7d6 slashing damage, or half as much damage on a successful save.",
+          "newValue": "As an action, you can create a whirlwind of metallic shards in a 30-foot radius around you. Each creature within the area must make a Dexterity saving throw, taking 7d6 slashing damage on a failed save, or half as much damage on a successful one."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Weight of Lives||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "metal",
+      "changeType": "modified",
+      "ability": {
+        "id": "metal_master_weight_of_lives",
+        "name": "Weight of Lives",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, target a creature within 60 feet to make a Charisma saving throw. They take 2d8 force damage per karmic debt you discern (up to 18d8). On a failed save, they're restrained for rounds equal to debts discerned. On a success, they take half damage, have speed halved, and you gain temporary hit points equal to damage dealt.",
+          "newValue": "As an action, target a creature within 60 feet to make a Charisma saving throw. The creature takes 2d8 force damage per karmic debt you discern (up to a maximum of 18d8):\n- **On a failed save:** The creature is restrained for a number of rounds equal to the debts discerned.\n- **On a successful save:** The creature takes half damage, and its speed is halved for 1 round.\n\nRegardless of the outcome, you gain temporary hit points equal to the total force damage dealt."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vital Essence Sublimation I (Nilo)||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "poison",
+      "changeType": "modified",
+      "ability": {
+        "id": "poison_initiate_vital_essence_sublimation_i",
+        "name": "Vital Essence Sublimation I (Nilo)",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "When you harvest the blood of a fallen creature, you can distill its essence into a single potion. You may either extract one of its abilities (action, bonus action, or reaction) and bottle it as a potion, or create a potion whose rarity depends on the creature’s level. Roll a d100; on a failure, the attempt is wasted.\n\n- Initiate: Common (no failure chance)\n- Adept: Uncommon (20% failure)\n- Master: Rare (40% failure)\n- Grandmaster: Very Rare (80% failure)\n- Great Grandmaster: Legendary (100% failure)\n\nYou can hold only one distilled essence at a time. Potions do not expire.",
+          "newValue": "When you harvest the blood of a fallen creature, you can distill its essence into a single potion. You may either extract one of its abilities (action, bonus action, or reaction) and bottle it as a potion, or create a potion whose rarity depends on the creature’s level.\n\nRoll a d100 to determine if the distillation succeeds; on a failure, the attempt is wasted.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% (No failure) |\n| Adept | Uncommon | 20% |\n| Master | Rare | 40% |\n| Grandmaster | Very Rare | 80% |\n| Great Grandmaster | Legendary | 100% |\n\nYou can hold only one distilled essence at a time. Distilled potions do not expire."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Moonlit Verdant Beam||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "poison",
+      "changeType": "modified",
+      "ability": {
+        "id": "poison_adept_moonlit_verdant_beam",
+        "name": "Moonlit Verdant Beam",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack. On a hit, the target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC. On a failed save, the target is blinded and poisoned until the end of your next turn.",
+          "newValue": "As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack:\n- **On a hit:** The target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC.\n- **On a failed save:** The target is blinded and poisoned until the end of your next turn."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vital Essence Sublimation II (Nilo)||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "poison",
+      "changeType": "modified",
+      "ability": {
+        "id": "poison_adept_vital_essence_sublimation_ii",
+        "name": "Vital Essence Sublimation II (Nilo)",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "Your failure chances are reduced: Common and Uncommon potions no longer fail, while higher rarity failure rates decrease (Rare 20%, Very Rare 60%, Legendary 80%).\nYou can now hold up to two distilled essences at a time.",
+          "newValue": "Your distillation technique improves, reducing failure rates and expanding capacity:\n- You can now hold up to two distilled essences at a time.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% |\n| Adept | Uncommon | 0% |\n| Master | Rare | 20% |\n| Grandmaster | Very Rare | 60% |\n| Great Grandmaster | Legendary | 80% |"
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vital Essence Sublimation III (Nilo)||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "poison",
+      "changeType": "modified",
+      "ability": {
+        "id": "poison_master_vital_essence_sublimation_iii",
+        "name": "Vital Essence Sublimation III (Nilo)",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.\n\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points.",
+          "newValue": "Your mastery over distillation reaches its zenith:\n- You can now hold up to three distilled essences at a time.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% |\n| Adept | Uncommon | 0% |\n| Master | Rare | 0% |\n| Grandmaster | Very Rare | 40% |\n| Great Grandmaster | Legendary | 60% |\n\n**Instant Sublimation:**\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tide's Reflection Art I (Thalassios)||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "water",
+      "changeType": "modified",
+      "ability": {
+        "id": "water_adept_tides_reflection_art_i",
+        "name": "Tide's Reflection Art I (Thalassios)",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, you summon a Water Clone in an unoccupied space you can see within 30 feet. The clone lasts for 1 minute or until destroyed. The clone is linked to your senses, allowing you to cast spells through it as if you were in its space. The clone has the following stats: Armor Class: Your spell save DC (8 + proficiency bonus + spellcasting modifier). Hit Points: Equal to half your hit point maximum. Speed: Equal to your swimming speed. Immunity: Cold damage. Resistance: Fire damage. Vulnerability: Lightning damage. As a bonus action, you can command the clone to move and take one of the following actions: Melee Spell Attack: Range 10 feet, dealing 1d8 + your spellcasting modifier cold damage. Ranged Spell Attack: Range 60 feet, dealing 1d6 + your spellcasting modifier cold damage. Take the Dash, Dodge, or Disengage action.",
+          "newValue": "As a bonus action, you summon a Water Clone in an unoccupied space you can see within 30 feet. The clone lasts for 1 minute or until destroyed. The clone is linked to your senses, allowing you to cast spells through it as if you were in its space.\n\n**Clone Statistics:**\n- **Armor Class:** Your spell save DC (8 + proficiency bonus + spellcasting modifier)\n- **Hit Points:** Equal to half your hit point maximum\n- **Speed:** Equal to your swimming speed\n- **Damage Resistances:** Fire\n- **Damage Immunities:** Cold\n- **Damage Vulnerabilities:** Lightning\n\n**Commanding the Clone:**\nAs a bonus action, you can command the clone to move and take one of the following actions:\n- **Melee Spell Attack:** Reach 10 ft., dealing 1d8 + your spellcasting modifier cold damage.\n- **Ranged Spell Attack:** Range 60 ft., dealing 1d6 + your spellcasting modifier cold damage.\n- **Utility:** Take the Dash, Dodge, or Disengage action."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tide's Reflection Art II (Thalassios)||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "water",
+      "changeType": "modified",
+      "ability": {
+        "id": "water_adept_tides_reflection_art_ii",
+        "name": "Tide's Reflection Art II (Thalassios)",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a reaction, you can cause your one of your Water Clones to detonate, dealing cold damage equal to half of its maximum hit points in a 10-foot radius. Creatures in range must succeed on a Dexterity saving throw or take full damage, or half as much on a success. You can now summon two Water Clones at the same time, increasing the damage by one damage dice when they attack together.",
+          "newValue": "As a reaction, you can cause one of your Water Clones to detonate in a 10-foot radius burst of frigid water. Each creature in range must make a Dexterity saving throw, taking cold damage equal to half the clone's maximum hit points on a failed save, or half as much on a successful one.\n\nIn addition, you can now summon up to two Water Clones simultaneously. When they attack together, their attack damage increases by one damage die."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tide's Reflection Art III (Thalassios)||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "water",
+      "changeType": "modified",
+      "ability": {
+        "id": "water_adept_tides_reflection_art_iii",
+        "name": "Tide's Reflection Art III (Thalassios)",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additionally, you can now summon three Water Clones at the same time, and they last for 10 minutes. Your Water Clones now emit dim moonlight in a 60-foot radius around them.",
+          "newValue": "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks.\n\nIn addition, your mastery deepens:\n- You can now summon up to three Water Clones simultaneously.\n- Your Water Clones last for 10 minutes.\n- Your Water Clones emit dim moonlight in a 60-foot radius around them."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Moonfall Condemnation||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "water",
+      "changeType": "modified",
+      "ability": {
+        "id": "water_master_moonfall_condemnation",
+        "name": "Moonfall Condemnation",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an Action, you target one creature within 120 feet. A pillar of concentrated moonlight descends, requiring a Dexterity saving throw against your essence ability save DC. On a failed save, the target takes 6d8 Radiant damage and 3d8 Cold damage, and is Restrained until the end of their next turn as lunar energy begins to calcify their limbs. On a successful save, they take half damage and are not Restrained. If this damage reduces the target to 50 hit points or fewer, they must immediately make a Constitution saving throw against your essence ability save DC. On a failed Constitution save, the creature is Petrified into moonstone",
+          "newValue": "As an action, you target one creature within 120 feet. A pillar of concentrated moonlight descends, requiring a Dexterity saving throw against your essence ability save DC:\n- **On a failed save:** The target takes 6d8 radiant damage and 3d8 cold damage, and is restrained until the end of its next turn as lunar energy begins to calcify its limbs.\n- **On a successful save:** The target takes half damage and is not restrained.\n\n**Lunar Petrification:**\nIf this damage reduces the target to 50 hit points or fewer, it must immediately make a Constitution saving throw against your essence ability save DC. On a failed save, the creature is petrified into moonstone."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Vine Manipulation||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "wood",
+      "changeType": "modified",
+      "ability": {
+        "id": "wood_initiate_vine_manipulation",
+        "name": "Vine Manipulation",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You gain the ability to manipulate vines and roots within 30 feet of you. As an action, you can cause vines to emerge from the ground or surrounding vegetation to ensnare a creature or create barriers. The vines can grapple or restrain a creature (Strength saving throw) or create difficult terrain in a 10-foot square area for 1 minute.",
+          "newValue": "You gain the ability to manipulate vines and roots within 30 feet of you.\n\nAs an action, you can cause vines to emerge from the ground or surrounding vegetation to ensnare a creature or create barriers:\n- **Ensnare:** Force a creature to make a Strength saving throw; on a failed save, the creature is grappled or restrained (your choice) by the vines.\n- **Barriers:** Create difficult terrain in a 10-foot square area for 1 minute."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Needle Barrage||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "wood",
+      "changeType": "modified",
+      "ability": {
+        "id": "wood_adept_needle_barrage",
+        "name": "Needle Barrage",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You unleash a torrent of wooden needles that streak toward one creature you can see within range. The target makes a Dexterity saving throw. On a failure: 8d4 piercing damage and is riddled with needles, reducing its speed by half until the end of your next turn. On a success: half damage and no speed reduction.",
+          "newValue": "You unleash a torrent of wooden needles that streak toward one creature you can see within range. The target must make a Dexterity saving throw:\n- **On a failed save:** The target takes 8d4 piercing damage and is riddled with needles, reducing its speed by half until the end of your next turn.\n- **On a successful save:** The target takes half damage and suffers no speed reduction."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Tree Form||adept",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "wood",
+      "changeType": "modified",
+      "ability": {
+        "id": "wood_adept_tree_form",
+        "name": "Tree Form",
+        "tier": "adept"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You can use your action to transform into a treelike creature. While in this form, you gain the following benefits: - AC 17: Your skin becomes as tough as bark. - Hit Points: You gain temporary hit points equal to twice your level. - Attacks: You can make a slam attack with +6 to hit, dealing 2d6+4 bludgeoning damage. - Rooted: You can root yourself to the ground. While rooted, you cannot move, but you have advantage on Strength and Constitution saving throws, and any creature that starts its turn within 5 feet of you takes 1d6 bludgeoning damage. - This form lasts for 1 minute or until you use your action to revert to your normal form. You can use this feature once per long rest.",
+          "newValue": "You can use your action to transform into a treelike creature for 1 minute or until you use your action to revert to your normal form (usable once per long rest).\n\nWhile in this form, you gain the following benefits:\n- **Armor Class:** Your AC becomes 17 as your skin becomes as tough as bark.\n- **Hit Points:** You gain temporary hit points equal to twice your character level.\n- **Slam Attack:** You can make a slam melee attack with a +6 bonus to hit, dealing 2d6 + 4 bludgeoning damage.\n- **Rooted Stance:** You can root yourself to the ground. While rooted, you cannot move, but you have advantage on Strength and Constitution saving throws, and any creature that starts its turn within 5 feet of you takes 1d6 bludgeoning damage."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Coiling Resilience||initiate",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "wood",
+      "changeType": "modified",
+      "ability": {
+        "id": "vine_master_coiling_resilience",
+        "name": "Coiling Resilience",
+        "tier": "initiate"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "You gain a +1 bonus to all saving throws for each creature you currently have grappled",
+          "newValue": "You gain a +1 bonus to all saving throws for each creature you currently have grappled."
+        }
+      ]
+    },
+    {
+      "id": "94875b95ad38b02ade14990e0bf7b298b1096850-Heart Exchange||master",
+      "date": "2026-09-23 19:28:13 -0300",
+      "commitHash": "94875b95ad38b02ade14990e0bf7b298b1096850",
+      "commitMessage": "feat(markdown): add react-markdown support and format all ability descriptions with structured markdown",
+      "essenceType": "wood",
+      "changeType": "modified",
+      "ability": {
+        "id": "wood_master_heart_exchange",
+        "name": "Heart Exchange",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude. For the next hour, whenever one of you takes damage, both take half that damage. Whenever one regains hit points, both regain the same amount. You both gain advantage on all saving throws. This bond is unbreakable and lasts the full duration regardless of distance or conditions. You can maintain only one heart exchange at a time.",
+          "newValue": "As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude.\n\nFor the next hour, you and the target share an unbreakable bond regardless of distance:\n- Whenever one of you takes damage, both take half that damage.\n- Whenever one regains hit points, both regain the same amount.\n- You both gain advantage on all saving throws.\n\nYou can maintain only one heart exchange at a time."
+        }
+      ]
+    },
+    {
+      "id": "5f7e0e90fbdc147cd4c0da755c6dd0d34b838831-Cacophonic Shield||3rd",
+      "date": "2026-09-23 19:24:46 -0300",
+      "commitHash": "5f7e0e90fbdc147cd4c0da755c6dd0d34b838831",
+      "commitMessage": "feat: add author and location metadata support and attribute all abilities",
+      "essenceType": "air",
+      "changeType": "added",
+      "ability": {
+        "id": "wind_3rd_level_cacophonic_shield",
+        "name": "Cacophonic Shield",
+        "tier": "3rd",
+        "description": "https://5e.tools/spells.html#cacophonic%20shield_frhof",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": true,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "5f7e0e90fbdc147cd4c0da755c6dd0d34b838831-Cacophonic Shield||adept",
+      "date": "2026-09-23 19:24:46 -0300",
+      "commitHash": "5f7e0e90fbdc147cd4c0da755c6dd0d34b838831",
+      "commitMessage": "feat: add author and location metadata support and attribute all abilities",
+      "essenceType": "air",
+      "changeType": "removed",
+      "ability": {
+        "id": "wind_adept_cacophonic_shield",
+        "name": "Cacophonic Shield",
+        "tier": "adept",
+        "description": "https://5e.tools/spells.html#cacophonic%20shield_frhof",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
     {
       "id": "203bcc8e6a1c52e5a183431d647b21993aa899d5-Ethereal Phase Barrier||grandmaster",
       "date": "2026-03-31 00:50:50 -0300",

@@ -241,7 +241,9 @@ author: Yoo Tae-yang
 location: Sirius
 ```
 
-When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach. You can only use this ability once per turn. The target must make a Strength saving throw. On a failure, it takes 3d10 thunder damage, is launched 20 feet into the air, and is Restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing Prone.
+When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach (usable once per turn).
+
+The target must make a Strength saving throw. On a failed save, it takes 3d10 thunder damage, is launched 20 feet into the air, and is restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing prone.
 
 ---
 ## Master Tier
@@ -259,7 +261,13 @@ author: Mario (Ilmater's Chosen)
 location: Leatrux
 ```
 
-A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets; each immediately ends one of the following conditions: Blinded, Charmed, Deafened, Frightened, Grappled, Paralyzed, Petrified, Poisoned, Restrained, or Stunned. For 1 minute, those creatures also have advantage on saves against those same conditions.For 1 minute, you become an unyielding force. You can’t be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will. Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone. The ground cracks beneath your steady steps.
+A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets:
+- Each target immediately ends one of the following conditions affecting it: **Blinded**, **Charmed**, **Deafened**, **Frightened**, **Grappled**, **Paralyzed**, **Petrified**, **Poisoned**, **Restrained**, or **Stunned**.
+- For 1 minute, those creatures also have advantage on saving throws against those same conditions.
+
+In addition, for 1 minute, you become an unyielding force:
+- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.
+- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.
 
 ---
 ### Just Passing By
@@ -291,7 +299,18 @@ author: Yuji (Shadow Sect)
 location: Leatrux
 ```
 
-As an Action, you target a point within 150 feet; a cylinder of swirling, moonlight-infused winds erupts in a 30-foot radius and 60-foot height. When the spiral appears, each creature in the area must make a Constitution saving throw against your essence ability save DC, taking 6d8 Radiant damage on a failed save and being lifted 20 feet into the air until the start of its next turn. On a successful save, they take half damage and are not lifted. The effect lasts for 1 minute. Any creature that starts its turn in the area or enters it for the first time on a turn must make the saving throw, taking 3d6 Radiant damage on a failed save, or half on a successful one, but it is not lifted. You can use a Bonus Action on a subsequent turn to move the area of effect by up to 30 feet.
+As an action, you target a point within 150 feet. A cylinder of swirling, moonlight-infused winds erupts in a 30-foot radius and 60-foot height for 1 minute.
+
+**Initial Eruption:**
+When the spiral appears, each creature in the area must make a Constitution saving throw against your essence ability save DC:
+- **On a failed save:** The creature takes 6d8 radiant damage and is lifted 20 feet into the air until the start of its next turn.
+- **On a successful save:** The creature takes half damage and is not lifted.
+
+**Ongoing Hazard:**
+Any creature that starts its turn in the area or enters it for the first time on a turn must make a Constitution saving throw, taking 3d6 radiant damage on a failed save, or half as much on a successful one (it is not lifted).
+
+**Repositioning:**
+You can use a bonus action on a subsequent turn to move the cylinder up to 30 feet.
 
 ---
 ### Waning Moon Sabers
@@ -307,7 +326,11 @@ author: Yuji (Shadow Sect)
 location: Leatrux
 ```
 
-As a bonus action, launch up to three crescent-shaped energy blades that travel 150 feet. Each saber makes a ranged spell attack for 1d4 + 1 Radiant damage. On a hit, the target must make a Constitution saving throw or be blinded until the end of their next turn as moonlight sears their vision. On a critical hit, the target automatically fails the saving throw. The sabers curve around cover, ignoring half and three-quarters cover.
+As a bonus action, launch up to three crescent-shaped energy blades that travel up to 150 feet. The sabers curve around cover, ignoring half and three-quarters cover.
+
+Make a ranged spell attack for each saber:
+- **On a hit:** The target takes 1d4 + 1 radiant damage and must make a Constitution saving throw or be blinded until the end of its next turn as moonlight sears its vision.
+- **Critical Hit:** The target automatically fails the saving throw.
 
 ---
 ### Sky-Piercing Execution

@@ -95,7 +95,7 @@ author: Llamarada Tribe
 location: Phudara / Isle of Whispers
 ```
 
-As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw or be knocked prone and take 4d4 bludgeoning damage.
+As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw. On a failed save, the creature takes 4d4 bludgeoning damage and is knocked prone.
 
 ---
 ## Adept Tier
@@ -161,7 +161,7 @@ author: Llamarada Tribe
 location: Phudara / Isle of Whispers
 ```
 
-As a bonus action, you can cause the ground to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns to break free.
+As a bonus action, you cause hands of compacted earth to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns, ending the effect on a success.
 
 ---
 ### Stone Armor
@@ -209,7 +209,11 @@ author: Llamarada Tribe
 location: Phudara / Isle of Whispers
 ```
 
-As an action, you create a swirling storm of sand in a 20-foot radius centred on you. Each creature in the area must make a Constitution saving throw, taking 3d6 slashing damage on a failed save and becoming blinded until the end of their next turn, or half as much damage on a successful save. The storm lasts for 1 minute. The area is difficult terrain, any creature that starts its turn within the storm takes 1d6 damage.’
+As an action, you create a swirling storm of sand in a 20-foot radius centered on you that lasts for 1 minute.
+
+Each creature in the area must make a Constitution saving throw, taking 3d6 slashing damage and becoming blinded until the end of its next turn on a failed save, or half as much damage on a successful one.
+
+The area is difficult terrain, and any creature that starts its turn within the storm takes 1d6 slashing damage.
 
 ---
 ## Active Tier
@@ -244,7 +248,10 @@ isCantrip: false
 location: Sirius
 ```
 
-For 1 minute, you become an unyielding force. You can’t be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will. Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone. The ground cracks beneath your steady steps.
+For 1 minute, you become an unyielding force:
+- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.
+- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.
+- The ground cracks beneath your steady steps.
 
 ---
 ### Stone Fist III
@@ -261,7 +268,6 @@ location: Sirius
 
 Your unarmed strikes deal 1d10 bludgeoning damage and count as magical for overcoming resistance and immunity.
 
-
 ---
 ### Foolish Old Man Moves Mountains
 
@@ -276,7 +282,7 @@ author: Shadow Sect
 location: Sirius
 ```
 
-Each time you fail a saving throw against a hostile creature’s effect, your abilities DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.
+Each time you fail a saving throw against a hostile creature’s effect, your essence ability save DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.
 
 ---
 ## Cantrips

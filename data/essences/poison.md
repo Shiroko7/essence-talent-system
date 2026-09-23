@@ -111,15 +111,19 @@ author: Phudara's unknown inheritance
 location: Phudara / Isle of Whispers
 ```
 
-When you harvest the blood of a fallen creature, you can distill its essence into a single potion. You may either extract one of its abilities (action, bonus action, or reaction) and bottle it as a potion, or create a potion whose rarity depends on the creature’s level. Roll a d100; on a failure, the attempt is wasted.
+When you harvest the blood of a fallen creature, you can distill its essence into a single potion. You may either extract one of its abilities (action, bonus action, or reaction) and bottle it as a potion, or create a potion whose rarity depends on the creature’s level.
 
-- Initiate: Common (no failure chance)
-- Adept: Uncommon (20% failure)
-- Master: Rare (40% failure)
-- Grandmaster: Very Rare (80% failure)
-- Great Grandmaster: Legendary (100% failure)
+Roll a d100 to determine if the distillation succeeds; on a failure, the attempt is wasted.
 
-You can hold only one distilled essence at a time. Potions do not expire.
+| Creature Cultivation Tier | Potion Rarity | Failure Rate |
+|---|---|---|
+| Initiate | Common | 0% (No failure) |
+| Adept | Uncommon | 20% |
+| Master | Rare | 40% |
+| Grandmaster | Very Rare | 80% |
+| Great Grandmaster | Legendary | 100% |
+
+You can hold only one distilled essence at a time. Distilled potions do not expire.
 
 ---
 ### Toxic Skin Secretion I
@@ -322,7 +326,9 @@ author: Lesbian Dragons
 location: Leatrux
 ```
 
-As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack. On a hit, the target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC. On a failed save, the target is blinded and poisoned until the end of your next turn.
+As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack:
+- **On a hit:** The target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC.
+- **On a failed save:** The target is blinded and poisoned until the end of your next turn.
 
 ---
 ### Vital Essence Sublimation II (Nilo)
@@ -338,8 +344,16 @@ author: Phudara's unknown inheritance
 location: Phudara / Isle of Whispers
 ```
 
-Your failure chances are reduced: Common and Uncommon potions no longer fail, while higher rarity failure rates decrease (Rare 20%, Very Rare 60%, Legendary 80%).
-You can now hold up to two distilled essences at a time.
+Your distillation technique improves, reducing failure rates and expanding capacity:
+- You can now hold up to two distilled essences at a time.
+
+| Creature Cultivation Tier | Potion Rarity | Failure Rate |
+|---|---|---|
+| Initiate | Common | 0% |
+| Adept | Uncommon | 0% |
+| Master | Rare | 20% |
+| Grandmaster | Very Rare | 60% |
+| Great Grandmaster | Legendary | 80% |
 
 ---
 ### Toxic Skin Secretion II
@@ -389,9 +403,18 @@ author: Phudara's unknown inheritance
 location: Phudara / Isle of Whispers
 ```
 
-Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.
-You can now hold up to three distilled essences at a time.
+Your mastery over distillation reaches its zenith:
+- You can now hold up to three distilled essences at a time.
 
+| Creature Cultivation Tier | Potion Rarity | Failure Rate |
+|---|---|---|
+| Initiate | Common | 0% |
+| Adept | Uncommon | 0% |
+| Master | Rare | 0% |
+| Grandmaster | Very Rare | 40% |
+| Great Grandmaster | Legendary | 60% |
+
+**Instant Sublimation:**
 When you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:
 
 | Creature Tier | Essence Cost |

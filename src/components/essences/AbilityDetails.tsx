@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind, ExternalLink } from 'lucide-react';
+import { X, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind } from 'lucide-react';
 import { Ability, EssencePath, EssencePathId, getTierCost } from '../../types/essence';
 
 interface AbilityDetailsProps {
@@ -23,43 +23,7 @@ const ESSENCE_ICON_COLORS: Record<EssencePathId, string> = {
   wind: '#7dd3fc',
 };
 
-const formatDescription = (description: string): React.ReactNode => {
-  if (description.startsWith('http')) {
-    return (
-      <div className="text-left">
-        <p className="mb-3 text-fog">This ability references an external spell. For detailed information:</p>
-        <a
-          href={description}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-gold hover:text-gold-bright transition-colors"
-        >
-          <ExternalLink size={14} />
-          View spell details
-        </a>
-      </div>
-    );
-  }
-
-  const sentences = description.split(/(?<=[.!?])\s+/g);
-  const paragraphs: string[] = [];
-  let currentParagraph = '';
-
-  sentences.forEach((sentence, index) => {
-    currentParagraph += sentence + (index < sentences.length - 1 ? ' ' : '');
-
-    if (currentParagraph.length > 150 || sentence.includes('\n') || index === sentences.length - 1) {
-      paragraphs.push(currentParagraph.trim());
-      currentParagraph = '';
-    }
-  });
-
-  return paragraphs.map((paragraph, index) => (
-    <p key={index} className={index > 0 ? "mt-3 text-left" : "text-left"}>
-      {paragraph}
-    </p>
-  ));
-};
+import AbilityMarkdown from './AbilityMarkdown';
 
 const AbilityDetails: React.FC<AbilityDetailsProps> = ({
   ability,
@@ -154,9 +118,7 @@ const AbilityDetails: React.FC<AbilityDetailsProps> = ({
           {/* Description */}
           <div className="arcane-card p-5 mb-5">
             <h3 className="font-display text-sm tracking-wider text-gold mb-3">Description</h3>
-            <div className="text-parchment/90 leading-relaxed font-body">
-              {formatDescription(ability.description)}
-            </div>
+            <AbilityMarkdown content={ability.description} />
           </div>
 
           {/* Stats Grid */}

@@ -74,7 +74,7 @@ export const poisonAbilities = [
   {
     id: "poison_initiate_vital_essence_sublimation_i",
     name: "Vital Essence Sublimation I (Nilo)",
-    description: "When you harvest the blood of a fallen creature, you can distill its essence into a single potion. You may either extract one of its abilities (action, bonus action, or reaction) and bottle it as a potion, or create a potion whose rarity depends on the creature’s level. Roll a d100; on a failure, the attempt is wasted.\n\n- Initiate: Common (no failure chance)\n- Adept: Uncommon (20% failure)\n- Master: Rare (40% failure)\n- Grandmaster: Very Rare (80% failure)\n- Great Grandmaster: Legendary (100% failure)\n\nYou can hold only one distilled essence at a time. Potions do not expire.",
+    description: "When you harvest the blood of a fallen creature, you can distill its essence into a single potion. You may either extract one of its abilities (action, bonus action, or reaction) and bottle it as a potion, or create a potion whose rarity depends on the creature’s level.\n\nRoll a d100 to determine if the distillation succeeds; on a failure, the attempt is wasted.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% (No failure) |\n| Adept | Uncommon | 20% |\n| Master | Rare | 40% |\n| Grandmaster | Very Rare | 80% |\n| Great Grandmaster | Legendary | 100% |\n\nYou can hold only one distilled essence at a time. Distilled potions do not expire.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -223,7 +223,7 @@ export const poisonAbilities = [
   {
     id: "poison_adept_moonlit_verdant_beam",
     name: "Moonlit Verdant Beam",
-    description: "As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack. On a hit, the target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC. On a failed save, the target is blinded and poisoned until the end of your next turn.",
+    description: "As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack:\n- **On a hit:** The target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC.\n- **On a failed save:** The target is blinded and poisoned until the end of your next turn.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -235,7 +235,7 @@ export const poisonAbilities = [
   {
     id: "poison_adept_vital_essence_sublimation_ii",
     name: "Vital Essence Sublimation II (Nilo)",
-    description: "Your failure chances are reduced: Common and Uncommon potions no longer fail, while higher rarity failure rates decrease (Rare 20%, Very Rare 60%, Legendary 80%).\nYou can now hold up to two distilled essences at a time.",
+    description: "Your distillation technique improves, reducing failure rates and expanding capacity:\n- You can now hold up to two distilled essences at a time.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% |\n| Adept | Uncommon | 0% |\n| Master | Rare | 20% |\n| Grandmaster | Very Rare | 60% |\n| Great Grandmaster | Legendary | 80% |",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -271,7 +271,7 @@ export const poisonAbilities = [
   {
     id: "poison_master_vital_essence_sublimation_iii",
     name: "Vital Essence Sublimation III (Nilo)",
-    description: "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.\n\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points.",
+    description: "Your mastery over distillation reaches its zenith:\n- You can now hold up to three distilled essences at a time.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% |\n| Adept | Uncommon | 0% |\n| Master | Rare | 0% |\n| Grandmaster | Very Rare | 40% |\n| Great Grandmaster | Legendary | 60% |\n\n**Instant Sublimation:**\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points.",
     tier: "master",
     isActive: false,
     isPassive: true,

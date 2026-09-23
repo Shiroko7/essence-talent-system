@@ -62,7 +62,7 @@ export const earthAbilities = [
   {
     id: "earth_initiate_pebble_barrage",
     name: "Pebble Barrage",
-    description: "As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw or be knocked prone and take 4d4 bludgeoning damage.",
+    description: "As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw. On a failed save, the creature takes 4d4 bludgeoning damage and is knocked prone.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const earthAbilities = [
   {
     id: "earth_adept_earthen_grasp",
     name: "Earthen Grasp",
-    description: "As a bonus action, you can cause the ground to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns to break free.",
+    description: "As a bonus action, you cause hands of compacted earth to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns, ending the effect on a success.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -146,7 +146,7 @@ export const earthAbilities = [
   {
     id: "earth_adept_sandstorm",
     name: "Sandstorm",
-    description: "As an action, you create a swirling storm of sand in a 20-foot radius centred on you. Each creature in the area must make a Constitution saving throw, taking 3d6 slashing damage on a failed save and becoming blinded until the end of their next turn, or half as much damage on a successful save. The storm lasts for 1 minute. The area is difficult terrain, any creature that starts its turn within the storm takes 1d6 damage.’",
+    description: "As an action, you create a swirling storm of sand in a 20-foot radius centered on you that lasts for 1 minute.\n\nEach creature in the area must make a Constitution saving throw, taking 3d6 slashing damage and becoming blinded until the end of its next turn on a failed save, or half as much damage on a successful one.\n\nThe area is difficult terrain, and any creature that starts its turn within the storm takes 1d6 slashing damage.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -170,7 +170,7 @@ export const earthAbilities = [
   {
     id: "earth_essence_immovable_mountain",
     name: "Immovable Mountain",
-    description: "For 1 minute, you become an unyielding force. You can’t be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will. Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone. The ground cracks beneath your steady steps.",
+    description: "For 1 minute, you become an unyielding force:\n- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.\n- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.\n- The ground cracks beneath your steady steps.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -192,7 +192,7 @@ export const earthAbilities = [
   {
     id: "earth_master_essence_moves_mountains",
     name: "Foolish Old Man Moves Mountains",
-    description: "Each time you fail a saving throw against a hostile creature’s effect, your abilities DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.",
+    description: "Each time you fail a saving throw against a hostile creature’s effect, your essence ability save DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.",
     tier: "master",
     isActive: false,
     isPassive: true,
