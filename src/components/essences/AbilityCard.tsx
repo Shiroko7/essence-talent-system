@@ -73,17 +73,22 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
   return (
     <div
       className={`
-        relative arcane-card transition-all duration-200 cursor-pointer
+        relative arcane-card transition-all duration-200 cursor-pointer p-4 flex flex-col justify-between
         ${isLocked ? 'opacity-40 cursor-not-allowed' : 'arcane-card-hover'}
         ${isSelected ? 'ability-selected' : 'border-l-2 border-l-transparent'}
       `}
       onClick={handleCardClick}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
-      style={{ minHeight: '80px' }}
+      style={{ minHeight: '84px' }}
     >
+      {/* Selected indicator line */}
+      {isSelected && (
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold/80 via-gold to-gold/80" />
+      )}
+
       {/* Top row: Name (left) and Type badge (right) */}
-      <div className="absolute top-3 left-4 right-4 flex items-start justify-between gap-3">
+      <div className="flex items-start justify-between gap-3 mb-2">
         <h4 className={`font-display text-base tracking-wide ${isSelected ? 'text-gold-bright' : 'text-ivory'}`}>
           {ability.name}
         </h4>
@@ -95,18 +100,15 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
       </div>
 
       {/* Bottom row: Info button (right) */}
-      <button
-        className="absolute bottom-3 right-3 text-mist hover:text-gold transition-colors p-1.5 rounded hover:bg-charcoal"
-        onClick={handleInfoClick}
-        aria-label="Show ability details"
-      >
-        <Info size={18} />
-      </button>
-
-      {/* Selected indicator line */}
-      {isSelected && (
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold/80 via-gold to-gold/80" />
-      )}
+      <div className="flex justify-end mt-auto pt-1">
+        <button
+          className="text-mist hover:text-gold transition-colors p-1.5 rounded hover:bg-charcoal"
+          onClick={handleInfoClick}
+          aria-label="Show ability details"
+        >
+          <Info size={18} />
+        </button>
+      </div>
 
       {/* Tooltip */}
       {showTooltip && !isLocked && (

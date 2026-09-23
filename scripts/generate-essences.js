@@ -66,6 +66,8 @@ function parseMarkdownFile(content, essenceName) {
       isPassive: metadata.isPassive || false,
       isSpell: metadata.isSpell || false,
       isCantrip: metadata.isCantrip || false,
+      author: metadata.author || metadata.source || undefined,
+      location: metadata.location || undefined,
     };
 
     // Categorize the ability
@@ -105,7 +107,7 @@ function escapeString(str) {
  */
 function generateTypeScriptFile(abilities, cantrips, spells, essenceName) {
   const formatAbility = (ability) => {
-    return `  {
+    let result = `  {
     id: "${escapeString(ability.id)}",
     name: "${escapeString(ability.name)}",
     description: "${escapeString(ability.description)}",
@@ -113,8 +115,15 @@ function generateTypeScriptFile(abilities, cantrips, spells, essenceName) {
     isActive: ${ability.isActive},
     isPassive: ${ability.isPassive},
     isSpell: ${ability.isSpell},
-    isCantrip: ${ability.isCantrip},
-  }`;
+    isCantrip: ${ability.isCantrip},`;
+    if (ability.author) {
+      result += `\n    author: "${escapeString(ability.author)}",`;
+    }
+    if (ability.location) {
+      result += `\n    location: "${escapeString(ability.location)}",`;
+    }
+    result += '\n  }';
+    return result;
   };
 
   let content = `export const ${essenceName}Abilities = [\n`;

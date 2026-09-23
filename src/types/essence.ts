@@ -43,6 +43,9 @@ export interface Ability {
   isPassive: boolean;
   isSpell: boolean;
   isCantrip: boolean;
+  author?: string;
+  location?: string;
+  source?: string;
 }
 
 // Define the character state

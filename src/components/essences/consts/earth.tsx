@@ -8,6 +8,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_initiate_miners_touch",
@@ -18,6 +20,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_initiate_rock_whisperer",
@@ -28,6 +32,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_initiate_earth_sense",
@@ -38,6 +44,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_initiate_stone_fist_1",
@@ -48,6 +56,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_initiate_pebble_barrage",
@@ -58,6 +68,8 @@ export const earthAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_adept_earthen_resilience",
@@ -68,6 +80,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_adept_terramancer",
@@ -78,6 +92,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_adept_stone_camouflage",
@@ -88,6 +104,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_adept_earthen_grasp",
@@ -98,6 +116,8 @@ export const earthAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_adept_stone_armor",
@@ -108,6 +128,8 @@ export const earthAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_adept_stone_fist_2",
@@ -118,6 +140,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_adept_sandstorm",
@@ -128,6 +152,8 @@ export const earthAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_active_earthen_ward",
@@ -138,6 +164,8 @@ export const earthAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "earth_essence_immovable_mountain",
@@ -148,6 +176,7 @@ export const earthAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "earth_master_stone_fist_3",
@@ -158,6 +187,7 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "earth_master_essence_moves_mountains",
@@ -168,6 +198,8 @@ export const earthAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Shadow Sect",
+    location: "Sirius",
   }
 ];
 

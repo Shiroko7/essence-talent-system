@@ -8,6 +8,8 @@ export const lightningAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_initiate_lightning_step",
@@ -18,6 +20,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_initiate_stormborn_presence",
@@ -28,6 +32,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_initiate_storm_navigator",
@@ -38,6 +44,8 @@ export const lightningAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_initiate_lightning_insight",
@@ -48,6 +56,8 @@ export const lightningAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_adept_thunderous_speed",
@@ -58,6 +68,8 @@ export const lightningAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_adept_conductive_touch",
@@ -68,6 +80,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_adept_lightning_sense",
@@ -78,6 +92,8 @@ export const lightningAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_adept_thunderous_entrance",
@@ -88,6 +104,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_adept_thunderous_strike",
@@ -98,6 +116,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_adept_lightning_javelin",
@@ -108,6 +128,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lei Zhen",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "lightning_essence_arc_chain",
@@ -118,6 +140,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Nethan (Nilo's Father)",
+    location: "Leatrux",
   },
   {
     id: "lightning_essence_lightning_cage",
@@ -128,6 +152,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Nethan (Nilo's Father)",
+    location: "Leatrux",
   },
   {
     id: "lightning_essence_extinguishing_lightning",
@@ -138,6 +164,8 @@ export const lightningAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Nethan (Nilo's Father)",
+    location: "Leatrux",
   }
 ];
 

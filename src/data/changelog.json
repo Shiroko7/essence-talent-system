@@ -1,7 +1,247 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-05T23:09:13.247Z",
+  "generatedAt": "2026-09-23T22:24:36.611Z",
   "entries": [
+    {
+      "id": "203bcc8e6a1c52e5a183431d647b21993aa899d5-Ethereal Phase Barrier||grandmaster",
+      "date": "2026-03-31 00:50:50 -0300",
+      "commitHash": "203bcc8e6a1c52e5a183431d647b21993aa899d5",
+      "commitMessage": "add Ethereal Phase Barrier to acid abilities code",
+      "essenceType": "acid",
+      "changeType": "added",
+      "ability": {
+        "id": "acid_grandmaster_ethereal_phase_barrier",
+        "name": "Ethereal Phase Barrier",
+        "tier": "grandmaster",
+        "description": "When you cast wall of force, the wall manifests on the Ethereal Plane rather than the Material Plane, appearing as a shimmering, translucent membrane of acidic essence. The spell no longer requires concentration.\\n\\nThe wall cannot be destroyed or dispelled by any attack, spell, or magical effect unless that effect originates from the Ethereal Plane or is capable of transcending planar boundaries.\\n\\n**Essence Refinement.** When you cast wall of force with this feature, you may imbue it with additional essences. For each essence spent, choose one of the following benefits:\\n\\n- Extend the wall's duration by 1 hour.\\n- Increase the wall's size by an additional 10-foot radius (or equivalent panel area).",
+        "isActive": false,
+        "isPassive": true,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "31903e474f2751461aa006b645087eaf0fa14c3b-Ethereal Phase Barrier||grandmaster",
+      "date": "2026-03-30 20:45:25 -0300",
+      "commitHash": "31903e474f2751461aa006b645087eaf0fa14c3b",
+      "commitMessage": "add Ethereal Phase Barrier grandmaster acid ability",
+      "essenceType": "acid",
+      "changeType": "added",
+      "ability": {
+        "id": "acid_grandmaster_ethereal_phase_barrier",
+        "name": "Ethereal Phase Barrier",
+        "tier": "grandmaster",
+        "description": "When you cast wall of force, the wall manifests on the Ethereal Plane rather than the Material Plane, appearing as a shimmering, translucent membrane of acidic essence. The spell no longer requires concentration.\n\nThe wall cannot be destroyed or dispelled by any attack, spell, or magical effect unless that effect originates from the Ethereal Plane or is capable of transcending planar boundaries.\n\n**Essence Refinement.** When you cast wall of force with this feature, you may imbue it with additional essences. For each essence spent, choose one of the following benefits:\n\n- Extend the wall's duration by 1 hour.\n- Increase the wall's size by an additional 10-foot radius (or equivalent panel area).",
+        "isActive": false,
+        "isPassive": true,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7-Air Bubble||2nd",
+      "date": "2026-02-27 22:41:31 -0300",
+      "commitHash": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7",
+      "commitMessage": "fixing some broken links",
+      "essenceType": "air",
+      "changeType": "added",
+      "ability": {
+        "id": "wind_2nd_level_air_bubble",
+        "name": "Air Bubble",
+        "tier": "2nd",
+        "description": "https://5e.tools/spells.html#air%20bubble_aag",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": true,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7-Air Bubble||cantrip",
+      "date": "2026-02-27 22:41:31 -0300",
+      "commitHash": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7",
+      "commitMessage": "fixing some broken links",
+      "essenceType": "air",
+      "changeType": "removed",
+      "ability": {
+        "id": "wind_cantrip_air_bubble",
+        "name": "Air Bubble",
+        "tier": "cantrip",
+        "description": "https://5e.tools/spells.html#air%20bubble_eepc",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": true
+      }
+    },
+    {
+      "id": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7-Retrieve||cantrip",
+      "date": "2026-02-27 22:41:31 -0300",
+      "commitHash": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7",
+      "commitMessage": "fixing some broken links",
+      "essenceType": "air",
+      "changeType": "removed",
+      "ability": {
+        "id": "wind_cantrip_retrieve",
+        "name": "Retrieve",
+        "tier": "cantrip",
+        "description": "https://5e.tools/spells.html#retrieve_obojimatallgrass",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": true
+      }
+    },
+    {
+      "id": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7-Whelm Weapon||1st",
+      "date": "2026-02-27 22:41:31 -0300",
+      "commitHash": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7",
+      "commitMessage": "fixing some broken links",
+      "essenceType": "metal",
+      "changeType": "removed",
+      "ability": {
+        "id": "metal_1st_level_whelm_weapon",
+        "name": "Whelm Weapon",
+        "tier": "1st",
+        "description": "https://5e.tools/spells.html#whelm%20weapon_obojimatallgrass",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": true,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7-Arcane Aegis||1st",
+      "date": "2026-02-27 22:41:31 -0300",
+      "commitHash": "5222faa00f4bb3b05ffc92da4cdf999fc93d0bf7",
+      "commitMessage": "fixing some broken links",
+      "essenceType": "metal",
+      "changeType": "modified",
+      "ability": {
+        "id": "metal_1st_level_arcane_aegis",
+        "name": "Arcane Aegis",
+        "tier": "1st"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "https://5e.tools/spells.html#arcane%20aegis_obojimatallgrass",
+          "newValue": "https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24"
+        }
+      ]
+    },
+    {
+      "id": "730c50f2353afceebd6d4fb12a3d8bd3ec936da1-Cacophonic Shield||adept",
+      "date": "2026-02-27 22:17:13 -0300",
+      "commitHash": "730c50f2353afceebd6d4fb12a3d8bd3ec936da1",
+      "commitMessage": "fix Cacophonic shield",
+      "essenceType": "air",
+      "changeType": "added",
+      "ability": {
+        "id": "wind_adept_cacophonic_shield",
+        "name": "Cacophonic Shield",
+        "tier": "adept",
+        "description": "https://5e.tools/spells.html#cacophonic%20shield_frhof",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "730c50f2353afceebd6d4fb12a3d8bd3ec936da1-Cacophonic Shield||1st",
+      "date": "2026-02-27 22:17:13 -0300",
+      "commitHash": "730c50f2353afceebd6d4fb12a3d8bd3ec936da1",
+      "commitMessage": "fix Cacophonic shield",
+      "essenceType": "air",
+      "changeType": "removed",
+      "ability": {
+        "id": "wind_1st_level_cacophonic_shield",
+        "name": "Cacophonic Shield",
+        "tier": "1st",
+        "description": "https://5e.tools/spells.html#cacophonic%20shield_obojimatallgrass",
+        "isActive": false,
+        "isPassive": false,
+        "isSpell": true,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "7356d16a4867ccfdcc48753f492add3dd689066c-Ascending Dragon Gale||adept",
+      "date": "2026-02-27 15:32:47 -0300",
+      "commitHash": "7356d16a4867ccfdcc48753f492add3dd689066c",
+      "commitMessage": "add Yoo Tae-yang essences",
+      "essenceType": "air",
+      "changeType": "added",
+      "ability": {
+        "id": "wind_adept_ascending_dragon_gale",
+        "name": "Ascending Dragon Gale",
+        "tier": "adept",
+        "description": "When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach. You can only use this ability once per turn. The target must make a Strength saving throw. On a failure, it takes 3d10 thunder damage, is launched 20 feet into the air, and is Restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing Prone.",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "7356d16a4867ccfdcc48753f492add3dd689066c-Sky-Piercing Execution||master",
+      "date": "2026-02-27 15:32:47 -0300",
+      "commitHash": "7356d16a4867ccfdcc48753f492add3dd689066c",
+      "commitMessage": "add Yoo Tae-yang essences",
+      "essenceType": "air",
+      "changeType": "added",
+      "ability": {
+        "id": "wind_master_sky_piercing_execution",
+        "name": "Sky-Piercing Execution",
+        "tier": "master",
+        "description": "As a reaction when a creature within 60 feet is airborne or suspended, teleport to an adjacent empty space in the air. Make one piercing melee weapon attack against it. On a hit, the target suffers the attack's normal damage plus an extra 4d10 thunder damage, and is instantly slammed [DESCRIPTION INCOMPLETE - please fill in the rest].",
+        "isActive": true,
+        "isPassive": false,
+        "isSpell": false,
+        "isCantrip": false
+      }
+    },
+    {
+      "id": "f39ee632f4c4e8a6889f1f2286aeea04e60a6dc5-Vital Essence Sublimation III (Nilo)||master",
+      "date": "2026-02-16 17:33:42 -0300",
+      "commitHash": "f39ee632f4c4e8a6889f1f2286aeea04e60a6dc5",
+      "commitMessage": "Evolve Vital Essence Sublimation",
+      "essenceType": "poison",
+      "changeType": "modified",
+      "ability": {
+        "id": "poison_master_vital_essence_sublimation_iii",
+        "name": "Vital Essence Sublimation III (Nilo)",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.",
+          "newValue": "Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.\nYou can now hold up to three distilled essences at a time.\n\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points."
+        }
+      ]
+    },
+    {
+      "id": "f5f5e84a586fd5116dac2a8dce57eb125ac001d9-Tide's Reflection Art III (Thalassios)||master",
+      "date": "2026-02-05 21:14:51 -0300",
+      "commitHash": "f5f5e84a586fd5116dac2a8dce57eb125ac001d9",
+      "commitMessage": "Revamp UI",
+      "essenceType": "water",
+      "changeType": "modified",
+      "ability": {
+        "id": "water_adept_tides_reflection_art_iii",
+        "name": "Tide's Reflection Art III (Thalassios)",
+        "tier": "master"
+      },
+      "changes": [
+        {
+          "field": "description",
+          "oldValue": "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additinonally, you can now summon three Water Clones at the same time, and they last for 10 minutes.",
+          "newValue": "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks. Additionally, you can now summon three Water Clones at the same time, and they last for 10 minutes. Your Water Clones now emit dim moonlight in a 60-foot radius around them."
+        }
+      ]
+    },
     {
       "id": "2ad0716f6bacc12b54888de10978abcf608a43ec-Tide's Reflection Art III (Thalassios)||master",
       "date": "2026-02-05 10:02:20 -0300",

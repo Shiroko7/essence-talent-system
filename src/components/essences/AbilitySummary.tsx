@@ -391,8 +391,8 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                               <span className={`text-essence-${pathId}`}>{getEssenceIcon(pathId)}</span>
                               {searchTerm ? highlightText(ability.name, searchTerm) : ability.name}
                             </h4>
-                            <div className="text-sm text-mist mt-1 flex items-center gap-1 font-body">
-                              {pathName} Path • {ability.tier.toString().charAt(0).toUpperCase() + ability.tier.toString().slice(1)}
+                            <div className="text-sm text-mist mt-1 flex items-center gap-1.5 font-body flex-wrap">
+                              <span>{pathName} Path • {ability.tier.toString().charAt(0).toUpperCase() + ability.tier.toString().slice(1)}</span>
                             </div>
                           </div>
                           <span className={`px-3 py-1 rounded text-xs font-display tracking-wide ${typeClassName}`}>
@@ -411,6 +411,14 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
                             }
                           </div>
                         </div>
+
+                        {(ability.author || ability.location) && (
+                          <div className="mt-3 pt-2.5 border-t border-ash/30 flex items-center gap-1.5 text-xs text-mist font-body">
+                            {ability.author && <span>{ability.author}</span>}
+                            {ability.author && ability.location && <span className="text-mist/40">•</span>}
+                            {ability.location && <span>{ability.location}</span>}
+                          </div>
+                        )}
                       </div>
                     );
                   })}

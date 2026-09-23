@@ -11,12 +11,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Gain proficiency in History. If already proficient, you gain expertise.
 
 ---
-
 ### Miner's Touch
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Gain proficiency with mason’s tools and miner’s tools.
 
 ---
-
 ### Rock Whisperer
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can communicate simple ideas with earth elementals and creatures of stone.
 
 ---
-
 ### Earth Sense
 
 ```yaml
@@ -56,12 +59,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You have advantage on Survival and Perception checks to navigate underground or in rocky terrain.
 
 ---
-
 ### Stone Fist I
 
 ```yaml
@@ -71,12 +75,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your unarmed strikes deal 1d6 bludgeoning damage and count as magical for overcoming resistance and immunity.
 
 ---
-
 ### Pebble Barrage
 
 ```yaml
@@ -86,12 +91,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw or be knocked prone and take 4d4 bludgeoning damage.
 
 ---
-
 ## Adept Tier
 
 ### Earthen Resilience
@@ -103,12 +109,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Gain proficiency in Constitution saving throws.
 
 ---
-
 ### Terramancer
 
 ```yaml
@@ -118,12 +125,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Gain expertise in Athletics when performing tasks involving lifting, pushing, or pulling heavy objects made of stone or earth.
 
 ---
-
 ### Stone Camouflage
 
 ```yaml
@@ -133,12 +141,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You have expertise on Stealth checks to hide in rocky terrain or against stone surfaces.
 
 ---
-
 ### Earthen Grasp
 
 ```yaml
@@ -148,12 +157,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can cause the ground to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns to break free.
 
 ---
-
 ### Stone Armor
 
 ```yaml
@@ -163,12 +173,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can encase yourself in a layer of stone, granting you resistance to bludgeoning, piercing, and slashing damage for 1 minute.
 
 ---
-
 ### Stone Fist II
 
 ```yaml
@@ -178,12 +189,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your unarmed strikes deal 1d8 bludgeoning damage and count as magical for overcoming resistance and immunity.
 
 ---
-
 ### Sandstorm
 
 ```yaml
@@ -193,12 +205,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you create a swirling storm of sand in a 20-foot radius centred on you. Each creature in the area must make a Constitution saving throw, taking 3d6 slashing damage on a failed save and becoming blinded until the end of their next turn, or half as much damage on a successful save. The storm lasts for 1 minute. The area is difficult terrain, any creature that starts its turn within the storm takes 1d6 damage.’
 
 ---
-
 ## Active Tier
 
 ### Earthen Ward
@@ -210,12 +223,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a reaction, a surge of earth magic momentarily hardens your form. You gain temporary hit points equal to 1d10 + your Constitution modifier.
 
 ---
-
 ## Master Tier
 
 ### Immovable Mountain
@@ -227,12 +241,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 For 1 minute, you become an unyielding force. You can’t be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will. Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone. The ground cracks beneath your steady steps.
 
 ---
-
 ### Stone Fist III
 
 ```yaml
@@ -242,13 +256,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 Your unarmed strikes deal 1d10 bludgeoning damage and count as magical for overcoming resistance and immunity.
 
 
 ---
-
 ### Foolish Old Man Moves Mountains
 
 ```yaml
@@ -258,12 +272,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Shadow Sect
+location: Sirius
 ```
 
 Each time you fail a saving throw against a hostile creature’s effect, your abilities DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.
 
 ---
-
 ## Cantrips
 
 ### Magic Stone
@@ -280,7 +295,6 @@ isCantrip: true
 https://5e.tools/spells.html#magic%20stone_xge
 
 ---
-
 ### Mold Earth
 
 ```yaml
@@ -295,7 +309,6 @@ isCantrip: true
 https://5e.tools/spells.html#mold%20earth_xge
 
 ---
-
 ## Spells
 
 ### Earth Tremor
@@ -312,7 +325,6 @@ isCantrip: false
 https://5e.tools/spells.html#earth%20tremor_xge
 
 ---
-
 ### Earthbind
 
 ```yaml
@@ -327,7 +339,6 @@ isCantrip: false
 https://5e.tools/spells.html#earthbind_xge
 
 ---
-
 ### Maximilian's Earthen Grasp
 
 ```yaml
@@ -342,7 +353,6 @@ isCantrip: false
 https://5e.tools/spells.html#maximilian's%20earthen%20grasp_xge
 
 ---
-
 ### Erupting Earth
 
 ```yaml
@@ -357,7 +367,6 @@ isCantrip: false
 https://5e.tools/spells.html#erupting%20earth_xge
 
 ---
-
 ### Wall of Sand
 
 ```yaml
@@ -372,7 +381,6 @@ isCantrip: false
 https://5e.tools/spells.html#wall%20of%20sand_xge
 
 ---
-
 ### Meld into Stone
 
 ```yaml
@@ -387,7 +395,6 @@ isCantrip: false
 https://5e.tools/spells.html#meld%20into%20stone_xphb
 
 ---
-
 ### Stone Shape
 
 ```yaml
@@ -402,7 +409,6 @@ isCantrip: false
 https://5e.tools/spells.html#stone%20shape_xphb
 
 ---
-
 ### Stoneskin
 
 ```yaml
@@ -417,7 +423,6 @@ isCantrip: false
 https://5e.tools/spells.html#stoneskin_xphb
 
 ---
-
 ### Transmute Rock
 
 ```yaml
@@ -432,7 +437,6 @@ isCantrip: false
 https://5e.tools/spells.html#transmute%20rock_xge
 
 ---
-
 ### Wall of Stone
 
 ```yaml
@@ -447,7 +451,6 @@ isCantrip: false
 https://5e.tools/spells.html#wall%20of%20stone_xphb
 
 ---
-
 ### Destructive Wave
 
 ```yaml
@@ -462,7 +465,6 @@ isCantrip: false
 https://5e.tools/spells.html#destructive%20wave_xphb
 
 ---
-
 ### Bones of the Earth
 
 ```yaml
@@ -477,7 +479,6 @@ isCantrip: false
 https://5e.tools/spells.html#bones%20of%20the%20earth_xge
 
 ---
-
 ### Flesh to Stone
 
 ```yaml
@@ -492,7 +493,6 @@ isCantrip: false
 https://5e.tools/spells.html#flesh%20to%20stone_xphb
 
 ---
-
 ### Investiture of Stone
 
 ```yaml
@@ -507,7 +507,6 @@ isCantrip: false
 https://5e.tools/spells.html#investiture%20of%20stone_xge
 
 ---
-
 ### Move Earth
 
 ```yaml
@@ -522,7 +521,6 @@ isCantrip: false
 https://5e.tools/spells.html#move%20earth_xphb
 
 ---
-
 ### Reverse Gravity
 
 ```yaml
@@ -537,7 +535,6 @@ isCantrip: false
 https://5e.tools/spells.html#reverse%20gravity_xphb
 
 ---
-
 ### Earthquake
 
 ```yaml
@@ -552,7 +549,6 @@ isCantrip: false
 https://5e.tools/spells.html#earthquake_xphb
 
 ---
-
 ### Meteor Swarm
 
 ```yaml
@@ -567,7 +563,6 @@ isCantrip: false
 https://5e.tools/spells.html#meteor%20swarm_xphb
 
 ---
-
 ### Imprisonment
 
 ```yaml
@@ -582,7 +577,6 @@ isCantrip: false
 https://5e.tools/spells.html#imprisonment_xphb
 
 ---
-
 ### Tremor
 
 ```yaml
@@ -597,7 +591,6 @@ isCantrip: false
 https://5e.tools/spells.html#tremor_grimhollowpg24
 
 ---
-
 ### Earth Worm
 
 ```yaml

@@ -8,6 +8,8 @@ export const airAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_initiate_thunderous_roar",
@@ -18,6 +20,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_initiate_whispers_of_the_gale",
@@ -28,6 +32,8 @@ export const airAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Faelara Rest of the Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_echoing_footsteps",
@@ -38,6 +44,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_thunderstep",
@@ -48,6 +56,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_calm_breeze",
@@ -58,6 +68,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_misty_escape",
@@ -68,6 +80,8 @@ export const airAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_whispering_winds",
@@ -78,6 +92,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_wind_barrier",
@@ -88,6 +104,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_cyclone_step",
@@ -98,6 +116,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_wind_sprint",
@@ -108,6 +128,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_sound_analysis",
@@ -118,6 +140,8 @@ export const airAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_gale_force_strike",
@@ -128,6 +152,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_fortune_favors_the_swift",
@@ -138,6 +164,8 @@ export const airAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Wang Dabao",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "wind_adept_ascending_dragon_gale",
@@ -148,6 +176,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Yoo Tae-yang",
+    location: "Sirius",
   },
   {
     id: "wind_master_essence_liberations_gale",
@@ -158,6 +188,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Mario (Ilmater's Chosen)",
+    location: "Leatrux",
   },
   {
     id: "wind_master_essence_just_passing_by",
@@ -168,6 +200,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Wang Tianbao (Shadow Sect)",
+    location: "Sirius",
   },
   {
     id: "wind_master_essence_lunar_wind_spiral",
@@ -178,6 +212,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Yuji (Shadow Sect)",
+    location: "Leatrux",
   },
   {
     id: "wind_master_essence_waning_moon_sabers",
@@ -188,6 +224,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Yuji (Shadow Sect)",
+    location: "Leatrux",
   },
   {
     id: "wind_master_sky_piercing_execution",
@@ -198,16 +236,8 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
-  },
-  {
-    id: "wind_adept_cacophonic_shield",
-    name: "Cacophonic Shield",
-    description: "https://5e.tools/spells.html#cacophonic%20shield_frhof",
-    tier: "adept",
-    isActive: true,
-    isPassive: false,
-    isSpell: false,
-    isCantrip: false,
+    author: "Yoo Tae-yang",
+    location: "Sirius",
   }
 ];
 
@@ -510,6 +540,16 @@ export const airSpells = [
     name: "Storm of Vengeance",
     description: "https://5e.tools/spells.html#storm%20of%20vengeance_xphb",
     tier: "9th",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+  },
+  {
+    id: "wind_3rd_level_cacophonic_shield",
+    name: "Cacophonic Shield",
+    description: "https://5e.tools/spells.html#cacophonic%20shield_frhof",
+    tier: "3rd",
     isActive: false,
     isPassive: false,
     isSpell: true,

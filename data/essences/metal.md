@@ -11,12 +11,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You gain proficiency with smith's tools.
 
 ---
-
 ### Magnetic Attraction
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can pull or push a metal object weighing up to 10 pounds within 60 feet, moving it up to 10 feet toward or away from you. If the object is carried or worn by a creature, that creature must succeed on a Strength saving throw against your spell save DC. On a failed save, you can choose to either move the creature along with the object or detach the object from the creature. For objects heavier or larger than the base limit, you can attempt to move them by making an Intelligence (Arcana) check against a DC determined by the object’s weight and size. Objects far beyond your power are immovable.
 
 ---
-
 ### Metal Sense
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can detect the presence of metal within 30 feet of you. You sense the type and general location of metal objects, including hidden compartments or concealed weapons.
 
 ---
-
 ### Keen Edge
 
 ```yaml
@@ -56,12 +59,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can temporarily sharpen a weapon or ammunition, granting it a +1 bonus to attack and damage rolls for the next hour.
 
 ---
-
 ### Magnetic Focus
 
 ```yaml
@@ -71,12 +75,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a reaction, you can magnetically attract a metal weapon you can see within 30 feet of you to your hand, provided it's not being worn or carried by another creature.
 
 ---
-
 ### Metallic Echo
 
 ```yaml
@@ -86,12 +91,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you strike a metallic object with a melee weapon, you can create a ringing sound that echoes in a 10-foot radius. Creatures in the area must succeed on a Constitution saving throw or be deafened until the end of their next turn.
 
 ---
-
 ## Adept Tier
 
 ### Enhanced Armor
@@ -103,12 +109,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can spend 10 minutes to reinforce any armor. For the next hour, you gain resistance to one type of damage (chosen when you use this ability) while wearing armor.
 
 ---
-
 ### Gemsight
 
 ```yaml
@@ -118,12 +125,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You gain expertise in Perception checks to locate hidden gemstones or precious minerals. When you find such items, you can appraise their value with a successful Intelligence (Investigation) check.
 
 ---
-
 ### Magnetic Shield
 
 ```yaml
@@ -133,12 +141,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a reaction when you are hit by an attack, you can create a magnetic field that reduces the damage by 1d10 + your Constitution modifier. If the attacker is wielding a metal weapon, they must make a Strength saving throw or be disarmed.
 
 ---
-
 ### Steel Tornado
 
 ```yaml
@@ -148,12 +157,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you can create a whirlwind of metallic shards in a 30-foot radius around you. Creatures within the cylinder must make a Dexterity saving throw. On a failed save, a creature takes 7d6 slashing damage, or half as much damage on a successful save.
 
 ---
-
 ## Master
 
 ### Weight of Lives 
@@ -165,12 +175,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Shadow Sect
+location: Sirius
 ```
 
 As an action, target a creature within 60 feet to make a Charisma saving throw. They take 2d8 force damage per karmic debt you discern (up to 18d8). On a failed save, they're restrained for rounds equal to debts discerned. On a success, they take half damage, have speed halved, and you gain temporary hit points equal to damage dealt.
 
 ---
-
 ## Cantrips
 
 ### Blade Ward
@@ -187,7 +198,6 @@ isCantrip: true
 https://5e.tools/spells.html#blade%20ward_xphb
 
 ---
-
 ### Sword Burst
 
 ```yaml
@@ -202,7 +212,6 @@ isCantrip: true
 https://5e.tools/spells.html#sword%20burst_tce
 
 ---
-
 ## Spells
 
 ### Cloud of Daggers
@@ -219,7 +228,6 @@ isCantrip: false
 https://5e.tools/spells.html#cloud%20of%20daggers_xphb
 
 ---
-
 ### Heat Metal
 
 ```yaml
@@ -234,7 +242,6 @@ isCantrip: false
 https://5e.tools/spells.html#heat%20metal_xphb
 
 ---
-
 ### Fabricate
 
 ```yaml
@@ -249,7 +256,6 @@ isCantrip: false
 https://5e.tools/spells.html#fabricate_xphb
 
 ---
-
 ### Animate Objects
 
 ```yaml
@@ -264,7 +270,6 @@ isCantrip: false
 https://5e.tools/spells.html#animate%20objects_xphb
 
 ---
-
 ### Blade Barrier
 
 ```yaml
@@ -279,7 +284,6 @@ isCantrip: false
 https://5e.tools/spells.html#blade%20barrier_xphb
 
 ---
-
 ### Mordenkainen's Sword
 
 ```yaml
@@ -294,7 +298,6 @@ isCantrip: false
 https://5e.tools/spells.html#mordenkainen's%20sword_xphb
 
 ---
-
 ### Foresight
 
 ```yaml
@@ -309,7 +312,6 @@ isCantrip: false
 https://5e.tools/spells.html#foresight_xphb
 
 ---
-
 ### Arcane Aegis
 
 ```yaml
@@ -324,7 +326,6 @@ isCantrip: false
 https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24
 
 ---
-
 ### Enspelled Armament
 
 ```yaml
@@ -339,7 +340,6 @@ isCantrip: false
 https://5e.tools/spells.html#enspelled%20armament_obojimatallgrass
 
 ---
-
 ### Pillar of Force
 
 ```yaml
@@ -354,7 +354,6 @@ isCantrip: false
 https://5e.tools/spells.html#pillar%20of%20force_obojimatallgrass
 
 ---
-
 ### Pogmo's Pot
 
 ```yaml

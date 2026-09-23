@@ -8,6 +8,8 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_initiate_ice_form",
@@ -18,6 +20,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_initiate_raincaller",
@@ -28,6 +32,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_initiate_restorative_rain",
@@ -38,6 +44,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_initiate_frozen_insight",
@@ -48,6 +56,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_tides_reflection_art_i",
@@ -58,6 +68,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Selune",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_aqua_agility",
@@ -68,6 +80,8 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_tide_of_emotions",
@@ -78,6 +92,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_tidal_surge",
@@ -88,6 +104,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_rain_of_revelation",
@@ -98,6 +116,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_glacial_shield",
@@ -108,6 +128,8 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_hydroportation",
@@ -118,6 +140,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_tides_reflection_art_ii",
@@ -128,6 +152,8 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Selune",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_adept_moonlit_verdant_beam",
@@ -138,6 +164,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lesbian Dragons",
+    location: "Leatrux",
   },
   {
     id: "water_master_draconic_regeneration_emerald_moon",
@@ -148,6 +176,8 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Lesbian Dragons",
+    location: "Leatrux",
   },
   {
     id: "water_adept_tides_reflection_art_iii",
@@ -158,6 +188,8 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Selune",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "water_master_lunar_tide",
@@ -168,6 +200,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Shadow Sect",
+    location: "Sirius",
   },
   {
     id: "water_master_moonfall_condemnation",
@@ -178,6 +212,8 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Yuji (Shadow Sect)",
+    location: "Leatrux",
   }
 ];
 

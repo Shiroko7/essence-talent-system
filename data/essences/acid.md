@@ -11,12 +11,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you can create a powerful, improvised explosive from available materials. It deals 4d6 acid damage in a 10-foot radius on a failed Dexterity saving throw, or half as much on a successful save.
 
 ---
-
 ### Alchemy Proficiency
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Gain proficiency in Alchemist’s Supplies. You can craft basic alchemical substances, such as acid flasks, potions of healing, and other simple concoctions.
 
 ---
-
 ### Acidic Insight
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You have developed a keen understanding of acidic substances and their effects. You gain advantage on Intelligence (Arcana) and Wisdom (Nature) checks related to acids, alchemical reactions, and chemical processes. This knowledge allows you to identify and analyse unknown substances or toxins with ease.
 
 ---
-
 ### Acidic Precision
 
 ```yaml
@@ -56,12 +59,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your expertise with corrosive substances has honed your skill in turning everyday objects into deadly weapons. You gain proficiency with all thrown weapons and improvised thrown weapons.
 
 ---
-
 ## Adept Tier
 
 ### Chemical Expertise
@@ -73,12 +77,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can create more advanced alchemical mixtures, such as potent acid flasks or alchemical fire. You gain a +2 bonus to checks involving Alchemist’s Supplies and can create these mixtures in half the usual time.
 
 ---
-
 ### Explosive Savant
 
 ```yaml
@@ -88,12 +93,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you use an explosive device or alchemical flask, its damage increases by an additional damage dice. Additionally, you can use such devices as a bonus action instead of an action.
 
 ---
-
 ### Miasmic Cloud
 
 ```yaml
@@ -103,12 +109,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can create a cloud of acidic mist in a 10-foot radius around you. Any creature that starts its turn within the cloud must make a Constitution saving throw or take 6d6 acid damage and be blinded until the end of its next turn.
 
 ---
-
 ### Acidic Embrace
 
 ```yaml
@@ -118,12 +125,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute
 
 ---
-
 ### Expanded Explosion
 
 ```yaml
@@ -133,12 +141,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your expertise in crafting explosives has improved the effectiveness of your bombs. When you create or use an explosive device, you increase its radius by 10 feet. For example, a bomb that normally affects a 10-foot radius now affects a 20-foot radius. This increased radius applies to all explosive effects you create, including those from your Improvised Explosives and any similar abilities.
 
 ---
-
 ### Extended Reach
 
 ```yaml
@@ -148,12 +157,12 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 Your skill with explosive devices allows you to strike from farther away. When you create or use an explosive, its range to the target point is doubled. For example, a bomb that can normally be thrown or placed within 30 feet can now target a point up to 60 feet away.
 
 ---
-
 ## Master Tier
 
 ### Seven-Color Elixir
@@ -165,6 +174,8 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Fendral
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven.
@@ -178,7 +189,6 @@ As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine
     7.Obsidian Terror — Fear in a 30-foot cone.
 
 ---
-
 ### Erosion of Being
 
 ```yaml
@@ -188,12 +198,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Shadow Sect
+location: Sirius
 ```
 
 As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success. On a failed save, the creature begins dissolving into nothingness and is banished to a harmless demiplane for 1 minute. If reduced to 0 hit points by this damage, it dissolves completely and is permanently destroyed (no resurrection except by Wish). At the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success.
 
 ---
-
 ## Grandmaster Tier
 
 ### Ethereal Phase Barrier
@@ -205,6 +216,8 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Malzareth (Dryad Cyric Cultist)
+location: Sirius
 ```
 
 When you cast wall of force, the wall manifests on the Ethereal Plane rather than the Material Plane, appearing as a shimmering, translucent membrane of acidic essence. The spell no longer requires concentration.
@@ -217,7 +230,6 @@ The wall cannot be destroyed or dispelled by any attack, spell, or magical effec
 - Increase the wall's size by an additional 10-foot radius (or equivalent panel area).
 
 ---
-
 ## Cantrips
 
 ### Acid Splash
@@ -234,7 +246,6 @@ isCantrip: true
 https://5e.tools/spells.html#acid%20splash_xphb
 
 ---
-
 ### Primal Savagery
 
 ```yaml
@@ -249,7 +260,6 @@ isCantrip: true
 https://5e.tools/spells.html#primal%20savagery_xge
 
 ---
-
 ## Spells
 
 ### Absorb Elements
@@ -266,7 +276,6 @@ isCantrip: false
 https://5e.tools/spells.html#absorb%20elements_xge
 
 ---
-
 ### Chromatic Orb
 
 ```yaml
@@ -281,7 +290,6 @@ isCantrip: false
 https://5e.tools/spells.html#chromatic%20orb_xphb
 
 ---
-
 ### Chaos Bolt
 
 ```yaml
@@ -296,7 +304,6 @@ isCantrip: false
 https://5e.tools/spells.html#chaos%20bolt_xge
 
 ---
-
 ### Melf's Acid Arrow
 
 ```yaml
@@ -311,7 +318,6 @@ isCantrip: false
 https://5e.tools/spells.html#melf's%20acid%20arrow_xphb
 
 ---
-
 ### Dragon's Breath
 
 ```yaml
@@ -326,7 +332,6 @@ isCantrip: false
 https://5e.tools/spells.html#dragon's%20breath_xge
 
 ---
-
 ### Elemental Weapon
 
 ```yaml
@@ -341,7 +346,6 @@ isCantrip: false
 https://5e.tools/spells.html#elemental%20weapon_xphb
 
 ---
-
 ### Glyph of Warding
 
 ```yaml
@@ -356,7 +360,6 @@ isCantrip: false
 https://5e.tools/spells.html#glyph%20of%20warding_xphb
 
 ---
-
 ### Hunger of Hadar
 
 ```yaml
@@ -371,7 +374,6 @@ isCantrip: false
 https://5e.tools/spells.html#hunger%20of%20hadar_xphb
 
 ---
-
 ### Vitriolic Sphere
 
 ```yaml
@@ -386,7 +388,6 @@ isCantrip: false
 https://5e.tools/spells.html#vitriolic%20sphere_xge
 
 ---
-
 ### Elemental Bane
 
 ```yaml
@@ -401,7 +402,6 @@ isCantrip: false
 https://5e.tools/spells.html#elemental%20bane_xge
 
 ---
-
 ### Wall of Force
 
 ```yaml
@@ -416,7 +416,6 @@ isCantrip: false
 https://5e.tools/spells.html#wall%20of%20force_xphb
 
 ---
-
 ### Synaptic Static
 
 ```yaml
@@ -431,7 +430,6 @@ isCantrip: false
 https://5e.tools/spells.html#synaptic%20static_xphb
 
 ---
-
 ### Disintegrate
 
 ```yaml
@@ -446,7 +444,6 @@ isCantrip: false
 https://5e.tools/spells.html#disintegrate_xphb
 
 ---
-
 ### Prismatic Spray
 
 ```yaml
@@ -461,7 +458,6 @@ isCantrip: false
 https://5e.tools/spells.html#prismatic%20spray_phb
 
 ---
-
 ### Antimagic Field
 
 ```yaml
@@ -476,7 +472,6 @@ isCantrip: false
 https://5e.tools/spells.html#prismatic%20spray_phb
 
 ---
-
 ### Prismatic Wall
 
 ```yaml
@@ -491,7 +486,6 @@ isCantrip: false
 https://5e.tools/spells.html#prismatic%20wall_phb
 
 ---
-
 ### Storm of Vengeance
 
 ```yaml
@@ -506,7 +500,6 @@ isCantrip: false
 https://5e.tools/spells.html#storm%20of%20vengeance_phb
 
 ---
-
 ### Blade of Disaster
 
 ```yaml
@@ -521,7 +514,6 @@ isCantrip: false
 https://5e.tools/spells.html#blade%20of%20disaster_tce
 
 ---
-
 ### Elminster's Elusion
 
 ```yaml
@@ -536,7 +528,6 @@ isCantrip: false
 https://5e.tools/spells.html#elminster's%20elusion_frhof
 
 ---
-
 ### Elemental Exhalation
 
 ```yaml
@@ -551,7 +542,6 @@ isCantrip: false
 https://5e.tools/spells.html#elemental%20exhalation_obojimatallgrass
 
 ---
-
 ### Primordial Power
 
 ```yaml
@@ -566,7 +556,6 @@ isCantrip: false
 https://5e.tools/spells.html#primordial%20power_obojimatallgrass
 
 ---
-
 ### Magic Mirror
 
 ```yaml
@@ -581,7 +570,6 @@ isCantrip: false
 https://5e.tools/spells.html#magic%20mirror_obojimatallgrass
 
 ---
-
 ### Songal's Elemental Suffusion
 
 ```yaml
@@ -596,7 +584,6 @@ isCantrip: false
 https://5e.tools/spells.html#songal's%20elemental%20suffusion_frhof
 
 ---
-
 ### Draconic Transformation
 
 ```yaml

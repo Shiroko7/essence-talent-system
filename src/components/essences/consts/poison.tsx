@@ -8,6 +8,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_initiate_herbalists_knowledge",
@@ -18,6 +20,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_initiate_strength_booster",
@@ -28,6 +32,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_initiate_quickening_draught",
@@ -38,6 +44,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_initiate_enchanting_perfume",
@@ -48,6 +56,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_initiate_venomous_bite",
@@ -58,6 +68,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Vajra from the Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_initiate_vital_essence_sublimation_i",
@@ -68,6 +80,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Phudara's unknown inheritance",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_adept_toxic_skin_secretion_1",
@@ -78,6 +92,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Church of Talona",
+    location: "Leatrux",
   },
   {
     id: "poison_adept_venomous_strike",
@@ -88,6 +104,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_adept_hallucinogenic_trance",
@@ -98,6 +116,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_adept_vestibular_trance",
@@ -108,6 +128,7 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "poison_adept_enhanced_mutagen",
@@ -118,6 +139,7 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "poison_adept_enhanced_mutagen_dexterity",
@@ -128,6 +150,7 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "poison_adept_enhanced_mutagen_constitution",
@@ -138,6 +161,7 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "poison_adept_enhanced_mutagen_intelligence",
@@ -148,6 +172,7 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "poison_adept_enhanced_mutagen_wisdom",
@@ -158,6 +183,7 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "poison_adept_enhanced_mutagen_charisma",
@@ -168,6 +194,7 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "poison_adept_pill_of_focus",
@@ -178,6 +205,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_adept_venomous_precision",
@@ -188,6 +217,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_adept_moonlit_verdant_beam",
@@ -198,6 +229,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lesbian Dragons",
+    location: "Leatrux",
   },
   {
     id: "poison_adept_vital_essence_sublimation_ii",
@@ -208,6 +241,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Phudara's unknown inheritance",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_adept_toxic_skin_secretion_2",
@@ -218,6 +253,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Church of Talona",
+    location: "Leatrux",
   },
   {
     id: "poison_adept_toxic_skin_secretion_3",
@@ -228,6 +265,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Church of Talona",
+    location: "Leatrux",
   },
   {
     id: "poison_master_vital_essence_sublimation_iii",
@@ -238,6 +277,8 @@ export const poisonAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Phudara's unknown inheritance",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "poison_master_essence_snake_horror",
@@ -248,6 +289,8 @@ export const poisonAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Lord Kai (Shadow Sect)",
+    location: "Sirius",
   }
 ];
 

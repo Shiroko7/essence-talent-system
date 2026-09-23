@@ -8,6 +8,8 @@ export const fireAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_initiate_searing_gaze",
@@ -18,6 +20,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_initiate_flame_kinship",
@@ -28,6 +32,8 @@ export const fireAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_initiate_ember_strike",
@@ -38,6 +44,8 @@ export const fireAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_initiate_flame_lash",
@@ -48,6 +56,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_initiate_inferno_disengage",
@@ -58,6 +68,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_initiate_heart_crusher_grip",
@@ -68,6 +80,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Xu Ning (Lime's ancestor)",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_adept_blazing_presence",
@@ -78,6 +92,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_adept_embers_resilience",
@@ -88,6 +104,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_adept_blazing_trail",
@@ -98,6 +116,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_adept_scorched_ground",
@@ -108,6 +128,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_adept_burning_fury",
@@ -118,6 +140,8 @@ export const fireAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "fire_adept_frightful_pursuit",
@@ -128,6 +152,7 @@ export const fireAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    location: "Sirius",
   },
   {
     id: "fire_essence_martyrs_flame_aura",
@@ -138,6 +163,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Mario (Ilmater's Chosen)",
+    location: "Leatrux",
   },
   {
     id: "fire_master_essence_shadowflame_dream",
@@ -148,6 +175,8 @@ export const fireAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Shadow Sect",
+    location: "Sirius",
   }
 ];
 

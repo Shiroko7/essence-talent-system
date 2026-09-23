@@ -72,6 +72,8 @@ export function parseMarkdownFile(content, essenceName) {
       isPassive: metadata.isPassive || false,
       isSpell: metadata.isSpell || false,
       isCantrip: metadata.isCantrip || false,
+      author: metadata.author || metadata.source || undefined,
+      location: metadata.location || undefined,
     };
 
     // Categorize the ability

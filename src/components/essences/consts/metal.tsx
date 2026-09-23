@@ -8,6 +8,8 @@ export const metalAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_initiate_magnetic_attraction",
@@ -18,6 +20,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_initiate_metal_sense",
@@ -28,6 +32,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_initiate_keen_edge",
@@ -38,6 +44,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_initiate_magnetic_focus",
@@ -48,6 +56,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_initiate_metallic_echo",
@@ -58,6 +68,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_adept_enhanced_armor",
@@ -68,6 +80,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_adept_gemsight",
@@ -78,6 +92,8 @@ export const metalAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_adept_magnetic_shield",
@@ -88,6 +104,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_adept_steel_tornado",
@@ -98,6 +116,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Llamarada Tribe",
+    location: "Phudara / Isle of Whispers",
   },
   {
     id: "metal_master_weight_of_lives",
@@ -108,6 +128,8 @@ export const metalAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
+    author: "Shadow Sect",
+    location: "Sirius",
   }
 ];
 

@@ -11,12 +11,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you can imbue your touch with a mild poison. A creature you touch must make a Constitution saving throw against your spell save DC or become poisoned for 1 minute. While poisoned this way, the creature takes 1d6 poison damage at the start of each of its turns until it succeeds a saving throw. The poison ends early if the creature receives any kind of healing.
 
 ---
-
 ### Herbalist’s Knowledge
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You gain proficiency with the Medicine skill and advantage on checks to identify or use medicinal herbs and poisons.
 
 ---
-
 ### Strength Booster
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can drink a mutagen to gain a 1d4 bonus to strength based ability checks for 10 minutes.
 
 ---
-
 ### Quickening Draught
 
 ```yaml
@@ -56,12 +59,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, by drinking a specially prepared potion, you gain an additional 10 feet of movement speed for 10 minutes.
 
 ---
-
 ### Enchanting Perfume
 
 ```yaml
@@ -71,12 +75,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As an action, you can apply a specially crafted perfume that enhances your charm and charisma. For the next hour, you gain a 1d4 bonus to Charisma (Persuasion) and Charisma (Deception) checks.
 
 ---
-
 ### Venomous Bite (Gio)
 
 ```yaml
@@ -86,12 +91,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Vajra from the Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you take the Attack action, you can replace one of your attacks with a bite attack, imbuing it with a potent venom. Make a melee weapon attack against a creature within your reach. On a hit, the target takes 1d12 piercing damage and must succeed on a Constitution saving throw against your spell save DC or become poisoned for 1 minute. The bite attack is considered magical for the purposes of overcoming resistance and immunity to nonmagical attacks.
 
 ---
-
 ### Vital Essence Sublimation I (Nilo)
 
 ```yaml
@@ -101,6 +107,8 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Phudara's unknown inheritance
+location: Phudara / Isle of Whispers
 ```
 
 When you harvest the blood of a fallen creature, you can distill its essence into a single potion. You may either extract one of its abilities (action, bonus action, or reaction) and bottle it as a potion, or create a potion whose rarity depends on the creature’s level. Roll a d100; on a failure, the attempt is wasted.
@@ -114,7 +122,6 @@ When you harvest the blood of a fallen creature, you can distill its essence int
 You can hold only one distilled essence at a time. Potions do not expire.
 
 ---
-
 ### Toxic Skin Secretion I
 
 ```yaml
@@ -124,12 +131,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Church of Talona
+location: Leatrux
 ```
 
 Once per turn, when a creature hits you with a melee attack, that creature must succeed on a Constitution saving throw against your spell save DC or become poisoned until the end of its next turn.
 
 ---
-
 ## Adept Tier
 
 ### Venomous Strike
@@ -141,12 +149,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can coat a weapon with a potent poison. The next attack you make with that weapon deals an additional 2d6 poison damage on a hit. The target must also succeed on a Constitution saving throw or be poisoned for 1 minute.
 
 ---
-
 ### Hallucinogenic Trance
 
 ```yaml
@@ -156,12 +165,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can target one poisoned creature within 30 feet. The target must succeed on a Wisdom saving throw or be subjected to vivid hallucinations for the duration of its poisoned condition. While affected by these hallucinations, the creature has disadvantage on Intelligence, Wisdom, and Charisma saving throws and ability checks. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
 
 ---
-
 ### Vestibular Trance
 
 ```yaml
@@ -171,12 +181,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As a bonus action, you can target one poisoned creature within 30 feet. The target must succeed on a Constitution saving throw or be overwhelmed by distorted bodily sensations (nausea, vertigo, and loss of coordination) for the duration of its poisoned condition. While affected, the creature has disadvantage on Strength, Dexterity, and Constitution saving throws and ability checks. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
 
 ---
-
 ### Mutagen Formula (Strength)
 
 ```yaml
@@ -186,12 +196,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Strength for 10 minutes, and you take a –2 penalty to Intelligence for the same duration.
 
 ---
-
 ### Mutagen Formula (Dexterity)
 
 ```yaml
@@ -201,12 +211,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Dexterity for 10 minutes, and you take a –2 penalty to Wisdom for the same duration.
 
 ---
-
 ### Mutagen Formula (Constitution)
 
 ```yaml
@@ -216,12 +226,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Constitution for 10 minutes, and you take a –2 penalty to Charisma for the same duration.
 
 ---
-
 ### Mutagen Formula (Intelligence)
 
 ```yaml
@@ -231,12 +241,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Intelligence for 10 minutes, and you take a –2 penalty to Strength for the same duration.
 
 ---
-
 ### Mutagen Formula (Wisdom)
 
 ```yaml
@@ -246,12 +256,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Wisdom for 10 minutes, and you take a –2 penalty to Dexterity for the same duration.
 
 ---
-
 ### Mutagen Formula (Charisma)
 
 ```yaml
@@ -261,12 +271,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Charisma for 10 minutes, and you take a –2 penalty to Constitution for the same duration.
 
 ---
-
 ### Pill of Focus
 
 ```yaml
@@ -276,12 +286,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you can consume a pill to gain advantage on concentration checks for the next hour.
 
 ---
-
 ### Venomous Precision
 
 ```yaml
@@ -291,12 +302,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When attacking a creature that is poisoned, you have advantage on attack rolls against that creature.
 
 ---
-
 ### Moonlit Verdant Beam
 
 ```yaml
@@ -306,12 +318,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lesbian Dragons
+location: Leatrux
 ```
 
 As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack. On a hit, the target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC. On a failed save, the target is blinded and poisoned until the end of your next turn.
 
 ---
-
 ### Vital Essence Sublimation II (Nilo)
 
 ```yaml
@@ -321,13 +334,14 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Phudara's unknown inheritance
+location: Phudara / Isle of Whispers
 ```
 
 Your failure chances are reduced: Common and Uncommon potions no longer fail, while higher rarity failure rates decrease (Rare 20%, Very Rare 60%, Legendary 80%).
 You can now hold up to two distilled essences at a time.
 
 ---
-
 ### Toxic Skin Secretion II
 
 ```yaml
@@ -337,12 +351,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Church of Talona
+location: Leatrux
 ```
 
 Once per turn, when a creature hits you with a melee attack, that creature must succeed on a Constitution saving throw against your spell save DC or become poisoned for 1 minute. On a failed save, the creature also takes poison damage equal to your proficiency bonus.
 
 ---
-
 ## Master Tier
 
 ### Toxic Skin Secretion III
@@ -354,12 +369,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Church of Talona
+location: Leatrux
 ```
 
 Once per turn, when a creature hits you with a melee attack, that creature must succeed on a Constitution saving throw against your spell save DC. On a failed save, the creature becomes poisoned for 1 hour, takes poison damage equal to twice your proficiency bonus, and has its movement speed halved while poisoned this way.
 
 ---
-
 ### Vital Essence Sublimation III (Nilo)
 
 ```yaml
@@ -369,6 +385,8 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Phudara's unknown inheritance
+location: Phudara / Isle of Whispers
 ```
 
 Your success improves further: Common, Uncommon, and Rare potions no longer fail; only Very Rare (40%) and Legendary (60%) can fail.
@@ -387,7 +405,6 @@ When you deal poison damage to a living creature, you can immediately distill on
 If the creature dies from the triggering damage, the extraction costs no essence points.
 
 ---
-
 ### Apex Toxinator
 
 ```yaml
@@ -397,14 +414,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Lord Kai (Shadow Sect)
+location: Sirius
 ```
 
 As an Action, you channel the pure essence of poison to conjure a monstrous, hissing Snake Horror in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.
 
 ---
-
-
-
 ## Cantrips
 
 ### Poison Spray
@@ -420,7 +436,6 @@ isCantrip: true
 https://5e.tools/spells.html#poison%20spray_xphb
 
 ---
-
 ### Infestation
 
 ```yaml
@@ -435,7 +450,6 @@ isCantrip: true
 https://5e.tools/spells.html#infestation_xge
 
 ---
-
 ## Spells
 
 ### Ray of Sickness
@@ -452,7 +466,6 @@ isCantrip: false
 https://5e.tools/spells.html#ray%20of%20sickness_xphb
 
 ---
-
 ### Purify Food and Drink
 
 ```yaml
@@ -467,7 +480,6 @@ isCantrip: false
 https://5e.tools/spells.html#purify%20food%20and%20drink_xphb
 
 ---
-
 ### Enlarge/Reduce
 
 ```yaml
@@ -482,7 +494,6 @@ isCantrip: false
 https://5e.tools/spells.html#enlarge%2freduce_xphb
 
 ---
-
 ### Protection from Poison
 
 ```yaml
@@ -497,7 +508,6 @@ isCantrip: false
 https://5e.tools/spells.html#protection%20from%20poison_xphb
 
 ---
-
 ### Bestow Curse
 
 ```yaml
@@ -512,7 +522,6 @@ isCantrip: false
 https://5e.tools/spells.html#bestow%20curse_xphb
 
 ---
-
 ### Cloudkill
 
 ```yaml
@@ -527,7 +536,6 @@ isCantrip: false
 https://5e.tools/spells.html#cloudkill_xphb
 
 ---
-
 ### Contagion
 
 ```yaml
@@ -542,7 +550,6 @@ isCantrip: false
 https://5e.tools/spells.html#contagion_xphb
 
 ---
-
 ### Circle of Death
 
 ```yaml
@@ -557,7 +564,6 @@ isCantrip: false
 https://5e.tools/spells.html#circle%20of%20death_xphb
 
 ---
-
 ### Prismatic Spray
 
 ```yaml
@@ -572,7 +578,6 @@ isCantrip: false
 https://5e.tools/spells.html#prismatic%20spray_phb
 
 ---
-
 ### Prismatic Wall
 
 ```yaml
@@ -587,7 +592,6 @@ isCantrip: false
 https://5e.tools/spells.html#prismatic%20wall_phb
 
 ---
-
 ### Swallow Magic
 
 ```yaml
@@ -602,7 +606,6 @@ isCantrip: false
 https://5e.tools/spells.html#swallow%20magic_obojimatallgrass
 
 ---
-
 ### Syluné's Viper
 
 ```yaml
@@ -617,7 +620,6 @@ isCantrip: false
 https://5e.tools/spells.html#syluné's%20viper_frhof
 
 ---
-
 ### Investiture of Venom
 
 ```yaml

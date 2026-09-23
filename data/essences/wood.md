@@ -11,12 +11,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You gain the ability to manipulate vines and roots within 30 feet of you. As an action, you can cause vines to emerge from the ground or surrounding vegetation to ensnare a creature or create barriers. The vines can grapple or restrain a creature (Strength saving throw) or create difficult terrain in a 10-foot square area for 1 minute.
 
 ---
-
 ### Fertile Ground Resilience
 
 ```yaml
@@ -26,12 +27,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When you are standing on or above fertile soil (such as grasslands, forests, or similar natural terrain), you can use your reaction to gain immunity to effects that would knock you prone or push you away. Additionally, while on such terrain, you gain advantage on saving throws against being grappled or restrained.
 
 ---
-
 ### Thorny Defence
 
 ```yaml
@@ -41,12 +43,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 When a creature hits you with a melee attack, you can use your reaction to cause thorns to erupt from your skin. The attacker takes 4d4 piercing damage.
 
 ---
-
 ### Woodcraft
 
 ```yaml
@@ -56,12 +59,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You gain proficiency with woodcarver’s tools and the ability to craft simple wooden items. You can create small wooden objects (e.g., a carved figurine, a simple tool) in 1 hour, provided you have access to suitable materials. You can also use your tools to make minor repairs to wooden objects.
 
 ---
-
 ## Adept Tier
 
 ### Plant Bond
@@ -73,12 +77,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can communicate with plants in a basic way. You understand their emotions and can ask simple questions (e.g., \"Where is the nearest source of water?\"). Plants can also provide you with basic information about their immediate surroundings.
 
 ---
-
 ### Woodland Stride
 
 ```yaml
@@ -88,12 +93,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Moving through nonmagical plant life, such as undergrowth or vines, costs you no extra movement. You can also move through difficult terrain caused by plant life without penalty.
 
 ---
-
 ### Nature’s Insight
 
 ```yaml
@@ -103,12 +109,13 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You gain proficiency in Nature and Survival skills. If you are already proficient in either of these skills, you gain expertise, doubling your proficiency bonus for those skills.
 
 ---
-
 ### Verdant Armor
 
 ```yaml
@@ -118,12 +125,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, you encase yourself in a layer of living wood and leaves for 1 minute. At the start of each of your turns while this armor is active, you regain hit points equal to 1d6.
 
 ---
-
 ### Needle Barrage
 
 ```yaml
@@ -133,12 +141,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You unleash a torrent of wooden needles that streak toward one creature you can see within range. The target makes a Dexterity saving throw. On a failure: 8d4 piercing damage and is riddled with needles, reducing its speed by half until the end of your next turn. On a success: half damage and no speed reduction.
 
 ---
-
 ### Tree Form
 
 ```yaml
@@ -148,12 +157,13 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 You can use your action to transform into a treelike creature. While in this form, you gain the following benefits: - AC 17: Your skin becomes as tough as bark. - Hit Points: You gain temporary hit points equal to twice your level. - Attacks: You can make a slam attack with +6 to hit, dealing 2d6+4 bludgeoning damage. - Rooted: You can root yourself to the ground. While rooted, you cannot move, but you have advantage on Strength and Constitution saving throws, and any creature that starts its turn within 5 feet of you takes 1d6 bludgeoning damage. - This form lasts for 1 minute or until you use your action to revert to your normal form. You can use this feature once per long rest.
 
 ---
-
 ### Entangling Reach
 
 ```yaml
@@ -163,12 +173,12 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As an action, you can target up to five creatures you can see within 120 feet, expending 1 point of Essence for each creature targeted. An unwilling target must make a Strength or Dexterity saving throw (your choice, DC determined by your abilities). On a failed save, the creature is grappled. This grapple ignores the creature's weight, unless the creature is one size larger than you.
 
 ---
-
 ### Coiling Resilience
 
 ```yaml
@@ -178,12 +188,12 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 You gain a +1 bonus to all saving throws for each creature you currently have grappled
 
 ---
-
 ## Master
 
 ### Heart Exchange
@@ -195,12 +205,12 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+location: Sirius
 ```
 
 As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude. For the next hour, whenever one of you takes damage, both take half that damage. Whenever one regains hit points, both regain the same amount. You both gain advantage on all saving throws. This bond is unbreakable and lasts the full duration regardless of distance or conditions. You can maintain only one heart exchange at a time.
 
 ---
-
 ## Cantrips
 
 ### Thorn Whip
@@ -217,7 +227,6 @@ isCantrip: true
 https://5e.tools/spells.html#thorn%20whip_xphb
 
 ---
-
 ### Shillelagh
 
 ```yaml
@@ -232,7 +241,6 @@ isCantrip: true
 https://5e.tools/spells.html#shillelagh_xphb
 
 ---
-
 ### Root Grab
 
 ```yaml
@@ -247,7 +255,6 @@ isCantrip: true
 https://5e.tools/spells.html#root%20grab_obojimatallgrass
 
 ---
-
 ## Spells
 
 ### Ensnaring Strike
@@ -264,7 +271,6 @@ isCantrip: false
 https://5e.tools/spells.html#ensnaring%20strike_xphb
 
 ---
-
 ### Purify Food and Drink
 
 ```yaml
@@ -279,7 +285,6 @@ isCantrip: false
 https://5e.tools/spells.html#purify%20food%20and%20drink_xphb
 
 ---
-
 ### Animal Friendship
 
 ```yaml
@@ -294,7 +299,6 @@ isCantrip: false
 https://5e.tools/spells.html#animal%20friendship_xphb
 
 ---
-
 ### Entangle
 
 ```yaml
@@ -309,7 +313,6 @@ isCantrip: false
 https://5e.tools/spells.html#entangle_xphb
 
 ---
-
 ### Find Familiar
 
 ```yaml
@@ -324,7 +327,6 @@ isCantrip: false
 https://5e.tools/spells.html#find%20familiar_xphb
 
 ---
-
 ### Goodberry
 
 ```yaml
@@ -339,7 +341,6 @@ isCantrip: false
 https://5e.tools/spells.html#goodberry_xphb
 
 ---
-
 ### Speak with Animals
 
 ```yaml
@@ -354,7 +355,6 @@ isCantrip: false
 https://5e.tools/spells.html#speak%20with%20animals_xphb
 
 ---
-
 ### Unseen Servant
 
 ```yaml
@@ -369,7 +369,6 @@ isCantrip: false
 https://5e.tools/spells.html#unseen%20servant_xphb
 
 ---
-
 ### Pass without Trace
 
 ```yaml
@@ -384,7 +383,6 @@ isCantrip: false
 https://5e.tools/spells.html#pass%20without%20trace_xphb
 
 ---
-
 ### Lesser Restoration
 
 ```yaml
@@ -399,7 +397,6 @@ isCantrip: false
 https://5e.tools/spells.html#lesser%20restoration_xphb
 
 ---
-
 ### Animal Friendship
 
 ```yaml
@@ -414,7 +411,6 @@ isCantrip: false
 https://5e.tools/spells.html#animal%20friendship_xphb
 
 ---
-
 ### Barkskin
 
 ```yaml
@@ -429,7 +425,6 @@ isCantrip: false
 https://5e.tools/spells.html#barkskin_xphb
 
 ---
-
 ### Locate Animals or Plants
 
 ```yaml
@@ -444,7 +439,6 @@ isCantrip: false
 https://5e.tools/spells.html#locate%20animals%20or%20plants_xphb
 
 ---
-
 ### Spike Growth
 
 ```yaml
@@ -459,7 +453,6 @@ isCantrip: false
 https://5e.tools/spells.html#spike%20growth_xphb
 
 ---
-
 ### Leomund's Tiny Hut
 
 ```yaml
@@ -474,7 +467,6 @@ isCantrip: false
 https://5e.tools/spells.html#leomund's%20tiny%20hut_xphb
 
 ---
-
 ### Leomund's Tiny Hut
 
 ```yaml
@@ -489,7 +481,6 @@ isCantrip: false
 https://5e.tools/spells.html#leomund's%20tiny%20hut_xphb
 
 ---
-
 ### Phantom Steed
 
 ```yaml
@@ -504,7 +495,6 @@ isCantrip: false
 https://5e.tools/spells.html#phantom%20steed_xphb
 
 ---
-
 ### Plant Growth
 
 ```yaml
@@ -519,7 +509,6 @@ isCantrip: false
 https://5e.tools/spells.html#plant%20growth_xphb
 
 ---
-
 ### Speak with Dead
 
 ```yaml
@@ -534,7 +523,6 @@ isCantrip: false
 https://5e.tools/spells.html#speak%20with%20dead_xphb
 
 ---
-
 ### Speak with Plants
 
 ```yaml
@@ -549,7 +537,6 @@ isCantrip: false
 https://5e.tools/spells.html#speak%20with%20plants_xphb
 
 ---
-
 ### Spirit Guardians
 
 ```yaml
@@ -564,7 +551,6 @@ isCantrip: false
 https://5e.tools/spells.html#spirit%20guardians_xphb
 
 ---
-
 ### Conjure Woodland Beings
 
 ```yaml
@@ -579,7 +565,6 @@ isCantrip: false
 https://5e.tools/spells.html#conjure%20woodland%20beings_xphb
 
 ---
-
 ### Dominate Beast
 
 ```yaml
@@ -594,7 +579,6 @@ isCantrip: false
 https://5e.tools/spells.html#dominate%20beast_xphb
 
 ---
-
 ### Grasping Vine
 
 ```yaml
@@ -609,7 +593,6 @@ isCantrip: false
 https://5e.tools/spells.html#grasping%20vine_xphb
 
 ---
-
 ### Giant Insect
 
 ```yaml
@@ -624,7 +607,6 @@ isCantrip: false
 https://5e.tools/spells.html#giant%20insect_xphb
 
 ---
-
 ### Guardian of Faith
 
 ```yaml
@@ -639,7 +621,6 @@ isCantrip: false
 https://5e.tools/spells.html#guardian%20of%20faith_xphb
 
 ---
-
 ### Locate Creature
 
 ```yaml
@@ -654,7 +635,6 @@ isCantrip: false
 https://5e.tools/spells.html#locate%20creature_xphb
 
 ---
-
 ### Conjure Minor Elementals
 
 ```yaml
@@ -669,7 +649,6 @@ isCantrip: false
 https://5e.tools/spells.html#conjure%20minor%20elementals_xphb
 
 ---
-
 ### Antilife Shell
 
 ```yaml
@@ -684,7 +663,6 @@ isCantrip: false
 https://5e.tools/spells.html#antilife%20shell_xphb
 
 ---
-
 ### Awaken
 
 ```yaml
@@ -699,7 +677,6 @@ isCantrip: false
 https://5e.tools/spells.html#awaken_xphb
 
 ---
-
 ### Commune with Nature
 
 ```yaml
@@ -714,7 +691,6 @@ isCantrip: false
 https://5e.tools/spells.html#commune%20with%20nature_xphb
 
 ---
-
 ### Contagion
 
 ```yaml
@@ -729,7 +705,6 @@ isCantrip: false
 https://5e.tools/spells.html#contagion_xphb
 
 ---
-
 ### Creation
 
 ```yaml
@@ -744,7 +719,6 @@ isCantrip: false
 https://5e.tools/spells.html#creation_xphb
 
 ---
-
 ### Insect Plague
 
 ```yaml
@@ -759,7 +733,6 @@ isCantrip: false
 https://5e.tools/spells.html#insect%20plague_xphb
 
 ---
-
 ### Tree Stride
 
 ```yaml
@@ -774,7 +747,6 @@ isCantrip: false
 https://5e.tools/spells.html#tree%20stride_xphb
 
 ---
-
 ### Conjure Elemental
 
 ```yaml
@@ -789,7 +761,6 @@ isCantrip: false
 https://5e.tools/spells.html#conjure%20elemental_xphb
 
 ---
-
 ### Planar Ally
 
 ```yaml
@@ -804,7 +775,6 @@ isCantrip: false
 https://5e.tools/spells.html#planar%20ally_xphb
 
 ---
-
 ### Wall of Thorns
 
 ```yaml
@@ -819,7 +789,6 @@ isCantrip: false
 https://5e.tools/spells.html#wall%20of%20thorns_xphb
 
 ---
-
 ### Transport via Plants
 
 ```yaml
@@ -834,7 +803,6 @@ isCantrip: false
 https://5e.tools/spells.html#transport%20via%20plants_xphb
 
 ---
-
 ### Conjure Celestial
 
 ```yaml
@@ -849,7 +817,6 @@ isCantrip: false
 https://5e.tools/spells.html#conjure%20celestial_xphb
 
 ---
-
 ### Animal Shapes
 
 ```yaml
@@ -864,7 +831,6 @@ isCantrip: false
 https://5e.tools/spells.html#animal%20shapes_xphb
 
 ---
-
 ### Shapechange
 
 ```yaml
@@ -879,7 +845,6 @@ isCantrip: false
 https://5e.tools/spells.html#shapechange_xphb
 
 ---
-
 ### True Polymorph
 
 ```yaml
@@ -894,7 +859,6 @@ isCantrip: false
 https://5e.tools/spells.html#true%20polymorph_xphb
 
 ---
-
 ### Forest Guard
 
 ```yaml
@@ -909,7 +873,6 @@ isCantrip: false
 https://5e.tools/spells.html#forest%20guard_obojimatallgrass
 
 ---
-
 ### Sprout Foliage
 
 ```yaml
@@ -924,7 +887,6 @@ isCantrip: false
 https://5e.tools/spells.html#sprout%20foliage_obojimatallgrass
 
 ---
-
 ### Thorn Armor
 
 ```yaml
@@ -939,7 +901,6 @@ isCantrip: false
 https://5e.tools/spells.html#thorn%20armor_obojimatallgrass
 
 ---
-
 ### Summon Plant
 
 ```yaml
@@ -954,7 +915,6 @@ isCantrip: false
 https://5e.tools/spells.html#summon%20plant_obojimatallgrass
 
 ---
-
 ### Tree
 
 ```yaml
