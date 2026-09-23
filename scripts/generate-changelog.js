@@ -151,6 +151,8 @@ function detectChanges(oldAbilities, newAbilities, commit, essenceName) {
           name: ability.name,
           tier: ability.tier,
           description: ability.description,
+          author: ability.author,
+          location: ability.location,
           isActive: ability.isActive,
           isPassive: ability.isPassive,
           isSpell: ability.isSpell,
@@ -175,6 +177,8 @@ function detectChanges(oldAbilities, newAbilities, commit, essenceName) {
           name: ability.name,
           tier: ability.tier,
           description: ability.description,
+          author: ability.author,
+          location: ability.location,
           isActive: ability.isActive,
           isPassive: ability.isPassive,
           isSpell: ability.isSpell,
@@ -200,7 +204,9 @@ function detectChanges(oldAbilities, newAbilities, commit, essenceName) {
           ability: {
             id: newAbility.id,
             name: newAbility.name,
-            tier: newAbility.tier
+            tier: newAbility.tier,
+            author: newAbility.author,
+            location: newAbility.location
           },
           changes: fieldChanges
         });

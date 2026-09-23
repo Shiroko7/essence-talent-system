@@ -166,6 +166,22 @@ location: Phudara / Isle of Whispers
 As an action, you can create a whirlwind of metallic shards in a 30-foot radius around you. Each creature within the area must make a Dexterity saving throw, taking 7d6 slashing damage on a failed save, or half as much damage on a successful one.
 
 ---
+### Gem Cocoon
+
+```yaml
+id: metal_adept_gem_cocoon
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Min Gyu
+location: Sirius
+```
+
+As an action, you lock yourself into an immovable, crystalline gem-like shell, gaining temporary hit points equal to 10 × your proficiency bonus + 10. While you possess any of these temporary hit points, your speed is 0, you cannot move or be moved by external forces, and you cannot take actions or reactions. You can dismiss this ability at will on your turn (no action required), losing any remaining temporary hit points. When this ability ends or when the temporary hit points are reduced to 0, you immediately regain normal movement and actions.
+
+---
 ## Master
 
 ### Weight of Lives 
@@ -186,6 +202,22 @@ As an action, target a creature within 60 feet to make a Charisma saving throw. 
 - **On a successful save:** The creature takes half damage, and its speed is halved for 1 round.
 
 Regardless of the outcome, you gain temporary hit points equal to the total force damage dealt.
+
+---
+### Black Tortoise Iron Bulwark
+
+```yaml
+id: metal_master_black_tortoise_iron_bulwark
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Min Gyu
+location: Sirius
+```
+
+As an action, you touch a construct, object, structure, or magical wall or barrier (such as a door, vehicle, fortification, or a wall or barrier created by a spell). The target gains temporary hit points equal to 10 × your proficiency bonus + 10. While the target possesses any of these temporary hit points, it gains resistance to all damage.
 
 ---
 ## Cantrips

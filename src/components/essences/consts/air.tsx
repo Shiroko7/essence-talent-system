@@ -168,6 +168,18 @@ export const airAbilities = [
     location: "Phudara / Isle of Whispers",
   },
   {
+    id: "wind_adept_umbral_form",
+    name: "Umbral Form",
+    description: "As a bonus action, you flatten and dissolve your physical form into a living shadow for up to 10 minutes. You can dismiss this effect at any time at will (no action required). The effect ends immediately if you make an attack roll or cast a spell.\n\nWhile in this form, you gain the following benefits:\n- **Shadow Invisibility:** While you are in dim light, darkness, or within the shadow cast by an object or creature of your size or larger, you are invisible. If you step into bright light (outside of a shadow), you are exposed and visible until you enter shadow again.\n- **Shadow Leap:** While in a shadow, you can use a bonus action to teleport up to 30 feet to an unoccupied space you can see that is also in dim light, darkness, or within the shadow of an object or creature of your size or larger. This teleport allows you to cross illuminated areas without being exposed.\n- **Fluid Silhouette:** You can move through spaces as narrow as 1 inch wide without squeezing, and you can move through the spaces of other creatures.",
+    tier: "adept",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Kwon Jae-Hwan",
+    location: "Sirius",
+  },
+  {
     id: "wind_adept_ascending_dragon_gale",
     name: "Ascending Dragon Gale",
     description: "When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach (usable once per turn).\n\nThe target must make a Strength saving throw. On a failed save, it takes 3d10 thunder damage, is launched 20 feet into the air, and is restrained and suspended until the end of your next turn. It then falls, taking falling damage and landing prone.",
@@ -237,6 +249,18 @@ export const airAbilities = [
     isSpell: false,
     isCantrip: false,
     author: "Yoo Tae-yang",
+    location: "Sirius",
+  },
+  {
+    id: "wind_master_static_slipstream",
+    name: "Static Slipstream",
+    description: "As an action, you fold space around yourself to step into a static pocket dimension for up to 1 minute (requires concentration).\n\nWhen you use this ability, you can enter alone, or attempt to bring one other creature you can see within 60 feet with you (you cannot send another creature without entering yourself). If the target creature is unwilling, it must make a Charisma saving throw against your essence ability save DC:\n- **On a failed save:** The creature is pulled into the dimension alongside you.\n- **On a successful save:** The creature resists and remains in the physical world. Regardless of the creature's success or failure, you can still choose to enter the dimension or cancel the effect.\n\n**Inside the Static Dimension:**\n- The dimension is a quiet, empty reflection of the physical world. Time continues normally in the outside world, but all external environmental hazards (such as avalanches, collapsing terrain, fires, rapids, or suspended projectiles) appear frozen in place and deal no damage.\n- Neither you nor any creature inside the dimension can interact with, target, or be targeted by anything on the outside plane.\n- You can move freely across the frozen terrain, ignoring difficult terrain and safely traversing terrain that would be hazardous or impassable in the physical world.\n\n**Ending the Effect:**\nYou can end this effect at any time at will (no action required). The effect also ends early if your concentration is broken, or if either creature inside drops to 0 hit points.\n\nWhen the dimension collapses, each creature inside immediately reappears in the physical world at the exact coordinates corresponding to its current position inside the dimension (or the nearest unoccupied space).",
+    tier: "master",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Kwon Jae-Hwan",
     location: "Sirius",
   }
 ];

@@ -1,7 +1,40 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, Plus, Trash2, Edit, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind } from 'lucide-react';
+import { ChevronDown, ChevronRight, Plus, Trash2, Edit, Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind, Compass } from 'lucide-react';
 import { ChangelogEntry } from '../../types/changelog';
 import { ESSENCE_PATHS, EssencePathId } from '../../types/essence';
+import AbilityMarkdown from '../essences/AbilityMarkdown';
+import { importEssenceData } from '../../utils/essenceData';
+
+let abilityMetaCache: Map<string, { author?: string; location?: string }> | null = null;
+
+function getAbilityMetadata(id: string, name: string): { author?: string; location?: string } {
+  if (!abilityMetaCache) {
+    abilityMetaCache = new Map();
+    try {
+      const data = importEssenceData();
+      const all = [
+        ...Object.values(data.abilities).flat(),
+        ...Object.values(data.cantrips).flat(),
+        ...Object.values(data.spells).flat(),
+      ];
+      for (const ab of all) {
+        const meta = { author: ab.author, location: ab.location };
+        if (ab.id) abilityMetaCache.set(ab.id, meta);
+        if (ab.name) abilityMetaCache.set(ab.name.toLowerCase(), meta);
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  const byId = abilityMetaCache.get(id);
+  if (byId && (byId.author || byId.location)) return byId;
+
+  const byName = abilityMetaCache.get(name.toLowerCase());
+  if (byName && (byName.author || byName.location)) return byName;
+
+  return {};
+}
 
 interface ChangelogEntryCardProps {
   entry: ChangelogEntry;
@@ -68,9 +101,14 @@ const getEssenceStyles = (id: EssencePathId): string => {
 
 const ChangelogEntryCard: React.FC<ChangelogEntryCardProps> = ({ entry }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [descViewMode, setDescViewMode] = useState<'diff' | 'preview'>('diff');
 
   const normalizedEssenceType = entry.essenceType === 'air' ? 'wind' : entry.essenceType;
   const essencePath = ESSENCE_PATHS.find(p => p.id === normalizedEssenceType);
+
+  const fallbackMeta = getAbilityMetadata(entry.ability.id, entry.ability.name);
+  const effectiveAuthor = entry.ability.author || fallbackMeta.author;
+  const effectiveLocation = entry.ability.location || fallbackMeta.location;
 
   const getChangeBadge = () => {
     switch (entry.changeType) {
@@ -121,6 +159,16 @@ const ChangelogEntryCard: React.FC<ChangelogEntryCardProps> = ({ entry }) => {
             <span className="arcane-badge">
               Tier {entry.ability.tier}
             </span>
+            {(effectiveAuthor || effectiveLocation) && (
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-display tracking-wide bg-charcoal/80 text-parchment/90 border border-gold-subtle/40">
+                <Compass size={12} className="text-gold/70 flex-shrink-0" />
+                <span>
+                  {effectiveAuthor && <span className="text-gold-bright">{effectiveAuthor}</span>}
+                  {effectiveAuthor && effectiveLocation && <span className="text-gold/40 mx-1">•</span>}
+                  {effectiveLocation && <span className="text-mist">{effectiveLocation}</span>}
+                </span>
+              </span>
+            )}
           </div>
 
           {/* Show description for added/removed abilities */}
@@ -130,9 +178,7 @@ const ChangelogEntryCard: React.FC<ChangelogEntryCardProps> = ({ entry }) => {
                 ? 'bg-type-active/10 border border-type-active/20'
                 : 'bg-essence-fire/10 border border-essence-fire/20'
             }`}>
-              <div className="text-sm text-parchment/90 whitespace-pre-wrap break-words font-body leading-relaxed">
-                {entry.ability.description}
-              </div>
+              <AbilityMarkdown content={entry.ability.description} className="text-sm" />
             </div>
           )}
 
@@ -160,44 +206,100 @@ const ChangelogEntryCard: React.FC<ChangelogEntryCardProps> = ({ entry }) => {
                 <div className="mt-3 space-y-3 pl-4 border-l-2 border-gold-subtle">
                   {entry.changes.map((change, index) => (
                     <div key={index} className="text-sm">
-                      <div className="font-display text-xs tracking-wider text-mist uppercase mb-2">
-                        {change.field}
-                      </div>
                       {change.field === 'description' ? (
-                        <div className="space-y-2">
-                          {(() => {
-                            const diff = highlightDiff(String(change.oldValue), String(change.newValue));
-                            return (
-                              <>
-                                <div className="bg-essence-fire/10 border border-essence-fire/20 rounded p-3">
-                                  <div className="text-xs text-essence-fire font-mono mb-2 flex items-center gap-1">
-                                    <span className="opacity-60">−</span> Removed
-                                  </div>
-                                  <div className="text-parchment/80 text-sm whitespace-pre-wrap break-words font-body">
-                                    <span>{diff.prefix}</span>
-                                    {diff.oldMiddle && <span className="bg-essence-fire/30 text-essence-fire rounded px-0.5">{diff.oldMiddle}</span>}
-                                    <span>{diff.suffix}</span>
-                                  </div>
+                        <div>
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="font-display text-xs tracking-wider text-mist uppercase">
+                              {change.field}
+                            </div>
+                            <div className="inline-flex rounded-md border border-gold-subtle/40 bg-charcoal/80 p-0.5 text-xs">
+                              <button
+                                type="button"
+                                onClick={() => setDescViewMode('diff')}
+                                className={`px-2 py-0.5 rounded transition-all font-display text-xs ${
+                                  descViewMode === 'diff'
+                                    ? 'bg-gold/20 text-gold-bright border border-gold/40'
+                                    : 'text-mist hover:text-parchment'
+                                }`}
+                              >
+                                Diff View
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => setDescViewMode('preview')}
+                                className={`px-2 py-0.5 rounded transition-all font-display text-xs ${
+                                  descViewMode === 'preview'
+                                    ? 'bg-gold/20 text-gold-bright border border-gold/40'
+                                    : 'text-mist hover:text-parchment'
+                                }`}
+                              >
+                                Rendered Preview
+                              </button>
+                            </div>
+                          </div>
+
+                          {descViewMode === 'diff' ? (
+                            <div className="space-y-2">
+                              {(() => {
+                                const diff = highlightDiff(String(change.oldValue), String(change.newValue));
+                                return (
+                                  <>
+                                    <div className="bg-essence-fire/10 border border-essence-fire/20 rounded p-3">
+                                      <div className="text-xs text-essence-fire font-mono mb-2 flex items-center gap-1">
+                                        <span className="opacity-60">−</span> Removed
+                                      </div>
+                                      <div className="text-parchment/80 text-sm whitespace-pre-wrap break-words font-body">
+                                        <span>{diff.prefix}</span>
+                                        {diff.oldMiddle && <span className="bg-essence-fire/30 text-essence-fire rounded px-0.5">{diff.oldMiddle}</span>}
+                                        <span>{diff.suffix}</span>
+                                      </div>
+                                    </div>
+                                    <div className="bg-type-active/10 border border-type-active/20 rounded p-3">
+                                      <div className="text-xs text-type-active font-mono mb-2 flex items-center gap-1">
+                                        <span className="opacity-60">+</span> Added
+                                      </div>
+                                      <div className="text-parchment/80 text-sm whitespace-pre-wrap break-words font-body">
+                                        <span>{diff.prefix}</span>
+                                        {diff.newMiddle && <span className="bg-type-active/30 text-type-active rounded px-0.5">{diff.newMiddle}</span>}
+                                        <span>{diff.suffix}</span>
+                                      </div>
+                                    </div>
+                                  </>
+                                );
+                              })()}
+                            </div>
+                          ) : (
+                            <div className="space-y-3">
+                              <div className="bg-type-active/10 border border-type-active/20 rounded p-3">
+                                <div className="text-xs text-type-active font-mono mb-2 flex items-center gap-1 font-semibold">
+                                  <span className="opacity-60">+</span> New Description
                                 </div>
-                                <div className="bg-type-active/10 border border-type-active/20 rounded p-3">
-                                  <div className="text-xs text-type-active font-mono mb-2 flex items-center gap-1">
-                                    <span className="opacity-60">+</span> Added
+                                <AbilityMarkdown content={String(change.newValue)} className="text-sm" />
+                              </div>
+                              <details className="text-xs text-mist group">
+                                <summary className="cursor-pointer hover:text-gold transition-colors py-1 flex items-center gap-1 font-display">
+                                  <span>View previous description</span>
+                                </summary>
+                                <div className="bg-essence-fire/10 border border-essence-fire/20 rounded p-3 mt-2">
+                                  <div className="text-xs text-essence-fire font-mono mb-2 flex items-center gap-1 font-semibold">
+                                    <span className="opacity-60">−</span> Previous Description
                                   </div>
-                                  <div className="text-parchment/80 text-sm whitespace-pre-wrap break-words font-body">
-                                    <span>{diff.prefix}</span>
-                                    {diff.newMiddle && <span className="bg-type-active/30 text-type-active rounded px-0.5">{diff.newMiddle}</span>}
-                                    <span>{diff.suffix}</span>
-                                  </div>
+                                  <AbilityMarkdown content={String(change.oldValue)} className="text-sm" />
                                 </div>
-                              </>
-                            );
-                          })()}
+                              </details>
+                            </div>
+                          )}
                         </div>
                       ) : (
-                        <div className="flex items-center gap-2 text-mist flex-wrap font-body">
-                          <span className="text-essence-fire line-through bg-essence-fire/10 px-2 py-1 rounded border border-essence-fire/20">{String(change.oldValue)}</span>
-                          <span className="text-gold/40">→</span>
-                          <span className="text-type-active bg-type-active/10 px-2 py-1 rounded border border-type-active/20">{String(change.newValue)}</span>
+                        <div>
+                          <div className="font-display text-xs tracking-wider text-mist uppercase mb-2">
+                            {change.field}
+                          </div>
+                          <div className="flex items-center gap-2 text-mist flex-wrap font-body">
+                            <span className="text-essence-fire line-through bg-essence-fire/10 px-2 py-1 rounded border border-essence-fire/20">{String(change.oldValue)}</span>
+                            <span className="text-gold/40">→</span>
+                            <span className="text-type-active bg-type-active/10 px-2 py-1 rounded border border-type-active/20">{String(change.newValue)}</span>
+                          </div>
                         </div>
                       )}
                     </div>

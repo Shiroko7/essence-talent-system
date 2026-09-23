@@ -214,6 +214,18 @@ export const waterAbilities = [
     isCantrip: false,
     author: "Yuji (Shadow Sect)",
     location: "Leatrux",
+  },
+  {
+    id: "water_master_aura_of_the_deep_bulwark",
+    name: "Aura of the Deep Bulwark",
+    description: "As an action, you radiate a massive, pressurized sphere of dampening aqueous vapor extending from you in a 120-foot radius for 1 minute.\n\nWhile inside this aura, you and friendly creatures gain resistance to fire damage and force damage. In addition, affected creatures have advantage on saving throws against spells, traps, munitions, and hazards that produce an explosion or concussive blast (such as *Fireball*, *Shatter*, explosive barrels, or demolition charges).",
+    tier: "master",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Kwon Jae-Hwan",
+    location: "Sirius",
   }
 ];
 

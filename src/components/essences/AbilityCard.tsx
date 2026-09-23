@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Info } from 'lucide-react';
 import { Ability, EssencePath, getTierCost } from '../../types/essence';
+import AbilityMarkdown from './AbilityMarkdown';
 
 interface AbilityCardProps {
   ability: Ability;
@@ -64,10 +65,11 @@ const AbilityCard: React.FC<AbilityCardProps> = ({
     if (description.startsWith('http')) {
       return null;
     }
-    const preview = description.length > 120
-      ? description.substring(0, 120) + '...'
-      : description;
-    return <p className="text-parchment/80 text-sm leading-relaxed">{preview}</p>;
+    const firstParagraph = description.split('\n\n')[0];
+    const preview = firstParagraph.length > 160
+      ? firstParagraph.substring(0, 160) + '...'
+      : firstParagraph;
+    return <AbilityMarkdown content={preview} className="text-sm" />;
   };
 
   return (

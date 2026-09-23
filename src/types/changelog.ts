@@ -4,9 +4,9 @@ import { EssencePathId, TierId, SpellLevel } from './essence';
  * Represents a single field change in an ability modification
  */
 export interface FieldChange {
-  field: 'name' | 'description' | 'tier' | 'isActive' | 'isPassive' | 'isSpell' | 'isCantrip';
-  oldValue: any;
-  newValue: any;
+  field: 'name' | 'description' | 'tier' | 'isActive' | 'isPassive' | 'isSpell' | 'isCantrip' | 'author' | 'location';
+  oldValue: unknown;
+  newValue: unknown;
 }
 
 /**
@@ -24,6 +24,8 @@ export interface ChangelogEntry {
     name: string;
     tier: TierId | SpellLevel;
     description?: string;        // Full description (for added/removed)
+    author?: string;             // Creator / author
+    location?: string;           // Origin / region
     isActive?: boolean;
     isPassive?: boolean;
     isSpell?: boolean;
