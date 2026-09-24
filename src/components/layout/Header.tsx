@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sparkles, Menu, X, Github, FlaskConical, Store, ScrollText } from 'lucide-react';
+import { Sparkles, Menu, X, Github, FlaskConical, Store, ScrollText, Layers } from 'lucide-react';
 
 const Header: React.FC = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { to: '/', label: 'Talents', icon: Sparkles },
+    { to: '/', label: 'Talents (v1)', icon: Sparkles },
+    { to: '/v2', label: 'V2 (seven plus seven)', icon: Layers },
     { to: '/changelog', label: 'Changelog', icon: ScrollText },
     { to: '/merchants', label: 'Merchants', icon: Store },
     { to: '/potions', label: 'Alchemy', icon: FlaskConical },
@@ -15,6 +16,7 @@ const Header: React.FC = () => {
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
+    if (path === '/v2') return location.pathname === '/v2' || location.pathname === '/cultivation';
     return location.pathname.startsWith(path);
   };
 

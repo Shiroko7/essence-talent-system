@@ -49,6 +49,21 @@ export default {
           'lightning-dim': '#5a3d7a',
           wind: '#7dd3fc',
           'wind-dim': '#3d6a7a',
+          // Divine Paths
+          moon: '#c7d2fe',
+          'moon-dim': '#4f46e5',
+          void: '#c084fc',
+          'void-dim': '#581c87',
+          providence: '#fbbf24',
+          'providence-dim': '#b45309',
+          ruin: '#f87171',
+          'ruin-dim': '#991b1b',
+          torment: '#e879f9',
+          'torment-dim': '#86198f',
+          pestilence: '#a3e635',
+          'pestilence-dim': '#4d7c0f',
+          tempest: '#38bdf8',
+          'tempest-dim': '#0369a1',
         },
 
         // Rarity Colors
@@ -82,6 +97,17 @@ export default {
         'glow-acid': '0 0 20px rgba(168, 224, 74, 0.3)',
         'glow-lightning': '0 0 20px rgba(192, 132, 252, 0.3)',
         'glow-wind': '0 0 20px rgba(125, 211, 252, 0.3)',
+        'glow-moon': '0 0 20px rgba(199, 210, 254, 0.35)',
+        'glow-sun': '0 0 20px rgba(251, 191, 36, 0.35)',
+        'glow-love': '0 0 20px rgba(251, 113, 133, 0.35)',
+        'glow-void': '0 0 20px rgba(192, 132, 252, 0.35)',
+        'glow-providence': '0 0 20px rgba(251, 191, 36, 0.35)',
+        'glow-ruin': '0 0 20px rgba(248, 113, 113, 0.35)',
+        'glow-torment': '0 0 20px rgba(232, 121, 249, 0.35)',
+        'glow-pestilence': '0 0 20px rgba(163, 230, 53, 0.35)',
+        'glow-tempest': '0 0 20px rgba(56, 189, 248, 0.35)',
+        'glow-sky': '0 0 20px rgba(103, 232, 249, 0.35)',
+        'glow-alchemy': '0 0 20px rgba(94, 234, 212, 0.35)',
       },
       borderColor: {
         'gold-subtle': 'rgba(201, 169, 89, 0.15)',
@@ -146,6 +172,7 @@ export default {
     // Essence shadows
     'shadow-glow-water', 'shadow-glow-fire', 'shadow-glow-earth', 'shadow-glow-metal',
     'shadow-glow-wood', 'shadow-glow-poison', 'shadow-glow-acid', 'shadow-glow-lightning', 'shadow-glow-wind',
+    'shadow-glow-sky', 'shadow-glow-alchemy', 'shadow-glow-sun', 'shadow-glow-love',
     // Rarity colors
     'bg-rarity-common', 'bg-rarity-uncommon', 'bg-rarity-rare', 'bg-rarity-very-rare', 'bg-rarity-legendary',
     'text-rarity-common', 'text-rarity-uncommon', 'text-rarity-rare', 'text-rarity-very-rare', 'text-rarity-legendary',

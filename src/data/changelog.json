@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-23T23:20:16.799Z",
+  "generatedAt": "2026-09-24T20:36:28.519Z",
   "entries": [
     {
-      "id": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43-Umbral Form||adept",
+      "id": "667183249369d0c8212152449a4c2e4705a65343-Umbral Form||adept",
       "date": "2026-09-23 19:30:21 -0300",
-      "commitHash": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43",
+      "commitHash": "667183249369d0c8212152449a4c2e4705a65343",
       "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
       "essenceType": "air",
       "changeType": "added",
@@ -23,9 +23,9 @@
       }
     },
     {
-      "id": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43-Static Slipstream||master",
+      "id": "667183249369d0c8212152449a4c2e4705a65343-Static Slipstream||master",
       "date": "2026-09-23 19:30:21 -0300",
-      "commitHash": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43",
+      "commitHash": "667183249369d0c8212152449a4c2e4705a65343",
       "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
       "essenceType": "air",
       "changeType": "added",
@@ -43,9 +43,9 @@
       }
     },
     {
-      "id": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43-Gem Cocoon||adept",
+      "id": "667183249369d0c8212152449a4c2e4705a65343-Gem Cocoon||adept",
       "date": "2026-09-23 19:30:21 -0300",
-      "commitHash": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43",
+      "commitHash": "667183249369d0c8212152449a4c2e4705a65343",
       "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
       "essenceType": "metal",
       "changeType": "added",
@@ -63,9 +63,9 @@
       }
     },
     {
-      "id": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43-Black Tortoise Iron Bulwark||master",
+      "id": "667183249369d0c8212152449a4c2e4705a65343-Black Tortoise Iron Bulwark||master",
       "date": "2026-09-23 19:30:21 -0300",
-      "commitHash": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43",
+      "commitHash": "667183249369d0c8212152449a4c2e4705a65343",
       "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
       "essenceType": "metal",
       "changeType": "added",
@@ -83,9 +83,9 @@
       }
     },
     {
-      "id": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43-Aura of the Deep Bulwark||master",
+      "id": "667183249369d0c8212152449a4c2e4705a65343-Aura of the Deep Bulwark||master",
       "date": "2026-09-23 19:30:21 -0300",
-      "commitHash": "0cb13a6442dfea5ac72af071f211cd9bc8c06e43",
+      "commitHash": "667183249369d0c8212152449a4c2e4705a65343",
       "commitMessage": "feat(abilities): add Sirius essence abilities for Kwon Jae-Hwan and Min Gyu",
       "essenceType": "water",
       "changeType": "added",

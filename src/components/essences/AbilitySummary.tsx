@@ -163,7 +163,7 @@ const AbilitySummary: React.FC<AbilitySummaryProps> = ({
     });
 
     const result = Array.from(tierGroups.entries())
-      .filter(([_, abilities]) => abilities.length > 0)
+      .filter(([, abilities]) => abilities.length > 0)
       .map(([tier, abilities]) => ({
         tier: tier as TierId,
         abilities

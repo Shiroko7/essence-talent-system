@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import EssenceTalentTree from './components/essences/EssenceTalentTree';
+import CultivationTalentTree from './components/cultivation/CultivationTalentTree';
 import ChangelogPage from './pages/ChangelogPage';
 import MerchantsPage from './pages/MerchantsPage';
 import MerchantCatalogPage from './pages/MerchantCatalogPage';
@@ -16,6 +17,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<EssenceTalentTree />} />
+          <Route path="/v2" element={<CultivationTalentTree key="v2" version="v2" />} />
+          <Route path="/cultivation" element={<CultivationTalentTree key="v2-cultivation" version="v2" />} />
           <Route path="/changelog" element={<ChangelogPage />} />
           <Route path="/merchants" element={<MerchantsPage />} />
           <Route path="/merchants/:merchantId" element={<MerchantCatalogPage />} />

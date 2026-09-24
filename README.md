@@ -24,6 +24,18 @@ plus cantrips and levelled spells. Abilities are tagged active / passive /
 spell / cantrip, and the app filters and cross-references them so a player can
 answer "what can I actually do at adept fire" without scrolling a document.
 
+## Cultivation paths
+
+`/v2` contains a single fourteen-path catalog: seven Primordial foundations
+(Wood, Fire, Earth, Metal, Water, Sky, and Alchemy) and seven Divine portfolios
+(Lunar, Love, Ruin, Pestilence, Shadow, Tempest, and Providence). The older
+nine-element tree remains at `/`.
+
+Each spell and cantrip has one path owner. Markdown is the source of truth, and
+`bun run generate:cultivation` checks unique spell ownership and verifies that
+every path has both cantrips and leveled spells. The full roster and balance
+table live in [data/cultivation](data/cultivation/README.md).
+
 ## Markdown is the single source of truth
 
 The design decision worth talking about. Every ability lives in a markdown file
@@ -100,5 +112,6 @@ at build time, there is no backend and no database.
 
 ## See also
 
+- [Cultivation paths design](docs/cultivation-paths-design.md) - the seven-Primordial/seven-Divine structure and path boundaries.
 - [ADDING_ITEM_DATA.md](ADDING_ITEM_DATA.md) — how to extend the merchant catalogue.
 - [data/essences/README.md](data/essences/README.md) — the ability markdown format in full.

@@ -9,8 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generate:essences": "bun scripts/generate-essences.js",
+    "generate:cultivation": "bun scripts/generate-cultivation.js",
     "generate:changelog": "bun scripts/generate-changelog.js",
-    "generate:all": "bun run generate:essences && bun run generate:changelog"
+    "generate:all": "bun run generate:essences && bun run generate:cultivation && bun run generate:changelog"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.74.0",

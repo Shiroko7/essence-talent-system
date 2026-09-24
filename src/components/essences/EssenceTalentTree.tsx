@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind, Sparkles, Moon } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Droplet, Flame, Mountain, Sword, TreeDeciduous, Skull, FlaskConical, Zap, Wind, Sparkles, Moon, ArrowRight } from 'lucide-react';
 import {
   ESSENCE_PATHS,
   EssencePathId,
@@ -156,6 +157,25 @@ const EssenceTalentTree: React.FC = () => {
   return (
     <Layout>
       <div className="max-w-[1400px] mx-auto">
+        {/* V2 Cultivation Redesign Announcement Banner */}
+        <div className="arcane-panel p-3.5 mb-6 border border-gold-accent/40 bg-gradient-to-r from-charcoal via-slate to-charcoal flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5">
+            <span className="px-2 py-0.5 rounded text-[10px] font-display uppercase tracking-wider bg-gold/20 text-gold-bright border border-gold/40">
+              New Redesign
+            </span>
+            <span className="text-xs text-parchment font-body">
+              Explore the <strong>Cultivation Paths Redesign (v2.2)</strong> featuring 7 Primordial & 9 Divine paths.
+            </span>
+          </div>
+          <Link
+            to="/cultivation"
+            className="arcane-btn text-xs px-3 py-1.5 flex items-center gap-1.5 !border-gold/40 hover:!border-gold text-gold-bright whitespace-nowrap"
+          >
+            <span>View Cultivation v2</span>
+            <ArrowRight size={13} />
+          </Link>
+        </div>
+
         {/* Character Setup Panel */}
         <div className="arcane-panel p-5 mb-6">
           <div className="flex justify-between items-center mb-4 pb-3 border-b border-gold-subtle">
