@@ -4,8 +4,11 @@ import { tint } from '../model';
 import type { TalentController } from '../model';
 import { AbilityIcon, AlwaysOnChips, InfoButton, PathLinkButton, RestButtons, UseButton } from '../ui';
 import { TrackedPath, TrackerProps, refillPath, trackerGroups } from './shared';
-import { DaoBody, FigureToggle, RealmLadder, StageBadge } from './DaoBody';
-import { BODY_H, BODY_W, anchorFor, bodyStage, pathStage, stageInfo, useFigure } from './dao';
+import { FigureToggle, RealmLadder, StageBadge } from './DaoChrome';
+import { CelestialBody } from './CelestialBody';
+import { CEL_VIEW, celestialAnchor } from './celestial';
+import { bodyStage, pathStage, stageInfo, useFigure } from './dao';
+import { hash } from './tree';
 
 const SIZE = 92;
 const R = 38;
@@ -109,7 +112,7 @@ const useWidth = () => {
 };
 
 const STAGE_H = 700;
-const BODY_PX = 330;
+const BODY_PX = 480;
 
 /**
  * Rings — a cultivation HUD. The body stands at the centre with the Dao Tree
@@ -137,14 +140,14 @@ const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
   );
 
   const body = (px: number) => (
-    <DaoBody ctl={ctl} paths={all} figure={figure} highlightId={focusId} onHover={setHoverId} onSelect={setSelectedId} style={{ width: px }} />
+    <CelestialBody ctl={ctl} paths={all} figure={figure} highlightId={focusId} onHover={setHoverId} onSelect={setSelectedId} style={{ width: px }} />
   );
 
   // Orbit geometry: two curved columns of rings either side of the body.
   const W = Math.min(width, 1240);
-  const scale = BODY_PX / BODY_W;
+  const scale = BODY_PX / CEL_VIEW.w;
   const bodyLeft = (W - BODY_PX) / 2;
-  const bodyTop = (STAGE_H - BODY_H * scale) / 2;
+  const bodyTop = (STAGE_H - CEL_VIEW.h * scale) / 2;
   const half = Math.ceil(all.length / 2);
   const place = (j: number, k: number, side: -1 | 1) => {
     const gap = k > 1 ? Math.min(150, (STAGE_H - 150) / (k - 1)) : 0;
@@ -177,8 +180,17 @@ const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
         {orbit ? (
           <div
             className="relative mx-auto rounded-2xl border border-gold-subtle overflow-hidden"
-            style={{ width: W, height: STAGE_H, background: 'radial-gradient(ellipse at 50% 45%, rgba(201,169,89,0.08), rgba(10,10,15,0.6) 60%)' }}
+            style={{ width: W, height: STAGE_H, background: 'radial-gradient(ellipse at 50% 55%, #1a1433 0%, #0b0a18 45%, #050509 80%)' }}
           >
+            {/* Starfield */}
+            <svg className="absolute inset-0 pointer-events-none" width={W} height={STAGE_H}>
+              <style>{`.star { animation: star 3s ease-in-out infinite; } @keyframes star { 50% { opacity: 0.2; } }
+                @media (prefers-reduced-motion: reduce) { .star { animation: none; } }`}</style>
+              {Array.from({ length: 110 }).map((_, i) => (
+                <circle key={i} cx={hash(i) * W} cy={hash(i + 200) * STAGE_H} r={0.4 + hash(i + 400) * 1.1} fill="#fff"
+                  opacity={0.25 + hash(i + 600) * 0.6} className={i % 3 ? undefined : 'star'} style={{ animationDelay: `${hash(i + 800) * 3}s` }} />
+              ))}
+            </svg>
             <div className="absolute rounded-[50%] border border-dashed border-gold/10" style={{ left: W / 2 - Math.min(W / 2 - 80, 430), right: W / 2 - Math.min(W / 2 - 80, 430), top: -60, bottom: -60 }} />
             <div className="absolute" style={{ left: bodyLeft, top: bodyTop }}>{body(BODY_PX)}</div>
             {/* Threads of qi from each ring to where its path grows in the body */}
@@ -186,8 +198,8 @@ const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
               <style>{`.qi-thread { animation: qi-flow 1.4s linear infinite; } @keyframes qi-flow { to { stroke-dashoffset: -24; } }
                 @media (prefers-reduced-motion: reduce) { .qi-thread { animation: none; } }`}</style>
               {all.map((t, i) => {
-                const [ax, ay] = anchorFor(pathStage(ctl, t.path.id), i);
-                const end = { x: bodyLeft + ax * scale, y: bodyTop + ay * scale };
+                const [ax, ay] = celestialAnchor(pathStage(ctl, t.path.id), i);
+                const end = { x: bodyLeft + (ax - CEL_VIEW.x) * scale, y: bodyTop + (ay - CEL_VIEW.y) * scale };
                 const start = positions[i];
                 const mid = { x: (start.x + end.x) / 2, y: Math.min(start.y, end.y) - 30 };
                 const lit = t.path.id === focusId;
@@ -207,7 +219,7 @@ const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
           </div>
         ) : (
           <div className="space-y-3">
-            <div className="flex justify-center">{body(Math.min(260, width * 0.7))}</div>
+            <div className="flex justify-center">{body(Math.min(340, width))}</div>
             <div className="flex flex-wrap justify-center gap-2">{all.map(ring)}</div>
           </div>
         )}
