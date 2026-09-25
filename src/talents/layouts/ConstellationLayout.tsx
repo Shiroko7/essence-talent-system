@@ -3,8 +3,9 @@ import { Lock, Unlock } from 'lucide-react';
 import { Ability } from '../../types/essence';
 import { KIND_META, TIER_IDS, groupByTier, pathsByGroup, searchAll, tierOf, tint } from '../model';
 import type { LayoutProps } from '../TalentPage';
+import EssenceTracker from '../essence/EssenceTracker';
 import {
-  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, EssenceBoard, LevelStepper, PathSigil, SearchField,
+  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, LevelStepper, PathSigil, SearchField,
   VersionSwitch
 } from '../ui';
 
@@ -204,7 +205,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
           <h2 className="font-display text-xl text-ivory tracking-wide">Essence</h2>
           <span className="text-xs text-mist">Click a path name to jump to its tree</span>
         </div>
-        <EssenceBoard ctl={ctl} onOpenPath={id => openPath(id, true)} />
+        <EssenceTracker ctl={ctl} onOpenPath={id => openPath(id, true)} />
       </section>
 
       <AbilityModal ctl={ctl} ability={detail} onClose={() => setDetail(null)} />

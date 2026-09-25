@@ -9,6 +9,7 @@ import { useV1Controller, useV2Controller } from './useTalentController';
 import { Toast } from './ui';
 import ConstellationLayout from './layouts/ConstellationLayout';
 import ClassicLayout from './layouts/ClassicLayout';
+import { ESSENCE_VARIANTS, EssenceVariant, EssenceVariantContext, isEssenceVariant } from './essence/variant';
 
 export interface LayoutProps {
   ctl: TalentController;
@@ -51,8 +52,29 @@ const useDesign = (): [DesignId, (id: DesignId) => void] => {
   return [design, setDesign];
 };
 
-/** Fixed bar for comparing the candidate designs side by side. */
-const DesignSwitcher: React.FC<{ design: DesignId; onChange: (id: DesignId) => void }> = ({ design, onChange }) => {
+const ESSENCE_STORAGE_KEY = 'talent-essence-variant';
+
+const useEssenceVariant = (): [EssenceVariant, (id: EssenceVariant) => void] => {
+  const [params, setParams] = useSearchParams();
+  const fromUrl = params.get('essence');
+  let stored: string | null = null;
+  try { stored = localStorage.getItem(ESSENCE_STORAGE_KEY); } catch { /* storage unavailable */ }
+  const variant = isEssenceVariant(fromUrl) ? fromUrl : isEssenceVariant(stored) ? stored : 'ledger';
+
+  const setVariant = (id: EssenceVariant) => {
+    try { localStorage.setItem(ESSENCE_STORAGE_KEY, id); } catch { /* storage unavailable */ }
+    const next = new URLSearchParams(params);
+    next.set('essence', id);
+    setParams(next, { replace: true });
+  };
+
+  return [variant, setVariant];
+};
+
+/** Fixed bar for comparing the candidate designs and essence trackers. */
+const DesignSwitcher: React.FC<{
+  design: DesignId; onChange: (id: DesignId) => void; essence?: EssenceVariant; onEssence?: (id: EssenceVariant) => void;
+}> = ({ design, onChange, essence, onEssence }) => {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (!e.altKey) return;
@@ -92,7 +114,29 @@ const DesignSwitcher: React.FC<{ design: DesignId; onChange: (id: DesignId) => v
             );
           })}
         </div>
-        <span className="ml-auto text-xs text-mist font-body whitespace-nowrap hidden lg:inline">{current.blurb}</span>
+        {essence && onEssence && (
+          <>
+            <span className="w-px h-6 bg-gold-subtle flex-shrink-0" />
+            <span className="font-display text-[10px] tracking-[0.2em] uppercase text-gold-dim whitespace-nowrap">Essence</span>
+            <div className="flex items-center gap-1">
+              {ESSENCE_VARIANTS.map(v => (
+                <button
+                  key={v.id}
+                  onClick={() => onEssence(v.id)}
+                  title={v.blurb}
+                  className={`px-2.5 py-1 rounded font-display text-xs tracking-wide whitespace-nowrap transition-colors ${
+                    v.id === essence ? 'bg-gold/20 text-gold-bright border border-gold/40' : 'text-fog hover:text-parchment border border-transparent'
+                  }`}
+                >
+                  {v.label}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+        <span className="ml-auto text-xs text-mist font-body whitespace-nowrap hidden 2xl:inline">
+          {essence ? ESSENCE_VARIANTS.find(v => v.id === essence)?.blurb : current.blurb}
+        </span>
       </div>
     </div>
   );
@@ -117,6 +161,7 @@ const V2Designs: React.FC<{ design: DesignId }> = ({ design }) => {
 
 const TalentPage: React.FC<{ version: SystemVersion }> = ({ version }) => {
   const [design, setDesign] = useDesign();
+  const [essence, setEssence] = useEssenceVariant();
 
   if (design === 'legacy') {
     return (
@@ -129,10 +174,12 @@ const TalentPage: React.FC<{ version: SystemVersion }> = ({ version }) => {
 
   return (
     <Layout>
-      <div className="pb-11">
-        {version === 'v1' ? <V1Designs design={design} /> : <V2Designs design={design} />}
-      </div>
-      <DesignSwitcher design={design} onChange={setDesign} />
+      <EssenceVariantContext.Provider value={essence}>
+        <div className="pb-11">
+          {version === 'v1' ? <V1Designs design={design} /> : <V2Designs design={design} />}
+        </div>
+      </EssenceVariantContext.Provider>
+      <DesignSwitcher design={design} onChange={setDesign} essence={essence} onEssence={setEssence} />
     </Layout>
   );
 };

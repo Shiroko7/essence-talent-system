@@ -4,8 +4,9 @@ import { Ability } from '../../types/essence';
 import { KindFilter, SystemPath, groupByTier, learnedCount, matchesKind, pathsByGroup, searchAll, tint } from '../model';
 import type { TalentController } from '../model';
 import type { LayoutProps } from '../TalentPage';
+import EssenceTracker from '../essence/EssenceTracker';
 import {
-  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, EssenceBoard, GroupLabel, LevelStepper, PathSigil,
+  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, GroupLabel, LevelStepper, PathSigil,
   SearchField, Segmented, VersionSwitch
 } from '../ui';
 
@@ -62,7 +63,7 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const [kind, setKind] = useState<KindFilter>('all');
   const [search, setSearch] = useState('');
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  const [essenceOpen, setEssenceOpen] = useState(false);
+  const [essenceOpen, setEssenceOpen] = useState(true);
   const [detail, setDetail] = useState<Ability | null>(null);
 
   const path = pathId ? system.paths.find(p => p.id === pathId)! : null;
@@ -96,24 +97,31 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
 
       {/* Essence */}
       {ctl.learnedPaths.length > 0 && (
-        <div className="arcane-panel p-4">
-          <button onClick={() => setEssenceOpen(!essenceOpen)} className="w-full flex items-center gap-2 text-left">
-            <h2 className="font-display text-base tracking-wide text-ivory">Essence</h2>
-            {/* Collapsed summary: every pool at a glance */}
-            <span className="flex flex-wrap items-center gap-x-4 gap-y-1 ml-3">
-              {ctl.learnedPaths.map(p => (
-                <span key={p.id} className="flex items-center gap-1 text-sm tabular-nums" title={p.name}>
-                  {p.icon(14)}
-                  <span className="font-display" style={{ color: p.accent }}>{ctl.pool(p.id).current}</span>
-                  <span className="text-xs text-mist">/{ctl.pool(p.id).max}</span>
-                </span>
-              ))}
-            </span>
-            <span className="ml-auto text-xs text-mist whitespace-nowrap">{essenceOpen ? 'Hide' : 'Track and use'}</span>
-            <ChevronDown size={16} className={`text-mist transition-transform ${essenceOpen ? 'rotate-180' : ''}`} />
-          </button>
-          {essenceOpen && <div className="mt-4"><EssenceBoard ctl={ctl} onOpenPath={openPath} /></div>}
-        </div>
+        <section className="arcane-panel p-4">
+          <header className="flex flex-wrap items-center gap-3">
+            <h2 className="font-display text-lg tracking-wide text-ivory">Essence</h2>
+            {!essenceOpen && (
+              <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                {ctl.learnedPaths.map(p => (
+                  <span key={p.id} className="flex items-center gap-1 text-sm tabular-nums" title={p.name}>
+                    {p.icon(14)}
+                    <span className="font-display" style={{ color: p.accent }}>{ctl.pool(p.id).current}</span>
+                    <span className="text-xs text-mist">/{ctl.pool(p.id).max}</span>
+                  </span>
+                ))}
+              </span>
+            )}
+            <button
+              onClick={() => setEssenceOpen(!essenceOpen)}
+              className="ml-auto arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5"
+              aria-expanded={essenceOpen}
+            >
+              {essenceOpen ? 'Hide tracker' : 'Show tracker'}
+              <ChevronDown size={14} className={`transition-transform ${essenceOpen ? 'rotate-180' : ''}`} />
+            </button>
+          </header>
+          {essenceOpen && <div className="mt-4"><EssenceTracker ctl={ctl} onOpenPath={openPath} /></div>}
+        </section>
       )}
 
       <div className="flex flex-col md:flex-row gap-4 items-start">
