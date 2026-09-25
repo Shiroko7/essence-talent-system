@@ -91,11 +91,25 @@ const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => 
                       <Plus size={11} />
                     </button>
                   </div>
-                  <div className="flex gap-0.5 mb-3">
+                  {/* Usable pool, then striped segments held by passives and cantrips */}
+                  <div className={`flex gap-0.5 ${pool.reserved > 0 ? 'mb-1' : 'mb-3'}`}>
                     {Array.from({ length: pool.max }).map((_, i) => (
-                      <span key={i} className="h-1 flex-1 rounded-full" style={{ background: i < pool.current ? path.accent : 'rgba(106,106,122,0.3)' }} />
+                      <span key={i} className="h-1.5 flex-1 rounded-full" style={{ background: i < pool.current ? path.accent : 'rgba(106,106,122,0.3)' }} />
+                    ))}
+                    {Array.from({ length: pool.reserved }).map((_, i) => (
+                      <span
+                        key={`r${i}`}
+                        className="h-1.5 flex-1 rounded-full"
+                        title="Held by passives and cantrips"
+                        style={{ background: 'repeating-linear-gradient(-45deg, rgba(255,107,74,0.15) 0 2px, rgba(255,107,74,0.45) 2px 4px)' }}
+                      />
                     ))}
                   </div>
+                  {pool.reserved > 0 && (
+                    <p className="text-[11px] text-mist mb-3">
+                      Max reduced by <span className="text-essence-fire">{pool.reserved}</span> held by passives and cantrips
+                    </p>
+                  )}
                   <div className="space-y-1.5">
                     {actions.map(a => {
                       const cost = costOf(a);
