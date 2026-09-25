@@ -6,7 +6,7 @@ import {
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
 import {
-  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, pathsByGroup, previewText, reservesEssence, sortAbilities,
+  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, previewText, reservesEssence,
   tierInfo, tierOf, tint
 } from './model';
 import { iconFor } from './abilityIcons';
@@ -200,75 +200,6 @@ export const CharacterMenu: React.FC<{ ctl: TalentController; align?: 'left' | '
 };
 
 /* -------------------------------------------------------------- pools */
-
-/**
- * Clickable essence pips: click a filled pip to spend down to it, an empty pip to
- * regain up to it. Reserved essence is drawn as struck-out pips at the end.
- */
-export const PoolPips: React.FC<{ ctl: TalentController; path: SystemPath; size?: 'sm' | 'md' | 'lg' }> = ({ ctl, path, size = 'md' }) => {
-  const { current, max, reserved } = ctl.pool(path.id);
-  const dim = size === 'lg' ? 18 : size === 'md' ? 13 : 9;
-  return (
-    <div className="flex flex-wrap items-center gap-1">
-      {Array.from({ length: max }).map((_, i) => {
-        const filled = i < current;
-        return (
-          <button
-            key={i}
-            onClick={() => ctl.adjustPool(path.id, (filled ? i : i + 1) - current)}
-            className="rounded-full transition-all duration-150 hover:scale-110"
-            style={{
-              width: dim, height: dim,
-              background: filled ? path.accent : 'transparent',
-              border: `1.5px solid ${filled ? path.accent : tint(path.accent, 0.4)}`,
-              boxShadow: filled ? `0 0 8px ${tint(path.accent, 0.5)}` : undefined
-            }}
-            aria-label={filled ? `Spend down to ${i}` : `Regain up to ${i + 1}`}
-          />
-        );
-      })}
-      {Array.from({ length: reserved }).map((_, i) => (
-        <span
-          key={`r${i}`}
-          className="rounded-full relative"
-          title="Reserved by passives and cantrips"
-          style={{
-            width: dim, height: dim,
-            background: 'repeating-linear-gradient(-45deg, transparent 0 2px, rgba(255,107,74,0.35) 2px 4px)',
-            border: '1.5px solid rgba(255,107,74,0.3)'
-          }}
-        />
-      ))}
-    </div>
-  );
-};
-
-export const PoolCounter: React.FC<{ ctl: TalentController; path: SystemPath; large?: boolean }> = ({ ctl, path, large }) => {
-  const { current, max } = ctl.pool(path.id);
-  return (
-    <div className="inline-flex items-center gap-1.5">
-      <button
-        onClick={() => ctl.adjustPool(path.id, -1)}
-        disabled={current <= 0}
-        className="w-7 h-7 rounded border border-gold-subtle text-fog hover:text-essence-fire hover:border-essence-fire/60 disabled:opacity-30 flex items-center justify-center"
-        aria-label={`Spend 1 ${path.name}`}
-      >
-        <Minus size={13} />
-      </button>
-      <span className={`font-display tabular-nums text-center ${large ? 'text-2xl w-16' : 'text-base w-12'}`}>
-        <span style={{ color: path.accent }}>{current}</span><span className="text-mist text-[0.7em]">/{max}</span>
-      </span>
-      <button
-        onClick={() => ctl.adjustPool(path.id, 1)}
-        disabled={current >= max}
-        className="w-7 h-7 rounded border border-gold-subtle text-fog hover:text-essence-wood hover:border-essence-wood/60 disabled:opacity-30 flex items-center justify-center"
-        aria-label={`Regain 1 ${path.name}`}
-      >
-        <Plus size={13} />
-      </button>
-    </div>
-  );
-};
 
 export const RestButtons: React.FC<{ ctl: TalentController; compact?: boolean }> = ({ ctl, compact }) => (
   <div className="flex gap-2">
@@ -489,85 +420,6 @@ export const AbilityIcon: React.FC<{
         </span>
       )}
     </span>
-  );
-};
-
-/* ------------------------------------------------------------- essence */
-
-/** Per-path pool card: pips, counter, and one-tap Use for every learned action. */
-const PoolCard: React.FC<{
-  ctl: TalentController; path: SystemPath; onOpenPath?: (pathId: string) => void; onInfo?: (ability: Ability) => void; showAbilities: boolean;
-}> = ({ ctl, path, onOpenPath, onInfo, showAbilities }) => {
-  const learned = sortAbilities((ctl.system.abilitiesByPath[path.id] || []).filter(a => ctl.isLearned(a.id)));
-  const actions = learned.filter(a => !reservesEssence(a));
-  const constant = learned.filter(a => reservesEssence(a));
-  return (
-    <div className="rounded-lg p-3.5 border flex flex-col gap-3" style={{ borderColor: tint(path.accent, 0.25), background: tint(path.accent, 0.05) }}>
-      <div className="flex items-center gap-2.5">
-        <span className="flex items-center gap-2.5 flex-1 min-w-0">
-          <PathSigil path={path} size={30} active />
-          <span className="font-display text-sm tracking-wide truncate" style={{ color: path.accent }}>{path.name}</span>
-          <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
-        </span>
-        <PoolCounter ctl={ctl} path={path} />
-      </div>
-      <PoolPips ctl={ctl} path={path} size="lg" />
-      {showAbilities && actions.length > 0 && (
-        <ul className="space-y-1">
-          {actions.map(a => (
-            <li key={a.id} className="flex items-center gap-2">
-              <AbilityIcon ability={a} path={path} status="learned" size={22} />
-              <span className="flex-1 text-sm text-parchment truncate">{a.name}</span>
-              <UseButton ctl={ctl} ability={a} path={path} compact />
-              <InfoButton ability={a} onInfo={onInfo} />
-            </li>
-          ))}
-        </ul>
-      )}
-      {showAbilities && <AlwaysOnChips abilities={constant} path={path} onInfo={onInfo} />}
-    </div>
-  );
-};
-
-/**
- * Every essence pool, grouped by tradition so Primordial, Divine and Human read
- * as separate resources. The shared play surface for all designs.
- */
-export const EssenceBoard: React.FC<{
-  ctl: TalentController; onOpenPath?: (pathId: string) => void; onInfo?: (ability: Ability) => void; showAbilities?: boolean; columns?: 2 | 3;
-}> = ({ ctl, onOpenPath, onInfo, showAbilities = true, columns = 3 }) => {
-  const groups = pathsByGroup(ctl.system, ctl.learnedPaths);
-  if (!groups.length) {
-    return (
-      <EmptyState title="No essence to track yet">
-        Learn an ability and its path's pool appears here.
-      </EmptyState>
-    );
-  }
-  return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-mist">Tap a pip to set a pool, or Use an ability to spend its cost. Striped pips are held by passives and cantrips.</p>
-        <RestButtons ctl={ctl} compact />
-      </div>
-      {groups.map(({ group, paths }) => {
-        const totals = paths.reduce((acc, p) => {
-          const pool = ctl.pool(p.id);
-          return { current: acc.current + pool.current, max: acc.max + pool.max };
-        }, { current: 0, max: 0 });
-        return (
-          <section key={group.id} className="rounded-xl border border-gold-subtle bg-obsidian/60 p-4" style={{ borderTopColor: group.accent, borderTopWidth: 2 }}>
-            <header className="flex items-baseline justify-between mb-3">
-              <h3 className="font-display text-sm tracking-[0.18em] uppercase" style={{ color: group.accent }}>{group.label}</h3>
-              <span className="font-display text-sm tabular-nums text-fog">{totals.current}<span className="text-mist"> / {totals.max}</span></span>
-            </header>
-            <div className={`grid gap-3 sm:grid-cols-2 ${columns === 3 ? 'xl:grid-cols-3' : ''}`}>
-              {paths.map(p => <PoolCard key={p.id} ctl={ctl} path={p} onOpenPath={onOpenPath} onInfo={onInfo} showAbilities={showAbilities} />)}
-            </div>
-          </section>
-        );
-      })}
-    </div>
   );
 };
 

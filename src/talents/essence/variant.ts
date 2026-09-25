@@ -3,8 +3,7 @@ import { createContext } from 'react';
 export const ESSENCE_VARIANTS = [
   { id: 'vials', label: 'Vials', blurb: 'Liquid gauges on tradition shelves; click the glass to set' },
   { id: 'cast', label: 'Cast log', blurb: 'Tap abilities to spend; every change is logged with undo' },
-  { id: 'rings', label: 'Rings', blurb: 'HUD rings; scroll to adjust, select for actions' },
-  { id: 'cards', label: 'Cards', blurb: 'The previous card tracker, for comparison' }
+  { id: 'rings', label: 'Rings', blurb: 'HUD rings; scroll to adjust, select for actions' }
 ] as const;
 
 export type EssenceVariant = typeof ESSENCE_VARIANTS[number]['id'];
