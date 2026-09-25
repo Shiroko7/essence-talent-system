@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Check, ChevronDown, Download, Lock, Minus, Moon, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
+  Check, ChevronDown, Download, Info, Lock, Minus, Moon, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
 } from 'lucide-react';
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
 import {
-  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, reservesEssence, tierInfo, tierOf, tint
+  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, pathsByGroup, previewText, reservesEssence, sortAbilities,
+  tierInfo, tierOf, tint
 } from './model';
+import { iconFor } from './abilityIcons';
 
 /* ---------------------------------------------------------------- atoms */
 
@@ -341,7 +343,7 @@ export const LearnButton: React.FC<{ ctl: TalentController; ability: Ability; pa
       disabled={status !== 'available'}
       className={`arcane-btn arcane-btn-primary !py-2 text-xs disabled:opacity-40 disabled:cursor-not-allowed ${className}`}
     >
-      {status === 'locked' ? 'Locked' : status === 'unaffordable' ? 'Not enough points' : `Learn · ${costOf(ability)} pt${costOf(ability) > 1 ? 's' : ''}`}
+      {status === 'locked' ? 'Locked' : status === 'unaffordable' ? 'Not enough points' : 'Learn'}
     </button>
   );
 };
@@ -374,8 +376,6 @@ export const AbilityBody: React.FC<{ ctl: TalentController; ability: Ability; pa
       <div className="flex flex-wrap items-center gap-2">
         <KindTag ability={ability} />
         <span className="text-[11px] font-display tracking-wide text-fog">{tier.name} · Lv {tier.levelRequirement}+</span>
-        <span className="text-mist">·</span>
-        <CostTag ability={ability} verbose />
       </div>
       {lock && (
         <div className="flex items-center gap-2 text-xs text-fog bg-void/50 border border-gold-subtle rounded px-3 py-2">
@@ -394,8 +394,8 @@ export const AbilityBody: React.FC<{ ctl: TalentController; ability: Ability; pa
   );
 };
 
-/** Slide-over panel used by layouts that don't show full text inline. */
-export const AbilityDrawer: React.FC<{
+/** Centered detail window, used wherever the full text is not already on screen. */
+export const AbilityModal: React.FC<{
   ctl: TalentController; ability: Ability | null; onClose: () => void;
 }> = ({ ctl, ability, onClose }) => {
   useEffect(() => {
@@ -407,31 +407,34 @@ export const AbilityDrawer: React.FC<{
 
   if (!ability) return null;
   const path = ctl.pathOf(ability.id)!;
+  const status = ctl.statusOf(ability, path.id);
   return (
-    <div className="fixed inset-0 z-50 flex justify-end" onClick={onClose}>
-      <div className="absolute inset-0 bg-void/70 backdrop-blur-[2px]" />
-      <aside
-        className="relative w-full max-w-lg h-full bg-obsidian border-l border-gold-subtle shadow-arcane-lg flex flex-col animate-fade-in"
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-void/75 backdrop-blur-[3px]" />
+      <div
+        className="relative w-full max-w-xl max-h-[85vh] rounded-xl border bg-obsidian shadow-arcane-lg flex flex-col animate-fade-in"
+        style={{ borderColor: tint(path.accent, 0.35) }}
         onClick={e => e.stopPropagation()}
       >
-        <header className="p-5 border-b border-gold-subtle flex items-start gap-3" style={{ background: `linear-gradient(135deg, ${tint(path.accent, 0.12)}, transparent 60%)` }}>
-          <PathSigil path={path} size={42} active />
-          <div className="flex-1 min-w-0">
-            <p className="text-[11px] font-display tracking-widest uppercase" style={{ color: path.accent }}>{path.name}</p>
-            <h2 className="font-display text-xl text-ivory leading-tight">{ability.name}</h2>
-          </div>
-          <button onClick={onClose} className="p-1.5 text-mist hover:text-parchment rounded hover:bg-charcoal" aria-label="Close">
+        <header
+          className="p-5 pb-4 flex flex-col items-center text-center border-b border-gold-subtle rounded-t-xl"
+          style={{ background: `radial-gradient(90% 120% at 50% 0%, ${tint(path.accent, 0.16)}, transparent 70%)` }}
+        >
+          <button onClick={onClose} className="absolute top-3 right-3 p-1.5 text-mist hover:text-parchment rounded hover:bg-charcoal" aria-label="Close">
             <X size={18} />
           </button>
+          <AbilityIcon ability={ability} path={path} status={status} size={64} />
+          <p className="mt-3 text-[11px] font-display tracking-[0.2em] uppercase" style={{ color: path.accent }}>{path.name}</p>
+          <h2 className="font-display text-2xl text-ivory leading-tight">{ability.name}</h2>
         </header>
         <div className="flex-1 overflow-y-auto p-5">
           <AbilityBody ctl={ctl} ability={ability} path={path} />
         </div>
-        <footer className="p-4 border-t border-gold-subtle flex items-center justify-between gap-3">
+        <footer className="p-4 border-t border-gold-subtle flex items-center justify-center gap-3">
           <UseButton ctl={ctl} ability={ability} path={path} />
-          <LearnButton ctl={ctl} ability={ability} path={path} className="ml-auto" />
+          <LearnButton ctl={ctl} ability={ability} path={path} className="min-w-[140px]" />
         </footer>
-      </aside>
+      </div>
     </div>
   );
 };
@@ -481,3 +484,223 @@ export const EmptyState: React.FC<{ title: string; children?: React.ReactNode }>
     {children && <div className="text-sm text-mist mt-1.5 max-w-sm mx-auto">{children}</div>}
   </div>
 );
+
+/* ------------------------------------------------------------- icons */
+
+/**
+ * A talent icon in a game-style frame. Passives and cantrips get round frames,
+ * actives and spells square ones; the frame colour is the ability type and the
+ * glow is the path colour once learned.
+ */
+export const AbilityIcon: React.FC<{
+  ability: Ability; path: SystemPath; status?: AbilityStatus; size?: number; className?: string;
+}> = ({ ability, path, status = 'available', size = 40, className = '' }) => {
+  const Icon = iconFor(ability);
+  const kindColor = KIND_META[kindOf(ability)].color;
+  const learned = status === 'learned';
+  const locked = status === 'locked';
+  const round = reservesEssence(ability);
+  return (
+    <span
+      className={`relative inline-flex items-center justify-center flex-shrink-0 transition-all duration-200 ${round ? 'rounded-full' : 'rounded-md'} ${className}`}
+      style={{
+        width: size,
+        height: size,
+        border: `${size >= 48 ? 2 : 1.5}px solid ${learned ? path.accent : tint(kindColor, locked ? 0.25 : 0.6)}`,
+        background: learned
+          ? `radial-gradient(circle at 50% 35%, ${tint(path.accent, 0.55)}, ${tint(path.accent, 0.12)} 70%)`
+          : `radial-gradient(circle at 50% 35%, ${tint(path.accent, locked ? 0.04 : 0.14)}, rgba(10,10,15,0.95) 75%)`,
+        boxShadow: learned
+          ? `0 0 ${Math.round(size / 3)}px ${tint(path.accent, 0.55)}, inset 0 0 ${Math.round(size / 4)}px rgba(255,255,255,0.15)`
+          : 'inset 0 1px 0 rgba(255,255,255,0.05)'
+      }}
+    >
+      <Icon size={Math.round(size * 0.5)} style={{ color: learned ? '#faf8f2' : locked ? '#55556a' : path.accent }} strokeWidth={1.75} />
+      {locked && size >= 32 && (
+        <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-void border border-ash flex items-center justify-center">
+          <Lock size={9} className="text-mist" />
+        </span>
+      )}
+    </span>
+  );
+};
+
+/* ------------------------------------------------------------- essence */
+
+/** Per-path pool card: pips, counter, and one-tap Use for every learned action. */
+const PoolCard: React.FC<{ ctl: TalentController; path: SystemPath; onOpenPath?: (pathId: string) => void; showAbilities: boolean }> = ({
+  ctl, path, onOpenPath, showAbilities
+}) => {
+  const learned = sortAbilities((ctl.system.abilitiesByPath[path.id] || []).filter(a => ctl.isLearned(a.id)));
+  const actions = learned.filter(a => !reservesEssence(a));
+  const constant = learned.filter(a => reservesEssence(a));
+  return (
+    <div className="rounded-lg p-3.5 border flex flex-col gap-3" style={{ borderColor: tint(path.accent, 0.25), background: tint(path.accent, 0.05) }}>
+      <div className="flex items-center gap-2.5">
+        <button
+          onClick={() => onOpenPath?.(path.id)}
+          disabled={!onOpenPath}
+          className="flex items-center gap-2.5 flex-1 min-w-0 text-left group"
+          title={onOpenPath ? `Open the ${path.name} tree` : undefined}
+        >
+          <PathSigil path={path} size={30} active />
+          <span className={`font-display text-sm tracking-wide truncate ${onOpenPath ? 'group-hover:underline underline-offset-4' : ''}`} style={{ color: path.accent }}>
+            {path.name}
+          </span>
+        </button>
+        <PoolCounter ctl={ctl} path={path} />
+      </div>
+      <PoolPips ctl={ctl} path={path} size="lg" />
+      {showAbilities && actions.length > 0 && (
+        <ul className="space-y-1">
+          {actions.map(a => (
+            <li key={a.id} className="flex items-center gap-2">
+              <AbilityIcon ability={a} path={path} status="learned" size={22} />
+              <span className="flex-1 text-sm text-parchment truncate">{a.name}</span>
+              <UseButton ctl={ctl} ability={a} path={path} compact />
+            </li>
+          ))}
+        </ul>
+      )}
+      {showAbilities && constant.length > 0 && (
+        <p className="text-xs text-mist leading-snug">
+          <span className="font-display tracking-wide text-fog">Always on · </span>
+          {constant.map(a => a.name).join(', ')}
+        </p>
+      )}
+    </div>
+  );
+};
+
+/**
+ * Every essence pool, grouped by tradition so Primordial, Divine and Human read
+ * as separate resources. The shared play surface for all designs.
+ */
+export const EssenceBoard: React.FC<{
+  ctl: TalentController; onOpenPath?: (pathId: string) => void; showAbilities?: boolean; columns?: 2 | 3;
+}> = ({ ctl, onOpenPath, showAbilities = true, columns = 3 }) => {
+  const groups = pathsByGroup(ctl.system, ctl.learnedPaths);
+  if (!groups.length) {
+    return (
+      <EmptyState title="No essence to track yet">
+        Learn an ability and its path's pool appears here.
+      </EmptyState>
+    );
+  }
+  return (
+    <div className="space-y-5">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-xs text-mist">Tap a pip to set a pool, or Use an ability to spend its cost. Striped pips are held by passives and cantrips.</p>
+        <RestButtons ctl={ctl} compact />
+      </div>
+      {groups.map(({ group, paths }) => {
+        const totals = paths.reduce((acc, p) => {
+          const pool = ctl.pool(p.id);
+          return { current: acc.current + pool.current, max: acc.max + pool.max };
+        }, { current: 0, max: 0 });
+        return (
+          <section key={group.id} className="rounded-xl border border-gold-subtle bg-obsidian/60 p-4" style={{ borderTopColor: group.accent, borderTopWidth: 2 }}>
+            <header className="flex items-baseline justify-between mb-3">
+              <h3 className="font-display text-sm tracking-[0.18em] uppercase" style={{ color: group.accent }}>{group.label}</h3>
+              <span className="font-display text-sm tabular-nums text-fog">{totals.current}<span className="text-mist"> / {totals.max}</span></span>
+            </header>
+            <div className={`grid gap-3 sm:grid-cols-2 ${columns === 3 ? 'xl:grid-cols-3' : ''}`}>
+              {paths.map(p => <PoolCard key={p.id} ctl={ctl} path={p} onOpenPath={onOpenPath} showAbilities={showAbilities} />)}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  );
+};
+
+/** Big top-level tabs for switching between building and playing. */
+export const ViewTabs = <T extends string>({ value, options, onChange }: {
+  value: T; options: { id: T; label: string; icon: React.ElementType; badge?: number }[]; onChange: (v: T) => void;
+}) => (
+  <div className="inline-flex rounded-lg border border-gold-accent p-1 bg-void/60">
+    {options.map(({ id, label, icon: Icon, badge }) => (
+      <button
+        key={id}
+        onClick={() => onChange(id)}
+        className={`flex items-center gap-2 px-4 py-1.5 rounded-md font-display text-sm tracking-wide transition-colors whitespace-nowrap ${
+          value === id ? 'bg-gold/20 text-gold-bright' : 'text-fog hover:text-parchment'
+        }`}
+      >
+        <Icon size={15} /> {label}
+        {badge !== undefined && badge > 0 && <span className="text-[10px] px-1.5 rounded-full bg-gold/20 text-gold-bright">{badge}</span>}
+      </button>
+    ))}
+  </div>
+);
+
+/** Section heading for a tradition, used in path lists. */
+export const GroupLabel: React.FC<{ label: string; accent: string; className?: string }> = ({ label, accent, className = '' }) => (
+  <h3 className={`flex items-center gap-2 font-display text-[10px] tracking-[0.2em] uppercase ${className}`} style={{ color: accent }}>
+    <span className="w-1.5 h-1.5 rotate-45" style={{ background: accent }} />
+    {label}
+  </h3>
+);
+
+/**
+ * A clickable talent node: icon, name and type. Click learns or unlearns, the
+ * info button opens the full text, learned actions get a one-tap Use.
+ */
+export const AbilityTile: React.FC<{
+  ctl: TalentController; ability: Ability; path: SystemPath; onInfo: (ability: Ability) => void; showPath?: boolean;
+}> = ({ ctl, ability, path, onInfo, showPath }) => {
+  const [hover, setHover] = useState(false);
+  const status = ctl.statusOf(ability, path.id);
+  const learned = status === 'learned';
+  const kindColor = KIND_META[kindOf(ability)].color;
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={() => ctl.toggle(ability, path.id)}
+      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ctl.toggle(ability, path.id); } }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={`relative flex items-center gap-2.5 rounded-lg border p-2 pr-7 text-left transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
+        status === 'available' ? 'hover:-translate-y-0.5' : ''
+      } ${status === 'locked' ? 'opacity-55' : ''}`}
+      style={{
+        borderColor: learned ? tint(path.accent, 0.7) : 'rgba(201,169,89,0.14)',
+        background: learned ? `linear-gradient(135deg, ${tint(path.accent, 0.16)}, rgba(18,18,26,0.9) 70%)` : 'rgba(12,12,18,0.7)'
+      }}
+    >
+      <AbilityIcon ability={ability} path={path} status={status} size={38} />
+      <span className="flex-1 min-w-0">
+        <span className={`block text-[13px] leading-snug ${learned ? 'text-ivory font-semibold' : status === 'unaffordable' ? 'text-mist' : 'text-parchment'}`}>
+          {ability.name}
+        </span>
+        <span className="flex items-center gap-2 mt-0.5">
+          <span className="text-[10px] font-display tracking-wide" style={{ color: kindColor }}>
+            {ability.isSpell ? `${ability.tier} spell` : KIND_META[kindOf(ability)].label}
+          </span>
+          {showPath && <span className="text-[10px] font-display tracking-wide truncate" style={{ color: path.accent }}>{path.name}</span>}
+        </span>
+        {learned && !reservesEssence(ability) && (
+          <span className="block mt-1" onClick={e => e.stopPropagation()}>
+            <UseButton ctl={ctl} ability={ability} path={path} compact />
+          </span>
+        )}
+      </span>
+      <button
+        onClick={e => { e.stopPropagation(); onInfo(ability); }}
+        className="absolute top-1.5 right-1.5 p-0.5 text-mist hover:text-gold"
+        aria-label={`Read ${ability.name}`}
+      >
+        <Info size={13} />
+      </button>
+      {hover && (
+        <div className="hidden lg:block absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 p-3 arcane-tooltip pointer-events-none animate-fade-in text-center">
+          <p className="font-display text-sm text-ivory mb-1">{ability.name}</p>
+          <p className="text-sm text-parchment/90 leading-snug">{previewText(ability.description, 200)}</p>
+          {status === 'locked' && <p className="text-xs text-gold mt-2">{ctl.lockReason(ability, path.id)}</p>}
+          <p className="text-[11px] text-mist mt-2">Click to {learned ? 'unlearn' : 'learn'} · ⓘ for the full text</p>
+        </div>
+      )}
+    </div>
+  );
+};

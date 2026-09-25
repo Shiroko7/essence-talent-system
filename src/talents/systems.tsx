@@ -29,6 +29,12 @@ const V1_ICONS: Record<EssencePathId, typeof Droplet> = {
   wind: Wind
 };
 
+const GROUP_ACCENTS: Record<string, string> = {
+  primordial: '#34d399',
+  divine: '#a5b4fc',
+  human: '#f0abfc'
+};
+
 const mergePathAbilities = (
   ids: string[],
   abilities: Record<string, Ability[]>,
@@ -54,7 +60,7 @@ export const buildV1System = (): TalentSystem => {
     name: 'Elemental Essences',
     tagline: 'Nine elemental essences, five tiers of mastery each.',
     resourceName: 'Essence',
-    groups: [{ id: 'elements', label: 'Elements' }],
+    groups: [{ id: 'elements', label: 'Elements', accent: '#c9a959' }],
     paths,
     abilitiesByPath: mergePathAbilities(paths.map(p => p.id), abilities, cantrips, spells)
   };
@@ -77,7 +83,7 @@ export const buildV2System = (): TalentSystem => {
     name: 'Cultivation Paths',
     tagline: catalog.subtitle,
     resourceName: 'Essence',
-    groups: groups.map(group => ({ id: group.id, label: group.label })),
+    groups: groups.map(group => ({ id: group.id, label: group.label, accent: GROUP_ACCENTS[group.id] ?? '#c9a959' })),
     paths: systemPaths,
     abilitiesByPath: mergePathAbilities(systemPaths.map(p => p.id), abilities, cantrips, spells)
   };

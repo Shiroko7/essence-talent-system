@@ -12,26 +12,28 @@ import ConstellationLayout from './layouts/ConstellationLayout';
 import SheetLayout from './layouts/SheetLayout';
 import CompendiumLayout from './layouts/CompendiumLayout';
 import AtlasLayout from './layouts/AtlasLayout';
+import ClassicLayout from './layouts/ClassicLayout';
 
 export interface LayoutProps {
   ctl: TalentController;
 }
 
 const DESIGNS = [
-  { id: 'classic', label: 'Classic', icon: Columns3, blurb: 'The current page, unchanged' },
-  { id: 'grimoire', label: 'Grimoire', icon: BookOpen, blurb: 'Three-pane reader: paths · abilities · inspector' },
-  { id: 'constellation', label: 'Constellation', icon: Network, blurb: 'Visual tier board with a game-style resource HUD' },
-  { id: 'sheet', label: 'Sheet', icon: ScrollText, blurb: 'Play mode first: a character-sheet companion' },
-  { id: 'compendium', label: 'Compendium', icon: Table2, blurb: 'Every ability in one filterable, sortable table' },
-  { id: 'atlas', label: 'Atlas', icon: LayoutGrid, blurb: 'Learn the system: guided path gallery and full-text cards' }
+  { id: 'classic', label: 'Classic', icon: Columns3, blurb: 'The original structure, reworked: collapsible traditions, All paths, global search' },
+  { id: 'grimoire', label: 'Grimoire', icon: BookOpen, blurb: 'Three-pane reader with a build summary; essence on its own tab' },
+  { id: 'constellation', label: 'Constellation', icon: Network, blurb: 'Game board: tiers left to right, essence at the foot of the page' },
+  { id: 'sheet', label: 'Sheet', icon: ScrollText, blurb: 'Character-sheet companion: Play and Build modes' },
+  { id: 'compendium', label: 'Compendium', icon: Table2, blurb: 'Reference grouped by path with tier ladders, or one sortable table' },
+  { id: 'atlas', label: 'Atlas', icon: LayoutGrid, blurb: 'Reading first: full-text cards, tier ladder, hand tab' }
 ] as const;
 
-type DesignId = typeof DESIGNS[number]['id'];
+/** 'legacy' is the untouched original page, kept reachable via ?ui=legacy for reference. */
+type DesignId = typeof DESIGNS[number]['id'] | 'legacy';
 
 const STORAGE_KEY = 'talent-ui-design';
 const DEFAULT_DESIGN: DesignId = 'grimoire';
 
-const isDesign = (value: string | null): value is DesignId => DESIGNS.some(d => d.id === value);
+const isDesign = (value: string | null): value is DesignId => value === 'legacy' || DESIGNS.some(d => d.id === value);
 
 const readStoredDesign = (): DesignId => {
   try {
@@ -72,7 +74,7 @@ const DesignSwitcher: React.FC<{ design: DesignId; onChange: (id: DesignId) => v
     return () => window.removeEventListener('keydown', onKey);
   }, [onChange]);
 
-  const current = DESIGNS.find(d => d.id === design)!;
+  const current = DESIGNS.find(d => d.id === design) ?? { blurb: 'The original page, unchanged' };
   return (
     <div className="fixed bottom-0 inset-x-0 z-40 border-t border-gold-subtle bg-void/95 backdrop-blur-md">
       <div className="max-w-[1600px] mx-auto px-3 h-11 flex items-center gap-3 overflow-x-auto">
@@ -110,6 +112,7 @@ const renderDesign = (design: DesignId, ctl: TalentController) => {
     case 'sheet': return <SheetLayout ctl={ctl} />;
     case 'compendium': return <CompendiumLayout ctl={ctl} />;
     case 'atlas': return <AtlasLayout ctl={ctl} />;
+    case 'classic': return <ClassicLayout ctl={ctl} />;
     default: return <GrimoireLayout ctl={ctl} />;
   }
 };
@@ -127,7 +130,7 @@ const V2Designs: React.FC<{ design: DesignId }> = ({ design }) => {
 const TalentPage: React.FC<{ version: SystemVersion }> = ({ version }) => {
   const [design, setDesign] = useDesign();
 
-  if (design === 'classic') {
+  if (design === 'legacy') {
     return (
       <div className="pb-11">
         {version === 'v1' ? <EssenceTalentTree /> : <CultivationTalentTree key="v2" version="v2" />}

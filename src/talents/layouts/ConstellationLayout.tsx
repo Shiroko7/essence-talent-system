@@ -1,76 +1,92 @@
-import React, { useState } from 'react';
-import { ChevronRight, Info, Lock, Unlock } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Lock, Unlock } from 'lucide-react';
 import { Ability } from '../../types/essence';
-import { KIND_META, groupByTier, kindOf, previewText, learnedCount, tint } from '../model';
+import { KIND_META, TIER_IDS, groupByTier, pathsByGroup, searchAll, tierOf, tint } from '../model';
 import type { LayoutProps } from '../TalentPage';
 import {
-  AbilityDrawer, BudgetMeter, CharacterMenu, CostTag, KindTag, LevelStepper, PathSigil, PoolCounter, RestButtons,
+  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, EssenceBoard, LevelStepper, PathSigil, SearchField,
   VersionSwitch
 } from '../ui';
 
-/** Ring around a path sigil showing how much of the path has been learned. */
-const ProgressRing: React.FC<{ value: number; max: number; color: string; size: number; children: React.ReactNode }> = ({
-  value, max, color, size, children
-}) => {
-  const r = size / 2 - 2;
-  const c = 2 * Math.PI * r;
-  const pct = max ? Math.min(1, value / max) : 0;
-  return (
-    <span className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
-      <svg width={size} height={size} className="absolute inset-0 -rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(201,169,89,0.12)" strokeWidth={2} />
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={color} strokeWidth={2} strokeDasharray={c} strokeDashoffset={c * (1 - pct)} strokeLinecap="round" />
-      </svg>
-      {children}
-    </span>
-  );
-};
+const NUMERALS = ['I', 'II', 'III', 'IV', 'V'];
 
 /**
- * Constellation — the talent tree as a game board. Tiers run left to right with a
- * gate between each; nodes light up as they are learned. A heads-up bar pinned to
- * the bottom carries level, budget and every essence pool for play.
+ * Constellation — the talent tree as a game board. A full-width path selector
+ * split by tradition sits on top; tiers run left to right with a seal between
+ * each; the essence board lives at the foot of the page, one click from any tree.
  */
 const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const { system } = ctl;
   const [pathId, setPathId] = useState(system.paths[0].id);
+  const [search, setSearch] = useState('');
   const [detail, setDetail] = useState<Ability | null>(null);
-  const [hover, setHover] = useState<string | null>(null);
+  const boardRef = useRef<HTMLDivElement>(null);
 
   const path = system.paths.find(p => p.id === pathId)!;
-  const pathAbilities = system.abilitiesByPath[pathId] || [];
-  const tiers = groupByTier(pathAbilities);
+  const tiers = groupByTier(system.abilitiesByPath[pathId] || []);
+  const searching = search.trim().length > 0;
+  const results = searching ? searchAll(system, search) : [];
+
+  const openPath = (id: string, scroll = false) => {
+    setPathId(id);
+    setSearch('');
+    if (scroll) boardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
-    <div className="max-w-[1600px] mx-auto pb-24">
-      {/* Path constellation strip */}
-      <div className="flex items-center justify-between gap-4 mb-3">
+    <div className="max-w-[1600px] mx-auto">
+      {/* Title and character */}
+      <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-4">
         <div className="flex items-center gap-3">
-          <h1 className="font-display text-lg text-ivory tracking-wide">{system.name}</h1>
+          <h1 className="font-display text-xl text-ivory tracking-wide">{system.name}</h1>
           <VersionSwitch current={system.version} />
         </div>
+        <div className="flex-1 min-w-[220px] max-w-md">
+          <SearchField value={search} onChange={setSearch} placeholder="Search every path…" />
+        </div>
+        <div className="flex flex-wrap items-center gap-5 ml-auto">
+          <LevelStepper ctl={ctl} />
+          <BudgetMeter ctl={ctl} className="w-52" />
+          <CharacterMenu ctl={ctl} />
+        </div>
       </div>
-      <div className="arcane-panel p-3 mb-5 overflow-x-auto">
-        <div className="flex items-end gap-5 min-w-max">
-          {system.groups.map(group => (
-            <div key={group.id} className="flex flex-col gap-1.5">
+
+      {/* Path selector: one segment per tradition, sized by its number of paths */}
+      <div ref={boardRef} className="arcane-panel mb-6 overflow-x-auto scroll-mt-4">
+        <div className="flex min-w-max xl:min-w-0">
+          {pathsByGroup(system).map(({ group, paths }, gi) => (
+            <div
+              key={group.id}
+              className={`flex flex-col ${gi > 0 ? 'border-l border-gold-subtle' : ''}`}
+              style={{ flexGrow: paths.length, flexBasis: 0 }}
+            >
               {system.groups.length > 1 && (
-                <span className="font-display text-[10px] tracking-[0.2em] uppercase text-gold-dim px-1">{group.label}</span>
+                <div className="flex items-center justify-center gap-2 pt-3 pb-1">
+                  <span className="h-px w-6" style={{ background: tint(group.accent, 0.5) }} />
+                  <span className="font-display text-[10px] tracking-[0.25em] uppercase" style={{ color: group.accent }}>{group.label}</span>
+                  <span className="h-px w-6" style={{ background: tint(group.accent, 0.5) }} />
+                </div>
               )}
-              <div className="flex gap-1">
-                {system.paths.filter(p => p.groupId === group.id).map(p => {
-                  const active = p.id === pathId;
-                  const total = (system.abilitiesByPath[p.id] || []).length;
+              <div className="flex justify-around px-2 pb-3 pt-2 gap-1">
+                {paths.map(p => {
+                  const active = p.id === pathId && !searching;
+                  const abilities = system.abilitiesByPath[p.id] || [];
                   return (
                     <button
                       key={p.id}
-                      onClick={() => setPathId(p.id)}
-                      className={`flex flex-col items-center gap-1 px-2 py-1.5 rounded-lg transition-colors w-[72px] ${active ? 'bg-charcoal' : 'hover:bg-charcoal/50'}`}
+                      onClick={() => openPath(p.id)}
+                      className={`flex flex-col items-center gap-1.5 px-2 pt-2 pb-1.5 rounded-lg transition-all w-[84px] ${active ? '-translate-y-0.5' : 'hover:bg-charcoal/50'}`}
+                      style={active ? { background: tint(p.accent, 0.12), boxShadow: `0 0 0 1px ${tint(p.accent, 0.45)}, 0 6px 20px ${tint(p.accent, 0.2)}` } : undefined}
                     >
-                      <ProgressRing value={learnedCount(ctl, p.id)} max={total} color={p.accent} size={46}>
-                        <PathSigil path={p} size={34} active={active} className="!rounded-full" />
-                      </ProgressRing>
+                      <PathSigil path={p} size={46} active={active} className="!rounded-full" />
                       <span className={`text-[11px] font-display tracking-wide truncate w-full text-center ${active ? 'text-ivory' : 'text-fog'}`}>{p.name}</span>
+                      {/* One segment per tier, lit once something in it is learned */}
+                      <span className="flex gap-0.5 w-12">
+                        {TIER_IDS.map(t => {
+                          const lit = abilities.some(a => tierOf(a) === t && ctl.isLearned(a.id));
+                          return <span key={t} className="h-1 flex-1 rounded-full" style={{ background: lit ? p.accent : 'rgba(106,106,122,0.3)' }} />;
+                        })}
+                      </span>
                     </button>
                   );
                 })}
@@ -80,131 +96,118 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
         </div>
       </div>
 
-      {/* Path title */}
-      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4 px-1">
-        <h2 className="font-display text-2xl tracking-wide" style={{ color: path.accent }}>{path.name}</h2>
-        <p className="text-fog">{path.concept}{path.patron && <span className="text-mist"> · {path.patron}</span>}</p>
-        <div className="ml-auto flex items-center gap-3 text-[11px] text-mist">
-          {(['passive', 'active', 'cantrip', 'spell'] as const).map(k => (
-            <span key={k} className="inline-flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full" style={{ background: KIND_META[k].color }} /> {KIND_META[k].label}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Tier board */}
-      <div className="flex flex-col xl:flex-row gap-3 xl:gap-0 items-stretch">
-        {tiers.map(({ tier, abilities }, index) => {
-          const open = ctl.tierUnlocked(tier.id, pathId);
-          return (
-            <React.Fragment key={tier.id}>
-              {index > 0 && (
-                <div className="flex xl:flex-col items-center justify-center xl:justify-start xl:pt-10 gap-1 xl:w-8 flex-shrink-0 text-mist">
-                  <span className="h-px w-8 xl:h-16 xl:w-px" style={{ background: open ? path.accent : 'rgba(106,106,122,0.4)' }} />
-                  {open ? <Unlock size={13} style={{ color: path.accent }} /> : <Lock size={13} />}
-                  <span className="h-px w-8 xl:h-16 xl:w-px" style={{ background: open ? path.accent : 'rgba(106,106,122,0.4)' }} />
-                </div>
-              )}
-              <section
-                className={`flex-1 min-w-0 rounded-lg border p-3 transition-colors ${open ? '' : 'opacity-55'}`}
-                style={{
-                  borderColor: open ? tint(path.accent, 0.3) : 'rgba(201,169,89,0.1)',
-                  background: open ? `linear-gradient(180deg, ${tint(path.accent, 0.06)}, rgba(18,18,26,0.6))` : 'rgba(18,18,26,0.5)'
-                }}
-              >
-                <header className="mb-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-display text-sm tracking-widest uppercase text-ivory">{tier.name}</h3>
-                    <span className="text-[11px] font-display text-gold">{tier.pointCost} pt</span>
-                  </div>
-                  <p className="text-[11px] text-mist">
-                    {open ? `Levels ${tier.levels}` : ctl.level < tier.levelRequirement ? `Opens at level ${tier.levelRequirement}` : 'Learn one from the previous tier'}
-                  </p>
-                </header>
-                <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-1 gap-2">
-                  {abilities.length === 0 && <p className="text-xs text-mist italic col-span-full">No abilities</p>}
-                  {abilities.map(ability => {
-                    const status = ctl.statusOf(ability, pathId);
-                    const learned = status === 'learned';
-                    const kindColor = KIND_META[kindOf(ability)].color;
-                    return (
-                      <div key={ability.id} className="relative" onMouseEnter={() => setHover(ability.id)} onMouseLeave={() => setHover(null)}>
-                        <button
-                          onClick={() => ctl.toggle(ability, pathId)}
-                          className={`relative w-full text-left rounded-md pl-3 pr-7 py-2 border transition-all duration-200 ${
-                            status === 'available' ? 'hover:-translate-y-0.5' : ''
-                          } ${status === 'locked' || status === 'unaffordable' ? 'cursor-not-allowed' : ''}`}
-                          style={{
-                            borderColor: learned ? path.accent : 'rgba(201,169,89,0.15)',
-                            background: learned ? tint(path.accent, 0.18) : 'rgba(10,10,15,0.55)',
-                            boxShadow: learned ? `0 0 16px ${tint(path.accent, 0.35)}` : undefined
-                          }}
-                        >
-                          <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r" style={{ background: kindColor }} />
-                          <span className={`block text-[13px] leading-snug ${learned ? 'text-ivory font-semibold' : status === 'unaffordable' ? 'text-mist' : 'text-parchment'}`}>
-                            {ability.name}
-                          </span>
-                          <span className="flex items-center gap-2 mt-0.5">
-                            <span className="text-[10px] font-display tracking-wide" style={{ color: kindColor }}>
-                              {ability.isSpell ? ability.tier : KIND_META[kindOf(ability)].label}
-                            </span>
-                            <CostTag ability={ability} />
-                          </span>
-                        </button>
-                        <button
-                          onClick={() => setDetail(ability)}
-                          className="absolute top-1.5 right-1.5 p-0.5 text-mist hover:text-gold"
-                          aria-label={`Read ${ability.name}`}
-                        >
-                          <Info size={13} />
-                        </button>
-                        {hover === ability.id && (
-                          <div className={`hidden xl:block absolute z-30 top-0 w-72 ${index >= 3 ? 'right-full mr-2' : 'left-full ml-2'} p-3 arcane-tooltip pointer-events-none animate-fade-in`}>
-                            <div className="flex items-center justify-between gap-2 mb-1.5">
-                              <span className="font-display text-sm text-ivory">{ability.name}</span>
-                              <KindTag ability={ability} compact />
-                            </div>
-                            <p className="text-sm text-parchment/90 leading-snug">{previewText(ability.description, 220)}</p>
-                            {status === 'locked' && <p className="text-xs text-gold mt-2">{ctl.lockReason(ability, pathId)}</p>}
-                            <p className="text-[11px] text-mist mt-2">Click to {learned ? 'unlearn' : 'learn'} · ⓘ for full text</p>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
+      {searching ? (
+        <div className="arcane-panel p-5 mb-8">
+          <h2 className="font-display text-lg text-ivory mb-4">Results for “{search}”</h2>
+          {results.length === 0 && <EmptyState title="No abilities match" />}
+          <div className="space-y-6">
+            {results.map(({ path: p, abilities }) => (
+              <section key={p.id}>
+                <button
+                  onClick={() => openPath(p.id)}
+                  className="flex items-center gap-2 mb-2 font-display tracking-wide hover:underline underline-offset-4"
+                  style={{ color: p.accent }}
+                >
+                  {p.icon(15)} {p.name}
+                </button>
+                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {abilities.map(a => <AbilityTile key={a.id} ctl={ctl} ability={a} path={p} onInfo={setDetail} />)}
                 </div>
               </section>
-            </React.Fragment>
-          );
-        })}
-      </div>
-
-      {/* HUD */}
-      <div className="fixed bottom-11 inset-x-0 z-30 border-t border-gold-accent bg-obsidian/95 backdrop-blur-md shadow-arcane-lg">
-        <div className="max-w-[1600px] mx-auto px-4 py-2.5 flex items-center gap-5 overflow-x-auto">
-          <LevelStepper ctl={ctl} />
-          <BudgetMeter ctl={ctl} className="w-44 flex-shrink-0" />
-          <span className="w-px h-8 bg-gold-subtle flex-shrink-0" />
-          <div className="flex items-center gap-4 flex-1">
-            {ctl.learnedPaths.length === 0 && <span className="text-xs text-mist whitespace-nowrap">Essence pools appear here as you learn abilities.</span>}
-            {ctl.learnedPaths.map(p => (
-              <div key={p.id} className="flex items-center gap-1.5 flex-shrink-0" title={`${p.name} essence`}>
-                <button onClick={() => setPathId(p.id)}><PathSigil path={p} size={26} active={p.id === pathId} /></button>
-                <PoolCounter ctl={ctl} path={p} />
-              </div>
             ))}
           </div>
-          <RestButtons ctl={ctl} compact />
-          <CharacterMenu ctl={ctl} direction="up" />
         </div>
-      </div>
+      ) : (
+        <>
+          {/* Path title */}
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-4 px-1">
+            <h2 className="font-display text-3xl tracking-wide" style={{ color: path.accent }}>{path.name}</h2>
+            <p className="text-fog">{path.concept}{path.patron && <span className="text-mist"> · {path.patron}</span>}</p>
+            <div className="ml-auto flex items-center gap-4 text-[11px] text-mist">
+              {(['passive', 'active', 'cantrip', 'spell'] as const).map(k => (
+                <span key={k} className="inline-flex items-center gap-1.5">
+                  <span
+                    className={`w-3 h-3 border ${k === 'passive' || k === 'cantrip' ? 'rounded-full' : 'rounded-sm'}`}
+                    style={{ borderColor: KIND_META[k].color }}
+                  />
+                  {KIND_META[k].label}
+                </span>
+              ))}
+            </div>
+          </div>
 
-      <p className="text-center text-xs text-mist mt-6 flex items-center justify-center gap-1">
-        Tiers open left to right <ChevronRight size={12} /> learn any ability in a tier to open the next once you reach its level
-      </p>
+          {/* Tier board — left to right on desktop, bottom to top when stacked */}
+          <div className="flex flex-col-reverse xl:flex-row gap-3 xl:gap-0 items-stretch mb-10">
+            {tiers.map(({ tier, abilities }, index) => {
+              const open = ctl.tierUnlocked(tier.id, pathId);
+              const lineColor = open ? path.accent : 'rgba(106,106,122,0.35)';
+              return (
+                <React.Fragment key={tier.id}>
+                  {index > 0 && (
+                    <div className="flex xl:flex-col items-center justify-center xl:justify-start xl:pt-6 gap-1 xl:w-9 flex-shrink-0">
+                      <span className="h-px w-10 xl:h-8 xl:w-px" style={{ background: lineColor }} />
+                      <span
+                        className="w-7 h-7 rotate-45 flex items-center justify-center border"
+                        style={{
+                          borderColor: lineColor,
+                          background: open ? tint(path.accent, 0.15) : 'rgba(10,10,15,0.8)',
+                          boxShadow: open ? `0 0 12px ${tint(path.accent, 0.4)}` : undefined
+                        }}
+                      >
+                        <span className="-rotate-45">
+                          {open ? <Unlock size={12} style={{ color: path.accent }} /> : <Lock size={12} className="text-mist" />}
+                        </span>
+                      </span>
+                      <span className="h-px w-10 xl:h-8 xl:w-px" style={{ background: lineColor }} />
+                    </div>
+                  )}
+                  <section
+                    className={`flex-1 min-w-0 rounded-xl border p-3 transition-colors ${open ? '' : 'opacity-60'}`}
+                    style={{
+                      borderColor: open ? tint(path.accent, 0.3) : 'rgba(201,169,89,0.1)',
+                      background: open
+                        ? `radial-gradient(120% 60% at 50% 0%, ${tint(path.accent, 0.1)}, rgba(18,18,26,0.7) 70%)`
+                        : 'rgba(18,18,26,0.5)'
+                    }}
+                  >
+                    <header className="flex items-center gap-3 mb-3">
+                      <span
+                        className="w-9 h-9 rounded-full flex items-center justify-center font-display text-sm border flex-shrink-0"
+                        style={{ borderColor: open ? path.accent : 'rgba(106,106,122,0.5)', color: open ? path.accent : '#6a6a7a' }}
+                      >
+                        {NUMERALS[index]}
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="font-display text-sm tracking-widest uppercase text-ivory truncate">{tier.name}</h3>
+                        <p className="text-[11px] text-mist">
+                          {open
+                            ? `Levels ${tier.levels} · ${tier.pointCost} pt${tier.pointCost > 1 ? 's' : ''}`
+                            : ctl.level < tier.levelRequirement ? `Opens at level ${tier.levelRequirement}` : 'Learn one from the tier before'}
+                        </p>
+                      </div>
+                    </header>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-2">
+                      {abilities.length === 0 && <p className="text-xs text-mist italic">No abilities in this tier</p>}
+                      {abilities.map(a => <AbilityTile key={a.id} ctl={ctl} ability={a} path={path} onInfo={setDetail} />)}
+                    </div>
+                  </section>
+                </React.Fragment>
+              );
+            })}
+          </div>
+        </>
+      )}
 
-      <AbilityDrawer ctl={ctl} ability={detail} onClose={() => setDetail(null)} />
+      {/* Essence, at the foot of the page */}
+      <section className="arcane-panel p-5">
+        <div className="flex items-center gap-3 mb-4">
+          <h2 className="font-display text-xl text-ivory tracking-wide">Essence</h2>
+          <span className="text-xs text-mist">Click a path name to jump to its tree</span>
+        </div>
+        <EssenceBoard ctl={ctl} onOpenPath={id => openPath(id, true)} />
+      </section>
+
+      <AbilityModal ctl={ctl} ability={detail} onClose={() => setDetail(null)} />
     </div>
   );
 };

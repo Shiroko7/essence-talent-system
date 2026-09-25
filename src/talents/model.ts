@@ -11,6 +11,7 @@ export type SystemVersion = 'v1' | 'v2';
 export interface SystemGroup {
   id: string;
   label: string;
+  accent: string;
 }
 
 export interface SystemPath {
@@ -124,11 +125,32 @@ export const abilitySortKey = (ability: Ability) => {
 export const sortAbilities = (abilities: Ability[]) =>
   [...abilities].sort((a, b) => abilitySortKey(a) - abilitySortKey(b) || a.name.localeCompare(b.name));
 
-export const groupByTier = (abilities: Ability[]) =>
-  TIER_IDS.map(tierId => ({
+/**
+ * Abilities bucketed by tier. Vertical layouts use 'ascending' so the tree grows
+ * upward: Great Grandmaster on top, Initiate at the bottom.
+ */
+export const groupByTier = (abilities: Ability[], direction: 'ascending' | 'left-to-right' = 'left-to-right') => {
+  const ids = direction === 'ascending' ? [...TIER_IDS].reverse() : TIER_IDS;
+  return ids.map(tierId => ({
     tier: tierInfo(tierId),
     abilities: sortAbilities(abilities.filter(a => tierOf(a) === tierId))
   }));
+};
+
+/** Global search: every path with at least one match, in catalog order. */
+export const searchAll = (system: TalentSystem, term: string, kind: KindFilter = 'all') =>
+  system.paths
+    .map(path => ({
+      path,
+      abilities: sortAbilities((system.abilitiesByPath[path.id] || []).filter(a => matchesSearch(a, term) && matchesKind(a, kind)))
+    }))
+    .filter(result => result.abilities.length > 0);
+
+/** Paths grouped by their tradition, keeping only non-empty groups. */
+export const pathsByGroup = (system: TalentSystem, paths: SystemPath[] = system.paths) =>
+  system.groups
+    .map(group => ({ group, paths: paths.filter(p => p.groupId === group.id) }))
+    .filter(entry => entry.paths.length > 0);
 
 export const isTierOpen = (tierId: TierId, selectedIds: string[], pathAbilities: Ability[], level: number) =>
   isTierUnlocked(tierId, selectedIds, pathAbilities, level);
