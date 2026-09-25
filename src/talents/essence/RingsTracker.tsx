@@ -106,7 +106,10 @@ const RingColumn: React.FC<{ ctl: TalentController; tracked: TrackedPath } & Pic
             className="w-6 h-6 rounded border border-gold-subtle text-fog hover:text-essence-wood disabled:opacity-30 flex items-center justify-center"><Plus size={11} /></button>
           <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
         </div>
-        {pool.reserved > 0 && <p className="text-[10px] text-mist"><span className="text-essence-fire">{pool.reserved}</span> held by passives and cantrips</p>}
+        {/* Always rendered (hidden when empty) so ability lists line up across columns */}
+        <p className={`text-[10px] text-mist ${pool.reserved > 0 ? '' : 'invisible'}`} aria-hidden={pool.reserved === 0}>
+          <span className="text-essence-fire">{pool.reserved}</span> held by passives and cantrips
+        </p>
       </div>
       {actions.length > 0 && (
         <ul className="mt-3 space-y-1 border-t pt-2" style={{ borderColor: tint(path.accent, 0.18) }}>
@@ -125,6 +128,22 @@ const RingColumn: React.FC<{ ctl: TalentController; tracked: TrackedPath } & Pic
   );
 };
 
+const COLUMN_MIN = 200;
+const COLUMN_GAP = 12;
+/** Section padding plus border, left and right. */
+const SECTION_CHROME = 26;
+
+/**
+ * Size a tradition so every path column is the same width across traditions:
+ * the basis is only the fixed chrome, and free space is shared per column.
+ * The minimum width makes a tradition wrap to a new line before its columns
+ * get too narrow.
+ */
+const columnSizing = (columns: number): React.CSSProperties => {
+  const chrome = SECTION_CHROME + (columns - 1) * COLUMN_GAP;
+  return { flexGrow: columns, flexBasis: chrome, minWidth: `min(100%, ${chrome + columns * COLUMN_MIN}px)` };
+};
+
 /**
  * Rings — a HUD with one column per path. Traditions sit side by side and grow
  * with their number of paths, so the whole width is used.
@@ -139,14 +158,14 @@ const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => (
       {trackerGroups(ctl).map(g => (
         <section
           key={g.group.id}
-          className="rounded-xl border p-3 min-w-0"
-          style={{ flexGrow: g.paths.length, flexBasis: g.paths.length * 230, borderColor: tint(g.group.accent, 0.3), background: tint(g.group.accent, 0.03) }}
+          className="rounded-xl border p-3 flex flex-col"
+          style={{ ...columnSizing(g.paths.length), borderColor: tint(g.group.accent, 0.3), background: tint(g.group.accent, 0.03) }}
         >
           <header className="flex items-baseline justify-between gap-3 mb-3 px-1">
             <h3 className="font-display text-[11px] tracking-[0.2em] uppercase" style={{ color: g.group.accent }}>{g.group.label}</h3>
             <span className="font-display text-xs tabular-nums text-fog">{g.current} / {g.max}</span>
           </header>
-          <div className="grid gap-3 grid-cols-[repeat(auto-fit,minmax(210px,1fr))]">
+          <div className="flex-1 grid gap-3 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
             {g.paths.map(t => <RingColumn key={t.path.id} ctl={ctl} tracked={t} onOpenPath={onOpenPath} onInfo={onInfo} />)}
           </div>
         </section>
