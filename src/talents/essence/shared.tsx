@@ -45,14 +45,7 @@ export const trackerGroups = (ctl: TalentController): TrackedGroup[] =>
     };
   });
 
-/** Set a pool to an exact value (the controller clamps it to 0..max). */
-export const setPool = (ctl: TalentController, pathId: string, value: number) =>
-  ctl.adjustPool(pathId, value - ctl.pool(pathId).current);
-
 export const refillPath = (ctl: TalentController, pathId: string) => {
   const { current, max } = ctl.pool(pathId);
   ctl.adjustPool(pathId, max - current);
 };
-
-export const refillGroup = (ctl: TalentController, group: TrackedGroup) =>
-  group.paths.forEach(t => refillPath(ctl, t.path.id));

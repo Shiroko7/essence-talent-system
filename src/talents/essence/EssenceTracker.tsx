@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Ability } from '../../types/essence';
 import { AbilityModal, EmptyState } from '../ui';
 import { TrackerProps } from './shared';
-import VialsTracker from './VialsTracker';
 import CastLogTracker from './CastLogTracker';
 import RingsTracker from './RingsTracker';
 import { EssenceVariantContext } from './variant';
@@ -19,9 +18,8 @@ const EssenceTracker: React.FC<Omit<TrackerProps, 'onInfo'>> = props => {
   const trackerProps: TrackerProps = { ...props, onInfo: setDetail };
   const tracker = (() => {
     switch (variant) {
-      case 'cast': return <CastLogTracker {...trackerProps} />;
       case 'rings': return <RingsTracker {...trackerProps} />;
-      default: return <VialsTracker {...trackerProps} />;
+      default: return <CastLogTracker {...trackerProps} />;
     }
   })();
 
