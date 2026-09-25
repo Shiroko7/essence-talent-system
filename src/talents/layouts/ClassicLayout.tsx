@@ -4,10 +4,10 @@ import { Ability } from '../../types/essence';
 import { KindFilter, SystemPath, groupByTier, learnedCount, matchesKind, pathsByGroup, searchAll, tint } from '../model';
 import type { TalentController } from '../model';
 import type { LayoutProps } from '../TalentPage';
-import EssenceTracker from '../essence/EssenceTracker';
+import { useInitialPath } from '../routes';
 import {
-  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, GroupLabel, LevelStepper, PathSigil,
-  SearchField, Segmented, VersionSwitch
+  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, GroupLabel, LevelStepper, PageTitle, PathSigil,
+  SearchField, Segmented
 } from '../ui';
 
 const KIND_OPTIONS: { id: KindFilter; label: string }[] = [
@@ -53,17 +53,16 @@ const AscendingTiers: React.FC<{
 );
 
 /**
- * Classic — the original structure (setup, essence, path sidebar, tier panels),
- * reworked: collapsible traditions, an All paths view, global search, essence
- * grouped by tradition, and tiers that climb from the bottom up.
+ * Classic — the original structure (setup, path sidebar, tier panels), reworked:
+ * collapsible traditions, an All paths view, global search, and tiers that
+ * climb from the bottom up.
  */
 const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const { system } = ctl;
-  const [pathId, setPathId] = useState<string | null>(system.paths[0].id);
+  const [pathId, setPathId] = useState<string | null>(useInitialPath(system));
   const [kind, setKind] = useState<KindFilter>('all');
   const [search, setSearch] = useState('');
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  const [essenceOpen, setEssenceOpen] = useState(true);
   const [detail, setDetail] = useState<Ability | null>(null);
 
   const path = pathId ? system.paths.find(p => p.id === pathId)! : null;
@@ -86,43 +85,11 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
     <div className="max-w-[1400px] mx-auto space-y-5">
       {/* Setup */}
       <div className="arcane-panel p-4 flex flex-wrap items-center gap-x-6 gap-y-3">
-        <div className="flex items-center gap-3 mr-auto">
-          <h1 className="font-display text-xl text-ivory tracking-wide">{system.name}</h1>
-          <VersionSwitch current={system.version} />
-        </div>
+        <PageTitle ctl={ctl} page="talents" className="mr-auto" />
         <LevelStepper ctl={ctl} />
         <BudgetMeter ctl={ctl} className="w-56" />
         <CharacterMenu ctl={ctl} />
       </div>
-
-      {/* Essence */}
-      {ctl.learnedPaths.length > 0 && (
-        <section className="arcane-panel p-4">
-          <header className="flex flex-wrap items-center gap-3">
-            <h2 className="font-display text-lg tracking-wide text-ivory">Essence</h2>
-            {!essenceOpen && (
-              <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                {ctl.learnedPaths.map(p => (
-                  <span key={p.id} className="flex items-center gap-1 text-sm tabular-nums" title={p.name}>
-                    {p.icon(14)}
-                    <span className="font-display" style={{ color: p.accent }}>{ctl.pool(p.id).current}</span>
-                    <span className="text-xs text-mist">/{ctl.pool(p.id).max}</span>
-                  </span>
-                ))}
-              </span>
-            )}
-            <button
-              onClick={() => setEssenceOpen(!essenceOpen)}
-              className="ml-auto arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5"
-              aria-expanded={essenceOpen}
-            >
-              {essenceOpen ? 'Hide tracker' : 'Show tracker'}
-              <ChevronDown size={14} className={`transition-transform ${essenceOpen ? 'rotate-180' : ''}`} />
-            </button>
-          </header>
-          {essenceOpen && <div className="mt-4"><EssenceTracker ctl={ctl} onOpenPath={openPath} /></div>}
-        </section>
-      )}
 
       <div className="flex flex-col md:flex-row gap-4 items-start">
         {/* Path sidebar */}

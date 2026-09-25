@@ -16,7 +16,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<TalentPage key="v1" version="v1" />} />
+          <Route path="/essence" element={<TalentPage key="v1-essence" version="v1" page="essence" />} />
+          <Route path="/sheet" element={<TalentPage key="v1-sheet" version="v1" page="sheet" />} />
           <Route path="/v2" element={<TalentPage key="v2" version="v2" />} />
+          <Route path="/v2/essence" element={<TalentPage key="v2-essence" version="v2" page="essence" />} />
+          <Route path="/v2/sheet" element={<TalentPage key="v2-sheet" version="v2" page="sheet" />} />
           <Route path="/cultivation" element={<TalentPage key="v2-cultivation" version="v2" />} />
           <Route path="/changelog" element={<ChangelogPage />} />
           <Route path="/merchants" element={<MerchantsPage />} />

@@ -1,47 +1,40 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Lock, Unlock } from 'lucide-react';
 import { Ability } from '../../types/essence';
 import { KIND_META, TIER_IDS, groupByTier, pathsByGroup, searchAll, tierOf, tint } from '../model';
 import type { LayoutProps } from '../TalentPage';
-import EssenceTracker from '../essence/EssenceTracker';
+import { useInitialPath } from '../routes';
 import {
-  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, LevelStepper, PathSigil, SearchField,
-  VersionSwitch
+  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, LevelStepper, PageTitle, PathSigil, SearchField
 } from '../ui';
 
 const NUMERALS = ['I', 'II', 'III', 'IV', 'V'];
 
 /**
  * Constellation — the talent tree as a game board. A full-width path selector
- * split by tradition sits on top; tiers run left to right with a seal between
- * each; the essence board lives at the foot of the page, one click from any tree.
+ * split by tradition sits on top; tiers run left to right with a seal between each.
  */
 const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const { system } = ctl;
-  const [pathId, setPathId] = useState(system.paths[0].id);
+  const [pathId, setPathId] = useState(useInitialPath(system) ?? system.paths[0].id);
   const [search, setSearch] = useState('');
   const [detail, setDetail] = useState<Ability | null>(null);
-  const boardRef = useRef<HTMLDivElement>(null);
 
   const path = system.paths.find(p => p.id === pathId)!;
   const tiers = groupByTier(system.abilitiesByPath[pathId] || []);
   const searching = search.trim().length > 0;
   const results = searching ? searchAll(system, search) : [];
 
-  const openPath = (id: string, scroll = false) => {
+  const openPath = (id: string) => {
     setPathId(id);
     setSearch('');
-    if (scroll) boardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
     <div className="max-w-[1600px] mx-auto">
       {/* Title and character */}
       <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-4">
-        <div className="flex items-center gap-3">
-          <h1 className="font-display text-xl text-ivory tracking-wide">{system.name}</h1>
-          <VersionSwitch current={system.version} />
-        </div>
+        <PageTitle ctl={ctl} page="talents" />
         <div className="flex-1 min-w-[220px] max-w-md">
           <SearchField value={search} onChange={setSearch} placeholder="Search every path…" />
         </div>
@@ -53,7 +46,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
       </div>
 
       {/* Path selector: one segment per tradition, sized by its number of paths */}
-      <div ref={boardRef} className="arcane-panel mb-6 overflow-x-auto scroll-mt-4">
+      <div className="arcane-panel mb-6 overflow-x-auto">
         <div className="flex min-w-max xl:min-w-0">
           {pathsByGroup(system).map(({ group, paths }, gi) => (
             <div
@@ -198,15 +191,6 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
           </div>
         </>
       )}
-
-      {/* Essence, at the foot of the page */}
-      <section className="arcane-panel p-5">
-        <div className="flex items-center gap-3 mb-4">
-          <h2 className="font-display text-xl text-ivory tracking-wide">Essence</h2>
-          <span className="text-xs text-mist">Click a path name to jump to its tree</span>
-        </div>
-        <EssenceTracker ctl={ctl} onOpenPath={id => openPath(id, true)} />
-      </section>
 
       <AbilityModal ctl={ctl} ability={detail} onClose={() => setDetail(null)} />
     </div>

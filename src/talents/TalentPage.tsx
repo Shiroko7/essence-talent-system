@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Columns3, Network } from 'lucide-react';
 import Layout from '../components/layout/Layout';
@@ -9,6 +9,9 @@ import { useV1Controller, useV2Controller } from './useTalentController';
 import { Toast } from './ui';
 import ConstellationLayout from './layouts/ConstellationLayout';
 import ClassicLayout from './layouts/ClassicLayout';
+import EssencePage from './pages/EssencePage';
+import SheetPage from './pages/SheetPage';
+import { TalentPageId } from './routes';
 import {
   DEFAULT_ESSENCE_VARIANT, ESSENCE_VARIANTS, EssenceVariant, EssenceVariantContext, isEssenceVariant
 } from './essence/variant';
@@ -75,9 +78,10 @@ const useEssenceVariant = (): [EssenceVariant, (id: EssenceVariant) => void] => 
 
 /** Fixed bar for comparing the candidate designs and essence trackers. */
 const DesignSwitcher: React.FC<{
-  design: DesignId; onChange: (id: DesignId) => void; essence?: EssenceVariant; onEssence?: (id: EssenceVariant) => void;
+  design?: DesignId; onChange?: (id: DesignId) => void; essence?: EssenceVariant; onEssence?: (id: EssenceVariant) => void;
 }> = ({ design, onChange, essence, onEssence }) => {
   useEffect(() => {
+    if (!onChange) return;
     const onKey = (e: KeyboardEvent) => {
       if (!e.altKey) return;
       const index = Number(e.key);
@@ -94,6 +98,7 @@ const DesignSwitcher: React.FC<{
   return (
     <div className="fixed bottom-0 inset-x-0 z-40 border-t border-gold-subtle bg-void/95 backdrop-blur-md">
       <div className="max-w-[1600px] mx-auto px-3 h-11 flex items-center gap-3 overflow-x-auto">
+        {design && onChange && (<>
         <span className="font-display text-[10px] tracking-[0.2em] uppercase text-gold-dim whitespace-nowrap hidden md:inline">
           Compare designs
         </span>
@@ -116,9 +121,10 @@ const DesignSwitcher: React.FC<{
             );
           })}
         </div>
+        </>)}
         {essence && onEssence && (
           <>
-            <span className="w-px h-6 bg-gold-subtle flex-shrink-0" />
+            {design && <span className="w-px h-6 bg-gold-subtle flex-shrink-0" />}
             <span className="font-display text-[10px] tracking-[0.2em] uppercase text-gold-dim whitespace-nowrap">Essence</span>
             <div className="flex items-center gap-1">
               {ESSENCE_VARIANTS.map(v => (
@@ -137,7 +143,7 @@ const DesignSwitcher: React.FC<{
           </>
         )}
         <span className="ml-auto text-xs text-mist font-body whitespace-nowrap hidden 2xl:inline">
-          {essence ? ESSENCE_VARIANTS.find(v => v.id === essence)?.blurb : current.blurb}
+          {essence ? ESSENCE_VARIANTS.find(v => v.id === essence)?.blurb : current?.blurb}
         </span>
       </div>
     </div>
@@ -151,19 +157,47 @@ const renderDesign = (design: DesignId, ctl: TalentController) => {
   }
 };
 
-const V1Designs: React.FC<{ design: DesignId }> = ({ design }) => {
+type Render = (ctl: TalentController) => ReactNode;
+
+const V1: React.FC<{ render: Render }> = ({ render }) => {
   const ctl = useV1Controller();
-  return <>{renderDesign(design, ctl)}<Toast ctl={ctl} /></>;
+  return <>{render(ctl)}<Toast ctl={ctl} /></>;
 };
 
-const V2Designs: React.FC<{ design: DesignId }> = ({ design }) => {
+const V2: React.FC<{ render: Render }> = ({ render }) => {
   const ctl = useV2Controller();
-  return <>{renderDesign(design, ctl)}<Toast ctl={ctl} /></>;
+  return <>{render(ctl)}<Toast ctl={ctl} /></>;
 };
 
-const TalentPage: React.FC<{ version: SystemVersion }> = ({ version }) => {
+const WithCharacter: React.FC<{ version: SystemVersion; render: Render }> = ({ version, render }) =>
+  version === 'v1' ? <V1 render={render} /> : <V2 render={render} />;
+
+/**
+ * A character's three pages: pick talents, track essence, and read the full
+ * sheet. Each page loads the same saved character for its version.
+ */
+const TalentPage: React.FC<{ version: SystemVersion; page?: TalentPageId }> = ({ version, page = 'talents' }) => {
   const [design, setDesign] = useDesign();
   const [essence, setEssence] = useEssenceVariant();
+
+  if (page === 'essence') {
+    return (
+      <Layout>
+        <EssenceVariantContext.Provider value={essence}>
+          <div className="pb-11"><WithCharacter version={version} render={ctl => <EssencePage ctl={ctl} />} /></div>
+        </EssenceVariantContext.Provider>
+        <DesignSwitcher essence={essence} onEssence={setEssence} />
+      </Layout>
+    );
+  }
+
+  if (page === 'sheet') {
+    return (
+      <Layout>
+        <WithCharacter version={version} render={ctl => <SheetPage ctl={ctl} />} />
+      </Layout>
+    );
+  }
 
   if (design === 'legacy') {
     return (
@@ -176,12 +210,10 @@ const TalentPage: React.FC<{ version: SystemVersion }> = ({ version }) => {
 
   return (
     <Layout>
-      <EssenceVariantContext.Provider value={essence}>
-        <div className="pb-11">
-          {version === 'v1' ? <V1Designs design={design} /> : <V2Designs design={design} />}
-        </div>
-      </EssenceVariantContext.Provider>
-      <DesignSwitcher design={design} onChange={setDesign} essence={essence} onEssence={setEssence} />
+      <div className="pb-11">
+        <WithCharacter version={version} render={ctl => renderDesign(design, ctl)} />
+      </div>
+      <DesignSwitcher design={design} onChange={setDesign} />
     </Layout>
   );
 };

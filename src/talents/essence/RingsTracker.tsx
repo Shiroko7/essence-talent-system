@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Minus, Plus, RotateCcw } from 'lucide-react';
 import { tint } from '../model';
 import type { TalentController } from '../model';
 import { AbilityIcon, AlwaysOnChips, InfoButton, PathLinkButton, RestButtons, UseButton } from '../ui';
 import { TrackedPath, TrackerProps, refillPath, trackerGroups } from './shared';
 
-const SIZE = 92;
-const R = 38;
+const SIZE = 104;
+const R = 43;
 const GAP_DEG = 6;
 
 const polar = (deg: number) => {
@@ -20,18 +20,19 @@ const arc = (from: number, to: number) => {
   return `M ${x1} ${y1} A ${R} ${R} 0 ${to - from > 180 ? 1 : 0} 1 ${x2} ${y2}`;
 };
 
-/** A segmented ring: one segment per point, reserved points drawn as dim red. */
-const Ring: React.FC<{
-  ctl: TalentController; tracked: TrackedPath; selected: boolean; onSelect: () => void;
-}> = ({ ctl, tracked, selected, onSelect }) => {
+/**
+ * A segmented ring gauge: one segment per point, reserved points in dim red.
+ * Scroll over it, or focus it and use the arrow keys, to adjust the pool.
+ */
+const Ring: React.FC<{ ctl: TalentController; tracked: TrackedPath }> = ({ ctl, tracked }) => {
   const { path, pool } = tracked;
   const total = Math.max(1, pool.max + pool.reserved);
   const step = 360 / total;
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const adjust = useRef((d: number) => ctl.adjustPool(path.id, d));
   adjust.current = (d: number) => ctl.adjustPool(path.id, d);
 
-  // Scroll over a ring to adjust it (needs a non-passive listener to stop page scroll).
+  // Scrolling adjusts the pool (needs a non-passive listener to stop the page scrolling).
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -41,17 +42,20 @@ const Ring: React.FC<{
   }, []);
 
   return (
-    <button
+    <div
       ref={ref}
-      onClick={onSelect}
+      tabIndex={0}
+      role="meter"
+      aria-valuenow={pool.current}
+      aria-valuemin={0}
+      aria-valuemax={pool.max}
+      aria-label={`${path.name}: ${pool.current} of ${pool.max}`}
+      title="Scroll or use the arrow keys to adjust"
       onKeyDown={e => {
         if (e.key === 'ArrowUp' || e.key === 'ArrowRight') { e.preventDefault(); adjust.current(1); }
         if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') { e.preventDefault(); adjust.current(-1); }
       }}
-      className={`flex flex-col items-center gap-1 rounded-xl px-1.5 pt-1.5 pb-2 transition-all focus:outline-none ${selected ? '' : 'hover:bg-charcoal/40'}`}
-      style={selected ? { background: tint(path.accent, 0.12), boxShadow: `0 0 0 1px ${tint(path.accent, 0.5)}` } : undefined}
-      title={`${path.name} — scroll or use arrow keys to adjust`}
-      aria-label={`${path.name}: ${pool.current} of ${pool.max}`}
+      className="rounded-full focus:outline-none focus-visible:ring-1 focus-visible:ring-gold cursor-ns-resize"
     >
       <svg width={SIZE} height={SIZE}>
         {Array.from({ length: total }).map((_, i) => {
@@ -64,86 +68,91 @@ const Ring: React.FC<{
               key={i}
               d={arc(from, Math.max(from + 1, to))}
               fill="none"
-              strokeWidth={lit ? 7 : 5}
+              strokeWidth={lit ? 8 : 6}
               strokeLinecap="round"
               stroke={reserved ? 'rgba(255,107,74,0.35)' : lit ? path.accent : 'rgba(106,106,122,0.35)'}
               style={lit ? { filter: `drop-shadow(0 0 4px ${tint(path.accent, 0.8)})`, transition: 'all 200ms' } : { transition: 'all 200ms' }}
             />
           );
         })}
-        <circle cx={SIZE / 2} cy={SIZE / 2} r={R - 10} fill={tint(path.accent, 0.08)} />
-        <foreignObject x={SIZE / 2 - 14} y={16} width={28} height={20}>
+        <circle cx={SIZE / 2} cy={SIZE / 2} r={R - 11} fill={tint(path.accent, 0.08)} />
+        <foreignObject x={SIZE / 2 - 14} y={20} width={28} height={20}>
           <div className="flex justify-center">{path.icon(16)}</div>
         </foreignObject>
-        <text x="50%" y={SIZE / 2 + 12} textAnchor="middle" className="font-display" fontSize="22" fill={path.accent}>{pool.current}</text>
-        <text x="50%" y={SIZE / 2 + 26} textAnchor="middle" fontSize="10" fill="#8888a0">of {pool.max}</text>
+        <text x="50%" y={SIZE / 2 + 13} textAnchor="middle" className="font-display" fontSize="24" fill={path.accent}>{pool.current}</text>
+        <text x="50%" y={SIZE / 2 + 28} textAnchor="middle" fontSize="10" fill="#8888a0">of {pool.max}</text>
       </svg>
-      <span className={`font-display text-xs tracking-wide ${selected ? 'text-ivory' : 'text-fog'}`}>{path.name}</span>
-    </button>
+    </div>
+  );
+};
+
+/** One path as a column: the ring on top, quick controls, then every action with Use. */
+const RingColumn: React.FC<{ ctl: TalentController; tracked: TrackedPath } & Pick<TrackerProps, 'onOpenPath' | 'onInfo'>> = ({
+  ctl, tracked, onOpenPath, onInfo
+}) => {
+  const { path, pool, actions, constant } = tracked;
+  return (
+    <div className="flex flex-col rounded-lg border p-3 min-w-0"
+      style={{ borderColor: tint(path.accent, 0.28), background: `linear-gradient(180deg, ${tint(path.accent, 0.08)}, rgba(10,10,15,0.5) 45%)` }}>
+      <div className="flex flex-col items-center gap-1.5">
+        <Ring ctl={ctl} tracked={tracked} />
+        <span className="font-display text-sm tracking-wide text-ivory">{path.name}</span>
+        <div className="flex items-center gap-1">
+          <button onClick={() => ctl.adjustPool(path.id, -1)} disabled={pool.current <= 0} aria-label={`Spend 1 ${path.name}`}
+            className="w-6 h-6 rounded border border-gold-subtle text-fog hover:text-essence-fire disabled:opacity-30 flex items-center justify-center"><Minus size={11} /></button>
+          <button onClick={() => refillPath(ctl, path.id)} disabled={pool.current >= pool.max} title={`Refill ${path.name}`}
+            className="h-6 px-2 rounded border border-gold-subtle text-[11px] text-mist hover:text-gold disabled:opacity-30 inline-flex items-center gap-1"><RotateCcw size={11} /> Refill</button>
+          <button onClick={() => ctl.adjustPool(path.id, 1)} disabled={pool.current >= pool.max} aria-label={`Regain 1 ${path.name}`}
+            className="w-6 h-6 rounded border border-gold-subtle text-fog hover:text-essence-wood disabled:opacity-30 flex items-center justify-center"><Plus size={11} /></button>
+          <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
+        </div>
+        {pool.reserved > 0 && <p className="text-[10px] text-mist"><span className="text-essence-fire">{pool.reserved}</span> held by passives and cantrips</p>}
+      </div>
+      {actions.length > 0 && (
+        <ul className="mt-3 space-y-1 border-t pt-2" style={{ borderColor: tint(path.accent, 0.18) }}>
+          {actions.map(a => (
+            <li key={a.id} className="flex items-center gap-1.5">
+              <AbilityIcon ability={a} path={path} status="learned" size={22} />
+              <span className="flex-1 min-w-0 text-[13px] text-parchment truncate" title={a.name}>{a.name}</span>
+              <UseButton ctl={ctl} ability={a} path={path} compact />
+              <InfoButton ability={a} onInfo={onInfo} className="!p-0.5" />
+            </li>
+          ))}
+        </ul>
+      )}
+      <AlwaysOnChips abilities={constant} path={path} onInfo={onInfo} className="mt-2" />
+    </div>
   );
 };
 
 /**
- * Rings — a game HUD. Every pool is a segmented ring, clustered by tradition.
- * Scroll over a ring (or focus it and use arrow keys) to adjust; select one to
- * open its tray with actions and quick controls.
+ * Rings — a HUD with one column per path. Traditions sit side by side and grow
+ * with their number of paths, so the whole width is used.
  */
-const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
-  const groups = trackerGroups(ctl);
-  const all = groups.flatMap(g => g.paths);
-  const [selectedId, setSelectedId] = useState<string | null>(all[0]?.path.id ?? null);
-  const selected = all.find(t => t.path.id === selectedId) ?? all[0];
-
-  return (
-    <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-mist flex-1 min-w-[240px]">Scroll over a ring to adjust · select it for actions</p>
-        <RestButtons ctl={ctl} compact />
-      </div>
-
-      <div className="flex flex-wrap items-stretch gap-3">
-        {groups.map(g => (
-          <section key={g.group.id} className="rounded-2xl border px-2 pt-2" style={{ borderColor: tint(g.group.accent, 0.3), background: tint(g.group.accent, 0.03) }}>
-            <p className="text-center font-display text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: g.group.accent }}>
-              {g.group.label} <span className="text-fog tracking-normal">{g.current}/{g.max}</span>
-            </p>
-            <div className="flex flex-wrap justify-center">
-              {g.paths.map(t => (
-                <Ring key={t.path.id} ctl={ctl} tracked={t} selected={t.path.id === selected?.path.id} onSelect={() => setSelectedId(t.path.id)} />
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
-
-      {/* Tray for the selected ring */}
-      {selected && (
-        <div className="rounded-xl border p-4 animate-fade-in" style={{ borderColor: tint(selected.path.accent, 0.4), background: `linear-gradient(135deg, ${tint(selected.path.accent, 0.1)}, rgba(18,18,26,0.9) 60%)` }}>
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <h3 className="font-display text-lg tracking-wide" style={{ color: selected.path.accent }}>{selected.path.name}</h3>
-            <div className="flex items-center gap-1">
-              <button onClick={() => ctl.adjustPool(selected.path.id, -1)} disabled={selected.pool.current <= 0} className="w-7 h-7 rounded border border-gold-subtle text-fog hover:text-essence-fire disabled:opacity-30 flex items-center justify-center"><Minus size={13} /></button>
-              <span className="font-display text-xl tabular-nums w-14 text-center text-ivory">{selected.pool.current}<span className="text-xs text-mist">/{selected.pool.max}</span></span>
-              <button onClick={() => ctl.adjustPool(selected.path.id, 1)} disabled={selected.pool.current >= selected.pool.max} className="w-7 h-7 rounded border border-gold-subtle text-fog hover:text-essence-wood disabled:opacity-30 flex items-center justify-center"><Plus size={13} /></button>
-              <button onClick={() => refillPath(ctl, selected.path.id)} className="ml-1 text-xs text-mist hover:text-gold inline-flex items-center gap-1"><RotateCcw size={12} /> Refill</button>
-            </div>
-            <span className="ml-auto"><PathLinkButton path={selected.path} onOpenPath={onOpenPath} /></span>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {selected.actions.map(a => (
-              <div key={a.id} className="flex items-center gap-2 rounded-md border border-gold-subtle bg-void/50 px-2 py-1.5">
-                <AbilityIcon ability={a} path={selected.path} status="learned" size={26} />
-                <span className="flex-1 text-sm text-parchment truncate">{a.name}</span>
-                <UseButton ctl={ctl} ability={a} path={selected.path} compact />
-                <InfoButton ability={a} onInfo={onInfo} />
-              </div>
-            ))}
-          </div>
-          <AlwaysOnChips abilities={selected.constant} path={selected.path} onInfo={onInfo} className="mt-3" />
-        </div>
-      )}
+const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => (
+  <div className="space-y-4">
+    <div className="flex flex-wrap items-center justify-between gap-3">
+      <p className="text-xs text-mist flex-1 min-w-[240px]">Scroll over a ring to adjust it · Use spends an ability's cost · ⓘ reads it</p>
+      <RestButtons ctl={ctl} compact />
     </div>
-  );
-};
+    <div className="flex flex-wrap gap-4 items-stretch">
+      {trackerGroups(ctl).map(g => (
+        <section
+          key={g.group.id}
+          className="rounded-xl border p-3 min-w-0"
+          style={{ flexGrow: g.paths.length, flexBasis: g.paths.length * 230, borderColor: tint(g.group.accent, 0.3), background: tint(g.group.accent, 0.03) }}
+        >
+          <header className="flex items-baseline justify-between gap-3 mb-3 px-1">
+            <h3 className="font-display text-[11px] tracking-[0.2em] uppercase" style={{ color: g.group.accent }}>{g.group.label}</h3>
+            <span className="font-display text-xs tabular-nums text-fog">{g.current} / {g.max}</span>
+          </header>
+          <div className="grid gap-3 grid-cols-[repeat(auto-fit,minmax(210px,1fr))]">
+            {g.paths.map(t => <RingColumn key={t.path.id} ctl={ctl} tracked={t} onOpenPath={onOpenPath} onInfo={onInfo} />)}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+);
 
 export default RingsTracker;

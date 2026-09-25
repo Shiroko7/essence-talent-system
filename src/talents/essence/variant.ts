@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
 export const ESSENCE_VARIANTS = [
-  { id: 'cast', label: 'Cast log', blurb: 'Tap abilities to spend; every change is logged with undo' },
-  { id: 'rings', label: 'Rings', blurb: 'HUD rings; scroll to adjust, select for actions' }
+  { id: 'cast', label: 'Cast', blurb: 'Path cards; tap an ability to spend its cost' },
+  { id: 'rings', label: 'Rings', blurb: 'One column per path: a ring gauge over its abilities' }
 ] as const;
 
 export type EssenceVariant = typeof ESSENCE_VARIANTS[number]['id'];

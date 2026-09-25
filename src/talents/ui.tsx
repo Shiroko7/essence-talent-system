@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  ChevronDown, Download, Info, Lock, Minus, Moon, Network, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
+  ChevronDown, Download, Gauge, Info, Lock, Minus, Moon, Network, Plus, RotateCcw, ScrollText, Search, Sparkles, Trash2, Upload, X, Zap
 } from 'lucide-react';
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
 import {
-  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, previewText, reservesEssence,
+  AbilityStatus, KIND_META, SystemPath, SystemVersion, TalentController, costOf, kindLabel, kindOf, previewText, reservesEssence,
   tierInfo, tierOf, tint
 } from './model';
 import { iconFor } from './abilityIcons';
+import { TalentPageId, pagePath } from './routes';
 
 /* ---------------------------------------------------------------- atoms */
 
@@ -352,18 +353,18 @@ export const Toast: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
   );
 };
 
-export const VersionSwitch: React.FC<{ current: 'v1' | 'v2' }> = ({ current }) => {
+export const VersionSwitch: React.FC<{ current: SystemVersion; page?: TalentPageId }> = ({ current, page = 'talents' }) => {
   const { search } = useLocation();
   const options = [
-    { id: 'v1', to: '/', label: 'V1', hint: 'Elements' },
-    { id: 'v2', to: '/v2', label: 'V2', hint: 'Cultivation' }
+    { id: 'v1' as const, label: 'V1', hint: 'Elements' },
+    { id: 'v2' as const, label: 'V2', hint: 'Cultivation' }
   ];
   return (
     <div className="inline-flex rounded-md bg-void/60 border border-gold-subtle p-0.5">
       {options.map(option => (
         <Link
           key={option.id}
-          to={`${option.to}${search}`}
+          to={`${pagePath(option.id, page)}${search}`}
           className={`rounded px-2.5 py-1 text-xs font-display tracking-wide transition-colors ${
             current === option.id ? 'bg-gold/20 text-gold-bright' : 'text-fog hover:text-parchment'
           }`}
@@ -374,6 +375,39 @@ export const VersionSwitch: React.FC<{ current: 'v1' | 'v2' }> = ({ current }) =
     </div>
   );
 };
+
+const PAGE_TABS: { id: TalentPageId; label: string; short: string; icon: typeof Network }[] = [
+  { id: 'talents', label: 'Talents', short: 'Talents', icon: Network },
+  { id: 'essence', label: 'Essence', short: 'Essence', icon: Gauge },
+  { id: 'sheet', label: 'Character sheet', short: 'Sheet', icon: ScrollText }
+];
+
+/** The three pages of a character: pick talents, track essence, read the full sheet. */
+export const PageTabs: React.FC<{ version: SystemVersion; page: TalentPageId }> = ({ version, page }) => (
+  <nav className="inline-flex max-w-full overflow-x-auto rounded-lg border border-gold-subtle bg-void/60 p-0.5" aria-label="Character pages">
+    {PAGE_TABS.map(({ id, label, short, icon: Icon }) => (
+      <Link
+        key={id}
+        to={pagePath(version, id)}
+        aria-current={page === id ? 'page' : undefined}
+        className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 font-display text-xs tracking-wide whitespace-nowrap transition-colors ${
+          page === id ? 'bg-gold/20 text-gold-bright shadow-[inset_0_0_0_1px_rgba(201,169,89,0.4)]' : 'text-fog hover:text-parchment hover:bg-charcoal/50'
+        }`}
+      >
+        <Icon size={14} /> <span className="sm:hidden">{short}</span><span className="hidden sm:inline">{label}</span>
+      </Link>
+    ))}
+  </nav>
+);
+
+/** System name, version switch and page tabs: the start of every page header. */
+export const PageTitle: React.FC<{ ctl: TalentController; page: TalentPageId; className?: string }> = ({ ctl, page, className = '' }) => (
+  <div className={`flex flex-wrap items-center gap-3 ${className}`}>
+    <h1 className="font-display text-xl text-ivory tracking-wide">{ctl.system.name}</h1>
+    <VersionSwitch current={ctl.system.version} page={page} />
+    <PageTabs version={ctl.system.version} page={page} />
+  </div>
+);
 
 export const EmptyState: React.FC<{ title: string; children?: React.ReactNode }> = ({ title, children }) => (
   <div className="text-center py-10 px-4">
