@@ -1,17 +1,5 @@
 export const providenceAbilities = [
   {
-    id: "water_master_draconic_regeneration_emerald_moon",
-    name: "Draconic Regeneration of the Emerald Moon",
-    description: "While under direct moonlight, you regain 1 hit point at the start of each of your turns. You can extend this regeneration to any creature within 60 feet by spending 1 essence point per creature at the start of your turn.",
-    tier: "master",
-    isActive: false,
-    isPassive: true,
-    isSpell: false,
-    isCantrip: false,
-    author: "Lesbian Dragons",
-    location: "Leatrux",
-  },
-  {
     id: "water_initiate_restorative_rain",
     name: "Restorative Rain",
     description: "As an action, you create a 20-foot radius of gentle rain centered on you that lasts for a number of rounds equal to your maximum Water essences. At the start of each of their turns while in the rain, they regain 1 hit point.",
@@ -112,6 +100,18 @@ export const providenceAbilities = [
     isSpell: false,
     isCantrip: false,
     author: "Ilmater / Portfolio (Endurance)",
+  },
+  {
+    id: "wind_adept_fortune_favors_the_swift",
+    name: "Fortune Favors the Swift",
+    description: "Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it to one d20 roll before the end of your next turn.",
+    tier: "adept",
+    isActive: false,
+    isPassive: true,
+    isSpell: false,
+    isCantrip: false,
+    author: "Wang Dabao",
+    location: "Phudara / Isle of Whispers",
   }
 ];
 
@@ -153,6 +153,17 @@ export const providenceCantrips = [
     id: "moon_cantrip_sacred_flame",
     name: "Sacred Flame",
     description: "Flame-like solar radiance descends on a creature you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage with no benefit from cover.\n\nhttps://5e.tools/spells.html#sacred%20flame_xphb",
+    tier: "cantrip",
+    isActive: false,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: true,
+    author: "Cleric / Evocation",
+  },
+  {
+    id: "moon_cantrip_light",
+    name: "Light",
+    description: "You touch one object. Until the spell ends, the object sheds bright sunlight in a 20-foot radius and dim light for an additional 20 feet.\n\nhttps://5e.tools/spells.html#light_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
@@ -294,5 +305,27 @@ export const providenceSpells = [
     isSpell: true,
     isCantrip: false,
     author: "D&D 5e (PHB)",
+  },
+  {
+    id: "providence_1st_heroism",
+    name: "Heroism",
+    description: "A willing creature is imbued with bravery: immune to being frightened, and gains temporary HP at the start of each turn.\n\nhttps://5e.tools/spells.html#heroism_xphb",
+    tier: "1st",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+    author: "Paladin / Cleric (Peace Domain)",
+  },
+  {
+    id: "moon_1st_guiding_bolt",
+    name: "Guiding Bolt",
+    description: "A flash of sunlight streaks toward a creature of your choice within range. On a hit, the target takes 4d6 radiant damage, and the next attack roll against it has advantage.\n\nhttps://5e.tools/spells.html#guiding%20bolt_xphb",
+    tier: "1st",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+    author: "Cleric / Evocation",
   }
 ];

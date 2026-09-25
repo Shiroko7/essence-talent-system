@@ -20,6 +20,18 @@ export const loveAbilities = [
     isSpell: false,
     isCantrip: false,
     author: "Cyric (source technique; emotional manipulation)",
+  },
+  {
+    id: "water_adept_tide_of_emotions",
+    name: "Tide of Emotions",
+    description: "By channelling the ebb and flow of water, you can influence the emotions of others within a 30-foot radius. Choose one emotion (calm, fear, or joy); affected creatures must succeed on a Wisdom saving throw or be overwhelmed by that emotion for 1 hour.",
+    tier: "adept",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   }
 ];
 
@@ -34,6 +46,17 @@ export const loveCantrips = [
     isSpell: false,
     isCantrip: true,
     author: "Enchantment / Emotional influence",
+  },
+  {
+    id: "torment_cantrip_vicious_mockery",
+    name: "Vicious Mockery",
+    description: "Unleash strings of barbed insults and psychic cruelty, dealing 1d4 psychic damage and giving disadvantage on its next attack.\n\nhttps://5e.tools/spells.html#vicious%20mockery_xphb",
+    tier: "cantrip",
+    isActive: false,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: true,
+    author: "Enchantment / Torment",
   }
 ];
 
@@ -103,17 +126,6 @@ export const loveSpells = [
     isSpell: true,
     isCantrip: false,
     author: "Enchantment / Love and emotional influence",
-  },
-  {
-    id: "providence_1st_heroism",
-    name: "Heroism",
-    description: "A willing creature is imbued with bravery: immune to being frightened, and gains temporary HP at the start of each turn.\n\nhttps://5e.tools/spells.html#heroism_xphb",
-    tier: "1st",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-    author: "Paladin / Cleric (Peace Domain)",
   },
   {
     id: "v2_love_compulsion",

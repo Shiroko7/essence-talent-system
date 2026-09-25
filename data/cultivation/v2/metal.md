@@ -126,23 +126,6 @@ You can spend 10 minutes to reinforce any armor. For the next hour, you gain res
 
 ---
 
-### Gemsight
-
-```yaml
-id: metal_adept_gemsight
-tier: adept
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-author: Llamarada Tribe
-location: Phudara / Isle of Whispers
-```
-
-You gain expertise in Perception checks to locate hidden gemstones or precious minerals. When you find such items, you can appraise their value with a successful Intelligence (Investigation) check.
-
----
-
 ### Magnetic Shield
 
 ```yaml
@@ -264,21 +247,6 @@ https://5e.tools/spells.html#sword%20burst_tce
 
 ---
 
-### Arcane Aegis
-
-```yaml
-id: metal_1st_level_arcane_aegis
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-```
-
-https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24
-
----
-
 ### Cloud of Daggers
 
 ```yaml
@@ -354,24 +322,6 @@ https://5e.tools/spells.html#mordenkainen's%20sword_xphb
 
 ---
 
-### True Strike
-
-```yaml
-id: ruin_cantrip_true_strike
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Divination / Assassination
-```
-
-Guided by a sudden flash of murder insight, you strike with lethal precision using your spellcasting modifier.
-
-https://5e.tools/spells.html#true%20strike_xphb
-
----
-
 ### Magic Weapon
 
 ```yaml
@@ -387,23 +337,3 @@ author: D&D 5e (PHB)
 You imbue a weapon with a temporary magical enhancement.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#magic%20weapon_phb).
-
----
-
-### Shatter
-
-```yaml
-id: v2_metal_shatter
-tier: 2nd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB)
-```
-
-A sudden resonant burst damages creatures and objects in an area.
-
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shatter_phb).
-
----

@@ -19,6 +19,7 @@ function parseMarkdownFile(content, pathName) {
   const cantrips = [];
   const spells = [];
   content = content.replace(/\r\n/g, '\n');
+  const spellcasting = content.match(/^Spellcasting:\s*(.+)$/mi)?.[1]?.trim().toLowerCase() ?? 'catalog';
   const headings = [...content.matchAll(/^###\s+.+$/gm)];
   const sections = headings.map((heading, index) => content.slice(heading.index, headings[index + 1]?.index ?? content.length));
 
@@ -50,7 +51,7 @@ function parseMarkdownFile(content, pathName) {
     else if (ability.isSpell) spells.push(ability);
     else abilities.push(ability);
   }
-  return { abilities, cantrips, spells };
+  return { abilities, cantrips, spells, spellcasting };
 }
 
 const escapeString = value => value.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
@@ -156,8 +157,14 @@ function main() {
     for (const file of files) {
       const pathName = path.basename(file, '.md');
       const parsed = parseMarkdownFile(fs.readFileSync(path.join(dataDir, file), 'utf8'), pathName);
-      if (!parsed.cantrips.length) throw new Error(`No cantrip assigned to ${version}/${pathName}; every path needs at least one.`);
-      if (!parsed.spells.length) throw new Error(`No leveled spell assigned to ${version}/${pathName}; every path needs at least one.`);
+      if (parsed.spellcasting === 'none') {
+        if (parsed.spells.length) {
+          throw new Error(`${version}/${pathName} declares no spellcasting but contains leveled spells.`);
+        }
+      } else {
+        if (!parsed.cantrips.length) console.warn(`Warning: No cantrip assigned to ${version}/${pathName}; every spellcasting path needs at least one.`);
+        if (!parsed.spells.length) console.warn(`Warning: No leveled spell assigned to ${version}/${pathName}; every spellcasting path needs at least one.`);
+      }
       for (const ability of [...parsed.abilities, ...parsed.cantrips, ...parsed.spells]) {
         if (!ability.id) throw new Error(`Missing ability id for "${ability.name}" in ${version}/${pathName}.`);
         if (!ability.name) throw new Error(`Missing heading/name in ${version}/${pathName}.`);

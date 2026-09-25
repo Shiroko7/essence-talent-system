@@ -107,40 +107,6 @@ You gain proficiency with woodcarver’s tools and the ability to craft simple w
 
 ---
 
-### Entangling Reach
-
-```yaml
-id: vine_master_entangling_reach
-tier: initiate
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-location: Sirius
-```
-
-As an action, you can target up to five creatures you can see within 120 feet, expending 1 point of Essence for each creature targeted. An unwilling target must make a Strength or Dexterity saving throw (your choice, DC determined by your abilities). On a failed save, the creature is grappled. This grapple ignores the creature's weight, unless the creature is one size larger than you.
-
----
-
-### Coiling Resilience
-
-```yaml
-id: vine_master_coiling_resilience
-tier: initiate
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-location: Sirius
-```
-
-You gain a +1 bonus to all saving throws for each creature you currently have grappled.
-
-## Adept Tier
-
----
-
 ### Plant Bond
 
 ```yaml
@@ -416,5 +382,3 @@ author: D&D 5e (PHB)
 You create a small natural sign or harmless effect that reflects the nearby environment.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#druidcraft_phb).
-
----

@@ -71,21 +71,6 @@ You have advantage on Survival and Perception checks to navigate underground or 
 
 ---
 
-### Stone Fist I
-
-```yaml
-id: earth_initiate_stone_fist_1
-tier: initiate
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-author: Llamarada Tribe
-location: Phudara / Isle of Whispers
-```
-
-Your unarmed strikes deal 1d6 bludgeoning damage and count as magical for overcoming resistance and immunity.
-
 ---
 
 ### Pebble Barrage
@@ -192,21 +177,6 @@ As a bonus action, you can encase yourself in a layer of stone, granting you res
 
 ---
 
-### Stone Fist II
-
-```yaml
-id: earth_adept_stone_fist_2
-tier: adept
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-author: Llamarada Tribe
-location: Phudara / Isle of Whispers
-```
-
-Your unarmed strikes deal 1d8 bludgeoning damage and count as magical for overcoming resistance and immunity.
-
 ---
 
 ### Sandstorm
@@ -251,20 +221,6 @@ For 1 minute, you become an unyielding force:
 
 ---
 
-### Stone Fist III
-
-```yaml
-id: earth_master_stone_fist_3
-tier: master
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-location: Sirius
-```
-
-Your unarmed strikes deal 1d10 bludgeoning damage and count as magical for overcoming resistance and immunity.
-
 ---
 
 ### Foolish Old Man Moves Mountains
@@ -290,7 +246,7 @@ Each time you fail a saving throw against a hostile creature’s effect, your es
 
 ```yaml
 id: earth_active_earthen_ward
-tier: active
+tier: adept
 isActive: true
 isPassive: false
 isSpell: false
@@ -441,3 +397,18 @@ isCantrip: false
 https://5e.tools/spells.html#earthquake_xphb
 
 ---
+
+### Gemsight
+
+```yaml
+id: metal_adept_gemsight
+tier: adept
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
+```
+
+You gain expertise in Perception checks to locate hidden gemstones or precious minerals. When you find such items, you can appraise their value with a successful Intelligence (Investigation) check.

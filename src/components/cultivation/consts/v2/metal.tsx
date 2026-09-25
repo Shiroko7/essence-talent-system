@@ -84,18 +84,6 @@ export const metalAbilities = [
     location: "Phudara / Isle of Whispers",
   },
   {
-    id: "metal_adept_gemsight",
-    name: "Gemsight",
-    description: "You gain expertise in Perception checks to locate hidden gemstones or precious minerals. When you find such items, you can appraise their value with a successful Intelligence (Investigation) check.",
-    tier: "adept",
-    isActive: false,
-    isPassive: true,
-    isSpell: false,
-    isCantrip: false,
-    author: "Llamarada Tribe",
-    location: "Phudara / Isle of Whispers",
-  },
-  {
     id: "metal_adept_magnetic_shield",
     name: "Magnetic Shield",
     description: "As a reaction when you are hit by an attack, you can create a magnetic field that reduces the damage by 1d10 + your Constitution modifier. If the attacker is wielding a metal weapon, they must make a Strength saving throw or be disarmed.",
@@ -177,31 +165,10 @@ export const metalCantrips = [
     isPassive: false,
     isSpell: false,
     isCantrip: true,
-  },
-  {
-    id: "ruin_cantrip_true_strike",
-    name: "True Strike",
-    description: "Guided by a sudden flash of murder insight, you strike with lethal precision using your spellcasting modifier.\n\nhttps://5e.tools/spells.html#true%20strike_xphb",
-    tier: "cantrip",
-    isActive: false,
-    isPassive: false,
-    isSpell: false,
-    isCantrip: true,
-    author: "Divination / Assassination",
   }
 ];
 
 export const metalSpells = [
-  {
-    id: "metal_1st_level_arcane_aegis",
-    name: "Arcane Aegis",
-    description: "https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24",
-    tier: "1st",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-  },
   {
     id: "metal_2nd_level_cloud_of_daggers",
     name: "Cloud of Daggers",
@@ -256,17 +223,6 @@ export const metalSpells = [
     id: "v2_metal_magic_weapon",
     name: "Magic Weapon",
     description: "You imbue a weapon with a temporary magical enhancement.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#magic%20weapon_phb).",
-    tier: "2nd",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-    author: "D&D 5e (PHB)",
-  },
-  {
-    id: "v2_metal_shatter",
-    name: "Shatter",
-    description: "A sudden resonant burst damages creatures and objects in an area.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shatter_phb).",
     tier: "2nd",
     isActive: false,
     isPassive: false,

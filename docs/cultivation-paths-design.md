@@ -1,18 +1,18 @@
-# Cultivation path structure
+# V2 cultivation path structure
 
-The active redesign uses **two families of seven**. Primordial paths describe foundations of the material world; Divine paths describe deity portfolios that shape how people experience that world.
+**Status: Canonical path structure intended for V2.** V2 groups paths into three campaign-relevant families: Primordial foundations of the natural world, Divine deity portfolios, and Human disciplines shaped through practice. The families do not need equal numbers of paths; the catalog is organized around what matters in the campaign rather than a target count or symmetry.
 
-| Primordial | Divine |
-| --- | --- |
-| Wood | Lunar (Selûne) |
-| Fire | Love (Sune) |
-| Earth | Ruin (Bhaal, Cyric, Loviatar) |
-| Metal | Pestilence (Talona) |
-| Water | Shadow (Shar) |
-| Sky | Tempest (Umberlee) |
-| Alchemy | Providence (Ilmater) |
+| Primordial | Divine | Human |
+| --- | --- | --- |
+| Wood | Lunar (Selûne) | Alchemy |
+| Fire | Love (Sune) | Heart |
+| Earth | Ruin (Bhaal, Cyric, Loviatar) | |
+| Metal | Pestilence (Talona) | |
+| Water | Shadow (Shar) | |
+| Sky | Tempest (Umberlee) | |
+| | Providence (Ilmater) | |
 
-This structure keeps the five classical elements, gives air and lightning a single Primordial home under Sky, and treats Alchemy as a principle of transformation. The Divine family keeps the portfolios most important to the setting. Pain is part of Ruin; poison, disease, and curses are part of Pestilence. A generic knowledge or magic path was not added, and abilities without a clean home were pruned.
+The six Primordial paths cover the five classical elements plus Sky, which houses air and lightning. The seven Divine portfolios preserve the deity themes most important to the setting. Human holds Alchemy as a learned craft and Heart as martial discipline and embodied mastery. Pain is part of Ruin; poison, disease, and curses are part of Pestilence. Abilities without a useful campaign home were pruned rather than kept to fill a quota.
 
 ## Boundaries
 
@@ -21,6 +21,9 @@ This structure keeps the five classical elements, gives air and lightning a sing
 - **Alchemy and Pestilence:** Alchemy changes substances through formulas, acids, medicines, and refinement. Pestilence afflicts living bodies through poison, disease, contagion, and curses, and includes resistance or remedies tied directly to those afflictions.
 - **Lunar and Shadow:** Lunar is Selûne’s moonlight, stars, cycles, navigation, dreams, reflection, and celestial foresight. Shadow is Shar’s darkness, concealment, absence, and Shadow Weave. They remain separate; the model does not combine Light and Void as a twilight portfolio.
 - **Love and Providence:** Love is affection, beauty, attraction, devotion, empathy, and emotional bonds. Providence is protection, healing, endurance, hope, sacrifice, and liberation from debilitating bonds.
+- **Love and Heart:** Love concerns relationships and emotional bonds between people. Heart concerns personal discipline expressed through martial forms, unarmed practice, weapon technique, and trained movement. A technique may channel Essence without being a spell.
+- **Heart and Shadow:** Netherdark Fist stays in Shadow because void and darkness define it, despite its martial delivery. Heart holds techniques whose defining identity is embodied martial discipline.
+- **Human disciplines:** Alchemy is a practice of refining and recombining substances, rather than a natural element or deity portfolio. Its alchemical spells remain with Alchemy. Heart holds Stone Fist I–V, scaling from a d4 to a d12, the three sequential Radiant Vein Blade forms, and other custom martial talents, along with True Strike as an exceptional strike cantrip; it has no leveled-spell list.
 - **Ruin:** Murder, assassination, pain, deception, and thievery are deliberate forms of destruction and belong together. Loviatar’s pain abilities were moved here; there is no standalone Pain path.
 - **Wood:** Wood is plants, roots, forests, and growth. It does not collect every animal, weather, or healing spell with a natural flavor; those entries were pruned or assigned to a clearer path.
 
@@ -32,6 +35,6 @@ The archived sixteen-path source remains under [`data/cultivation/archive/v2.2/`
 
 ## Balance and implementation
 
-The current roster has 152 custom talents (94 active, 58 passive), 39 cantrips, and 137 leveled spells. Its path totals range from 14 to 28 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused portfolios such as Love and Tempest, while Ruin and Providence cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
+The current roster has 185 custom talents (121 active, 64 passive), 39 cantrips, and 137 leveled spells, for 361 total entries. Its path totals range from 15 to 37 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Heart and Love, while Alchemy, Sky, and Providence cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
 
-Source Markdown lives in `data/cultivation/v2/`; `scripts/generate-cultivation.js` enforces unique IDs and one owner per spell/cantrip, and checks that every path has both kinds of spell entry. Path labels, families, colors, and descriptions live in `src/types/cultivation.ts`. The `/v2` page uses a separate seven-plus-seven local-save key and reconciles older V2.3 selections by stable ability IDs.
+Source Markdown lives in `data/cultivation/v2/`; `scripts/generate-cultivation.js` enforces unique IDs and one owner per spell/cantrip. Spellcasting paths require cantrips and leveled spells; Heart is a martial-discipline path with True Strike as its only cantrip and no leveled spells. Path labels, families, colors, and descriptions live in `src/types/cultivation.ts`. The `/v2` page uses a separate local-save key and reconciles older V2.3 selections by stable ability IDs.

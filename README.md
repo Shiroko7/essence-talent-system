@@ -26,15 +26,15 @@ answer "what can I actually do at adept fire" without scrolling a document.
 
 ## Cultivation paths
 
-`/v2` contains a single fourteen-path catalog: seven Primordial foundations
-(Wood, Fire, Earth, Metal, Water, Sky, and Alchemy) and seven Divine portfolios
-(Lunar, Love, Ruin, Pestilence, Shadow, Tempest, and Providence). The older
-nine-element tree remains at `/`.
+`/v2` contains the canonical campaign-focused catalog for V2: six Primordial
+foundations (Wood, Fire, Earth, Metal, Water, and Sky), seven Divine portfolios
+(Lunar, Love, Ruin, Pestilence, Shadow, Tempest, and Providence), and two Human
+disciplines (Alchemy and Heart). The older nine-element tree remains at `/`.
 
 Each spell and cantrip has one path owner. Markdown is the source of truth, and
-`bun run generate:cultivation` checks unique spell ownership and verifies that
-every path has both cantrips and leveled spells. The full roster and balance
-table live in [data/cultivation](data/cultivation/README.md).
+`bun run generate:cultivation` checks unique spell ownership. Spellcasting paths
+have cantrips and leveled spells; Heart is a martial-talent path with True Strike as an exception cantrip and no leveled spells.
+The full roster and balance table live in [data/cultivation](data/cultivation/README.md).
 
 ## Markdown is the single source of truth
 

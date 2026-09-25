@@ -20,23 +20,6 @@ You have advantage on saving throws against being frightened or charmed while wi
 
 ---
 
-### Searing Gaze
-
-```yaml
-id: fire_initiate_searing_gaze
-tier: initiate
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-author: Llamarada Tribe
-location: Phudara / Isle of Whispers
-```
-
-As a bonus action, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 minute.
-
----
-
 ### Flame Kinship
 
 ```yaml
@@ -102,23 +85,6 @@ location: Phudara / Isle of Whispers
 ```
 
 When you use the Disengage action, you create a burst of fire around you. Each creature within 5 feet of you takes 2d6 fire damage.
-
----
-
-### Blazing Presence
-
-```yaml
-id: fire_adept_blazing_presence
-tier: adept
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-author: Llamarada Tribe
-location: Phudara / Isle of Whispers
-```
-
-Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.
 
 ---
 
@@ -382,5 +348,3 @@ isCantrip: false
 ```
 
 https://5e.tools/spells.html#flame%20strike_xphb
-
----

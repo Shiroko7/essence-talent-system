@@ -191,24 +191,6 @@ You conjure a crackling triangular cage of lightning in a 30-foot area centered 
 
 ---
 
-### Lightning Lure
-
-```yaml
-id: v2_lightning_lightning_lure
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: D&D 5e (TCE)
-```
-
-A lash of lightning pulls a nearby creature toward you and shocks it if it comes close.
-
-Source reference: [D&D 5e TCE on 5e.tools](https://5e.tools/spells.html#lightning%20lure_tce).
-
----
-
 ### Witch Bolt
 
 ```yaml
@@ -447,3 +429,109 @@ You whisper a short message that travels to a creature at a distance.
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#message_phb).
 
 ---
+
+### Shatter
+
+```yaml
+id: v2_metal_shatter
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+A sudden resonant burst damages creatures and objects in an area.
+
+Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shatter_phb).
+
+---
+
+### Thunderclap
+
+```yaml
+id: tempest_cantrip_thunderclap
+tier: cantrip
+isActive: false
+isPassive: false
+isSpell: false
+isCantrip: true
+author: Cleric / Evocation
+```
+
+Create a burst of thunderous sound heard up to 100 feet away, dealing 1d6 thunder damage to all adjacent creatures.
+
+https://5e.tools/spells.html#thunderclap_xphb
+
+---
+
+### Thunderwave
+
+```yaml
+id: tempest_1st_thunderwave
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Cleric (Tempest Domain) / Evocation
+```
+
+A wave of thunderous force deals 2d8 thunder damage and pushes creatures 10 feet away.
+
+https://5e.tools/spells.html#thunderwave_xphb
+
+---
+
+### Whispers of the Gale (Laura)
+
+```yaml
+id: wind_initiate_whispers_of_the_gale
+tier: initiate
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Faelara Rest of the Lluvia Tribe
+location: Phudara / Isle of Whispers
+```
+
+When you miss with a ranged attack roll (including spell attacks), you can use your reaction and expend a spell slot of 1st level or higher to reroll the attack. You must use the new roll, and the spell slot is expended regardless of the outcome.
+
+---
+## Adept Tier
+
+---
+
+### Wind Sprint
+
+```yaml
+id: wind_adept_wind_sprint
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
+```
+
+You can double your movement speed for a number of rounds equal to your proficiency bonus.
+
+---
+
+### Just Passing By
+
+```yaml
+id: wind_master_essence_just_passing_by
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Wang Tianbao (Shadow Sect)
+location: Sirius
+```
+
+As a reaction, you dissolve into wind until the start of your next turn, passing through solid objects, becoming immune to nonmagical slashing, piercing, and bludgeoning damage and resistant to magical slashing, piercing, and bludgeoning damage.

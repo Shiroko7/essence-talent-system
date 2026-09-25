@@ -37,23 +37,6 @@ As a bonus action, you can turn your body into ice for 1 minute. You gain resist
 
 ---
 
-### Frozen Insight
-
-```yaml
-id: water_initiate_frozen_insight
-tier: initiate
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-author: Lluvia Tribe
-location: Phudara / Isle of Whispers
-```
-
-You can temporarily turn your thoughts into ice, allowing you to gain deep insight into a complex problem or puzzle. For 1 hour, you gain advantage on Intelligence checks related to solving mysteries or understanding arcane knowledge.
-
----
-
 ### Mistbound Step
 
 ```yaml
@@ -121,23 +104,6 @@ Your swimming speed equals your walking speed. Additionally, you gain the abilit
 
 ---
 
-### Tide of Emotions
-
-```yaml
-id: water_adept_tide_of_emotions
-tier: adept
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-author: Lluvia Tribe
-location: Phudara / Isle of Whispers
-```
-
-By channelling the ebb and flow of water, you can influence the emotions of others within a 30-foot radius. Choose one emotion (calm, fear, or joy); affected creatures must succeed on a Wisdom saving throw or be overwhelmed by that emotion for 1 hour.
-
----
-
 ### Tidal Surge
 
 ```yaml
@@ -155,30 +121,13 @@ You can summon a powerful wave of water that heals and revitalizes. As an action
 
 ---
 
-### Rain of Revelation
-
-```yaml
-id: water_adept_rain_of_revelation
-tier: adept
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-author: Lluvia Tribe
-location: Phudara / Isle of Whispers
-```
-
-You can summon a gentle, magical rain that grants clarity and insight to those who stand in it. Allies within a 20-foot radius can ask one question about their future or destiny, and you provide a vague but helpful answer based on your understanding of the world.
-
----
-
 ### Glacial Shield
 
 ```yaml
 id: water_adept_glacial_shield
 tier: adept
-isActive: false
-isPassive: true
+isActive: true
+isPassive: false
 isSpell: false
 isCantrip: false
 author: Lluvia Tribe
@@ -228,8 +177,8 @@ When you take damage, you can use your reaction to turn into a cloud of mist, ca
 ```yaml
 id: water_adept_tides_reflection_art_ii
 tier: adept
-isActive: false
-isPassive: true
+isActive: true
+isPassive: false
 isSpell: false
 isCantrip: false
 author: Selune
@@ -454,5 +403,3 @@ isCantrip: false
 ```
 
 https://5e.tools/spells.html#conjure%20ocean_obojimatallgrass
-
----

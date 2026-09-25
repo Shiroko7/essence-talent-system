@@ -1,6 +1,6 @@
 # Alchemy Cultivation Path
 
-Tradition: Primordial
+Tradition: Human
 Concept: The transformation, refinement, and recombination of substances.
 
 ### Caustic Bomb
@@ -122,10 +122,10 @@ You can magically coat a weapon or object in a layer of corrosive acid. The weap
 
 ---
 
-### Mutagen Formula
+### Mutagen Formula (Strength)
 
 ```yaml
-id: alchemy_adept_mutagen_formula
+id: poison_adept_enhanced_mutagen
 tier: adept
 isActive: true
 isPassive: false
@@ -134,7 +134,87 @@ isCantrip: false
 location: Sirius
 ```
 
-When you learn this talent, choose one mutagen formula: Strength (+2 Strength, −2 Intelligence), Dexterity (+2 Dexterity, −2 Wisdom), Constitution (+2 Constitution, −2 Charisma), Intelligence (+2 Intelligence, −2 Strength), Wisdom (+2 Wisdom, −2 Dexterity), or Charisma (+2 Charisma, −2 Constitution). As a bonus action, when you drink a mutagen, you gain the chosen +2 ability score bonus and its paired −2 penalty for 10 minutes.
+As a bonus action, when you drink a mutagen, you gain a +2 bonus to Strength for 10 minutes, and you take a –2 penalty to Intelligence for the same duration.
+
+---
+
+### Mutagen Formula (Dexterity)
+
+```yaml
+id: poison_adept_enhanced_mutagen_dexterity
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+location: Sirius
+```
+
+As a bonus action, when you drink a mutagen, you gain a +2 bonus to Dexterity for 10 minutes, and you take a –2 penalty to Wisdom for the same duration.
+
+---
+
+### Mutagen Formula (Constitution)
+
+```yaml
+id: poison_adept_enhanced_mutagen_constitution
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+location: Sirius
+```
+
+As a bonus action, when you drink a mutagen, you gain a +2 bonus to Constitution for 10 minutes, and you take a –2 penalty to Charisma for the same duration.
+
+---
+
+### Mutagen Formula (Intelligence)
+
+```yaml
+id: poison_adept_enhanced_mutagen_intelligence
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+location: Sirius
+```
+
+As a bonus action, when you drink a mutagen, you gain a +2 bonus to Intelligence for 10 minutes, and you take a –2 penalty to Strength for the same duration.
+
+---
+
+### Mutagen Formula (Wisdom)
+
+```yaml
+id: poison_adept_enhanced_mutagen_wisdom
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+location: Sirius
+```
+
+As a bonus action, when you drink a mutagen, you gain a +2 bonus to Wisdom for 10 minutes, and you take a –2 penalty to Dexterity for the same duration.
+
+---
+
+### Mutagen Formula (Charisma)
+
+```yaml
+id: poison_adept_enhanced_mutagen_charisma
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+location: Sirius
+```
+
+As a bonus action, when you drink a mutagen, you gain a +2 bonus to Charisma for 10 minutes, and you take a –2 penalty to Constitution for the same duration.
 
 ---
 
@@ -463,3 +543,154 @@ On a failed save, the creature begins dissolving into nothingness and is banishe
 At the end of each turn while banished, the creature takes 2d8 acid damage and can repeat the save, returning on a success.
 
 ---
+
+### Shapechange
+
+```yaml
+id: v2_moon_shapechange
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+You take the form of another creature while retaining your own mind and abilities.
+
+Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shapechange_phb).
+
+---
+
+### Acidic Precision
+
+```yaml
+id: acid_initiate_acidic_precision
+tier: initiate
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+```
+
+Your expertise with corrosive substances has honed your skill in turning everyday objects into deadly weapons. You gain proficiency with all thrown weapons and improvised thrown weapons.
+
+---
+## Adept Tier
+
+---
+
+### Extended Reach
+
+```yaml
+id: acid_adept_extended_reach
+tier: adept
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+location: Sirius
+```
+
+Your skill with explosive devices allows you to strike from farther away. When you create or use an explosive, its range to the target point is doubled. For example, a bomb that can normally be thrown or placed within 30 feet can now target a point up to 60 feet away.
+
+---
+## Master Tier
+
+---
+
+### Seven-Color Elixir
+
+```yaml
+id: acid_seven_color_elixir
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Fendral
+location: Phudara / Isle of Whispers
+```
+
+As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven:
+
+1. **Crimson Veil** — *Greater Invisibility* for 1 minute.
+2. **Azure Sight** — *True Seeing* for 10 minutes.
+3. **Golden Mirage** — Four illusory duplicates (*Mirror Image*).
+4. **Emerald Phantasm** — *Hallucinatory Terrain* in a 150-foot radius.
+5. **Violet Confusion** — *Confusion* affecting all creatures within 30 feet.
+6. **Silver Displacement** — *Mislead* effect.
+7. **Obsidian Terror** — *Fear* in a 30-foot cone.
+
+---
+
+### Strength Booster
+
+```yaml
+id: poison_initiate_strength_booster
+tier: initiate
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+```
+
+As a bonus action, you can drink a mutagen to gain a 1d4 bonus to strength based ability checks for 10 minutes.
+
+---
+
+### Enchanting Perfume
+
+```yaml
+id: poison_initiate_enchanting_perfume
+tier: initiate
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+```
+
+As an action, you can apply a specially crafted perfume that enhances your charm and charisma. For the next hour, you gain a 1d4 bonus to Charisma (Persuasion) and Charisma (Deception) checks.
+
+---
+
+### Pill of Focus
+
+```yaml
+id: poison_adept_pill_of_focus
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+```
+
+As a bonus action, you can consume a pill to gain advantage on concentration checks for the next hour.
+
+---
+
+### Apex Toxinator
+
+```yaml
+id: poison_master_essence_snake_horror
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Lord Kai (Shadow Sect)
+location: Sirius
+```
+
+As an Action, through concentrated biochemical reagents and alchemical cultivation, you conjure a monstrous, hissing Snake Horror homunculus in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.
+
+---
+## Cantrips

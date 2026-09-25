@@ -2,7 +2,7 @@ import { TierId, SpellLevel, Ability, Tier, TIERS, FilterType, FilterPill, FILTE
 
 export type CultivationVersion = 'v2';
 export type CultivationPathId = string;
-export type CultivationTradition = 'primordial' | 'divine';
+export type CultivationTradition = 'primordial' | 'divine' | 'human';
 
 export interface CultivationPath {
   id: CultivationPathId;
@@ -51,6 +51,7 @@ const palettes = {
   water: ['bg-blue-600/30', 'text-blue-400', 'border-blue-500/50', 'shadow-glow-water', 'bg-blue-950/70 text-blue-300 border-blue-500/40', '#4a9eff'],
   sky: ['bg-cyan-600/30', 'text-cyan-300', 'border-cyan-400/50', 'shadow-glow-sky', 'bg-cyan-950/70 text-cyan-200 border-cyan-400/40', '#67e8f9'],
   alchemy: ['bg-teal-600/30', 'text-teal-300', 'border-teal-400/50', 'shadow-glow-alchemy', 'bg-teal-950/70 text-teal-200 border-teal-400/40', '#5eead4'],
+  heart: ['bg-fuchsia-600/25', 'text-fuchsia-300', 'border-fuchsia-400/50', 'shadow-glow-heart', 'bg-fuchsia-950/70 text-fuchsia-200 border-fuchsia-400/40', '#e879f9'],
   lunar: ['bg-indigo-400/25', 'text-indigo-200', 'border-indigo-300/50', 'shadow-glow-moon', 'bg-indigo-950/70 text-indigo-200 border-indigo-400/40', '#c7d2fe'],
   love: ['bg-rose-500/25', 'text-rose-300', 'border-rose-400/50', 'shadow-glow-love', 'bg-rose-950/70 text-rose-200 border-rose-400/40', '#fb7185'],
   ruin: ['bg-red-600/25', 'text-red-300', 'border-red-500/50', 'shadow-glow-ruin', 'bg-red-950/80 text-red-200 border-red-500/50', '#f87171'],
@@ -71,7 +72,11 @@ const makePath = (
   thematicFoundation?: string
 ): CultivationPath => {
   const [color, textColor, borderColor, glowClass, badgeClass, accentColor] = palettes[paletteId];
-  const traditionLabel = tradition === 'primordial' ? 'Primordial' : 'Divine';
+  const traditionLabel = {
+    primordial: 'Primordial',
+    divine: 'Divine',
+    human: 'Human'
+  }[tradition];
   return { id, name, tradition, traditionLabel, concept, description, color, textColor, borderColor, glowClass, badgeClass, accentColor, thematicFoundation };
 };
 
@@ -82,7 +87,8 @@ const paths: CultivationPath[] = [
   makePath('metal', 'Metal', 'primordial', 'Refinement and directed force', 'Metal, ore, magnetism, forged edges, weapons, and armor.', 'metal'),
   makePath('water', 'Water', 'primordial', 'Flow and dissolution', 'Water, ice, mist, tides, and fluid adaptation.', 'water'),
   makePath('sky', 'Sky', 'primordial', 'Air and electrical force', 'Air, pressure, flight, sound carried through air, and direct lightning.', 'sky'),
-  makePath('alchemy', 'Alchemy', 'primordial', 'Transformation of substances', 'Formulas, medicines, acids, refining, and the recombination of matter.', 'alchemy'),
+  makePath('alchemy', 'Alchemy', 'human', 'Transformation through craft', 'Formulas, medicines, acids, refining, and the recombination of substances through practice.', 'alchemy'),
+  makePath('heart', 'Heart', 'human', 'Martial discipline and embodied mastery', 'Unarmed forms, weapon technique, disciplined movement, and mastery shaped through practice.', 'heart'),
   makePath('lunar', 'Lunar', 'divine', 'Moon, stars, and celestial cycles', 'Moonlight, stars, navigation, dreams, reflection, and foresight.', 'lunar', 'Selûne'),
   makePath('love', 'Love', 'divine', 'Affection and emotional bonds', 'Beauty, attraction, devotion, empathy, and the bonds between people.', 'love', 'Sune'),
   makePath('ruin', 'Ruin', 'divine', 'Violence and deliberate undoing', 'Murder, pain, deception, thievery, and the collapse of a chosen foe.', 'ruin', 'Bhaal, Cyric, and Loviatar'),
@@ -95,12 +101,13 @@ const paths: CultivationPath[] = [
 export const CULTIVATION_CATALOGS: Record<CultivationVersion, CultivationCatalog> = {
   v2: {
     version: 'v2',
-    title: 'Seven Primordial and Seven Divine',
-    subtitle: 'Seven Primordial Paths and Seven Divine Portfolios',
-    principle: 'The Primordial paths shape physical reality; the Divine paths express distinct portfolios.',
+    title: 'Primordial, Divine, and Human',
+    subtitle: 'Natural Foundations, Divine Portfolios, and Human Arts',
+    principle: 'Paths are grouped by campaign relevance; the families do not need equal sizes.',
     groups: [
       { id: 'primordial', label: 'Primordial', color: 'emerald' },
-      { id: 'divine', label: 'Divine Portfolios', color: 'indigo' }
+      { id: 'divine', label: 'Divine Portfolios', color: 'indigo' },
+      { id: 'human', label: 'Human Disciplines', color: 'fuchsia' }
     ],
     paths
   }

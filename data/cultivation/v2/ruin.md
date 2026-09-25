@@ -132,21 +132,6 @@ A wave of necromantic energy washes out from a point you can see within range. C
 
 ---
 
-### Sky-Piercing Execution
-
-```yaml
-id: wind_master_sky_piercing_execution
-tier: master
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-author: Yoo Tae-yang
-location: Sirius
-```
-
-As a reaction when a creature within 60 feet is airborne or suspended, teleport to an adjacent empty space in the air. Make one piercing melee weapon attack against it. On a hit, the target suffers the attack's normal damage plus an extra 4d10 thunder damage, The target must succeed on a Strength saving throw against your essence ability save DC or fall up to 60 feet, land prone, and take the normal falling damage. On a successful save, it remains airborne.
-
 ## Grandmaster Tier
 
 ---
@@ -416,24 +401,6 @@ Whenever a creature within 30 feet takes damage from your attacks or spells, you
 
 ---
 
-### Vicious Mockery
-
-```yaml
-id: torment_cantrip_vicious_mockery
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Enchantment / Torment
-```
-
-Unleash strings of barbed insults and psychic cruelty, dealing 1d4 psychic damage and giving disadvantage on its next attack.
-
-https://5e.tools/spells.html#vicious%20mockery_xphb
-
----
-
 ### Mislead
 
 ```yaml
@@ -557,3 +524,35 @@ author: Cult of Cyric
 As a bonus action, you cloak yourself in deceptive shadows for 1 minute. While cloaked, you make no sound when moving and leave behind neither physical footprints nor forensic trace. The first attack you hit while cloaked deals an extra 2d6 necrotic damage and ends the cloak.
 
 ---
+
+### Searing Gaze
+
+```yaml
+id: fire_initiate_searing_gaze
+tier: initiate
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
+```
+
+As a bonus action, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 minute.
+
+---
+
+### Blazing Presence
+
+```yaml
+id: fire_adept_blazing_presence
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
+```
+
+Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.

@@ -3,23 +3,6 @@
 Tradition: Divine
 Concept: Ilmater’s endurance, hope, protection, healing, and freedom from bonds.
 
-### Draconic Regeneration of the Emerald Moon
-
-```yaml
-id: water_master_draconic_regeneration_emerald_moon
-tier: master
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-author: Lesbian Dragons
-location: Leatrux
-```
-
-While under direct moonlight, you regain 1 hit point at the start of each of your turns. You can extend this regeneration to any creature within 60 feet by spending 1 essence point per creature at the start of your turn.
-
----
-
 ### Spare the Dying
 
 ```yaml
@@ -505,3 +488,72 @@ Flame-like solar radiance descends on a creature you can see within range. The t
 https://5e.tools/spells.html#sacred%20flame_xphb
 
 ---
+
+### Heroism
+
+```yaml
+id: providence_1st_heroism
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Paladin / Cleric (Peace Domain)
+```
+
+A willing creature is imbued with bravery: immune to being frightened, and gains temporary HP at the start of each turn.
+
+https://5e.tools/spells.html#heroism_xphb
+
+---
+
+### Light
+
+```yaml
+id: moon_cantrip_light
+tier: cantrip
+isActive: false
+isPassive: false
+isSpell: false
+isCantrip: true
+author: Cleric / Evocation
+```
+
+You touch one object. Until the spell ends, the object sheds bright sunlight in a 20-foot radius and dim light for an additional 20 feet.
+
+https://5e.tools/spells.html#light_xphb
+
+---
+
+### Guiding Bolt
+
+```yaml
+id: moon_1st_guiding_bolt
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Cleric / Evocation
+```
+
+A flash of sunlight streaks toward a creature of your choice within range. On a hit, the target takes 4d6 radiant damage, and the next attack roll against it has advantage.
+
+https://5e.tools/spells.html#guiding%20bolt_xphb
+
+---
+
+### Fortune Favors the Swift
+
+```yaml
+id: wind_adept_fortune_favors_the_swift
+tier: adept
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Wang Dabao
+location: Phudara / Isle of Whispers
+```
+
+Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it to one d20 roll before the end of your next turn.

@@ -39,24 +39,6 @@ https://5e.tools/spells.html#whirlwind_xphb
 
 ---
 
-### Thunderclap
-
-```yaml
-id: tempest_cantrip_thunderclap
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Cleric / Evocation
-```
-
-Create a burst of thunderous sound heard up to 100 feet away, dealing 1d6 thunder damage to all adjacent creatures.
-
-https://5e.tools/spells.html#thunderclap_xphb
-
----
-
 ### Stormborn Presence
 
 ```yaml
@@ -124,24 +106,6 @@ author: Cleric (Tempest Domain) / Conjuration
 A churning storm cloud forms in a 360-foot radius, unleashing lightning bolts, acidic rain, hail, and howling hurricane winds.
 
 https://5e.tools/spells.html#storm%20of%20vengeance_xphb
-
----
-
-### Thunderwave
-
-```yaml
-id: tempest_1st_thunderwave
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric (Tempest Domain) / Evocation
-```
-
-A wave of thunderous force deals 2d8 thunder damage and pushes creatures 10 feet away.
-
-https://5e.tools/spells.html#thunderwave_xphb
 
 ---
 
@@ -323,3 +287,95 @@ Hail and freezing rain batter an area, turning the ground slick and difficult to
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#ice%20storm_phb).
 
 ---
+
+### Lightning Lure
+
+```yaml
+id: v2_lightning_lightning_lure
+tier: cantrip
+isActive: false
+isPassive: false
+isSpell: false
+isCantrip: true
+author: D&D 5e (TCE)
+```
+
+A lash of lightning pulls a nearby creature toward you and shocks it if it comes close.
+
+Source reference: [D&D 5e TCE on 5e.tools](https://5e.tools/spells.html#lightning%20lure_tce).
+
+---
+
+### Lightning Insight
+
+```yaml
+id: lightning_initiate_lightning_insight
+tier: initiate
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
+```
+
+When on or near water, you can use your connection to lightning to sense changes in weather. You can use a bonus action to gain advantage on Wisdom (Perception) checks to spot distant ships, landmarks, or other navigation hazards.
+
+---
+## Adept Tier
+
+---
+
+### Thunderous Entrance
+
+```yaml
+id: lightning_adept_thunderous_entrance
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
+```
+
+You can make a dramatic entrance by creating a booming thunderclap that announces your presence. This effect grants you expertise on Charisma (Performance) checks to make a memorable first impression.
+
+---
+
+### Thunderous Strike
+
+```yaml
+id: lightning_adept_thunderous_strike
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Lei Zhen
+location: Phudara / Isle of Whispers
+```
+
+When you hit a creature with a melee weapon attack, you can channel the force of a thunderstorm into your strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn. This ability can only be used once per turn, and once a creature is stunned by this ability, it cannot be stunned again by it for 1 minute.
+
+---
+
+### Extinguishing Lightning
+
+```yaml
+id: lightning_essence_extinguishing_lightning
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Nethan (Nilo's Father)
+location: Leatrux
+```
+
+As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save, or half as much on a successful one.
+
+On a failed save, one ongoing magical effect or spell on the creature immediately ends (your choice).
+
+---
+## Cantrips

@@ -136,6 +136,18 @@ export const pestilenceAbilities = [
     isSpell: false,
     isCantrip: false,
     location: "Sirius",
+  },
+  {
+    id: "poison_adept_venomous_precision",
+    name: "Venomous Precision",
+    description: "When attacking a creature that is poisoned, you have advantage on attack rolls against that creature.",
+    tier: "adept",
+    isActive: false,
+    isPassive: true,
+    isSpell: false,
+    isCantrip: false,
+    author: "Espora Tribe",
+    location: "Phudara / Isle of Whispers",
   }
 ];
 

@@ -127,6 +127,18 @@ export const shadowAbilities = [
     isCantrip: false,
     author: "Yuji",
     location: "Leatrux",
+  },
+  {
+    id: "wind_adept_echoing_footsteps",
+    name: "Echoing Footsteps",
+    description: "You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 100 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.",
+    tier: "adept",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
   }
 ];
 
@@ -265,5 +277,27 @@ export const shadowSpells = [
     isSpell: true,
     isCantrip: false,
     author: "Shadow Weave / Evocation",
+  },
+  {
+    id: "v2_moon_mirror_image",
+    name: "Mirror Image",
+    description: "Several illusory reflections surround you, confusing attacks aimed at your true form.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mirror%20image_phb).",
+    tier: "2nd",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+    author: "D&D 5e (PHB)",
+  },
+  {
+    id: "v2_moon_blur",
+    name: "Blur",
+    description: "Your outline shifts and shimmers, making your position difficult to read.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#blur_phb).",
+    tier: "2nd",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+    author: "D&D 5e (PHB)",
   }
 ];

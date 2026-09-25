@@ -471,3 +471,54 @@ Darkness and screaming horrors fill a 60-foot-radius sphere. Creatures in the ar
 https://5e.tools/spells.html#maddening%20darkness_xphb
 
 ---
+
+### Mirror Image
+
+```yaml
+id: v2_moon_mirror_image
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+Several illusory reflections surround you, confusing attacks aimed at your true form.
+
+Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mirror%20image_phb).
+
+---
+
+### Blur
+
+```yaml
+id: v2_moon_blur
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+Your outline shifts and shimmers, making your position difficult to read.
+
+Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#blur_phb).
+
+---
+
+### Echoing Footsteps
+
+```yaml
+id: wind_adept_echoing_footsteps
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
+```
+
+You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 100 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.

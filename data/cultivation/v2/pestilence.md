@@ -488,3 +488,18 @@ You break a curse affecting a creature or object.
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#remove%20curse_phb).
 
 ---
+
+### Venomous Precision
+
+```yaml
+id: poison_adept_venomous_precision
+tier: adept
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+```
+
+When attacking a creature that is poisoned, you have advantage on attack rolls against that creature.

@@ -204,60 +204,6 @@ https://5e.tools/spells.html#true%20seeing_xphb
 
 ---
 
-### Mirror Image
-
-```yaml
-id: v2_moon_mirror_image
-tier: 2nd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB)
-```
-
-Several illusory reflections surround you, confusing attacks aimed at your true form.
-
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mirror%20image_phb).
-
----
-
-### Blur
-
-```yaml
-id: v2_moon_blur
-tier: 2nd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB)
-```
-
-Your outline shifts and shimmers, making your position difficult to read.
-
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#blur_phb).
-
----
-
-### Shapechange
-
-```yaml
-id: v2_moon_shapechange
-tier: 9th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB)
-```
-
-You take the form of another creature while retaining your own mind and abilities.
-
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shapechange_phb).
-
----
-
 ### Dancing Lights
 
 ```yaml
@@ -330,42 +276,6 @@ https://5e.tools/spells.html#dream_xphb
 
 ---
 
-### Light
-
-```yaml
-id: moon_cantrip_light
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Cleric / Evocation
-```
-
-You touch one object. Until the spell ends, the object sheds bright sunlight in a 20-foot radius and dim light for an additional 20 feet.
-
-https://5e.tools/spells.html#light_xphb
-
----
-
-### Guiding Bolt
-
-```yaml
-id: moon_1st_guiding_bolt
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric / Evocation
-```
-
-A flash of sunlight streaks toward a creature of your choice within range. On a hit, the target takes 4d6 radiant damage, and the next attack roll against it has advantage.
-
-https://5e.tools/spells.html#guiding%20bolt_xphb
-
----
-
 ### Crown of Stars
 
 ```yaml
@@ -383,3 +293,50 @@ Seven motes of starlight orbit you and can be hurled as radiant projectiles.
 Source reference: [D&D 5e XGE on 5e.tools](https://5e.tools/spells.html#crown%20of%20stars_xge).
 
 ---
+
+### Arcane Aegis
+
+```yaml
+id: metal_1st_level_arcane_aegis
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+```
+
+https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24
+
+---
+
+### Draconic Regeneration of the Emerald Moon
+
+```yaml
+id: water_master_draconic_regeneration_emerald_moon
+tier: master
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Lesbian Dragons
+location: Leatrux
+```
+
+While under direct moonlight, you regain 1 hit point at the start of each of your turns. You can extend this regeneration to any creature within 60 feet by spending 1 essence point per creature at the start of your turn.
+
+---
+
+### Rain of Revelation
+
+```yaml
+id: water_adept_rain_of_revelation
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
+```
+
+You can summon a gentle, magical rain that grants clarity and insight to those who stand in it. Allies within a 20-foot radius can ask one question about their future or destiny, and you provide a vague but helpful answer based on your understanding of the world.

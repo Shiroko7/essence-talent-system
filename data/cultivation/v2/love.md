@@ -186,24 +186,6 @@ https://5e.tools/spells.html#antipathy%20sympathy_xphb
 
 ---
 
-### Heroism
-
-```yaml
-id: providence_1st_heroism
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Paladin / Cleric (Peace Domain)
-```
-
-A willing creature is imbued with bravery: immune to being frightened, and gains temporary HP at the start of each turn.
-
-https://5e.tools/spells.html#heroism_xphb
-
----
-
 ### Compulsion
 
 ```yaml
@@ -275,3 +257,36 @@ You influence several creatures with a brief course of action that sounds reason
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mass%20suggestion_phb).
 
 ---
+
+### Vicious Mockery
+
+```yaml
+id: torment_cantrip_vicious_mockery
+tier: cantrip
+isActive: false
+isPassive: false
+isSpell: false
+isCantrip: true
+author: Enchantment / Torment
+```
+
+Unleash strings of barbed insults and psychic cruelty, dealing 1d4 psychic damage and giving disadvantage on its next attack.
+
+https://5e.tools/spells.html#vicious%20mockery_xphb
+
+---
+
+### Tide of Emotions
+
+```yaml
+id: water_adept_tide_of_emotions
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Lluvia Tribe
+location: Phudara / Isle of Whispers
+```
+
+By channelling the ebb and flow of water, you can influence the emotions of others within a 30-foot radius. Choose one emotion (calm, fear, or joy); affected creatures must succeed on a Wisdom saving throw or be overwhelmed by that emotion for 1 hour.

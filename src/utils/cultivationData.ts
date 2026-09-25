@@ -1,6 +1,7 @@
 import { alchemyAbilities as v2_alchemyAbilities, alchemyCantrips as v2_alchemyCantrips, alchemySpells as v2_alchemySpells } from '../components/cultivation/consts/v2/alchemy';
 import { earthAbilities as v2_earthAbilities, earthCantrips as v2_earthCantrips, earthSpells as v2_earthSpells } from '../components/cultivation/consts/v2/earth';
 import { fireAbilities as v2_fireAbilities, fireCantrips as v2_fireCantrips, fireSpells as v2_fireSpells } from '../components/cultivation/consts/v2/fire';
+import { heartAbilities as v2_heartAbilities, heartCantrips as v2_heartCantrips, heartSpells as v2_heartSpells } from '../components/cultivation/consts/v2/heart';
 import { loveAbilities as v2_loveAbilities, loveCantrips as v2_loveCantrips, loveSpells as v2_loveSpells } from '../components/cultivation/consts/v2/love';
 import { lunarAbilities as v2_lunarAbilities, lunarCantrips as v2_lunarCantrips, lunarSpells as v2_lunarSpells } from '../components/cultivation/consts/v2/lunar';
 import { metalAbilities as v2_metalAbilities, metalCantrips as v2_metalCantrips, metalSpells as v2_metalSpells } from '../components/cultivation/consts/v2/metal';
@@ -31,6 +32,7 @@ const dataByVersion: Record<CultivationVersion, Record<string, PathData>> = {
     "alchemy": { abilities: v2_alchemyAbilities as Ability[], cantrips: v2_alchemyCantrips as Ability[], spells: v2_alchemySpells as Ability[] },
     "earth": { abilities: v2_earthAbilities as Ability[], cantrips: v2_earthCantrips as Ability[], spells: v2_earthSpells as Ability[] },
     "fire": { abilities: v2_fireAbilities as Ability[], cantrips: v2_fireCantrips as Ability[], spells: v2_fireSpells as Ability[] },
+    "heart": { abilities: v2_heartAbilities as Ability[], cantrips: v2_heartCantrips as Ability[], spells: v2_heartSpells as Ability[] },
     "love": { abilities: v2_loveAbilities as Ability[], cantrips: v2_loveCantrips as Ability[], spells: v2_loveSpells as Ability[] },
     "lunar": { abilities: v2_lunarAbilities as Ability[], cantrips: v2_lunarCantrips as Ability[], spells: v2_lunarSpells as Ability[] },
     "metal": { abilities: v2_metalAbilities as Ability[], cantrips: v2_metalCantrips as Ability[], spells: v2_metalSpells as Ability[] },
