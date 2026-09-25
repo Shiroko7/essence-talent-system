@@ -57,13 +57,13 @@ export function isTierUnlocked(
       if (prevTier === 'initiate' && (spellTier === 'cantrip' || spellTier === '1st' || spellTier === '2nd')) {
         return true;
       }
-      if (prevTier === 'adept' && spellTier === '3rd' || spellTier === '4th') {
+      if (prevTier === 'adept' && (spellTier === '3rd' || spellTier === '4th')) {
         return true;
       }
-      if (prevTier === 'master' && spellTier === '5th' || spellTier === '6th') {
+      if (prevTier === 'master' && (spellTier === '5th' || spellTier === '6th')) {
         return true;
       }
-      if (prevTier === 'grandmaster' && spellTier === '7th' || spellTier === '8th') {
+      if (prevTier === 'grandmaster' && (spellTier === '7th' || spellTier === '8th')) {
         return true;
       }
       if (prevTier === 'greatgrandmaster' && spellTier === '9th') {
