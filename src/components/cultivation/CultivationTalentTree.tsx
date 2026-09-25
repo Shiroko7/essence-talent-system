@@ -60,7 +60,7 @@ const CultivationTalentTree: React.FC<{ version: CultivationVersion }> = ({ vers
     updateActiveEssence,
     setCharacterState
   } = useCultivationAllocation({
-    initialLevel: 9,
+    initialLevel: 11,
     paths,
     catalogVersion: version,
     allAbilities: abilities,

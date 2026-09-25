@@ -78,7 +78,7 @@ const EssenceTalentTree: React.FC = () => {
     updateActiveEssence,
     setCharacterState
   } = useEssenceAllocation({
-    initialLevel: 9,
+    initialLevel: 11,
     allAbilities: abilities,
     cantrips,
     spells

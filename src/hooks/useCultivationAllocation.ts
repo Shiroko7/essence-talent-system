@@ -29,7 +29,7 @@ interface CultivationAllocationProps {
 }
 
 export const useCultivationAllocation = ({
-  initialLevel = 9,
+  initialLevel = 11,
   initialSelectedAbilities = [],
   paths,
   catalogVersion,

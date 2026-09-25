@@ -191,7 +191,7 @@ function useControllerFromAllocation<C extends CharacterLike>(
 export function useV1Controller(): TalentController {
   const [system] = useState(buildV1System);
   const [data] = useState(importEssenceData);
-  const allocation = useEssenceAllocation({ initialLevel: 9, allAbilities: data.abilities, cantrips: data.cantrips, spells: data.spells });
+  const allocation = useEssenceAllocation({ initialLevel: 11, allAbilities: data.abilities, cantrips: data.cantrips, spells: data.spells });
 
   return useControllerFromAllocation(
     system,
@@ -221,7 +221,7 @@ export function useV2Controller(): TalentController {
   const [system] = useState(buildV2System);
   const [data] = useState(() => importCultivationData('v2'));
   const allocation = useCultivationAllocation({
-    initialLevel: 9,
+    initialLevel: 11,
     paths: data.paths,
     catalogVersion: 'v2',
     allAbilities: data.abilities,
