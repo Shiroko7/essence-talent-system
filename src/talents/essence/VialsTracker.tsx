@@ -1,7 +1,8 @@
 import React from 'react';
-import { Minus, Plus } from 'lucide-react';
+import { Info, Minus, Plus } from 'lucide-react';
 import { costOf, tint } from '../model';
-import { AbilityIcon, RestButtons } from '../ui';
+import { AbilityIcon, PathLinkButton, RestButtons } from '../ui';
+import { Ability } from '../../types/essence';
 import { TrackedPath, TrackerProps, setPool, trackerGroups } from './shared';
 import type { TalentController } from '../model';
 
@@ -11,8 +12,10 @@ const VIAL_HEIGHT = 168;
  * One vial. Liquid height is the current pool; the striped cap is essence held
  * by passives. Click anywhere on the glass to set the level to that mark.
  */
-const Vial: React.FC<{ ctl: TalentController; tracked: TrackedPath; onOpenPath?: (id: string) => void }> = ({ ctl, tracked, onOpenPath }) => {
-  const { path, pool, actions } = tracked;
+const Vial: React.FC<{
+  ctl: TalentController; tracked: TrackedPath; onOpenPath?: (id: string) => void; onInfo?: (a: Ability) => void;
+}> = ({ ctl, tracked, onOpenPath, onInfo }) => {
+  const { path, pool, actions, constant } = tracked;
   const total = Math.max(1, pool.max + pool.reserved);
   const unit = VIAL_HEIGHT / total;
 
@@ -75,36 +78,50 @@ const Vial: React.FC<{ ctl: TalentController; tracked: TrackedPath; onOpenPath?:
         </button>
       </div>
 
-      <button
-        onClick={() => onOpenPath?.(path.id)}
-        disabled={!onOpenPath}
-        className={`font-display text-xs tracking-wide truncate max-w-full ${onOpenPath ? 'hover:underline underline-offset-4' : ''}`}
-        style={{ color: path.accent }}
-      >
-        {path.name}
-      </button>
+      <span className="font-display text-xs tracking-wide truncate max-w-full" style={{ color: path.accent }}>{path.name}</span>
+      <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
 
-      {/* Actions as icon buttons: tap to spend */}
-      <div className="flex flex-wrap justify-center gap-1">
+      {/* Actions as icon buttons: tap to spend, the corner badge opens details */}
+      <div className="flex flex-wrap justify-center gap-1.5 pt-1">
         {actions.map(a => {
           const cost = costOf(a);
           const disabled = pool.current < cost;
           return (
-            <button
-              key={a.id}
-              onClick={() => ctl.spend(a, path.id)}
-              disabled={disabled}
-              title={`${a.name} — spend ${cost}`}
-              className="relative disabled:opacity-35 disabled:cursor-not-allowed hover:scale-110 transition-transform"
-            >
-              <AbilityIcon ability={a} path={path} status="learned" size={28} />
-              <span className="absolute -bottom-1 -right-1 min-w-[14px] h-[14px] px-0.5 rounded-full bg-void border text-[9px] font-display leading-[12px]" style={{ borderColor: path.accent, color: path.accent }}>
-                {cost}
-              </span>
-            </button>
+            <span key={a.id} className="relative">
+              <button
+                onClick={() => ctl.spend(a, path.id)}
+                disabled={disabled}
+                title={`${a.name} — spend ${cost}`}
+                className="block disabled:opacity-35 disabled:cursor-not-allowed hover:scale-110 transition-transform"
+              >
+                <AbilityIcon ability={a} path={path} status="learned" size={30} />
+                <span className="absolute -bottom-1 -right-1 min-w-[14px] h-[14px] px-0.5 rounded-full bg-void border text-[9px] font-display leading-[12px]" style={{ borderColor: path.accent, color: path.accent }}>
+                  {cost}
+                </span>
+              </button>
+              {onInfo && (
+                <button
+                  onClick={() => onInfo(a)}
+                  className="absolute -top-1.5 -left-1.5 w-4 h-4 rounded-full bg-void border border-gold-subtle text-mist hover:text-gold hover:border-gold flex items-center justify-center"
+                  title={`Read ${a.name}`}
+                  aria-label={`Read ${a.name}`}
+                >
+                  <Info size={10} />
+                </button>
+              )}
+            </span>
           );
         })}
       </div>
+      {constant.length > 0 && (
+        <div className="flex flex-wrap justify-center gap-1" title="Always on">
+          {constant.map(a => (
+            <button key={a.id} onClick={() => onInfo?.(a)} disabled={!onInfo} title={`${a.name} (always on)`} className="opacity-70 hover:opacity-100">
+              <AbilityIcon ability={a} path={path} status="learned" size={20} />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -114,10 +131,10 @@ const Vial: React.FC<{ ctl: TalentController; tracked: TrackedPath; onOpenPath?:
  * liquid is the pool: readable at a glance from across the table, set by clicking
  * the glass, spent by tapping an ability's icon beneath it.
  */
-const VialsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => (
+const VialsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => (
   <div className="space-y-4">
     <div className="flex flex-wrap items-center justify-between gap-3">
-      <p className="text-xs text-mist flex-1 min-w-[240px]">Click the glass to set a level · tap an icon to spend its cost · stripes are held by passives</p>
+      <p className="text-xs text-mist flex-1 min-w-[240px]">Click the glass to set a level · tap an icon to spend its cost · ⓘ reads it · stripes are held by passives</p>
       <RestButtons ctl={ctl} compact />
     </div>
     <div className="flex flex-wrap gap-4">
@@ -128,7 +145,7 @@ const VialsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => (
             <span className="font-display text-xs tabular-nums text-fog">{g.current} / {g.max}</span>
           </header>
           <div className="flex flex-wrap justify-center gap-3 pb-4">
-            {g.paths.map(t => <Vial key={t.path.id} ctl={ctl} tracked={t} onOpenPath={onOpenPath} />)}
+            {g.paths.map(t => <Vial key={t.path.id} ctl={ctl} tracked={t} onOpenPath={onOpenPath} onInfo={onInfo} />)}
           </div>
           {/* The shelf */}
           <div className="h-2 -mx-4 rounded-b-xl" style={{ background: `linear-gradient(180deg, ${tint(g.group.accent, 0.35)}, ${tint(g.group.accent, 0.08)})` }} />

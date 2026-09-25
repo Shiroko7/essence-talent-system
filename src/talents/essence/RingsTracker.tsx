@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Minus, Plus, RotateCcw } from 'lucide-react';
 import { tint } from '../model';
 import type { TalentController } from '../model';
-import { AbilityIcon, RestButtons, UseButton } from '../ui';
+import { AbilityIcon, AlwaysOnChips, InfoButton, PathLinkButton, RestButtons, UseButton } from '../ui';
 import { TrackedPath, TrackerProps, refillPath, trackerGroups } from './shared';
 
 const SIZE = 92;
@@ -88,7 +88,7 @@ const Ring: React.FC<{
  * Scroll over a ring (or focus it and use arrow keys) to adjust; select one to
  * open its tray with actions and quick controls.
  */
-const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => {
+const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
   const groups = trackerGroups(ctl);
   const all = groups.flatMap(g => g.paths);
   const [selectedId, setSelectedId] = useState<string | null>(all[0]?.path.id ?? null);
@@ -127,9 +127,7 @@ const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => {
               <button onClick={() => ctl.adjustPool(selected.path.id, 1)} disabled={selected.pool.current >= selected.pool.max} className="w-7 h-7 rounded border border-gold-subtle text-fog hover:text-essence-wood disabled:opacity-30 flex items-center justify-center"><Plus size={13} /></button>
               <button onClick={() => refillPath(ctl, selected.path.id)} className="ml-1 text-xs text-mist hover:text-gold inline-flex items-center gap-1"><RotateCcw size={12} /> Refill</button>
             </div>
-            {onOpenPath && (
-              <button onClick={() => onOpenPath(selected.path.id)} className="ml-auto text-xs font-display text-gold hover:text-gold-bright">Open tree →</button>
-            )}
+            <span className="ml-auto"><PathLinkButton path={selected.path} onOpenPath={onOpenPath} /></span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {selected.actions.map(a => (
@@ -137,12 +135,11 @@ const RingsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => {
                 <AbilityIcon ability={a} path={selected.path} status="learned" size={26} />
                 <span className="flex-1 text-sm text-parchment truncate">{a.name}</span>
                 <UseButton ctl={ctl} ability={a} path={selected.path} compact />
+                <InfoButton ability={a} onInfo={onInfo} />
               </div>
             ))}
           </div>
-          {selected.constant.length > 0 && (
-            <p className="text-xs text-mist mt-3">Always on · {selected.constant.map(a => a.name).join(', ')}</p>
-          )}
+          <AlwaysOnChips abilities={selected.constant} path={selected.path} onInfo={onInfo} className="mt-3" />
         </div>
       )}
     </div>

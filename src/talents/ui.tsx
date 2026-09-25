@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  ChevronDown, Download, Info, Lock, Minus, Moon, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
+  ChevronDown, Download, Info, Lock, Minus, Moon, Network, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
 } from 'lucide-react';
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
@@ -495,26 +495,20 @@ export const AbilityIcon: React.FC<{
 /* ------------------------------------------------------------- essence */
 
 /** Per-path pool card: pips, counter, and one-tap Use for every learned action. */
-const PoolCard: React.FC<{ ctl: TalentController; path: SystemPath; onOpenPath?: (pathId: string) => void; showAbilities: boolean }> = ({
-  ctl, path, onOpenPath, showAbilities
-}) => {
+const PoolCard: React.FC<{
+  ctl: TalentController; path: SystemPath; onOpenPath?: (pathId: string) => void; onInfo?: (ability: Ability) => void; showAbilities: boolean;
+}> = ({ ctl, path, onOpenPath, onInfo, showAbilities }) => {
   const learned = sortAbilities((ctl.system.abilitiesByPath[path.id] || []).filter(a => ctl.isLearned(a.id)));
   const actions = learned.filter(a => !reservesEssence(a));
   const constant = learned.filter(a => reservesEssence(a));
   return (
     <div className="rounded-lg p-3.5 border flex flex-col gap-3" style={{ borderColor: tint(path.accent, 0.25), background: tint(path.accent, 0.05) }}>
       <div className="flex items-center gap-2.5">
-        <button
-          onClick={() => onOpenPath?.(path.id)}
-          disabled={!onOpenPath}
-          className="flex items-center gap-2.5 flex-1 min-w-0 text-left group"
-          title={onOpenPath ? `Open the ${path.name} tree` : undefined}
-        >
+        <span className="flex items-center gap-2.5 flex-1 min-w-0">
           <PathSigil path={path} size={30} active />
-          <span className={`font-display text-sm tracking-wide truncate ${onOpenPath ? 'group-hover:underline underline-offset-4' : ''}`} style={{ color: path.accent }}>
-            {path.name}
-          </span>
-        </button>
+          <span className="font-display text-sm tracking-wide truncate" style={{ color: path.accent }}>{path.name}</span>
+          <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
+        </span>
         <PoolCounter ctl={ctl} path={path} />
       </div>
       <PoolPips ctl={ctl} path={path} size="lg" />
@@ -525,16 +519,12 @@ const PoolCard: React.FC<{ ctl: TalentController; path: SystemPath; onOpenPath?:
               <AbilityIcon ability={a} path={path} status="learned" size={22} />
               <span className="flex-1 text-sm text-parchment truncate">{a.name}</span>
               <UseButton ctl={ctl} ability={a} path={path} compact />
+              <InfoButton ability={a} onInfo={onInfo} />
             </li>
           ))}
         </ul>
       )}
-      {showAbilities && constant.length > 0 && (
-        <p className="text-xs text-mist leading-snug">
-          <span className="font-display tracking-wide text-fog">Always on · </span>
-          {constant.map(a => a.name).join(', ')}
-        </p>
-      )}
+      {showAbilities && <AlwaysOnChips abilities={constant} path={path} onInfo={onInfo} />}
     </div>
   );
 };
@@ -544,8 +534,8 @@ const PoolCard: React.FC<{ ctl: TalentController; path: SystemPath; onOpenPath?:
  * as separate resources. The shared play surface for all designs.
  */
 export const EssenceBoard: React.FC<{
-  ctl: TalentController; onOpenPath?: (pathId: string) => void; showAbilities?: boolean; columns?: 2 | 3;
-}> = ({ ctl, onOpenPath, showAbilities = true, columns = 3 }) => {
+  ctl: TalentController; onOpenPath?: (pathId: string) => void; onInfo?: (ability: Ability) => void; showAbilities?: boolean; columns?: 2 | 3;
+}> = ({ ctl, onOpenPath, onInfo, showAbilities = true, columns = 3 }) => {
   const groups = pathsByGroup(ctl.system, ctl.learnedPaths);
   if (!groups.length) {
     return (
@@ -572,7 +562,7 @@ export const EssenceBoard: React.FC<{
               <span className="font-display text-sm tabular-nums text-fog">{totals.current}<span className="text-mist"> / {totals.max}</span></span>
             </header>
             <div className={`grid gap-3 sm:grid-cols-2 ${columns === 3 ? 'xl:grid-cols-3' : ''}`}>
-              {paths.map(p => <PoolCard key={p.id} ctl={ctl} path={p} onOpenPath={onOpenPath} showAbilities={showAbilities} />)}
+              {paths.map(p => <PoolCard key={p.id} ctl={ctl} path={p} onOpenPath={onOpenPath} onInfo={onInfo} showAbilities={showAbilities} />)}
             </div>
           </section>
         );
@@ -648,6 +638,66 @@ export const AbilityTile: React.FC<{
           <p className="text-[11px] text-mist mt-2">Click to {learned ? 'unlearn' : 'learn'} · ⓘ for the full text</p>
         </div>
       )}
+    </div>
+  );
+};
+
+/** Shortcut from a tracker to the path's full talent tree. */
+export const PathLinkButton: React.FC<{ path: SystemPath; onOpenPath?: (pathId: string) => void; compact?: boolean }> = ({
+  path, onOpenPath, compact
+}) => {
+  if (!onOpenPath) return null;
+  return (
+    <button
+      onClick={() => onOpenPath(path.id)}
+      title={`See every ${path.name} ability`}
+      aria-label={`See every ${path.name} ability`}
+      className={`inline-flex items-center gap-1 rounded border font-display tracking-wide whitespace-nowrap transition-colors hover:bg-charcoal ${
+        compact ? 'px-1.5 py-0.5 text-[10px]' : 'px-2 py-1 text-[11px]'
+      }`}
+      style={{ borderColor: tint(path.accent, 0.4), color: path.accent }}
+    >
+      <Network size={compact ? 10 : 12} /> {compact ? 'Tree' : 'All abilities'}
+    </button>
+  );
+};
+
+/** Opens an ability's full details. */
+export const InfoButton: React.FC<{ ability: Ability; onInfo?: (ability: Ability) => void; className?: string }> = ({ ability, onInfo, className = '' }) => {
+  if (!onInfo) return null;
+  return (
+    <button
+      onClick={e => { e.stopPropagation(); onInfo(ability); }}
+      className={`p-1 rounded text-mist hover:text-gold hover:bg-charcoal transition-colors flex-shrink-0 ${className}`}
+      title={`Read ${ability.name}`}
+      aria-label={`Read ${ability.name}`}
+    >
+      <Info size={14} />
+    </button>
+  );
+};
+
+/** Learned passives and cantrips as chips that open their details. */
+export const AlwaysOnChips: React.FC<{ abilities: Ability[]; path: SystemPath; onInfo?: (ability: Ability) => void; className?: string }> = ({
+  abilities, path, onInfo, className = ''
+}) => {
+  if (!abilities.length) return null;
+  return (
+    <div className={`flex flex-wrap items-center gap-1.5 ${className}`}>
+      <span className="text-[10px] font-display tracking-widest uppercase text-mist">Always on</span>
+      {abilities.map(a => (
+        <button
+          key={a.id}
+          onClick={() => onInfo?.(a)}
+          disabled={!onInfo}
+          className="inline-flex items-center gap-1 rounded-full border border-gold-subtle bg-void/40 pl-0.5 pr-2 py-0.5 text-[11px] text-fog hover:text-parchment hover:border-gold/40 disabled:hover:text-fog"
+          title={onInfo ? `Read ${a.name}` : a.name}
+        >
+          <AbilityIcon ability={a} path={path} status="learned" size={16} />
+          {a.name}
+          {onInfo && <Info size={10} className="opacity-60" />}
+        </button>
+      ))}
     </div>
   );
 };

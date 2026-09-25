@@ -9,7 +9,9 @@ import { useV1Controller, useV2Controller } from './useTalentController';
 import { Toast } from './ui';
 import ConstellationLayout from './layouts/ConstellationLayout';
 import ClassicLayout from './layouts/ClassicLayout';
-import { ESSENCE_VARIANTS, EssenceVariant, EssenceVariantContext, isEssenceVariant } from './essence/variant';
+import {
+  DEFAULT_ESSENCE_VARIANT, ESSENCE_VARIANTS, EssenceVariant, EssenceVariantContext, isEssenceVariant
+} from './essence/variant';
 
 export interface LayoutProps {
   ctl: TalentController;
@@ -59,7 +61,7 @@ const useEssenceVariant = (): [EssenceVariant, (id: EssenceVariant) => void] => 
   const fromUrl = params.get('essence');
   let stored: string | null = null;
   try { stored = localStorage.getItem(ESSENCE_STORAGE_KEY); } catch { /* storage unavailable */ }
-  const variant = isEssenceVariant(fromUrl) ? fromUrl : isEssenceVariant(stored) ? stored : 'ledger';
+  const variant = isEssenceVariant(fromUrl) ? fromUrl : isEssenceVariant(stored) ? stored : DEFAULT_ESSENCE_VARIANT;
 
   const setVariant = (id: EssenceVariant) => {
     try { localStorage.setItem(ESSENCE_STORAGE_KEY, id); } catch { /* storage unavailable */ }

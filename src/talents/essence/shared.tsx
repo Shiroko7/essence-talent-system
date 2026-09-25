@@ -5,6 +5,8 @@ export interface TrackerProps {
   ctl: TalentController;
   /** Jump to a path's talent tree, when the host layout supports it. */
   onOpenPath?: (pathId: string) => void;
+  /** Open an ability's full details. */
+  onInfo?: (ability: Ability) => void;
 }
 
 export interface TrackedPath {

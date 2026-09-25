@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { History, Minus, Moon, Plus, Undo2 } from 'lucide-react';
 import { costOf, tint } from '../model';
 import type { TalentController } from '../model';
-import { AbilityIcon, EmptyState, PathSigil } from '../ui';
+import { AbilityIcon, AlwaysOnChips, EmptyState, InfoButton, PathLinkButton, PathSigil } from '../ui';
 import { TrackerProps, trackerGroups } from './shared';
 
 interface LogEntry {
@@ -54,7 +54,7 @@ const useCastLog = (ctl: TalentController) => {
  * cost; every change (spends, ±1, rests) lands in a session log you can undo
  * entry by entry, so a misclick mid-combat is one tap to fix.
  */
-const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => {
+const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
   const groups = trackerGroups(ctl);
   const { log, record, undo, clear } = useCastLog(ctl);
 
@@ -74,10 +74,11 @@ const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => {
               {g.paths.map(({ path, pool, actions, constant }) => (
                 <div key={path.id} className="rounded-lg border p-3" style={{ borderColor: tint(path.accent, 0.3), background: tint(path.accent, 0.04) }}>
                   <div className="flex items-center gap-2 mb-2">
-                    <button onClick={() => onOpenPath?.(path.id)} disabled={!onOpenPath} className="flex items-center gap-2 flex-1 min-w-0 text-left">
+                    <span className="flex items-center gap-2 flex-1 min-w-0">
                       <PathSigil path={path} size={28} active />
                       <span className="font-display text-sm truncate" style={{ color: path.accent }}>{path.name}</span>
-                    </button>
+                      <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
+                    </span>
                     <button onClick={() => record(`${path.name} −1`, { [path.id]: -Math.min(1, pool.current) })} disabled={pool.current <= 0}
                       className="w-6 h-6 rounded border border-gold-subtle text-fog hover:text-essence-fire disabled:opacity-30 flex items-center justify-center" aria-label="Spend 1">
                       <Minus size={11} />
@@ -99,23 +100,23 @@ const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath }) => {
                     {actions.map(a => {
                       const cost = costOf(a);
                       return (
-                        <button
-                          key={a.id}
-                          onClick={() => record(a.name, { [path.id]: -cost })}
-                          disabled={pool.current < cost}
-                          className="w-full flex items-center gap-2.5 rounded-md border px-2 py-1.5 text-left transition-all hover:-translate-y-px disabled:opacity-35 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                          style={{ borderColor: tint(path.accent, 0.3), background: 'rgba(10,10,15,0.6)' }}
-                        >
-                          <AbilityIcon ability={a} path={path} status="learned" size={26} />
-                          <span className="flex-1 text-sm text-parchment truncate">{a.name}</span>
-                          <span className="font-display text-sm tabular-nums" style={{ color: path.accent }}>−{cost}</span>
-                        </button>
+                        <div key={a.id} className="flex items-center gap-1">
+                          <button
+                            onClick={() => record(a.name, { [path.id]: -cost })}
+                            disabled={pool.current < cost}
+                            className="flex-1 min-w-0 flex items-center gap-2.5 rounded-md border px-2 py-1.5 text-left transition-all hover:-translate-y-px disabled:opacity-35 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                            style={{ borderColor: tint(path.accent, 0.3), background: 'rgba(10,10,15,0.6)' }}
+                          >
+                            <AbilityIcon ability={a} path={path} status="learned" size={26} />
+                            <span className="flex-1 text-sm text-parchment truncate">{a.name}</span>
+                            <span className="font-display text-sm tabular-nums" style={{ color: path.accent }}>−{cost}</span>
+                          </button>
+                          <InfoButton ability={a} onInfo={onInfo} />
+                        </div>
                       );
                     })}
                   </div>
-                  {constant.length > 0 && (
-                    <p className="text-[11px] text-mist mt-2">Always on: {constant.map(a => a.name).join(', ')}</p>
-                  )}
+                  <AlwaysOnChips abilities={constant} path={path} onInfo={onInfo} className="mt-2" />
                 </div>
               ))}
             </div>
