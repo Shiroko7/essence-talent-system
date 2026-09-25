@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Info, Minus, Plus } from 'lucide-react';
 import { costOf, tint } from '../model';
 import type { SystemGroup } from '../model';
-import { FigureToggle, Manifestations, RealmLadder, RealmTitle, StageBadge } from './DaoChrome';
-import { VesselBody } from './VesselBody';
-import { bodyStage, pathStage, useFigure } from './dao';
+import { DaoPanel, Manifestations, StageBadge } from './DaoBody';
+import { pathStage, useFigure } from './dao';
 import { AbilityIcon, PathLinkButton, RestButtons } from '../ui';
 import { Ability } from '../../types/essence';
 import { TrackedPath, TrackerProps, setPool, trackerGroups } from './shared';
@@ -194,23 +193,9 @@ const VialsTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
         <p className="text-xs text-mist flex-1 min-w-[240px]">Click the glass to set a level · tap an icon to spend its cost · ⓘ reads it · stripes are held by passives</p>
         <RestButtons ctl={ctl} compact />
       </div>
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(300px,380px)_minmax(0,1fr)] items-stretch">
-        <div className="rounded-xl border p-4 flex flex-col gap-3"
-          style={{ borderColor: 'rgba(215,228,255,0.18)', background: 'radial-gradient(ellipse at 50% 40%, rgba(160,190,255,0.09), rgba(10,10,15,0.9) 70%)' }}>
-          <div className="flex items-start justify-between gap-3">
-            <RealmTitle stage={bodyStage(ctl)} />
-            <FigureToggle figure={figure} onChange={setFigure} />
-          </div>
-          <VesselBody ctl={ctl} paths={flat} figure={figure} highlightId={hoverId} onHover={setHoverId} className="w-full mx-auto" style={{ maxWidth: 380 }} />
-          <p className="flex justify-between text-xs text-mist">
-            <span>In the vessel</span>
-            <span className="tabular-nums">
-              <span className="text-ivory font-display">{flat.reduce((n, t) => n + t.pool.current, 0)}</span> / {flat.reduce((n, t) => n + t.pool.max, 0)}
-              {' · '}<span className="text-essence-fire">{flat.reduce((n, t) => n + t.pool.reserved, 0)}</span> held
-            </span>
-          </p>
-          <div className="flex justify-center"><RealmLadder stage={bodyStage(ctl)} /></div>
-        </div>
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(280px,340px)_minmax(0,1fr)] items-stretch">
+        <DaoPanel ctl={ctl} paths={flat} figure={figure} onFigure={setFigure} highlightId={hoverId} onHover={setHoverId} onInfo={onInfo}
+          showManifestations={false} />
         <div className="flex flex-col gap-4 lg:order-first">
           {wing(wings[0], 'left')}
         </div>

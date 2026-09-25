@@ -2,13 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { History, Minus, Moon, Plus, Undo2 } from 'lucide-react';
 import { costOf, tint } from '../model';
 import type { TalentController } from '../model';
-import type { Ability } from '../../types/essence';
 import { AbilityIcon, AlwaysOnChips, EmptyState, InfoButton, PathLinkButton, PathSigil } from '../ui';
-import { TrackedPath, TrackerProps, trackerGroups } from './shared';
-import { FigureToggle, StageBadge } from './DaoChrome';
-import { ScrollBody } from './ScrollBody';
-import { bodyStage, pathStage, stageInfo, useFigure } from './dao';
-import type { Figure } from './dao';
+import { TrackerProps, trackerGroups } from './shared';
+import { DaoPanel, StageBadge } from './DaoBody';
+import { pathStage, useFigure } from './dao';
 
 interface LogEntry {
   id: number;
@@ -54,39 +51,6 @@ const useCastLog = (ctl: TalentController) => {
   return { log, record, undo, clear: () => setLog([]) };
 };
 
-const ROD = 'linear-gradient(180deg, #7a5530, #3b2a1a)';
-
-/** The parchment scroll the meridian chart is painted on. */
-const MeridianScroll: React.FC<{
-  ctl: TalentController; paths: TrackedPath[]; figure: Figure; onFigure: (f: Figure) => void;
-  hoverId: string | null; onHover: (id: string | null) => void; onInfo?: (a: Ability) => void;
-}> = ({ ctl, paths, figure, onFigure, hoverId, onHover, onInfo }) => {
-  const stage = bodyStage(ctl);
-  return (
-    <div>
-      <div className="h-3 -mx-1.5 rounded-full shadow-md" style={{ background: ROD }} />
-      <div className="px-4 pt-3 pb-4 text-[#2b2118]"
-        style={{ background: 'linear-gradient(180deg, #efe3c6, #e2d1aa)', boxShadow: 'inset 0 0 36px rgba(120,86,40,0.35)' }}>
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="font-display text-[10px] tracking-[0.25em] uppercase text-[#8a6234]">Meridian chart{stage > 0 ? ` · ${stageInfo(stage).tier}` : ''}</p>
-            <p className="font-display text-lg leading-tight">{stage > 0 ? stageInfo(stage).name : 'No seed yet'}</p>
-          </div>
-          <FigureToggle figure={figure} onChange={onFigure} tone="paper" />
-        </div>
-        <ScrollBody ctl={ctl} paths={paths} figure={figure} highlightId={hoverId} onHover={onHover} onInfo={onInfo} className="w-full mt-1" />
-        <p className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-[11px] text-[#2b2118]/75 mt-1">
-          <span className="inline-flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#5dba6f] ring-1 ring-[#2b2118]/60" /> ready</span>
-          <span className="inline-flex items-center gap-1"><span className="w-2 h-2 rounded-full ring-1 ring-[#2b2118]/60" /> not enough</span>
-          <span className="inline-flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#2b2118]" /> always on</span>
-          <span>· tap a point to read it</span>
-        </p>
-      </div>
-      <div className="h-3 -mx-1.5 rounded-full shadow-md" style={{ background: ROD }} />
-    </div>
-  );
-};
-
 /**
  * Cast log — action first. Every learned ability is a button that spends its
  * cost; every change (spends, ±1, rests) lands in a session log you can undo
@@ -104,9 +68,10 @@ const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => 
   ));
 
   return (
-    <div className="grid gap-4 items-start lg:grid-cols-[380px_minmax(0,1fr)] xl:grid-cols-[400px_minmax(0,1fr)_280px]">
+    <div className="grid gap-4 items-start lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,1fr)_290px]">
       <div className="lg:sticky lg:top-4 lg:row-span-2 xl:row-span-1">
-        <MeridianScroll ctl={ctl} paths={flat} figure={figure} onFigure={setFigure} hoverId={hoverId} onHover={setHoverId} onInfo={onInfo} />
+        <DaoPanel ctl={ctl} paths={flat} figure={figure} onFigure={setFigure} highlightId={hoverId} onHover={setHoverId} onInfo={onInfo}
+          showManifestations={false} bodyWidth={250} />
       </div>
       <div className="space-y-4 min-w-0">
         {groups.map(g => (
@@ -128,11 +93,9 @@ const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => 
                       <PathSigil path={path} size={28} active />
                       <span className="min-w-0">
                         <span className="block font-display text-sm truncate" style={{ color: path.accent }}>{path.name}</span>
-                        <span className="flex flex-wrap items-center gap-1.5 mt-0.5">
-                          <StageBadge level={pathStage(ctl, path.id)} accent={path.accent} />
-                          <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
-                        </span>
+                        <StageBadge level={pathStage(ctl, path.id)} accent={path.accent} />
                       </span>
+                      <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
                     </span>
                     <button onClick={() => record(`${path.name} −1`, { [path.id]: -Math.min(1, pool.current) })} disabled={pool.current <= 0}
                       className="w-6 h-6 rounded border border-gold-subtle text-fog hover:text-essence-fire disabled:opacity-30 flex items-center justify-center" aria-label="Spend 1">
