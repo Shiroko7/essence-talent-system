@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { BookOpen, Columns3, LayoutGrid, Network, ScrollText, Table2 } from 'lucide-react';
+import { Columns3, Network } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import EssenceTalentTree from '../components/essences/EssenceTalentTree';
 import CultivationTalentTree from '../components/cultivation/CultivationTalentTree';
 import { SystemVersion, TalentController } from './model';
 import { useV1Controller, useV2Controller } from './useTalentController';
 import { Toast } from './ui';
-import GrimoireLayout from './layouts/GrimoireLayout';
 import ConstellationLayout from './layouts/ConstellationLayout';
-import SheetLayout from './layouts/SheetLayout';
-import CompendiumLayout from './layouts/CompendiumLayout';
-import AtlasLayout from './layouts/AtlasLayout';
 import ClassicLayout from './layouts/ClassicLayout';
 
 export interface LayoutProps {
@@ -20,18 +16,14 @@ export interface LayoutProps {
 
 const DESIGNS = [
   { id: 'classic', label: 'Classic', icon: Columns3, blurb: 'The original structure, reworked: collapsible traditions, All paths, global search' },
-  { id: 'grimoire', label: 'Grimoire', icon: BookOpen, blurb: 'Three-pane reader with a build summary; essence on its own tab' },
   { id: 'constellation', label: 'Constellation', icon: Network, blurb: 'Game board: tiers left to right, essence at the foot of the page' },
-  { id: 'sheet', label: 'Sheet', icon: ScrollText, blurb: 'Character-sheet companion: Play and Build modes' },
-  { id: 'compendium', label: 'Compendium', icon: Table2, blurb: 'Reference grouped by path with tier ladders, or one sortable table' },
-  { id: 'atlas', label: 'Atlas', icon: LayoutGrid, blurb: 'Reading first: full-text cards, tier ladder, hand tab' }
 ] as const;
 
 /** 'legacy' is the untouched original page, kept reachable via ?ui=legacy for reference. */
 type DesignId = typeof DESIGNS[number]['id'] | 'legacy';
 
 const STORAGE_KEY = 'talent-ui-design';
-const DEFAULT_DESIGN: DesignId = 'grimoire';
+const DEFAULT_DESIGN: DesignId = 'classic';
 
 const isDesign = (value: string | null): value is DesignId => value === 'legacy' || DESIGNS.some(d => d.id === value);
 
@@ -109,11 +101,7 @@ const DesignSwitcher: React.FC<{ design: DesignId; onChange: (id: DesignId) => v
 const renderDesign = (design: DesignId, ctl: TalentController) => {
   switch (design) {
     case 'constellation': return <ConstellationLayout ctl={ctl} />;
-    case 'sheet': return <SheetLayout ctl={ctl} />;
-    case 'compendium': return <CompendiumLayout ctl={ctl} />;
-    case 'atlas': return <AtlasLayout ctl={ctl} />;
-    case 'classic': return <ClassicLayout ctl={ctl} />;
-    default: return <GrimoireLayout ctl={ctl} />;
+    default: return <ClassicLayout ctl={ctl} />;
   }
 };
 

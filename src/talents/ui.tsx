@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Check, ChevronDown, Download, Info, Lock, Minus, Moon, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
+  ChevronDown, Download, Info, Lock, Minus, Moon, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
 } from 'lucide-react';
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
@@ -39,39 +39,6 @@ export const KindTag: React.FC<{ ability: Ability; compact?: boolean }> = ({ abi
     >
       {compact ? (ability.isSpell ? ability.tier : meta.label) : kindLabel(ability)}
     </span>
-  );
-};
-
-/** Cost expressed the way the rule works: reserved permanently, or paid per use. */
-export const CostTag: React.FC<{ ability: Ability; verbose?: boolean }> = ({ ability, verbose }) => {
-  const cost = costOf(ability);
-  const reserve = reservesEssence(ability);
-  return (
-    <span
-      className="inline-flex items-center gap-1 text-[11px] font-display tracking-wide whitespace-nowrap"
-      title={reserve ? `Reserves ${cost} of this path's essence permanently` : `Costs ${cost} essence each use`}
-    >
-      <span className={reserve ? 'text-essence-fire' : 'text-essence-water'}>{reserve ? <Lock size={10} /> : <Zap size={10} />}</span>
-      <span className="text-parchment">{cost}</span>
-      {verbose && <span className="text-mist">{reserve ? 'reserved' : 'per use'}</span>}
-    </span>
-  );
-};
-
-export const StatusDot: React.FC<{ status: AbilityStatus; accent: string }> = ({ status, accent }) => {
-  if (status === 'learned') {
-    return (
-      <span className="w-5 h-5 rounded-full inline-flex items-center justify-center flex-shrink-0 align-middle" style={{ background: accent }}>
-        <Check size={12} className="text-void" strokeWidth={3} />
-      </span>
-    );
-  }
-  if (status === 'locked') return <Lock size={14} className="text-mist flex-shrink-0" />;
-  return (
-    <span
-      className="w-5 h-5 rounded-full border inline-block flex-shrink-0 align-middle"
-      style={{ borderColor: status === 'available' ? tint(accent, 0.7) : 'rgba(106,106,122,0.5)' }}
-    />
   );
 };
 
@@ -613,26 +580,6 @@ export const EssenceBoard: React.FC<{
     </div>
   );
 };
-
-/** Big top-level tabs for switching between building and playing. */
-export const ViewTabs = <T extends string>({ value, options, onChange }: {
-  value: T; options: { id: T; label: string; icon: React.ElementType; badge?: number }[]; onChange: (v: T) => void;
-}) => (
-  <div className="inline-flex rounded-lg border border-gold-accent p-1 bg-void/60">
-    {options.map(({ id, label, icon: Icon, badge }) => (
-      <button
-        key={id}
-        onClick={() => onChange(id)}
-        className={`flex items-center gap-2 px-4 py-1.5 rounded-md font-display text-sm tracking-wide transition-colors whitespace-nowrap ${
-          value === id ? 'bg-gold/20 text-gold-bright' : 'text-fog hover:text-parchment'
-        }`}
-      >
-        <Icon size={15} /> {label}
-        {badge !== undefined && badge > 0 && <span className="text-[10px] px-1.5 rounded-full bg-gold/20 text-gold-bright">{badge}</span>}
-      </button>
-    ))}
-  </div>
-);
 
 /** Section heading for a tradition, used in path lists. */
 export const GroupLabel: React.FC<{ label: string; accent: string; className?: string }> = ({ label, accent, className = '' }) => (
