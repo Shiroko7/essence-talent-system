@@ -4,8 +4,6 @@ import { costOf, tint } from '../model';
 import type { TalentController } from '../model';
 import { AbilityIcon, AlwaysOnChips, EmptyState, InfoButton, PathLinkButton, PathSigil } from '../ui';
 import { TrackerProps, trackerGroups } from './shared';
-import { DaoPanel, StageBadge } from './DaoBody';
-import { pathStage, useFigure } from './dao';
 
 interface LogEntry {
   id: number;
@@ -58,43 +56,27 @@ const useCastLog = (ctl: TalentController) => {
  */
 const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => {
   const groups = trackerGroups(ctl);
-  const flat = groups.flatMap(g => g.paths);
   const { log, record, undo, clear } = useCastLog(ctl);
-  const [figure, setFigure] = useFigure();
-  const [hoverId, setHoverId] = useState<string | null>(null);
 
   const longRest = () => record('Long rest', Object.fromEntries(
     groups.flatMap(g => g.paths.map(t => [t.path.id, t.pool.max - t.pool.current]))
   ));
 
   return (
-    <div className="grid gap-4 items-start lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,1fr)_290px]">
-      <div className="lg:sticky lg:top-4 lg:row-span-2 xl:row-span-1">
-        <DaoPanel ctl={ctl} paths={flat} figure={figure} onFigure={setFigure} highlightId={hoverId} onHover={setHoverId} onInfo={onInfo}
-          showManifestations={false} bodyWidth={250} />
-      </div>
-      <div className="space-y-4 min-w-0">
+    <div className="grid lg:grid-cols-[minmax(0,1fr)_300px] gap-4 items-start">
+      <div className="space-y-4">
         {groups.map(g => (
           <section key={g.group.id}>
             <h3 className="font-display text-[11px] tracking-[0.2em] uppercase mb-2" style={{ color: g.group.accent }}>
               {g.group.label} <span className="text-fog tracking-normal">· {g.current}/{g.max}</span>
             </h3>
-            <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-3">
+            <div className="grid sm:grid-cols-2 gap-3">
               {g.paths.map(({ path, pool, actions, constant }) => (
-                <div
-                  key={path.id}
-                  className="rounded-lg border p-3 transition-colors"
-                  style={{ borderColor: tint(path.accent, hoverId === path.id ? 0.7 : 0.3), background: tint(path.accent, hoverId === path.id ? 0.09 : 0.04) }}
-                  onMouseEnter={() => setHoverId(path.id)}
-                  onMouseLeave={() => setHoverId(null)}
-                >
+                <div key={path.id} className="rounded-lg border p-3" style={{ borderColor: tint(path.accent, 0.3), background: tint(path.accent, 0.04) }}>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="flex items-center gap-2 flex-1 min-w-0">
                       <PathSigil path={path} size={28} active />
-                      <span className="min-w-0">
-                        <span className="block font-display text-sm truncate" style={{ color: path.accent }}>{path.name}</span>
-                        <StageBadge level={pathStage(ctl, path.id)} accent={path.accent} />
-                      </span>
+                      <span className="font-display text-sm truncate" style={{ color: path.accent }}>{path.name}</span>
                       <PathLinkButton path={path} onOpenPath={onOpenPath} compact />
                     </span>
                     <button onClick={() => record(`${path.name} −1`, { [path.id]: -Math.min(1, pool.current) })} disabled={pool.current <= 0}
@@ -157,7 +139,7 @@ const CastLogTracker: React.FC<TrackerProps> = ({ ctl, onOpenPath, onInfo }) => 
       </div>
 
       {/* Session log */}
-      <aside className="rounded-lg border border-gold-subtle bg-obsidian/70 lg:col-start-2 xl:col-start-auto xl:sticky xl:top-4">
+      <aside className="rounded-lg border border-gold-subtle bg-obsidian/70 lg:sticky lg:top-4">
         <header className="flex items-center gap-2 px-3 py-2 border-b border-gold-subtle">
           <History size={14} className="text-gold" />
           <span className="font-display text-xs tracking-widest uppercase text-ivory flex-1">Session log</span>
