@@ -30,15 +30,38 @@ export interface TalentSystem {
   name: string;
   tagline: string;
   resourceName: string;
+  /**
+   * V2 shares essence across a family: every path in a group feeds one pool and
+   * any learned ability in the group can draw on it. V1 keeps one pool per path.
+   */
+  sharedPools: boolean;
   groups: SystemGroup[];
   paths: SystemPath[];
   abilitiesByPath: Record<string, Ability[]>;
+}
+
+/** Where essence is tracked: one path (V1) or a whole family of paths (V2). */
+export interface EssencePool {
+  /** The path id for a single-path pool, the group id for a family pool. */
+  id: string;
+  label: string;
+  accent: string;
+  /** Every path that feeds the pool and may draw on it. */
+  paths: SystemPath[];
+}
+
+export interface PoolSource {
+  path: SystemPath;
+  max: number;
+  reserved: number;
 }
 
 export interface PoolStatus {
   current: number;
   max: number;
   reserved: number;
+  /** The learned paths that make up the pool's capacity, in catalog order. */
+  sources: PoolSource[];
 }
 
 export type AbilityStatus = 'learned' | 'available' | 'unaffordable' | 'locked';
@@ -56,8 +79,12 @@ export interface TalentController {
   statusOf: (ability: Ability, pathId: string) => AbilityStatus;
   lockReason: (ability: Ability, pathId: string) => string | null;
   tierUnlocked: (tierId: TierId, pathId: string) => boolean;
-  pool: (pathId: string) => PoolStatus;
-  adjustPool: (pathId: string, delta: number) => void;
+  /** Pools with at least one learned ability, in catalog order. */
+  pools: EssencePool[];
+  /** The pool a path's abilities draw on. */
+  poolOf: (pathId: string) => EssencePool;
+  pool: (poolId: string) => PoolStatus;
+  adjustPool: (poolId: string, delta: number) => void;
   spend: (ability: Ability, pathId: string) => void;
   fullRest: () => void;
   emptyPools: () => void;
@@ -70,6 +97,8 @@ export interface TalentController {
   dismissNotice: () => void;
   pathOf: (abilityId: string) => SystemPath | undefined;
   learnedPaths: SystemPath[];
+  /** V2 only: replace the build with the V1 character saved in this browser. */
+  importFromV1?: () => void;
 }
 
 export const TIER_IDS: TierId[] = ['initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster'];
@@ -180,6 +209,27 @@ export const previewText = (description: string, length = 140) => {
 /** How many abilities in a path the character has learned. */
 export const learnedCount = (ctl: TalentController, pathId: string) =>
   (ctl.system.abilitiesByPath[pathId] || []).filter(a => ctl.isLearned(a.id)).length;
+
+/**
+ * Learned paths ordered by how far the character has gone in each: the deepest
+ * tier learned, then the most essence invested. Ties keep system order.
+ */
+export const pathsByDepth = (ctl: TalentController, paths: SystemPath[] = ctl.learnedPaths): SystemPath[] => {
+  const rank = new Map(paths.map(path => {
+    const learned = (ctl.system.abilitiesByPath[path.id] || []).filter(a => ctl.isLearned(a.id));
+    return [path.id, {
+      depth: Math.max(-1, ...learned.map(a => TIER_IDS.indexOf(tierOf(a)))),
+      essence: learned.reduce((sum, a) => sum + costOf(a), 0)
+    }];
+  }));
+  return [...paths].sort((x, y) => {
+    const a = rank.get(x.id)!, b = rank.get(y.id)!;
+    return b.depth - a.depth || b.essence - a.essence;
+  });
+};
+
+/** The path the character has gone furthest in. Paths with nothing learned never win. */
+export const deepestPath = (ctl: TalentController): SystemPath | undefined => pathsByDepth(ctl)[0];
 
 /** Hex colour with alpha, for tinting surfaces with a path accent. */
 export const tint = (hex: string, alpha: number) => {

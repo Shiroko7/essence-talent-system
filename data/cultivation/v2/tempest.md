@@ -35,7 +35,7 @@ author: Evocation / Hurricane
 
 A howling cyclone 10 feet wide and 30 feet tall sweeps across the field, sucking up creatures, hurling them, and dealing 10d6 bludgeoning damage.
 
-https://5e.tools/spells.html#whirlwind_xphb
+https://5e.tools/spells.html#whirlwind_xge
 
 ---
 
@@ -159,7 +159,7 @@ author: Cleric / Conjuration
 
 A crashing wave of seawater 30 ft long and 10 ft wide knocks creatures prone and deals 4d8 bludgeoning damage.
 
-https://5e.tools/spells.html#tidal%20wave_xphb
+https://5e.tools/spells.html#tidal%20wave_xge
 
 ---
 
@@ -177,7 +177,7 @@ author: Evocation / Tempest
 
 A 20-foot-radius sphere of gale winds hampers movement, and as a bonus action each round zap a target for 4d6 lightning damage.
 
-https://5e.tools/spells.html#storm%20sphere_xphb
+https://5e.tools/spells.html#storm%20sphere_xge
 
 ---
 
@@ -195,7 +195,7 @@ author: Evocation / Umberlee
 
 A 30-foot-radius swirling vortex of water drags creatures toward its center and deals 6d6 bludgeoning damage.
 
-https://5e.tools/spells.html#maelstrom_xphb
+https://5e.tools/spells.html#maelstrom_xge
 
 ---
 
@@ -379,3 +379,79 @@ On a failed save, one ongoing magical effect or spell on the creature immediatel
 
 ---
 ## Cantrips
+
+---
+
+## Spells restored from V1
+
+---
+
+### Lightning Arrow
+
+```yaml
+id: lightning_3rd_level_lightning_arrow
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+Your next ranged weapon attack becomes a bolt of lightning that deals 4d8 lightning damage and bursts onto nearby creatures.
+
+Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#lightning%20arrow_phb).
+
+---
+
+### Ride the Lightning
+
+```yaml
+id: lightning_5th_level_ride_the_lightning
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+You become a bolt of lightning, damaging creatures along a 60-foot line before reappearing at its end.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#ride%20the%20lightning_grimhollowpg24).
+
+---
+
+### Red Rain
+
+```yaml
+id: v2_tempest_red_rain
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+Blood rain falls within 5 miles, withering plants, frightening beasts, and draining exposed creatures with exhaustion and necrotic damage.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#red%20rain_grimhollowpg24).
+
+---
+
+### Beast of Ragnarok
+
+```yaml
+id: v2_tempest_beast_of_ragnarok
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Northlands Worldbook
+```
+
+Fenris’s aura darkens the sky with snow for a mile around you; you gain advantage on d20 tests and immunity to all damage but one random type.
+
+Source reference: [Kobold Press Northlands Worldbook on 5e.tools](https://5e.tools/spells.html#beast%20of%20ragnarok_northlandsworldbook).

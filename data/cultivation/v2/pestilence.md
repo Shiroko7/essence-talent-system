@@ -47,6 +47,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -86,6 +87,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -129,6 +131,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -155,6 +158,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -220,7 +224,7 @@ author: Cleric / Conjuration
 
 Parasites and biting mites appear on a foe, dealing 1d6 poison damage and compelling random movement.
 
-https://5e.tools/spells.html#infestation_xphb
+https://5e.tools/spells.html#infestation_xge
 
 ## Spells
 
@@ -380,6 +384,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -428,6 +433,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Shadow Sect
 location: Sirius
 ```
 
@@ -503,3 +509,223 @@ location: Phudara / Isle of Whispers
 ```
 
 When attacking a creature that is poisoned, you have advantage on attack rolls against that creature.
+
+---
+
+## Spells restored from V1
+
+---
+
+### Stinking Cloud
+
+```yaml
+id: wind_3rd_level_stinking_cloud
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A 20-foot sphere of nauseating gas poisons creatures inside it, leaving them unable to act.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#stinking%20cloud_xphb).
+
+---
+
+### Syluné's Viper
+
+```yaml
+id: poison_3rd_level_sylunes_viper
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Heroes of Faerûn)
+```
+
+A spectral snake coils around you, granting temporary hit points, a climbing speed, and a venomous ranged bite.
+
+Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#sylun%C3%A9's%20viper_frhof).
+
+---
+
+### Elemental Bane
+
+```yaml
+id: acid_4th_level_elemental_bane
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+A creature loses resistance to a chosen element and takes extra damage of that type.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#elemental%20bane_xge).
+
+---
+
+### Giant Insect
+
+```yaml
+id: wood_4th_level_giant_insect
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You summon a giant centipede, spider, or wasp that fights alongside you.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#giant%20insect_xphb).
+
+---
+
+### Investiture of Venom
+
+```yaml
+id: poison_6th_level_investiture_of_venom
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+Poison fills your veins: immunity to poison, and the power to poison creatures around you.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#investiture%20of%20venom_grimhollowpg24).
+
+---
+
+### Symbol
+
+```yaml
+id: v2_pestilence_symbol
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You inscribe a harmful glyph that triggers death, discord, fear, pain, sleep, or stunning on creatures that come near it.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#symbol_xphb).
+
+---
+
+### Abi-Dalzim's Horrid Wilting
+
+```yaml
+id: v2_pestilence_abi_dalzims_horrid_wilting
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+You draw the moisture from every creature in a 30-foot cube, dealing heavy necrotic damage; plants wither instantly.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#abi-dalzim's%20horrid%20wilting_xge).
+
+---
+
+### Befuddlement
+
+```yaml
+id: v2_pestilence_befuddlement
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You blast a creature's mind for psychic damage; on a failed save it cannot cast spells or take the Magic action, repeating the save only every 30 days.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#befuddlement_xphb).
+
+---
+
+### Fleshcrawl
+
+```yaml
+id: v2_pestilence_fleshcrawl
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+You rip the flesh from a creature for 8d10 necrotic damage and animate its skin as a fleshling that fights for you.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#fleshcrawl_grimhollowpg24).
+
+---
+
+### Flense
+
+```yaml
+id: v2_pestilence_flense
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+Necromantic force slices the skin from a creature, dealing 8d6 necrotic damage each turn you keep up the spell.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#flense_grimhollowpg24).
+
+---
+
+### Creeping Death
+
+```yaml
+id: v2_pestilence_creeping_death
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+You mark a creature with a death threshold paid for in Hit Dice; if its hit points fall to or below it, it dies, and you can raise the threshold each turn.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#creeping%20death_grimhollowpg24).
+
+---
+
+### Lifesink
+
+```yaml
+id: v2_pestilence_lifesink
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+An aura of necrotic decay damages creatures near you while you regain hit points for each one caught in it.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#lifesink_grimhollowpg24).

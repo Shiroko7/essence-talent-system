@@ -3,27 +3,6 @@
 Tradition: Divine
 Concept: Sune’s affection, beauty, attraction, devotion, and emotional bonds.
 
-### Heart Exchange
-
-```yaml
-id: wood_master_heart_exchange
-tier: master
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-location: Sirius
-```
-
-As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude.
-
-For the next hour, you and the target share an unbreakable bond regardless of distance:
-- Whenever one of you takes damage, both take half that damage.
-- Whenever one regains hit points, both regain the same amount.
-- You both gain advantage on all saving throws.
-
-You can maintain only one heart exchange at a time.
-
 ## Cantrips
 
 ---
@@ -38,6 +17,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Cyric (source technique; emotional manipulation)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -182,7 +162,7 @@ author: Enchantment / Love and emotional influence
 
 You imbue an area or object with either irresistible attraction or repulsion, drawing creatures toward it or compelling them to avoid it.
 
-https://5e.tools/spells.html#antipathy%20sympathy_xphb
+https://5e.tools/spells.html#antipathy%2fsympathy_xphb
 
 ---
 
@@ -290,3 +270,169 @@ location: Phudara / Isle of Whispers
 ```
 
 By channelling the ebb and flow of water, you can influence the emotions of others within a 30-foot radius. Choose one emotion (calm, fear, or joy); affected creatures must succeed on a Wisdom saving throw or be overwhelmed by that emotion for 1 hour.
+
+---
+
+## Spells restored from V1
+
+---
+
+### Animal Friendship
+
+```yaml
+id: wood_1st_level_animal_friendship
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A beast is charmed by you unless you or your allies harm it.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#animal%20friendship_xphb).
+
+---
+
+### Speak with Animals
+
+```yaml
+id: wood_1st_level_speak_with_animals
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You can understand and speak with beasts and use Influence with them.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#speak%20with%20animals_xphb).
+
+---
+
+### Dominate Beast
+
+```yaml
+id: wood_4th_level_dominate_beast
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A beast is charmed and telepathically commanded by you.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#dominate%20beast_xphb).
+
+---
+
+### Transfix
+
+```yaml
+id: v2_love_transfix
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Arcana Unleashed)
+```
+
+Your appearance becomes otherworldly and alluring; one creature that fails a Charisma save is charmed and incapacitated, drawn toward you.
+
+Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#transfix_au).
+
+---
+
+### Tether Essence
+
+```yaml
+id: v2_love_tether_essence
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+Two creatures are magically linked so that damage and healing dealt to one is also dealt to the other, and when one drops to 0 hit points, so does the other.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#tether%20essence_egw).
+
+---
+
+### Dominate Monster
+
+```yaml
+id: v2_love_dominate_monster
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A creature that fails a Wisdom save is charmed and follows your telepathic commands for up to 1 hour.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#dominate%20monster_xphb).
+
+---
+
+### Telepathy
+
+```yaml
+id: v2_love_telepathy
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You share a telepathic link with a willing, familiar creature anywhere on the same plane, exchanging words, images, and sensations for 24 hours.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#telepathy_xphb).
+
+---
+
+### Obsession
+
+```yaml
+id: v2_love_obsession
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Abi-Dalzim's Abhorrent Adventurers
+```
+
+You ignite a creature’s passion and direct it at a chosen person; it deepens over the weeks and can become permanent, though true love’s kiss ends it.
+
+Source reference: [Abi-Dalzim's Abhorrent Adventurers on 5e.tools](https://5e.tools/spells.html#obsession_abidalzims).
+
+---
+
+### Virus Charm
+
+```yaml
+id: v2_love_virus_charm
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Blackstaff's Book of 1000 Spells
+```
+
+Up to five creatures are charmed into treating you as a friend, and each spreads the charm by touch to others.
+
+Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tools/spells.html#virus%20charm_bb1000s).

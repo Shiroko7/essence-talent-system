@@ -31,7 +31,7 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-author: Yuji
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -56,7 +56,7 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-author: Yuji
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -124,6 +124,7 @@ isPassive: true
 isSpell: false
 isCantrip: false
 author: Shar's Shadow Disciple
+location: Leatrux
 ```
 
 You wrap yourself in the silence and obscurity of the Void. You gain darkvision out to 60 feet (or increase existing darkvision by 30 feet). While you are in dim light or darkness, you have advantage on Dexterity (Stealth) checks and can take the Hide action as a bonus action.
@@ -139,7 +140,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Yuji
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -186,6 +187,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Portfolio (Darkness / Shar)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action
@@ -212,6 +214,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Portfolio (Darkness / Shar)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action
@@ -233,7 +236,7 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-author: Yuji
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -257,7 +260,7 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-author: Yuji
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -450,7 +453,7 @@ author: Shadow Weave / Necromancy
 
 Flame-like shadows wreathe your body, heavily obscuring you and dealing 2d8 necrotic damage to any creature within 10 feet that hits you.
 
-https://5e.tools/spells.html#shadow%20of%20moil_xphb
+https://5e.tools/spells.html#shadow%20of%20moil_xge
 
 ---
 
@@ -468,7 +471,7 @@ author: Shadow Weave / Evocation
 
 Darkness and screaming horrors fill a 60-foot-radius sphere. Creatures in the area take 8d8 psychic damage on a failed Wisdom save.
 
-https://5e.tools/spells.html#maddening%20darkness_xphb
+https://5e.tools/spells.html#maddening%20darkness_xge
 
 ---
 
@@ -522,3 +525,331 @@ location: Phudara / Isle of Whispers
 ```
 
 You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 100 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.
+
+---
+
+## Spells restored from V1
+
+---
+
+### Unseen Servant
+
+```yaml
+id: wood_1st_level_unseen_servant
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+An invisible, mindless force performs simple tasks at your command.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#unseen%20servant_xphb).
+
+---
+
+### Elminster's Elusion
+
+```yaml
+id: acid_2nd_level_elminsters_elusion
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Heroes of Faerûn)
+```
+
+Arcane wards give you advantage on saves against magic and let you shrug off damage entirely on a successful save.
+
+Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#elminster's%20elusion_frhof).
+
+---
+
+### Swallow Magic
+
+```yaml
+id: poison_2nd_level_swallow_magic
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Obojima: Tales from the Tall Grass
+```
+
+When a spell fails to affect you, you swallow its leftover magic to heal, gain speed, or bolster a roll.
+
+Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#swallow%20magic_obojimatallgrass).
+
+---
+
+### Phantom Steed
+
+```yaml
+id: wood_3rd_level_phantom_steed
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A quasi-real horse appears to carry you swiftly across the land.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#phantom%20steed_xphb).
+
+---
+
+### Creation
+
+```yaml
+id: wood_5th_level_creation
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You pull shadow material from the Shadowfell to shape a temporary object of vegetable or mineral matter.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#creation_xphb).
+
+---
+
+### Sequester
+
+```yaml
+id: v2_shadow_sequester
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+An object or willing creature becomes invisible and hidden from all divination; a creature falls into suspended animation until a set condition ends it.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#sequester_xphb).
+
+---
+
+### Dark Star
+
+```yaml
+id: v2_shadow_dark_star
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+A sphere of magical darkness and crushing gravity up to 40 feet across deafens those within, hinders movement, and deals force damage.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#dark%20star_egw).
+
+---
+
+### Ravenous Void
+
+```yaml
+id: v2_shadow_ravenous_void
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+A 20-foot sphere of destructive gravity drags creatures inward, restrains them, and deals heavy force damage; anything reduced to 0 hit points is annihilated.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#ravenous%20void_egw).
+
+---
+
+### Vision of Elapsing Eons
+
+```yaml
+id: v2_shadow_vision_of_elapsing_eons
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Arcana Unleashed)
+```
+
+A creature believes it watches itself and its surroundings crumble through the eons, taking 10d12 psychic damage and becoming paralyzed on a failed save.
+
+Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#vision%20of%20elapsing%20eons_au).
+
+---
+
+### Conjure Shadow Titan
+
+```yaml
+id: v2_shadow_conjure_shadow_titan
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Tales from the Shadows
+```
+
+You summon a titan of shadow that obeys your commands, hiding in darkness and hurling boulders of cold shadow-stuff.
+
+Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#conjure%20shadow%20titan_talesfromtheshadows).
+
+---
+
+### Dying of the Light
+
+```yaml
+id: v2_shadow_dying_of_the_light
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Tales from the Shadows
+```
+
+Withering darkness fills a 120-foot sphere, snuffing light and draining chosen creatures with necrotic damage and exhaustion.
+
+Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#dying%20of%20the%20light_talesfromtheshadows).
+
+---
+
+### Void Star
+
+```yaml
+id: v2_shadow_void_star
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D Beyond Drops
+```
+
+A fragment of a dark star deals 6d12 necrotic damage, then more a turn later, and you regain hit points equal to that second burst.
+
+Source reference: [D&D Beyond Drops on 5e.tools](https://5e.tools/spells.html#void%20star_dndbeyonddrops).
+
+---
+
+### Creeping Darkness
+
+```yaml
+id: v2_shadow_creeping_darkness
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Tales from the Shadows
+```
+
+A crawling mass of shadows drags and restrains the living, dealing necrotic damage to those caught in its tendrils.
+
+Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#creeping%20darkness_talesfromtheshadows).
+
+---
+
+### Umbral Storm
+
+```yaml
+id: v2_shadow_umbral_storm
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Tales from the Shadows
+```
+
+A storm of raging shadow entropy deals necrotic damage and exhaustion to creatures within; you can move it each turn.
+
+Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#umbral%20storm_talesfromtheshadows).
+
+---
+
+### Shadow Form
+
+```yaml
+id: v2_shadow_shadow_form
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Elminster's Guide to Magic
+```
+
+You wrap a creature in Shadowfell essence: it gains advantage and doubled proficiency on Stealth checks and can squeeze through any gap wider than an inch.
+
+Source reference: [Elminster's Guide to Magic on 5e.tools](https://5e.tools/spells.html#shadow%20form_elminsters%20guide%20to%20magic).
+
+---
+
+### Devouring Darkness
+
+```yaml
+id: v2_shadow_devouring_darkness
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kibbles' Compendium of Legends and Legacies
+```
+
+Dark tendrils burst from you, dealing 6d8 necrotic damage to chosen creatures within 20 feet and dragging them to your side; you regain hit points from the damage dealt.
+
+Source reference: [Kibbles' Compendium of Legends and Legacies on 5e.tools](https://5e.tools/spells.html#devouring%20darkness_kt-cll).
+
+---
+
+### Grace of Shar
+
+```yaml
+id: v2_shadow_grace_of_shar
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grimlore's Grimoire
+```
+
+A creature you touch receives a sliver of Shar’s umbral omniscience, gaining blindsight out to 30 feet.
+
+Source reference: [Grimlore's Grimoire on 5e.tools](https://5e.tools/spells.html#grace%20of%20shar_grimloresgrimoire).
+
+---
+
+### Investiture of Shadow
+
+```yaml
+id: v2_shadow_investiture_of_shadow
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Dark Arts Player's Companion
+```
+
+Shadows swirl around you: you turn invisible at the start of each turn, see through magical darkness to 120 feet, and can conjure spheres of magical darkness.
+
+Source reference: [Dark Arts Player's Companion on 5e.tools](https://5e.tools/spells.html#investiture%20of%20shadow_dapc).

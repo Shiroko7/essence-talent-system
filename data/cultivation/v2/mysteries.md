@@ -1,0 +1,539 @@
+# Mysteries Cultivation Path
+
+Tradition: Immortal
+Concept: Space, time, and the illusory made real; what cannot be put into words, made to obey anyway.
+
+### Mouth of the Well
+
+```yaml
+id: mysteries_initiate_mouth_of_the_well
+tier: initiate
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Shadow Sect
+location: Sirius
+```
+
+As a bonus action, you open the mouth of a well beneath a creature you can see within 30 feet. For a moment the ground becomes still, dark water that holds the creature's reflection, and space folds inward around it. The target must make a Dexterity saving throw against your essence ability save DC:
+- **On a failed save:** Its speed becomes 0 until the end of its next turn, and it has disadvantage on the next saving throw it makes against one of your Mysteries abilities before the end of your next turn.
+- **On a successful save:** Its speed is halved until the end of its next turn.
+
+---
+
+## Adept Tier
+
+---
+
+### Illusory and Real
+
+```yaml
+id: mysteries_adept_illusory_and_real
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Shadow Sect
+location: Sirius
+```
+
+As a reaction when an attack roll is made against you, you trade places with your own reflection. The attack targets the reflection instead and misses, and you teleport up to 15 feet to an unoccupied space you can see. For an instant, no one watching can tell which of the two was ever real.
+
+---
+
+## Master Tier
+
+---
+
+### Unshaken Conviction
+
+```yaml
+id: mysteries_master_unshaken_conviction
+tier: master
+isActive: false
+isPassive: true
+isSpell: false
+isCantrip: false
+author: Shadow Sect
+location: Sirius
+```
+
+You believe in what you see so completely that what you see must agree with you.
+- You have advantage on saving throws against being charmed or frightened, and against illusions.
+- You always know whether a creature or object you can see is an illusion, a reflection, or displaced in space or time, though not what it truly is.
+- Once per long rest, when you fail a saving throw, you can choose to succeed instead.
+
+---
+
+## Grandmaster Tier
+
+---
+
+### Fishing the Moon from the Well
+
+```yaml
+id: mysteries_grandmaster_fishing_the_moon_from_the_well
+tier: grandmaster
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Netherdark Emperor "Yuji" (Shadow Sect)
+location: Sirius
+```
+
+A monkey sees the moon in a well and reaches for it, and every child knows the moon is not there. You reach anyway, and the moon comes up in your hand.
+
+As an action, choose a creature you can see within 120 feet. The ground beneath it becomes the mouth of a bottomless well, and dark, still water holds its reflection: the moon in the well. A vast hand, neither illusory nor real, reaches down into the reflection. The target must make a Charisma saving throw against your essence ability save DC. A creature without a soul, such as most constructs, has no moon in the well and is unaffected.
+
+**On a failed save,** you fish its soul out of the reflection. Choose one:
+- **Pluck:** The target takes 8d10 psychic damage. If this reduces it to 0 hit points, it dies and you hold its soul as a pale, moon-like light for up to 24 hours. While you hold it, the creature can be restored to life only by *true resurrection* or *wish*, and you can ask the soul up to five questions as if you had cast *speak with dead*. You can hold one soul at a time, and you can release it whenever you choose.
+- **Hold:** The soul hangs in your hand while its body stands empty. For up to 1 minute (concentration), the target is paralyzed. As a bonus action on each of your turns, you can move the body up to its speed and have it make one weapon attack against a creature you choose. The target repeats the saving throw at the end of each of its turns, ending the effect on a success.
+- **Drown:** The target falls into the well and is trapped in its reflection: an empty, silent copy of the surroundings where no one else exists. For up to 1 minute (concentration), it can't be seen, targeted, or affected from the outside world. At the end of each of its turns, it repeats the saving throw, climbing out on a success. When the effect ends, it reappears in the space it left, or the nearest unoccupied space.
+
+**On a successful save,** the hand closes on water: the target takes 4d10 psychic damage and nothing more.
+
+**Beyond your realm:** A creature whose challenge rating or level is higher than your level has advantage on the saving throw.
+
+---
+
+## Cantrips
+
+---
+
+### Prestidigitation
+
+```yaml
+id: v2_mysteries_prestidigitation
+tier: cantrip
+isActive: false
+isPassive: false
+isSpell: false
+isCantrip: true
+author: D&D 5e (PHB 2024)
+```
+
+Small wonders from nothing: a harmless sensory effect, a flickering flame, a cleaned or soiled object, a warmed or flavored meal, a faint mark, or a trinket or illusory image that fits in your hand.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#prestidigitation_xphb).
+
+---
+
+## Spells
+
+---
+
+### Gift of Alacrity
+
+```yaml
+id: v2_mysteries_gift_of_alacrity
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+You grant a willing creature a moment borrowed from the future: for 8 hours, it adds 1d8 to its initiative rolls.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#gift%20of%20alacrity_egw).
+
+---
+
+### Rope Trick
+
+```yaml
+id: v2_mysteries_rope_trick
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A rope rises into the air and opens onto an extradimensional space that hides up to eight Medium or smaller creatures for 1 hour.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#rope%20trick_xphb).
+
+---
+
+### Fortune's Favor
+
+```yaml
+id: v2_mysteries_fortunes_favor
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+You show a creature a glimpse of what is about to happen: once within the next hour, it can roll an additional d20 for an attack roll, ability check, or saving throw and choose which roll to use.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#fortune's%20favor_egw).
+
+---
+
+### Wristpocket
+
+```yaml
+id: v2_mysteries_wristpocket
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+With a flick of the wrist, an object you hold of 5 pounds or less vanishes into an extradimensional pocket, and you can call it back to your hand while the spell lasts.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#wristpocket_egw).
+
+---
+
+### Blink
+
+```yaml
+id: v2_mysteries_blink
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+For 1 minute, at the end of each of your turns you may slip into the Ethereal Plane until your next turn, returning to a space within 10 feet of where you vanished.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#blink_xphb).
+
+---
+
+### Haste
+
+```yaml
+id: wind_3rd_level_haste
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A creature gains doubled speed, +2 AC, advantage on Dexterity saves, and an extra limited action each turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#haste_xphb).
+
+---
+
+### Slow
+
+```yaml
+id: v2_mysteries_slow
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Up to six creatures in a 40-foot cube are dragged behind the flow of time: on a failed Wisdom save their speed is halved, they lose AC and Dexterity save bonus, can't take reactions, and act less each turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#slow_xphb).
+
+---
+
+### Dimension Door
+
+```yaml
+id: v2_mysteries_dimension_door
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You teleport up to 500 feet to a place you can see, picture, or describe, and can bring one willing creature with you.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#dimension%20door_xphb).
+
+---
+
+### Far Step
+
+```yaml
+id: v2_mysteries_far_step
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+You teleport up to 60 feet, and for up to 1 minute you can do so again as a bonus action on each of your turns.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#far%20step_xge).
+
+---
+
+### Temporal Shunt
+
+```yaml
+id: v2_mysteries_temporal_shunt
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+As a reaction to a creature attacking or casting a spell, you push it a moment forward in time: on a failed Wisdom save it vanishes, its action is wasted, and it returns at the start of its next turn.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#temporal%20shunt_egw).
+
+---
+
+### Teleportation Circle
+
+```yaml
+id: v2_mysteries_teleportation_circle
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You draw a circle of sigils that opens a portal to a permanent teleportation circle whose sequence you know, until the end of your next turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#teleportation%20circle_xphb).
+
+---
+
+### Arcane Gate
+
+```yaml
+id: v2_mysteries_arcane_gate
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You open two linked portals up to 500 feet apart; whatever enters one steps out of the other for up to 10 minutes.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#arcane%20gate_xphb).
+
+---
+
+### Scatter
+
+```yaml
+id: v2_mysteries_scatter
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+Space tears around up to five creatures within 30 feet, and each is teleported up to 120 feet to a space you can see; unwilling creatures make a Wisdom save.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#scatter_xge).
+
+---
+
+### Teleport
+
+```yaml
+id: lightning_7th_level_teleport
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You and up to eight willing creatures instantly travel to a known destination on the same plane.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#teleport_xphb).
+
+---
+
+### Reverse Gravity
+
+```yaml
+id: wind_7th_level_reverse_gravity
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You turn gravity upside down in a 50-foot-radius, 100-foot-high cylinder: creatures and loose objects in it fall upward and hang at the top.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#reverse%20gravity_xphb).
+
+---
+
+### Plane Shift
+
+```yaml
+id: v2_mysteries_plane_shift
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You and up to eight willing creatures cross to another plane of existence, or you cast an unwilling creature out onto one.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#plane%20shift_xphb).
+
+---
+
+### Mordenkainen's Magnificent Mansion
+
+```yaml
+id: v2_mysteries_mordenkainens_magnificent_mansion
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You open a door onto an extradimensional mansion, with servants and a feast, that lasts for 24 hours.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#mordenkainen's%20magnificent%20mansion_xphb).
+
+---
+
+### Demiplane
+
+```yaml
+id: v2_mysteries_demiplane
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A shadowy door opens onto an empty room outside the world, a pocket of space you can return to each time you cast the spell.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#demiplane_xphb).
+
+---
+
+### Reality Break
+
+```yaml
+id: v2_mysteries_reality_break
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+A creature's hold on reality shatters: on a failed Wisdom save it can't take reactions and each turn suffers a random effect, from visions of other worlds to rifts that tear it through space.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#reality%20break_egw).
+
+---
+
+### Gate
+
+```yaml
+id: v2_mysteries_gate
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You open a portal to another plane, and can speak a creature's true name to pull it through.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#gate_xphb).
+
+---
+
+### Time Stop
+
+```yaml
+id: water_9th_level_time_stop
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Time stops for everyone but you, granting you 1d4 + 1 consecutive turns.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#time%20stop_xphb).
+
+---
+
+### Paradox
+
+```yaml
+id: v2_lunar_paradox
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Valda's Spire of Secrets: Player Pack 1
+```
+
+You undo one action taken in the last round, erasing its direct effects, and the creature that took it suffers 10d8 psychic damage.
+
+Source reference: [Valda's Spire of Secrets: Player Pack 1 on 5e.tools](https://5e.tools/spells.html#paradox_valdaplayerpack).
+
+---
+
+### Time Ravage
+
+```yaml
+id: v2_pestilence_time_ravage
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (EGW)
+```
+
+Rapid aging deals 10d12 necrotic damage; on a failed save the target is left with only 30 days before it dies of old age.
+
+Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#time%20ravage_egw).
+

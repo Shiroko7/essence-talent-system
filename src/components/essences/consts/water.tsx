@@ -68,7 +68,7 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
-    author: "Selune",
+    author: "Selûne",
     location: "Phudara / Isle of Whispers",
   },
   {
@@ -152,7 +152,7 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
-    author: "Selune",
+    author: "Selûne",
     location: "Phudara / Isle of Whispers",
   },
   {
@@ -188,7 +188,7 @@ export const waterAbilities = [
     isPassive: true,
     isSpell: false,
     isCantrip: false,
-    author: "Selune",
+    author: "Selûne",
     location: "Phudara / Isle of Whispers",
   },
   {
@@ -212,7 +212,7 @@ export const waterAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
-    author: "Yuji (Shadow Sect)",
+    author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
   },
   {

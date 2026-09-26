@@ -164,7 +164,7 @@ const EssenceTalentTree: React.FC = () => {
               New Redesign
             </span>
             <span className="text-xs text-parchment font-body">
-              Explore the <strong>V2 Cultivation Paths</strong> grouped into Primordial, Divine, and Human disciplines.
+              Explore the <strong>V2 Cultivation Paths</strong> grouped into Primordial, Divine, and Immortal families.
             </span>
           </div>
           <Link

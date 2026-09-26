@@ -13,6 +13,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -41,6 +42,7 @@ isPassive: true
 isSpell: false
 isCantrip: false
 author: Cult of the Lord of Murder
+location: Leatrux
 ```
 
 You instinctively track the scent of open wounds. You have advantage on Wisdom (Perception) and Wisdom (Survival) checks to detect or track any creature that is below its hit point maximum. In addition, your weapon attacks deal an extra 1d4 damage against targets below half their maximum hit points.
@@ -57,6 +59,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
+location: Leatrux
 ```
 
 **Casting Time:** 10 minutes  
@@ -89,6 +92,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
+location: Leatrux
 ```
 
 **Casting Time:** 1 bonus action  
@@ -120,6 +124,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action  
@@ -146,6 +151,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
+location: Leatrux
 ```
 
 **Casting Time:** 1 bonus action  
@@ -306,6 +312,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Maiden of Pain (Loviatar)
+location: Leatrux
 ```
 
 You channel vitality through inflicting suffering. When you hit a creature with an attack, you can invoke barbed ethereal lashes to lacerate the foe, dealing an additional 1d6 piercing damage. The target must succeed on a Wisdom saving throw or have disadvantage on its next attack roll.
@@ -376,7 +383,8 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Cyric
+location: Leatrux
 ```
 
 You have advantage on attack rolls against any creature that is currently frightened.
@@ -393,6 +401,7 @@ isPassive: true
 isSpell: false
 isCantrip: false
 author: Maiden of Pain (Loviatar)
+location: Leatrux
 ```
 
 Whenever a creature within 30 feet takes damage from your attacks or spells, you convert their agony into physical resilience, gaining temporary hit points equal to your character level.
@@ -447,6 +456,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Maiden of Pain (Loviatar)
+location: Leatrux
 ```
 
 You wreath yourself in a mantle of barbed needles and psychic torment for 1 minute. Any creature that hits you with a melee attack takes psychic damage equal to the damage dealt or 3d8 (whichever is lower), and cannot take reactions until the start of its next turn.
@@ -487,7 +497,7 @@ author: Enchantment / Pure Agony
 
 Utter a word of power that causes overwhelming physical suffering, reducing speed to 10 ft and giving disadvantage on attacks and checks.
 
-https://5e.tools/spells.html#power%20word%20pain_xphb
+https://5e.tools/spells.html#power%20word%20pain_xge
 
 ---
 
@@ -519,6 +529,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Cult of Cyric
+location: Leatrux
 ```
 
 As a bonus action, you cloak yourself in deceptive shadows for 1 minute. While cloaked, you make no sound when moving and leave behind neither physical footprints nor forensic trace. The first attack you hit while cloaked deals an extra 2d6 necrotic damage and ends the cloak.
@@ -556,3 +567,241 @@ location: Phudara / Isle of Whispers
 ```
 
 Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.
+
+---
+
+## Spells restored from V1
+
+---
+
+### Hellish Rebuke
+
+```yaml
+id: fire_1st_level_hellish_rebuke
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+As a reaction to being damaged, you engulf the attacker in green flames for 2d10 fire damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#hellish%20rebuke_xphb).
+
+---
+
+### Speak with Dead
+
+```yaml
+id: wood_3rd_level_speak_with_dead
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A corpse answers up to five questions with what it knew in life.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#speak%20with%20dead_xphb).
+
+---
+
+### Antilife Shell
+
+```yaml
+id: wood_5th_level_antilife_shell
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A 10-foot aura keeps living creatures, except constructs and undead, from reaching you.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#antilife%20shell_xphb).
+
+---
+
+### Synaptic Static
+
+```yaml
+id: acid_5th_level_synaptic_static
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A burst of psychic energy deals 8d6 psychic damage and muddles the thoughts of those who fail their save.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#synaptic%20static_xphb).
+
+---
+
+### Power Word Stun
+
+```yaml
+id: v2_ruin_power_word_stun
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A creature with 150 hit points or fewer is stunned until it succeeds on a Constitution save; a stronger one is rooted in place.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#power%20word%20stun_xphb).
+
+---
+
+### Glibness
+
+```yaml
+id: v2_ruin_glibness
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+For an hour you can treat any Charisma check roll as a 15, and magic that detects lies always reports you as truthful.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#glibness_xphb).
+
+---
+
+### Psychic Scream
+
+```yaml
+id: v2_ruin_psychic_scream
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+Up to ten creatures take 14d6 psychic damage and are stunned; a creature slain by it has its head explode.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#psychic%20scream_xge).
+
+---
+
+### Wail of the Banshee
+
+```yaml
+id: v2_ruin_wail_of_the_banshee
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Arcana Unleashed)
+```
+
+Your terrible scream kills up to ten creatures with 50 hit points or fewer; stronger targets take heavy psychic damage.
+
+Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#wail%20of%20the%20banshee_au).
+
+---
+
+### Power Word Maim
+
+```yaml
+id: v2_ruin_power_word_maim
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+A creature with 125 hit points or fewer is twisted for 8d10 necrotic damage and knocked prone; stronger creatures are rooted in place.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#power%20word%20maim_grimhollowpg24).
+
+---
+
+### Dread Curse of Azathoth
+
+```yaml
+id: v2_ruin_dread_curse_of_azathoth
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Cthulhu by Torchlight
+```
+
+You speak Azathoth’s secret name, dooming a creature to die at the end of its third turn unless the spell is broken.
+
+Source reference: [Cthulhu by Torchlight on 5e.tools](https://5e.tools/spells.html#dread%20curse%20of%20azathoth_cthulhutorchlight).
+
+---
+
+### Doom of False Friends
+
+```yaml
+id: v2_ruin_doom_of_false_friends
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Book of Ebon Tides
+```
+
+You sever the bond between two creatures, compelling each to hunt and attack the other.
+
+Source reference: [Kobold Press Book of Ebon Tides on 5e.tools](https://5e.tools/spells.html#doom%20of%20false%20friends_bookofebontides).
+
+---
+
+### Wipe Face
+
+```yaml
+id: v2_ruin_wipe_face
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+A creature’s face seals over into smooth skin, blinding and incapacitating it as it begins to suffocate.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#wipe%20face_grimhollowpg24).
+
+---
+
+### Wave of Oblivion
+
+```yaml
+id: v2_ruin_wave_of_oblivion
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Cthulhu by Torchlight
+```
+
+A cone of oblivion kills bloodied creatures that fail a save, reducing them to dust.
+
+Source reference: [Cthulhu by Torchlight on 5e.tools](https://5e.tools/spells.html#wave%20of%20oblivion_cthulhutorchlight).

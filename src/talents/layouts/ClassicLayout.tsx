@@ -59,7 +59,7 @@ const AscendingTiers: React.FC<{
  */
 const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const { system } = ctl;
-  const [pathId, setPathId] = useState<string | null>(useInitialPath(system));
+  const [pathId, setPathId] = useState<string | null>(useInitialPath(ctl));
   const [kind, setKind] = useState<KindFilter>('all');
   const [search, setSearch] = useState('');
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());

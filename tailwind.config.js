@@ -109,6 +109,7 @@ export default {
         'glow-sky': '0 0 20px rgba(103, 232, 249, 0.35)',
         'glow-alchemy': '0 0 20px rgba(94, 234, 212, 0.35)',
         'glow-heart': '0 0 20px rgba(232, 121, 249, 0.35)',
+        'glow-mysteries': '0 0 20px rgba(231, 229, 228, 0.3)',
       },
       borderColor: {
         'gold-subtle': 'rgba(201, 169, 89, 0.15)',
@@ -174,7 +175,7 @@ export default {
     'shadow-glow-water', 'shadow-glow-fire', 'shadow-glow-earth', 'shadow-glow-metal',
     'shadow-glow-wood', 'shadow-glow-poison', 'shadow-glow-acid', 'shadow-glow-lightning', 'shadow-glow-wind',
     'shadow-glow-sky', 'shadow-glow-alchemy', 'shadow-glow-sun', 'shadow-glow-love',
-    'shadow-glow-heart',
+    'shadow-glow-heart', 'shadow-glow-mysteries',
     // Rarity colors
     'bg-rarity-common', 'bg-rarity-uncommon', 'bg-rarity-rare', 'bg-rarity-very-rare', 'bg-rarity-legendary',
     'text-rarity-common', 'text-rarity-uncommon', 'text-rarity-rare', 'text-rarity-very-rare', 'text-rarity-legendary',

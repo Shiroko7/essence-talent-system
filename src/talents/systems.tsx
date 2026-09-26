@@ -60,6 +60,7 @@ export const buildV1System = (): TalentSystem => {
     name: 'Elemental Essences',
     tagline: 'Nine elemental essences, five tiers of mastery each.',
     resourceName: 'Essence',
+    sharedPools: false,
     groups: [{ id: 'elements', label: 'Elements', accent: '#c9a959' }],
     paths,
     abilitiesByPath: mergePathAbilities(paths.map(p => p.id), abilities, cantrips, spells)
@@ -83,6 +84,7 @@ export const buildV2System = (): TalentSystem => {
     name: 'Cultivation Paths',
     tagline: catalog.subtitle,
     resourceName: 'Essence',
+    sharedPools: true,
     groups: groups.map(group => ({ id: group.id, label: group.label, accent: GROUP_ACCENTS[group.id] ?? '#c9a959' })),
     paths: systemPaths,
     abilitiesByPath: mergePathAbilities(systemPaths.map(p => p.id), abilities, cantrips, spells)

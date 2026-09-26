@@ -1,11 +1,13 @@
 import React, { ReactNode, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Gauge, Network, ScrollText } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowRightLeft, Gauge, Network, ScrollText } from 'lucide-react';
 import type { TalentController } from '../model';
 import { TalentPageId, pagePath } from '../routes';
 import { BudgetMeter, CharacterMenu, LevelStepper } from '../ui';
 import { DESIGNS, useDesignContext } from '../design';
 import { ESSENCE_VARIANTS, useEssenceVariantControl } from '../essence/variant';
+import MigrationBanner from './MigrationBanner';
+import { moveV1ToV2 } from '../migration';
 
 const TABS: { id: TalentPageId; label: string; short: string; icon: typeof Network }[] = [
   { id: 'talents', label: 'Talents', short: 'Talents', icon: Network },
@@ -89,6 +91,27 @@ const EssenceToggle: React.FC = () => {
   return <ViewToggle label="Essence tracker" options={ESSENCE_VARIANTS} value={ctx.variant} onChange={ctx.setVariant} />;
 };
 
+/** V1 only: carry this character into V2, overwriting the V2 build, and open it there. */
+const MoveToV2Button: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
+  const navigate = useNavigate();
+  const move = () => {
+    if (!window.confirm('Move this character to V2? Your current V2 build will be overwritten (a backup is kept).')) return;
+    try {
+      moveV1ToV2({ level: ctl.level, selectedAbilities: ctl.selectedIds });
+      navigate(pagePath('v2', 'talents'));
+    } catch (error) {
+      console.error('Error moving the V1 character to V2:', error);
+      window.alert('Could not save to V2 in this browser.');
+    }
+  };
+  return (
+    <button onClick={move} disabled={!ctl.selectedIds.length}
+      className="arcane-btn arcane-btn-primary !px-3 !py-1.5 text-xs flex items-center gap-1.5 disabled:opacity-40">
+      <ArrowRightLeft size={13} /> Move to V2
+    </button>
+  );
+};
+
 /** Level, points and the Character menu pinned to the bottom of the screen. */
 const CharacterDock: React.FC<{ ctl: TalentController; actions?: ReactNode }> = ({ ctl, actions }) => (
   <div className={`fixed bottom-0 inset-x-0 z-40 border-t border-gold-subtle bg-obsidian/95 backdrop-blur-md shadow-[0_-8px_24px_rgba(0,0,0,0.4)]`}>
@@ -98,6 +121,7 @@ const CharacterDock: React.FC<{ ctl: TalentController; actions?: ReactNode }> = 
       <span className="sm:hidden font-display text-sm text-gold tabular-nums whitespace-nowrap">{ctl.pointsLeft}<span className="text-mist text-xs"> pts left</span></span>
       <div className="ml-auto flex items-center gap-2">
         {actions}
+        {ctl.system.version === 'v1' && <MoveToV2Button ctl={ctl} />}
         <CharacterMenu ctl={ctl} direction="up" />
       </div>
     </div>
@@ -117,6 +141,7 @@ export const PageHeader: React.FC<{ ctl: TalentController; page: TalentPageId; a
       {page === 'talents' && <div className="ml-auto pb-1.5"><DesignToggle /></div>}
       {page === 'essence' && <div className="ml-auto pb-1.5"><EssenceToggle /></div>}
     </header>
+    {ctl.system.version === 'v2' && page !== 'migration' && <MigrationBanner ctl={ctl} />}
     <CharacterDock ctl={ctl} actions={actions} />
   </>
 );

@@ -224,7 +224,7 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
-    author: "Yuji (Shadow Sect)",
+    author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
   },
   {
@@ -236,7 +236,7 @@ export const airAbilities = [
     isPassive: false,
     isSpell: false,
     isCantrip: false,
-    author: "Yuji (Shadow Sect)",
+    author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
   },
   {

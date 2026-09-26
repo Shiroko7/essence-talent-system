@@ -28,13 +28,13 @@ As an action, you fire a beam of toxic moonlight at a creature within 60 feet. M
 
 ```yaml
 id: water_master_lunar_tide
-tier: master
+tier: adept
 isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Shadow Sect
-location: Sirius
+author: Netherdark Emperor "Yuji" (Shadow Sect)
+location: Leatrux
 ```
 
 As a reaction when you or creatures within 30 feet are subjected to a Dexterity saving throw against an ability that deals damage, you summon a protective wave of water guided by lunar force. All affected creatures reduce the damage taken by 2d8 + your spellcasting modifier. The water then dissipates harmlessly.
@@ -45,12 +45,12 @@ As a reaction when you or creatures within 30 feet are subjected to a Dexterity 
 
 ```yaml
 id: water_master_moonfall_condemnation
-tier: master
+tier: grandmaster
 isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Yuji (Shadow Sect)
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -67,12 +67,12 @@ If this damage reduces the target to 50 hit points or fewer, it must immediately
 
 ```yaml
 id: wind_master_essence_lunar_wind_spiral
-tier: master
+tier: grandmaster
 isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Yuji (Shadow Sect)
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -100,7 +100,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Yuji (Shadow Sect)
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -340,3 +340,134 @@ location: Phudara / Isle of Whispers
 ```
 
 You can summon a gentle, magical rain that grants clarity and insight to those who stand in it. Allies within a 20-foot radius can ask one question about their future or destiny, and you provide a vague but helpful answer based on your understanding of the world.
+
+---
+
+## Spells restored from V1
+
+---
+
+### Locate Creature
+
+```yaml
+id: wood_4th_level_locate_creature
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You sense the direction to a familiar creature, or the nearest of a kind, within 1,000 feet.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#locate%20creature_xphb).
+
+---
+
+### Magic Mirror
+
+```yaml
+id: acid_5th_level_magic_mirror
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+A shimmering reflection redirects a spell targeting you onto another creature you can see.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#magic%20mirror_grimhollowpg24).
+
+---
+
+### Prismatic Spray
+
+```yaml
+id: acid_7th_level_prismatic_spray
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+Eight rays of multicolored light flash in a cone, each color bringing a different devastating effect.
+
+Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prismatic%20spray_phb).
+
+---
+
+### Prismatic Wall
+
+```yaml
+id: acid_9th_level_prismatic_wall
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+A wall or sphere of seven shimmering layers of light, each harming or hindering creatures that pass.
+
+Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prismatic%20wall_phb).
+
+---
+
+### Dream of the Blue Veil
+
+```yaml
+id: v2_lunar_dream_of_the_blue_veil
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (TCE)
+```
+
+You and up to eight willing creatures dream of another world and, when the vision ends, physically travel there.
+
+Source reference: [D&D 5e (TCE) on 5e.tools](https://5e.tools/spells.html#dream%20of%20the%20blue%20veil_tce).
+
+---
+
+### Moment of Prescience
+
+```yaml
+id: v2_lunar_moment_of_prescience
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Arcana Unleashed)
+```
+
+A sixth sense guides you: turn a failed d20 test into a 20, or turn an attack roll against you into a 1.
+
+Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#moment%20of%20prescience_au).
+
+---
+
+### Wyrd Sight
+
+```yaml
+id: v2_lunar_wyrd_sight
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Northlands Worldbook
+```
+
+You twist the threads of fate: once per turn, add or subtract 1d12 from a d20 roll made by a creature you can see.
+
+Source reference: [Kobold Press Northlands Worldbook on 5e.tools](https://5e.tools/spells.html#wyrd%20sight_northlandsworldbook).
+

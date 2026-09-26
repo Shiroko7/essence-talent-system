@@ -11,10 +11,11 @@ import {
   calculateEffectiveMaxPoints,
   getCultivationPathAbilities,
   shouldUnallocateAbility,
-  reconcileCultivationCharacter
+  reconcileCultivationCharacter,
+  settleRetieredTalents
 } from '../utils/cultivationUtils';
 
-const STORAGE_KEY_CULTIVATION: Record<CultivationVersion, string> = {
+export const STORAGE_KEY_CULTIVATION: Record<CultivationVersion, string> = {
   v2: 'cultivation-paths-character-v2-seven-plus-seven'
 };
 
@@ -26,7 +27,22 @@ interface CultivationAllocationProps {
   allAbilities: Record<CultivationPathId, Ability[]>;
   cantrips: Record<CultivationPathId, Ability[]>;
   spells: Record<CultivationPathId, Ability[]>;
+  /**
+   * A character that takes the place of whatever is saved, such as a V1 character
+   * not yet carried over. The save it replaces is kept under a backup key.
+   */
+  pendingImport?: () => CultivationCharacter | null;
 }
+
+/** Keep the saved build that a V1 import is about to replace. */
+export const backUpCultivationSave = (catalogVersion: CultivationVersion) => {
+  try {
+    const replaced = localStorage.getItem(STORAGE_KEY_CULTIVATION[catalogVersion]) ?? localStorage.getItem('cultivation-paths-character-v2');
+    if (replaced) localStorage.setItem(`${STORAGE_KEY_CULTIVATION[catalogVersion]}-before-v1-import`, replaced);
+  } catch (error) {
+    console.error('Error backing up cultivation character before import:', error);
+  }
+};
 
 export const useCultivationAllocation = ({
   initialLevel = 11,
@@ -35,9 +51,16 @@ export const useCultivationAllocation = ({
   catalogVersion,
   allAbilities,
   cantrips,
-  spells
+  spells,
+  pendingImport
 }: CultivationAllocationProps) => {
   const loadCharacterFromStorage = (): CultivationCharacter => {
+    const imported = pendingImport?.();
+    if (imported) {
+      backUpCultivationSave(catalogVersion);
+      return imported;
+    }
+
     try {
       const storageKey = STORAGE_KEY_CULTIVATION[catalogVersion];
       const activeCatalogData = localStorage.getItem(storageKey);
@@ -45,7 +68,9 @@ export const useCultivationAllocation = ({
       if (savedData) {
         const parsed = JSON.parse(savedData) as CultivationCharacter;
         if (parsed && typeof parsed.level === 'number' && Array.isArray(parsed.selectedAbilities)) {
-          if (activeCatalogData && parsed.version === catalogVersion) return parsed;
+          if (activeCatalogData && parsed.version === catalogVersion) {
+            return settleRetieredTalents(parsed, { abilities: allAbilities, cantrips, spells }, paths);
+          }
           return reconcileCultivationCharacter(parsed, { abilities: allAbilities, cantrips, spells }, paths, catalogVersion);
         }
       }
@@ -271,6 +296,7 @@ export const useCultivationAllocation = ({
     updateActiveEssence,
     getPathPassiveReduction,
     setCharacterState,
+    updateCharacter: setCharacter,
     currentAbilityError,
     clearAbilityError
   };

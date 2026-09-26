@@ -21,131 +21,6 @@ https://5e.tools/spells.html#spare%20the%20dying_xphb
 
 ---
 
-### Lesser Restoration
-
-```yaml
-id: providence_2nd_lesser_restoration
-tier: 2nd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric / Paladin
-```
-
-You end one disease or condition: blinded, deafened, paralyzed, or poisoned.
-
-https://5e.tools/spells.html#lesser%20restoration_xphb
-
----
-
-### Greater Restoration
-
-```yaml
-id: providence_5th_greater_restoration
-tier: 5th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric / Abjuration
-```
-
-You end one debilitating effect: exhaustion levels, charmed/petrified, cursed, or ability reductions.
-
-https://5e.tools/spells.html#greater%20restoration_xphb
-
----
-
-### Heal
-
-```yaml
-id: providence_6th_heal
-tier: 6th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric (Life Domain)
-```
-
-A surge of positive energy washes through a creature you touch, restoring 70 hit points and ending all blindness, deafness, and diseases.
-
-https://5e.tools/spells.html#heal_xphb
-
----
-
-### Cure Wounds
-
-```yaml
-id: providence_1st_cure_wounds
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric / Paladin
-```
-
-A creature you touch regains hit points equal to 1d8 + your spellcasting ability modifier.
-
-https://5e.tools/spells.html#cure%20wounds_xphb
-
----
-
-### Revivify
-
-```yaml
-id: providence_3rd_revivify
-tier: 3rd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric / Paladin
-```
-
-You touch a creature that has died within the last minute, returning it to life with 1 hit point.
-
-https://5e.tools/spells.html#revivify_xphb
-
----
-
-### Restorative Rain
-
-```yaml
-id: water_initiate_restorative_rain
-tier: initiate
-isActive: true
-isPassive: false
-isSpell: false
-isCantrip: false
-author: Lluvia Tribe
-location: Phudara / Isle of Whispers
-```
-
-As an action, you create a 20-foot radius of gentle rain centered on you that lasts for a number of rounds equal to your maximum Water essences. At the start of each of their turns while in the rain, they regain 1 hit point.
-
----
-
-### Healing Word
-
-```yaml
-id: v2_life_healing_word
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB)
-```
-
-A spoken prayer restores a small amount of vitality to a creature within range.
-
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#healing%20word_phb).
-
----
-
 ### Unbroken Spirit
 
 ```yaml
@@ -156,6 +31,7 @@ isPassive: true
 isSpell: false
 isCantrip: false
 author: Order of the Broken Arrow (Ilmater)
+location: Leatrux
 ```
 
 Your resolve remains steadfast under trial. When you or an ally within 15 feet makes a saving throw against being frightened or charmed, or rolls a death saving throw, the creature adds a d4 to the result. Additionally, when you are below half your maximum hit points, your movement speed cannot be reduced by difficult terrain.
@@ -172,6 +48,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action 
@@ -194,6 +71,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action 
@@ -219,6 +97,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action 
@@ -241,6 +120,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action 
@@ -438,6 +318,7 @@ isPassive: false
 isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
+location: Leatrux
 ```
 
 **Casting Time:** 1 action 
@@ -471,24 +352,6 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#bless_ph
 
 ---
 
-### Sacred Flame
-
-```yaml
-id: moon_cantrip_sacred_flame
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Cleric / Evocation
-```
-
-Flame-like solar radiance descends on a creature you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage with no benefit from cover.
-
-https://5e.tools/spells.html#sacred%20flame_xphb
-
----
-
 ### Heroism
 
 ```yaml
@@ -507,42 +370,6 @@ https://5e.tools/spells.html#heroism_xphb
 
 ---
 
-### Light
-
-```yaml
-id: moon_cantrip_light
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Cleric / Evocation
-```
-
-You touch one object. Until the spell ends, the object sheds bright sunlight in a 20-foot radius and dim light for an additional 20 feet.
-
-https://5e.tools/spells.html#light_xphb
-
----
-
-### Guiding Bolt
-
-```yaml
-id: moon_1st_guiding_bolt
-tier: 1st
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric / Evocation
-```
-
-A flash of sunlight streaks toward a creature of your choice within range. On a hit, the target takes 4d6 radiant damage, and the next attack roll against it has advantage.
-
-https://5e.tools/spells.html#guiding%20bolt_xphb
-
----
-
 ### Fortune Favors the Swift
 
 ```yaml
@@ -557,3 +384,277 @@ location: Phudara / Isle of Whispers
 ```
 
 Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it to one d20 roll before the end of your next turn.
+
+---
+
+## Spells restored from V1
+
+---
+
+### Absorb Elements
+
+```yaml
+id: acid_1st_level_absorb_elements
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+As a reaction you gain resistance to incoming elemental damage and add it to your next melee hit.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#absorb%20elements_xge).
+
+---
+
+### Glyph of Warding
+
+```yaml
+id: acid_3rd_level_glyph_of_warding
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You inscribe a hidden glyph that releases an explosion or a stored spell when triggered.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#glyph%20of%20warding_xphb).
+
+---
+
+### Leomund's Tiny Hut
+
+```yaml
+id: wood_3rd_level_leomunds_tiny_hut
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A dome of force shelters you and your companions and keeps others and outside magic out.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#leomund's%20tiny%20hut_xphb).
+
+---
+
+### Spirit Guardians
+
+```yaml
+id: wood_3rd_level_spirit_guardians
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Protective spirits circle you, slowing enemies and dealing radiant or necrotic damage to them.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#spirit%20guardians_xphb).
+
+---
+
+### Guardian of Faith
+
+```yaml
+id: wood_4th_level_guardian_of_faith
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A spectral guardian of your deity damages each enemy that comes near it, until it has dealt 60 damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#guardian%20of%20faith_xphb).
+
+---
+
+### Planar Ally
+
+```yaml
+id: wood_6th_level_planar_ally
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You beseech a powerful being, who sends a celestial, elemental, or fiend to aid you in exchange for payment.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#planar%20ally_xphb).
+
+---
+
+### Circle of Power
+
+```yaml
+id: v2_providence_circle_of_power
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A 30-foot aura gives you and your allies advantage on saves against magic, and successful saves against half-damage effects deal no damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#circle%20of%20power_xphb).
+
+---
+
+### Holy Weapon
+
+```yaml
+id: v2_providence_holy_weapon
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+A weapon you touch shines with holy light and deals an extra 2d8 radiant damage; you can dismiss it in a radiant burst that blinds foes.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#holy%20weapon_xge).
+
+---
+
+### Heroes' Feast
+
+```yaml
+id: v2_providence_heroes_feast
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Up to twelve creatures share a feast that cures poison and disease and grants poison immunity, fear immunity, advantage on Wisdom saves, and extra hit points for 24 hours.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#heroes'%20feast_xphb).
+
+---
+
+### Power Word Fortify
+
+```yaml
+id: v2_providence_power_word_fortify
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Up to six creatures you can see share 120 temporary hit points.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#power%20word%20fortify_xphb).
+
+---
+
+### Holy Aura
+
+```yaml
+id: v2_providence_holy_aura
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A 30-foot aura gives allies advantage on all saves and imposes disadvantage on attacks against them; fiends and undead that strike them are blinded.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#holy%20aura_xphb).
+
+---
+
+### Perfection
+
+```yaml
+id: v2_providence_perfection
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+A holy word remakes a creature in an Arch Seraph’s image: fully healed, curses suppressed, ability scores below 18 raised to 18, and a seraph’s blessing.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#perfection_grimhollowpg24).
+
+---
+
+### Phoenix Flames
+
+```yaml
+id: v2_providence_phoenix_flames
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+You die in a burst of holy fire that deals 30d6 radiant damage around you, then rise from the ashes 10 minutes later.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#phoenix%20flames_grimhollowpg24).
+
+---
+
+### Power Word Shield
+
+```yaml
+id: v2_providence_power_word_shield
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Heliana's Guide to Monster Hunting
+```
+
+A word shields a creature: until the end of its next turn it is immune to all but psychic damage and has advantage on saves.
+
+Source reference: [Heliana's Guide to Monster Hunting on 5e.tools](https://5e.tools/spells.html#power%20word%20shield_helianasguidetomonsterhunting).
+
+---
+
+### Conjure Celestial
+
+```yaml
+id: wood_7th_level_conjure_celestial
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A pillar of celestial light heals allies and sears enemies within it; you can move it each turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#conjure%20celestial_xphb).

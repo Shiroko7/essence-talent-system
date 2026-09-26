@@ -2,8 +2,8 @@ import { createContext, useContext } from 'react';
 import { CircleGauge, LayoutGrid } from 'lucide-react';
 
 export const ESSENCE_VARIANTS = [
-  { id: 'cast', label: 'Cast', icon: LayoutGrid, blurb: 'Path cards; tap an ability to spend its cost' },
-  { id: 'rings', label: 'Rings', icon: CircleGauge, blurb: 'One column per path: a ring gauge over its abilities' }
+  { id: 'cast', label: 'Cast', icon: LayoutGrid, blurb: 'Pool cards; tap an ability to spend its cost' },
+  { id: 'rings', label: 'Rings', icon: CircleGauge, blurb: 'A ring gauge per pool over its paths and abilities' }
 ] as const;
 
 export type EssenceVariant = typeof ESSENCE_VARIANTS[number]['id'];

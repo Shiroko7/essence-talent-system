@@ -14,7 +14,8 @@ import {
   FlaskConical,
   CloudLightning,
   Swords,
-  Sparkles
+  Sparkles,
+  Orbit
 } from 'lucide-react';
 import { CultivationPathId } from '../../types/cultivation';
 
@@ -30,6 +31,7 @@ export const getCultivationPathIcon = (id: CultivationPathId, color: string, siz
     case 'sky': return <Wind {...props} />;
     case 'alchemy': return <Beaker {...props} />;
     case 'heart': return <Swords {...props} />;
+    case 'mysteries': return <Orbit {...props} />;
     case 'lunar': return <Moon {...props} />;
     case 'love': return <Heart {...props} />;
     case 'shadow': return <EyeOff {...props} />;

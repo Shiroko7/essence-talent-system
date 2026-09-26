@@ -316,7 +316,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Yuji (Shadow Sect)
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 
@@ -343,7 +343,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Yuji (Shadow Sect)
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 

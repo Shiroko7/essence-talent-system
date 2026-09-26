@@ -1,6 +1,6 @@
 # Heart Cultivation Path
 
-Tradition: Human
+Tradition: Immortal
 Concept: Martial discipline and embodied mastery.
 Spellcasting: none
 
@@ -21,7 +21,7 @@ Your unarmed strikes deal 1d4 bludgeoning damage and count as magical for overco
 
 ---
 
-### Radiant Vein Blade Technique — 1st Form: Twin Strike of Conviction (쌍신념격/雙信念擊)
+### Radiant Vein Blade I: Twin Strike of Conviction
 
 ```yaml
 id: heart_initiate_radiant_vein_blade_form_1
@@ -30,17 +30,17 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Kelemvor
+location: Leatrux
 ```
 
-An immortal martial art passed down from Kelemvor, ancient paladin of Tyr. Its power comes from the wielder's inner radiance: the conviction that good exists because one chooses to embody it.
+**Weapon Requirement:** Any weapon.
 
-**Cost:** 1 Essence. **Attack replacement:** Replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make that weapon attack with advantage. On a hit, it deals an extra 1d6 damage.
+**Cost:** 1 Essence.
 
-**Damage type:** When you spend Essence for a form, choose Radiant damage or the damage type associated with the Essence spent.
+**Attack replacement:** Replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make that attack with advantage. On a hit, it deals an extra 1d6 damage of a type you choose: radiant, or your weapon's damage type.
 
-**Flow:** You can use only one form per turn. Use the forms in order: 1st, 2nd, then 3rd. If this attack misses, or if you do not use the 2nd Form on your next turn, the flow breaks and you must restart with the 1st Form.
-
-"The first step is believing you can make a difference."
+**Flow:** You can use only one Radiant Vein Blade form per turn. If this attack misses, or you don't use Radiant Vein Blade II on your next turn, the flow breaks and you must start again with Radiant Vein Blade I.
 
 ---
 
@@ -61,7 +61,7 @@ Your unarmed strikes deal 1d6 bludgeoning damage and count as magical for overco
 
 ---
 
-### Radiant Vein Blade Technique — 2nd Form: Aegis of the Righteous (의로운방패/義-盾)
+### Radiant Vein Blade II: Aegis of the Righteous
 
 ```yaml
 id: heart_adept_radiant_vein_blade_form_2
@@ -70,17 +70,19 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Kelemvor
+location: Leatrux
 ```
 
-This is the second link in Kelemvor's Radiant Vein Blade Technique (光脈劍/Gwangmaekgeom), an art powered by the wielder's chosen conviction rather than a divine portfolio.
+*Prerequisite: Radiant Vein Blade I*
 
-**Cost:** 2 Essences. **Attack replacement:** Replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. On a hit, the attack deals an extra 2d6 damage of the type you chose when spending Essence, and the target's AC is reduced by 2 until the end of your next turn.
+**Weapon Requirement:** Any weapon.
 
-**Damage type:** Choose Radiant or the damage type associated with the Essence spent.
+**Cost:** 2 Essences.
 
-**Flow:** You can use only one form per turn. Use this only on the turn immediately following a hit with the 1st Form. If this attack misses, or if you do not use the 3rd Form on your next turn, the flow breaks and you must restart with the 1st Form.
+**Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade I, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. On a hit, the attack deals an extra 2d6 damage of a type you choose (radiant, or your weapon's damage type), and the target's AC is reduced by 2 until the end of your next turn.
 
-"When you light the way, others will follow."
+**Flow:** You can use only one Radiant Vein Blade form per turn. If this attack misses, or you don't use Radiant Vein Blade III on your next turn, the flow breaks and you must start again with Radiant Vein Blade I.
 
 ---
 
@@ -93,14 +95,15 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your unarmed strikes deal 1d8 bludgeoning damage and count as magical for overcoming resistance and immunity.
 
 ---
 
-### Radiant Vein Blade Technique — 3rd Form: Cascading Judgment (연속심판/連續審判)
+### Radiant Vein Blade III: Cascading Judgment
 
 ```yaml
 id: heart_master_radiant_vein_blade_form_3
@@ -109,17 +112,21 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Kelemvor
+location: Leatrux
 ```
 
-This is the final link in Kelemvor's Radiant Vein Blade Technique (光脈劍/Gwangmaekgeom), an art powered by the wielder's chosen conviction rather than a divine portfolio.
+*Prerequisite: Radiant Vein Blade II*
 
-**Cost:** 3 Essences. **Attack replacement:** Replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make one weapon attack against the primary target. Hit or miss, unleash a 15-foot cone of blade energy from yourself in the direction of that target.
+**Weapon Requirement:** Any weapon.
 
-The primary target and each creature in the cone must make a Dexterity saving throw against your essence ability save DC. The primary target makes this save with disadvantage. On a failed save, a creature takes 3d8 damage of the type you chose when spending Essence and is pushed 10 feet away from you. On a success, it takes half damage and is not pushed. Choose Radiant or the damage type associated with the Essence spent.
+**Cost:** 3 Essences.
 
-**Flow:** You can use only one form per turn. Use this only on the turn immediately following a hit with the 2nd Form. The sequence ends after this form. If its weapon attack misses, the flow breaks; otherwise, you may begin again with the 1st Form on a later turn.
+**Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade II, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make one weapon attack against the primary target. Hit or miss, you unleash a 15-foot cone of blade energy from yourself toward that target. The primary target and each creature in the cone must make a Dexterity saving throw against your essence ability save DC, and the primary target makes it with disadvantage:
+- **On a failed save:** The creature takes 3d8 damage of a type you choose (radiant, or your weapon's damage type) and is pushed 10 feet away from you.
+- **On a successful save:** The creature takes half damage and is not pushed.
 
-"Your will can move mountains."
+**Flow:** You can use only one Radiant Vein Blade form per turn. The sequence ends after this form. If its weapon attack misses, the flow breaks; otherwise, you can begin again with Radiant Vein Blade I on a later turn.
 
 ---
 
@@ -149,7 +156,8 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your unarmed strikes deal 1d10 bludgeoning damage and count as magical for overcoming resistance and immunity.
@@ -165,7 +173,8 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Llamarada Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your unarmed strikes deal 1d12 bludgeoning damage and count as magical for overcoming resistance and immunity.
@@ -216,6 +225,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
+author: Bingsan Mun Sect
 location: Sirius
 ```
 
@@ -232,6 +242,7 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
+author: Bingsan Mun Sect
 location: Sirius
 ```
 
@@ -504,6 +515,30 @@ location: Sirius
 - **On a successful save:** The target takes the extra damage and its movement speed is halved until the end of its next turn.
 
 An affected creature can repeat the Constitution saving throw at the end of each of its turns, ending the condition on a success.
+
+---
+
+### Heart Exchange
+
+```yaml
+id: wood_master_heart_exchange
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Ha Yeon-ae
+location: Sirius
+```
+
+As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude.
+
+For the next hour, you and the target share an unbreakable bond regardless of distance:
+- Whenever one of you takes damage, both take half that damage.
+- Whenever one regains hit points, both regain the same amount.
+- You both gain advantage on all saving throws.
+
+You can maintain only one heart exchange at a time.
 
 ---
 

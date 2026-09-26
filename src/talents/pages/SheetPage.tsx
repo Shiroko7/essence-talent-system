@@ -4,7 +4,7 @@ import { ChevronDown, ChevronsDownUp, ChevronsUpDown, Network, Printer } from 'l
 import { Ability } from '../../types/essence';
 import AbilityMarkdown from '../../components/essences/AbilityMarkdown';
 import {
-  KindFilter, TalentController, costOf, groupByTier, kindOf, matchesKind, matchesSearch, pathsByGroup, reservesEssence, tint
+  KindFilter, TalentController, costOf, groupByTier, kindOf, matchesKind, matchesSearch, pathsByDepth, pathsByGroup, reservesEssence, tint
 } from '../model';
 import type { SystemPath } from '../model';
 import { pagePath } from '../routes';
@@ -72,9 +72,13 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
 
   const learnedIn = (pathId: string) => (system.abilitiesByPath[pathId] || []).filter(a => ctl.isLearned(a.id));
   const visibleIn = (pathId: string) => learnedIn(pathId).filter(a => matchesKind(a, kind) && matchesSearch(a, search));
-  const groups = pathsByGroup(system, ctl.learnedPaths)
+  // Like the talent tree's default, lead with the furthest path: families
+  // follow their furthest path, and paths within a family are ranked the same way.
+  const ranked = pathsByDepth(ctl);
+  const groups = pathsByGroup(system, ranked)
     .map(({ group, paths }) => ({ group, paths: paths.filter(p => visibleIn(p.id).length > 0) }))
-    .filter(g => g.paths.length > 0);
+    .filter(g => g.paths.length > 0)
+    .sort((a, b) => ranked.indexOf(a.paths[0]) - ranked.indexOf(b.paths[0]));
   const allLearned = ctl.learnedPaths.flatMap(p => learnedIn(p.id));
   const printButton = (
     <button onClick={() => window.print()} className="arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5" disabled={!allLearned.length}>
@@ -116,25 +120,38 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
           <div className="flex flex-col lg:flex-row gap-5 items-start">
             {/* Contents */}
             <nav className="w-full lg:w-60 flex-shrink-0 arcane-panel p-3 lg:sticky lg:top-4 print:hidden" aria-label="Paths in this summary">
-              {groups.map(({ group, paths }) => (
+              {groups.map(({ group, paths }) => {
+                // A family pool is shown once, beside the family; V1 pools belong to single paths.
+                const familyPool = system.sharedPools ? ctl.pool(group.id) : null;
+                return (
                 <div key={group.id} className="mb-2 last:mb-0">
-                  {system.groups.length > 1 && <GroupLabel label={group.label} accent={group.accent} className="px-1.5 py-1.5" />}
+                  {system.groups.length > 1 && (
+                    <div className="flex items-center gap-2 pr-2">
+                      <GroupLabel label={group.label} accent={group.accent} className="flex-1 px-1.5 py-1.5" />
+                      {familyPool && (
+                        <span className="text-xs tabular-nums" style={{ color: group.accent }} title={`Shared ${group.label} ${system.resourceName.toLowerCase()}`}>
+                          {familyPool.current}/{familyPool.max}
+                        </span>
+                      )}
+                    </div>
+                  )}
                   <ul className="space-y-0.5">
                     {paths.map(p => {
-                      const pool = ctl.pool(p.id);
+                      const pool = familyPool ? null : ctl.pool(ctl.poolOf(p.id).id);
                       return (
                         <li key={p.id}>
                           <a href={`#path-${p.id}`} className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-charcoal/50">
                             <PathSigil path={p} size={24} />
                             <span className="flex-1 text-sm font-display text-fog truncate">{p.name}</span>
-                            <span className="text-xs tabular-nums" style={{ color: p.accent }}>{pool.current}/{pool.max}</span>
+                            {pool && <span className="text-xs tabular-nums" style={{ color: p.accent }}>{pool.current}/{pool.max}</span>}
                           </a>
                         </li>
                       );
                     })}
                   </ul>
                 </div>
-              ))}
+                );
+              })}
               {!groups.length && <p className="text-xs text-mist px-2 py-1">No abilities match.</p>}
             </nav>
 
@@ -144,7 +161,9 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
                 <div className="arcane-panel"><EmptyState title="No abilities match">Try another type or search term.</EmptyState></div>
               )}
               {groups.flatMap(({ group, paths }) => paths.map(p => {
-                const pool = ctl.pool(p.id);
+                const poolInfo = ctl.poolOf(p.id);
+                const pool = ctl.pool(poolInfo.id);
+                const shared = poolInfo.paths.length > 1;
                 return (
                   <section key={p.id} id={`path-${p.id}`} className="arcane-panel p-4 md:p-5 scroll-mt-4 break-inside-avoid-page">
                     <header className="flex flex-wrap items-center gap-4 pb-4 mb-4 border-b" style={{ borderColor: tint(p.accent, 0.2) }}>
@@ -157,7 +176,12 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
                         {(p.description ?? p.concept) && <p className="text-sm text-fog">{p.description ?? p.concept}</p>}
                       </div>
                       <div className="text-right">
-                        <p className="font-display text-2xl tabular-nums" style={{ color: p.accent }}>
+                        {shared && (
+                          <p className="font-display text-[10px] tracking-[0.2em] uppercase" style={{ color: poolInfo.accent }}>
+                            {poolInfo.label} {system.resourceName}
+                          </p>
+                        )}
+                        <p className="font-display text-2xl tabular-nums" style={{ color: shared ? poolInfo.accent : p.accent }}>
                           {pool.current}<span className="text-sm text-mist"> / {pool.max}</span>
                         </p>
                         {pool.reserved > 0 && <p className="text-[11px] text-mist"><span className="text-essence-fire">{pool.reserved}</span> held</p>}

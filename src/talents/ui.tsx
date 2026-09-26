@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  ChevronDown, Download, Info, Lock, Minus, Moon, Network, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
+  ChevronDown, Download, History, Info, Lock, Minus, Moon, Network, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
 import {
@@ -9,6 +10,7 @@ import {
   tierInfo, tierOf, tint
 } from './model';
 import { iconFor } from './abilityIcons';
+import { pagePath } from './routes';
 
 /* ---------------------------------------------------------------- atoms */
 
@@ -159,6 +161,11 @@ export const CharacterMenu: React.FC<{ ctl: TalentController; align?: 'left' | '
           <button className={item} onClick={() => fileRef.current?.click()}>
             <Upload size={15} className="text-essence-wood" /> Load build from file
           </button>
+          {ctl.system.version === 'v2' && (
+            <Link className={item} to={pagePath('v2', 'migration')} onClick={() => setOpen(false)}>
+              <History size={15} className="text-gold" /> V1 migration guide
+            </Link>
+          )}
           {ctl.canUndo && (
             <button className={item} onClick={() => { ctl.undo(); setOpen(false); }}>
               <RotateCcw size={15} className="text-gold" /> Undo reset
@@ -248,14 +255,15 @@ export const LearnButton: React.FC<{ ctl: TalentController; ability: Ability; pa
 export const UseButton: React.FC<{ ctl: TalentController; ability: Ability; path: SystemPath; compact?: boolean }> = ({ ctl, ability, path, compact }) => {
   if (reservesEssence(ability) || !ctl.isLearned(ability.id)) return null;
   const cost = costOf(ability);
-  const canUse = ctl.pool(path.id).current >= cost;
+  const pool = ctl.poolOf(path.id);
+  const canUse = ctl.pool(pool.id).current >= cost;
   return (
     <button
       onClick={() => ctl.spend(ability, path.id)}
       disabled={!canUse}
       className={`rounded font-display tracking-wide inline-flex items-center gap-1 transition-all disabled:opacity-35 disabled:cursor-not-allowed ${compact ? 'px-2 py-0.5 text-[11px]' : 'px-3 py-1.5 text-xs'}`}
       style={{ color: path.accent, border: `1px solid ${tint(path.accent, 0.5)}`, background: tint(path.accent, 0.08) }}
-      title={`Spend ${cost} ${path.name} essence`}
+      title={`Spend ${cost} ${pool.label} essence`}
     >
       <Zap size={compact ? 10 : 12} /> Use · {cost}
     </button>
@@ -511,21 +519,23 @@ export const AlwaysOnChips: React.FC<{ abilities: Ability[]; path: SystemPath; o
 }) => {
   if (!abilities.length) return null;
   return (
-    <div className={`flex flex-wrap items-center gap-1.5 ${className}`}>
-      <span className="text-[10px] font-display tracking-widest uppercase text-mist">Always on</span>
-      {abilities.map(a => (
-        <button
-          key={a.id}
-          onClick={() => onInfo?.(a)}
-          disabled={!onInfo}
-          className="inline-flex items-center gap-1 rounded-full border border-gold-subtle bg-void/40 pl-0.5 pr-2 py-0.5 text-[11px] text-fog hover:text-parchment hover:border-gold/40 disabled:hover:text-fog"
-          title={onInfo ? `Read ${a.name}` : a.name}
-        >
-          <AbilityIcon ability={a} path={path} status="learned" size={16} />
-          {a.name}
-          {onInfo && <Info size={10} className="opacity-60" />}
-        </button>
-      ))}
+    <div className={className}>
+      <span className="block mb-1 text-[10px] font-display tracking-widest uppercase text-mist">Passives</span>
+      <div className="flex flex-wrap items-center gap-1.5">
+        {abilities.map(a => (
+          <button
+            key={a.id}
+            onClick={() => onInfo?.(a)}
+            disabled={!onInfo}
+            className="inline-flex items-center gap-1 rounded-full border border-gold-subtle bg-void/40 pl-0.5 pr-2 py-0.5 text-[11px] text-fog hover:text-parchment hover:border-gold/40 disabled:hover:text-fog"
+            title={onInfo ? `Read ${a.name}` : a.name}
+          >
+            <AbilityIcon ability={a} path={path} status="learned" size={16} />
+            {a.name}
+            {onInfo && <Info size={10} className="opacity-60" />}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

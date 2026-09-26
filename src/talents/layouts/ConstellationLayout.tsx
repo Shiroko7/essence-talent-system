@@ -17,7 +17,7 @@ const NUMERALS = ['I', 'II', 'III', 'IV', 'V'];
  */
 const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const { system } = ctl;
-  const [pathId, setPathId] = useState(useInitialPath(system) ?? system.paths[0].id);
+  const [pathId, setPathId] = useState(useInitialPath(ctl));
   const [search, setSearch] = useState('');
   const [detail, setDetail] = useState<Ability | null>(null);
 
@@ -46,7 +46,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
           {pathsByGroup(system).map(({ group, paths }, gi) => (
             <div
               key={group.id}
-              className={`flex flex-col ${gi > 0 ? 'border-l border-gold-subtle' : ''}`}
+              className={`flex flex-col min-w-0 ${gi > 0 ? 'border-l border-gold-subtle' : ''}`}
               style={{ flexGrow: paths.length, flexBasis: 0 }}
             >
               {system.groups.length > 1 && (
@@ -64,7 +64,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                     <button
                       key={p.id}
                       onClick={() => openPath(p.id)}
-                      className={`flex flex-col items-center gap-1.5 px-2 pt-2 pb-1.5 rounded-lg transition-all w-[84px] ${active ? '-translate-y-0.5' : 'hover:bg-charcoal/50'}`}
+                      className={`flex flex-col items-center gap-1.5 px-2 pt-2 pb-1.5 rounded-lg transition-all w-[84px] xl:w-auto xl:flex-1 xl:min-w-0 xl:max-w-[84px] ${active ? '-translate-y-0.5' : 'hover:bg-charcoal/50'}`}
                       style={active ? { background: tint(p.accent, 0.12), boxShadow: `0 0 0 1px ${tint(p.accent, 0.45)}, 0 6px 20px ${tint(p.accent, 0.2)}` } : undefined}
                     >
                       <PathSigil path={p} size={46} active={active} className="!rounded-full" />

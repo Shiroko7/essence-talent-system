@@ -91,7 +91,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Selune
+author: Selûne
 location: Phudara / Isle of Whispers
 ```
 
@@ -219,7 +219,7 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-author: Selune
+author: Selûne
 location: Phudara / Isle of Whispers
 ```
 
@@ -273,7 +273,7 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-author: Selune
+author: Selûne
 location: Phudara / Isle of Whispers
 ```
 
@@ -310,7 +310,7 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-author: Yuji (Shadow Sect)
+author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
 ```
 

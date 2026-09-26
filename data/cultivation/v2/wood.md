@@ -382,3 +382,385 @@ author: D&D 5e (PHB)
 You create a small natural sign or harmless effect that reflects the nearby environment.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#druidcraft_phb).
+
+---
+
+## Spells restored from V1
+
+---
+
+### Ensnaring Strike
+
+```yaml
+id: wood_1st_level_ensnaring_strike
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Your weapon hit summons grasping vines that restrain the target and pierce it each turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#ensnaring%20strike_xphb).
+
+---
+
+### Find Familiar
+
+```yaml
+id: wood_1st_level_find_familiar
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You gain a spirit familiar in animal form that scouts for you and can deliver your touch spells.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#find%20familiar_xphb).
+
+---
+
+### Forest Guard
+
+```yaml
+id: wood_1st_level_forest_guard
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Obojima: Tales from the Tall Grass
+```
+
+An animated shrub grows from the ground and lashes hostile creatures that come near it.
+
+Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#forest%20guard_obojimatallgrass).
+
+---
+
+### Sprout Foliage
+
+```yaml
+id: wood_1st_level_sprout_foliage
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Obojima: Tales from the Tall Grass
+```
+
+Leafy foliage covers your body, letting you pass as a normal bush while prone and motionless.
+
+Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#sprout%20foliage_obojimatallgrass).
+
+---
+
+### Barkskin
+
+```yaml
+id: wood_2nd_level_barkskin
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A touched creature's skin turns bark-like, giving it AC 17 if its AC is lower.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#barkskin_xphb).
+
+---
+
+### Locate Animals or Plants
+
+```yaml
+id: wood_2nd_level_locate_animals_or_plants
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You sense the direction and distance to the nearest named kind of beast or plant within 5 miles.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#locate%20animals%20or%20plants_xphb).
+
+---
+
+### Thorn Armor
+
+```yaml
+id: wood_3rd_level_thorn_armor
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+A thorny exoskeleton grants temporary hit points and pierces melee attackers for the hit points they strip away.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#thorn%20armor_grimhollowpg24).
+
+---
+
+### Conjure Woodland Beings
+
+```yaml
+id: wood_4th_level_conjure_woodland_beings
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Nature spirits swirl around you, dealing force damage to creatures that enter or remain in their emanation.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#conjure%20woodland%20beings_xphb).
+
+---
+
+### Summon Plant
+
+```yaml
+id: wood_4th_level_summon_plant
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+You call a plant spirit with a blooming, oaken, or thorny feature that fights alongside you.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#summon%20plant_grimhollowpg24).
+
+---
+
+### Awaken
+
+```yaml
+id: wood_5th_level_awaken
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A beast or plant gains an Intelligence of 10 and speech, and is charmed by you for a time.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#awaken_xphb).
+
+---
+
+### Commune with Nature
+
+```yaml
+id: wood_5th_level_commune_with_nature
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Nature spirits reveal facts about the land within 3 miles, such as terrain, water, creatures, and settlements.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#commune%20with%20nature_xphb).
+
+---
+
+### Wrath of Nature
+
+```yaml
+id: v2_wood_wrath_of_nature
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+Trees, rocks, and grasses in a 60-foot cube animate against your enemies, grasping, lashing, and hurling stones.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#wrath%20of%20nature_xge).
+
+---
+
+### Druid Grove
+
+```yaml
+id: v2_wood_druid_grove
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+You ward an area with nature spirits: fog, grasping undergrowth, animated trees, and wind hinder intruders; it becomes permanent if cast there daily for a year.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#druid%20grove_xge).
+
+---
+
+### Summon Dinosaur
+
+```yaml
+id: v2_wood_summon_dinosaur
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Arcana Unleashed)
+```
+
+You call forth a primeval dinosaur spirit, an ankylosaur, triceratops, or tyrannosaur, that fights at your side.
+
+Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#summon%20dinosaur_au).
+
+---
+
+### Regenerate
+
+```yaml
+id: v2_wood_regenerate
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A creature regains 4d8 + 15 hit points and 1 hit point each turn for an hour, and severed body parts regrow.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#regenerate_xphb).
+
+---
+
+### Forest Sanctuary
+
+```yaml
+id: v2_wood_forest_sanctuary
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Deep Magic
+```
+
+You shelter a 200-foot cube of forest from storms, winds, and floods, including magical ones; cast there daily for a year, it becomes permanent.
+
+Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#forest%20sanctuary_kpdm).
+
+---
+
+### World Tree
+
+```yaml
+id: v2_wood_world_tree
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Fragments of the Forbidden Tome
+```
+
+A seed grows into a colossal living tree up to 5 miles tall, with chambers, bridges, and roots that can house a whole civilization.
+
+Source reference: [Fragments of the Forbidden Tome on 5e.tools](https://5e.tools/spells.html#world%20tree_fftforbiddentome).
+
+---
+
+### Primordial Rainforest
+
+```yaml
+id: v2_wood_primordial_rainforest
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Orana's Expanded Spellbook
+```
+
+A rainforest sprouts from a seed, overgrowing a 150-foot cube; within it you sense every creature and command lashing vines.
+
+Source reference: [Orana's Expanded Spellbook on 5e.tools](https://5e.tools/spells.html#primordial%20rainforest_oranasexpandedspellbook).
+
+---
+
+### Arboreal Curse
+
+```yaml
+id: v2_wood_arboreal_curse
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+A creature’s flesh hardens into bark, restraining it; after three failed saves it becomes a tree, which turns permanent after a year and a day.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#arboreal%20curse_grimhollowpg24).
+
+---
+
+### Bloom
+
+```yaml
+id: v2_wood_bloom
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Kobold Press Deep Magic
+```
+
+A ritual that makes the land within a mile deeply fertile, instantly raising a forest, orchard, grassland, or ready field.
+
+Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#bloom_kpdm).
+
+---
+
+### Shapechange
+
+```yaml
+id: v2_moon_shapechange
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+```
+
+You take the form of another creature while retaining your own mind and abilities.
+
+Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shapechange_phb).

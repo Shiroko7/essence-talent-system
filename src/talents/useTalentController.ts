@@ -4,9 +4,12 @@ import useEssenceAllocation from '../hooks/useEssenceAllocation';
 import { useCultivationAllocation } from '../hooks/useCultivationAllocation';
 import { importEssenceData } from '../utils/essenceData';
 import { importCultivationData } from '../utils/cultivationData';
-import { calculatePathEssenceStatus, migrateV1CharacterToCultivation, reconcileCultivationCharacter } from '../utils/cultivationUtils';
+import { calculatePathEssenceStatus, reconcileCultivationCharacter, settleRetieredTalents } from '../utils/cultivationUtils';
+import { CultivationCharacter } from '../types/cultivation';
+import { MigrationSource, planV1Migration, readMigrationSource, readV1Save, writeMigrationSource } from './migration';
 import {
   AbilityStatus,
+  EssencePool,
   PoolStatus,
   TalentController,
   TalentSystem,
@@ -35,7 +38,44 @@ interface AllocationLike<C extends CharacterLike> {
   canUndo: boolean;
   updateActiveEssence: (pathId: never, amount: number) => void;
   setCharacterState: (state: C) => void;
+  /** Functional update; needed where pools span several paths. */
+  updateCharacter?: (update: (prev: C) => C) => void;
 }
+
+/** A path's own share of essence: what it holds now, its capacity, and what passives hold. */
+const pathEssence = (pathId: string, character: CharacterLike, system: TalentSystem) => {
+  const status = calculatePathEssenceStatus(pathId, character as CultivationCharacter, system.abilitiesByPath, {}, {});
+  return { current: Math.min(status.spent, status.available), max: status.available, reserved: status.passiveReduction };
+};
+
+/**
+ * Move essence into or out of a pool that spans several paths. Essence is still
+ * stored per path, so a shared pool is the sum of its paths: spending drains the
+ * preferred path first and then the others, regaining fills paths in order.
+ * Older saves need no conversion; their per-path amounts simply add up.
+ */
+const shiftPoolEssence = (
+  character: CharacterLike,
+  pool: EssencePool,
+  delta: number,
+  system: TalentSystem,
+  preferPathId?: string
+): Record<string, number> => {
+  const next = { ...character.activeEssenceByPath };
+  const order = preferPathId
+    ? [...pool.paths.filter(p => p.id === preferPathId), ...pool.paths.filter(p => p.id !== preferPathId)]
+    : pool.paths;
+  let left = Math.abs(delta);
+  for (const path of order) {
+    if (left <= 0) break;
+    const { current, max } = pathEssence(path.id, character, system);
+    const moved = Math.min(left, delta < 0 ? current : max - current);
+    if (moved <= 0) continue;
+    next[path.id] = current + (delta < 0 ? -moved : moved);
+    left -= moved;
+  }
+  return next;
+};
 
 const downloadJson = (data: unknown, filename: string) => {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -129,14 +169,40 @@ function useControllerFromAllocation<C extends CharacterLike>(
     allocation.toggleAbility(ability, pathId as never);
   };
 
-  const pool = (pathId: string): PoolStatus => {
-    const status = calculatePathEssenceStatus(pathId, character, system.abilitiesByPath, {}, {});
-    return { current: Math.min(status.spent, status.available), max: status.available, reserved: status.passiveReduction };
-  };
+  const allPools = useMemo((): EssencePool[] => system.sharedPools
+    ? system.groups.map(g => ({ id: g.id, label: g.label, accent: g.accent, paths: system.paths.filter(p => p.groupId === g.id) }))
+    : system.paths.map(p => ({ id: p.id, label: p.name, accent: p.accent, paths: [p] })),
+  [system]);
+  const poolById = useMemo(() => new Map(allPools.map(p => [p.id, p])), [allPools]);
+  const poolByPath = useMemo(() => new Map(allPools.flatMap(pool => pool.paths.map(p => [p.id, pool] as const))), [allPools]);
+  const poolOf = (pathId: string) => poolByPath.get(pathId)!;
 
   const learnedPaths = system.paths.filter(path =>
     (system.abilitiesByPath[path.id] || []).some(a => selectedSet.has(a.id))
   );
+  const learnedSet = new Set(learnedPaths.map(p => p.id));
+
+  const pool = (poolId: string): PoolStatus => {
+    const sources = (poolById.get(poolId)?.paths ?? [])
+      .filter(path => learnedSet.has(path.id))
+      .map(path => ({ path, ...pathEssence(path.id, character, system) }));
+    return {
+      current: sources.reduce((n, s) => n + s.current, 0),
+      max: sources.reduce((n, s) => n + s.max, 0),
+      reserved: sources.reduce((n, s) => n + s.reserved, 0),
+      sources: sources.map(({ path, max, reserved }) => ({ path, max, reserved }))
+    };
+  };
+
+  const adjustPool = (poolId: string, delta: number, preferPathId?: string) => {
+    const target = poolById.get(poolId);
+    if (!target || delta === 0) return;
+    if (!allocation.updateCharacter || target.paths.length === 1) {
+      allocation.updateActiveEssence((preferPathId ?? target.paths[0].id) as never, delta);
+      return;
+    }
+    allocation.updateCharacter(prev => ({ ...prev, activeEssenceByPath: shiftPoolEssence(prev, target, delta, system, preferPathId) }));
+  };
 
   const setPools = (value: (pathId: string) => number) => {
     const next = { ...character.activeEssenceByPath };
@@ -157,17 +223,20 @@ function useControllerFromAllocation<C extends CharacterLike>(
     statusOf,
     lockReason,
     tierUnlocked,
+    pools: allPools.filter(p => p.paths.some(path => learnedSet.has(path.id))),
+    poolOf,
     pool,
-    adjustPool: (pathId, delta) => allocation.updateActiveEssence(pathId as never, delta),
+    adjustPool: (poolId, delta) => adjustPool(poolId, delta),
     spend: (ability, pathId) => {
       const cost = costOf(ability);
-      if (pool(pathId).current < cost) {
-        setNotice(`Not enough ${system.resourceName.toLowerCase()} left in ${pathById.get(pathId)?.name} to use ${ability.name}.`);
+      const target = poolOf(pathId);
+      if (pool(target.id).current < cost) {
+        setNotice(`Not enough ${target.label} ${system.resourceName.toLowerCase()} left to use ${ability.name}.`);
         return;
       }
-      allocation.updateActiveEssence(pathId as never, -cost);
+      adjustPool(target.id, -cost, pathId);
     },
-    fullRest: () => setPools(pathId => pool(pathId).max),
+    fullRest: () => setPools(pathId => pathEssence(pathId, character, system).max),
     emptyPools: () => setPools(() => 0),
     reset: allocation.resetCharacter,
     undo: allocation.undoReset,
@@ -217,16 +286,32 @@ export function useV1Controller(): TalentController {
   );
 }
 
+const V1_IMPORT_NOTICE = 'Your V1 character was carried over to V2. The migration guide explains where each ability went.';
+
 export function useV2Controller(): TalentController {
   const [system] = useState(buildV2System);
   const [data] = useState(() => importCultivationData('v2'));
+
+  /** Plan a V1 character into V2 and remember it as the source of the migration guide. */
+  const importV1 = (saved: Pick<MigrationSource, 'level' | 'selectedAbilities'>, origin: MigrationSource['origin']): CultivationCharacter => {
+    writeMigrationSource({ ...saved, origin, importedAt: new Date().toISOString() });
+    const plan = planV1Migration(saved, system);
+    return { level: plan.level, selectedAbilities: plan.selectedAbilities, activeEssenceByPath: plan.activeEssenceByPath, version: 'v2' };
+  };
+
   const allocation = useCultivationAllocation({
     initialLevel: 11,
     paths: data.paths,
     catalogVersion: 'v2',
     allAbilities: data.abilities,
     cantrips: data.cantrips,
-    spells: data.spells
+    spells: data.spells,
+    // A V1 character is carried over once per browser, replacing any earlier V2 build.
+    pendingImport: () => {
+      const saved = readV1Save();
+      if (!saved || readMigrationSource()) return null;
+      return { ...importV1(saved, 'browser'), migrationNotice: V1_IMPORT_NOTICE };
+    }
   });
   const [migrationNotice, setMigrationNotice] = useState<string | null>(null);
   const { character, setCharacterState } = allocation;
@@ -239,7 +324,7 @@ export function useV2Controller(): TalentController {
     setCharacterState(updated);
   }, [character, setCharacterState]);
 
-  return useControllerFromAllocation(
+  const ctl = useControllerFromAllocation(
     system,
     allocation,
     current => downloadJson({
@@ -256,8 +341,9 @@ export function useV2Controller(): TalentController {
       const activeEssenceByPath = (json.activeEssenceByPath || {}) as Record<string, number>;
 
       if (json.catalogVersion === 'v2' && json.version === '2.4') {
-        setCharacterState({ level, selectedAbilities, activeEssenceByPath, version: 'v2' });
-        return 'Loaded V2 configuration.';
+        const settled = settleRetieredTalents({ level, selectedAbilities, activeEssenceByPath, version: 'v2' }, data, data.paths);
+        setCharacterState({ ...settled, migrationNotice: undefined });
+        return settled.migrationNotice ? `Loaded V2 configuration. ${settled.migrationNotice}` : 'Loaded V2 configuration.';
       }
       if (['2.3', '2.2', '2.1', '2.0'].includes(json.version as string)) {
         const migrated = reconcileCultivationCharacter(
@@ -270,9 +356,17 @@ export function useV2Controller(): TalentController {
       if (json.catalogVersion && json.catalogVersion !== 'v2') {
         throw new Error(`This save belongs to ${String(json.catalogVersion).toUpperCase()}.`);
       }
-      setCharacterState(migrateV1CharacterToCultivation(json, data, data.paths, 'v2'));
-      return 'Migrated a V1 character into V2. Abilities without a V2 counterpart were dropped.';
+      setCharacterState(importV1({ level, selectedAbilities }, 'file'));
+      return V1_IMPORT_NOTICE;
     },
     migrationNotice
   );
+
+  return {
+    ...ctl,
+    importFromV1: () => {
+      const saved = readV1Save();
+      if (saved) setCharacterState(importV1(saved, 'browser'));
+    }
+  };
 }

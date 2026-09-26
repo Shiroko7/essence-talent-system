@@ -348,3 +348,223 @@ isCantrip: false
 ```
 
 https://5e.tools/spells.html#flame%20strike_xphb
+
+---
+
+## Spells restored from V1
+
+---
+
+### Produce Flame
+
+```yaml
+id: fire_cantrip_produce_flame
+tier: cantrip
+isActive: false
+isPassive: false
+isSpell: false
+isCantrip: true
+author: D&D 5e (PHB 2024)
+```
+
+A harmless flame lights your hand; you can hurl it as a ranged spell attack that deals fire damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#produce%20flame_xphb).
+
+---
+
+### Spellfire Flare
+
+```yaml
+id: fire_1st_level_spellfire_flare
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Heroes of Faerûn)
+```
+
+A blast of brilliant spellfire ignores cover and deals 2d10 radiant damage on a ranged spell attack.
+
+Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#spellfire%20flare_frhof).
+
+---
+
+### Continual Flame
+
+```yaml
+id: fire_2nd_level_continual_flame
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A heatless, fuel-free flame sheds light from an object you touch and cannot be smothered or quenched.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#continual%20flame_xphb).
+
+---
+
+### Flaming Sphere
+
+```yaml
+id: fire_2nd_level_flaming_sphere
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A rolling 5-foot sphere of fire scorches creatures that end their turn near it; you can steer it as a bonus action.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#flaming%20sphere_xphb).
+
+---
+
+### Scorching Ray
+
+```yaml
+id: fire_2nd_level_scorching_ray
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You hurl three fiery rays at one or more targets, each dealing 2d6 fire damage on a hit.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#scorching%20ray_xphb).
+
+---
+
+### Ashardalon's Stride
+
+```yaml
+id: fire_3rd_level_ashardalons_stride
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (FTD)
+```
+
+Dragon flames blast from your feet: +20 feet of speed, no opportunity attacks, and fire damage to anything you pass.
+
+Source reference: [D&D 5e (FTD) on 5e.tools](https://5e.tools/spells.html#ashardalon's%20stride_ftd).
+
+---
+
+### Flame Arrows
+
+```yaml
+id: fire_3rd_level_flame_arrows
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+Ammunition drawn from a touched quiver deals an extra 1d6 fire damage, for up to twelve shots.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#flame%20arrows_xge).
+
+---
+
+### Fire Shield
+
+```yaml
+id: fire_4th_level_fire_shield
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Flames wreathe you as a warm or chill shield, granting resistance and burning creatures that hit you in melee.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#fire%20shield_xphb).
+
+---
+
+### Spellfire Storm
+
+```yaml
+id: fire_4th_level_spellfire_storm
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Heroes of Faerûn)
+```
+
+A 20-foot pillar of spellfire deals 4d10 radiant damage to creatures inside it or entering it.
+
+Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#spellfire%20storm_frhof).
+
+---
+
+### Investiture of Flame
+
+```yaml
+id: fire_6th_level_investiture_of_flame
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+Your body becomes wreathed in fire: immunity to fire, a burning aura, and a line of flame you can loose as an action.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#investiture%20of%20flame_xge).
+
+---
+
+### Delayed Blast Fireball
+
+```yaml
+id: fire_7th_level_delayed_blast_fireball
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A glowing bead grows stronger each round you hold it, then explodes in a 20-foot radius of fire.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#delayed%20blast%20fireball_xphb).
+
+---
+
+### Incendiary Cloud
+
+```yaml
+id: fire_8th_level_incendiary_cloud
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A roiling cloud of embers obscures a 20-foot radius and deals 10d8 fire damage, drifting away from you each turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#incendiary%20cloud_xphb).

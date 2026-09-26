@@ -5,6 +5,7 @@ import { heartAbilities as v2_heartAbilities, heartCantrips as v2_heartCantrips,
 import { loveAbilities as v2_loveAbilities, loveCantrips as v2_loveCantrips, loveSpells as v2_loveSpells } from '../components/cultivation/consts/v2/love';
 import { lunarAbilities as v2_lunarAbilities, lunarCantrips as v2_lunarCantrips, lunarSpells as v2_lunarSpells } from '../components/cultivation/consts/v2/lunar';
 import { metalAbilities as v2_metalAbilities, metalCantrips as v2_metalCantrips, metalSpells as v2_metalSpells } from '../components/cultivation/consts/v2/metal';
+import { mysteriesAbilities as v2_mysteriesAbilities, mysteriesCantrips as v2_mysteriesCantrips, mysteriesSpells as v2_mysteriesSpells } from '../components/cultivation/consts/v2/mysteries';
 import { pestilenceAbilities as v2_pestilenceAbilities, pestilenceCantrips as v2_pestilenceCantrips, pestilenceSpells as v2_pestilenceSpells } from '../components/cultivation/consts/v2/pestilence';
 import { providenceAbilities as v2_providenceAbilities, providenceCantrips as v2_providenceCantrips, providenceSpells as v2_providenceSpells } from '../components/cultivation/consts/v2/providence';
 import { ruinAbilities as v2_ruinAbilities, ruinCantrips as v2_ruinCantrips, ruinSpells as v2_ruinSpells } from '../components/cultivation/consts/v2/ruin';
@@ -36,6 +37,7 @@ const dataByVersion: Record<CultivationVersion, Record<string, PathData>> = {
     "love": { abilities: v2_loveAbilities as Ability[], cantrips: v2_loveCantrips as Ability[], spells: v2_loveSpells as Ability[] },
     "lunar": { abilities: v2_lunarAbilities as Ability[], cantrips: v2_lunarCantrips as Ability[], spells: v2_lunarSpells as Ability[] },
     "metal": { abilities: v2_metalAbilities as Ability[], cantrips: v2_metalCantrips as Ability[], spells: v2_metalSpells as Ability[] },
+    "mysteries": { abilities: v2_mysteriesAbilities as Ability[], cantrips: v2_mysteriesCantrips as Ability[], spells: v2_mysteriesSpells as Ability[] },
     "pestilence": { abilities: v2_pestilenceAbilities as Ability[], cantrips: v2_pestilenceCantrips as Ability[], spells: v2_pestilenceSpells as Ability[] },
     "providence": { abilities: v2_providenceAbilities as Ability[], cantrips: v2_providenceCantrips as Ability[], spells: v2_providenceSpells as Ability[] },
     "ruin": { abilities: v2_ruinAbilities as Ability[], cantrips: v2_ruinCantrips as Ability[], spells: v2_ruinSpells as Ability[] },

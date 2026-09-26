@@ -10,6 +10,7 @@ import ConstellationLayout from './layouts/ConstellationLayout';
 import ClassicLayout from './layouts/ClassicLayout';
 import EssencePage from './pages/EssencePage';
 import SheetPage from './pages/SheetPage';
+import MigrationPage from './pages/MigrationPage';
 import { TalentPageId } from './routes';
 import { DesignContext, DesignId, useDesign } from './design';
 import {
@@ -77,6 +78,7 @@ const TalentPage: React.FC<{ version: SystemVersion; page?: TalentPageId }> = ({
   const render: Render = ctl => {
     if (page === 'essence') return <EssencePage ctl={ctl} />;
     if (page === 'sheet') return <SheetPage ctl={ctl} />;
+    if (page === 'migration') return <MigrationPage ctl={ctl} />;
     return renderDesign(design, ctl);
   };
 

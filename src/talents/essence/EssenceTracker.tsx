@@ -12,7 +12,7 @@ const EssenceTracker: React.FC<Omit<TrackerProps, 'onInfo'>> = props => {
   const [detail, setDetail] = useState<Ability | null>(null);
 
   if (!props.ctl.learnedPaths.length) {
-    return <EmptyState title="No essence to track yet">Learn an ability and its path's pool appears here.</EmptyState>;
+    return <EmptyState title="No essence to track yet">Learn an ability and the essence pool it draws on appears here.</EmptyState>;
   }
 
   const trackerProps: TrackerProps = { ...props, onInfo: setDetail };

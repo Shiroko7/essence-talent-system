@@ -337,3 +337,169 @@ author: D&D 5e (PHB)
 You imbue a weapon with a temporary magical enhancement.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#magic%20weapon_phb).
+
+---
+
+## Spells restored from V1
+
+---
+
+### Elemental Weapon
+
+```yaml
+id: acid_3rd_level_elemental_weapon
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A touched weapon becomes magic, gaining +1 to attack rolls and extra elemental damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#elemental%20weapon_xphb).
+
+---
+
+### Enspelled Armament
+
+```yaml
+id: metal_3rd_level_enspelled_armament
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+An iridescent weapon appears in your hands; you attack with it using your spellcasting ability.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#enspelled%20armament_grimhollowpg24).
+
+---
+
+### Pillar of Force
+
+```yaml
+id: metal_5th_level_pillar_of_force
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Obojima: Tales from the Tall Grass
+```
+
+A pillar of wood or stone thrusts from beneath you, battering a creature and pushing it back.
+
+Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#pillar%20of%20force_obojimatallgrass).
+
+---
+
+### Wall of Force
+
+```yaml
+id: acid_5th_level_wall_of_force
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+An invisible, nearly indestructible wall or dome of force blocks everything that tries to pass.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#wall%20of%20force_xphb).
+
+---
+
+### Blade of Disaster
+
+```yaml
+id: acid_9th_level_blade_of_disaster
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (TCE)
+```
+
+A blade-shaped planar rift strikes for 4d12 force damage and scores critical hits on 18 or higher.
+
+Source reference: [D&D 5e (TCE) on 5e.tools](https://5e.tools/spells.html#blade%20of%20disaster_tce).
+
+---
+
+### Imprisonment
+
+```yaml
+id: earth_9th_level_imprisonment
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+You bind a creature in one of several magical prisons (burial, chaining, hedged prison, minimus, or slumber).
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#imprisonment_xphb).
+
+---
+
+### Pogmo's Pot
+
+```yaml
+id: metal_9th_level_pogmos_pot
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Obojima: Tales from the Tall Grass
+```
+
+A cast-iron pot sucks nearby small loose objects into an extradimensional space until the spell ends.
+
+Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#pogmo's%20pot_obojimatallgrass).
+
+---
+
+### Forcecage
+
+```yaml
+id: v2_metal_forcecage
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+An invisible, immobile cage or box of magical force traps creatures within it.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#forcecage_xphb).
+
+---
+
+### Iron Body
+
+```yaml
+id: v2_metal_iron_body
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Arcana Unleashed)
+```
+
+A willing creature becomes living metal, gaining resistance to physical and fire damage and immunity to poison, paralysis, and petrification.
+
+Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#iron%20body_au).

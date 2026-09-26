@@ -1,6 +1,6 @@
 # Alchemy Cultivation Path
 
-Tradition: Human
+Tradition: Immortal
 Concept: The transformation, refinement, and recombination of substances.
 
 ### Caustic Bomb
@@ -131,7 +131,8 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Strength for 10 minutes, and you take a –2 penalty to Intelligence for the same duration.
@@ -147,7 +148,8 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Dexterity for 10 minutes, and you take a –2 penalty to Wisdom for the same duration.
@@ -163,7 +165,8 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Constitution for 10 minutes, and you take a –2 penalty to Charisma for the same duration.
@@ -179,7 +182,8 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Intelligence for 10 minutes, and you take a –2 penalty to Strength for the same duration.
@@ -195,7 +199,8 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Wisdom for 10 minutes, and you take a –2 penalty to Dexterity for the same duration.
@@ -211,7 +216,8 @@ isActive: true
 isPassive: false
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Charisma for 10 minutes, and you take a –2 penalty to Constitution for the same duration.
@@ -351,7 +357,7 @@ author: D&D 5e (TCE)
 
 A stream of corrosive liquid coats creatures in a line, damaging them until they or an ally scrape it away.
 
-Source reference: [D&D 5e TCE on 5e.tools](https://5e.tools/spells.html#tasha%E2%80%99s%20caustic%20brew_tce).
+Source reference: [D&D 5e TCE on 5e.tools](https://5e.tools/spells.html#tasha's%20caustic%20brew_tce).
 
 ---
 
@@ -369,7 +375,7 @@ author: D&D 5e (PHB)
 
 A magical arrow of acid strikes one target, with lingering damage if the attack misses.
 
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#acid%20arrow_phb).
+Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#melf's%20acid%20arrow_phb).
 
 ---
 
@@ -544,24 +550,6 @@ At the end of each turn while banished, the creature takes 2d8 acid damage and c
 
 ---
 
-### Shapechange
-
-```yaml
-id: v2_moon_shapechange
-tier: 9th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB)
-```
-
-You take the form of another creature while retaining your own mind and abilities.
-
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shapechange_phb).
-
----
-
 ### Acidic Precision
 
 ```yaml
@@ -591,7 +579,8 @@ isActive: false
 isPassive: true
 isSpell: false
 isCantrip: false
-location: Sirius
+author: Espora Tribe
+location: Phudara / Isle of Whispers
 ```
 
 Your skill with explosive devices allows you to strike from farther away. When you create or use an explosive, its range to the target point is doubled. For example, a bomb that can normally be thrown or placed within 30 feet can now target a point up to 60 feet away.
@@ -694,3 +683,224 @@ As an Action, through concentrated biochemical reagents and alchemical cultivati
 
 ---
 ## Cantrips
+
+---
+
+## Spells restored from V1
+
+---
+
+### Chaos Bolt
+
+```yaml
+id: acid_1st_level_chaos_bolt
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+A mass of chaotic energy deals damage of a random type and can leap between targets on matching dice.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#chaos%20bolt_xge).
+
+---
+
+### Chromatic Orb
+
+```yaml
+id: acid_1st_level_chromatic_orb
+tier: 1st
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+An orb of chosen elemental energy deals 3d8 damage and can leap to more targets on matching dice.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#chromatic%20orb_xphb).
+
+---
+
+### Enlarge/Reduce
+
+```yaml
+id: poison_2nd_level_enlarge_reduce
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A creature or object grows or shrinks one size, changing its strength and weapon damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#enlarge%2Freduce_xphb).
+
+---
+
+### Disintegrate
+
+```yaml
+id: acid_6th_level_disintegrate
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+A green ray deals 10d6 + 40 force damage and reduces anything it kills to dust.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#disintegrate_xphb).
+
+---
+
+### Animal Shapes
+
+```yaml
+id: wood_8th_level_animal_shapes
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+Any number of willing creatures take the forms of beasts, and you can reshape them on later turns.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#animal%20shapes_xphb).
+
+---
+
+### Lesser Restoration
+
+```yaml
+id: providence_2nd_lesser_restoration
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Cleric / Paladin
+```
+
+You end one disease or condition: blinded, deafened, paralyzed, or poisoned.
+
+https://5e.tools/spells.html#lesser%20restoration_xphb
+
+
+---
+
+### Greater Restoration
+
+```yaml
+id: providence_5th_greater_restoration
+tier: 5th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Cleric / Abjuration
+```
+
+You end one debilitating effect: exhaustion levels, charmed/petrified, cursed, or ability reductions.
+
+https://5e.tools/spells.html#greater%20restoration_xphb
+
+---
+
+### Create Magen
+
+```yaml
+id: v2_alchemy_create_magen
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (IDRotF)
+```
+
+You transform a quicksilver-filled doll into a magen construct that obeys your commands.
+
+Source reference: [D&D 5e (IDRotF) on 5e.tools](https://5e.tools/spells.html#create%20magen_idrotf).
+
+---
+
+### Clone
+
+```yaml
+id: v2_alchemy_clone
+tier: 8th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB 2024)
+```
+
+An inert duplicate grows in a vessel over 120 days; if the original dies, its soul transfers to the clone.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#clone_xphb).
+
+---
+
+### Detonate
+
+```yaml
+id: v2_alchemy_detonate
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Arcana Unleashed)
+```
+
+An explosive seed inside a creature deals 10d10 fire damage, then erupts in a 60-foot blast that damages everyone around it.
+
+Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#detonate_au).
+
+---
+
+### Mass Polymorph
+
+```yaml
+id: v2_alchemy_mass_polymorph
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (XGE)
+```
+
+Up to ten creatures transform into beasts of your choice for up to an hour.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#mass%20polymorph_xge).
+
+---
+
+### Steal Immortality
+
+```yaml
+id: v2_alchemy_steal_immortality
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Grim Hollow Player's Guide
+```
+
+You take on a creature type’s immortal traits, gaining temporary hit points, resistances, and that type’s signature gifts.
+
+Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#steal%20immortality_grimhollowpg24).
