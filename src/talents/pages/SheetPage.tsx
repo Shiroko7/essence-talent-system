@@ -8,7 +8,7 @@ import {
 } from '../model';
 import type { SystemPath } from '../model';
 import { pagePath } from '../routes';
-import { CharacterCard, PageHeader } from '../header/PageHeader';
+import { PageHeader } from '../header/PageHeader';
 import {
   AbilityIcon, EmptyState, GroupLabel, KindTag, PathSigil, SearchField, Segmented, UseButton
 } from '../ui';
@@ -93,7 +93,6 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
 
       {!allLearned.length ? (
         <div className="arcane-panel">
-          <CharacterCard ctl={ctl} layout="row" className="p-4 border-b border-gold-subtle" />
           <EmptyState title="Nothing learned yet">
             Pick abilities on the <Link to={pagePath(system.version, 'talents')} className="text-gold hover:text-gold-bright">Talents page</Link> and they appear here in full.
           </EmptyState>
@@ -117,7 +116,6 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
           <div className="flex flex-col lg:flex-row gap-5 items-start">
             {/* Contents */}
             <nav className="w-full lg:w-60 flex-shrink-0 arcane-panel p-3 lg:sticky lg:top-4 print:hidden" aria-label="Paths in this summary">
-              <CharacterCard ctl={ctl} actions={printButton} className="px-1 pb-3 mb-3 border-b border-gold-subtle" />
               {groups.map(({ group, paths }) => (
                 <div key={group.id} className="mb-2 last:mb-0">
                   {system.groups.length > 1 && <GroupLabel label={group.label} accent={group.accent} className="px-1.5 py-1.5" />}

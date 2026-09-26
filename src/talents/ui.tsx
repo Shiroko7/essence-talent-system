@@ -1,16 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import {
   ChevronDown, Download, Info, Lock, Minus, Moon, Network, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
 } from 'lucide-react';
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
 import {
-  AbilityStatus, KIND_META, SystemPath, SystemVersion, TalentController, costOf, kindLabel, kindOf, previewText, reservesEssence,
+  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, previewText, reservesEssence,
   tierInfo, tierOf, tint
 } from './model';
 import { iconFor } from './abilityIcons';
-import { TalentPageId, pagePath } from './routes';
 
 /* ---------------------------------------------------------------- atoms */
 
@@ -349,29 +347,6 @@ export const Toast: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
         <p className="text-sm text-parchment flex-1">{ctl.notice}</p>
         <button onClick={ctl.dismissNotice} className="text-mist hover:text-parchment" aria-label="Dismiss"><X size={14} /></button>
       </div>
-    </div>
-  );
-};
-
-export const VersionSwitch: React.FC<{ current: SystemVersion; page?: TalentPageId }> = ({ current, page = 'talents' }) => {
-  const { search } = useLocation();
-  const options = [
-    { id: 'v1' as const, label: 'V1', hint: 'Elements' },
-    { id: 'v2' as const, label: 'V2', hint: 'Cultivation' }
-  ];
-  return (
-    <div className="inline-flex rounded-md bg-void/60 border border-gold-subtle p-0.5">
-      {options.map(option => (
-        <Link
-          key={option.id}
-          to={`${pagePath(option.id, page)}${search}`}
-          className={`rounded px-2.5 py-1 text-xs font-display tracking-wide transition-colors ${
-            current === option.id ? 'bg-gold/20 text-gold-bright' : 'text-fog hover:text-parchment'
-          }`}
-        >
-          {option.label} <span className="hidden sm:inline text-[10px] opacity-70">{option.hint}</span>
-        </Link>
-      ))}
     </div>
   );
 };
