@@ -146,6 +146,11 @@ const PatchNotesPage: React.FC = () => {
     return { v1, v2, find1: makeLookup(v1), find2: makeLookup(v2) };
   }, []);
   const [open, setOpen] = useState<Found | null>(null);
+  useEffect(() => {
+    const previous = document.title;
+    document.title = `Patch ${PATCH.version} · ${PATCH.name} · Essence Talent System`;
+    return () => { document.title = previous; };
+  }, []);
   const p1 = (id: string) => v1.paths.find(p => p.id === id);
   const p2 = (id: string) => v2.paths.find(p => p.id === id);
   const countNewTalents = NEW_TALENTS.reduce((n, p) => n + (p.talents?.length ?? 0), 0);

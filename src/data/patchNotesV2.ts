@@ -32,7 +32,10 @@ export const PATCH = {
   version: 'V2.0',
   name: 'Cultivation Paths',
   date: '2026-09-26',
-  title: 'Essence System Overhaul: New Paths to Divinity and Immortality? Poison Path DELETED!?'
+  title: 'Essence System Overhaul: New Paths to Divinity and Immortality? Poison Path DELETED!?',
+  /** Link preview text and image (see vite.config.ts). */
+  summary: 'Nine essences became sixteen cultivation paths across three Essence pools: Primordial, Divine and Immortal. 218 new abilities, rebalances, and where every old ability went.',
+  image: '/og/patch-notes-v2.png'
 };
 
 export const MOTIVATION = [
