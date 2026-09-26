@@ -7,7 +7,7 @@ This directory contains the markdown files that serve as the **single source of 
 1. **Edit markdown files** in this directory (e.g., `fire.md`, `water.md`)
 2. **Run the generator**: `bun run generate:essences`
 3. TypeScript files are auto-generated in `src/components/essences/consts/`
-4. The generated `.tsx` files are ignored by git (they're build artifacts)
+4. The generated `.tsx` files are committed, but they are build output: don't edit them by hand
 
 ## Markdown Format
 

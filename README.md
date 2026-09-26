@@ -1,11 +1,12 @@
 # Essence Talent System
 
-A browsable reference for a homebrew D&D 5e cultivation system — nine elemental
-essences, five tiers of mastery each — plus the merchant and potion catalogues
-that go with the campaign.
+A browsable reference for a homebrew D&D 5e cultivation system (the Essence
+Dao), plus the merchant and potion catalogues that go with the campaign.
 
-Built because a homebrew system that lives in a 60-page Google Doc is a homebrew
-system nobody at the table will ever read.
+The campaign's rules live in an Obsidian vault, published at
+[publish.obsidian.md/leatrux](https://publish.obsidian.md/leatrux/). This app is
+the interactive half: players plan their build here instead of reading
+ability lists page by page.
 
 Later ported into Baldur's Gate 3 as a playable mod:
 [essence-dao-bg3](https://github.com/Shiroko7/essence-dao-bg3).
@@ -13,8 +14,7 @@ Later ported into Baldur's Gate 3 as a playable mod:
 ## The system
 
 Essence is a second resource that runs parallel to spell slots rather than
-replacing them. Nine paths — **acid, air, earth, fire, lightning, metal, poison,
-water, wood** — each with abilities laid out across tiers:
+replacing them. Abilities are grouped into paths and laid out across tiers:
 
 ```
 initiate → adept → master → grandmaster → great grandmaster
@@ -23,6 +23,10 @@ initiate → adept → master → grandmaster → great grandmaster
 plus cantrips and levelled spells. Abilities are tagged active / passive /
 spell / cantrip, and the app filters and cross-references them so a player can
 answer "what can I actually do at adept fire" without scrolling a document.
+
+There are two versions. **V1** (`/`) is the original: nine elemental essences
+(**acid, air, earth, fire, lightning, metal, poison, water, wood**), one Essence
+pool each. **V2** (`/v2`) replaces them with sixteen cultivation paths, below.
 
 ## Cultivation paths
 
@@ -41,8 +45,9 @@ The full roster and balance table live in [data/cultivation](data/cultivation/RE
 
 ## Markdown is the single source of truth
 
-The design decision worth talking about. Every ability lives in a markdown file
-under `data/essences/` — one per element — with YAML front-matter per ability:
+The design decision worth talking about. Every ability lives in a markdown file,
+one per path: V1 essences under `data/essences/`, V2 paths under
+`data/cultivation/v2/`. Each ability has a YAML block:
 
 ~~~~markdown
 ### Ability Name
@@ -57,8 +62,11 @@ Description text, multiple paragraphs if needed.
 ---
 ~~~~
 
-`bun run generate:essences` compiles those into TypeScript consts under
-`src/components/essences/consts/`, **which are gitignored as build artifacts.**
+`bun run generate:essences` and `bun run generate:cultivation` compile those into
+TypeScript consts under `src/components/essences/consts/` and
+`src/components/cultivation/consts/v2/`. The consts are committed, but they are
+build output: never edit them by hand, since every build regenerates them from
+the markdown.
 
 This matters because the content is edited far more often than the code. Game
 balance changes constantly; React components do not. Keeping abilities in
@@ -78,6 +86,11 @@ answered by the repo rather than by memory.
   corrections.
 - **Potions** — the alchemy reference, including essence-pair combinations.
 - **Changelog** — auto-generated, so players can see what was rebalanced.
+- **Patch notes** (`/patch-notes`) — the V1 → V2 overhaul, written for players.
+- **Rules** (`/rules`) — Attunement: Elemental (in play), Divine and Immortal
+  (drafts).
+- **Migration guide** (`/v2/migration`) — what happened to each ability of a
+  player's V1 character when it was carried into V2.
 
 ## Running it
 
@@ -87,7 +100,8 @@ bun run dev
 ```
 
 ```bash
-bun run generate:essences    # markdown → TS consts
+bun run generate:essences    # V1 markdown → TS consts
+bun run generate:cultivation # V2 markdown → TS consts, validates the roster
 bun run generate:changelog   # git history → changelog data
 bun run generate:all
 bun run build                # runs generate:all, then builds
@@ -115,6 +129,6 @@ at build time, there is no backend and no database.
 
 ## See also
 
-- [Cultivation paths design](docs/cultivation-paths-design.md) - the seven-Primordial/seven-Divine structure and path boundaries.
+- [Cultivation paths design](docs/cultivation-paths-design.md) — the Primordial, Divine, and Immortal families and path boundaries.
 - [ADDING_ITEM_DATA.md](ADDING_ITEM_DATA.md) — how to extend the merchant catalogue.
 - [data/essences/README.md](data/essences/README.md) — the ability markdown format in full.

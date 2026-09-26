@@ -1,4 +1,4 @@
-1 | 0 | 32 |1 | 15 | 23 |5 | 20 | 34 |3 | 20 | 35 |3 | 18 | 48 |3 | 18 | 30 |1 | 22 | 35 |2 | 20 | 35 |4 | 18 | 36 |2 | 17 | 22 |1 | 19 | 27 |4 | 24 | 45 |2 | 15 | 29 |2 | 20 | 37 |4 | 24 | 38 |# Cultivation paths
+# Cultivation paths
 
 The canonical catalog intended for V2 groups campaign-relevant paths into **Primordial**, **Divine**, and **Immortal** families. Markdown under `v2/` is the source of truth; `bun run generate:cultivation` builds the TypeScript modules and checks the roster. Family sizes are intentionally uneven. Each family shares one Essence pool: every learned path in it adds to the pool, and any learned ability in the family can spend from it. Tier prerequisites still apply per path. The family's internal ID stays `human` for the Immortal family, so saved builds keep loading. The pre-redesign sixteen-path source is retained in [`archive/v2.2/`](archive/v2.2/) for reference.
 
