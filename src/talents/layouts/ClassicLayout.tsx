@@ -5,9 +5,9 @@ import { KindFilter, SystemPath, groupByTier, learnedCount, matchesKind, pathsBy
 import type { TalentController } from '../model';
 import type { LayoutProps } from '../TalentPage';
 import { useInitialPath } from '../routes';
+import { CharacterCard, PageHeader } from '../header/PageHeader';
 import {
-  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, GroupLabel, LevelStepper, PageTitle, PathSigil,
-  SearchField, Segmented
+  AbilityModal, AbilityTile, EmptyState, GroupLabel, PathSigil, SearchField, Segmented
 } from '../ui';
 
 const KIND_OPTIONS: { id: KindFilter; label: string }[] = [
@@ -83,17 +83,12 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
 
   return (
     <div className="max-w-[1400px] mx-auto space-y-5">
-      {/* Setup */}
-      <div className="arcane-panel p-4 flex flex-wrap items-center gap-x-6 gap-y-3">
-        <PageTitle ctl={ctl} page="talents" className="mr-auto" />
-        <LevelStepper ctl={ctl} />
-        <BudgetMeter ctl={ctl} className="w-56" />
-        <CharacterMenu ctl={ctl} />
-      </div>
+      <PageHeader ctl={ctl} page="talents" />
 
       <div className="flex flex-col md:flex-row gap-4 items-start">
         {/* Path sidebar */}
         <aside className="w-full md:w-64 arcane-panel p-3 flex-shrink-0 md:sticky md:top-4 md:max-h-[calc(100vh-6rem)] md:overflow-y-auto">
+          <CharacterCard ctl={ctl} className="px-1 pb-3 mb-3 border-b border-gold-subtle" />
           <button
             onClick={() => setPathId(null)}
             className={`w-full flex items-center gap-2.5 px-2.5 py-2 mb-2 rounded font-display text-sm tracking-wide transition-colors ${

@@ -4,8 +4,10 @@ import { Ability } from '../../types/essence';
 import { KIND_META, TIER_IDS, groupByTier, pathsByGroup, searchAll, tierOf, tint } from '../model';
 import type { LayoutProps } from '../TalentPage';
 import { useInitialPath } from '../routes';
+import { CharacterCard, PageHeader } from '../header/PageHeader';
+import { useHeaderVariant } from '../header/variant';
 import {
-  AbilityModal, AbilityTile, BudgetMeter, CharacterMenu, EmptyState, LevelStepper, PageTitle, PathSigil, SearchField
+  AbilityModal, AbilityTile, EmptyState, PathSigil, SearchField
 } from '../ui';
 
 const NUMERALS = ['I', 'II', 'III', 'IV', 'V'];
@@ -19,6 +21,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const [pathId, setPathId] = useState(useInitialPath(system) ?? system.paths[0].id);
   const [search, setSearch] = useState('');
   const [detail, setDetail] = useState<Ability | null>(null);
+  const headerVariant = useHeaderVariant();
 
   const path = system.paths.find(p => p.id === pathId)!;
   const tiers = groupByTier(system.abilitiesByPath[pathId] || []);
@@ -32,22 +35,21 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
 
   return (
     <div className="max-w-[1600px] mx-auto">
-      {/* Title and character */}
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-4">
-        <PageTitle ctl={ctl} page="talents" />
-        <div className="flex-1 min-w-[220px] max-w-md">
-          <SearchField value={search} onChange={setSearch} placeholder="Search every path…" />
-        </div>
-        <div className="flex flex-wrap items-center gap-5 ml-auto">
-          <LevelStepper ctl={ctl} />
-          <BudgetMeter ctl={ctl} className="w-52" />
-          <CharacterMenu ctl={ctl} />
-        </div>
+      <PageHeader ctl={ctl} page="talents" />
+
+      {/* Search sits with the board it filters */}
+      <div className="my-4 w-full sm:w-96">
+        <SearchField value={search} onChange={setSearch} placeholder="Search every path…" />
       </div>
 
       {/* Path selector: one segment per tradition, sized by its number of paths */}
       <div className="arcane-panel mb-6 overflow-x-auto">
         <div className="flex min-w-max xl:min-w-0">
+          {headerVariant === 'card' && (
+            <div className="w-60 flex-shrink-0 flex items-center p-4 border-r border-gold-subtle">
+              <CharacterCard ctl={ctl} className="w-full" />
+            </div>
+          )}
           {pathsByGroup(system).map(({ group, paths }, gi) => (
             <div
               key={group.id}

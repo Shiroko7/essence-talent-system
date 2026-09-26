@@ -8,8 +8,9 @@ import {
 } from '../model';
 import type { SystemPath } from '../model';
 import { pagePath } from '../routes';
+import { CharacterCard, PageHeader } from '../header/PageHeader';
 import {
-  AbilityIcon, CharacterMenu, EmptyState, GroupLabel, KindTag, LevelStepper, PageTitle, PathSigil, SearchField, Segmented, UseButton
+  AbilityIcon, EmptyState, GroupLabel, KindTag, PathSigil, SearchField, Segmented, UseButton
 } from '../ui';
 
 const KIND_OPTIONS: { id: KindFilter; label: string }[] = [
@@ -83,6 +84,11 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
     .filter(g => g.paths.length > 0);
   const allLearned = ctl.learnedPaths.flatMap(p => learnedIn(p.id));
   const pools = ctl.learnedPaths.map(p => ctl.pool(p.id));
+  const printButton = (
+    <button onClick={() => window.print()} className="arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5" disabled={!allLearned.length}>
+      <Printer size={13} /> Print
+    </button>
+  );
   const toggle = (id: string) => setCollapsed(prev => {
     const next = new Set(prev);
     if (next.has(id)) next.delete(id); else next.add(id);
@@ -91,17 +97,11 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
 
   return (
     <div className="max-w-[1400px] mx-auto space-y-5">
-      <div className="arcane-panel p-4 flex flex-wrap items-center gap-x-6 gap-y-3 print:hidden">
-        <PageTitle ctl={ctl} page="sheet" className="mr-auto" />
-        <LevelStepper ctl={ctl} />
-        <button onClick={() => window.print()} className="arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5" disabled={!allLearned.length}>
-          <Printer size={13} /> Print
-        </button>
-        <CharacterMenu ctl={ctl} />
-      </div>
+      <div className="print:hidden"><PageHeader ctl={ctl} page="sheet" actions={printButton} /></div>
 
       {!allLearned.length ? (
         <div className="arcane-panel">
+          <CharacterCard ctl={ctl} layout="row" className="p-4 border-b border-gold-subtle" />
           <EmptyState title="Nothing learned yet">
             Pick abilities on the <Link to={pagePath(system.version, 'talents')} className="text-gold hover:text-gold-bright">Talents page</Link> and they appear here in full.
           </EmptyState>
@@ -137,6 +137,7 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
           <div className="flex flex-col lg:flex-row gap-5 items-start">
             {/* Contents */}
             <nav className="w-full lg:w-60 flex-shrink-0 arcane-panel p-3 lg:sticky lg:top-4 print:hidden" aria-label="Paths on this sheet">
+              <CharacterCard ctl={ctl} actions={printButton} className="px-1 pb-3 mb-3 border-b border-gold-subtle" />
               {groups.map(({ group, paths }) => (
                 <div key={group.id} className="mb-2 last:mb-0">
                   {system.groups.length > 1 && <GroupLabel label={group.label} accent={group.accent} className="px-1.5 py-1.5" />}
