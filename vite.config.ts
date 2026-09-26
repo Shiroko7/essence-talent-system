@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
@@ -37,7 +38,11 @@ const linkPreviews = (): Plugin => {
       // Netlify sets URL to the site's address; crawlers need absolute links.
       const site = (process.env.URL || '').replace(/\/$/, '')
       const index = readFileSync(resolve(outDir, 'index.html'), 'utf-8')
+      // Chat apps cache previews by image URL, so a changed image needs a new URL.
+      const versioned = (path: string) =>
+        `${site}${path}?v=${createHash('sha1').update(readFileSync(resolve(outDir, path.slice(1)))).digest('hex').slice(0, 8)}`
       for (const page of PREVIEWS) {
+        const image = versioned(page.image)
         const tags = [
           ['name', 'description', page.description],
           ['property', 'og:site_name', 'Essence Talent System'],
@@ -45,13 +50,13 @@ const linkPreviews = (): Plugin => {
           ['property', 'og:title', page.title],
           ['property', 'og:description', page.description],
           ['property', 'og:url', `${site}/${page.route}`],
-          ['property', 'og:image', `${site}${page.image}`],
+          ['property', 'og:image', image],
           ['property', 'og:image:width', '1200'],
           ['property', 'og:image:height', '630'],
           ['name', 'twitter:card', 'summary_large_image'],
           ['name', 'twitter:title', page.title],
           ['name', 'twitter:description', page.description],
-          ['name', 'twitter:image', `${site}${page.image}`],
+          ['name', 'twitter:image', image],
           ['name', 'theme-color', '#c9a959']
         ].map(([attr, key, value]) => `    <meta ${attr}="${key}" content="${escape(value)}" />`).join('\n')
 
