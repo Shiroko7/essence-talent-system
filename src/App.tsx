@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import TalentPage from './talents/TalentPage';
 import ChangelogPage from './pages/ChangelogPage';
+import PatchNotesPage from './pages/PatchNotesPage';
 import MerchantsPage from './pages/MerchantsPage';
 import MerchantCatalogPage from './pages/MerchantCatalogPage';
 import PotionsPage from './pages/PotionsPage';
@@ -23,7 +24,9 @@ function App() {
           <Route path="/v2/essence" element={<TalentPage key="v2-essence" version="v2" page="essence" />} />
           <Route path="/v2/summary" element={<TalentPage key="v2-sheet" version="v2" page="sheet" />} />
           <Route path="/v2/sheet" element={<Navigate to="/v2/summary" replace />} />
+          <Route path="/v2/migration" element={<TalentPage key="v2-migration" version="v2" page="migration" />} />
           <Route path="/cultivation" element={<TalentPage key="v2-cultivation" version="v2" />} />
+          <Route path="/patch-notes" element={<PatchNotesPage />} />
           <Route path="/changelog" element={<ChangelogPage />} />
           <Route path="/merchants" element={<MerchantsPage />} />
           <Route path="/merchants/:merchantId" element={<MerchantCatalogPage />} />
