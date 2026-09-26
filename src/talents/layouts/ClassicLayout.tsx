@@ -136,7 +136,7 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
         </aside>
 
         {/* Main panel */}
-        <div className="flex-1 min-w-0 arcane-panel p-5">
+        <div className="flex-1 w-full min-w-0 arcane-panel p-5">
           <div className="flex flex-col md:flex-row md:items-center gap-3 mb-5">
             <Segmented value={kind} options={KIND_OPTIONS} onChange={setKind} />
             <div className="md:ml-auto md:w-80"><SearchField value={search} onChange={setSearch} placeholder="Search every path…" /></div>
@@ -161,15 +161,16 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
             )
           ) : path && (
             <>
-              <header className="flex items-center gap-4 p-4 mb-5 rounded-lg border" style={{ borderColor: tint(path.accent, 0.25), background: `linear-gradient(135deg, ${tint(path.accent, 0.12)}, transparent 60%)` }}>
-                <PathSigil path={path} size={52} active />
-                <div>
-                  <p className="font-display text-[11px] tracking-[0.2em] uppercase text-gold-dim">
-                    {system.groups.find(g => g.id === path.groupId)?.label}{path.patron && ` · ${path.patron}`}
-                  </p>
-                  <h2 className="font-display text-2xl text-ivory tracking-wide">{path.name}</h2>
-                  <p className="text-sm text-fog">{path.description ?? path.concept}</p>
-                </div>
+              {/* One slim line: which path this is, and what it is about */}
+              <header className="flex items-center gap-2.5 pb-3 mb-4 border-b" style={{ borderColor: tint(path.accent, 0.25) }}>
+                <PathSigil path={path} size={26} active />
+                <h2 className="font-display text-lg tracking-wide flex-shrink-0" style={{ color: path.accent }}>{path.name}</h2>
+                <p className="hidden sm:block min-w-0 text-sm text-fog truncate" title={path.description ?? path.concept}>
+                  <span className="font-display text-[10px] tracking-[0.2em] uppercase text-gold-dim mr-2">
+                    {system.groups.find(g => g.id === path.groupId)?.label}
+                  </span>
+                  {path.description ?? path.concept}
+                </p>
               </header>
               <AscendingTiers
                 ctl={ctl}
