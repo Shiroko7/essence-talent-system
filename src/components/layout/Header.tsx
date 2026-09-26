@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   ];
 
   const isActive = (path: string) => {
-    if (path === '/') return ['/', '/essence', '/sheet'].includes(location.pathname);
+    if (path === '/') return ['/', '/essence', '/summary'].includes(location.pathname);
     if (path === '/v2') return location.pathname.startsWith('/v2') || location.pathname === '/cultivation';
     return location.pathname.startsWith(path);
   };

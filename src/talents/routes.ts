@@ -6,7 +6,8 @@ export type TalentPageId = 'talents' | 'essence' | 'sheet';
 /** URL of one of the three pages for a system version. */
 export const pagePath = (version: SystemVersion, page: TalentPageId) => {
   const base = version === 'v1' ? '' : '/v2';
-  return page === 'talents' ? base || '/' : `${base}/${page}`;
+  if (page === 'talents') return base || '/';
+  return `${base}/${page === 'sheet' ? 'summary' : page}`;
 };
 
 /** The path named in `?path=`, when the Essence or Sheet page links into a tree. */

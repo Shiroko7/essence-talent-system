@@ -9,7 +9,7 @@ import { useHeaderVariant } from './variant';
 const TABS: { id: TalentPageId; label: string; short: string; icon: typeof Network }[] = [
   { id: 'talents', label: 'Talents', short: 'Talents', icon: Network },
   { id: 'essence', label: 'Essence', short: 'Essence', icon: Gauge },
-  { id: 'sheet', label: 'Character sheet', short: 'Sheet', icon: ScrollText }
+  { id: 'sheet', label: 'Summary', short: 'Summary', icon: ScrollText }
 ];
 
 /** The three pages of a character as an underlined tab strip. */

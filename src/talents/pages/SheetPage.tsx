@@ -21,13 +21,6 @@ const KIND_OPTIONS: { id: KindFilter; label: string }[] = [
   { id: 'spell', label: 'Spell' }
 ];
 
-const Stat: React.FC<{ label: string; children: React.ReactNode }> = ({ label, children }) => (
-  <div className="px-4 py-3">
-    <p className="font-display text-[10px] tracking-[0.2em] uppercase text-mist">{label}</p>
-    <p className="font-display text-xl text-ivory tabular-nums leading-tight mt-0.5">{children}</p>
-  </div>
-);
-
 /** One learned ability, with its full text. Collapsed cards still print in full. */
 const AbilityEntry: React.FC<{
   ctl: TalentController; ability: Ability; path: SystemPath; open: boolean; onToggle: () => void; searchTerm: string;
@@ -68,8 +61,8 @@ const AbilityEntry: React.FC<{
 };
 
 /**
- * The detailed character sheet: every learned ability in full, grouped by path
- * and tier, for reference at the table or on paper.
+ * Summary: every learned ability in full, grouped by path and tier, for
+ * reference at the table or on paper.
  */
 const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
   const { system } = ctl;
@@ -83,7 +76,6 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
     .map(({ group, paths }) => ({ group, paths: paths.filter(p => visibleIn(p.id).length > 0) }))
     .filter(g => g.paths.length > 0);
   const allLearned = ctl.learnedPaths.flatMap(p => learnedIn(p.id));
-  const pools = ctl.learnedPaths.map(p => ctl.pool(p.id));
   const printButton = (
     <button onClick={() => window.print()} className="arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5" disabled={!allLearned.length}>
       <Printer size={13} /> Print
@@ -108,18 +100,6 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
         </div>
       ) : (
         <>
-          {/* Summary */}
-          <div className="arcane-panel grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-x divide-gold-subtle/60">
-            <Stat label="Level">{ctl.level}</Stat>
-            <Stat label="Talent points">{ctl.pointsSpent}<span className="text-sm text-mist"> / {ctl.pointsTotal}</span></Stat>
-            <Stat label="Paths">{ctl.learnedPaths.length}</Stat>
-            <Stat label="Abilities">{allLearned.length}</Stat>
-            <Stat label="Essence">
-              {pools.reduce((n, p) => n + p.current, 0)}<span className="text-sm text-mist"> / {pools.reduce((n, p) => n + p.max, 0)}</span>
-            </Stat>
-            <Stat label="Held by passives"><span className="text-essence-fire">{pools.reduce((n, p) => n + p.reserved, 0)}</span></Stat>
-          </div>
-
           {/* Filters */}
           <div className="flex flex-col md:flex-row md:items-center gap-3 print:hidden">
             <Segmented value={kind} options={KIND_OPTIONS.filter(o => o.id === 'all' || allLearned.some(a => kindOf(a) === o.id))} onChange={setKind} />
@@ -136,7 +116,7 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
 
           <div className="flex flex-col lg:flex-row gap-5 items-start">
             {/* Contents */}
-            <nav className="w-full lg:w-60 flex-shrink-0 arcane-panel p-3 lg:sticky lg:top-4 print:hidden" aria-label="Paths on this sheet">
+            <nav className="w-full lg:w-60 flex-shrink-0 arcane-panel p-3 lg:sticky lg:top-4 print:hidden" aria-label="Paths in this summary">
               <CharacterCard ctl={ctl} actions={printButton} className="px-1 pb-3 mb-3 border-b border-gold-subtle" />
               {groups.map(({ group, paths }) => (
                 <div key={group.id} className="mb-2 last:mb-0">
