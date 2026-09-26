@@ -1,14 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, CircleSlash, Layers, Megaphone, Route, X } from 'lucide-react';
+import { ArrowRight, BookOpen, Check, CircleSlash, Layers, Megaphone, Route, X } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
 import { Ability } from '../types/essence';
 import { SystemPath, TalentSystem, TIER_IDS, tierInfo, tint } from '../talents/model';
 import { buildV1System, buildV2System } from '../talents/systems';
 import { GroupLabel, PathSigil } from '../talents/ui';
+import { ATTUNEMENTS } from '../data/attunementRules';
 import {
-  DELETED_ESSENCES, FIXES, MOTIVATION, MOVED, NEW_PATH_IDS, NEW_SPELLS, NEW_TALENTS, PATCH, PathAbilities, QA,
+  ATTUNEMENT_CHANGES, DELETED_ESSENCES, FIXES, MOTIVATION, MOVED, NEW_PATH_IDS, NEW_SPELLS, NEW_TALENTS, PATCH, PATH_ORIGINS, PathAbilities, QA,
   REMOVED, RETIERED, REWORKED, STONE_FIST
 } from '../data/patchNotesV2';
 
@@ -129,6 +130,7 @@ const AbilityDialog: React.FC<{ found: Found | null; onClose: () => void }> = ({
 const TOC = [
   ['why', 'Why this patch'],
   ['pools', 'Three Essence pools'],
+  ['attunement', 'Attunement'],
   ['qa', 'Q&A'],
   ['ui', 'UI/UX'],
   ['paths', 'New paths'],
@@ -239,11 +241,29 @@ const PatchNotesPage: React.FC = () => {
               </div>
               <Prose>
                 <p>For now, the only drawback to mixing sources is that your Essence is split between pools. I haven't decided on drawbacks for mixing paths, or benefits for sticking to one. Those may come later.</p>
-                <p><strong className="text-ivory">Attunement.</strong> I still need to rework Elemental Attunement and create its counterparts, Divine Attunement and Immortal Attunement. You will most likely only be able to hold one of them. Choosing your path to immortality may never come up, since it is likely a Grandmaster-level decision.</p>
               </Prose>
-              <p className="rounded-lg border border-gold/30 bg-gold/5 px-4 py-3 text-parchment">
-                For now, treat everyone as a <span className="text-gold-bright">Primordial cultivator with Elemental Attunement</span>.
-              </p>
+            </Section>
+
+            <Section id="attunement" kicker="New rule" title="Attunement">
+              <Prose>
+                <p>Each source now has its own Attunement, with its own kind of domain. You hold only one, and choosing it is likely a Grandmaster-level decision.</p>
+              </Prose>
+              <div className="grid md:grid-cols-3 gap-3">
+                {ATTUNEMENTS.map(a => {
+                  const group = v2.groups.find(g => g.id === a.family)!;
+                  return (
+                    <Link key={a.id} to={`/rules#${a.id}`} className="arcane-panel p-4 block hover:brightness-125 transition" style={{ borderColor: tint(group.accent, 0.3) }}>
+                      <GroupLabel label={group.label} accent={group.accent} className="mb-1" />
+                      <p className="font-display text-ivory tracking-wide">{a.name}</p>
+                      <p className="text-sm mt-1"><span style={{ color: group.accent }}>{a.domainLabel}.</span> <span className="text-fog">{a.summary}</span></p>
+                    </Link>
+                  );
+                })}
+              </div>
+              <ul className="space-y-1.5 list-disc pl-5 text-parchment/85">
+                {ATTUNEMENT_CHANGES.map(c => <li key={c}>{c}</li>)}
+              </ul>
+              <Link to="/rules" className="arcane-btn !px-4 !py-2 text-sm inline-flex items-center gap-2"><BookOpen size={15} /> Read the Attunement rules</Link>
             </Section>
 
             <Section id="qa" kicker="You asked" title="Q&A">
@@ -275,7 +295,7 @@ const PatchNotesPage: React.FC = () => {
                   <GroupLabel label={group.label} accent={group.accent} className="mb-2" />
                   <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-3">
                     {v2.paths.filter(p => p.groupId === group.id).map(path => {
-                      const badge = NEW_PATH_IDS.includes(path.id) ? 'New' : path.id === 'sky' ? 'Formerly Air' : null;
+                      const badge = NEW_PATH_IDS.includes(path.id) ? 'New' : path.id === 'sky' ? 'Renamed' : null;
                       return (
                         <div key={path.id} className="rounded-lg border p-3 flex gap-3" style={{ borderColor: tint(path.accent, 0.25), background: tint(path.accent, 0.04) }}>
                           <PathSigil path={path} size={40} active={!!badge} />
@@ -284,6 +304,7 @@ const PatchNotesPage: React.FC = () => {
                               <span className="font-display text-ivory tracking-wide">{path.name}</span>
                               {badge && <span className="text-[10px] font-display tracking-wider uppercase px-1.5 rounded" style={{ color: path.accent, background: tint(path.accent, 0.12) }}>{badge}</span>}
                             </p>
+                            {PATH_ORIGINS[path.id] && <p className="text-xs text-parchment/80">{PATH_ORIGINS[path.id]}</p>}
                             {path.patron && <p className="text-xs text-gold-dim">{path.patron}</p>}
                             <p className="text-sm text-fog mt-0.5">{path.description}</p>
                           </div>

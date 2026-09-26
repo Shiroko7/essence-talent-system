@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import TalentPage from './talents/TalentPage';
 import ChangelogPage from './pages/ChangelogPage';
 import PatchNotesPage from './pages/PatchNotesPage';
+import RulesPage from './pages/RulesPage';
 import MerchantsPage from './pages/MerchantsPage';
 import MerchantCatalogPage from './pages/MerchantCatalogPage';
 import PotionsPage from './pages/PotionsPage';
@@ -27,6 +28,7 @@ function App() {
           <Route path="/v2/migration" element={<TalentPage key="v2-migration" version="v2" page="migration" />} />
           <Route path="/cultivation" element={<TalentPage key="v2-cultivation" version="v2" />} />
           <Route path="/patch-notes" element={<PatchNotesPage />} />
+          <Route path="/rules" element={<RulesPage />} />
           <Route path="/changelog" element={<ChangelogPage />} />
           <Route path="/merchants" element={<MerchantsPage />} />
           <Route path="/merchants/:merchantId" element={<MerchantCatalogPage />} />

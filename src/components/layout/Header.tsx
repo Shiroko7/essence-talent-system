@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sparkles, Menu, X, Github, FlaskConical, Store, ScrollText, Layers, Megaphone } from 'lucide-react';
+import { Sparkles, Menu, X, Github, FlaskConical, Store, ScrollText, Layers, Megaphone, BookOpen } from 'lucide-react';
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -9,6 +9,7 @@ const Header: React.FC = () => {
   const navItems = [
     { to: '/', label: 'Talents (v1)', icon: Sparkles },
     { to: '/v2', label: 'Talents V2', icon: Layers },
+    { to: '/rules', label: 'Rules', icon: BookOpen },
     { to: '/patch-notes', label: 'Patch Notes', icon: Megaphone },
     { to: '/changelog', label: 'Changelog', icon: ScrollText },
     { to: '/merchants', label: 'Merchants', icon: Store },

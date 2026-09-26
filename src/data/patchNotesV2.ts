@@ -67,14 +67,33 @@ export const QA: { q: string; a: string }[] = [
     a: 'You can use all three. Spreading across too many paths gives you somewhat diminished returns, since your Essence is split between pools, but you do you.'
   },
   {
-    q: 'Does my path have any out-of-game implications?',
-    a: 'It does. Think of it as shaping the kind of ending your character gets once the campaign is over.'
+    q: 'Does my path have any out-of-combat implications?',
+    a: 'It does. Your path defines where you stand in the world: who can become your allies, and who will become your enemies. Think of it as shaping the kind of ending your character gets once the campaign is close to the finale.'
   }
+];
+
+/** How Elemental Attunement changed from the vault rule. */
+export const ATTUNEMENT_CHANGES = [
+  'You hold one Attunement and one domain, from one path you have learned.',
+  'One benefit per tier instead of two. Every Attunement gets an extra attunement slot at Master.',
+  'Elemental: Air’s domain is now Sky’s. Lightning, Poison, and Acid lost theirs with their paths.',
+  'Elemental: Domain Movement moves to Adept and gives every kind of movement your domain allows.',
+  'Elemental: Domain Manifestation covers 1 mile, and Essence Supremacy only empowers your domain’s path.',
+  'Elemental: Environmental Immunity, Domain Inspiration, Essence Sight, Legendary Resistance, and Legendary Action are gone.'
 ];
 
 export const DELETED_ESSENCES = ['wind', 'lightning', 'poison', 'acid'];
 
 /** V2 paths that did not exist in V1. Sky is Air renamed, so it is not listed. */
+/** Where a V2 path's abilities came from, when it inherited from V1 essences. */
+export const PATH_ORIGINS: Record<string, string> = {
+  sky: 'Formerly Air and Lightning',
+  tempest: 'Partly Lightning, Water, and Air',
+  lunar: 'Partly Water',
+  pestilence: 'Partly Poison',
+  alchemy: 'Partly Acid and Poison'
+};
+
 export const NEW_PATH_IDS = ['lunar', 'love', 'ruin', 'pestilence', 'shadow', 'tempest', 'providence', 'alchemy', 'heart', 'mysteries'];
 
 export const NEW_TALENTS: (PathAbilities & { teacher: string })[] = [
