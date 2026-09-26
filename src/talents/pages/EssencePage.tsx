@@ -12,7 +12,7 @@ const EssencePage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
 
   return (
     <div className="max-w-[1600px] mx-auto space-y-5">
-      <PageHeader ctl={ctl} page="essence" aboveSwitcher />
+      <PageHeader ctl={ctl} page="essence" />
       <section className="arcane-panel p-4 md:p-5">
         <EssenceTracker ctl={ctl} onOpenPath={openPath} />
       </section>
