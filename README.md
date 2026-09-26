@@ -87,8 +87,8 @@ answered by the repo rather than by memory.
 - **Potions** — the alchemy reference, including essence-pair combinations.
 - **Changelog** — auto-generated, so players can see what was rebalanced.
 - **Patch notes** (`/patch-notes`) — the V1 → V2 overhaul, written for players.
-- **Rules** (`/rules`) — Attunement: Elemental (in play), Divine and Immortal
-  (drafts).
+- **Rules** (`/rules`) — Attunement: Elemental (Primordial), Portfolio (Divine),
+  and Dao (Immortal).
 - **Migration guide** (`/v2/migration`) — what happened to each ability of a
   player's V1 character when it was carried into V2.
 

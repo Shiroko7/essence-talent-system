@@ -253,6 +253,7 @@ const PatchNotesPage: React.FC = () => {
                   const group = v2.groups.find(g => g.id === a.family)!;
                   return (
                     <Link key={a.id} to={`/rules#${a.id}`} className="arcane-panel p-4 block hover:brightness-125 transition" style={{ borderColor: tint(group.accent, 0.3) }}>
+                      <GroupLabel label={group.label} accent={group.accent} className="mb-1" />
                       <p className="font-display text-ivory tracking-wide">{a.name}</p>
                       <p className="text-sm mt-1"><span style={{ color: group.accent }}>{a.domainLabel}.</span> <span className="text-fog">{a.summary}</span></p>
                     </Link>

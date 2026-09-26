@@ -52,6 +52,7 @@ const RulesPage: React.FC = () => {
                 className="rounded-lg border px-3 py-2.5 text-left transition-colors"
                 style={{ borderColor: tint(g.accent, selected ? 0.6 : 0.2), background: tint(g.accent, selected ? 0.12 : 0.03) }}
               >
+                <p className="font-display text-[10px] tracking-[0.2em] uppercase text-mist">{g.label}</p>
                 <p className={`font-display text-sm sm:text-base tracking-wide ${selected ? 'text-ivory' : 'text-fog'}`}>{a.name}</p>
                 <p className="font-display text-[10px] tracking-[0.2em] uppercase" style={{ color: g.accent }}>{a.domainLabel}</p>
               </button>

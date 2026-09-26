@@ -1,7 +1,7 @@
 /**
  * Attunement rules for the Essence Dao. Elemental Attunement is adapted from the
  * campaign vault (publish.obsidian.md/leatrux/Homebrew/Essences/Elemental+Attunement)
- * for the V2 paths; Divine and Immortal Attunement are drafts built on the same frame.
+ * for the V2 paths; Portfolio (Divine) and Dao (Immortal) Attunement are built on the same frame.
  */
 
 export const VAULT_URL = 'https://publish.obsidian.md/leatrux/Homebrew/Essences/Elemental+Attunement';
@@ -72,7 +72,7 @@ export const ATTUNEMENTS: Attunement[] = [
   },
   {
     id: 'divine',
-    name: 'Divine Attunement',
+    name: 'Portfolio Attunement',
     family: 'divine',
     domainLabel: 'Consecrated Ground',
     summary: 'Wherever your portfolio is revered or lived out: its temples and churches, any place with many of its followers, and wherever it is happening.',
@@ -96,7 +96,7 @@ export const ATTUNEMENTS: Attunement[] = [
   },
   {
     id: 'immortal',
-    name: 'Immortal Attunement',
+    name: 'Dao Attunement',
     family: 'human',
     domainLabel: 'Sanctum',
     summary: 'A place you have made your own through cultivation, where your Dao Heart settles: your furnace, your training hall, your well. It can be moved or rebuilt, but it takes time to become yours. At Grandmaster it follows you everywhere.',
