@@ -67,7 +67,7 @@ const WithCharacter: React.FC<{ version: SystemVersion; render: Render }> = ({ v
  * summary. Each page loads the same saved character for its version.
  */
 const TalentPage: React.FC<{ version: SystemVersion; page?: TalentPageId }> = ({ version, page = 'talents' }) => {
-  const [design, setDesign] = useDesign();
+  const [design, setDesign] = useDesign(version);
   const [essence, setEssence] = useEssenceVariant();
 
   if (page === 'talents' && design === 'legacy') {
