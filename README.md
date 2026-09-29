@@ -132,3 +132,14 @@ at build time, there is no backend and no database.
 - [Cultivation paths design](docs/cultivation-paths-design.md) — the Primordial, Divine, and Immortal families and path boundaries.
 - [ADDING_ITEM_DATA.md](ADDING_ITEM_DATA.md) — how to extend the merchant catalogue.
 - [data/essences/README.md](data/essences/README.md) — the ability markdown format in full.
+
+## License
+
+- **Code** is [MIT](LICENSE).
+- **Homebrew content** (the abilities, paths, rules and lore in
+  `data/cultivation/`, `data/essences/` and `docs/`) is
+  [CC BY 4.0](LICENSE-CONTENT): use and adapt it freely, with credit.
+- **Third-party material is not covered.** Spells and items from D&D and
+  third-party books are referenced by name and linked to 5e.tools. Item
+  descriptions in `src/data/items/` are © Wizards of the Coast and their
+  respective publishers, sourced via 5e.tools.

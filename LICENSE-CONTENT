@@ -1,0 +1,22 @@
+Essence Talent System content
+Copyright (c) 2025-2026 shiro
+
+The original game content in this repository (the homebrew abilities, paths,
+rules and lore in data/cultivation/, data/essences/ and docs/) is licensed
+under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt it for any purpose, including commercially,
+as long as you give appropriate credit ("Essence Talent System by shiro"),
+link to the license, and indicate if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Not covered by this license:
+
+- Spell, cantrip and item names and links that refer to published
+  Dungeons & Dragons and third-party books. Their text is not included here;
+  it belongs to Wizards of the Coast and the respective publishers.
+- Item descriptions in src/data/items/, which are sourced via 5e.tools and
+  remain (c) Wizards of the Coast and their respective publishers.
+
+The source code is licensed separately under the MIT License (see LICENSE).
