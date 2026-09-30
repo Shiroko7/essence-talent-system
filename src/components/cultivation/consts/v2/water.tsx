@@ -38,7 +38,7 @@ export const waterAbilities = [
   {
     id: "water_initiate_restorative_rain",
     name: "Restorative Rain",
-    description: "As an action, you create a 20-foot radius of gentle rain centered on you that lasts for a number of rounds equal to your maximum Water essences. At the start of each of their turns while in the rain, they regain 1 hit point.\n\n\n---\n\n## Adept Tier",
+    description: "As an action, you create a 20-foot radius of gentle rain centered on you that lasts for a number of rounds equal to your maximum Water essences. At the start of each of their turns while in the rain, they regain 1 hit point.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const waterAbilities = [
   {
     id: "water_adept_tides_reflection_art_ii",
     name: "Tide's Reflection Art II (Thalassios)",
-    description: "As a reaction, you can spend 2 Essence to cause one of your Water Clones to detonate in a 10-foot radius burst of frigid water. Each creature in range must make a Dexterity saving throw, taking cold damage equal to half the clone's maximum hit points on a failed save, or half as much on a successful one.\n\nIn addition, you can now summon up to two Water Clones simultaneously. When they attack together, their attack damage increases by one damage die.\n\n## Master Tier",
+    description: "As a reaction, you can spend 2 Essence to cause one of your Water Clones to detonate in a 10-foot radius burst of frigid water. Each creature in range must make a Dexterity saving throw, taking cold damage equal to half the clone's maximum hit points on a failed save, or half as much on a successful one.\n\nIn addition, you can now summon up to two Water Clones simultaneously. When they attack together, their attack damage increases by one damage die.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -134,7 +134,7 @@ export const waterAbilities = [
   {
     id: "water_adept_tides_reflection_art_iii",
     name: "Tide's Reflection Art III (Thalassios)",
-    description: "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks.\n\nIn addition, your mastery deepens:\n- You can now summon up to three Water Clones simultaneously.\n- Your Water Clones last for 10 minutes.\n- Your Water Clones emit dim moonlight in a 60-foot radius around them.\n\n## Cantrips",
+    description: "As a bonus action, you can instantly swap places with one of your Water Clones without provoking opportunity attacks.\n\nIn addition, your mastery deepens:\n- You can now summon up to three Water Clones simultaneously.\n- Your Water Clones last for 10 minutes.\n- Your Water Clones emit dim moonlight in a 60-foot radius around them.",
     tier: "master",
     isActive: false,
     isPassive: true,
@@ -169,7 +169,7 @@ export const waterCantrips = [
   {
     id: "water_cantrip_shape_water",
     name: "Shape Water",
-    description: "https://5e.tools/spells.html#shape%20water_xge\n\n## Spells",
+    description: "https://5e.tools/spells.html#shape%20water_xge",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
@@ -253,7 +253,7 @@ export const waterSpells = [
   {
     id: "water_3rd_level_conjure_ocean",
     name: "Conjure Ocean",
-    description: "https://5e.tools/spells.html#conjure%20ocean_obojimatallgrass\n\n---\n\n## Spells restored from V1",
+    description: "https://5e.tools/spells.html#conjure%20ocean_obojimatallgrass",
     tier: "3rd",
     isActive: false,
     isPassive: false,

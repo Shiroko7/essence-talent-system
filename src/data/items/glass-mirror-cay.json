@@ -1,0 +1,433 @@
+{
+  "merchantId": "glass-mirror-cay",
+  "lastUpdated": "2026-09-28",
+  "items": [
+    {
+      "id": "shard-solitaire-black-sapphire",
+      "name": "Shard Solitaire (Black Sapphire)",
+      "rarity": "legendary",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#shard%20solitaire%20(black%20sapphire)_kftgv",
+      "source": "KftGV",
+      "detailedData": {
+        "entries": [
+          "This gemstone contains an unstable extradimensional rift. Its facets are ribboned with iridescent veins that seem to move of their own accord.",
+          {
+            "type": "entries",
+            "name": "Rift Step",
+            "entries": [
+              "As a bonus action, while wearing or holding the shard solitaire, you can teleport yourself, along with anything you're wearing or carrying, to an unoccupied space you can see within 30 feet of yourself.",
+              "When you use this property, you can tap into the unstable power of the stone's extradimensional rift to increase the teleport distance by up to 30 feet, but if you teleport more than 30 feet using Rift Step, you must succeed on a DC 16 Constitution saving throw or take 3d10 force damage immediately after you teleport."
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Spellcasting",
+            "entries": [
+              "The stone has 6 charges and regains 1d6 expended charges daily at dawn. As an action, you can cast one of the stone's spells by expending the requisite number of charges, requiring no material components (save DC 16). The black sapphire shard solitaire can be used to cast the following spells: banishment (3 charges; the target is banished to the stone's extradimensional space for the spell's duration), mirror image (1 charge), blight (3 charges), finger of death (6 charges)."
+            ]
+          }
+        ],
+        "charges": 6,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "belt-of-frost-giant-strength",
+      "name": "Belt of Frost Giant Strength",
+      "rarity": "very rare",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#belt%20of%20frost%20giant%20strength_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "While wearing this belt, your Strength score changes to 23. The item has no effect on you if your Strength without the belt is equal to or greater than the belt's score."
+        ],
+        "ability": {
+          "static": {
+            "str": 23
+          }
+        }
+      }
+    },
+    {
+      "id": "nimbus-coronet",
+      "name": "Nimbus Coronet",
+      "rarity": "very rare",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#nimbus%20coronet_bgg",
+      "source": "BGG",
+      "detailedData": {
+        "entries": [
+          "The design of this bronze circlet resembles swirling clouds. At its center is set a deep-blue stone, upon which is inscribed the cloud rune.",
+          "While wearing this circlet, you take no damage from falling. Additionally, as a bonus action, you and everything you are wearing or carrying can teleport to an unoccupied space you can see within 15 feet of yourself, reappearing in a puff of shimmering clouds.",
+          {
+            "type": "entries",
+            "name": "Invoking the Rune",
+            "entries": [
+              "As an action, you can invoke the circlet's rune to assume a cloudlike form. The form lasts for 1 minute, until you are incapacitated, or until you dismiss it (no action required).",
+              "While in cloud form, you have a flying speed of 60 feet and resistance to bludgeoning, piercing, and slashing damage.",
+              "Once the rune has been invoked, it can't be invoked again until the next dawn."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "wand-of-polymorph",
+      "name": "Wand of Polymorph",
+      "rarity": "very rare",
+      "type": "wand",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#wand%20of%20polymorph_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "This wand has 7 charges. While holding it, you can expend 1 charge to cast Polymorph (save DC 15) from it.",
+          {
+            "type": "entries",
+            "name": "Regaining Charges",
+            "entries": [
+              "The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll 1d20. On a 1, the wand crumbles into ashes and is destroyed."
+            ]
+          }
+        ],
+        "charges": 7,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "bellows-of-strangulation",
+      "name": "Bellows of Strangulation",
+      "rarity": "rare",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#bellows%20of%20strangulation_au",
+      "source": "AU",
+      "detailedData": {
+        "entries": [
+          "This bellows has 6 charges. While you are holding it, you can take a Magic action and use one of three command words to cause one of the following effects:",
+          {
+            "type": "list",
+            "items": [
+              {
+                "type": "entries",
+                "name": "First Command Word",
+                "entry": "You expend 1 charge to cause the bellows to suck the energy from one creature you can see within 60 feet. The creature must succeed on a DC 15 Constitution saving throw or have the Incapacitated condition for 1 minute. The creature repeats the save at the end of each of its turns, ending the effect on itself on a success."
+              },
+              {
+                "type": "entries",
+                "name": "Second Command Word",
+                "entry": "You expend 3 charges to cause the bellows to suck the energy from creatures in a 30-foot Cone. Each creature in that area must succeed on a DC 15 Constitution saving throw or have the Incapacitated condition for 1 minute. An affected creature repeats the save at the end of each of its turns, ending the effect on itself on a success."
+              },
+              {
+                "type": "entries",
+                "name": "Third Command Word",
+                "entry": "You expend 5 charges to cast the Cloudkill spell (spell DC 17) from the bellows."
+              }
+            ],
+            "style": "list-hang-notitle"
+          },
+          {
+            "type": "entries",
+            "name": "Regaining Charges",
+            "entries": [
+              "The bellows regains 1d6 + 1 charges daily at dawn. If you expend the last charge, roll 1d20. On a 1, the bellows explodes in a harmless burst of wind and is lost forever."
+            ]
+          }
+        ],
+        "charges": 6,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "cape-of-the-mountebank",
+      "name": "Cape of the Mountebank",
+      "rarity": "rare",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#cape%20of%20the%20mountebank_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "This cape smells faintly of brimstone. While wearing it, you can use it to cast Dimension Door as a Magic action. This property can't be used again until the next dawn.",
+          "When you teleport with that spell, you leave behind a cloud of smoke. The space you left is Lightly Obscured by that smoke until the end of your next turn."
+        ]
+      }
+    },
+    {
+      "id": "shadow-tag",
+      "name": "Shadow Tag",
+      "rarity": "rare",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#shadow%20tag_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This silver coin is embossed with the visage of a hooded, near-faceless figure with eyes that are always dark. While holding the coin, you can use an action to whisper its command word and toss it into a creature's shadow that you can see within 10 feet of you. When you do, the coin magically dissolves and tags the creature's shadow, causing a smoky, pitch-dark copy of the coin to appear in your hand instead.",
+          "While you're within 1000 feet of the tagged creature's shadow, small points of light appear within the dark coin's eyes that look in the shadow's direction. If the dark coin's eyes are looking toward the shadow, you can grasp the coin and use an action to speak its command word again, destroying the coin and immediately teleporting you to an unoccupied space within 5 feet of the tagged creature. Alternatively, when you destroy the coin, you can force the tagged creature to make a DC 15 Charisma saving throw. On a failed save, the creature teleports to an unoccupied space on solid ground that you can see within 15 feet of you. A creature can choose to fail the saving throw.",
+          "If the tagged creature doesn't have a shadow, such as if it becomes invisible, the dark coin's eyes disappear until the creature's shadow reappears. The dark coin remains for 24 hours or until you destroy it. If the dark coin lasts for its full duration, there is a 50 percent chance that the normal coin reappears and replaces it. If the coin doesn't reappear at the end of the duration, it's destroyed."
+        ]
+      }
+    },
+    {
+      "id": "wings-of-flying",
+      "name": "Wings of Flying",
+      "rarity": "rare",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#wings%20of%20flying_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "While wearing this cloak, you can take a Magic action to turn the cloak into a pair of wings on your back. The wings lasts for 1 hour or until you end the effect early as a Magic action. The wings give you a Fly Speed of 60 feet. If you are aloft when the wings disappear, you fall. When the wings disappear, you can't use them again for 1d12 hours."
+        ]
+      }
+    },
+    {
+      "id": "staff-of-charming",
+      "name": "Staff of Charming",
+      "rarity": "rare",
+      "type": "staff",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "quarterstaff"
+      },
+      "toolsUrl": "https://5e.tools/items.html#staff%20of%20charming_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "This staff has 10 charges. While holding the staff, you can use any of its properties:",
+          {
+            "type": "list",
+            "style": "list-hang-notitle",
+            "items": [
+              {
+                "type": "entries",
+                "name": "Cast Spell",
+                "entries": [
+                  "You can expend 1 of the staff's charges to cast Charm Person, Command, or Comprehend Languages from it using your spell save DC."
+                ]
+              },
+              {
+                "type": "entries",
+                "name": "Reflect Enchantment",
+                "entries": [
+                  "If you succeed on a saving throw against an Enchantment spell that targets only you, you can take a Reaction to expend 1 charge from the staff and turn the spell back on its caster as if you had cast the spell."
+                ]
+              },
+              {
+                "type": "entries",
+                "name": "Resist Enchantment",
+                "entries": [
+                  "If you fail a saving throw against an Enchantment spell that targets only you, you can turn your failed save into a successful one. You can't use this property of the staff again until the next dawn."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Regaining Charges",
+            "entries": [
+              "The staff regains 1d8 + 2 expended charges daily at dawn. If you expend the last charge, roll 1d20. On a 1, the staff crumbles to dust and is destroyed."
+            ]
+          }
+        ],
+        "dmg1": "1d6",
+        "dmg2": "1d8",
+        "dmgType": "B",
+        "charges": 10,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "bottled-breath",
+      "name": "Bottled Breath",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#bottled%20breath_pota",
+      "source": "PotA",
+      "price": 400,
+      "detailedData": {
+        "entries": [
+          "This bottle contains a breath of elemental air. When you inhale it, you either exhale it or hold it.",
+          "If you exhale the breath, you gain the effect of the gust of wind spell. If you hold the breath, you don't need to breathe for 1 hour, though you can end this benefit early (for example, to speak). Ending it early doesn't give you the benefit of exhaling the breath."
+        ]
+      }
+    },
+    {
+      "id": "wind-fan",
+      "name": "Wind Fan",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#wind%20fan_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "While holding this fan, you can cast Gust of Wind (save DC 13) from it. Each subsequent time the fan is used before the next dawn, it has a cumulative 20 percent chance of not working; if the fan fails to work, it tears into useless, nonmagical tatters."
+        ]
+      }
+    },
+    {
+      "id": "dark-mantle",
+      "name": "Dark Mantle",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#dark%20mantle_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "This leathery cloak is made from the remains of a darkmantle. While wearing it, climbing doesn't cost you extra movement, and you have advantage on Strength (Athletics) check made to climb.",
+          "In addition, while wearing this cloak, you can use an action to speak its command word to emit an aura of magical darkness. This aura extends from you in a 15-foot radius, moves with you, and spreads around corners. The darkness lasts as long as you maintain concentration (as if concentrating on a spell), up to 1 minute. A creature with darkvision can't see through this darkness, and nonmagical light can't illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell that created the light is dispelled. Once this property of the cloak has been used, it can't be used again until the next dawn."
+        ]
+      }
+    },
+    {
+      "id": "eversmoking-bottle",
+      "name": "Eversmoking Bottle",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#eversmoking%20bottle_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "As a Magic action, you can open or close this bottle.",
+          "Opening the bottle causes thick smoke to billow out, forming a cloud that fills a 60-foot Emanation originating from the bottle. The area within the smoke is Heavily Obscured.",
+          "Each minute the bottle remains open, the size of the Emanation increases by 10 feet until it reaches its maximum size of 120 feet.",
+          "Closing the bottle causes the cloud to become fixed in place until it disperses after 10 minutes. A strong wind (such as that created by the Gust of Wind spell) disperses the cloud after 1 minute."
+        ]
+      }
+    },
+    {
+      "id": "feywild-shard",
+      "name": "Feywild Shard",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#feywild%20shard_tce",
+      "source": "TCE",
+      "detailedData": {
+        "entries": [
+          "This warm crystal glints with the sunset colors of the Feywild sky and evokes whispers of emotional memory. As an action, you can attach the shard to a Tiny object (such as a weapon or a piece of jewelry) or detach it. It falls off if your attunement to it ends. You can use the shard as a spellcasting focus while you hold or wear it.",
+          "When you use a Metamagic option on a spell while you are holding or wearing the shard, you can roll on the Wild Magic Surge table in the Player's Handbook. If the result is a spell, it is too wild to be affected by your Metamagic, and if it normally requires concentration, it doesn't require concentration in this case; the spell lasts for its full duration.",
+          "If you don't have the Wild Magic Sorcerous Origin, once this property is used to roll on the Wild Magic Surge table, it can't be used again until the next dawn."
+        ]
+      }
+    },
+    {
+      "id": "wand-of-enthralling",
+      "name": "Wand of Enthralling",
+      "rarity": "uncommon",
+      "type": "wand",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#wand%20of%20enthralling_aud",
+      "source": "AUD",
+      "detailedData": {
+        "entries": [
+          "This wand has 4 charges and regains 1d4 expended charges daily at dawn. While holding it, you can expend 1 charge to cast Enthrall (save DC 15) from it."
+        ],
+        "charges": 4,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "potion-of-cold-resistance",
+      "name": "Potion of Cold Resistance",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20cold%20resistance_xdmg",
+      "source": "XDMG",
+      "price": 400,
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you have resistance to cold damage for 1 hour."
+        ],
+        "resist": [
+          "cold"
+        ]
+      }
+    },
+    {
+      "id": "potion-of-greater-healing",
+      "name": "Potion of Greater Healing",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20greater%20healing_xdmg",
+      "source": "XDMG",
+      "price": 200,
+      "detailedData": {
+        "entries": [
+          "You regain 4d4 + 4 Hit Points when you drink this potion. The potion's red liquid glimmers when agitated."
+        ]
+      }
+    },
+    {
+      "id": "perfume-of-bewitching",
+      "name": "Perfume of Bewitching",
+      "rarity": "common",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#perfume%20of%20bewitching_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "This tiny vial contains magic perfume, enough for one use. You can take a Magic action to apply the perfume to yourself, and its effect lasts 1 hour. For the duration, you have Advantage on all Charisma (Deception and Persuasion) checks made to influence a creature within 5 feet of yourself."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-healing",
+      "name": "Potion of Healing",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20healing_xdmg",
+      "source": "XDMG",
+      "price": 50,
+      "detailedData": {
+        "entries": [
+          "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 2d4 + 2 Hit Points. The potion's red liquid glimmers when agitated."
+        ]
+      }
+    },
+    {
+      "id": "whispergust-mote",
+      "name": "Whispergust Mote",
+      "rarity": "common",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#whispergust%20mote_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "A whispergust mote is a sentient breath of air typically separated from a larger air elemental. When not invisible, its form resembles a dollop of blue whipped cream but is weightless and fluid to the touch. The mote can use an action to become invisible, but it typically only does so when it senses danger. When left to its own devices, the mote will gently tousle the hair of passing creatures or flip a fallen leaf. While it is a form that is defined by its wanderlust, it nevertheless enjoys the company and experiences of adventuring parties that travel to new and unique locations. Most owners of a whispergust mote are rarely so bold as to claim ownership of it at all.",
+          "The mote is considered a magical object and is not a creature. It has a flying speed of 20 feet and can hover. It has AC 10, 5 hit points, and has resistance to all damage. The whispergust mote regains all its hit points if affected by a gust of wind spell or similar magic.",
+          {
+            "type": "entries",
+            "name": "Sentience",
+            "entries": [
+              "The whispergust mote is a sentient chaotic good item with an Intelligence of 1, a Wisdom of 8, and a Charisma of 7. It has hearing and darkvision out to a range of 60 feet. It can't speak or read, but understands Auran and Common."
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Personality",
+            "entries": [
+              "The whispergust mote ultimately travels where it wants to go, but knows that companionship is often worth the limitations that come with it. In even the most dull of places, the mote will find ways to entertain itself—often to the panic or frustration of the creatures it travels with."
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

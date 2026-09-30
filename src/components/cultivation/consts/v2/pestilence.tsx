@@ -50,7 +50,7 @@ export const pestilenceAbilities = [
   {
     id: "pestilence_initiate_creeping_pestilence",
     name: "Creeping Pestilence",
-    description: "**Casting Time:** 1 action  \n**Range:** 60 feet  \n**Components:** V, S  \n**Duration:** Concentration, up to 1 minute  \n**Portfolio:** Poison\n\nYou infect a creature you can see within range with a virulent disease. The target must succeed on a Constitution saving throw or become poisoned for the duration. While poisoned in this way, the creature is wracked with weakness and vulnerability—it takes an additional 1d6 poison damage whenever it takes poison damage from any source.\n\nAt the end of each of its turns, the target can make another Constitution saving throw. On a success, the spell ends on the target. On a failure, the disease spreads: choose one creature within 60 feet of the target. That creature must succeed on a Constitution saving throw or also become poisoned by this spell (with its own separate duration and spreading capability).\n\n## Adept Tier",
+    description: "**Casting Time:** 1 action  \n**Range:** 60 feet  \n**Components:** V, S  \n**Duration:** Concentration, up to 1 minute  \n**Portfolio:** Poison\n\nYou infect a creature you can see within range with a virulent disease. The target must succeed on a Constitution saving throw or become poisoned for the duration. While poisoned in this way, the creature is wracked with weakness and vulnerability—it takes an additional 1d6 poison damage whenever it takes poison damage from any source.\n\nAt the end of each of its turns, the target can make another Constitution saving throw. On a success, the spell ends on the target. On a failure, the disease spreads: choose one creature within 60 feet of the target. That creature must succeed on a Constitution saving throw or also become poisoned by this spell (with its own separate duration and spreading capability).",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -86,7 +86,7 @@ export const pestilenceAbilities = [
   {
     id: "pestilence_adept_lingering_touch",
     name: "Lingering Touch",
-    description: "**Casting Time:** 1 action  \n**Range:** 60 feet  \n**Components:** V, S  \n**Duration:** 1 minute  \n**Portfolio:** Poison\n\nYou point at a creature within range, and sickly brown energy lashes out to infect it. The target must make a Constitution saving throw. On a failed save, the target takes 5d10 poison damage and becomes both restrained and poisoned for the duration as virulent toxins seize its body. On a successful save, the target takes half as much damage and is not restrained or poisoned.\n\nA restrained creature can use its action to make a Constitution saving throw. On a success, the restrained condition ends, but the creature remains poisoned for the duration. At the end of each of its turns while poisoned by this spell, the creature can make another Constitution saving throw, ending the poisoned condition on a success.\n\n## Master Tier",
+    description: "**Casting Time:** 1 action  \n**Range:** 60 feet  \n**Components:** V, S  \n**Duration:** 1 minute  \n**Portfolio:** Poison\n\nYou point at a creature within range, and sickly brown energy lashes out to infect it. The target must make a Constitution saving throw. On a failed save, the target takes 5d10 poison damage and becomes both restrained and poisoned for the duration as virulent toxins seize its body. On a successful save, the target takes half as much damage and is not restrained or poisoned.\n\nA restrained creature can use its action to make a Constitution saving throw. On a success, the restrained condition ends, but the creature remains poisoned for the duration. At the end of each of its turns while poisoned by this spell, the creature can make another Constitution saving throw, ending the poisoned condition on a success.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const pestilenceAbilities = [
   {
     id: "pestilence_master_blessed_immunity",
     name: "Blessed Immunity",
-    description: "**Casting Time:** 1 action  \n**Range:** Touch  \n**Components:** V, S  \n**Duration:** 8 hours  \n**Portfolio:** Poison\n\nYou touch a willing creature, granting it Talona's protection. For the duration, the target gains the following benefits:\n\n- Immunity to poison damage and the poisoned condition\n- Immunity to disease, including magical diseases like lycanthropy and mummy rot\n- Any existing poisons or diseases affecting the target are suppressed for the duration\n- Parasitic infestations (such as rot grubs) are immediately expelled from the target's body, dealing no harm\n- Any molds, spores, or fungi on or within the target's body are destroyed\n\nAdditionally, if the target would contract a disease during the spell's duration, they automatically succeed on any saving throw to resist it.\n\n## Cantrips",
+    description: "**Casting Time:** 1 action  \n**Range:** Touch  \n**Components:** V, S  \n**Duration:** 8 hours  \n**Portfolio:** Poison\n\nYou touch a willing creature, granting it Talona's protection. For the duration, the target gains the following benefits:\n\n- Immunity to poison damage and the poisoned condition\n- Immunity to disease, including magical diseases like lycanthropy and mummy rot\n- Any existing poisons or diseases affecting the target are suppressed for the duration\n- Parasitic infestations (such as rot grubs) are immediately expelled from the target's body, dealing no harm\n- Any molds, spores, or fungi on or within the target's body are destroyed\n\nAdditionally, if the target would contract a disease during the spell's duration, they automatically succeed on any saving throw to resist it.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -146,7 +146,7 @@ export const pestilenceAbilities = [
   {
     id: "poison_adept_venomous_precision",
     name: "Venomous Precision",
-    description: "When attacking a creature that is poisoned, you have advantage on attack rolls against that creature.\n\n---\n\n## Spells restored from V1",
+    description: "When attacking a creature that is poisoned, you have advantage on attack rolls against that creature.",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -172,7 +172,7 @@ export const pestilenceCantrips = [
   {
     id: "pestilence_cantrip_infestation",
     name: "Infestation",
-    description: "Parasites and biting mites appear on a foe, dealing 1d6 poison damage and compelling random movement.\n\nhttps://5e.tools/spells.html#infestation_xge\n\n## Spells",
+    description: "Parasites and biting mites appear on a foe, dealing 1d6 poison damage and compelling random movement.\n\nhttps://5e.tools/spells.html#infestation_xge",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

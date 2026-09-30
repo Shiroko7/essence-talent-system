@@ -127,13 +127,7 @@ author: Bhaal / Portfolio (Murder)
 location: Leatrux
 ```
 
-**Casting Time:** 1 action  
-**Range:** 60 feet  
-**Components:** V, S  
-**Duration:** Instantaneous  
-**Portfolio:**  Murder
-
-A wave of necromantic energy washes out from a point you can see within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target must make a Constitution saving throw. On a failed save, a creature takes 5d10 necrotic damage. On a successful save, the creature takes half as much damage.
+As an action, you release a wave of necrotic energy from a point you can see within 60 feet. Choose up to six creatures within 30 feet of that point. Each must make a Constitution saving throw against your essence ability save DC, taking 5d10 necrotic damage on a failed save, or half as much on a successful one.
 
 ---
 

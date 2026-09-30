@@ -2,7 +2,7 @@ export const loveAbilities = [
   {
     id: "ruin_initiate_attraction_disdain",
     name: "Attraction/Disdain",
-    description: "**Casting Time:** 1 action  \n**Range:** Touch  \n**Components:** V, S, M (a holy symbol)  \n**Duration:** 1 hour  \n**Portfolio:** Emotional influence\n\nChoose attraction or disdain when you cast this spell:\n\n**Attraction.** You touch a creature, which must make a Charisma saving throw. On a failure, any negative emotions it has toward you become positive emotions (hatred becomes love, etc.). Your Charisma score increases by 1d4+2 for interactions with the target.\n\n**Disdain.** You touch a creature and name another creature it knows. The target must make a Charisma saving throw. On a failure, any positive emotions it has toward the named creature become negative emotions. The named creature's Charisma score is reduced by 1d4+2 for interactions with the target.\n\nIf the target's emotions are extremely intense, the DM can impose a +1 to +5 bonus to the saving throw.\n\n## Cantrips",
+    description: "**Casting Time:** 1 action  \n**Range:** Touch  \n**Components:** V, S, M (a holy symbol)  \n**Duration:** 1 hour  \n**Portfolio:** Emotional influence\n\nChoose attraction or disdain when you cast this spell:\n\n**Attraction.** You touch a creature, which must make a Charisma saving throw. On a failure, any negative emotions it has toward you become positive emotions (hatred becomes love, etc.). Your Charisma score increases by 1d4+2 for interactions with the target.\n\n**Disdain.** You touch a creature and name another creature it knows. The target must make a Charisma saving throw. On a failure, any positive emotions it has toward the named creature become negative emotions. The named creature's Charisma score is reduced by 1d4+2 for interactions with the target.\n\nIf the target's emotions are extremely intense, the DM can impose a +1 to +5 bonus to the saving throw.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -14,7 +14,7 @@ export const loveAbilities = [
   {
     id: "water_adept_tide_of_emotions",
     name: "Tide of Emotions",
-    description: "By channelling the ebb and flow of water, you can influence the emotions of others within a 30-foot radius. Choose one emotion (calm, fear, or joy); affected creatures must succeed on a Wisdom saving throw or be overwhelmed by that emotion for 1 hour.\n\n---\n\n## Spells restored from V1",
+    description: "By channelling the ebb and flow of water, you can influence the emotions of others within a 30-foot radius. Choose one emotion (calm, fear, or joy); affected creatures must succeed on a Wisdom saving throw or be overwhelmed by that emotion for 1 hour.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -29,7 +29,7 @@ export const loveCantrips = [
   {
     id: "love_cantrip_friends",
     name: "Friends",
-    description: "For a brief time, you gain advantage on Charisma checks directed at one creature that is not hostile to you. When the magic ends, the creature recognizes that its feelings were influenced.\n\nhttps://5e.tools/spells.html#friends_xphb\n\n## Spells",
+    description: "For a brief time, you gain advantage on Charisma checks directed at one creature that is not hostile to you. When the magic ends, the creature recognizes that its feelings were influenced.\n\nhttps://5e.tools/spells.html#friends_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

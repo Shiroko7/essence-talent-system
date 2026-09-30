@@ -38,7 +38,7 @@ export const tempestAbilities = [
   {
     id: "lightning_initiate_lightning_insight",
     name: "Lightning Insight",
-    description: "When on or near water, you can use your connection to lightning to sense changes in weather. You can use a bonus action to gain advantage on Wisdom (Perception) checks to spot distant ships, landmarks, or other navigation hazards.\n\n---\n## Adept Tier",
+    description: "When on or near water, you can use your connection to lightning to sense changes in weather. You can use a bonus action to gain advantage on Wisdom (Perception) checks to spot distant ships, landmarks, or other navigation hazards.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -74,7 +74,7 @@ export const tempestAbilities = [
   {
     id: "lightning_essence_extinguishing_lightning",
     name: "Extinguishing Lightning",
-    description: "As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save, or half as much on a successful one.\n\nOn a failed save, one ongoing magical effect or spell on the creature immediately ends (your choice).\n\n---\n## Cantrips\n\n---\n\n## Spells restored from V1",
+    description: "As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save, or half as much on a successful one.\n\nOn a failed save, one ongoing magical effect or spell on the creature immediately ends (your choice).",
     tier: "master",
     isActive: true,
     isPassive: false,

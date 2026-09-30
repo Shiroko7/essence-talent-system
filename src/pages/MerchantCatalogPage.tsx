@@ -16,8 +16,8 @@ const MerchantCatalogPage: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<MerchantItem | null>(null);
   const [items, setItems] = useState<MerchantItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [sortBy, setSortBy] = useState<SortOption>('name');
-  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [sortBy, setSortBy] = useState<SortOption>('rarity');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [filterState, setFilterState] = useState<ItemFilterState>({
     search: '',
     rarity: [],

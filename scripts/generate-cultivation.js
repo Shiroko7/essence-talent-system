@@ -33,8 +33,9 @@ function parseMarkdownFile(content, pathName) {
       const [, key, raw] = match;
       metadata[key] = raw === 'true' ? true : raw === 'false' ? false : raw;
     }
+    // Section headings (## Master Tier, ## Spells...) belong to the file, not to the ability above them.
     const description = section.match(/```yaml[\s\S]*?```\s*\n\s*\n([\s\S]+)/)?.[1]
-      ?.replace(/\n+---\s*$/, '').trim() ?? '';
+      ?.split(/^#{1,2}\s/m)[0].replace(/(\n+---\s*)+$/, '').trim() ?? '';
     const ability = {
       id: metadata.id || '',
       name: extractName(section),

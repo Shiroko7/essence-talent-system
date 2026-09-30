@@ -26,7 +26,7 @@ export const providenceAbilities = [
   {
     id: "providence_initiate_boon_of_fortitude",
     name: "Boon of Fortitude",
-    description: "**Casting Time:** 1 action \n**Range:** 60 feet \n**Components:** V, S \n**Duration:** Concentration, up to 1 minute **Portfolio:** Endurance\n\nYou choose one creature you can see within range. For the duration, the target gains **advantage on saving throws against the frightened and charmed conditions**.\n\nAdditionally, the target becomes **immune to the stunned and incapacitated conditions** if the effect is caused by pain, torture, or physical trauma (such as damage that causes shock, not magical effects). The target is considered to be acting normally despite grievous physical wounds.\n\n## Adept Tier",
+    description: "**Casting Time:** 1 action \n**Range:** 60 feet \n**Components:** V, S \n**Duration:** Concentration, up to 1 minute **Portfolio:** Endurance\n\nYou choose one creature you can see within range. For the duration, the target gains **advantage on saving throws against the frightened and charmed conditions**.\n\nAdditionally, the target becomes **immune to the stunned and incapacitated conditions** if the effect is caused by pain, torture, or physical trauma (such as damage that causes shock, not magical effects). The target is considered to be acting normally despite grievous physical wounds.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -74,7 +74,7 @@ export const providenceAbilities = [
   {
     id: "wind_master_essence_liberations_gale",
     name: "Liberation’s Gale",
-    description: "A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets:\n- Each target immediately ends one of the following conditions affecting it: **Blinded**, **Charmed**, **Deafened**, **Frightened**, **Grappled**, **Paralyzed**, **Petrified**, **Poisoned**, **Restrained**, or **Stunned**.\n- For 1 minute, those creatures also have advantage on saving throws against those same conditions.\n\nIn addition, for 1 minute, you become an unyielding force:\n- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.\n- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.\n\n## Cantrips",
+    description: "A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets:\n- Each target immediately ends one of the following conditions affecting it: **Blinded**, **Charmed**, **Deafened**, **Frightened**, **Grappled**, **Paralyzed**, **Petrified**, **Poisoned**, **Restrained**, or **Stunned**.\n- For 1 minute, those creatures also have advantage on saving throws against those same conditions.\n\nIn addition, for 1 minute, you become an unyielding force:\n- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.\n- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -86,7 +86,7 @@ export const providenceAbilities = [
   {
     id: "providence_master_agony_of_the_martyr",
     name: "Agony of the Martyr",
-    description: "**Casting Time:** 1 action \n**Range:** 120 feet \n**Components:** V, S \n**Duration:** Concentration, up to 4 rounds **Portfolio:** Endurance\n\nA beam of gray energy strikes one creature you can see. The target makes a **Wisdom saving throw with disadvantage**. On a failed save, the target takes **4d10 necrotic damage** and is **stunned by blinding pain** until the start of your next turn. On a successful save, the target takes half damage and is not stunned, and the spell ends.\n\nAt the start of each of your subsequent turns for the duration, the target must repeat the Wisdom saving throw, this time **without disadvantage**. On a failure, the target takes **4d10 necrotic damage** and remains stunned until the start of your next turn. On a success, the target takes half damage, and the spell ends.\n\n## Cantrips",
+    description: "**Casting Time:** 1 action \n**Range:** 120 feet \n**Components:** V, S \n**Duration:** Concentration, up to 4 rounds **Portfolio:** Endurance\n\nA beam of gray energy strikes one creature you can see. The target makes a **Wisdom saving throw with disadvantage**. On a failed save, the target takes **4d10 necrotic damage** and is **stunned by blinding pain** until the start of your next turn. On a successful save, the target takes half damage and is not stunned, and the spell ends.\n\nAt the start of each of your subsequent turns for the duration, the target must repeat the Wisdom saving throw, this time **without disadvantage**. On a failure, the target takes **4d10 necrotic damage** and remains stunned until the start of your next turn. On a success, the target takes half damage, and the spell ends.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -98,7 +98,7 @@ export const providenceAbilities = [
   {
     id: "wind_adept_fortune_favors_the_swift",
     name: "Fortune Favors the Swift",
-    description: "Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it to one d20 roll before the end of your next turn.\n\n---\n\n## Spells restored from V1",
+    description: "Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it to one d20 roll before the end of your next turn.",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -135,7 +135,7 @@ export const providenceCantrips = [
   {
     id: "providence_cantrip_resistance",
     name: "Resistance",
-    description: "You touch one willing creature, granting perseverance. Once before the spell ends, the target can roll a d4 and add it to one saving throw.\n\nhttps://5e.tools/spells.html#resistance_xphb\n\n## Spells",
+    description: "You touch one willing creature, granting perseverance. Once before the spell ends, the target can roll a d4 and add it to one saving throw.\n\nhttps://5e.tools/spells.html#resistance_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

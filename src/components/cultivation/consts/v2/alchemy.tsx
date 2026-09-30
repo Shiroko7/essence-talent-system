@@ -158,7 +158,7 @@ export const alchemyAbilities = [
   {
     id: "acid_adept_chemical_expertise",
     name: "Chemical Expertise",
-    description: "You can create more advanced alchemical mixtures, such as potent acid flasks or alchemical fire. You gain a +2 bonus to checks involving Alchemist’s Supplies and can create these mixtures in half the usual time.\n\n## Master Tier",
+    description: "You can create more advanced alchemical mixtures, such as potent acid flasks or alchemical fire. You gain a +2 bonus to checks involving Alchemist’s Supplies and can create these mixtures in half the usual time.",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -194,7 +194,7 @@ export const alchemyAbilities = [
   {
     id: "poison_initiate_herbalists_knowledge",
     name: "Herbalist’s Knowledge",
-    description: "You gain proficiency with the Medicine skill and advantage on checks to identify or use medicinal herbs and poisons.\n\n## Adept Tier",
+    description: "You gain proficiency with the Medicine skill and advantage on checks to identify or use medicinal herbs and poisons.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -218,7 +218,7 @@ export const alchemyAbilities = [
   {
     id: "poison_master_vital_essence_sublimation_iii",
     name: "Vital Essence Sublimation III (Nilo)",
-    description: "Your mastery over distillation reaches its zenith:\n- You can now hold up to three distilled essences at a time.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% |\n| Adept | Uncommon | 0% |\n| Master | Rare | 0% |\n| Grandmaster | Very Rare | 40% |\n| Great Grandmaster | Legendary | 60% |\n\n**Instant Sublimation:**\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points.\n\n## Cantrips",
+    description: "Your mastery over distillation reaches its zenith:\n- You can now hold up to three distilled essences at a time.\n\n| Creature Cultivation Tier | Potion Rarity | Failure Rate |\n|---|---|---|\n| Initiate | Common | 0% |\n| Adept | Uncommon | 0% |\n| Master | Rare | 0% |\n| Grandmaster | Very Rare | 40% |\n| Great Grandmaster | Legendary | 60% |\n\n**Instant Sublimation:**\nWhen you deal poison damage to a living creature, you can immediately distill one of its abilities into a potion. The essence cost depends on the creature's cultivation tier:\n\n| Creature Tier | Essence Cost |\n|---|---|\n| Initiate | 1 |\n| Adept | 2 |\n| Master | 3 |\n| Grandmaster | 4 |\n| Great Grandmaster | 5 |\n\nIf the creature dies from the triggering damage, the extraction costs no essence points.",
     tier: "master",
     isActive: false,
     isPassive: true,
@@ -242,7 +242,7 @@ export const alchemyAbilities = [
   {
     id: "acid_initiate_acidic_precision",
     name: "Acidic Precision",
-    description: "Your expertise with corrosive substances has honed your skill in turning everyday objects into deadly weapons. You gain proficiency with all thrown weapons and improvised thrown weapons.\n\n---\n## Adept Tier",
+    description: "Your expertise with corrosive substances has honed your skill in turning everyday objects into deadly weapons. You gain proficiency with all thrown weapons and improvised thrown weapons.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -254,7 +254,7 @@ export const alchemyAbilities = [
   {
     id: "acid_adept_extended_reach",
     name: "Extended Reach",
-    description: "Your skill with explosive devices allows you to strike from farther away. When you create or use an explosive, its range to the target point is doubled. For example, a bomb that can normally be thrown or placed within 30 feet can now target a point up to 60 feet away.\n\n---\n## Master Tier",
+    description: "Your skill with explosive devices allows you to strike from farther away. When you create or use an explosive, its range to the target point is doubled. For example, a bomb that can normally be thrown or placed within 30 feet can now target a point up to 60 feet away.",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -314,7 +314,7 @@ export const alchemyAbilities = [
   {
     id: "poison_master_essence_snake_horror",
     name: "Apex Toxinator",
-    description: "As an Action, through concentrated biochemical reagents and alchemical cultivation, you conjure a monstrous, hissing Snake Horror homunculus in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.\n\n---\n## Cantrips\n\n---\n\n## Spells restored from V1",
+    description: "As an Action, through concentrated biochemical reagents and alchemical cultivation, you conjure a monstrous, hissing Snake Horror homunculus in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -329,7 +329,7 @@ export const alchemyCantrips = [
   {
     id: "acid_cantrip_acid_splash",
     name: "Acid Splash",
-    description: "https://5e.tools/spells.html#acid%20splash_xphb\n\n## Spells",
+    description: "https://5e.tools/spells.html#acid%20splash_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
@@ -339,7 +339,7 @@ export const alchemyCantrips = [
   {
     id: "acid_cantrip_primal_savagery",
     name: "Primal Savagery",
-    description: "https://5e.tools/spells.html#primal%20savagery_xge\n\n## Spells",
+    description: "https://5e.tools/spells.html#primal%20savagery_xge",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

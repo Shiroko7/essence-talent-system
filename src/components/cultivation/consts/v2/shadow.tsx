@@ -14,7 +14,7 @@ export const shadowAbilities = [
   {
     id: "void_adept_netherdark_fist_ii",
     name: "Netherdark Fist II: Voidstride",
-    description: "*Prerequisite: Netherdark Fist*\n\nWhen you use Netherdark Fist, you can spend **2 essences** instead of 1:\n\n- Your movement before the strike does not provoke opportunity attacks.\n- The damage increases to **4d10 force damage**.\n- On a failed save, the target's speed is reduced by 10 feet until the start of your next turn as shadowy tendrils latch onto them.\n\n## Master Tier",
+    description: "*Prerequisite: Netherdark Fist*\n\nWhen you use Netherdark Fist, you can spend **2 essences** instead of 1:\n\n- Your movement before the strike does not provoke opportunity attacks.\n- The damage increases to **4d10 force damage**.\n- On a failed save, the target's speed is reduced by 10 feet until the start of your next turn as shadowy tendrils latch onto them.",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -26,7 +26,7 @@ export const shadowAbilities = [
   {
     id: "void_master_netherdark_fist_iii",
     name: "Netherdark Fist III: Gravitic Collapse",
-    description: "*Prerequisite: Netherdark Fist II*\n\nWhen you use Netherdark Fist, you can spend **3 essences**:\n\n- You can move up to your full speed without provoking opportunity attacks before the strike.\n- The damage increases to **6d10 force damage**.\n- On a failed save, the target is knocked prone and cannot take reactions until the start of your next turn.\n\n## Grandmaster Tier",
+    description: "*Prerequisite: Netherdark Fist II*\n\nWhen you use Netherdark Fist, you can spend **3 essences**:\n\n- You can move up to your full speed without provoking opportunity attacks before the strike.\n- The damage increases to **6d10 force damage**.\n- On a failed save, the target is knocked prone and cannot take reactions until the start of your next turn.",
     tier: "master",
     isActive: false,
     isPassive: true,
@@ -62,7 +62,7 @@ export const shadowAbilities = [
   {
     id: "void_initiate_netherdark_fist",
     name: "Netherdark Fist",
-    description: "**Action | Range:** Half your maximum speed\n\nYou can move up to half your maximum speed before making this strike. You channel the crushing emptiness of the void into a strike against a single creature within range. The target must make a Charisma saving throw against your essence ability save DC.\n\n- **Failed Save:** The creature takes 2d10 force damage.\n- **Successful Save:** The creature takes half damage.\n\n## Adept Tier",
+    description: "**Action | Range:** Half your maximum speed\n\nYou can move up to half your maximum speed before making this strike. You channel the crushing emptiness of the void into a strike against a single creature within range. The target must make a Charisma saving throw against your essence ability save DC.\n\n- **Failed Save:** The creature takes 2d10 force damage.\n- **Successful Save:** The creature takes half damage.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const shadowAbilities = [
   {
     id: "void_grandmaster_netherdark_fist_iv",
     name: "Netherdark Fist IV: Reality Rend",
-    description: "*Prerequisite: Netherdark Fist III*\n\nWhen you use Netherdark Fist, you can spend **4 essences**:\n\n- The damage increases to **8d10 force damage**.\n- On a failed save, the target cannot regain hit points until the end of your next turn and subtracts 1d4 from the next saving throw it makes within 1 minute.\n\n## Greatgrandmaster Tier",
+    description: "*Prerequisite: Netherdark Fist III*\n\nWhen you use Netherdark Fist, you can spend **4 essences**:\n\n- The damage increases to **8d10 force damage**.\n- On a failed save, the target cannot regain hit points until the end of your next turn and subtracts 1d4 from the next saving throw it makes within 1 minute.",
     tier: "grandmaster",
     isActive: false,
     isPassive: true,
@@ -122,7 +122,7 @@ export const shadowAbilities = [
   {
     id: "void_greatgrandmaster_netherdark_fist_v",
     name: "Netherdark Fist V: Absolute Oblivion",
-    description: "*Prerequisite: Netherdark Fist IV*\n\nWhen you use Netherdark Fist, you can spend **5 essences** to unleash the full devastating potential of the void:\n\n- The damage increases to **10d10 force damage**.\n- On a failed save, the target gains 1 level of exhaustion as reality itself buckles around them and the void tears at their very essence.\n\n## Cantrips",
+    description: "*Prerequisite: Netherdark Fist IV*\n\nWhen you use Netherdark Fist, you can spend **5 essences** to unleash the full devastating potential of the void:\n\n- The damage increases to **10d10 force damage**.\n- On a failed save, the target gains 1 level of exhaustion as reality itself buckles around them and the void tears at their very essence.",
     tier: "greatgrandmaster",
     isActive: false,
     isPassive: true,
@@ -134,7 +134,7 @@ export const shadowAbilities = [
   {
     id: "wind_adept_echoing_footsteps",
     name: "Echoing Footsteps",
-    description: "You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 100 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.\n\n---\n\n## Spells restored from V1",
+    description: "You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 100 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -149,7 +149,7 @@ export const shadowCantrips = [
   {
     id: "void_cantrip_minor_illusion",
     name: "Minor Illusion",
-    description: "You create a sound or an image of an object within range that lasts for the duration to deceive observers.\n\nhttps://5e.tools/spells.html#minor%20illusion_xphb\n\n## Spells",
+    description: "You create a sound or an image of an object within range that lasts for the duration to deceive observers.\n\nhttps://5e.tools/spells.html#minor%20illusion_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

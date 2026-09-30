@@ -41,8 +41,8 @@ const MerchantsPage: React.FC = () => {
         {/* Merchants grouped by region */}
         {sortedRegions.map(region => {
           const regionMerchants = merchantsByRegion[region];
-          const availableMerchants = regionMerchants.filter(m => m.isAvailable);
-          const lockedMerchants = regionMerchants.filter(m => !m.isAvailable);
+          // Subregions keep the order they first appear in merchants.json
+          const subregions = [...new Set(regionMerchants.map(m => m.subregion ?? ''))];
 
           return (
             <section key={region} className="mb-12">
@@ -53,42 +53,59 @@ const MerchantsPage: React.FC = () => {
                 </h2>
               </div>
 
-              {/* Available Merchants */}
-              {availableMerchants.length > 0 && (
-                <div className="mb-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {availableMerchants.map((merchant, index) => (
-                      <div
-                        key={merchant.id}
-                        className="animate-fade-in"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        <MerchantCard merchant={merchant} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+              {subregions.map(subregion => {
+                const subregionMerchants = regionMerchants.filter(m => (m.subregion ?? '') === subregion);
+                const availableMerchants = subregionMerchants.filter(m => m.isAvailable);
+                const lockedMerchants = subregionMerchants.filter(m => !m.isAvailable);
 
-              {/* Locked Merchants */}
-              {lockedMerchants.length > 0 && (
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Lock size={16} className="text-mist" />
-                    <h3 className="font-display text-lg tracking-wide text-mist">
-                      Locked
-                    </h3>
+                return (
+                  <div key={subregion} className="mb-10 last:mb-0">
+                    {/* Subregion Header */}
+                    {subregion && (
+                      <h3 className="font-display text-lg tracking-wide text-gold mb-4">
+                        {subregion}
+                      </h3>
+                    )}
+
+                    {/* Available Merchants */}
+                    {availableMerchants.length > 0 && (
+                      <div className="mb-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {availableMerchants.map((merchant, index) => (
+                            <div
+                              key={merchant.id}
+                              className="animate-fade-in"
+                              style={{ animationDelay: `${index * 0.1}s` }}
+                            >
+                              <MerchantCard merchant={merchant} />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Locked Merchants */}
+                    {lockedMerchants.length > 0 && (
+                      <div>
+                        <div className="flex items-center gap-2 mb-4">
+                          <Lock size={16} className="text-mist" />
+                          <h3 className="font-display text-lg tracking-wide text-mist">
+                            Locked
+                          </h3>
+                        </div>
+                        <p className="text-fog text-sm font-body mb-4">
+                          Complete quests or meet requirements to unlock these merchants.
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {lockedMerchants.map(merchant => (
+                            <MerchantCard key={merchant.id} merchant={merchant} />
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <p className="text-fog text-sm font-body mb-4">
-                    Complete quests or meet requirements to unlock these merchants.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {lockedMerchants.map(merchant => (
-                      <MerchantCard key={merchant.id} merchant={merchant} />
-                    ))}
-                  </div>
-                </div>
-              )}
+                );
+              })}
             </section>
           );
         })}

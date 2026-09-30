@@ -170,7 +170,7 @@ export const heartAbilities = [
   {
     id: "heart_initiate_lacerating_edge",
     name: "Lacerating Edge",
-    description: "**Weapon Requirement:** Any melee weapon that deals slashing damage (such as a battleaxe, greataxe, greatsword, scimitar, longsword, sickle, or handaxe).\n\n**Cost:** 1 Essence.\n\n**Attack replacement:** When you hit a creature with a slashing melee weapon as part of the Attack action, the target must succeed on a Constitution saving throw against your essence ability save DC or begin Bleeding for 1 minute. A bleeding creature takes 1d4 necrotic damage at the start of each of its turns and has disadvantage on Constitution saving throws to maintain concentration. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success.\n\n## Adept Tier",
+    description: "**Weapon Requirement:** Any melee weapon that deals slashing damage (such as a battleaxe, greataxe, greatsword, scimitar, longsword, sickle, or handaxe).\n\n**Cost:** 1 Essence.\n\n**Attack replacement:** When you hit a creature with a slashing melee weapon as part of the Attack action, the target must succeed on a Constitution saving throw against your essence ability save DC or begin Bleeding for 1 minute. A bleeding creature takes 1d4 necrotic damage at the start of each of its turns and has disadvantage on Constitution saving throws to maintain concentration. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -254,7 +254,7 @@ export const heartAbilities = [
   {
     id: "heart_adept_skirmishers_volley",
     name: "Skirmisher's Volley (Mobile Shot)",
-    description: "**Weapon Requirement:** Any ranged weapon with the Light property (such as a hand crossbow) or a shortbow.\n\n**Cost:** 2 Essences.\n\n**Action:** Bonus Action.\n\nImmediately after taking the Dash or Disengage action on your turn, you can make one ranged weapon attack with an eligible weapon as a bonus action. This attack ignores half and three-quarters cover and does not suffer disadvantage from being within 5 feet of a hostile creature.\n\n## Master Tier",
+    description: "**Weapon Requirement:** Any ranged weapon with the Light property (such as a hand crossbow) or a shortbow.\n\n**Cost:** 2 Essences.\n\n**Action:** Bonus Action.\n\nImmediately after taking the Dash or Disengage action on your turn, you can make one ranged weapon attack with an eligible weapon as a bonus action. This attack ignores half and three-quarters cover and does not suffer disadvantage from being within 5 feet of a hostile creature.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -290,7 +290,7 @@ export const heartAbilities = [
   {
     id: "wood_master_heart_exchange",
     name: "Heart Exchange",
-    description: "As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude.\n\nFor the next hour, you and the target share an unbreakable bond regardless of distance:\n- Whenever one of you takes damage, both take half that damage.\n- Whenever one regains hit points, both regain the same amount.\n- You both gain advantage on all saving throws.\n\nYou can maintain only one heart exchange at a time.\n\n---\n\n## Grandmaster Tier",
+    description: "As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude.\n\nFor the next hour, you and the target share an unbreakable bond regardless of distance:\n- Whenever one of you takes damage, both take half that damage.\n- Whenever one regains hit points, both regain the same amount.\n- You both gain advantage on all saving throws.\n\nYou can maintain only one heart exchange at a time.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -350,7 +350,7 @@ export const heartAbilities = [
   {
     id: "heart_grandmaster_azure_dragon_ascending_the_waves",
     name: "Azure Dragon Ascending the Waves",
-    description: "**Prerequisite:** Must currently be in a Draconic Form (such as under a dragon transformation, *Dragon Form*, wild shape, or draconic avatar).\n\n**Weapon Requirement:** Natural weapons (claws, bite, tail) or unarmed strikes while in a Draconic Form.\n\n**Cost:** 4 Essences.\n\n**Action:** Bonus Action.\n\nYou erupt upward in a spiraling vortex of churning seawater and storm mist, flying up to your movement speed in a straight line or upward arc without provoking opportunity attacks.\n- Each creature within 10 feet of your flight path must make a Strength saving throw against your essence ability save DC:\n  - **On a failed save:** It takes 4d10 cold damage and 4d10 bludgeoning damage, is lifted 20 feet into the air by the ascending waves, and falls, taking falling damage and landing prone.\n  - **On a successful save:** It takes half damage and is not lifted or knocked prone.\n- At any point during or at the end of this ascent, you can make one natural weapon attack (bite, claw, or tail) against a target within reach with advantage. On a hit, the attack deals its normal damage plus an extra 4d8 thunder or cold damage.\n\n---\n\n## Cantrips",
+    description: "**Prerequisite:** Must currently be in a Draconic Form (such as under a dragon transformation, *Dragon Form*, wild shape, or draconic avatar).\n\n**Weapon Requirement:** Natural weapons (claws, bite, tail) or unarmed strikes while in a Draconic Form.\n\n**Cost:** 4 Essences.\n\n**Action:** Bonus Action.\n\nYou erupt upward in a spiraling vortex of churning seawater and storm mist, flying up to your movement speed in a straight line or upward arc without provoking opportunity attacks.\n- Each creature within 10 feet of your flight path must make a Strength saving throw against your essence ability save DC:\n  - **On a failed save:** It takes 4d10 cold damage and 4d10 bludgeoning damage, is lifted 20 feet into the air by the ascending waves, and falls, taking falling damage and landing prone.\n  - **On a successful save:** It takes half damage and is not lifted or knocked prone.\n- At any point during or at the end of this ascent, you can make one natural weapon attack (bite, claw, or tail) against a target within reach with advantage. On a hit, the attack deals its normal damage plus an extra 4d8 thunder or cold damage.",
     tier: "grandmaster",
     isActive: true,
     isPassive: false,

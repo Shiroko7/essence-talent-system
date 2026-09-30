@@ -38,7 +38,7 @@ export const earthAbilities = [
   {
     id: "earth_initiate_earth_sense",
     name: "Earth Sense",
-    description: "You have advantage on Survival and Perception checks to navigate underground or in rocky terrain.\n\n---",
+    description: "You have advantage on Survival and Perception checks to navigate underground or in rocky terrain.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -50,7 +50,7 @@ export const earthAbilities = [
   {
     id: "earth_initiate_pebble_barrage",
     name: "Pebble Barrage",
-    description: "As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw. On a failed save, the creature takes 4d4 bludgeoning damage and is knocked prone.\n\n## Adept Tier",
+    description: "As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw. On a failed save, the creature takes 4d4 bludgeoning damage and is knocked prone.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const earthAbilities = [
   {
     id: "earth_adept_stone_armor",
     name: "Stone Armor",
-    description: "As a bonus action, you can encase yourself in a layer of stone, granting you resistance to bludgeoning, piercing, and slashing damage for 1 minute.\n\n---",
+    description: "As a bonus action, you can encase yourself in a layer of stone, granting you resistance to bludgeoning, piercing, and slashing damage for 1 minute.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -122,7 +122,7 @@ export const earthAbilities = [
   {
     id: "earth_adept_sandstorm",
     name: "Sandstorm",
-    description: "As an action, you create a swirling storm of sand in a 20-foot radius centered on you that lasts for 1 minute.\n\nEach creature in the area must make a Constitution saving throw, taking 3d6 slashing damage and becoming blinded until the end of its next turn on a failed save, or half as much damage on a successful one.\n\nThe area is difficult terrain, and any creature that starts its turn within the storm takes 1d6 slashing damage.\n\n## Master Tier",
+    description: "As an action, you create a swirling storm of sand in a 20-foot radius centered on you that lasts for 1 minute.\n\nEach creature in the area must make a Constitution saving throw, taking 3d6 slashing damage and becoming blinded until the end of its next turn on a failed save, or half as much damage on a successful one.\n\nThe area is difficult terrain, and any creature that starts its turn within the storm takes 1d6 slashing damage.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -134,7 +134,7 @@ export const earthAbilities = [
   {
     id: "earth_essence_immovable_mountain",
     name: "Immovable Mountain",
-    description: "For 1 minute, you become an unyielding force:\n- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.\n- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.\n- The ground cracks beneath your steady steps.\n\n---",
+    description: "For 1 minute, you become an unyielding force:\n- You cannot be knocked prone, grappled, restrained, paralyzed, stunned, or moved against your will.\n- Whenever you hit a creature with a melee attack, you may push it 10 feet or knock it prone.\n- The ground cracks beneath your steady steps.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -146,7 +146,7 @@ export const earthAbilities = [
   {
     id: "earth_master_essence_moves_mountains",
     name: "Foolish Old Man Moves Mountains",
-    description: "Each time you fail a saving throw against a hostile creature’s effect, your essence ability save DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.\n\n## Special Abilities",
+    description: "Each time you fail a saving throw against a hostile creature’s effect, your essence ability save DC increases by 1 until you complete a long rest. This increase can stack up to a maximum of +3.",
     tier: "master",
     isActive: false,
     isPassive: true,
@@ -158,7 +158,7 @@ export const earthAbilities = [
   {
     id: "earth_active_earthen_ward",
     name: "Earthen Ward",
-    description: "As a reaction, a surge of earth magic momentarily hardens your form. You gain temporary hit points equal to 1d10 + your Constitution modifier.\n\n## Cantrips",
+    description: "As a reaction, a surge of earth magic momentarily hardens your form. You gain temporary hit points equal to 1d10 + your Constitution modifier.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -170,7 +170,7 @@ export const earthAbilities = [
   {
     id: "metal_adept_gemsight",
     name: "Gemsight",
-    description: "You gain expertise in Perception checks to locate hidden gemstones or precious minerals. When you find such items, you can appraise their value with a successful Intelligence (Investigation) check.\n\n---\n\n## Spells restored from V1",
+    description: "You gain expertise in Perception checks to locate hidden gemstones or precious minerals. When you find such items, you can appraise their value with a successful Intelligence (Investigation) check.",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -195,7 +195,7 @@ export const earthCantrips = [
   {
     id: "earth_cantrip_mold_earth",
     name: "Mold Earth",
-    description: "https://5e.tools/spells.html#mold%20earth_xge\n\n## Spells",
+    description: "https://5e.tools/spells.html#mold%20earth_xge",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

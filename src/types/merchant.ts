@@ -119,6 +119,7 @@ export interface MerchantItem {
   properties?: ItemProperties;
   toolsUrl: string; // Full 5e.tools URL
   source?: string; // Book source (DMG, PHB, etc.)
+  price?: number; // Overrides the merchant's rarity price (e.g. a potion sold at its Alchemy District price)
   detailedData?: ItemDetailedData; // Full 5etools data
 }
 
@@ -135,6 +136,7 @@ export interface Merchant {
   description: string;
   location?: string;
   region?: string; // Grouping region (e.g., "Sirius")
+  subregion?: string; // Section within a region (e.g., "Glass Mirror Cay — Outpost")
   isAvailable: boolean; // locked/unlocked for players
   lockReason?: string; // Why merchant is locked (e.g., "Complete quest X")
   inventoryFile: string; // Path to items JSON file
@@ -254,7 +256,7 @@ export function getRarityColor(rarity: ItemRarity): string {
 
 // Helper function to get item price from merchant pricing
 export function getItemPrice(item: MerchantItem, pricing: MerchantPricing): number {
-  return pricing.priceByRarity[item.rarity];
+  return item.price ?? pricing.priceByRarity[item.rarity];
 }
 
 // Helper function to format price with currency

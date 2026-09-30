@@ -26,7 +26,7 @@ export const skyAbilities = [
   {
     id: "wind_initiate_mistbound_step",
     name: "Mistbound Step",
-    description: "The Misty Step spell does not consume a spell slot if you begin or end your movement in a heavily obscured area.\n\n---\n\n## Adept Tier",
+    description: "The Misty Step spell does not consume a spell slot if you begin or end your movement in a heavily obscured area.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -50,7 +50,7 @@ export const skyAbilities = [
   {
     id: "lightning_essence_arc_chain",
     name: "Arc Chain",
-    description: "Choose a creature within 120 feet. The target must make a Dexterity saving throw, taking 3d8 lightning damage on a failed save, or half as much on a successful one.\n\nIf the target fails its saving throw, the arc leaps to another creature within 30 feet of it that hasn’t been struck yet, forcing the same saving throw. The chain continues jumping to new creatures until a target succeeds on its save or no valid targets remain within range.\n\n## Master Tier",
+    description: "Choose a creature within 120 feet. The target must make a Dexterity saving throw, taking 3d8 lightning damage on a failed save, or half as much on a successful one.\n\nIf the target fails its saving throw, the arc leaps to another creature within 30 feet of it that hasn’t been struck yet, forcing the same saving throw. The chain continues jumping to new creatures until a target succeeds on its save or no valid targets remain within range.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -62,7 +62,7 @@ export const skyAbilities = [
   {
     id: "lightning_adept_conductive_touch",
     name: "Conductive Touch",
-    description: "When you hit a creature with a melee attack, you can choose to deal an extra 2d12 lightning damage.\n\n## Master Tier",
+    description: "When you hit a creature with a melee attack, you can choose to deal an extra 2d12 lightning damage.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -98,7 +98,7 @@ export const skyAbilities = [
   {
     id: "lightning_essence_lightning_cage",
     name: "Lightning Cage",
-    description: "You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting for 1 minute:\n- Creatures inside have their speed halved and cannot take reactions.\n- Any creature that touches or attempts to pass through the cage's perimeter takes 4d10 lightning damage.\n- A creature trapped inside can use an action to make a Strength saving throw to break through: on a failed save, it remains trapped and takes 4d10 lightning damage; on a successful save, it escapes and takes half damage.\n\n## Spells",
+    description: "You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting for 1 minute:\n- Creatures inside have their speed halved and cannot take reactions.\n- Any creature that touches or attempts to pass through the cage's perimeter takes 4d10 lightning damage.\n- A creature trapped inside can use an action to make a Strength saving throw to break through: on a failed save, it remains trapped and takes 4d10 lightning damage; on a successful save, it escapes and takes half damage.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const skyAbilities = [
   {
     id: "wind_adept_calm_breeze",
     name: "Calm Breeze",
-    description: "You can use a bonus action to create a soothing breeze that relaxes and calms creatures within a 30-foot radius, providing them with advantage on saving throws against being frightened or charmed. This effect lasts for 10 minutes.\n\n## Master Tier",
+    description: "You can use a bonus action to create a soothing breeze that relaxes and calms creatures within a 30-foot radius, providing them with advantage on saving throws against being frightened or charmed. This effect lasts for 10 minutes.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -170,7 +170,7 @@ export const skyAbilities = [
   {
     id: "wind_initiate_whispers_of_the_gale",
     name: "Whispers of the Gale (Laura)",
-    description: "When you miss with a ranged attack roll (including spell attacks), you can use your reaction and expend a spell slot of 1st level or higher to reroll the attack. You must use the new roll, and the spell slot is expended regardless of the outcome.\n\n---\n## Adept Tier",
+    description: "When you miss with a ranged attack roll (including spell attacks), you can use your reaction and expend a spell slot of 1st level or higher to reroll the attack. You must use the new roll, and the spell slot is expended regardless of the outcome.",
     tier: "initiate",
     isActive: false,
     isPassive: true,
@@ -194,7 +194,7 @@ export const skyAbilities = [
   {
     id: "wind_master_essence_just_passing_by",
     name: "Just Passing By",
-    description: "As a reaction, you dissolve into wind until the start of your next turn, passing through solid objects, becoming immune to nonmagical slashing, piercing, and bludgeoning damage and resistant to magical slashing, piercing, and bludgeoning damage.\n\n---\n\n## Spells restored from V1",
+    description: "As a reaction, you dissolve into wind until the start of your next turn, passing through solid objects, becoming immune to nonmagical slashing, piercing, and bludgeoning damage and resistant to magical slashing, piercing, and bludgeoning damage.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -209,7 +209,7 @@ export const skyCantrips = [
   {
     id: "tempest_cantrip_shocking_grasp",
     name: "Shocking Grasp",
-    description: "Lightning springs from your hand to deliver a shock, dealing 1d8 lightning damage and preventing reactions.\n\nhttps://5e.tools/spells.html#shocking%20grasp_xphb\n\n## Spells",
+    description: "Lightning springs from your hand to deliver a shock, dealing 1d8 lightning damage and preventing reactions.\n\nhttps://5e.tools/spells.html#shocking%20grasp_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
@@ -220,7 +220,7 @@ export const skyCantrips = [
   {
     id: "tempest_cantrip_gust",
     name: "Gust",
-    description: "Seize air to push creatures 5 feet away or blow objects violently.\n\nhttps://5e.tools/spells.html#gust_xge\n\n## Spells",
+    description: "Seize air to push creatures 5 feet away or blow objects violently.\n\nhttps://5e.tools/spells.html#gust_xge",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

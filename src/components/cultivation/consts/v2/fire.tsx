@@ -247,7 +247,7 @@ export const fireSpells = [
   {
     id: "fire_5th_level_flame_strike",
     name: "Flame Strike",
-    description: "https://5e.tools/spells.html#flame%20strike_xphb\n\n---\n\n## Spells restored from V1",
+    description: "https://5e.tools/spells.html#flame%20strike_xphb",
     tier: "5th",
     isActive: false,
     isPassive: false,

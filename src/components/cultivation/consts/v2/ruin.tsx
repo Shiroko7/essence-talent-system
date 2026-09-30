@@ -26,7 +26,7 @@ export const ruinAbilities = [
   {
     id: "ruin_initiate_bhaal_s_tribute",
     name: "Bhaal's Tribute",
-    description: "**Casting Time:** 10 minutes  \n**Range:** Touch  \n**Components:** V, S, M (a corpse that died within the last 24 hours)  \n**Duration:** Instantaneous  \n**Portfolio:**  Murder\n\nYou perform a dark ritual using a recently deceased body to erase all evidence of a murder. When you cast this spell, you must touch a corpse that has died within the last 24 hours. The spell affects a 30-foot radius centered on the corpse.\n\nAll of the following evidence within the area is completely destroyed:\n- Blood stains, tracks, and other physical traces of violence\n- Scent trails that could be followed by creatures or magic\n- Divination magic targeting events that occurred in the area becomes unable to detect anything related to the murder\n- The corpse itself dissolves into ash that scatters on an unfelt wind\n\nAny creature that witnessed the events and is within the area when the spell is cast must make a Wisdom saving throw. On a failed save, their memories of the murder become hazy and unclear, as if viewed through fog (they remember something happened but cannot recall specific details).\n\n## Adept Tier",
+    description: "**Casting Time:** 10 minutes  \n**Range:** Touch  \n**Components:** V, S, M (a corpse that died within the last 24 hours)  \n**Duration:** Instantaneous  \n**Portfolio:**  Murder\n\nYou perform a dark ritual using a recently deceased body to erase all evidence of a murder. When you cast this spell, you must touch a corpse that has died within the last 24 hours. The spell affects a 30-foot radius centered on the corpse.\n\nAll of the following evidence within the area is completely destroyed:\n- Blood stains, tracks, and other physical traces of violence\n- Scent trails that could be followed by creatures or magic\n- Divination magic targeting events that occurred in the area becomes unable to detect anything related to the murder\n- The corpse itself dissolves into ash that scatters on an unfelt wind\n\nAny creature that witnessed the events and is within the area when the spell is cast must make a Wisdom saving throw. On a failed save, their memories of the murder become hazy and unclear, as if viewed through fog (they remember something happened but cannot recall specific details).",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -38,7 +38,7 @@ export const ruinAbilities = [
   {
     id: "ruin_adept_mark_for_death",
     name: "Mark for Death",
-    description: "**Casting Time:** 1 bonus action  \n**Range:** 60 feet  \n**Components:** V, S, M (a black arrow or dagger)  \n**Duration:** 1 minute  \n**Portfolio:** Murder\n\nYou mark one creature you can see within range for assassination. The target must make a Wisdom saving throw. On a successful save, the spell fails. On a failed save, the target is doomed to die and gains the following effects for the duration:\n\n- You have advantage on attack rolls against the marked creature\n- When you hit the marked creature with an attack, it takes an additional 1d8 necrotic damage\n- The marked creature cannot benefit from temporary hit points or healing of any kind\n- The marked creature has disadvantage on death saving throws\n\nThe marked creature feels an overwhelming sense of impending doom.\n\n## Master Tier",
+    description: "**Casting Time:** 1 bonus action  \n**Range:** 60 feet  \n**Components:** V, S, M (a black arrow or dagger)  \n**Duration:** 1 minute  \n**Portfolio:** Murder\n\nYou mark one creature you can see within range for assassination. The target must make a Wisdom saving throw. On a successful save, the spell fails. On a failed save, the target is doomed to die and gains the following effects for the duration:\n\n- You have advantage on attack rolls against the marked creature\n- When you hit the marked creature with an attack, it takes an additional 1d8 necrotic damage\n- The marked creature cannot benefit from temporary hit points or healing of any kind\n- The marked creature has disadvantage on death saving throws\n\nThe marked creature feels an overwhelming sense of impending doom.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -50,7 +50,7 @@ export const ruinAbilities = [
   {
     id: "ruin_master_mass_inflict_wounds",
     name: "Mass Inflict Wounds",
-    description: "**Casting Time:** 1 action  \n**Range:** 60 feet  \n**Components:** V, S  \n**Duration:** Instantaneous  \n**Portfolio:**  Murder\n\nA wave of necromantic energy washes out from a point you can see within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target must make a Constitution saving throw. On a failed save, a creature takes 5d10 necrotic damage. On a successful save, the creature takes half as much damage.\n\n---\n\n## Grandmaster Tier",
+    description: "As an action, you release a wave of necrotic energy from a point you can see within 60 feet. Choose up to six creatures within 30 feet of that point. Each must make a Constitution saving throw against your essence ability save DC, taking 5d10 necrotic damage on a failed save, or half as much on a successful one.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -62,7 +62,7 @@ export const ruinAbilities = [
   {
     id: "ruin_grandmaster_mark_of_doom",
     name: "Mark of Doom",
-    description: "**Casting Time:** 1 bonus action  \n**Range:** Any distance (on same plane)  \n**Components:** V, S, M (an object belonging to the target or blood from a relative of the target)  \n**Duration:** 24 hours  \n**Portfolio:** Murder\n\nYou mark a single creature for death, targeting them through a personal connection. The target must make a Wisdom saving throw. On a successful save, the spell fails and the material component is consumed.\n\nOn a failed save, the target is marked for death and suffers the following effects for the duration:\n\n- The target automatically fails all saving throws against divination spells and effects that would locate or track them\n- The target automatically fails all death saving throws\n- You have advantage on all attack rolls against the target\n\nThe marked creature feels a sense of impending doom but doesn't know the source. This spell can only affect one creature at a time per caster. If you cast this spell again while a creature is already marked, the previous mark ends.\n\n## Cantrips",
+    description: "**Casting Time:** 1 bonus action  \n**Range:** Any distance (on same plane)  \n**Components:** V, S, M (an object belonging to the target or blood from a relative of the target)  \n**Duration:** 24 hours  \n**Portfolio:** Murder\n\nYou mark a single creature for death, targeting them through a personal connection. The target must make a Wisdom saving throw. On a successful save, the spell fails and the material component is consumed.\n\nOn a failed save, the target is marked for death and suffers the following effects for the duration:\n\n- The target automatically fails all saving throws against divination spells and effects that would locate or track them\n- The target automatically fails all death saving throws\n- You have advantage on all attack rolls against the target\n\nThe marked creature feels a sense of impending doom but doesn't know the source. This spell can only affect one creature at a time per caster. If you cast this spell again while a creature is already marked, the previous mark ends.",
     tier: "grandmaster",
     isActive: true,
     isPassive: false,
@@ -74,7 +74,7 @@ export const ruinAbilities = [
   {
     id: "torment_initiate_whips_kiss",
     name: "Whip's Kiss",
-    description: "You channel vitality through inflicting suffering. When you hit a creature with an attack, you can invoke barbed ethereal lashes to lacerate the foe, dealing an additional 1d6 piercing damage. The target must succeed on a Wisdom saving throw or have disadvantage on its next attack roll.\n\n## Adept Tier",
+    description: "You channel vitality through inflicting suffering. When you hit a creature with an attack, you can invoke barbed ethereal lashes to lacerate the foe, dealing an additional 1d6 piercing damage. The target must succeed on a Wisdom saving throw or have disadvantage on its next attack roll.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -110,7 +110,7 @@ export const ruinAbilities = [
   {
     id: "torment_adept_blood_tithe",
     name: "Blood Tithe",
-    description: "Whenever a creature within 30 feet takes damage from your attacks or spells, you convert their agony into physical resilience, gaining temporary hit points equal to your character level.\n\n## Master Tier",
+    description: "Whenever a creature within 30 feet takes damage from your attacks or spells, you convert their agony into physical resilience, gaining temporary hit points equal to your character level.",
     tier: "adept",
     isActive: false,
     isPassive: true,
@@ -158,7 +158,7 @@ export const ruinAbilities = [
   {
     id: "fire_adept_blazing_presence",
     name: "Blazing Presence",
-    description: "Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.\n\n---\n\n## Spells restored from V1",
+    description: "Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -184,7 +184,7 @@ export const ruinCantrips = [
   {
     id: "ruin_cantrip_chill_touch",
     name: "Chill Touch",
-    description: "Assail a foe with deadly chill, dealing 1d8 necrotic damage and stopping it from regaining hit points.\n\nhttps://5e.tools/spells.html#chill%20touch_xphb\n\n## Spells",
+    description: "Assail a foe with deadly chill, dealing 1d8 necrotic damage and stopping it from regaining hit points.\n\nhttps://5e.tools/spells.html#chill%20touch_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
@@ -195,7 +195,7 @@ export const ruinCantrips = [
   {
     id: "torment_cantrip_mind_sliver",
     name: "Mind Sliver",
-    description: "Drive a disorienting spike of psychic pain into a creature's mind: 1d6 psychic damage and -1d4 on its next saving throw.\n\nhttps://5e.tools/spells.html#mind%20sliver_xphb\n\n## Spells",
+    description: "Drive a disorienting spike of psychic pain into a creature's mind: 1d6 psychic damage and -1d4 on its next saving throw.\n\nhttps://5e.tools/spells.html#mind%20sliver_xphb",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

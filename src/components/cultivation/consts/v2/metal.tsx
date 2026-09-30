@@ -62,7 +62,7 @@ export const metalAbilities = [
   {
     id: "metal_initiate_metallic_echo",
     name: "Metallic Echo",
-    description: "When you strike a metallic object with a melee weapon, you can create a ringing sound that echoes in a 10-foot radius. Creatures in the area must succeed on a Constitution saving throw or be deafened until the end of their next turn.\n\n## Adept Tier",
+    description: "When you strike a metallic object with a melee weapon, you can create a ringing sound that echoes in a 10-foot radius. Creatures in the area must succeed on a Constitution saving throw or be deafened until the end of their next turn.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -134,7 +134,7 @@ export const metalAbilities = [
   {
     id: "metal_master_black_tortoise_iron_bulwark",
     name: "Black Tortoise Iron Bulwark",
-    description: "As an action, you touch a construct, object, structure, or magical wall or barrier (such as a door, vehicle, fortification, or a wall or barrier created by a spell). The target gains temporary hit points equal to 10 × your proficiency bonus + 10. While the target possesses any of these temporary hit points, it gains resistance to all damage.\n\n## Cantrips",
+    description: "As an action, you touch a construct, object, structure, or magical wall or barrier (such as a door, vehicle, fortification, or a wall or barrier created by a spell). The target gains temporary hit points equal to 10 × your proficiency bonus + 10. While the target possesses any of these temporary hit points, it gains resistance to all damage.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -222,7 +222,7 @@ export const metalSpells = [
   {
     id: "v2_metal_magic_weapon",
     name: "Magic Weapon",
-    description: "You imbue a weapon with a temporary magical enhancement.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#magic%20weapon_phb).\n\n---\n\n## Spells restored from V1",
+    description: "You imbue a weapon with a temporary magical enhancement.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#magic%20weapon_phb).",
     tier: "2nd",
     isActive: false,
     isPassive: false,

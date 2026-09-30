@@ -2,7 +2,7 @@ export const lunarAbilities = [
   {
     id: "water_adept_moonlit_verdant_beam",
     name: "Moonlit Verdant Beam",
-    description: "As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack:\n- **On a hit:** The target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC.\n- **On a failed save:** The target is blinded and poisoned until the end of your next turn.\n\n## Master Tier",
+    description: "As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack:\n- **On a hit:** The target takes 3d6 radiant damage + 3d6 poison damage and must make a Constitution saving throw against your spell save DC.\n- **On a failed save:** The target is blinded and poisoned until the end of your next turn.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -50,7 +50,7 @@ export const lunarAbilities = [
   {
     id: "wind_master_essence_waning_moon_sabers",
     name: "Waning Moon Sabers",
-    description: "As a bonus action, launch up to three crescent-shaped energy blades that travel up to 150 feet. The sabers curve around cover, ignoring half and three-quarters cover.\n\nMake a ranged spell attack for each saber:\n- **On a hit:** The target takes 1d4 + 1 radiant damage and must make a Constitution saving throw or be blinded until the end of its next turn as moonlight sears its vision.\n- **Critical Hit:** The target automatically fails the saving throw.\n\n## Cantrips\n\n## Spells",
+    description: "As a bonus action, launch up to three crescent-shaped energy blades that travel up to 150 feet. The sabers curve around cover, ignoring half and three-quarters cover.\n\nMake a ranged spell attack for each saber:\n- **On a hit:** The target takes 1d4 + 1 radiant damage and must make a Constitution saving throw or be blinded until the end of its next turn as moonlight sears its vision.\n- **Critical Hit:** The target automatically fails the saving throw.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -74,7 +74,7 @@ export const lunarAbilities = [
   {
     id: "water_adept_rain_of_revelation",
     name: "Rain of Revelation",
-    description: "You can summon a gentle, magical rain that grants clarity and insight to those who stand in it. Allies within a 20-foot radius can ask one question about their future or destiny, and you provide a vague but helpful answer based on your understanding of the world.\n\n---\n\n## Spells restored from V1",
+    description: "You can summon a gentle, magical rain that grants clarity and insight to those who stand in it. Allies within a 20-foot radius can ask one question about their future or destiny, and you provide a vague but helpful answer based on your understanding of the world.",
     tier: "adept",
     isActive: true,
     isPassive: false,

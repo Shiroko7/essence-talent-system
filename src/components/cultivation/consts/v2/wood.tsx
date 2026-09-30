@@ -110,7 +110,7 @@ export const woodAbilities = [
   {
     id: "wood_adept_tree_form",
     name: "Tree Form",
-    description: "You can use your action to transform into a treelike creature for 1 minute or until you use your action to revert to your normal form (usable once per long rest).\n\nWhile in this form, you gain the following benefits:\n- **Armor Class:** Your AC becomes 17 as your skin becomes as tough as bark.\n- **Hit Points:** You gain temporary hit points equal to twice your character level.\n- **Slam Attack:** You can make a slam melee attack with a +6 bonus to hit, dealing 2d6 + 4 bludgeoning damage.\n- **Rooted Stance:** You can root yourself to the ground. While rooted, you cannot move, but you have advantage on Strength and Constitution saving throws, and any creature that starts its turn within 5 feet of you takes 1d6 bludgeoning damage.\n\n## Master Tier",
+    description: "You can use your action to transform into a treelike creature for 1 minute or until you use your action to revert to your normal form (usable once per long rest).\n\nWhile in this form, you gain the following benefits:\n- **Armor Class:** Your AC becomes 17 as your skin becomes as tough as bark.\n- **Hit Points:** You gain temporary hit points equal to twice your character level.\n- **Slam Attack:** You can make a slam melee attack with a +6 bonus to hit, dealing 2d6 + 4 bludgeoning damage.\n- **Rooted Stance:** You can root yourself to the ground. While rooted, you cannot move, but you have advantage on Strength and Constitution saving throws, and any creature that starts its turn within 5 feet of you takes 1d6 bludgeoning damage.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -155,7 +155,7 @@ export const woodCantrips = [
   {
     id: "v2_wood_druidcraft",
     name: "Druidcraft",
-    description: "You create a small natural sign or harmless effect that reflects the nearby environment.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#druidcraft_phb).\n\n---\n\n## Spells restored from V1",
+    description: "You create a small natural sign or harmless effect that reflects the nearby environment.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#druidcraft_phb).",
     tier: "cantrip",
     isActive: false,
     isPassive: false,

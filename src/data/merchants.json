@@ -2,11 +2,33 @@
   "version": "1.0",
   "merchants": [
     {
+      "id": "glass-mirror-cay",
+      "name": "Mirror Tide Exchange",
+      "description": "A salt-scoured trading post on a black-glass cay at the edge of the Forbidden Sea. Sailors say the Princess of Air and Darkness walked here before she took the Unseelie throne, and that the tide still returns what she left behind: black gems, breathless winds, and cloaks cut from shadow.",
+      "location": "Glass Mirror Cay, coast of the Forbidden Sea",
+      "region": "Sirius",
+      "subregion": "Glass Mirror Cay — Outpost",
+      "isAvailable": true,
+      "inventoryFile": "glass-mirror-cay",
+      "pricing": {
+        "currency": "electrum",
+        "priceByRarity": {
+          "common": 200,
+          "uncommon": 800,
+          "rare": 8000,
+          "very rare": 80000,
+          "legendary": 400000,
+          "artifact": 400000
+        }
+      }
+    },
+    {
       "id": "forge-of-seoul",
       "name": "Forge of Seoul",
       "description": "A legendary forge that crafts wondrous magical items from across the multiverse.",
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
+      "subregion": "Continental Sirius — Seoul",
       "isAvailable": true,
       "inventoryFile": "forge-of-seoul",
       "pricing": {
@@ -27,6 +49,7 @@
       "description": "A vibrant marketplace where alchemists brew potions, elixirs, and magical concoctions from rare ingredients.",
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
+      "subregion": "Continental Sirius — Seoul",
       "isAvailable": true,
       "inventoryFile": "alchemy-district-seoul",
       "pricing": {
@@ -47,6 +70,7 @@
       "description": "A serene healing sanctuary staffed by skilled clerics and herbalists offering restorative potions and healing supplies.",
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
+      "subregion": "Continental Sirius — Seoul",
       "isAvailable": true,
       "inventoryFile": "medical-pavilion-seoul",
       "pricing": {
@@ -67,6 +91,7 @@
       "description": "A sprawling marketplace filled with exotic wonders, magical trinkets, and rare curiosities from across the planes.",
       "location": "Seoul, Capital of Sirius",
       "region": "Sirius",
+      "subregion": "Continental Sirius — Seoul",
       "isAvailable": true,
       "inventoryFile": "grand-bazaar-seoul",
       "pricing": {
