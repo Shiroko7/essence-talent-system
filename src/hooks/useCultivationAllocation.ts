@@ -14,6 +14,7 @@ import {
   reconcileCultivationCharacter,
   settleRetieredTalents
 } from '../utils/cultivationUtils';
+import { getActiveCharacterId, loadCharacterRoster } from '../talents/characters/characterStorage';
 
 export const STORAGE_KEY_CULTIVATION: Record<CultivationVersion, string> = {
   v2: 'cultivation-paths-character-v2-seven-plus-seven'
@@ -62,6 +63,19 @@ export const useCultivationAllocation = ({
     }
 
     try {
+      const roster = loadCharacterRoster('v2');
+      const activeId = getActiveCharacterId('v2', roster);
+      const activeBuild = roster.find(c => c.id === activeId) || roster[0];
+      if (activeBuild && typeof activeBuild.level === 'number' && Array.isArray(activeBuild.selectedAbilities)) {
+        const parsed: CultivationCharacter = {
+          level: activeBuild.level,
+          selectedAbilities: activeBuild.selectedAbilities,
+          activeEssenceByPath: activeBuild.activeEssenceByPath || {},
+          version: catalogVersion
+        };
+        return settleRetieredTalents(parsed, { abilities: allAbilities, cantrips, spells }, paths);
+      }
+
       const storageKey = STORAGE_KEY_CULTIVATION[catalogVersion];
       const activeCatalogData = localStorage.getItem(storageKey);
       const savedData = activeCatalogData ?? localStorage.getItem('cultivation-paths-character-v2');

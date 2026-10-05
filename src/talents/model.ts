@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Ability, SpellLevel, Tier, TierId, TIERS, getTierCost } from '../types/essence';
 import { isTierUnlocked } from '../utils/cultivationUtils';
+import type { CharacterBuild } from './characters/characterTypes';
 
 /**
  * A normalized view of a talent system. V1 (nine essences) and V2 (cultivation
@@ -99,6 +100,15 @@ export interface TalentController {
   learnedPaths: SystemPath[];
   /** V2 only: replace the build with the V1 character saved in this browser. */
   importFromV1?: () => void;
+  /** Saved builds / characters stored locally in the browser */
+  characters: CharacterBuild[];
+  activeCharacterId: string;
+  activeCharacter: CharacterBuild | undefined;
+  selectCharacter: (id: string) => void;
+  createCharacter: (name?: string, initialLevel?: number) => void;
+  duplicateCharacter: (sourceId?: string, name?: string) => void;
+  renameCharacter: (id: string, name: string) => void;
+  deleteCharacter: (id: string) => void;
 }
 
 export const TIER_IDS: TierId[] = ['initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster'];

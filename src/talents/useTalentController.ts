@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Ability, EssencePathId } from '../types/essence';
 import useEssenceAllocation from '../hooks/useEssenceAllocation';
 import { useCultivationAllocation } from '../hooks/useCultivationAllocation';
@@ -11,6 +11,7 @@ import {
   AbilityStatus,
   EssencePool,
   PoolStatus,
+  SystemVersion,
   TalentController,
   TalentSystem,
   TIER_IDS,
@@ -20,6 +21,15 @@ import {
   tierOf
 } from './model';
 import { buildV1System, buildV2System } from './systems';
+import type { CharacterBuild } from './characters/characterTypes';
+import {
+  generateBuildId,
+  getActiveCharacterId,
+  loadCharacterRoster,
+  saveCharacterRoster,
+  setActiveCharacterId,
+  syncLegacyStorage
+} from './characters/characterStorage';
 
 interface CharacterLike {
   level: number;
@@ -112,6 +122,241 @@ function useControllerFromAllocation<C extends CharacterLike>(
 ): TalentController {
   const { character, totalEssencePoints, totalPointsSpent } = allocation;
   const [notice, setNotice] = useState<string | null>(null);
+
+  const [roster, setRoster] = useState<CharacterBuild[]>(() => loadCharacterRoster(system.version));
+  const [activeCharacterId, setActiveCharacterIdState] = useState<string>(() => getActiveCharacterId(system.version, roster));
+
+  const selectCharacterRef = useRef<(id: string) => void>(() => {});
+
+  // Sync with window events if another component triggers a roster update
+  useEffect(() => {
+    const handleRosterUpdate = (e: Event) => {
+      const customEvent = e as CustomEvent<{ version: SystemVersion }>;
+      if (customEvent.detail?.version === system.version) {
+        setRoster(loadCharacterRoster(system.version));
+      }
+    };
+    const handleActiveChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ version: SystemVersion; id: string }>;
+      if (customEvent.detail?.version === system.version && customEvent.detail?.id !== activeCharacterId) {
+        selectCharacterRef.current(customEvent.detail.id);
+      }
+    };
+    window.addEventListener('talent-roster-updated', handleRosterUpdate);
+    window.addEventListener('talent-active-character-changed', handleActiveChange);
+    return () => {
+      window.removeEventListener('talent-roster-updated', handleRosterUpdate);
+      window.removeEventListener('talent-active-character-changed', handleActiveChange);
+    };
+  }, [system.version, activeCharacterId]);
+
+  // Keep the active build in roster synchronized with character state in real-time
+  useEffect(() => {
+    setRoster(prev => {
+      const targetIndex = prev.findIndex(c => c.id === activeCharacterId);
+      if (targetIndex === -1) return prev;
+      const current = prev[targetIndex];
+      const sameAbilities =
+        current.selectedAbilities.length === character.selectedAbilities.length &&
+        current.selectedAbilities.every((id, idx) => id === character.selectedAbilities[idx]);
+      const sameEssence = JSON.stringify(current.activeEssenceByPath) === JSON.stringify(character.activeEssenceByPath);
+      if (current.level === character.level && sameAbilities && sameEssence) {
+        return prev;
+      }
+
+      const updated = [...prev];
+      updated[targetIndex] = {
+        ...current,
+        level: character.level,
+        selectedAbilities: character.selectedAbilities,
+        activeEssenceByPath: character.activeEssenceByPath,
+        updatedAt: Date.now()
+      };
+      saveCharacterRoster(system.version, updated);
+      syncLegacyStorage(system.version, updated[targetIndex]);
+      return updated;
+    });
+  }, [character.level, character.selectedAbilities, character.activeEssenceByPath, activeCharacterId, system.version]);
+
+  const activeCharacter = useMemo(
+    () => roster.find(c => c.id === activeCharacterId) || roster[0],
+    [roster, activeCharacterId]
+  );
+
+  const selectCharacter = useCallback((id: string) => {
+    if (id === activeCharacterId) return;
+    const target = roster.find(c => c.id === id);
+    if (!target) return;
+
+    const updatedRoster = roster.map(c =>
+      c.id === activeCharacterId
+        ? {
+            ...c,
+            level: character.level,
+            selectedAbilities: character.selectedAbilities,
+            activeEssenceByPath: character.activeEssenceByPath,
+            updatedAt: Date.now()
+          }
+        : c
+    );
+
+    saveCharacterRoster(system.version, updatedRoster);
+    setActiveCharacterId(system.version, id);
+    setRoster(updatedRoster);
+    setActiveCharacterIdState(id);
+
+    allocation.setCharacterState({
+      level: target.level,
+      selectedAbilities: [...target.selectedAbilities],
+      activeEssenceByPath: { ...target.activeEssenceByPath },
+      ...(system.version === 'v2' ? { version: 'v2' } : {})
+    } as unknown as C);
+
+    syncLegacyStorage(system.version, target);
+    setNotice(`Switched to "${target.name}".`);
+  }, [activeCharacterId, allocation, character, roster, system.version]);
+
+  selectCharacterRef.current = selectCharacter;
+
+  const createCharacter = useCallback((name?: string, initialLevel = 11) => {
+    const buildName = name?.trim() || `Character ${roster.length + 1}`;
+    const newBuild: CharacterBuild = {
+      id: generateBuildId(),
+      name: buildName,
+      version: system.version,
+      level: initialLevel,
+      selectedAbilities: [],
+      activeEssenceByPath: {},
+      createdAt: Date.now(),
+      updatedAt: Date.now()
+    };
+
+    const updatedRoster = [
+      ...roster.map(c =>
+        c.id === activeCharacterId
+          ? {
+              ...c,
+              level: character.level,
+              selectedAbilities: character.selectedAbilities,
+              activeEssenceByPath: character.activeEssenceByPath,
+              updatedAt: Date.now()
+            }
+          : c
+      ),
+      newBuild
+    ];
+
+    saveCharacterRoster(system.version, updatedRoster);
+    setActiveCharacterId(system.version, newBuild.id);
+    setRoster(updatedRoster);
+    setActiveCharacterIdState(newBuild.id);
+
+    allocation.setCharacterState({
+      level: newBuild.level,
+      selectedAbilities: [],
+      activeEssenceByPath: {},
+      ...(system.version === 'v2' ? { version: 'v2' } : {})
+    } as unknown as C);
+
+    syncLegacyStorage(system.version, newBuild);
+    setNotice(`Created "${buildName}".`);
+  }, [activeCharacterId, allocation, character, roster, system.version]);
+
+  const duplicateCharacter = useCallback((sourceId?: string, customName?: string) => {
+    const idToClone = sourceId || activeCharacterId;
+    const source = roster.find(c => c.id === idToClone);
+    if (!source) return;
+
+    const sourceLevel = idToClone === activeCharacterId ? character.level : source.level;
+    const sourceAbilities = idToClone === activeCharacterId ? character.selectedAbilities : source.selectedAbilities;
+    const sourceEssence = idToClone === activeCharacterId ? character.activeEssenceByPath : source.activeEssenceByPath;
+
+    const cloneName = customName?.trim() || `${source.name} (Copy)`;
+    const clonedBuild: CharacterBuild = {
+      id: generateBuildId(),
+      name: cloneName,
+      version: system.version,
+      level: sourceLevel,
+      selectedAbilities: [...sourceAbilities],
+      activeEssenceByPath: { ...sourceEssence },
+      createdAt: Date.now(),
+      updatedAt: Date.now()
+    };
+
+    const updatedRoster = [
+      ...roster.map(c =>
+        c.id === activeCharacterId
+          ? {
+              ...c,
+              level: character.level,
+              selectedAbilities: character.selectedAbilities,
+              activeEssenceByPath: character.activeEssenceByPath,
+              updatedAt: Date.now()
+            }
+          : c
+      ),
+      clonedBuild
+    ];
+
+    saveCharacterRoster(system.version, updatedRoster);
+    setActiveCharacterId(system.version, clonedBuild.id);
+    setRoster(updatedRoster);
+    setActiveCharacterIdState(clonedBuild.id);
+
+    allocation.setCharacterState({
+      level: clonedBuild.level,
+      selectedAbilities: [...clonedBuild.selectedAbilities],
+      activeEssenceByPath: { ...clonedBuild.activeEssenceByPath },
+      ...(system.version === 'v2' ? { version: 'v2' } : {})
+    } as unknown as C);
+
+    syncLegacyStorage(system.version, clonedBuild);
+    setNotice(`Duplicated build as "${cloneName}".`);
+  }, [activeCharacterId, allocation, character, roster, system.version]);
+
+  const renameCharacter = useCallback((id: string, newName: string) => {
+    const trimmed = newName.trim();
+    if (!trimmed) return;
+
+    const updatedRoster = roster.map(c =>
+      c.id === id ? { ...c, name: trimmed, updatedAt: Date.now() } : c
+    );
+    saveCharacterRoster(system.version, updatedRoster);
+    setRoster(updatedRoster);
+    setNotice(`Renamed build to "${trimmed}".`);
+  }, [roster, system.version]);
+
+  const deleteCharacter = useCallback((id: string) => {
+    if (roster.length <= 1) {
+      setNotice('Cannot delete the only build in the roster.');
+      return;
+    }
+
+    const target = roster.find(c => c.id === id);
+    const updatedRoster = roster.filter(c => c.id !== id);
+
+    if (id === activeCharacterId) {
+      const nextActive = updatedRoster[0];
+      saveCharacterRoster(system.version, updatedRoster);
+      setActiveCharacterId(system.version, nextActive.id);
+      setRoster(updatedRoster);
+      setActiveCharacterIdState(nextActive.id);
+
+      allocation.setCharacterState({
+        level: nextActive.level,
+        selectedAbilities: [...nextActive.selectedAbilities],
+        activeEssenceByPath: { ...nextActive.activeEssenceByPath },
+        ...(system.version === 'v2' ? { version: 'v2' } : {})
+      } as unknown as C);
+
+      syncLegacyStorage(system.version, nextActive);
+      setNotice(`Deleted "${target?.name ?? 'build'}" and switched to "${nextActive.name}".`);
+    } else {
+      saveCharacterRoster(system.version, updatedRoster);
+      setRoster(updatedRoster);
+      setNotice(`Deleted "${target?.name ?? 'build'}".`);
+    }
+  }, [activeCharacterId, allocation, roster, system.version]);
 
   useEffect(() => {
     if (externalNotice) setNotice(externalNotice);
@@ -253,7 +498,15 @@ function useControllerFromAllocation<C extends CharacterLike>(
     notice,
     dismissNotice: () => setNotice(null),
     pathOf: id => pathById.get(pathIndex.get(id) ?? ''),
-    learnedPaths
+    learnedPaths,
+    characters: roster,
+    activeCharacterId,
+    activeCharacter,
+    selectCharacter,
+    createCharacter,
+    duplicateCharacter,
+    renameCharacter,
+    deleteCharacter
   };
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  ChevronDown, Download, History, Info, Lock, Minus, Moon, Network, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
+  Check, ChevronDown, Copy, Download, History, Info, Lock, Minus, Moon, Network, Pencil, Plus, RotateCcw, Search, Sparkles, Trash2, Upload, X, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Ability } from '../types/essence';
@@ -11,6 +11,8 @@ import {
 } from './model';
 import { iconFor } from './abilityIcons';
 import { pagePath } from './routes';
+import { calculateBuildEssenceSummary } from './characters/characterStorage';
+import type { CharacterBuild } from './characters/characterTypes';
 
 /* ---------------------------------------------------------------- atoms */
 
@@ -126,67 +128,213 @@ export const BudgetMeter: React.FC<{ ctl: TalentController; className?: string }
   );
 };
 
-/** Save, load, reset and undo — grouped behind one menu so the header stays calm. */
+/** A one-line name prompt. Enter confirms, Escape cancels; an empty name never commits. */
+const NameField: React.FC<{
+  initial?: string; placeholder: string; commitOnBlur?: boolean; onCommit: (name: string) => void; onCancel: () => void;
+}> = ({ initial = '', placeholder, commitOnBlur = false, onCommit, onCancel }) => {
+  const [value, setValue] = useState(initial);
+  // Confirming unmounts the input, which can blur it a second time.
+  const done = useRef(false);
+  const finish = (commit: boolean) => {
+    if (done.current) return;
+    done.current = true;
+    const name = value.trim();
+    if (commit && name) onCommit(name); else onCancel();
+  };
+
+  return (
+    <form className="flex items-center gap-1.5" onSubmit={e => { e.preventDefault(); finish(true); }}>
+      <input
+        autoFocus
+        required
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        onFocus={e => e.target.select()}
+        onBlur={() => finish(commitOnBlur)}
+        onKeyDown={e => { if (e.key === 'Escape') finish(false); }}
+        maxLength={40}
+        placeholder={placeholder}
+        aria-label={placeholder}
+        className="arcane-input flex-1 min-w-0 px-2 py-1 text-sm"
+      />
+      <button
+        type="submit"
+        onMouseDown={e => e.preventDefault()}
+        className="w-7 h-7 flex-shrink-0 rounded border border-gold/40 text-gold hover:text-gold-bright hover:border-gold flex items-center justify-center"
+        aria-label="Confirm name"
+      >
+        <Check size={14} />
+      </button>
+    </form>
+  );
+};
+
+/**
+ * The build switcher on the dock. The open build sits in a card with everything
+ * that acts on it; the other builds stored in this browser are listed below.
+ */
 export const CharacterMenu: React.FC<{ ctl: TalentController; align?: 'left' | 'right'; direction?: 'down' | 'up' }> = ({
   ctl, align = 'right', direction = 'down'
 }) => {
   const [open, setOpen] = useState(false);
-  const [confirming, setConfirming] = useState(false);
+  /** The one prompt or confirmation showing, if any. */
+  const [mode, setMode] = useState<'rename' | 'duplicate' | 'new' | 'reset' | 'delete' | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
+
+  const name = ctl.activeCharacter?.name || 'Character';
+  const others = ctl.characters.filter(build => build.id !== ctl.activeCharacterId);
+  const pathsOf = (build: CharacterBuild) => calculateBuildEssenceSummary(build, ctl.system).learnedPathNames.join(', ') || 'No talents yet';
+
+  const dismiss = () => { setOpen(false); setMode(null); };
 
   useEffect(() => {
     if (!open) return;
     const close = (e: MouseEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) { setOpen(false); setConfirming(false); }
+      if (rootRef.current?.contains(e.target as Node)) return;
+      // Blur first so a name being edited is saved before the menu goes.
+      if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+      dismiss();
     };
     document.addEventListener('mousedown', close);
     return () => document.removeEventListener('mousedown', close);
   }, [open]);
 
-  const item = 'w-full flex items-center gap-2.5 px-3 py-2 text-sm font-body text-parchment hover:bg-charcoal/80 rounded text-left';
+  const label = 'px-2 pb-1 font-display text-[11px] tracking-widest uppercase text-mist';
+  const item = 'w-full flex items-center gap-2.5 px-2 py-2 text-sm font-body text-parchment hover:bg-charcoal/80 rounded text-left';
+  const action = 'flex items-center gap-2 px-2 py-1.5 text-xs font-body text-parchment hover:bg-gold/10 rounded text-left disabled:opacity-40 disabled:hover:bg-transparent';
+  const danger = 'arcane-btn !px-3 !py-1 text-xs !text-essence-fire !border-essence-fire/50';
 
   return (
     <div className="relative" ref={rootRef}>
-      <button onClick={() => setOpen(!open)} className="arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5">
-        Character <ChevronDown size={13} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
+      <button
+        onClick={() => (open ? dismiss() : setOpen(true))}
+        aria-expanded={open}
+        title="Builds stored in this browser"
+        className="arcane-btn !px-3 !py-1.5 text-xs flex items-center gap-1.5 max-w-[140px] sm:max-w-[220px]"
+      >
+        <span className="truncate">{name}</span>
+        <ChevronDown size={13} className={`flex-shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
         <div
-          className={`absolute z-50 w-60 p-1.5 arcane-tooltip animate-fade-in ${align === 'right' ? 'right-0' : 'left-0'} ${direction === 'down' ? 'top-full mt-2' : 'bottom-full mb-2'}`}
+          className={`absolute z-50 w-80 max-w-[calc(100vw-2rem)] max-h-[calc(100vh-5rem)] overflow-y-auto p-3 arcane-tooltip animate-fade-in ${align === 'right' ? 'right-0' : 'left-0'} ${direction === 'down' ? 'top-full mt-2' : 'bottom-full mb-2'}`}
         >
-          <button className={item} onClick={() => { ctl.save(); setOpen(false); }}>
-            <Download size={15} className="text-essence-water" /> Save build to file
-          </button>
-          <button className={item} onClick={() => fileRef.current?.click()}>
-            <Upload size={15} className="text-essence-wood" /> Load build from file
-          </button>
-          {ctl.system.version === 'v2' && (
-            <Link className={item} to={pagePath('v2', 'migration')} onClick={() => setOpen(false)}>
-              <History size={15} className="text-gold" /> V1 migration guide
-            </Link>
-          )}
-          {ctl.canUndo && (
-            <button className={item} onClick={() => { ctl.undo(); setOpen(false); }}>
-              <RotateCcw size={15} className="text-gold" /> Undo reset
-            </button>
-          )}
-          <div className="arcane-divider my-1.5" />
-          {confirming ? (
-            <div className="px-3 py-2">
-              <p className="text-xs text-fog mb-2">Forget every learned ability and reset the level?</p>
-              <div className="flex gap-2">
-                <button className="arcane-btn !px-3 !py-1 text-xs !text-essence-fire !border-essence-fire/50" onClick={() => { ctl.reset(); setConfirming(false); setOpen(false); }}>
-                  Reset
-                </button>
-                <button className="arcane-btn !px-3 !py-1 text-xs" onClick={() => setConfirming(false)}>Cancel</button>
+          <div className={label}>Current build</div>
+          <div className="rounded-md border border-gold/30 bg-gold/5">
+            <div className="px-3 py-2.5">
+              {mode === 'rename' ? (
+                <NameField initial={name} placeholder="Build name" commitOnBlur
+                  onCommit={next => { if (next !== name) ctl.renameCharacter(ctl.activeCharacterId, next); setMode(null); }}
+                  onCancel={() => setMode(null)} />
+              ) : (
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="truncate font-display text-base tracking-wide text-gold-bright">{name}</span>
+                  <span className="font-display text-xs text-gold-dim tabular-nums whitespace-nowrap">Lvl {ctl.level}</span>
+                </div>
+              )}
+              <div className="mt-0.5 truncate text-[11px] text-mist">
+                {ctl.learnedPaths.map(path => path.name).join(', ') || 'No talents yet'}
               </div>
             </div>
-          ) : (
-            <button className={`${item} disabled:opacity-40`} disabled={ctl.selectedIds.length === 0} onClick={() => setConfirming(true)}>
-              <Trash2 size={15} className="text-essence-fire" /> Reset build
-            </button>
+            <div className="border-t border-gold/20 p-1.5">
+              {mode === 'duplicate' ? (
+                <div className="p-1.5">
+                  <p className="text-xs text-fog mb-2">Name the copy of this build.</p>
+                  <NameField initial={`${name} (Copy)`} placeholder="Name of the copy"
+                    onCommit={next => { ctl.duplicateCharacter(undefined, next); dismiss(); }}
+                    onCancel={() => setMode(null)} />
+                </div>
+              ) : mode === 'reset' || mode === 'delete' ? (
+                <div className="p-1.5">
+                  <p className="text-xs text-fog mb-2">
+                    {mode === 'reset'
+                      ? 'Forget every learned ability and reset the level?'
+                      : `Delete "${name}" from this browser? This cannot be undone.`}
+                  </p>
+                  <div className="flex gap-2">
+                    <button
+                      className={danger}
+                      onClick={() => {
+                        if (mode === 'reset') ctl.reset();
+                        else ctl.deleteCharacter(ctl.activeCharacterId);
+                        dismiss();
+                      }}
+                    >
+                      {mode === 'reset' ? 'Reset' : 'Delete'}
+                    </button>
+                    <button className="arcane-btn !px-3 !py-1 text-xs" onClick={() => setMode(null)}>Cancel</button>
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 gap-0.5">
+                  <button className={action} onClick={() => setMode('rename')}>
+                    <Pencil size={14} className="text-gold" /> Rename
+                  </button>
+                  <button className={action} onClick={() => setMode('duplicate')}>
+                    <Copy size={14} className="text-gold" /> Duplicate
+                  </button>
+                  <button className={action} onClick={() => { ctl.save(); dismiss(); }}>
+                    <Download size={14} className="text-gold" /> Save to file
+                  </button>
+                  <button className={action} onClick={() => fileRef.current?.click()}>
+                    <Upload size={14} className="text-gold" /> Load from file
+                  </button>
+                  {ctl.canUndo ? (
+                    <button className={action} onClick={() => { ctl.undo(); dismiss(); }}>
+                      <RotateCcw size={14} className="text-gold" /> Undo reset
+                    </button>
+                  ) : (
+                    <button className={action} disabled={ctl.selectedIds.length === 0} onClick={() => setMode('reset')}>
+                      <RotateCcw size={14} className="text-essence-fire" /> Reset
+                    </button>
+                  )}
+                  <button className={action} disabled={others.length === 0} onClick={() => setMode('delete')}
+                    title={others.length === 0 ? 'This is the only build' : undefined}>
+                    <Trash2 size={14} className="text-essence-fire" /> Delete
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {others.length > 0 && (
+            <>
+              <div className={`${label} mt-4`}>Switch to</div>
+              <div className="max-h-48 overflow-y-auto">
+                {others.map(build => (
+                  <button key={build.id} className="w-full px-2 py-1.5 rounded text-left hover:bg-charcoal/80"
+                    onClick={() => { ctl.selectCharacter(build.id); dismiss(); }}>
+                    <span className="flex items-baseline justify-between gap-3">
+                      <span className="truncate font-display text-sm tracking-wide text-parchment">{build.name}</span>
+                      <span className="font-display text-xs text-gold-dim tabular-nums whitespace-nowrap">Lvl {build.level}</span>
+                    </span>
+                    <span className="block truncate text-[11px] text-mist">{pathsOf(build)}</span>
+                  </button>
+                ))}
+              </div>
+            </>
           )}
+
+          <div className="mt-3 pt-2 border-t border-gold-subtle">
+            {mode === 'new' ? (
+              <div className="px-2 py-1.5">
+                <p className="text-xs text-fog mb-2">Name the new build.</p>
+                <NameField placeholder="e.g. Boss phase 1"
+                  onCommit={next => { ctl.createCharacter(next); dismiss(); }}
+                  onCancel={() => setMode(null)} />
+              </div>
+            ) : (
+              <button className={item} onClick={() => setMode('new')}>
+                <Plus size={15} className="text-gold" /> New build
+              </button>
+            )}
+            {ctl.system.version === 'v2' && (
+              <Link className={item} to={pagePath('v2', 'migration')} onClick={dismiss}>
+                <History size={15} className="text-gold" /> V1 migration guide
+              </Link>
+            )}
+          </div>
           <input
             ref={fileRef}
             type="file"
@@ -196,7 +344,7 @@ export const CharacterMenu: React.FC<{ ctl: TalentController; align?: 'left' | '
               const file = e.target.files?.[0];
               if (file) ctl.load(file);
               e.target.value = '';
-              setOpen(false);
+              dismiss();
             }}
           />
         </div>

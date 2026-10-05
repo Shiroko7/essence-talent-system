@@ -13,6 +13,7 @@ import {
   getPathAbilities,
   shouldUnallocateAbility
 } from '../utils/essenceUtils';
+import { getActiveCharacterId, loadCharacterRoster } from '../talents/characters/characterStorage';
 
 // Create storage keys
 const STORAGE_KEY_CHARACTER = 'essence-talent-system-character';
@@ -35,6 +36,17 @@ const useEssenceAllocation = ({
   // Try to load character from localStorage or use default
   const loadCharacterFromStorage = (): Character => {
     try {
+      const roster = loadCharacterRoster('v1');
+      const activeId = getActiveCharacterId('v1', roster);
+      const activeBuild = roster.find(c => c.id === activeId) || roster[0];
+      if (activeBuild && typeof activeBuild.level === 'number' && Array.isArray(activeBuild.selectedAbilities)) {
+        return {
+          level: activeBuild.level,
+          selectedAbilities: activeBuild.selectedAbilities,
+          activeEssenceByPath: (activeBuild.activeEssenceByPath || {}) as Record<EssencePathId, number>
+        };
+      }
+
       const savedData = localStorage.getItem(STORAGE_KEY_CHARACTER);
       if (savedData) {
         const parsedData = JSON.parse(savedData) as Character;
