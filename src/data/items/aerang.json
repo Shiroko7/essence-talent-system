@@ -1,0 +1,366 @@
+{
+  "merchantId": "aerang",
+  "lastUpdated": "2026-10-12",
+  "items": [
+    {
+      "id": "potion-of-dragons-majesty",
+      "name": "Potion of Dragon's Majesty",
+      "rarity": "legendary",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20dragon's%20majesty_ftd",
+      "source": "FTD",
+      "detailedData": {
+        "entries": [
+          "This potion looks like liquid gold, with a single scale from a chromatic, gem, or metallic dragon suspended in it. When you drink this potion, you transform into an adult dragon of the same kind as the dragon the scale came from. The transformation lasts for 1 hour. Any equipment you are wearing or carrying melds into your new form or falls to the ground (your choice). For the duration, you use the game statistics of the adult dragon instead of your own, but you retain your languages, personality, and memories. You can't use a dragon's Change Shape or its legendary or lair actions."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-giant-size",
+      "name": "Potion of Giant Size",
+      "rarity": "legendary",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20giant%20size_skt",
+      "source": "SKT",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you become Huge for 24 hours if you are Medium or smaller, otherwise the potion does nothing. For that duration, your Strength becomes 25, if it isn't already higher, and your hit point maximum is doubled (your current hit points are doubled when you drink the potion). In addition, the reach of your melee attacks increases by 5 feet.",
+          "Everything you are carrying and wearing also increases in size for the duration. When rolling damage for weapons enlarged in this manner, roll three times the normal number of dice; for example, an enlarged longsword would deal 3d8 slashing damage (instead of 1d8), or 3d10 slashing damage (instead of 1d10) when used with two hands.",
+          "When the effect ends, any hit points you have above your hit point maximum become temporary hit points. This potion is a pale white liquid made from the tongue of a giant clam, with a pungent aroma akin to that of rotting algae. It tastes sweet, however, when consumed."
+        ]
+      }
+    },
+    {
+      "id": "rejuvenating-draft-legendary",
+      "name": "Rejuvenating Draft (Legendary)",
+      "rarity": "legendary",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#rejuvenating%20draft%20(legendary)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you regain all spent Hit Dice. When you drink the legendary variant of a rejuvenating draft, your age is reduced by 1d4 years (to a minimum of 1 year old)."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-possibility",
+      "name": "Potion of Possibility",
+      "rarity": "very rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20possibility_egw",
+      "source": "EGW",
+      "detailedData": {
+        "entries": [
+          "When you drink this clear potion, you gain two Fragments of Possibility, each of which looks like a Tiny, grayish bead of energy that follows you around, staying within 1 foot of you at all times. Each fragment lasts for 8 hours or until used.",
+          "When you make an attack roll, an ability check, or a saving throw, you can expend your fragment to roll an additional d20 and choose which of the d20s to use. Alternatively, when an attack roll is made against you, you can expend your fragment to roll a d20 and choose which of the d20s to use, the one you rolled or the one the attacker rolled.",
+          "If the original d20 roll has advantage or disadvantage, you roll your d20 after advantage or disadvantage has been applied to the original roll.",
+          "While you have one or more Fragments of Possibility from this potion, you can't gain another Fragment of Possibility from any source."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-greater-invisibility",
+      "name": "Potion of Greater Invisibility",
+      "rarity": "very rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20greater%20invisibility_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "This potion's container looks empty but feels as though it holds liquid. When you drink the potion, you have the Invisible condition for 1 hour."
+        ]
+      }
+    },
+    {
+      "id": "bloody-marilith-very-rare",
+      "name": "Bloody Marilith (Very Rare)",
+      "rarity": "very rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#bloody%20marilith%20(very%20rare)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "The following bloody marilith is a very rare variant with more powerful properties. It uses blood from a fiendish marilith, instead of a magical substitute, and pleasantly burns your tongue when drinking it. It also tastes better.",
+          "When you drink this potion, you can take one reaction on every turn in a combat for 1 minute. Unlike its common variant, this potion's effect does not end when you use an additional reaction.",
+          "Drinking additional bloody mariliths before you finish a long rest leaves your body feeling worn. When the potion's effect ends, you can't move or take actions until after your next turn, as a wave of lethargy sweeps over you."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-speed",
+      "name": "Potion of Speed",
+      "rarity": "very rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20speed_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you gain the effect of the Haste spell for 1 minute (no Concentration required) without suffering the wave of lethargy that typically occurs when the effect ends.",
+          "This potion's yellow fluid is streaked with black and swirls on its own."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-mind-reading",
+      "name": "Potion of Mind Reading",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20mind%20reading_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you gain the effect of the Detect Thoughts spell (save DC 13) for 10 minutes (no Concentration required).",
+          "This potion's dense, purple liquid has an ovoid cloud of pink floating in it."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-clairvoyance",
+      "name": "Potion of Clairvoyance",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20clairvoyance_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you gain the effect of the Clairvoyance spell (no Concentration required).",
+          "An eyeball bobs in this potion's yellowish liquid but vanishes when the potion is opened."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-mind-control-humanoid",
+      "name": "Potion of Mind Control (humanoid)",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20mind%20control%20(humanoid)_tftyp",
+      "source": "TftYP",
+      "detailedData": {
+        "entries": [
+          "When you drink a potion of mind control, you can cast a dominate spell (save DC 15) on a specific creature if you do so before the end of your next turn. If you don't, the potion is wasted.",
+          "A potion of mind control produces the effect of a dominate person spell. If the target's initial saving throw fails, the effect lasts for 1 hour, with no concentration required on your part. The charmed creature has disadvantage on new saving throws to break the effect during this time."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-maximum-power",
+      "name": "Potion of Maximum Power",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20maximum%20power_egw",
+      "source": "EGW",
+      "detailedData": {
+        "entries": [
+          "The first time you cast a damage-dealing spell of 4th level or lower within 1 minute after drinking the potion, instead of rolling dice to determine the damage dealt, you can instead use the highest number possible for each die.",
+          "This glowing purple liquid smells of sugar and plum, but it has a muddy taste."
+        ]
+      }
+    },
+    {
+      "id": "oil-of-etherealness",
+      "name": "Oil of Etherealness",
+      "rarity": "rare",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#oil%20of%20etherealness_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "One vial of this oil can cover one Medium or smaller creature, along with the equipment it's wearing and carrying (one additional vial is required for each size category above Medium). Applying the oil takes 10 minutes. The affected creature then gains the effect of the Etherealness spell for 1 hour.",
+          "Beads of this cloudy, gray oil form on the outside of its container and quickly evaporate."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-advantage",
+      "name": "Potion of Advantage",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20advantage_wbtw",
+      "source": "WBtW",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you gain advantage on one ability check, attack roll, or saving throw of your choice that you make within the next hour.",
+          "This potion takes the form of a sparkling, golden mist that moves and pours like water."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-psionic-fortitude",
+      "name": "Potion of Psionic Fortitude",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20psionic%20fortitude_pabtso",
+      "source": "PaBTSO",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you have advantage for 1 hour on saving throws you make to avoid or end the charmed or stunned condition on yourself.",
+          "This black potion swirls with shimmering flecks of pink and purple."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-pugilism",
+      "name": "Potion of Pugilism",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20pugilism_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "After you drink this potion, each Unarmed Strike you make deals an extra 1d6 Force damage on a hit. This effect lasts 10 minutes.",
+          "This potion is a thick green fluid that tastes like spinach."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-polychromy",
+      "name": "Potion of Polychromy",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20polychromy_ditlcot",
+      "source": "DitLCoT",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you and everything you are wearing or carrying take on a rainbow-hued appearance for 1 hour. During that time, you can use a bonus action to turn any color or combination of colors you choose. If you mimic the colors of your surroundings, your hues continually shift to match your surroundings, and you have advantage on Dexterity (Stealth) checks until you change your colors again or the potion wears off.",
+          "The potion is separated into seven brightly colored bands of immiscible liquids and has a syrupy taste."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-poison",
+      "name": "Potion of Poison",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20poison_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "This concoction looks, smells, and tastes like a Potion of Healing or another beneficial potion. However, it is actually poison masked by illusion magic. Identify reveals its true nature.",
+          "If you drink this potion, you take 4d6 Poison damage and must succeed on a DC 13 Constitution saving throw or have the Poisoned condition for 1 hour."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-fire-breath",
+      "name": "Potion of Fire Breath",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20fire%20breath_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "After drinking this potion, you can take a Bonus Action to exhale fire at a target within 30 feet of yourself. The target makes a DC 13 Dexterity saving throw, taking 4d6 Fire damage on a failed save or half as much damage on a successful one. The effect ends after you exhale the fire three times or when 1 hour has passed.",
+          "This potion's orange liquid flickers, and smoke fills the top of the container and wafts out whenever it is opened."
+        ]
+      }
+    },
+    {
+      "id": "dust-of-deliciousness",
+      "name": "Dust of Deliciousness",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#dust%20of%20deliciousness_egw",
+      "source": "EGW",
+      "detailedData": {
+        "entries": [
+          "This reddish brown dust can be sprinkled over any edible substance to greatly improve the flavor. The dust also dulls the eater's senses: anyone eating food treated with this dust has disadvantage on Wisdom ability checks and Wisdom saving throws for 1 hour. There is enough dust to flavor six servings."
+        ]
+      }
+    },
+    {
+      "id": "dust-of-sneezing-and-choking",
+      "name": "Dust of Sneezing and Choking",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#dust%20of%20sneezing%20and%20choking_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "Found in a small container, this powder resembles Dust of Disappearance, and Identify reveals it to be such. There is enough of it for one use.",
+          "As a Utilize action, you can throw the dust into the air, forcing yourself and every creature in a 30-foot Emanation originating from you to make a DC 15 Constitution saving throw. Constructs, Elementals, Oozes, Plants, and Undead succeed on the save automatically.",
+          "On a failed save, a creature begins sneezing uncontrollably; it has the Incapacitated condition and is suffocating. The creature repeats the save at the end of each of its turns, ending the effect on itself on a success. The effect also ends on any creature targeted by a Lesser Restoration spell."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-comprehension",
+      "name": "Potion of Comprehension",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20comprehension_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you gain the effect of the Comprehend Languages spell for 1 hour.",
+          "This potion's liquid is a clear concoction with bits of salt and soot swirling in it."
+        ]
+      }
+    },
+    {
+      "id": "potion-of-climbing",
+      "name": "Potion of Climbing",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20climbing_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "When you drink this potion, you gain a Climb Speed equal to your Speed for 1 hour. During this time, you have Advantage on Strength (Athletics) checks to climb.",
+          "This potion is separated into brown, silver, and gray layers resembling bands of stone. Shaking the bottle fails to mix the colors."
+        ]
+      }
+    },
+    {
+      "id": "wispy-sour-common",
+      "name": "Wispy Sour (Common)",
+      "rarity": "common",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#wispy%20sour%20(common)_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "The typical wispy sour, a common potion, is a specialty alcoholic beverage that causes you to float harmlessly off the floor. When you drink this potion, you gain a flying speed of 10 feet for 1 minute, but can only hover 1 foot above the ground when doing so. The drink is smooth, sweet, and has a slight aftertaste of ash. A tiny, single light from the dancing lights spell is often cast within the drink when served. Due to its magical nature, the alcohol within this potion affects a creature twice as much as the alcohol within a nonmagical beverage."
+        ]
+      }
+    },
+    {
+      "id": "candy-xorn",
+      "name": "Candy Xorn",
+      "rarity": "common",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#candy%20xorn_griffonssaddlebag2",
+      "source": "GriffonsSaddlebag2",
+      "detailedData": {
+        "entries": [
+          "Candy xorn is a round, waxy candy that typically comes in small bags of 2d6 + 3 pieces. Each piece is traditionally either orange or yellow, but always has a narrow, reptilian pupil drawn at its center. Eating a candy xorn causes your eyes to turn orange or yellow (your choice), and your pupils to match the ones found on the piece of candy. After 1 minute, the effect ends and your eyes return to normal.",
+          "In addition, each piece of candy xorn has a 5 percent chance to not be candy at all, but actually a gemstone covered in the sugared coating. When you find a gemstone in this way, it can be either eye agate (40%, 10 gp), tiger's eye (40%, 10 gp), or amber (20%, 100 gp)."
+        ]
+      }
+    }
+  ]
+}

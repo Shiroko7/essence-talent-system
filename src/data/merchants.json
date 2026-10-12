@@ -2,6 +2,26 @@
   "version": "1.0",
   "merchants": [
     {
+      "id": "aerang",
+      "name": "The Price of Silence",
+      "description": "Aerang never brewed a single one of these. She simply watches, listens, and knows far too much, and people pay to keep her quiet with whatever they have on hand. The result is a cabinet of other people's secrets in bottle form: a few genuine treasures, a few bad jokes, and whatever she found too interesting to give back.",
+      "region": "Sirius",
+      "subregion": "Aerang — Sealed Artifact",
+      "isAvailable": true,
+      "inventoryFile": "aerang",
+      "pricing": {
+        "currency": "gold",
+        "priceByRarity": {
+          "common": 50,
+          "uncommon": 200,
+          "rare": 2000,
+          "very rare": 20000,
+          "legendary": 100000,
+          "artifact": 100000
+        }
+      }
+    },
+    {
       "id": "glass-mirror-cay",
       "name": "Mirror Tide Exchange",
       "description": "A salt-scoured trading post on a black-glass cay at the edge of the Forbidden Sea. Sailors say the Princess of Air and Darkness walked here before she took the Unseelie throne, and that the tide still returns what she left behind: black gems, breathless winds, and cloaks cut from shadow.",
