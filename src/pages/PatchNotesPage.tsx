@@ -195,7 +195,7 @@ const PatchNotesPage: React.FC = () => {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
-              <Link to="/v2" className="arcane-btn arcane-btn-primary !px-4 !py-2 text-sm inline-flex items-center gap-2"><Layers size={15} /> Open Talents V2</Link>
+              <Link to="/" className="arcane-btn arcane-btn-primary !px-4 !py-2 text-sm inline-flex items-center gap-2"><Layers size={15} /> Open Talents V2</Link>
               <a href="#migration" className="arcane-btn !px-4 !py-2 text-sm inline-flex items-center gap-2"><Route size={15} /> How do I migrate?</a>
             </div>
           </div>
@@ -466,7 +466,7 @@ const PatchNotesPage: React.FC = () => {
                 </ul>
               </div>
               <div className="flex flex-wrap items-center gap-3">
-                <Link to="/v2/migration" className="arcane-btn arcane-btn-primary !px-4 !py-2 text-sm inline-flex items-center gap-2"><Route size={15} /> Open your migration guide</Link>
+                <Link to="/migration" className="arcane-btn arcane-btn-primary !px-4 !py-2 text-sm inline-flex items-center gap-2"><Route size={15} /> Open your migration guide</Link>
                 <span className="text-sm text-mist">Lists every ability you had, where it went, and anything that needs your attention.</span>
               </div>
             </Section>

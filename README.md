@@ -24,19 +24,20 @@ plus cantrips and levelled spells. Abilities are tagged active / passive /
 spell / cantrip, and the app filters and cross-references them so a player can
 answer "what can I actually do at adept fire" without scrolling a document.
 
-There are two versions. **V1** (`/`) is the original: nine elemental essences
+There are two versions. **V2** (`/`, the home page) uses the cultivation paths
+below. **V1** (`/v1`) is the original: nine elemental essences
 (**acid, air, earth, fire, lightning, metal, poison, water, wood**), one Essence
-pool each. **V2** (`/v2`) replaces them with sixteen cultivation paths, below.
+pool each.
 
 ## Cultivation paths
 
-`/v2` contains the canonical campaign-focused catalog for V2: six Primordial
+`/` contains the canonical campaign-focused catalog for V2: six Primordial
 foundations (Wood, Fire, Earth, Metal, Water, and Sky), seven Divine portfolios
 (Lunar, Love, Ruin, Pestilence, Shadow, Tempest, and Providence), and three
 Immortal paths (Alchemy, Heart, and Mysteries). Each family shares one Essence
 pool: every path in it adds to the pool, and any learned ability in the family
 spends from it. The older nine-element tree, with one pool per essence, remains
-at `/`.
+at `/v1`.
 
 Each spell and cantrip has one path owner. Markdown is the source of truth, and
 `bun run generate:cultivation` checks unique spell ownership. Spellcasting paths
@@ -89,7 +90,7 @@ answered by the repo rather than by memory.
 - **Patch notes** (`/patch-notes`) — the V1 → V2 overhaul, written for players.
 - **Rules** (`/rules`) — Attunement: Elemental (Primordial), Portfolio (Divine),
   and Dao (Immortal).
-- **Migration guide** (`/v2/migration`) — what happened to each ability of a
+- **Migration guide** (`/migration`) — what happened to each ability of a
   player's V1 character when it was carried into V2.
 
 ## Running it

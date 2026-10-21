@@ -168,7 +168,7 @@ const EssenceTalentTree: React.FC = () => {
             </span>
           </div>
           <Link
-            to="/cultivation"
+            to="/"
             className="arcane-btn text-xs px-3 py-1.5 flex items-center gap-1.5 !border-gold/40 hover:!border-gold text-gold-bright whitespace-nowrap"
           >
             <span>View Cultivation v2</span>

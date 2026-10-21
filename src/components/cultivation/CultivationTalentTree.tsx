@@ -194,7 +194,7 @@ const CultivationTalentTree: React.FC<{ version: CultivationVersion }> = ({ vers
 
             <div className="flex items-center gap-3 flex-wrap">
               <Link
-                to="/"
+                to="/v1"
                 className="arcane-btn text-xs px-3.5 py-2 flex items-center gap-2 !border-gold/30 hover:!border-gold text-parchment"
               >
                 <ArrowLeftRight size={14} className="text-gold" />

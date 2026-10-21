@@ -7,8 +7,8 @@ const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { to: '/', label: 'Talents (v1)', icon: Sparkles },
-    { to: '/v2', label: 'Talents V2', icon: Layers },
+    { to: '/', label: 'Talents', icon: Layers },
+    { to: '/v1', label: 'Talents (v1)', icon: Sparkles },
     { to: '/rules', label: 'Rules', icon: BookOpen },
     { to: '/patch-notes', label: 'Patch Notes', icon: Megaphone },
     { to: '/changelog', label: 'Changelog', icon: ScrollText },
@@ -17,8 +17,7 @@ const Header: React.FC = () => {
   ];
 
   const isActive = (path: string) => {
-    if (path === '/') return ['/', '/essence', '/summary'].includes(location.pathname);
-    if (path === '/v2') return location.pathname.startsWith('/v2') || location.pathname === '/cultivation';
+    if (path === '/') return ['/', '/essence', '/summary', '/migration'].includes(location.pathname);
     return location.pathname.startsWith(path);
   };
 

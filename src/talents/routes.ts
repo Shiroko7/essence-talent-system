@@ -4,9 +4,9 @@ import type { SystemVersion, TalentController } from './model';
 
 export type TalentPageId = 'talents' | 'essence' | 'sheet' | 'migration';
 
-/** URL of a character page for a system version. The migration guide exists for V2 only. */
+/** URL of a character page for a system version. V2 is the home page; V1 lives under /v1. The migration guide exists for V2 only. */
 export const pagePath = (version: SystemVersion, page: TalentPageId) => {
-  const base = version === 'v1' ? '' : '/v2';
+  const base = version === 'v1' ? '/v1' : '';
   if (page === 'talents') return base || '/';
   return `${base}/${page === 'sheet' ? 'summary' : page}`;
 };
