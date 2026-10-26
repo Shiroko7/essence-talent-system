@@ -189,6 +189,17 @@ export const tempestSpells = [
     author: "Evocation / Tempest",
   },
   {
+    id: "tempest_5th_maelstrom",
+    name: "Maelstrom",
+    description: "A 30-foot-radius swirling vortex of water drags creatures toward its center and deals 6d6 bludgeoning damage.\n\nhttps://5e.tools/spells.html#maelstrom_xge",
+    tier: "5th",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+    author: "Evocation / Umberlee",
+  },
+  {
     id: "tempest_8th_control_weather",
     name: "Control Weather",
     description: "Seize command of precipitation, temperature, and wind across a 5-mile radius, summoning hurricanes or calm skies.\n\nhttps://5e.tools/spells.html#control%20weather_xphb",

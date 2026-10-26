@@ -362,24 +362,6 @@ https://5e.tools/spells.html#cone%20of%20cold_xphb
 
 ---
 
-### Maelstrom
-
-```yaml
-id: tempest_5th_maelstrom
-tier: 5th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Evocation / Tidal Whirlpool
-```
-
-A 30-foot-radius whirlpool of tidal water drags creatures toward its center and deals 6d6 bludgeoning damage.
-
-https://5e.tools/spells.html#maelstrom_xge
-
----
-
 ### Wall of Water
 
 ```yaml

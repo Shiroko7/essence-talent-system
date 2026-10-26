@@ -299,14 +299,14 @@ domainText: Its damage dice are d10s.
 
 Hadal Domain is active rather than passive: its Essence is spent once to wake the deep for 1 minute, so it can't run every fight for free. Below the Light only changes ink; treating dry land as underwater would have pulled creatures down into solid rock.
 
-Maelstrom moved to Water, and its 8d6 rider (an extra-dice rider, weight 1) is a ready candidate when Water gets domain lines.
+Maelstrom stays in Tempest. Its 8d6 rider (an extra-dice rider, weight 1) is a ready candidate when Tempest gets domain lines.
 
 ## Settled
 
 1. **Rule 1:** riders use your Attunement's domain only.
 2. **Domain-bound:** techniques only, never spells or cantrips. Undertow's Great Grandmaster technique won't be domain-bound either.
 3. **The Deep:** its last example is "any wreck or shore where someone drowned".
-4. **Elsewhere:** Maelstrom goes to Water, and Water's former Echoes of the Deep talent becomes Tidespeech.
+4. **Elsewhere:** Maelstrom stays in Tempest, and Water's former Echoes of the Deep talent becomes Tidespeech.
 
 ## Sources
 

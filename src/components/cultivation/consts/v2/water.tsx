@@ -231,17 +231,6 @@ export const waterSpells = [
     author: "Evocation / Glacial Squall",
   },
   {
-    id: "tempest_5th_maelstrom",
-    name: "Maelstrom",
-    description: "A 30-foot-radius whirlpool of tidal water drags creatures toward its center and deals 6d6 bludgeoning damage.\n\nhttps://5e.tools/spells.html#maelstrom_xge",
-    tier: "5th",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-    author: "Evocation / Tidal Whirlpool",
-  },
-  {
     id: "water_3rd_level_wall_of_water",
     name: "Wall of Water",
     description: "https://5e.tools/spells.html#wall%20of%20water_xge",
