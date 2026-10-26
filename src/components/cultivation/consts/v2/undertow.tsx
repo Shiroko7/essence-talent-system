@@ -377,7 +377,7 @@ export const undertowSpells = [
   {
     id: "v2_undertow_leviathans_maw",
     name: "Leviathan's Maw",
-    description: "Leviathan jaws erupt from the ground or the water in a 20-foot-radius cylinder, dealing 12d6 force damage and banishing creatures that fail a Dexterity saving throw. Out of water they go to a harmless demiplane; from water, they are swallowed into the Elemental Plane of Water.\n\nSource reference: [All Beneath the Yonder Seas and Streams on 5e.tools](https://5e.tools/spells.html#leviathan's%20maw_abyss).",
+    description: "Leviathan jaws erupt from the ground or the water in a 20-foot-radius cylinder, dealing 12d6 force damage and banishing creatures that fail a Dexterity saving throw until the spell ends. Out of water they go to a harmless demiplane. From water they are swallowed into the Elemental Plane of Water, where they are blinded and restrained and take 6d6 bludgeoning damage at the start of each of their turns.\n\n**Change from the book:** A creature in the Elemental Plane of Water repeats the Dexterity saving throw at the end of each of its turns. On a success, it swims free and reappears in the space it left, or the nearest unoccupied space.\n\nSource reference: [All Beneath the Yonder Seas and Streams on 5e.tools](https://5e.tools/spells.html#leviathan's%20maw_abyss).",
     tier: "8th",
     isActive: false,
     isPassive: false,
