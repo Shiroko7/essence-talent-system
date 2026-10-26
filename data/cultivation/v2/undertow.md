@@ -186,8 +186,8 @@ location: Sirius / Forbidden Sea
 domain: bound
 ```
 
-Named for the hadal zone, the trenches below 6,000 meters. When you roll initiative on your Consecrated Ground, or at the start of any later round there, you can use this technique to wake the deep for 1 minute. It takes no action.
-- **Weight of the Deep:** At initiative count 20 each round, any number of creatures you can see there take 3d8 bludgeoning damage from the pressure. No attack roll or saving throw avoids it, and you choose who is spared.
+Named for the hadal zone, the trenches below 6,000 meters. As a bonus action on your Consecrated Ground, you wake the deep for 1 minute.
+- **Weight of the Deep:** When you wake it, and at initiative count 20 each round after, any number of creatures you can see there take 3d8 bludgeoning damage from the pressure. No attack roll or saving throw avoids it, and you choose who is spared.
 - **Below the Light:** Your ink there is heavily obscuring even out of water, and up to three of your clouds last until a strong wind clears them.
 
 ---

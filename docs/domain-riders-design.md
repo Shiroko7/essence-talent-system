@@ -204,7 +204,7 @@ A light rider is worth less than a level, a standard rider about one, and a heav
 
 - **Water Whip** (cantrip): 3d6 (10.5) at 11th level becomes 3d10 (16.5), level with Fire Bolt, and it still pulls.
 - **Tentacle Lash** (4th, half on a miss): 5d8 (22.5) at a 65% hit chance averages 14.6 a turn. Half damage on a miss raises that to 18.6, +27%.
-- **Hadal Domain** (Grandmaster, domain-bound, 4 Essence for 1 minute): 3d8 (13.5) to any number of creatures each round, with no roll. Each round that's about 60% of a 6th or 7th-level area spell, with no action or concentration. Against four creatures over four rounds it deals about 216; a 7th-level Fire Storm for the same 4 Essence deals about 120, once.
+- **Hadal Domain** (Grandmaster, domain-bound, a bonus action and 4 Essence for 1 minute): 3d8 (13.5) to any number of creatures when it wakes and each round after, with no roll. Each round that's about 60% of a 6th or 7th-level area spell, with no further action and no concentration. Against four creatures over four rounds it deals about 216; a 7th-level Fire Storm for the same 4 Essence deals about 120, once.
 
 ## Choosing which abilities get lines
 
@@ -293,11 +293,11 @@ domainText: Its damage dice are d10s.
 | Master | Enervation (5th) | Rider | The target has disadvantage on the saving throw. | 1 |
 | Master | Eyebite (6th) | Rider | When you cast it, you can choose two creatures instead of one. | 1 |
 | Grandmaster | Summon Leviathan Avatar (7th) | Rider | The space needn't hold water, and the leviathan swims through air. | ½ |
-| Grandmaster | Hadal Domain | Bound | 4 Essence wakes the deep for 1 minute. | – |
+| Grandmaster | Hadal Domain | Bound | A bonus action and 4 Essence wake the deep for 1 minute. | – |
 
 **Plain (17):** Ink Sac, Ink Splash, Figgly's Exploding Squid, Breath of the Deep, Vomit Tentacles and Watery Grave (Initiate); Drag Below, Evard's Black Tentacles, Doomtide and Crushing Depths (Adept); Kraken's Grasp, Drowning Grip and Portal to the Depths (Master); Pressure Sphere, Undertow and Leviathan's Maw (Grandmaster); Echoes of the Deep (Great Grandmaster). Most of these already blind, restrain, silence or banish on a single roll, which is strong for their tier.
 
-Hadal Domain is active rather than passive: its Essence is spent once to wake the deep for 1 minute, so it can't run every fight for free. Below the Light only changes ink; treating dry land as underwater would have pulled creatures down into solid rock.
+Hadal Domain is active rather than passive: a bonus action and its Essence wake the deep for 1 minute, so it can't run every fight for free. The first pulse hits as it wakes, so the bonus action costs tempo, not damage. Below the Light only changes ink; treating dry land as underwater would have pulled creatures down into solid rock.
 
 Maelstrom stays in Tempest. Its 8d6 rider (an extra-dice rider, weight 1) is a ready candidate when Tempest gets domain lines.
 
