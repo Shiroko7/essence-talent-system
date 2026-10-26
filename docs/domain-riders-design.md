@@ -307,6 +307,7 @@ Maelstrom stays in Tempest. Its 8d6 rider (an extra-dice rider, weight 1) is a r
 2. **Domain-bound:** techniques only, never spells or cantrips. Undertow's Great Grandmaster technique won't be domain-bound either.
 3. **The Deep:** its last example is "any wreck or shore where someone drowned".
 4. **Elsewhere:** Maelstrom stays in Tempest, and Water's former Echoes of the Deep talent becomes Tidespeech.
+5. **Leviathan's Maw:** a creature swallowed into the Elemental Plane of Water repeats the Dexterity save at the end of each of its turns. In the book it stays there, taking 6d6 a turn, until concentration breaks.
 
 ## Sources
 
