@@ -10,7 +10,7 @@ import type { SystemPath } from '../model';
 import { pagePath } from '../routes';
 import { PageHeader } from '../header/PageHeader';
 import {
-  AbilityIcon, EmptyState, GroupLabel, KindTag, PathSigil, SearchField, Segmented, UseButton
+  AbilityIcon, DomainLine, EmptyState, GroupLabel, KindTag, PathSigil, SearchField, Segmented, UseButton
 } from '../ui';
 
 const KIND_OPTIONS: { id: KindFilter; label: string }[] = [
@@ -48,6 +48,7 @@ const AbilityEntry: React.FC<{
       </div>
       <div className={`px-4 pb-4 sm:pl-[60px] ${open ? '' : 'hidden print:block'}`}>
         <AbilityMarkdown content={ability.description} searchTerm={searchTerm} className="text-[15px]" />
+        <div className="mt-3 empty:hidden"><DomainLine ability={ability} path={path} searchTerm={searchTerm} /></div>
         {(ability.author || ability.location) && (
           <p className="text-xs text-mist border-t border-gold-subtle pt-2 mt-3">
             {ability.author && <span className="text-gold/80">{ability.author}</span>}

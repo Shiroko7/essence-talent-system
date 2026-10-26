@@ -59,6 +59,7 @@ const palettes = {
   pestilence: ['bg-lime-700/25', 'text-lime-300', 'border-lime-500/50', 'shadow-glow-pestilence', 'bg-lime-950/80 text-lime-200 border-lime-500/50', '#a3e635'],
   shadow: ['bg-purple-900/40', 'text-purple-300', 'border-purple-600/50', 'shadow-glow-void', 'bg-purple-950/80 text-purple-200 border-purple-600/50', '#a855f7'],
   tempest: ['bg-sky-600/30', 'text-sky-300', 'border-sky-400/50', 'shadow-glow-tempest', 'bg-sky-950/80 text-sky-200 border-sky-400/40', '#38bdf8'],
+  undertow: ['bg-violet-700/25', 'text-violet-300', 'border-violet-400/50', 'shadow-glow-undertow', 'bg-violet-950/80 text-violet-200 border-violet-500/40', '#9d90ff'],
   providence: ['bg-amber-500/25', 'text-amber-300', 'border-amber-400/50', 'shadow-glow-providence', 'bg-amber-950/70 text-amber-200 border-amber-400/40', '#fbbf24']
 } as const;
 
@@ -97,6 +98,7 @@ const paths: CultivationPath[] = [
   makePath('pestilence', 'Pestilence', 'divine', 'Affliction and corruption', 'Disease, poison, curses, contagion, and resistance to corruption.', 'pestilence', 'Talona'),
   makePath('shadow', 'Shadow', 'divine', 'Darkness and concealment', 'Darkness, concealment, absence, and the Shadow Weave.', 'shadow', 'Shar'),
   makePath('tempest', 'Tempest', 'divine', 'Weather and storm authority', 'Storm fronts, rain, thunder, violent seas, and maritime peril.', 'tempest', 'Umberlee'),
+  makePath('undertow', 'Undertow', 'divine', 'The deep\'s hunger and the grasp that pulls you under', 'Lightless water, ink, crushing pressure, tentacles, drowning, and whatever is dragged below.', 'undertow', 'Yhal\'etsu'),
   makePath('providence', 'Providence', 'divine', 'Endurance, hope, and freedom', 'Protection, healing, perseverance, bearing burdens, and liberation from bonds.', 'providence', 'Ilmater')
 ];
 

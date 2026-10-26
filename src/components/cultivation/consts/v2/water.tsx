@@ -1,7 +1,7 @@
 export const waterAbilities = [
   {
     id: "water_initiate_echoes_of_the_deep",
-    name: "Echoes of the Deep",
+    name: "Tidespeech",
     description: "You can communicate with aquatic creatures or spirits of water, allowing you to understand their language and gain information about underwater locations or hidden treasures.",
     tier: "initiate",
     isActive: false,

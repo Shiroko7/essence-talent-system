@@ -197,7 +197,8 @@ export const isTierOpen = (tierId: TierId, selectedIds: string[], pathAbilities:
 export const matchesSearch = (ability: Ability, term: string) => {
   const q = term.trim().toLowerCase();
   if (!q) return true;
-  return ability.name.toLowerCase().includes(q) || ability.description.toLowerCase().includes(q);
+  return ability.name.toLowerCase().includes(q) || ability.description.toLowerCase().includes(q)
+    || (ability.domainText?.toLowerCase().includes(q) ?? false);
 };
 
 export type KindFilter = 'all' | AbilityKind;

@@ -5,6 +5,7 @@ import {
 import { Link } from 'react-router-dom';
 import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
+import { DOMAIN_LABELS } from '../data/attunementRules';
 import {
   AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, previewText, reservesEssence,
   tierInfo, tierOf, tint
@@ -418,6 +419,20 @@ export const UseButton: React.FC<{ ctl: TalentController; ability: Ability; path
   );
 };
 
+/** What an ability does on its path's domain: its rider line, or that it works only there. */
+export const DomainLine: React.FC<{ ability: Ability; path: SystemPath; searchTerm?: string }> = ({ ability, path, searchTerm }) => {
+  if (!ability.domain) return null;
+  const label = DOMAIN_LABELS[path.groupId] ?? 'Domain';
+  const content = ability.domain === 'bound'
+    ? `**Domain-bound.** You can use it only on your ${label}.`
+    : `**${label}.** ${ability.domainText ?? ''}`;
+  return (
+    <div className="border-l-2 pl-3" style={{ borderColor: tint(path.accent, 0.7) }}>
+      <AbilityMarkdown content={content} searchTerm={searchTerm} className="text-[15px]" />
+    </div>
+  );
+};
+
 /** Everything about one ability: meta row, full text, provenance. */
 export const AbilityBody: React.FC<{ ctl: TalentController; ability: Ability; path: SystemPath; searchTerm?: string }> = ({
   ctl, ability, path, searchTerm
@@ -436,6 +451,7 @@ export const AbilityBody: React.FC<{ ctl: TalentController; ability: Ability; pa
         </div>
       )}
       <AbilityMarkdown content={ability.description} searchTerm={searchTerm} className="text-[15px]" />
+      <DomainLine ability={ability} path={path} searchTerm={searchTerm} />
       {(ability.author || ability.location) && (
         <p className="text-xs text-mist font-body border-t border-gold-subtle pt-3">
           {ability.author && <span className="text-gold/80">{ability.author}</span>}

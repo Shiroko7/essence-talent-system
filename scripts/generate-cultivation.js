@@ -46,7 +46,9 @@ function parseMarkdownFile(content, pathName) {
       isSpell: metadata.isSpell || false,
       isCantrip: metadata.isCantrip || false,
       author: metadata.author || metadata.source || undefined,
-      location: metadata.location || undefined
+      location: metadata.location || undefined,
+      domain: metadata.domain || undefined,
+      domainText: metadata.domainText || undefined
     };
     if (ability.isCantrip) cantrips.push(ability);
     else if (ability.isSpell) spells.push(ability);
@@ -61,7 +63,29 @@ function formatAbility(ability) {
   let out = `  {\n    id: "${escapeString(ability.id)}",\n    name: "${escapeString(ability.name)}",\n    description: "${escapeString(ability.description)}",\n    tier: "${ability.tier}",\n    isActive: ${ability.isActive},\n    isPassive: ${ability.isPassive},\n    isSpell: ${ability.isSpell},\n    isCantrip: ${ability.isCantrip},`;
   if (ability.author) out += `\n    author: "${escapeString(ability.author)}",`;
   if (ability.location) out += `\n    location: "${escapeString(ability.location)}",`;
+  if (ability.domain) out += `\n    domain: "${ability.domain}",`;
+  if (ability.domainText) out += `\n    domainText: "${escapeString(ability.domainText)}",`;
   return `${out}\n  }`;
+}
+
+/**
+ * Domain lines follow docs/domain-riders-design.md: a rider is one line of text,
+ * and only Grandmaster or higher techniques can be domain-bound (never spells or cantrips).
+ */
+function validateDomain(ability, where) {
+  if (!ability.domain) {
+    if (ability.domainText) throw new Error(`"${ability.name}" in ${where} has domainText but no domain.`);
+    return;
+  }
+  if (ability.domain === 'rider') {
+    if (!ability.domainText) throw new Error(`Rider "${ability.name}" in ${where} needs a domainText line.`);
+    return;
+  }
+  if (ability.domain !== 'bound') throw new Error(`"${ability.name}" in ${where} has unknown domain "${ability.domain}"; use rider or bound.`);
+  if (ability.isSpell || ability.isCantrip) throw new Error(`Spell "${ability.name}" in ${where} can't be domain-bound; only techniques can.`);
+  if (!['grandmaster', 'greatgrandmaster'].includes(ability.tier)) {
+    throw new Error(`"${ability.name}" in ${where} is domain-bound below Grandmaster.`);
+  }
 }
 
 function generateTypeScriptFile(data, pathName) {
@@ -172,6 +196,7 @@ function main() {
         const priorId = abilityIds.get(ability.id);
         if (priorId) throw new Error(`Duplicate ability id "${ability.id}" in ${version}/${priorId} and ${version}/${pathName}.`);
         abilityIds.set(ability.id, pathName);
+        validateDomain(ability, `${version}/${pathName}`);
       }
       for (const ability of [...parsed.cantrips, ...parsed.spells]) {
         const name = normalizeName(ability.name);

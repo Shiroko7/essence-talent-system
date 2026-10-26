@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout';
 import { tint } from '../talents/model';
 import { buildV2System } from '../talents/systems';
 import { GroupLabel, PathSigil } from '../talents/ui';
-import { ATTUNEMENTS, GENERAL_RULES, VAULT_URL } from '../data/attunementRules';
+import { ATTUNEMENTS, DOMAIN_LINES, GENERAL_RULES, VAULT_URL } from '../data/attunementRules';
 
 const RulesPage: React.FC = () => {
   const system = useMemo(buildV2System, []);
@@ -101,6 +101,22 @@ const RulesPage: React.FC = () => {
               {attunement.notes.map(note => <li key={note}>{note}</li>)}
             </ul>
           )}
+        </section>
+
+        <section aria-label="Domain lines" className="space-y-3 pt-2">
+          <GroupLabel label="Domain lines" accent={accent} />
+          <p className="text-parchment/90">{DOMAIN_LINES.summary}</p>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {DOMAIN_LINES.kinds.map(kind => (
+              <div key={kind.name} className="rounded-lg border p-3" style={{ borderColor: tint(accent, 0.25), background: tint(accent, 0.04) }}>
+                <p className="font-display tracking-wide" style={{ color: accent }}>{kind.name}</p>
+                <p className="text-sm text-fog">{kind.text}</p>
+              </div>
+            ))}
+          </div>
+          <ul className="space-y-1 text-sm text-mist list-disc pl-5">
+            {DOMAIN_LINES.rules.map(rule => <li key={rule}>{rule}</li>)}
+          </ul>
         </section>
       </div>
     </Layout>

@@ -3,7 +3,7 @@
 Tradition: Primordial
 Concept: Water, ice, mist, tides, and fluid adaptation.
 
-### Echoes of the Deep
+### Tidespeech
 
 ```yaml
 id: water_initiate_echoes_of_the_deep
