@@ -15,7 +15,8 @@ import {
   CloudLightning,
   Swords,
   Sparkles,
-  Orbit
+  Orbit,
+  Anchor
 } from 'lucide-react';
 import { CultivationPathId } from '../../types/cultivation';
 
@@ -39,6 +40,7 @@ export const getCultivationPathIcon = (id: CultivationPathId, color: string, siz
     case 'ruin': return <Skull {...props} />;
     case 'pestilence': return <FlaskConical {...props} />;
     case 'tempest': return <CloudLightning {...props} />;
+    case 'undertow': return <Anchor {...props} />;
     default: return <Sparkles {...props} />;
   }
 };

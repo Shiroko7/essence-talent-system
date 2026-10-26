@@ -12,6 +12,7 @@ import { ruinAbilities as v2_ruinAbilities, ruinCantrips as v2_ruinCantrips, rui
 import { shadowAbilities as v2_shadowAbilities, shadowCantrips as v2_shadowCantrips, shadowSpells as v2_shadowSpells } from '../components/cultivation/consts/v2/shadow';
 import { skyAbilities as v2_skyAbilities, skyCantrips as v2_skyCantrips, skySpells as v2_skySpells } from '../components/cultivation/consts/v2/sky';
 import { tempestAbilities as v2_tempestAbilities, tempestCantrips as v2_tempestCantrips, tempestSpells as v2_tempestSpells } from '../components/cultivation/consts/v2/tempest';
+import { undertowAbilities as v2_undertowAbilities, undertowCantrips as v2_undertowCantrips, undertowSpells as v2_undertowSpells } from '../components/cultivation/consts/v2/undertow';
 import { waterAbilities as v2_waterAbilities, waterCantrips as v2_waterCantrips, waterSpells as v2_waterSpells } from '../components/cultivation/consts/v2/water';
 import { woodAbilities as v2_woodAbilities, woodCantrips as v2_woodCantrips, woodSpells as v2_woodSpells } from '../components/cultivation/consts/v2/wood';
 
@@ -44,6 +45,7 @@ const dataByVersion: Record<CultivationVersion, Record<string, PathData>> = {
     "shadow": { abilities: v2_shadowAbilities as Ability[], cantrips: v2_shadowCantrips as Ability[], spells: v2_shadowSpells as Ability[] },
     "sky": { abilities: v2_skyAbilities as Ability[], cantrips: v2_skyCantrips as Ability[], spells: v2_skySpells as Ability[] },
     "tempest": { abilities: v2_tempestAbilities as Ability[], cantrips: v2_tempestCantrips as Ability[], spells: v2_tempestSpells as Ability[] },
+    "undertow": { abilities: v2_undertowAbilities as Ability[], cantrips: v2_undertowCantrips as Ability[], spells: v2_undertowSpells as Ability[] },
     "water": { abilities: v2_waterAbilities as Ability[], cantrips: v2_waterCantrips as Ability[], spells: v2_waterSpells as Ability[] },
     "wood": { abilities: v2_woodAbilities as Ability[], cantrips: v2_woodCantrips as Ability[], spells: v2_woodSpells as Ability[] }
   }

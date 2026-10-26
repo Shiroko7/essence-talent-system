@@ -83,6 +83,7 @@ export const ATTUNEMENTS: Attunement[] = [
       { path: 'pestilence', name: 'Places of Sickness', examples: 'Plague towns, poisoned lands, sickrooms, sewers' },
       { path: 'shadow', name: 'The Dark', examples: 'Darkness, lightless underground, places of loss' },
       { path: 'tempest', name: 'The Storm', examples: 'At sea, inside a storm, shipwrecks' },
+      { path: 'undertow', name: 'The Deep', examples: 'Shrines of Yhal’etsu, the open sea below the last light, any wreck or shore where someone drowned' },
       { path: 'providence', name: 'Places of Suffering', examples: 'Infirmaries, refugee camps, prisons, battle’s aftermath' }
     ],
     tiers: tiers([
@@ -115,6 +116,25 @@ export const ATTUNEMENTS: Attunement[] = [
     notes: ['Choose one Immortal path you have learned; only its Sanctum counts.']
   }
 ];
+
+/** What a domain is called in each family, as it labels a domain line. */
+export const DOMAIN_LABELS: Record<string, string> = Object.fromEntries(ATTUNEMENTS.map(a => [a.family, a.domainLabel]));
+
+/** Domain riders and domain-bound techniques; the rationale is in docs/domain-riders-design.md. */
+export const DOMAIN_LINES = {
+  summary: 'About half of each path’s abilities answer its domain. The weaker ones gain a rider there, and a few of the strongest techniques work only there.',
+  kinds: [
+    { name: 'Domain rider', text: 'Works everywhere. On your domain it adds the one line printed under it.' },
+    { name: 'Domain-bound', text: 'Works only on your domain. Only a few Grandmaster or higher techniques are domain-bound, never spells or cantrips.' }
+  ],
+  rules: [
+    'Domain lines use your Attunement’s domain.',
+    'An ability gets its rider, or can be used at all if it’s domain-bound, if you’re in your domain when you use it. A passive applies while you’re there.',
+    'A rider lasts as long as the effect it came with, even if you leave the domain.',
+    'Your own abilities never turn a place into your domain. Only the place itself, or your Attunement, does.',
+    'A rider never adds a roll or anything to track, and no domain adds Legendary Resistance or changes action economy.'
+  ]
+};
 
 export const GENERAL_RULES = [
   'You hold one Attunement and one domain: a single Favored Domain, Consecrated Ground, or Sanctum, from one path you have learned.',

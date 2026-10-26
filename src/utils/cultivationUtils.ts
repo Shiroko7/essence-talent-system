@@ -351,7 +351,8 @@ export const MOVED_TALENT_IDS = [
   'water_9th_level_time_stop',
   'v2_lunar_paradox',
   'v2_pestilence_time_ravage',
-  'wood_master_heart_exchange'
+  'wood_master_heart_exchange',
+  'tempest_5th_maelstrom'
 ];
 
 export function settleRetieredTalents(

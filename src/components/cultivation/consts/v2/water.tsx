@@ -1,7 +1,7 @@
 export const waterAbilities = [
   {
     id: "water_initiate_echoes_of_the_deep",
-    name: "Echoes of the Deep",
+    name: "Tidespeech",
     description: "You can communicate with aquatic creatures or spirits of water, allowing you to understand their language and gain information about underwater locations or hidden treasures.",
     tier: "initiate",
     isActive: false,
@@ -229,6 +229,17 @@ export const waterSpells = [
     isSpell: true,
     isCantrip: false,
     author: "Evocation / Glacial Squall",
+  },
+  {
+    id: "tempest_5th_maelstrom",
+    name: "Maelstrom",
+    description: "A 30-foot-radius whirlpool of tidal water drags creatures toward its center and deals 6d6 bludgeoning damage.\n\nhttps://5e.tools/spells.html#maelstrom_xge",
+    tier: "5th",
+    isActive: false,
+    isPassive: false,
+    isSpell: true,
+    isCantrip: false,
+    author: "Evocation / Tidal Whirlpool",
   },
   {
     id: "water_3rd_level_wall_of_water",

@@ -46,6 +46,14 @@ export interface Ability {
   author?: string;
   location?: string;
   source?: string;
+  /**
+   * How the ability answers its path's domain (Favored Domain, Consecrated Ground
+   * or Sanctum). A rider works everywhere and adds `domainText` there; a
+   * domain-bound technique works only there. See docs/domain-riders-design.md.
+   */
+  domain?: 'rider' | 'bound';
+  /** The one line a rider adds on the domain. */
+  domainText?: string;
 }
 
 // Define the character state
