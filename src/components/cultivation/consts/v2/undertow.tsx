@@ -42,7 +42,7 @@ export const undertowAbilities = [
   {
     id: "undertow_initiate_grasping_tentacle",
     name: "Grasping Tentacle",
-    description: "As an action, a tentacle rises from water, ink or the ground at a point you can see within 30 feet and seizes a creature within 5 feet of it. The creature makes a Strength or Dexterity saving throw (its choice) against your essence ability save DC. On a failure, it is grappled, with an escape DC equal to your essence ability save DC. The tentacle sinks away when the grapple ends or after 1 minute, and you can have only one at a time.",
+    description: "As an action, a tentacle rises from water, ink or the ground at a point you can see within 30 feet and seizes a creature within 5 feet of it. The creature makes a Strength or Dexterity saving throw (its choice) against your essence ability save DC. On a failure, it takes 3d8 bludgeoning damage and is grappled, with an escape DC equal to your essence ability save DC. On a success, it takes half as much damage only. The tentacle sinks away when the grapple ends or after 1 minute, and you can have only one at a time.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -51,7 +51,7 @@ export const undertowAbilities = [
     author: "Yhal'etsu",
     location: "Sirius / Forbidden Sea",
     domain: "rider",
-    domainText: "It can seize two creatures within 5 feet of it, and sinks away when both grapples end.",
+    domainText: "Its damage dice are d12s.",
   },
   {
     id: "undertow_adept_ink_jet",
