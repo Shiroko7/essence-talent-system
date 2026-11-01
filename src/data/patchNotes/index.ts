@@ -1,6 +1,8 @@
 /**
  * Every patch, newest first. To add one: write its data file next to these, its
  * page in src/pages/patchNotes/, and register both here and in PATCH_PAGES.
+ * Its /patch-notes/<slug> route and link preview come from this list, so give it
+ * its own image: chat apps cache previews per URL.
  */
 
 import { PATCH as V2_0 } from './v2-0';

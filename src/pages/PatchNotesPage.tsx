@@ -11,10 +11,13 @@ const PATCH_PAGES: Record<string, React.FC> = {
   'v2-1': PatchV2_1
 };
 
-/** /patch-notes shows the latest patch; /patch-notes/<slug> shows an older one. */
+/**
+ * Every patch lives at /patch-notes/<slug>. /patch-notes and unknown slugs go to the latest,
+ * so the address people copy and share is always a versioned one with its own link preview.
+ */
 const PatchNotesPage: React.FC = () => {
   const { slug } = useParams();
-  const patch = slug ? PATCHES.find(p => p.slug === slug) : LATEST_PATCH;
+  const patch = PATCHES.find(p => p.slug === slug);
 
   useEffect(() => {
     if (!patch) return;
@@ -25,7 +28,7 @@ const PatchNotesPage: React.FC = () => {
 
   useEffect(() => { window.scrollTo(0, 0); }, [slug]);
 
-  if (!patch) return <Navigate to="/patch-notes" replace />;
+  if (!patch) return <Navigate to={`/patch-notes/${LATEST_PATCH.slug}`} replace />;
   const Page = PATCH_PAGES[patch.slug];
 
   return (
@@ -38,7 +41,7 @@ const PatchNotesPage: React.FC = () => {
               return (
                 <Link
                   key={p.slug}
-                  to={p === LATEST_PATCH ? '/patch-notes' : `/patch-notes/${p.slug}`}
+                  to={`/patch-notes/${p.slug}`}
                   aria-current={current ? 'page' : undefined}
                   className={`rounded border px-3 py-1.5 text-sm transition-colors ${current ? 'border-gold text-ivory bg-gold/10' : 'border-gold-subtle text-fog hover:text-ivory hover:border-gold/50'}`}
                 >

@@ -1,13 +1,13 @@
 import { createHash } from 'node:crypto'
-import { readFileSync, writeFileSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import { LATEST_PATCH as PATCH } from './src/data/patchNotes'
+import { LATEST_PATCH, PATCHES, type PatchMeta } from './src/data/patchNotes'
 import { RULES_PREVIEW } from './src/data/attunementRules'
 
 interface Preview {
-  /** Route, served from `${route}.html` (see public/_redirects). */
+  /** Route, served from `${route}.html` by a rule the build adds to _redirects. */
   route: string
   title: string
   tabTitle: string
@@ -16,8 +16,19 @@ interface Preview {
   type: 'article' | 'website'
 }
 
+const patchPreview = (route: string, patch: PatchMeta): Preview => ({
+  route,
+  title: patch.title,
+  tabTitle: `${patch.title} · Patch ${patch.version}`,
+  description: patch.summary,
+  image: patch.image,
+  type: 'article'
+})
+
 const PREVIEWS: Preview[] = [
-  { route: 'patch-notes', title: PATCH.title, tabTitle: `${PATCH.title} · Patch ${PATCH.version}`, description: PATCH.summary, image: PATCH.image, type: 'article' },
+  // The bare route previews the latest patch; each version keeps its own URL and preview for good.
+  patchPreview('patch-notes', LATEST_PATCH),
+  ...PATCHES.map(patch => patchPreview(`patch-notes/${patch.slug}`, patch)),
   { route: 'rules', title: RULES_PREVIEW.title, tabTitle: RULES_PREVIEW.title, description: RULES_PREVIEW.summary, image: RULES_PREVIEW.image, type: 'website' }
 ]
 
@@ -26,7 +37,7 @@ const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&q
 /**
  * Link previews (Discord, WhatsApp, Twitter...) read meta tags from the served HTML
  * and never run the app, so shareable pages get their own copy of index.html with
- * their tags. Netlify serves `${route}.html` at /route before the SPA rewrite.
+ * their tags, and a rule in _redirects serves `${route}.html` at /route.
  */
 const linkPreviews = (): Plugin => {
   let outDir = 'dist'
@@ -63,8 +74,15 @@ const linkPreviews = (): Plugin => {
         const html = index
           .replace(/<title>.*?<\/title>/, `<title>${escape(page.tabTitle)}</title>`)
           .replace(/<!-- link-preview:start -->[\s\S]*?<!-- link-preview:end -->/, tags.trimStart())
-        writeFileSync(resolve(outDir, `${page.route}.html`), html)
+        const file = resolve(outDir, `${page.route}.html`)
+        mkdirSync(dirname(file), { recursive: true })
+        writeFileSync(file, html)
       }
+
+      // Netlify uses the first rule that matches, so these go before the SPA catch-all.
+      const redirects = resolve(outDir, '_redirects')
+      const rules = PREVIEWS.map(page => `/${page.route}    /${page.route}.html   200`).join('\n')
+      writeFileSync(redirects, `${rules}\n${readFileSync(redirects, 'utf-8')}`)
     }
   }
 }
