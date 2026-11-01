@@ -13,7 +13,7 @@ export const PATCH = {
   date: '2026-10-28',
   title: 'Domain Expansion and the Undertow Path',
   summary: 'A new Divine path, Undertow, the Portfolio of Yhal’etsu. Enemy domains now clash. Ruin is rebalanced around its Consecrated Ground, abilities get tags, and every spell is rewritten from its source with 13 new ones.',
-  image: '/og/patch-notes-v2.png'
+  image: '/og/patch-notes-v2-1.png'
 };
 
 /** Ruin's changes, one line each. "On Consecrated Ground" parts are the ability's Domain Expansion. */
