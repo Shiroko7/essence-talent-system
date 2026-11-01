@@ -46,13 +46,22 @@ export interface Ability {
   author?: string;
   location?: string;
   source?: string;
+  /** What using it costs, shown as a tag. A spell's comes from its 5etools casting time. */
+  activation?: 'action' | 'bonus action' | 'reaction' | 'free' | 'attack' | 'on hit';
+  /** The technique's effect needs concentration, shown as a tag. */
+  concentration?: boolean;
+  /** The technique can be used only once per turn, shown as a tag. */
+  oncePerTurn?: boolean;
+  /** It can be performed as a ritual, shown as a tag. */
+  ritual?: boolean;
   /**
    * How the ability answers its path's domain (Favored Domain, Consecrated Ground
-   * or Sanctum). A rider works everywhere and adds `domainText` there; a
-   * domain-bound technique works only there. See docs/domain-riders-design.md.
+   * or Sanctum). A Domain Expansion works everywhere and adds `domainText` there; a
+   * restore is a nerfed technique whose `domainText` gives back its full strength there; a
+   * domain-bound technique works only there. See docs/domain-expansion-design.md.
    */
-  domain?: 'rider' | 'bound';
-  /** The one line a rider adds on the domain. */
+  domain?: 'expansion' | 'restore' | 'bound';
+  /** The one line a Domain Expansion or restore adds on the domain. */
   domainText?: string;
 }
 

@@ -14,6 +14,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can let out a powerful roar that creates a shockwave, forcing all creatures within 10 feet to make a Constitution saving throw or be pushed 10 feet away from you and become deafened for 1 minute.
@@ -67,6 +68,7 @@ isSpell: false
 isCantrip: false
 author: Lei Zhen
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You hurl a javelin of pure lightning at a target within 60 feet. Make a ranged spell attack:
@@ -85,6 +87,7 @@ isSpell: false
 isCantrip: false
 author: Nethan (Nilo's Father)
 location: Leatrux
+activation: action
 ```
 
 Choose a creature within 120 feet. The target must make a Dexterity saving throw, taking 3d8 lightning damage on a failed save, or half as much on a successful one.
@@ -105,11 +108,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Evocation / Lightning
+activation: action
 ```
 
-A 100-foot-long, 5-foot-wide stroke of lightning deals 8d6 lightning damage to all creatures in the line.
+A 100-foot line of lightning deals 8d6 lightning damage on a failed Dexterity save, or half on a success.
 
-https://5e.tools/spells.html#lightning%20bolt_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#lightning%20bolt_xphb).
 
 ---
 
@@ -124,6 +128,7 @@ isSpell: false
 isCantrip: false
 author: Lei Zhen
 location: Phudara / Isle of Whispers
+activation: on hit
 ```
 
 When you hit a creature with a melee attack, you can choose to deal an extra 2d12 lightning damage.
@@ -142,11 +147,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Evocation / Tempest
+activation: action
 ```
 
-Lightning springs from your hand to deliver a shock, dealing 1d8 lightning damage and preventing reactions.
+A melee spell attack deals 1d8 lightning damage, and the target can't make opportunity attacks until its next turn.
 
-https://5e.tools/spells.html#shocking%20grasp_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#shocking%20grasp_xphb).
 
 ## Spells
 
@@ -163,6 +169,7 @@ isSpell: false
 isCantrip: false
 author: Lei Zhen
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can harness the power of lightning to enhance your movement. Your jump distance is tripled, and your movement does not provoke opportunity attacks until the end of your turn.
@@ -197,6 +204,7 @@ isSpell: false
 isCantrip: false
 author: Nethan (Nilo's Father)
 location: Leatrux
+activation: action
 ```
 
 You conjure a crackling triangular cage of lightning in a 30-foot area centered on a point within 90 feet, lasting for 1 minute:
@@ -218,11 +226,32 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-A crackling arc links you to one target, dealing lightning damage while you sustain the connection.
+A ranged spell attack within 30 feet deals 1d12 lightning damage. While you concentrate, you can deal 1d12 more each turn as a bonus action.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#witch%20bolt_phb).
+
+---
+
+### Mordenkainen's Electric Arc
+
+```yaml
+id: v2_sky_mordenkainens_electric_arc
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Blackstaff's Book of 1000 Spells
+activation: action
+```
+
+An arc of lightning hits a creature you can see for 6d10 lightning damage on a failed Dexterity save, or half on a success. A creature in metal armor has disadvantage on the save.
+
+Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tools/spells.html#mordenkainen's%20electric%20arc_bb1000s).
 
 ---
 
@@ -236,9 +265,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-A powerful bolt leaps from one target to additional creatures within reach.
+Lightning strikes a creature within 150 feet and leaps to three more within 30 feet of it, each taking 10d8 lightning damage on a failed Dexterity save, or half on a success.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#chain%20lightning_phb).
 
@@ -255,6 +285,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 You can use a bonus action to create a soothing breeze that relaxes and calms creatures within a 30-foot radius, providing them with advantage on saving throws against being frightened or charmed. This effect lasts for 10 minutes.
@@ -274,6 +305,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can use an action to make a sudden, loud noise, creating a brief but intense thunderclap that can be heard up to 300 feet away. Creatures within 30 feet of you must make a Constitution saving throw or be stunned until the end of your next turn.
@@ -291,6 +323,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: reaction
 ```
 
 As a reaction to being targeted by an attack or harmful spell, you can summon a barrier of wind around you. You gain a +2 bonus to AC and saving throws until the start of your next turn. Additionally, attacks against you have disadvantage.
@@ -308,6 +341,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can use your action to send a message carried by the wind to any creature within 1 mile of you. The message is heard as a whisper by the intended recipient. This ability allows for secret communications or covert information exchange.
@@ -341,11 +375,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Transmutation / Wind
+activation: action
 ```
 
-Seize air to push creatures 5 feet away or blow objects violently.
+You push a Medium or smaller creature 5 feet on a failed Strength save, push a small object 10 feet, or make a harmless gust within 30 feet.
 
-https://5e.tools/spells.html#gust_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#gust_xge).
 
 ## Spells
 
@@ -361,11 +396,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Transmutation
+activation: action
+concentration: true
 ```
 
-Take command of the wind in a 100-foot cube: gusts, downdrafts, or updrafts that redirect missiles and topple fliers.
+You command the air in a 100-foot cube within 300 feet for up to 1 hour: gusts, a downdraft or an updraft.
 
-https://5e.tools/spells.html#control%20winds_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#control%20winds_xge).
 
 ---
 
@@ -378,9 +415,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: reaction
 ```
 
-https://5e.tools/spells.html#feather%20fall_xphb
+As a reaction, up to five falling creatures within 60 feet descend slowly and take no falling damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#feather%20fall_xphb).
 
 ---
 
@@ -393,9 +433,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#fly_xphb
+A willing creature you touch gains a 60-foot fly speed and can hover for up to 10 minutes.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#fly_xphb).
 
 ---
 
@@ -408,9 +452,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#wind%20wall_xphb
+A wall of wind up to 50 feet long rises within 120 feet. It deals 4d8 bludgeoning damage on a failed Strength save and blocks arrows, gas and small flyers.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#wind%20wall_xphb).
 
 ---
 
@@ -425,7 +473,9 @@ isSpell: true
 isCantrip: false
 ```
 
-https://5e.tools/spells.html#wind%20walk_xphb
+You and up to ten willing creatures within 30 feet become clouds with a 300-foot fly speed for 8 hours.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#wind%20walk_xphb).
 
 ---
 
@@ -439,9 +489,10 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: D&D 5e (PHB)
+activation: action
 ```
 
-You whisper a short message that travels to a creature at a distance.
+You whisper a message to a creature within 120 feet, and only it hears you and can whisper back.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#message_phb).
 
@@ -457,9 +508,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-A sudden resonant burst damages creatures and objects in an area.
+A painful ringing erupts in a 10-foot-radius sphere within 60 feet for 3d8 thunder damage on a failed Constitution save, or half on a success.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shatter_phb).
 
@@ -475,11 +527,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric / Evocation
+activation: action
 ```
 
-Create a burst of thunderous sound heard up to 100 feet away, dealing 1d6 thunder damage to all adjacent creatures.
+Each creature within 5 feet of you takes 1d6 thunder damage on a failed Constitution save.
 
-https://5e.tools/spells.html#thunderclap_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#thunderclap_xphb).
 
 ---
 
@@ -493,11 +546,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Tempest Domain) / Evocation
+activation: action
 ```
 
-A wave of thunderous force deals 2d8 thunder damage and pushes creatures 10 feet away.
+A 15-foot cube of thunder deals 2d8 thunder damage and pushes creatures 10 feet on a failed Constitution save, or half damage on a success.
 
-https://5e.tools/spells.html#thunderwave_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#thunderwave_xphb).
 
 ---
 
@@ -532,6 +586,8 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: free
+oncePerTurn: true
 ```
 
 You can double your movement speed for a number of rounds equal to your proficiency bonus.
@@ -549,6 +605,7 @@ isSpell: false
 isCantrip: false
 author: Wang Tianbao (Shadow Sect)
 location: Sirius
+activation: reaction
 ```
 
 As a reaction, you dissolve into wind until the start of your next turn, passing through solid objects, becoming immune to nonmagical slashing, piercing, and bludgeoning damage and resistant to magical slashing, piercing, and bludgeoning damage.
@@ -569,9 +626,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: bonus action
 ```
 
-A touched creature can jump up to 30 feet by spending 10 feet of movement.
+A willing creature you touch can jump up to 30 feet once per turn by spending 10 feet of movement, for 1 minute.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#jump_xphb).
 
@@ -581,15 +639,17 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#j
 
 ```yaml
 id: wind_1st_level_warding_wind
-tier: 1st
+tier: 2nd
 isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-A 10-foot wall of strong wind surrounds you, deafening, snuffing small flames, and giving ranged attacks disadvantage.
+A 10-foot wind around you deafens, blows out flames, hedges out gas, and imposes disadvantage on ranged attacks through it for up to 10 minutes.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#warding%20wind_xge).
 
@@ -605,9 +665,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (AAG)
+activation: action
 ```
 
-A globe of fresh air surrounds a creature's head so it can breathe underwater or in a vacuum.
+A globe of fresh air surrounds a willing creature's head within 60 feet for 24 hours, so it can't suffocate.
 
 Source reference: [D&D 5e (AAG) on 5e.tools](https://5e.tools/spells.html#air%20bubble_aag).
 
@@ -623,9 +684,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-A small whirlwind batters and pushes nearby creatures; you can move it and let it pick up debris to obscure the area.
+A dust devil within 60 feet deals 1d8 bludgeoning damage and pushes nearby creatures 10 feet on a failed Strength save. You can move it each turn.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#dust%20devil_xge).
 
@@ -641,9 +704,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A 60-foot line of strong wind pushes creatures back, halves movement toward you, and disperses gas.
+A 60-foot line of wind pushes creatures 15 feet on a failed Strength save, and costs extra movement to walk into, for up to 1 minute.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#gust%20of%20wind_xphb).
 
@@ -659,9 +724,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: bonus action
 ```
 
-Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space you can see.
+You teleport up to 30 feet to a space you can see.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#misty%20step_xphb).
 
@@ -677,9 +743,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Heroes of Faerûn)
+activation: action
+concentration: true
 ```
 
-A 10-foot aura of thunder deals 3d6 thunder damage and deafens creatures that enter it or end their turn there.
+A 10-foot aura of thunder deals 3d6 thunder damage and deafens creatures that enter it or end their turn there on a failed Constitution save, or half on a success.
 
 Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#cacophonic%20shield_frhof).
 
@@ -689,15 +757,17 @@ Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spel
 
 ```yaml
 id: wind_3rd_level_freedom_of_the_winds
-tier: 3rd
+tier: 5th
 isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
 author: Tal'Dorei Campaign Setting Reborn
+activation: action
+concentration: true
 ```
 
-Wind lifts you to a 60-foot flying speed, helps you slip grapples and restraints, and lets you teleport away from attacks.
+You gain a 60-foot fly speed and can teleport 60 feet as a reaction when you're targeted, for up to 10 minutes.
 
 Source reference: [Tal'Dorei Campaign Setting Reborn on 5e.tools](https://5e.tools/spells.html#freedom%20of%20the%20winds_taldoreicampaignsettingreborn).
 
@@ -713,9 +783,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A willing creature becomes a slow-flying misty cloud that can slip through small openings and resists damage.
+A willing creature you touch becomes a slow-flying cloud for up to 1 hour. It can slip through small gaps and resists nonmagical damage.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#gaseous%20form_xphb).
 
@@ -731,9 +803,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: action
+concentration: true
 ```
 
-Up to six creatures or objects rise 20 feet and hang suspended, able to move only by pushing off surfaces.
+Up to six creatures or objects within 60 feet, each up to 500 pounds, rise 20 feet and hang there. Unwilling ones make a Constitution save.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#mass%20levitate_obojimatallgrass).
 
@@ -749,9 +823,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-Wind whirls around you: ranged attacks against you have disadvantage, you fly at 60 feet, and you can hurl cubes of wind.
+For up to 10 minutes you fly at 60 feet, ranged attacks against you have disadvantage, and you can hurl a 15-foot cube of wind for 2d10 bludgeoning damage.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#investiture%20of%20wind_xge).
 
@@ -767,9 +843,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: action
+concentration: true
 ```
 
-A 30-foot aura of alacrity gives you and your allies advantage on Dexterity saves and lets them take no damage on a successful save.
+You and allies in a 30-foot aura have advantage on Dexterity saves and take no damage on a success, half on a failure.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#aura%20of%20evasion_au).
 
@@ -785,9 +863,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: bonus action
+concentration: true
 ```
 
-A 10-foot ring of crackling electricity moves with you, shocking creatures it touches with lightning and thunder damage.
+A 10-foot ring of electricity around you deals 3d6 lightning and 3d6 thunder damage and deafens creatures on a failed Constitution save, or half on a success.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#lightning%20ring_au).
 
@@ -803,9 +883,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Fragments of the Forbidden Tome
+activation: action
 ```
 
-A primordial bolt of lightning strikes a foe for massive lightning and thunder damage, then chains through up to nine more creatures.
+A primordial bolt hits a creature within 1,000 feet for 30d12 lightning and 10d12 thunder damage on a failed Dexterity save, then chains to up to nine more. It ignores resistance.
 
 Source reference: [Fragments of the Forbidden Tome on 5e.tools](https://5e.tools/spells.html#heavenstorm_fftforbiddentome).
 
@@ -821,9 +902,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: The Elements and Beyond
+activation: action
+concentration: true
 ```
 
-A hurricane-force wind follows you in a 200-foot cube, grounding fliers, deflecting ranged attacks, and pushing everything away from you.
+A hurricane wind fills a 200-foot cube around you and follows you. It makes ranged attacks through it miss and pushes creatures in the direction you chose.
 
 Source reference: [The Elements and Beyond on 5e.tools](https://5e.tools/spells.html#wind%20wake_teb).
 
@@ -839,9 +922,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: The Harbinger
+activation: action
+concentration: true
 ```
 
-A hurricane lifts you into its flying eye, pulling nearby creatures up into the storm and hurling them away.
+A hurricane lifts you and pulls creatures within 40 feet into it on a failed Dexterity save, dealing 10d6 bludgeoning damage and restraining them.
 
 Source reference: [The Harbinger on 5e.tools](https://5e.tools/spells.html#hurricane_theharbinger).
 
@@ -857,9 +942,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Heliana's Guide to Monster Hunting
+activation: action
+concentration: true
 ```
 
-A reshapeable storm of lightning and magnetic winds shocks creatures inside and knocks them prone, dragging hardest at those wearing iron.
+A storm of up to ten 10-foot cubes within 150 feet deals lightning damage to creatures inside. You can move one cube each turn.
 
 Source reference: [Heliana's Guide to Monster Hunting on 5e.tools](https://5e.tools/spells.html#arcanomagnetic%20storm_helianasguidetomonsterhunting).
 
@@ -875,8 +962,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Deep Magic
+activation: action
+concentration: true
 ```
 
-A breach to the planes of chaos unleashes a windstorm that deafens, blinds with debris, and hurls creatures in random directions.
+A chaotic windstorm of twelve 10-foot cubes within 150 feet deafens creatures inside and batters them with damage.
 
 Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#roaring%20winds%20of%20limbo_kpdm).
+
+

@@ -14,6 +14,7 @@ isSpell: false
 isCantrip: false
 author: Lesbian Dragons
 location: Leatrux
+activation: action
 ```
 
 As an action, you fire a beam of toxic moonlight at a creature within 60 feet. Make a ranged spell attack:
@@ -35,6 +36,7 @@ isSpell: false
 isCantrip: false
 author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
+activation: reaction
 ```
 
 As a reaction when you or creatures within 30 feet are subjected to a Dexterity saving throw against an ability that deals damage, you summon a protective wave of water guided by lunar force. All affected creatures reduce the damage taken by 2d8 + your spellcasting modifier. The water then dissipates harmlessly.
@@ -52,6 +54,7 @@ isSpell: false
 isCantrip: false
 author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
+activation: action
 ```
 
 As an action, you target one creature within 120 feet. A pillar of concentrated moonlight descends, requiring a Dexterity saving throw against your essence ability save DC:
@@ -74,6 +77,7 @@ isSpell: false
 isCantrip: false
 author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
+activation: action
 ```
 
 As an action, you target a point within 150 feet. A cylinder of swirling, moonlight-infused winds erupts in a 30-foot radius and 60-foot height for 1 minute.
@@ -102,6 +106,7 @@ isSpell: false
 isCantrip: false
 author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
+activation: bonus action
 ```
 
 As a bonus action, launch up to three crescent-shaped energy blades that travel up to 150 feet. The sabers curve around cover, ignoring half and three-quarters cover.
@@ -126,11 +131,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Twilight Domain) / Druid
+activation: action
+concentration: true
 ```
 
-Each object in a 20-foot cube is outlined in blue, green, or violet lunar light. Creatures fail a Dexterity save or are illuminated, granting advantage on attack rolls against them.
+Creatures in a 20-foot cube within 60 feet that fail a Dexterity save glow for up to 1 minute. Attacks against them have advantage and they can't be invisible.
 
-https://5e.tools/spells.html#faerie%20fire_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#faerie%20fire_xphb).
 
 ---
 
@@ -144,11 +151,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Twilight Domain) / Paladin (Ancients)
+activation: action
+concentration: true
 ```
 
-A silvery beam of pale light shines down in a 5-foot-radius cylinder. A creature entering the area or starting its turn there must make a Constitution saving throw or take 2d10 radiant damage.
+A 5-foot-radius beam of moonlight within 120 feet deals 2d10 radiant damage on a failed Constitution save, or half on a success. You can move it each turn.
 
-https://5e.tools/spells.html#moonbeam_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#moonbeam_xphb).
 
 ---
 
@@ -162,11 +171,31 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Twilight Domain) / Divination
+activation: action
 ```
 
-For the duration, you see invisible creatures and objects as if they were visible, and can perceive into the Ethereal Plane.
+For 1 hour you see invisible creatures and objects, and into the Ethereal Plane.
 
-https://5e.tools/spells.html#see%20invisibility_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#see%20invisibility_xphb).
+
+---
+
+### Clairvoyance
+
+```yaml
+id: v2_lunar_clairvoyance
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (PHB)
+concentration: true
+```
+
+An invisible sensor appears at a place within 1 mile that you know or can see, and you see or hear through it for up to 10 minutes.
+
+Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#clairvoyance_phb).
 
 ---
 
@@ -180,9 +209,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Alustriel / Selûne
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#alustriel's%20mooncloak_frhof
+Moonlight fills a 20-foot emanation for up to 1 minute. You and allies there have cover and resistance to cold, lightning and radiant damage.
+
+Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#alustriel's%20mooncloak_frhof).
 
 ---
 
@@ -196,11 +229,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Divination
+activation: action
 ```
 
-You give a willing creature the ability to see things as they actually are out to 120 feet: see in darkness, notice secret doors, see invisible creatures, and see into the Ethereal Plane.
+A willing creature you touch has truesight out to 120 feet for 1 hour.
 
-https://5e.tools/spells.html#true%20seeing_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#true%20seeing_xphb).
 
 ---
 
@@ -214,9 +248,11 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-You create up to four small lights that hover, move, and change position at your direction.
+You create up to four hovering lights within 120 feet and move them each turn.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#dancing%20lights_phb).
 
@@ -234,9 +270,9 @@ isCantrip: false
 author: Cleric / Divination
 ```
 
-You bestow supreme celestial foresight. The target cannot be surprised and has advantage on attack rolls, ability checks, and saving throws for 8 hours.
+For 8 hours a willing creature you touch has advantage on D20 Tests, and attacks against it have disadvantage.
 
-https://5e.tools/spells.html#foresight_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#foresight_xphb).
 
 ---
 
@@ -250,11 +286,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Divination
+activation: action
+ritual: true
 ```
 
-Your magic puts you in direct contact with Selûne or her celestial servants. You ask a single question concerning a specific goal or event within 7 days, receiving a truthful cryptic reply.
+You ask a god one question about an event within the next 7 days and receive a truthful, possibly cryptic answer.
 
-https://5e.tools/spells.html#divination_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#divination_xphb).
 
 ---
 
@@ -270,9 +308,9 @@ isCantrip: false
 author: Cleric (Twilight Domain) / Illusion
 ```
 
-This spell shapes a creature's dreams through the silver veil of Selûne, acting as a celestial messenger across any distance or plane.
+You enter a creature's dreams to speak with it, or to give it a nightmare that deals 3d6 psychic damage and denies it rest.
 
-https://5e.tools/spells.html#dream_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#dream_xphb).
 
 ---
 
@@ -286,9 +324,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-Seven motes of starlight orbit you and can be hurled as radiant projectiles.
+Seven motes of light orbit you for 1 hour. As a bonus action you hurl one as a ranged spell attack within 120 feet for 4d12 radiant damage.
 
 Source reference: [D&D 5e XGE on 5e.tools](https://5e.tools/spells.html#crown%20of%20stars_xge).
 
@@ -303,9 +342,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24
+You gain 2d10 temporary hit points. A creature that hits you in melee takes force damage equal to the temporary hit points lost.
+
+Source reference: [Grim Hollow: Player's Guide (2024) on 5e.tools](https://5e.tools/spells.html#arcane%20aegis_grimhollowpg24).
 
 ---
 
@@ -337,6 +379,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can summon a gentle, magical rain that grants clarity and insight to those who stand in it. Allies within a 20-foot radius can ask one question about their future or destiny, and you provide a vague but helpful answer based on your understanding of the world.
@@ -357,9 +400,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-You sense the direction to a familiar creature, or the nearest of a kind, within 1,000 feet.
+For up to 1 hour you sense the direction of a creature you know within 1,000 feet.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#locate%20creature_xphb).
 
@@ -375,9 +420,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: reaction
 ```
 
-A shimmering reflection redirects a spell targeting you onto another creature you can see.
+When you're targeted by a spell, you redirect it to another creature within 60 feet. A spell of 6th level or higher needs a spellcasting check.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#magic%20mirror_grimhollowpg24).
 
@@ -393,9 +439,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-Eight rays of multicolored light flash in a cone, each color bringing a different devastating effect.
+Eight colored rays fill a 60-foot cone. Each creature that fails a Dexterity save takes 12d6 damage of a random type or suffers a random effect.
 
 Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prismatic%20spray_phb).
 
@@ -411,9 +458,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-A wall or sphere of seven shimmering layers of light, each harming or hindering creatures that pass.
+An opaque wall or sphere of seven colored layers rises within 60 feet. Each layer deals damage or a condition to creatures that pass through it.
 
 Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prismatic%20wall_phb).
 
@@ -431,7 +479,7 @@ isCantrip: false
 author: D&D 5e (TCE)
 ```
 
-You and up to eight willing creatures dream of another world and, when the vision ends, physically travel there.
+You and up to eight willing creatures fall asleep and wake on another world of the Material Plane after 6 hours.
 
 Source reference: [D&D 5e (TCE) on 5e.tools](https://5e.tools/spells.html#dream%20of%20the%20blue%20veil_tce).
 
@@ -447,9 +495,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: reaction
 ```
 
-A sixth sense guides you: turn a failed d20 test into a 20, or turn an attack roll against you into a 1.
+As a reaction, you turn your failed D20 Test into a 20, or an attack roll against you into a 1.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#moment%20of%20prescience_au).
 
@@ -465,9 +514,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Northlands Worldbook
+activation: action
+concentration: true
 ```
 
-You twist the threads of fate: once per turn, add or subtract 1d12 from a d20 roll made by a creature you can see.
+For up to 1 minute, once per turn you add or subtract 1d12 from a d20 roll made by a creature you can see.
 
 Source reference: [Kobold Press Northlands Worldbook on 5e.tools](https://5e.tools/spells.html#wyrd%20sight_northlandsworldbook).
+
 

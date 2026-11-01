@@ -100,7 +100,7 @@ export const ATTUNEMENTS: Attunement[] = [
     name: 'Dao Attunement',
     family: 'human',
     domainLabel: 'Sanctum',
-    summary: 'A place you have made your own through cultivation, where your Dao Heart settles: your furnace, your training hall, your well. It can be moved or rebuilt, but it takes time to become yours. At Grandmaster it follows you everywhere.',
+    summary: 'A place you have made your own through cultivation, where your Dao Heart settles: your furnace, your training hall, your well. It can be moved or rebuilt, but it takes time to become yours. At Grandmaster you can enter it anywhere for an hour a day.',
     domains: [
       { path: 'alchemy', name: 'At the Furnace', examples: 'Within 30 feet of your alchemy furnace or workshop' },
       { path: 'heart', name: 'The Training Hall', examples: 'A sect training hall or dueling ground where you train, or any ground where you face a worthy opponent' },
@@ -110,7 +110,7 @@ export const ATTUNEMENTS: Attunement[] = [
       ['Essence Restoration', 'Finish a short rest in your Sanctum to regain all expended Immortal Essence.'],
       ['Tempered Body', 'In your Sanctum, when you roll initiative, gain temporary hit points equal to 10 + your level.'],
       ['Natal Treasure', 'One extra attunement slot for a single item you refine into your natal treasure over a long rest in your Sanctum. It stays bound to you until you choose another.'],
-      ['Dao Domain', 'Your Dao Heart belongs to you alone. From now on, you are always in your Sanctum, wherever you go.'],
+      ['Dao Domain', 'Once per day, as an action or when you roll initiative, you enter your Sanctum for 1 hour, wherever you are. For that hour it never collapses in a clash, even if your side loses, but it still joins clashes and can make other domains collapse.'],
       ['Transcendence', 'You are no longer mortal, and no longer written into fate. Your creature type becomes Immortal, and effects that only work on specific creature types don’t affect you. A creature that targets you with divination, prophecy, or a curse takes 10d10 force damage, or half as much on a successful Constitution saving throw against your essence ability save DC.']
     ]),
     notes: ['Choose one Immortal path you have learned; only its Sanctum counts.']
@@ -120,24 +120,87 @@ export const ATTUNEMENTS: Attunement[] = [
 /** What a domain is called in each family, as it labels a domain line. */
 export const DOMAIN_LABELS: Record<string, string> = Object.fromEntries(ATTUNEMENTS.map(a => [a.family, a.domainLabel]));
 
-/** Domain riders and domain-bound techniques; the rationale is in docs/domain-riders-design.md. */
-export const DOMAIN_LINES = {
-  summary: 'About half of each path’s abilities answer its domain. The weaker ones gain a rider there, and a few of the strongest techniques work only there.',
-  kinds: [
-    { name: 'Domain rider', text: 'Works everywhere. On your domain it adds the one line printed under it.' },
-    { name: 'Domain-bound', text: 'Works only on your domain. Only a few Grandmaster or higher techniques are domain-bound, never spells or cantrips.' }
-  ],
-  rules: [
-    'Domain lines use your Attunement’s domain.',
-    'An ability gets its rider, or can be used at all if it’s domain-bound, if you’re in your domain when you use it. A passive applies while you’re there.',
-    'A rider lasts as long as the effect it came with, even if you leave the domain.',
-    'Your own abilities never turn a place into your domain. Only the place itself, or your Attunement, does.',
-    'A rider never adds a roll or anything to track, and no domain adds Legendary Resistance or changes action economy.'
-  ]
-};
-
 export const GENERAL_RULES = [
   'You hold one Attunement and one domain: a single Favored Domain, Consecrated Ground, or Sanctum, from one path you have learned.',
   'You gain the Attunement’s benefit for each tier you reach.',
   'The DM decides whether you are in your domain.'
 ];
+
+/** Domain clashes: what happens when enemy domains meet. Player-facing; the odds stay off the page. */
+export const DOMAIN_CLASH = {
+  /** Domain rolls by level (creatures use their CR): a normal clash, and one where your path overcomes theirs. */
+  levels: [13, 14, 15, 16, 17, 18, 19, 20].map(level => {
+    const bonus = level > 13 ? `+${level - 13}` : '';
+    return { level, clash: `${level < 17 ? '2d6' : '2d10'}${bonus}`, overcome: `${level < 17 ? '2d8' : '2d12'}${bonus}` };
+  }),
+  steps: [
+    'Enemy domains clash at initiative, or at the start of the round after a new domain goes up.',
+    'Every domain that’s up joins the clash on its side. Allied domains never clash with each other, so each side can bring any number of domains.',
+    'One side holds the field and every other side challenges. The holder is the side whose domain the ground itself already is; otherwise the side with the higher level or CR; otherwise the side with the higher initiative.',
+    'Every domain on every side makes its domain roll. Each side keeps only its highest roll.',
+    'The highest roll wins, and the holders win ties. Every domain on every other side collapses. With more than two sides, all of them roll at once.'
+  ],
+  sovereign: 'Some Great Grandmasters hold their domain so firmly that it can’t be challenged while they have more than half their hit points.',
+  /** Matchups with no roll: they never reach the dice. */
+  coexist: 'Stays out of the clash and stays up. Applies when your domain coexists with every enemy domain.',
+  opposite: 'Both domains collapse before the roll.'
+};
+
+/** Path pairs that coexist (either way round), with the reason. Immortal paths coexist with nothing. */
+export const COEXIST: [string, string, string][] = [
+  ['sky', 'fire', 'Wind fans the flame.'], ['tempest', 'water', 'Umberlee’s storms ride the open sea.'],
+  ['lunar', 'love', 'Selûne’s moonlight and Sune’s beauty: lovers meet under the moon.'], ['love', 'providence', 'Bonds give the will to endure.'],
+  ['ruin', 'shadow', 'Murder done in the dark.'], ['ruin', 'pestilence', 'Blade and plague serve the same end.'],
+  ['tempest', 'undertow', 'Umberlee sinks the ships; the deep keeps them.'], ['shadow', 'undertow', 'The deep is as lightless as Shar’s dark.'],
+  ['water', 'undertow', 'The deep is still the sea.'], ['pestilence', 'shadow', 'Talona is Shar’s ally: plague spreads in the dark.'],
+  ['lunar', 'sky', 'The moon rides the open sky.'], ['earth', 'shadow', 'Shar keeps her caverns in the stone.']
+];
+
+/**
+ * The first path overcomes the second, with the reason. Immortal paths are overcome by nothing and
+ * overcome only Divine paths.
+ */
+export const OVERCOMES: [string, string, string][] = [
+  ['wood', 'earth', 'Roots split stone.'], ['earth', 'water', 'Banks contain the river.'], ['water', 'fire', 'The tide drowns the flame.'],
+  ['fire', 'metal', 'The forge melts the blade.'], ['metal', 'wood', 'The axe fells the tree.'],
+  ['fire', 'wood', 'Fire burns Wood.'], ['earth', 'fire', 'Ash smothers the flame.'], ['metal', 'earth', 'The mine hollows the mountain.'],
+  ['water', 'metal', 'Water rusts Metal.'], ['wood', 'water', 'Roots drink the spring dry.'],
+  ['fire', 'shadow', 'Firelight drives back the dark.'], ['sky', 'pestilence', 'The clean wind scatters the miasma.'],
+  ['lunar', 'water', 'The tides answer to Selûne.'], ['lunar', 'tempest', 'Selûne’s light guides ships home through Umberlee’s storms.'],
+  ['shadow', 'love', 'Shar is the mistress of loss: forgetting hollows out every bond.'],
+  ['love', 'wood', 'Beasts of the wild answer to kinship, as in Animal Friendship and Dominate Beast.'],
+  ['pestilence', 'wood', 'Talona’s blight withers the green.'], ['pestilence', 'water', 'Poisoned wells.'], ['pestilence', 'love', 'Talona’s rot spoils Sune’s beauty.'],
+  ['tempest', 'fire', 'Umberlee’s rain drowns the fire.'], ['tempest', 'sky', 'The storm front swallows the local winds.'],
+  ['providence', 'ruin', 'Ilmater endures every torment Loviatar devises.'],
+  ['alchemy', 'pestilence', 'Every poison has its antidote.'],
+  ['heart', 'ruin', 'A tempered body shrugs off pain; a steady Dao Heart sees through deceit.'],
+  ['mysteries', 'lunar', 'Fishing the Moon from the Well: the reflection takes the moon itself.'],
+  ['mysteries', 'shadow', 'Space folds around any hiding place.'],
+  ['undertow', 'lunar', 'Moonlight never reaches below the last light.'], ['undertow', 'fire', 'Nothing burns in the deep.'],
+  ['undertow', 'metal', 'The pressure of the deep crushes iron.'], ['earth', 'undertow', 'Stone doesn’t drown.'],
+  ['lunar', 'ruin', 'Selûne’s light exposes Mask’s thieves.']
+];
+
+/** Opposite paths (either way round), with the reason. */
+export const OPPOSITES: [string, string, string][] = [
+  ['sky', 'earth', 'Heaven and earth.'], ['lunar', 'shadow', 'Selûne and Shar, moonlight and the dark.'],
+  ['love', 'ruin', 'Sune’s devotion against murder and betrayal.'], ['pestilence', 'providence', 'Talona’s plague against Ilmater’s healing.'],
+  ['sky', 'undertow', 'Heaven and the abyss.']
+];
+
+export type Matchup = 'coexist' | 'overcome' | 'overcome-by' | 'opposite' | 'clash';
+
+/** How path a's domain meets path b's, and why. */
+export const matchup = (a: string, b: string): { kind: Matchup; why: string } => {
+  if (a === b) return { kind: 'coexist', why: 'The same path.' };
+  const either = (list: [string, string, string][]) => list.find(([x, y]) => (x === a && y === b) || (x === b && y === a));
+  const coexist = either(COEXIST);
+  if (coexist) return { kind: 'coexist', why: coexist[2] };
+  const opposite = either(OPPOSITES);
+  if (opposite) return { kind: 'opposite', why: opposite[2] };
+  const over = OVERCOMES.find(([x, y]) => x === a && y === b);
+  if (over) return { kind: 'overcome', why: over[2] };
+  const under = OVERCOMES.find(([x, y]) => x === b && y === a);
+  if (under) return { kind: 'overcome-by', why: under[2] };
+  return { kind: 'clash', why: 'They clash evenly.' };
+};

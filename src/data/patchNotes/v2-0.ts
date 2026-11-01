@@ -29,6 +29,7 @@ export interface Rebalance {
 }
 
 export const PATCH = {
+  slug: 'v2-0',
   version: 'V2.0',
   name: 'Cultivation Paths',
   date: '2026-09-26',

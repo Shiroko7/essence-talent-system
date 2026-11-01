@@ -57,13 +57,26 @@ Spells restored from the V1 essences keep their V1 IDs so V1 characters carry th
 
 Run `bun run generate:cultivation` to validate and regenerate the catalog. `bun run build` runs the complete project generation and production build.
 
-## Domain lines
+## Tags
 
-About half of each path's abilities answer its domain (Favored Domain, Consecrated Ground, or Sanctum). Two optional fields in an entry's YAML block mark them:
+Optional YAML fields show as tags beside an ability's kind:
 
 ```yaml
-domain: rider          # or: bound
+activation: action     # bonus action, reaction; techniques also: free, attack, on hit
+concentration: true
+ritual: true
+oncePerTurn: true      # techniques only, never on a reaction
+```
+
+A spell's tags and summary come from its 5etools entry, linked in its `Source reference` line. The generator rejects spell-style stat blocks (Casting Time, Range, Components…) in a technique's text.
+
+## Domain lines
+
+At least 40% of each path's techniques below Grandmaster answer its domain (Favored Domain, Consecrated Ground, or Sanctum). Two optional fields in an entry's YAML block mark them:
+
+```yaml
+domain: expansion      # or: restore, bound
 domainText: Its damage dice are d10s.
 ```
 
-A **rider** works everywhere and adds its `domainText` line on the domain; the app prints it under the ability with the family's domain label. A **bound** technique works only on the domain. The generator rejects a rider without text, text without a kind, and anything domain-bound that is a spell, a cantrip, or below Grandmaster. Undertow is the first path with domain lines; the design and its modifier catalogue are in [`docs/domain-riders-design.md`](../../docs/domain-riders-design.md). Essence left is still stored per path, and each family pool shows the sum, so older saves need no conversion.
+A **Domain Expansion** works everywhere and adds its `domainText` line on the domain; a **restore** is a nerfed technique whose `domainText` gives back its full strength there; the app prints it under the ability with the family's domain label. A **bound** technique works only on the domain. Spells and cantrips never get a domain line. The generator rejects a domain line on a spell or cantrip, a Domain Expansion or restore without text, text without a kind, and anything domain-bound below Grandmaster. Undertow is the first path with domain lines; the design and its modifier catalogue are in [`docs/domain-expansion-design.md`](../../docs/domain-expansion-design.md). Essence left is still stored per path, and each family pool shows the sum, so older saves need no conversion.

@@ -31,6 +31,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can turn your body into ice for 1 minute. You gain resistance to cold and fire damage and your movement speed is reduced by 10 feet.
@@ -48,6 +49,7 @@ isSpell: false
 isCantrip: false
 author: Selûne
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you summon a Water Clone in an unoccupied space you can see within 30 feet. The clone lasts for 1 minute or until destroyed. The clone is linked to your senses, allowing you to cast spells through it as if you were in its space.
@@ -77,6 +79,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 As an action, you create a 20-foot radius of gentle rain centered on you that lasts for a number of rounds equal to your maximum Water essences. At the start of each of their turns while in the rain, they regain 1 hit point.
@@ -116,6 +119,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can summon a powerful wave of water that heals and revitalizes. As an action, you create a wave that washes over allies in a 30-foot radius, restoring hit points equal to 3d8 + your spellcasting ability modifier.
@@ -133,6 +137,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: reaction
 ```
 
 As a reaction, you can spend one spell slot and encase yourself in a barrier of ice, granting you temporary hit points equal to ten times the spell level used plus your spell casting modifier. This lasts for 1 hour.
@@ -150,6 +155,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can teleport up to 60 feet to a space you can see within a body of water or mist. You must be in contact with the water or mist to use this ability.
@@ -184,9 +190,10 @@ isSpell: false
 isCantrip: false
 author: Selûne
 location: Phudara / Isle of Whispers
+activation: reaction
 ```
 
-As a reaction, you can spend 2 Essence to cause one of your Water Clones to detonate in a 10-foot radius burst of frigid water. Each creature in range must make a Dexterity saving throw, taking cold damage equal to half the clone's maximum hit points on a failed save, or half as much on a successful one.
+As a reaction, you can cause one of your Water Clones to detonate in a 10-foot radius burst of frigid water. Each creature in range must make a Dexterity saving throw, taking cold damage equal to half the clone's maximum hit points on a failed save, or half as much on a successful one.
 
 In addition, you can now summon up to two Water Clones simultaneously. When they attack together, their attack damage increases by one damage die.
 
@@ -205,6 +212,7 @@ isSpell: false
 isCantrip: false
 author: Kwon Jae-Hwan
 location: Sirius
+activation: action
 ```
 
 As an action, you radiate a massive, pressurized sphere of dampening aqueous vapor extending from you in a 120-foot radius for 1 minute.
@@ -246,9 +254,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: action
 ```
 
-https://5e.tools/spells.html#frostbite_xge
+A creature within 60 feet takes 1d6 cold damage on a failed Constitution save and has disadvantage on its next weapon attack.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#frostbite_xge).
 
 ---
 
@@ -261,9 +272,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: action
 ```
 
-https://5e.tools/spells.html#ray%20of%20frost_xphb
+A ranged spell attack within 60 feet deals 1d8 cold damage and reduces the target's speed by 10 feet until your next turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#ray%20of%20frost_xphb).
 
 ---
 
@@ -276,9 +290,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: action
 ```
 
-https://5e.tools/spells.html#shape%20water_xge
+You move, shape, color or freeze water in a 5-foot cube within 30 feet.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#shape%20water_xge).
 
 ## Spells
 
@@ -293,9 +310,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#create%20or%20destroy%20water_xphb
+You create up to 10 gallons of water or rain in a 30-foot cube within 30 feet, or destroy as much water or fog.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#create%20or%20destroy%20water_xphb).
 
 ---
 
@@ -308,9 +328,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#rime's%20binding%20ice_ftd
+A 30-foot cone of cold deals 3d8 cold damage and freezes creatures in place (speed 0) on a failed Constitution save, or half damage on a success.
+
+Source reference: [D&D 5e (FTD) on 5e.tools](https://5e.tools/spells.html#rime's%20binding%20ice_ftd).
 
 ---
 
@@ -323,9 +346,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+ritual: true
 ```
 
-https://5e.tools/spells.html#water%20walk_xphb
+Up to ten willing creatures within 30 feet can walk on water, mud, snow and lava as if it were solid ground for 1 hour.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#water%20walk_xphb).
 
 ---
 
@@ -338,9 +365,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#control%20water_xphb
+You control water in a cube up to 100 feet on a side within 300 feet for up to 10 minutes: flood, part, redirect or whirlpool.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#control%20water_xphb).
 
 ---
 
@@ -354,11 +385,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Evocation / Glacial Squall
+activation: action
 ```
 
-A 60-foot cone of subzero sea squall blasts creatures for 8d8 cold damage, freezing corpses into statues.
+A 60-foot cone of cold deals 8d8 cold damage on a failed Constitution save, or half on a success. A creature it kills becomes a frozen statue.
 
-https://5e.tools/spells.html#cone%20of%20cold_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#cone%20of%20cold_xphb).
 
 ---
 
@@ -371,9 +403,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#wall%20of%20water_xge
+A wall of water up to 30 feet long within 60 feet blocks fire, hinders ranged attacks and is difficult terrain to cross.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#wall%20of%20water_xge).
 
 ---
 
@@ -386,9 +422,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+ritual: true
 ```
 
-https://5e.tools/spells.html#water%20breathing_xphb
+Up to ten willing creatures within 30 feet can breathe underwater for 24 hours.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#water%20breathing_xphb).
 
 ---
 
@@ -401,9 +441,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#conjure%20ocean_obojimatallgrass
+A 20-foot cube of deep-ocean water appears within 60 feet and holds its shape. When the spell ends it crashes down and carries creatures 30 feet.
+
+Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#conjure%20ocean_obojimatallgrass).
 
 ---
 
@@ -421,9 +465,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: action
 ```
 
-You blow a bubble around an object of up to 500 pounds, making it float 4 feet off the ground and easy to push.
+A bubble lifts an object of up to 500 pounds within 60 feet 4 feet off the ground, so it can be pushed along.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#bubble%20lift_obojimatallgrass).
 
@@ -439,9 +484,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (IDRotF)
+activation: action
 ```
 
-Freezing cold sprays from your fingertips in a 15-foot cone, dealing cold damage and freezing water in the area.
+A 15-foot cone of cold deals 2d8 cold damage on a failed Constitution save, or half on a success, and freezes liquids.
 
 Source reference: [D&D 5e (IDRotF) on 5e.tools](https://5e.tools/spells.html#frost%20fingers_idrotf).
 
@@ -457,9 +503,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-A shard of ice pierces one target, then explodes, dealing cold damage to creatures around it.
+A ranged spell attack within 60 feet deals 1d10 piercing damage. Hit or miss, the shard explodes for 2d6 cold damage within 5 feet on a failed Dexterity save.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#ice%20knife_xge).
 
@@ -475,9 +522,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: action
 ```
 
-A spinning sphere of water deals bludgeoning damage that is highest at close range.
+A ranged spell attack within 90 feet deals 5d6 bludgeoning damage within 10 feet, 4d6 within 60 feet, or 3d6 beyond.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#water%20bullet_obojimatallgrass).
 
@@ -493,9 +541,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: action
+concentration: true
 ```
 
-Water envelops up to three weapons, reducing all damage they deal by a d4 for the duration.
+Up to three weapons within 60 feet are wrapped in water. Their damage is reduced by 1d4.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#whelm%20weapon_obojimatallgrass).
 
@@ -511,9 +561,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-A flurry of magic snowballs bursts in a 5-foot radius, dealing 3d6 cold damage.
+Snowballs burst in a 5-foot-radius sphere within 90 feet for 3d6 cold damage on a failed Dexterity save, or half on a success.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#snilloc's%20snowball%20swarm_xge).
 
@@ -529,9 +580,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Tal'Dorei Campaign Setting Reborn
+activation: action
 ```
 
-A deluge of seawater batters and knocks creatures prone in a 15-foot cylinder while sparing chosen allies.
+A 15-foot-radius deluge within 120 feet deals 2d8 bludgeoning damage and knocks creatures prone on a failed Strength save.
 
 Source reference: [Tal'Dorei Campaign Setting Reborn on 5e.tools](https://5e.tools/spells.html#freedom%20of%20the%20waves_taldoreicampaignsettingreborn).
 
@@ -547,9 +599,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-A hovering sphere of water engulfs and restrains creatures, and you can roll it to sweep up more.
+A 5-foot-radius sphere of water within 90 feet restrains creatures that fail a Strength save, and you can roll it 30 feet each turn.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#watery%20sphere_xge).
 
@@ -565,9 +619,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: action
+concentration: true
 ```
 
-An ethereal crustacean shell sets your AC to 20 and grants swimming, blindsight, and claw attacks.
+An ethereal crustacean shell gives you AC 20, a 40-foot swim speed, blindsight and a claw attack as a bonus action.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#crustacean%20form_obojimatallgrass).
 
@@ -583,9 +639,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-Ice rimes your body: immunity to cold, icy ground around you, and a freezing cone you can unleash as an action.
+For up to 10 minutes you're immune to cold and resist fire, the ground around you freezes, and you can blast a 15-foot cone of cold for 4d6 damage.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#investiture%20of%20ice_xge).
 
@@ -601,9 +659,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A frigid globe explodes in a 60-foot radius for 10d6 cold damage and freezes water; you can hold it as a grenade.
+A frigid globe explodes in a 60-foot-radius sphere within 300 feet for 10d6 cold damage on a failed Constitution save, or half on a success.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#otiluke's%20freezing%20sphere_xphb).
 
@@ -619,9 +678,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-You shape a wall or dome of ice that damages creatures it appears around and leaves a frigid sheet when broken.
+A wall or dome of ice rises within 120 feet. Creatures it appears on take 10d6 cold damage on a failed Dexterity save, and breaking through leaves freezing air.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#wall%20of%20ice_xphb).
 
@@ -637,9 +698,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Deep Magic
+activation: action
 ```
 
-Water poured from a vial forms two ice soldiers that obey your mental commands, each hunting its chosen foe until it dies, then melting away.
+Two ice soldiers appear within 30 feet and fight a target you name until it dies.
 
 Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#ice%20soldiers_kpdm).
 
@@ -655,9 +717,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Deep Magic
+activation: action
+concentration: true
 ```
 
-You turn one element to ice or snow in a 100-foot sphere: air becomes snowfall, earth becomes permafrost, fire becomes ice shards, or water freezes solid.
+You turn one element within 100 feet into ice or snow, harming creatures of that element and neutralizing related magic.
 
 Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#triumph%20of%20ice_kpdm).
 
@@ -673,9 +737,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Deep Magic
+activation: action
 ```
 
-Pure cold fills a 30-foot sphere around you for 10d8 cold damage; a creature killed by it turns to ice.
+Pure cold fills a 30-foot-radius sphere around you for 10d8 cold damage on a failed Constitution save, or half on a success.
 
 Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#glacial%20cascade_kpdm).
 
@@ -691,9 +756,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Spells That Don't Suck
+activation: action
+concentration: true
 ```
 
-A wall of water up to 300 feet long and high rolls across the battlefield, battering and carrying away the creatures in its path.
+A wall of water at least 50 feet long and high crashes down on everything in its path. Taking longer to cast makes it bigger.
 
 Source reference: [Spells That Don't Suck on 5e.tools](https://5e.tools/spells.html#great%20wave_spellsthatdontsuck).
 
@@ -709,9 +776,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: The Elements and Beyond
+activation: action
 ```
 
-Water rises from the lowest ground around you, flooding the land 20 feet each round until it has dropped the equivalent of 20 feet of rain.
+Water rises 20 feet a round across a 1-mile area until it equals 20 feet of rainfall, flooding the land.
 
 Source reference: [The Elements and Beyond on 5e.tools](https://5e.tools/spells.html#grand%20flood_teb).
 
@@ -727,9 +795,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: The Elements and Beyond: Spell Variants
+activation: action
 ```
 
-A 500-foot wave of ice and glacial water deals cold and force damage, hurling creatures back and knocking them prone.
+A 500-foot line of ice and water deals 11d10 cold and 11d10 force damage, pushes creatures 50 feet and knocks them prone on a failed Constitution save, or half on a success.
 
 Source reference: [The Elements and Beyond: Spell Variants on 5e.tools](https://5e.tools/spells.html#glacial%20tide_teb:sv).
 
@@ -745,9 +814,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: The Elements and Beyond
+activation: action
+concentration: true
 ```
 
-You freeze the liquid inside a creature, paralyzing it and dealing 7d10 + 30 cold damage; a creature killed by it turns entirely to ice.
+A creature within 60 feet is paralyzed and takes 7d10 + 30 cold damage on a failed Constitution save, or half on a success, repeating the save each turn.
 
 Source reference: [The Elements and Beyond on 5e.tools](https://5e.tools/spells.html#deep%20freeze_teb).
 
@@ -763,8 +834,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: The Elemental Spellbook
+activation: action
 ```
 
-A 200-foot mountain of glacial ice erupts from the ground, tossing creatures into the air and crushing anything flying above it.
+A 200-foot mountain of ice erupts within 1 mile, wrecking structures and burying or hurling creatures where it rises.
 
 Source reference: [The Elemental Spellbook on 5e.tools](https://5e.tools/spells.html#ice%20mountain_theelementalspellbookspellsoficefireandlightning).
+
+

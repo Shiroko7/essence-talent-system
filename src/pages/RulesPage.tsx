@@ -1,10 +1,90 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { BookOpen, ExternalLink } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { tint } from '../talents/model';
+import { SystemPath, tint } from '../talents/model';
 import { buildV2System } from '../talents/systems';
 import { GroupLabel, PathSigil } from '../talents/ui';
-import { ATTUNEMENTS, DOMAIN_LINES, GENERAL_RULES, VAULT_URL } from '../data/attunementRules';
+import { ATTUNEMENTS, DOMAIN_CLASH, GENERAL_RULES, Matchup, VAULT_URL, matchup } from '../data/attunementRules';
+
+const MATCHUP_STYLE: Record<Matchup, { mark: string; className: string }> = {
+  coexist: { mark: '=', className: 'text-emerald-400 bg-emerald-500/10' },
+  overcome: { mark: '▲', className: 'text-violet-300 bg-violet-500/20' },
+  'overcome-by': { mark: '–', className: 'text-mist bg-charcoal/60' },
+  clash: { mark: '–', className: 'text-mist bg-charcoal/60' },
+  opposite: { mark: '✕', className: 'text-red-400 bg-red-500/10' }
+};
+
+/** Every path against every other: rows are your path, columns the enemy's. */
+const MatchupChart: React.FC<{ paths: SystemPath[] }> = ({ paths }) => {
+  const [pair, setPair] = useState<[SystemPath, SystemPath] | null>(null);
+  const shown = pair && matchup(pair[0].id, pair[1].id);
+  return (
+    <div className="space-y-2">
+      <div className="arcane-panel p-3 overflow-x-auto">
+        <table className="border-separate border-spacing-[2px] mx-auto" aria-label="Your path (rows) against the enemy's path (columns)">
+          <thead>
+            <tr>
+              <th />
+              {paths.map(c => (
+                <th key={c.id} scope="col" title={c.name} className={`pb-1 transition-opacity ${pair && pair[1].id !== c.id ? 'opacity-40' : ''}`}><span className="sr-only">{c.name}</span><span className="inline-flex justify-center"><PathSigil path={c} size={22} /></span></th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {paths.map(r => (
+              <tr key={r.id}>
+                <th scope="row" className={`pr-2 text-right text-sm font-normal whitespace-nowrap transition-opacity ${pair && pair[0].id !== r.id ? 'opacity-40' : 'font-display'}`} style={{ color: r.accent }}>{r.name}</th>
+                {paths.map(c => {
+                  const m = matchup(r.id, c.id);
+                  const style = MATCHUP_STYLE[m.kind];
+                  const select = () => setPair([r, c]);
+                  return (
+                    <td key={c.id}>
+                      <span
+                        tabIndex={0} title={`${r.name} vs ${c.name}`} onMouseEnter={select} onFocus={select} onClick={select}
+                        className={`grid place-items-center w-7 h-7 rounded text-xs font-display cursor-default focus:outline-none ${style.className} ${pair && pair[0].id === r.id && pair[1].id === c.id ? 'ring-2 ring-gold scale-110' : pair && (pair[0].id === r.id || pair[1].id === c.id) ? 'brightness-150' : ''}`}
+                      >{style.mark}</span>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="arcane-panel px-4 py-3 min-h-[76px] flex items-center" aria-live="polite">
+        {pair && shown ? <Verdict a={pair[0]} b={pair[1]} kind={shown.kind} why={shown.why} /> : <p className="text-sm text-mist">Hover or tap a cell to see who wins.</p>}
+      </div>
+    </div>
+  );
+};
+
+/** The hovered matchup, said plainly: who wins, or that nobody does. */
+const Verdict: React.FC<{ a: SystemPath; b: SystemPath; kind: Matchup; why: string }> = ({ a, b, kind, why }) => {
+  const name = (p: SystemPath, dim = false) => (
+    <span className={`inline-flex items-center gap-1.5 font-display tracking-wide ${dim ? 'opacity-50' : ''}`} style={{ color: p.accent }}>
+      <PathSigil path={p} size={dim ? 20 : 26} active={!dim} /> {p.name}
+    </span>
+  );
+  const [winner, loser] = kind === 'overcome-by' ? [b, a] : [a, b];
+  const style = MATCHUP_STYLE[kind === 'overcome-by' ? 'overcome' : kind];
+  const [headline, rule] = {
+    overcome: [<>{name(winner)} <span className="text-violet-300">overcomes</span> {name(loser, true)}</>, `${winner.name} wins the edge: it rolls one die size larger.`],
+    'overcome-by': [<>{name(winner)} <span className="text-violet-300">overcomes</span> {name(loser, true)}</>, `${winner.name} wins the edge: it rolls one die size larger.`],
+    clash: [<>{name(a)} <span className="text-mist">clashes with</span> {name(b)}</>, 'Neither has the edge. The highest roll wins.'],
+    coexist: [<>{name(a)} <span className="text-emerald-400">coexists with</span> {name(b)}</>, 'No clash. Both stay up.'],
+    opposite: [<>{name(a)} <span className="text-red-400">opposes</span> {name(b)}</>, 'Nobody wins. Both collapse before the roll.']
+  }[kind] as [React.ReactNode, string];
+  return (
+    <div className="flex gap-3 items-start">
+      <span className={`grid place-items-center w-9 h-9 shrink-0 rounded text-base font-display ${style.className}`}>{style.mark}</span>
+      <div className="min-w-0 space-y-0.5">
+        <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-lg">{headline}</p>
+        <p className="text-sm text-fog"><span className="text-parchment">{rule}</span> {kind !== 'clash' && why}</p>
+      </div>
+    </div>
+  );
+};
 
 const RulesPage: React.FC = () => {
   const system = useMemo(buildV2System, []);
@@ -14,10 +94,14 @@ const RulesPage: React.FC = () => {
   const accent = system.groups.find(g => g.id === attunement.family)!.accent;
   const pathOf = (id: string) => system.paths.find(p => p.id === id);
 
+  const domainPaths = ATTUNEMENTS.flatMap(a => a.domains.map(d => pathOf(d.path))).filter((p): p is SystemPath => !!p);
+
   useEffect(() => {
     const previous = document.title;
     document.title = 'Essence Dao Rules · Essence Talent System';
+    if (initial === 'domain-clash') document.getElementById('domain-clash')?.scrollIntoView();
     return () => { document.title = previous; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const choose = (id: string) => {
@@ -103,20 +187,50 @@ const RulesPage: React.FC = () => {
           )}
         </section>
 
-        <section aria-label="Domain lines" className="space-y-3 pt-2">
-          <GroupLabel label="Domain lines" accent={accent} />
-          <p className="text-parchment/90">{DOMAIN_LINES.summary}</p>
-          <div className="grid sm:grid-cols-2 gap-2">
-            {DOMAIN_LINES.kinds.map(kind => (
-              <div key={kind.name} className="rounded-lg border p-3" style={{ borderColor: tint(accent, 0.25), background: tint(accent, 0.04) }}>
-                <p className="font-display tracking-wide" style={{ color: accent }}>{kind.name}</p>
-                <p className="text-sm text-fog">{kind.text}</p>
-              </div>
-            ))}
+        <section id="domain-clash" aria-label="Domain clash" className="space-y-4 pt-2 scroll-mt-6">
+          <GroupLabel label="Domain clash" accent={accent} />
+          <div className="arcane-panel overflow-x-auto">
+            <table className="w-full text-sm tabular-nums">
+              <thead>
+                <tr className="text-[10px] font-display tracking-wider uppercase text-mist">
+                  <th scope="col" className="text-left font-normal px-3 py-2">Level or CR</th>
+                  {DOMAIN_CLASH.levels.map(l => <th key={l.level} scope="col" className="font-normal px-2 py-2">{l.level}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  ['clash', 'Clash', DOMAIN_CLASH.levels.map(l => l.clash)],
+                  ['overcome', 'Overcome', DOMAIN_CLASH.levels.map(l => l.overcome)],
+                  ['coexist', 'Coexist', DOMAIN_CLASH.coexist],
+                  ['opposite', 'Opposites', DOMAIN_CLASH.opposite]
+                ] as [Matchup, string, string[] | string][]).map(([kind, name, cells]) => (
+                  <tr key={kind} className="border-t border-gold-subtle">
+                    <th scope="row" className="text-left font-normal px-3 py-2 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-2 font-display tracking-wide text-ivory">
+                        <span className={`grid place-items-center w-6 h-6 rounded text-xs ${MATCHUP_STYLE[kind].className}`}>{MATCHUP_STYLE[kind].mark}</span>{name}
+                      </span>
+                    </th>
+                    {typeof cells === 'string'
+                      ? <td colSpan={DOMAIN_CLASH.levels.length} className="px-2 py-2 text-fog">{cells}</td>
+                      : cells.map((roll, i) => <td key={i} className="px-2 py-2 text-center font-display text-parchment whitespace-nowrap">{roll}</td>)}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <ul className="space-y-1 text-sm text-mist list-disc pl-5">
-            {DOMAIN_LINES.rules.map(rule => <li key={rule}>{rule}</li>)}
-          </ul>
+
+          <ol className="arcane-panel">
+            {DOMAIN_CLASH.steps.map((step, i) => (
+              <li key={step} className="flex gap-3 px-4 py-3 border-t border-gold-subtle first:border-t-0 text-parchment/90">
+                <span className="font-display tabular-nums" style={{ color: accent }}>{i + 1}</span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+
+          <p className="text-parchment/90"><span className="font-display tracking-wide" style={{ color: accent }}>Sovereign Domain.</span> {DOMAIN_CLASH.sovereign}</p>
+
+          <MatchupChart paths={domainPaths} />
         </section>
       </div>
     </Layout>

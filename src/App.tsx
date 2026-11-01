@@ -39,6 +39,7 @@ function App() {
           <Route path="/v2/migration" element={<Moved to="/migration" />} />
           <Route path="/cultivation" element={<Moved to="/" />} />
           <Route path="/patch-notes" element={<PatchNotesPage />} />
+          <Route path="/patch-notes/:slug" element={<PatchNotesPage />} />
           <Route path="/rules" element={<RulesPage />} />
           <Route path="/changelog" element={<ChangelogPage />} />
           <Route path="/merchants" element={<MerchantsPage />} />

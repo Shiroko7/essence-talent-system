@@ -14,6 +14,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 As an action, you can imbue your touch with a mild poison. A creature you touch must make a Constitution saving throw against your spell save DC or become poisoned for 1 minute. While poisoned this way, the creature takes 1d6 poison damage at the start of each of its turns until it succeeds a saving throw. The poison ends early if the creature receives any kind of healing.
@@ -31,6 +32,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can coat a weapon with a potent poison. The next attack you make with that weapon deals an additional 2d6 poison damage on a hit. The target must also succeed on a Constitution saving throw or be poisoned for 1 minute.
@@ -48,15 +50,10 @@ isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action  
-**Range:** Touch  
-**Components:** V, S  
-**Duration:** Instantaneous  
-**Portfolio:** Poison
-
-A sickly brown radiance flickers around your hand. Make a melee spell attack against a creature you can reach. On a hit, the target takes 2d10 poison damage. If the target fails a Constitution saving throw, it is also poisoned until the end of your next turn, and its AC is reduced by 1 as the corrosive magic eats through armor or clothing, leaving raw welts on exposed skin. This AC reduction lasts until the creature finishes a short or long rest or receives magical healing.
+As an action, you wreathe your hand in sickly brown radiance and make a melee spell attack against a creature you can reach. On a hit, the target takes 2d10 poison damage. If the target fails a Constitution saving throw, it is also poisoned until the end of your next turn, and its AC is reduced by 1 as the corrosive magic eats through armor or clothing, leaving raw welts on exposed skin. This AC reduction lasts until the creature finishes a short or long rest or receives magical healing.
 
 ---
 
@@ -71,6 +68,7 @@ isSpell: false
 isCantrip: false
 author: Church of Talona
 location: Leatrux
+oncePerTurn: true
 ```
 
 Once per turn, when a creature hits you with a melee attack, that creature must succeed on a Constitution saving throw against your spell save DC or become poisoned until the end of its next turn.
@@ -88,17 +86,13 @@ isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
 location: Leatrux
+activation: action
+concentration: true
 ```
 
-**Casting Time:** 1 action  
-**Range:** 60 feet  
-**Components:** V, S  
-**Duration:** Concentration, up to 1 minute  
-**Portfolio:** Poison
+As an action, you infect a creature you can see within 60 feet with a virulent disease. The target must succeed on a Constitution saving throw or become poisoned for up to 1 minute. While poisoned in this way, the creature is wracked with weakness and vulnerability—it takes an additional 1d6 poison damage whenever it takes poison damage from any source.
 
-You infect a creature you can see within range with a virulent disease. The target must succeed on a Constitution saving throw or become poisoned for the duration. While poisoned in this way, the creature is wracked with weakness and vulnerability—it takes an additional 1d6 poison damage whenever it takes poison damage from any source.
-
-At the end of each of its turns, the target can make another Constitution saving throw. On a success, the spell ends on the target. On a failure, the disease spreads: choose one creature within 60 feet of the target. That creature must succeed on a Constitution saving throw or also become poisoned by this spell (with its own separate duration and spreading capability).
+At the end of each of its turns, the target can make another Constitution saving throw. On a success, the effect ends on the target. On a failure, the disease spreads: choose one creature within 60 feet of the target. That creature must succeed on a Constitution saving throw or also become poisoned by this ability (with its own separate duration and spreading capability).
 
 ## Adept Tier
 
@@ -115,6 +109,7 @@ isSpell: false
 isCantrip: false
 author: Church of Talona
 location: Leatrux
+oncePerTurn: true
 ```
 
 Once per turn, when a creature hits you with a melee attack, that creature must succeed on a Constitution saving throw against your spell save DC or become poisoned for 1 minute. On a failed save, the creature also takes poison damage equal to your proficiency bonus.
@@ -132,19 +127,15 @@ isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
 location: Leatrux
+activation: action
+concentration: true
 ```
 
-**Casting Time:** 1 action  
-**Range:** 90 feet  
-**Components:** V, S  
-**Duration:** Concentration, up to 1 minute  
-**Portfolio:** Poison
+As an action, you create a 20-foot-radius sphere of yellowish-green vapors centered on a point you can see within 90 feet. The cloud spreads around corners and is heavily obscured. It lasts for up to 1 minute or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.
 
-You create a 20-foot-radius sphere of yellowish-green vapors centered on a point you can see within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.
+When a creature enters the cloud for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 poison damage, becomes poisoned, and has its speed halved until the start of its next turn. On a successful save, the creature takes half as much damage and suffers no additional effects.
 
-When a creature enters the spell's area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 poison damage, becomes poisoned, and has its speed halved until the start of its next turn. On a successful save, the creature takes half as much damage and suffers no additional effects.
-
-Creatures wearing or bearing a holy symbol of Talona are immune to this spell's effects.
+Creatures wearing or bearing a holy symbol of Talona are immune to its effects.
 
 ---
 
@@ -159,17 +150,12 @@ isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action  
-**Range:** 60 feet  
-**Components:** V, S  
-**Duration:** 1 minute  
-**Portfolio:** Poison
+As an action, you point at a creature within 60 feet, and sickly brown energy lashes out to infect it. The target must make a Constitution saving throw. On a failed save, the target takes 5d10 poison damage and becomes both restrained and poisoned for 1 minute as virulent toxins seize its body. On a successful save, the target takes half as much damage and is not restrained or poisoned.
 
-You point at a creature within range, and sickly brown energy lashes out to infect it. The target must make a Constitution saving throw. On a failed save, the target takes 5d10 poison damage and becomes both restrained and poisoned for the duration as virulent toxins seize its body. On a successful save, the target takes half as much damage and is not restrained or poisoned.
-
-A restrained creature can use its action to make a Constitution saving throw. On a success, the restrained condition ends, but the creature remains poisoned for the duration. At the end of each of its turns while poisoned by this spell, the creature can make another Constitution saving throw, ending the poisoned condition on a success.
+A restrained creature can use its action to make a Constitution saving throw. On a success, the restrained condition ends, but the creature remains poisoned for the duration. At the end of each of its turns while poisoned by this ability, the creature can make another Constitution saving throw, ending the poisoned condition on a success.
 
 ## Master Tier
 
@@ -186,6 +172,7 @@ isSpell: false
 isCantrip: false
 author: Church of Talona
 location: Leatrux
+oncePerTurn: true
 ```
 
 Once per turn, when a creature hits you with a melee attack, that creature must succeed on a Constitution saving throw against your spell save DC. On a failed save, the creature becomes poisoned for 1 hour, takes poison damage equal to twice your proficiency bonus, and has its movement speed halved while poisoned this way.
@@ -202,11 +189,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric / Conjuration
+activation: action
 ```
 
-You project a puff of noxious gas from your palm. The creature must succeed on a Constitution save or take 1d12 poison damage.
+A ranged spell attack within 30 feet deals 1d12 poison damage.
 
-https://5e.tools/spells.html#poison%20spray_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#poison%20spray_xphb).
 
 ---
 
@@ -220,11 +208,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric / Conjuration
+activation: action
 ```
 
-Parasites and biting mites appear on a foe, dealing 1d6 poison damage and compelling random movement.
+A creature within 30 feet takes 1d6 poison damage and moves 5 feet in a random direction on a failed Constitution save.
 
-https://5e.tools/spells.html#infestation_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#infestation_xge).
 
 ## Spells
 
@@ -240,11 +229,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Death Domain) / Necromancy
+activation: action
 ```
 
-A ray of greenish energy deals 2d8 poison damage and poisons the target on a failed Constitution save.
+A ranged spell attack within 60 feet deals 2d8 poison damage and poisons the target until the end of your next turn.
 
-https://5e.tools/spells.html#ray%20of%20sickness_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#ray%20of%20sickness_xphb).
 
 ---
 
@@ -258,11 +248,14 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Divination
+activation: action
+concentration: true
+ritual: true
 ```
 
-Sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet.
+For up to 10 minutes you sense poisons, venomous creatures and diseases within 30 feet, and what kind each is.
 
-https://5e.tools/spells.html#detect%20poison%20and%20disease_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#detect%20poison%20and%20disease_xphb).
 
 ---
 
@@ -276,11 +269,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Death Domain) / Necromancy
+activation: action
 ```
 
-Drain fluid and vital energy from a creature, dealing 8d8 necrotic damage (maximum damage against plants).
+A creature within 30 feet takes 8d8 necrotic damage on a failed Constitution save, or half on a success. Plants fail automatically.
 
-https://5e.tools/spells.html#blight_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#blight_xphb).
 
 ---
 
@@ -294,11 +288,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Necromancy
+activation: action
 ```
 
-Inflict supernatural disease: Blinding Sickness, Filth Fever, Flesh Rot, Mindfire, Seizure, or Slimy Doom.
+Your touch deals 11d8 necrotic damage and poisons the target on a failed Constitution save, with disadvantage on saves of an ability you choose for 7 days.
 
-https://5e.tools/spells.html#contagion_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#contagion_xphb).
 
 ---
 
@@ -312,11 +307,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Conjuration
+activation: action
+concentration: true
 ```
 
-A 20-foot-radius swarm of biting locusts bites and obscures the battlefield, dealing 4d10 piercing damage.
+Locusts fill a 20-foot-radius sphere within 300 feet for up to 10 minutes, dealing 4d10 piercing damage on a failed Constitution save, or half on a success.
 
-https://5e.tools/spells.html#insect%20plague_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#insect%20plague_xphb).
 
 ---
 
@@ -330,11 +327,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Conjuration / Toxic Cloud
+activation: action
+concentration: true
 ```
 
-A rolling 20-foot-radius sphere of poisonous yellow-green fog deals 5d8 poison damage on failed Constitution saves.
+A 20-foot-radius cloud of poison within 120 feet drifts away from you and deals 5d8 poison damage on a failed Constitution save, or half on a success.
 
-https://5e.tools/spells.html#cloudkill_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#cloudkill_xphb).
 
 ---
 
@@ -348,11 +347,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Transmutation
+activation: action
+ritual: true
 ```
 
-Cleanse or discern corruption in food and drink within a 5-foot-radius sphere.
+You remove poison and rot from food and drink in a 5-foot-radius sphere within 10 feet.
 
-https://5e.tools/spells.html#purify%20food%20and%20drink_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#purify%20food%20and%20drink_xphb).
 
 ---
 
@@ -366,11 +367,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Abjuration
+activation: action
 ```
 
-Neutralize poison affecting a creature, granting resistance to poison damage and advantage on poison saves for 1 hour.
+You end the poisoned condition on a creature you touch, and for 1 hour it has resistance to poison and advantage on saves against poison.
 
-https://5e.tools/spells.html#protection%20from%20poison_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#protection%20from%20poison_xphb).
 
 ---
 
@@ -385,15 +387,10 @@ isSpell: false
 isCantrip: false
 author: Talona / Portfolio (Poison)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action  
-**Range:** Touch  
-**Components:** V, S  
-**Duration:** 8 hours  
-**Portfolio:** Poison
-
-You touch a willing creature, granting it Talona's protection. For the duration, the target gains the following benefits:
+As an action, you touch a willing creature, granting it Talona's protection. For 8 hours, the target gains the following benefits:
 
 - Immunity to poison damage and the poisoned condition
 - Immunity to disease, including magical diseases like lycanthropy and mummy rot
@@ -401,7 +398,7 @@ You touch a willing creature, granting it Talona's protection. For the duration,
 - Parasitic infestations (such as rot grubs) are immediately expelled from the target's body, dealing no harm
 - Any molds, spores, or fungi on or within the target's body are destroyed
 
-Additionally, if the target would contract a disease during the spell's duration, they automatically succeed on any saving throw to resist it.
+Additionally, if the target would contract a disease during that time, they automatically succeed on any saving throw to resist it.
 
 ## Cantrips
 
@@ -418,6 +415,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can target one poisoned creature within 30 feet. The target must succeed on a Wisdom saving throw or be subjected to vivid hallucinations for the duration of its poisoned condition. While affected by these hallucinations, the creature has disadvantage on Intelligence, Wisdom, and Charisma saving throws and ability checks. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
@@ -435,6 +433,7 @@ isSpell: false
 isCantrip: false
 author: Shadow Sect
 location: Sirius
+activation: bonus action
 ```
 
 As a bonus action, you can target one poisoned creature within 30 feet. The target must succeed on a Constitution saving throw or be overwhelmed by distorted bodily sensations (nausea, vertigo, and loss of coordination) for the duration of its poisoned condition. While affected, the creature has disadvantage on Strength, Dexterity, and Constitution saving throws and ability checks. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.
@@ -451,11 +450,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Necromancy
+activation: action
+concentration: true
 ```
 
-Curse a target with crippling agony, lost actions, or extra damage whenever struck.
+A creature you touch is cursed for up to 1 minute on a failed Wisdom save: disadvantage with one ability, disadvantage against you, wasted turns, or extra necrotic damage from you.
 
-https://5e.tools/spells.html#bestow%20curse_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#bestow%20curse_xphb).
 
 ---
 
@@ -469,11 +470,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Enchantment
+activation: action
+concentration: true
 ```
 
-Afflict up to three creatures with agonizing doubt and torment, forcing them to subtract 1d4 from attack rolls and saves.
+Up to three creatures within 30 feet that fail a Charisma save subtract 1d4 from attack rolls and saving throws for up to 1 minute.
 
-https://5e.tools/spells.html#bane_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#bane_xphb).
 
 ---
 
@@ -487,9 +490,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-You break a curse affecting a creature or object.
+All curses on a creature or object you touch end. A cursed item's owner can unattune from it.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#remove%20curse_phb).
 
@@ -526,9 +530,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A 20-foot sphere of nauseating gas poisons creatures inside it, leaving them unable to act.
+A 20-foot-radius cloud of nauseating gas within 90 feet heavily obscures the area. Creatures in it that fail a Constitution save lose their action.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#stinking%20cloud_xphb).
 
@@ -544,9 +550,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Heroes of Faerûn)
+activation: bonus action
 ```
 
-A spectral snake coils around you, granting temporary hit points, a climbing speed, and a venomous ranged bite.
+A spectral snake coils around you for 1 hour: 15 temporary hit points, a climb speed, and a venomous bite you can launch at creatures within 50 feet.
 
 Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#sylun%C3%A9's%20viper_frhof).
 
@@ -562,9 +569,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-A creature loses resistance to a chosen element and takes extra damage of that type.
+A creature within 90 feet that fails a Constitution save loses resistance to a damage type you choose and takes an extra 2d6 of it once per turn.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#elemental%20bane_xge).
 
@@ -580,9 +589,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-You summon a giant centipede, spider, or wasp that fights alongside you.
+You summon a giant centipede, spider or wasp within 60 feet that fights for you for up to 10 minutes.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#giant%20insect_xphb).
 
@@ -592,17 +603,38 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 
 ```yaml
 id: poison_6th_level_investiture_of_venom
-tier: 6th
+tier: 5th
 isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-Poison fills your veins: immunity to poison, and the power to poison creatures around you.
+For up to 10 minutes you're immune to poison, see who resists it, and poison a creature within 30 feet as a bonus action.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#investiture%20of%20venom_grimhollowpg24).
+
+---
+
+### Contagious Touch
+
+```yaml
+id: v2_pestilence_contagious_touch
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Blackstaff's Book of 1000 Spells
+activation: action
+```
+
+Like Contagion, but one melee spell attack infects a number of creatures within reach equal to your spellcasting modifier.
+
+Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tools/spells.html#contagious%20touch_bb1000s).
 
 ---
 
@@ -618,7 +650,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-You inscribe a harmful glyph that triggers death, discord, fear, pain, sleep, or stunning on creatures that come near it.
+You inscribe a 10-foot glyph that triggers a harmful effect you choose, such as death, fear, sleep or insanity, on creatures nearby.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#symbol_xphb).
 
@@ -634,9 +666,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-You draw the moisture from every creature in a 30-foot cube, dealing heavy necrotic damage; plants wither instantly.
+Moisture is drawn from creatures in a 30-foot cube within 150 feet for 12d8 necrotic damage on a failed Constitution save, or half on a success.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#abi-dalzim's%20horrid%20wilting_xge).
 
@@ -652,9 +685,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-You blast a creature's mind for psychic damage; on a failed save it cannot cast spells or take the Magic action, repeating the save only every 30 days.
+A creature within 150 feet takes 10d12 psychic damage and can't cast spells on a failed Intelligence save, or half damage on a success.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#befuddlement_xphb).
 
@@ -670,9 +704,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-You rip the flesh from a creature for 8d10 necrotic damage and animate its skin as a fleshling that fights for you.
+A creature within 100 feet takes 8d10 necrotic damage on a failed Constitution save, or half on a success, and its flayed skin rises to fight it.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#fleshcrawl_grimhollowpg24).
 
@@ -688,9 +724,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-Necromantic force slices the skin from a creature, dealing 8d6 necrotic damage each turn you keep up the spell.
+A ranged spell attack within 60 feet strips flesh for 8d6 necrotic damage, and you can repeat it each turn while you concentrate.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#flense_grimhollowpg24).
 
@@ -706,9 +744,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-You mark a creature with a death threshold paid for in Hit Dice; if its hit points fall to or below it, it dies, and you can raise the threshold each turn.
+You spend eight Hit Point Dice to set a threshold. A creature within 60 feet dies the moment its hit points fall to or below it.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#creeping%20death_grimhollowpg24).
 
@@ -724,8 +764,29 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-An aura of necrotic decay damages creatures near you while you regain hit points for each one caught in it.
+A 15-foot aura deals 4d6 necrotic damage to creatures that enter or start their turn in it, and heals you each turn.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#lifesink_grimhollowpg24).
+
+---
+
+### Afflict Line
+
+```yaml
+id: v2_pestilence_afflict_line
+tier: 9th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Deep Magic (01-20)
+ritual: true
+```
+
+As a ritual, you curse a creature within 1 mile and its firstborn on a failed Wisdom save, with disadvantage on checks and saves of your spellcasting ability until the curse is dispelled.
+
+Source reference: [Deep Magic (01-20) on 5e.tools](https://5e.tools/spells.html#afflict%20line_kpdm).

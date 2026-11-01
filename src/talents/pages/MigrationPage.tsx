@@ -146,7 +146,7 @@ const MigrationPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
 
   const counts = summarize(plan);
   const by = (fn: (e: MigrationEntry) => boolean) => plan.entries.filter(fn);
-  const imported = source?.importedAt ? new Date(source.importedAt).toLocaleDateString(undefined, { dateStyle: 'medium' }) : null;
+  const imported = source?.importedAt ? new Date(source.importedAt).toLocaleDateString('en-US', { dateStyle: 'medium' }) : null;
   const stats: { severity: Severity; value: number }[] = [
     { severity: 'error', value: counts.errors },
     { severity: 'warning', value: counts.warnings },

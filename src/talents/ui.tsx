@@ -46,6 +46,37 @@ export const KindTag: React.FC<{ ability: Ability; compact?: boolean }> = ({ abi
   );
 };
 
+const ACTIVATION_LABELS: Record<NonNullable<Ability['activation']>, string> = {
+  action: 'Action',
+  'bonus action': 'Bonus action',
+  reaction: 'Reaction',
+  free: 'Free action',
+  attack: 'Attack replacement',
+  'on hit': 'On hit'
+};
+
+/** How an ability is used, and whether it needs concentration, is a ritual or works only once per turn. */
+export const ActivationTags: React.FC<{ ability: Ability; compact?: boolean }> = ({ ability, compact }) => {
+  const tags = [
+    ability.activation && ACTIVATION_LABELS[ability.activation],
+    ability.concentration && 'Concentration',
+    ability.oncePerTurn && 'Once per turn',
+    ability.ritual && 'Ritual'
+  ].filter(Boolean) as string[];
+  return (
+    <>
+      {tags.map(tag => (
+        <span
+          key={tag}
+          className={`inline-flex items-center rounded font-display tracking-wide whitespace-nowrap text-fog border border-ash/60 bg-charcoal/40 ${compact ? 'px-1.5 py-0 text-[10px]' : 'px-2 py-0.5 text-[11px]'}`}
+        >
+          {tag}
+        </span>
+      ))}
+    </>
+  );
+};
+
 export const SearchField: React.FC<{
   value: string; onChange: (v: string) => void; placeholder?: string; autoFocus?: boolean; inputRef?: React.Ref<HTMLInputElement>;
 }> = ({ value, onChange, placeholder = 'Search abilities…', autoFocus, inputRef }) => (
@@ -419,7 +450,7 @@ export const UseButton: React.FC<{ ctl: TalentController; ability: Ability; path
   );
 };
 
-/** What an ability does on its path's domain: its rider line, or that it works only there. */
+/** What an ability does on its path's domain: its Domain Expansion line, or that it works only there. */
 export const DomainLine: React.FC<{ ability: Ability; path: SystemPath; searchTerm?: string }> = ({ ability, path, searchTerm }) => {
   if (!ability.domain) return null;
   const label = DOMAIN_LABELS[path.groupId] ?? 'Domain';
@@ -443,6 +474,7 @@ export const AbilityBody: React.FC<{ ctl: TalentController; ability: Ability; pa
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <KindTag ability={ability} />
+        <ActivationTags ability={ability} />
         <span className="text-[11px] font-display tracking-wide text-fog">{tier.name} · Lv {tier.levelRequirement}+</span>
       </div>
       {lock && (
@@ -580,8 +612,8 @@ export const GroupLabel: React.FC<{ label: string; accent: string; className?: s
 );
 
 /**
- * A clickable talent node: icon, name and type. Click learns or unlearns, the
- * info button opens the full text, learned actions get a one-tap Use.
+ * A clickable talent node: icon, name and type. Click learns or unlearns, and the
+ * info button opens the full text.
  */
 export const AbilityTile: React.FC<{
   ctl: TalentController; ability: Ability; path: SystemPath; onInfo: (ability: Ability) => void; showPath?: boolean;
@@ -617,11 +649,6 @@ export const AbilityTile: React.FC<{
           </span>
           {showPath && <span className="text-[10px] font-display tracking-wide truncate" style={{ color: path.accent }}>{path.name}</span>}
         </span>
-        {learned && !reservesEssence(ability) && (
-          <span className="block mt-1" onClick={e => e.stopPropagation()}>
-            <UseButton ctl={ctl} ability={ability} path={path} compact />
-          </span>
-        )}
       </span>
       <button
         onClick={e => { e.stopPropagation(); onInfo(ability); }}

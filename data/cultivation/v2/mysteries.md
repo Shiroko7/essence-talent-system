@@ -14,6 +14,7 @@ isSpell: false
 isCantrip: false
 author: Shadow Sect
 location: Sirius
+activation: bonus action
 ```
 
 As a bonus action, you open the mouth of a well beneath a creature you can see within 30 feet. For a moment the ground becomes still, dark water that holds the creature's reflection, and space folds inward around it. The target must make a Dexterity saving throw against your essence ability save DC:
@@ -37,6 +38,7 @@ isSpell: false
 isCantrip: false
 author: Shadow Sect
 location: Sirius
+activation: reaction
 ```
 
 As a reaction when an attack roll is made against you, you trade places with your own reflection. The attack targets the reflection instead and misses, and you teleport up to 15 feet to an unoccupied space you can see. For an instant, no one watching can tell which of the two was ever real.
@@ -82,6 +84,7 @@ isSpell: false
 isCantrip: false
 author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Sirius
+activation: action
 ```
 
 A monkey sees the moon in a well and reaches for it, and every child knows the moon is not there. You reach anyway, and the moon comes up in your hand.
@@ -113,9 +116,10 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-Small wonders from nothing: a harmless sensory effect, a flickering flame, a cleaned or soiled object, a warmed or flavored meal, a faint mark, or a trinket or illusory image that fits in your hand.
+You make a minor magical trick within 10 feet: a sensory effect, a small flame, cleaning or soiling, a mark, or a trinket.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#prestidigitation_xphb).
 
@@ -137,7 +141,7 @@ isCantrip: false
 author: D&D 5e (EGW)
 ```
 
-You grant a willing creature a moment borrowed from the future: for 8 hours, it adds 1d8 to its initiative rolls.
+A willing creature you touch adds 1d8 to its initiative rolls for 8 hours.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#gift%20of%20alacrity_egw).
 
@@ -153,9 +157,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A rope rises into the air and opens onto an extradimensional space that hides up to eight Medium or smaller creatures for 1 hour.
+A rope you touch rises to an invisible extradimensional space where up to eight Medium creatures can hide for 1 hour.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#rope%20trick_xphb).
 
@@ -173,7 +178,7 @@ isCantrip: false
 author: D&D 5e (EGW)
 ```
 
-You show a creature a glimpse of what is about to happen: once within the next hour, it can roll an additional d20 for an attack roll, ability check, or saving throw and choose which roll to use.
+A willing creature within 60 feet can, once within 1 hour, roll an extra d20 for an attack, check or save, or against an attack on it.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#fortune's%20favor_egw).
 
@@ -189,9 +194,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (EGW)
+activation: action
+concentration: true
+ritual: true
 ```
 
-With a flick of the wrist, an object you hold of 5 pounds or less vanishes into an extradimensional pocket, and you can call it back to your hand while the spell lasts.
+An object of up to 5 pounds in your hand vanishes into an extradimensional pocket, and you can summon it back or send it away again for up to 1 hour.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#wristpocket_egw).
 
@@ -207,9 +215,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-For 1 minute, at the end of each of your turns you may slip into the Ethereal Plane until your next turn, returning to a space within 10 feet of where you vanished.
+For 1 minute, at the end of each of your turns you have a 50% chance to vanish into the Ethereal Plane until your next turn.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#blink_xphb).
 
@@ -225,9 +234,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A creature gains doubled speed, +2 AC, advantage on Dexterity saves, and an extra limited action each turn.
+A willing creature within 30 feet has doubled speed, +2 AC, advantage on Dexterity saves and an extra action each turn for up to 1 minute. It's stunned for a turn when the spell ends.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#haste_xphb).
 
@@ -243,9 +254,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-Up to six creatures in a 40-foot cube are dragged behind the flow of time: on a failed Wisdom save their speed is halved, they lose AC and Dexterity save bonus, can't take reactions, and act less each turn.
+Up to six creatures in a 40-foot cube within 120 feet that fail a Wisdom save have halved speed, -2 AC and Dexterity saves, and only an action or a bonus action each turn.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#slow_xphb).
 
@@ -261,9 +274,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-You teleport up to 500 feet to a place you can see, picture, or describe, and can bring one willing creature with you.
+You teleport up to 500 feet to a spot you can see or describe, and can bring one willing creature with you.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#dimension%20door_xphb).
 
@@ -279,9 +293,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: bonus action
+concentration: true
 ```
 
-You teleport up to 60 feet, and for up to 1 minute you can do so again as a bonus action on each of your turns.
+You teleport up to 60 feet, and can teleport again as a bonus action on each turn for up to 1 minute.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#far%20step_xge).
 
@@ -297,9 +313,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (EGW)
+activation: reaction
 ```
 
-As a reaction to a creature attacking or casting a spell, you push it a moment forward in time: on a failed Wisdom save it vanishes, its action is wasted, and it returns at the start of its next turn.
+As a reaction to a creature's attack or spell, it vanishes into the next round on a failed Wisdom save, wasting the attack or spell.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#temporal%20shunt_egw).
 
@@ -317,7 +334,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-You draw a circle of sigils that opens a portal to a permanent teleportation circle whose sequence you know, until the end of your next turn.
+You draw a circle that opens a portal to a permanent teleportation circle you know, for one round.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#teleportation%20circle_xphb).
 
@@ -333,9 +350,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-You open two linked portals up to 500 feet apart; whatever enters one steps out of the other for up to 10 minutes.
+Two linked portals open, one within 500 feet and one within 10 feet of you, for up to 10 minutes.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#arcane%20gate_xphb).
 
@@ -351,9 +370,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-Space tears around up to five creatures within 30 feet, and each is teleported up to 120 feet to a space you can see; unwilling creatures make a Wisdom save.
+You teleport up to five creatures within 30 feet to spaces within 120 feet. Unwilling ones make a Wisdom save.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#scatter_xge).
 
@@ -369,9 +389,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-You and up to eight willing creatures instantly travel to a known destination on the same plane.
+You and up to eight willing creatures, or one object, teleport to a destination on the same plane. Familiarity sets the chance of arriving on target.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#teleport_xphb).
 
@@ -387,9 +408,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-You turn gravity upside down in a 50-foot-radius, 100-foot-high cylinder: creatures and loose objects in it fall upward and hang at the top.
+Gravity reverses in a 50-foot-radius cylinder within 100 feet for up to 1 minute, flinging unanchored creatures and objects upward.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#reverse%20gravity_xphb).
 
@@ -405,9 +428,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-You and up to eight willing creatures cross to another plane of existence, or you cast an unwilling creature out onto one.
+You and up to eight willing creatures travel to another plane, or you banish a creature there on a failed melee spell attack and Charisma save.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#plane%20shift_xphb).
 
@@ -425,7 +449,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-You open a door onto an extradimensional mansion, with servants and a feast, that lasts for 24 hours.
+A door within 300 feet opens into an extradimensional mansion with servants and a feast for 24 hours.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#mordenkainen's%20magnificent%20mansion_xphb).
 
@@ -441,9 +465,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A shadowy door opens onto an empty room outside the world, a pocket of space you can return to each time you cast the spell.
+A door within 60 feet opens onto a 30-foot empty room on its own demiplane for 1 hour.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#demiplane_xphb).
 
@@ -459,9 +484,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (EGW)
+activation: action
+concentration: true
 ```
 
-A creature's hold on reality shatters: on a failed Wisdom save it can't take reactions and each turn suffers a random effect, from visions of other worlds to rifts that tear it through space.
+A creature within 60 feet that fails a Wisdom save can't take reactions and suffers a random effect each turn, from psychic damage to being thrown elsewhere, for up to 1 minute.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#reality%20break_egw).
 
@@ -477,9 +504,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-You open a portal to another plane, and can speak a creature's true name to pull it through.
+A portal opens to a precise location on another plane for up to 1 minute. Speaking a creature's name pulls it through.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#gate_xphb).
 
@@ -495,9 +524,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-Time stops for everyone but you, granting you 1d4 + 1 consecutive turns.
+Time stops for everyone else while you take 1d4 + 1 turns in a row. It ends if you affect another creature.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#time%20stop_xphb).
 
@@ -513,9 +543,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Valda's Spire of Secrets: Player Pack 1
+activation: action
 ```
 
-You undo one action taken in the last round, erasing its direct effects, and the creature that took it suffers 10d8 psychic damage.
+You undo one action taken within 60 feet in the last round. Its direct effects are reversed and the creature that took it takes 10d8 force damage.
 
 Source reference: [Valda's Spire of Secrets: Player Pack 1 on 5e.tools](https://5e.tools/spells.html#paradox_valdaplayerpack).
 
@@ -531,9 +562,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (EGW)
+activation: action
 ```
 
-Rapid aging deals 10d12 necrotic damage; on a failed save the target is left with only 30 days before it dies of old age.
+A creature within 90 feet takes 10d12 necrotic damage on a failed Constitution save, or half on a success. On a failure it also ages to 30 days from death.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#time%20ravage_egw).
+
 

@@ -84,6 +84,7 @@ isSpell: false
 isCantrip: false
 author: Llamarada Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 As an action, you hurl a barrage of pebbles at a creature within 30 feet. The target must make a Dexterity saving throw. On a failed save, the creature takes 4d4 bludgeoning damage and is knocked prone.
@@ -154,6 +155,7 @@ isSpell: false
 isCantrip: false
 author: Llamarada Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you cause hands of compacted earth to grasp a creature within 30 feet, restraining it for 1 minute. The restrained creature can make a Strength saving throw at the end of each of its turns, ending the effect on a success.
@@ -171,6 +173,7 @@ isSpell: false
 isCantrip: false
 author: Llamarada Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can encase yourself in a layer of stone, granting you resistance to bludgeoning, piercing, and slashing damage for 1 minute.
@@ -190,6 +193,7 @@ isSpell: false
 isCantrip: false
 author: Llamarada Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 As an action, you create a swirling storm of sand in a 20-foot radius centered on you that lasts for 1 minute.
@@ -213,6 +217,7 @@ isSpell: false
 isCantrip: false
 author: Shadow Sect
 location: Sirius
+activation: action
 ```
 
 For 1 minute, you become an unyielding force:
@@ -254,6 +259,7 @@ isSpell: false
 isCantrip: false
 author: Llamarada Tribe
 location: Phudara / Isle of Whispers
+activation: reaction
 ```
 
 As a reaction, a surge of earth magic momentarily hardens your form. You gain temporary hit points equal to 1d10 + your Constitution modifier.
@@ -271,9 +277,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: bonus action
 ```
 
-https://5e.tools/spells.html#magic%20stone_xge
+Up to three pebbles you touch become weapons for ranged spell attacks, each dealing 1d6 + your spellcasting modifier bludgeoning damage.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#magic%20stone_xge).
 
 ---
 
@@ -286,9 +295,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: action
 ```
 
-https://5e.tools/spells.html#mold%20earth_xge
+You dig, move or shape loose earth in a 5-foot cube within 30 feet, or make it difficult terrain.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#mold%20earth_xge).
 
 ## Spells
 
@@ -303,9 +315,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#earth%20tremor_xge
+A tremor around you deals 1d6 bludgeoning damage and knocks creatures within 10 feet prone on a failed Dexterity save.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#earth%20tremor_xge).
 
 ---
 
@@ -318,9 +333,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#erupting%20earth_xge
+Earth erupts in a 20-foot cube within 120 feet for 3d12 bludgeoning damage on a failed Dexterity save, or half on a success, leaving difficult terrain.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#erupting%20earth_xge).
 
 ---
 
@@ -333,9 +351,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#stone%20shape_xphb
+You reshape a piece of stone you touch, up to 5 feet in any dimension, into any form you like.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#stone%20shape_xphb).
 
 ---
 
@@ -348,9 +369,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#stoneskin_xphb
+A willing creature you touch has resistance to bludgeoning, piercing and slashing damage for up to 1 hour.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#stoneskin_xphb).
 
 ---
 
@@ -363,9 +388,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#wall%20of%20stone_xphb
+A wall of stone made of ten 10-by-10-foot panels rises within 120 feet. It can trap creatures, and it becomes permanent if you hold it for 10 minutes.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#wall%20of%20stone_xphb).
 
 ---
 
@@ -378,9 +407,33 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#move%20earth_xphb
+You reshape dirt, sand or clay in an area up to 40 feet on a side within 120 feet, over up to 2 hours.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#move%20earth_xphb).
+
+---
+
+### Living Burial
+
+```yaml
+id: v2_earth_living_burial
+tier: 7th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: The Elements and Beyond
+activation: action
+concentration: true
+```
+
+The ground swallows a creature within 30 feet: 7d8 bludgeoning damage and buried 10 feet down on a failed Strength save, or half damage on a success. A buried creature takes 4d8 each turn until it digs free.
+
+Source reference: [The Elements and Beyond on 5e.tools](https://5e.tools/spells.html#living%20burial_teb).
 
 ---
 
@@ -393,9 +446,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#earthquake_xphb
+A 100-foot-radius earthquake within 500 feet knocks creatures prone, breaks concentration, opens fissures and damages structures.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#earthquake_xphb).
 
 ---
 
@@ -430,9 +487,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-The ground around you shakes, becoming difficult terrain and battering and toppling nearby creatures.
+The ground in a 15-foot emanation around you becomes difficult terrain. Creatures there take 1d6 bludgeoning damage and fall prone on a failed Dexterity save.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#tremor_grimhollowpg24).
 
@@ -448,9 +507,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-Magical strips drag a flying creature down, reducing its flying speed to 0.
+A creature within 300 feet that fails a Strength save has its flying speed reduced to 0 and descends safely.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#earthbind_xge).
 
@@ -466,9 +527,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-A hand of compacted soil rises to grab and restrain a creature, and you can make it crush the target.
+An earthen hand rises within 30 feet. It deals 2d6 bludgeoning damage and restrains a creature on a failed Strength save, and you can crush it again.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#maximilian's%20earthen%20grasp_xge).
 
@@ -484,9 +547,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+ritual: true
 ```
 
-You merge with a stone surface, hidden and protected until you step out.
+You merge with a stone surface for up to 8 hours, hidden from nonmagical senses.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#meld%20into%20stone_xphb).
 
@@ -502,9 +567,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-A wall of swirling sand blocks sight, blinds those inside it, and slows movement through it.
+A wall of swirling sand, up to 30 feet long and 10 feet high, blocks sight and slows movement through it.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#wall%20of%20sand_xge).
 
@@ -520,9 +587,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-You call a Large elemental spirit whose element sets its damage and lets it restrain nearby creatures.
+A Large elemental spirit appears within 60 feet. It restrains creatures that enter or start their turn near it and deals 8d8 damage of its element.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#conjure%20elemental_xphb).
 
@@ -538,9 +607,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-You turn a large area of rock to mud or mud to rock, bogging down or trapping creatures.
+Stone or mud in a 40-foot cube within 120 feet turns to mud or rock, miring or encasing creatures there.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#transmute%20rock_xge).
 
@@ -556,9 +626,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-Up to six stone pillars burst from the ground, lifting and possibly crushing creatures against ceilings.
+Up to six stone pillars burst from the ground within 120 feet, lifting creatures or crushing them against the ceiling for 6d6 bludgeoning damage.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#bones%20of%20the%20earth_xge).
 
@@ -574,9 +645,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-The earth forms a worm-like maw that bites nearby creatures and can swallow them whole.
+An earthen maw within 60 feet bites as a bonus action for 3d8 + your spellcasting modifier piercing damage and can swallow Large or smaller creatures.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#earth%20worm_grimhollowpg24).
 
@@ -592,9 +665,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A creature is restrained as its body hardens and, after repeated failed saves, turns permanently to stone.
+A creature within 60 feet is restrained on a failed Constitution save and turns to stone after three failed saves.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#flesh%20to%20stone_xphb).
 
@@ -610,9 +685,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-Rock spreads over you: resistance to weapon damage, the power to cause local earthquakes, and passage through stone.
+Rock covers you for up to 10 minutes: resistance to nonmagical weapon damage, an earthquake action, and movement through earth and stone.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#investiture%20of%20stone_xge).
 
@@ -630,7 +707,7 @@ isCantrip: false
 author: D&D 5e (XGE)
 ```
 
-A 120-foot stone fortress erupts from the ground, complete with towers, walls, and a keep staffed by invisible servants.
+A stone fortress 120 feet on a side rises within 1 mile, complete with towers and servants. It becomes permanent if cast every 7 days for a year.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#mighty%20fortress_xge).
 
@@ -646,6 +723,8 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
 You are immune to all damage for up to 10 minutes.
@@ -664,9 +743,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Valda's Spire of Secrets: Player Pack 2
+activation: action
 ```
 
-Boulders rain down in a 60-foot radius for 10d8 bludgeoning damage, burying creatures under the rubble.
+Boulders fall in a 60-foot-radius cylinder within 120 feet for 10d8 bludgeoning damage, burying creatures that fail a Dexterity save, or half on a success.
 
 Source reference: [Valda's Spire of Secrets: Player Pack 2 on 5e.tools](https://5e.tools/spells.html#rocks%20fall_valdaplayerpack2).
 
@@ -682,8 +762,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Northlands Worldbook
+activation: action
+concentration: true
 ```
 
-You shape-shift into a giant, taking its statistics and a pool of temporary hit points equal to its hit points.
+You shape-shift into a Giant of your level or lower, gaining its statistics and its hit points as temporary hit points.
 
 Source reference: [Kobold Press Northlands Worldbook on 5e.tools](https://5e.tools/spells.html#jotun%20form_northlandsworldbook).
+
+

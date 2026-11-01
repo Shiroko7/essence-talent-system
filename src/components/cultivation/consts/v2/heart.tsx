@@ -14,7 +14,7 @@ export const heartAbilities = [
   {
     id: "heart_initiate_radiant_vein_blade_form_1",
     name: "Radiant Vein Blade I: Twin Strike of Conviction",
-    description: "**Weapon Requirement:** Any weapon.\n\n**Cost:** 1 Essence.\n\n**Attack replacement:** Replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make that attack with advantage. On a hit, it deals an extra 1d6 damage of a type you choose: radiant, or your weapon's damage type.\n\n**Flow:** You can use only one Radiant Vein Blade form per turn. If this attack misses, or you don't use Radiant Vein Blade II on your next turn, the flow breaks and you must start again with Radiant Vein Blade I.",
+    description: "**Weapon Requirement:** Any weapon.\n\n**Attack replacement:** Replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make that attack with advantage. On a hit, it deals an extra 1d6 damage of a type you choose: radiant, or your weapon's damage type.\n\n**Flow:** You can use only one Radiant Vein Blade form per turn. If this attack misses, or you don't use Radiant Vein Blade II on your next turn, the flow breaks and you must start again with Radiant Vein Blade I.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -22,6 +22,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Kelemvor",
     location: "Leatrux",
+    activation: "attack",
   },
   {
     id: "earth_adept_stone_fist_2",
@@ -38,7 +39,7 @@ export const heartAbilities = [
   {
     id: "heart_adept_radiant_vein_blade_form_2",
     name: "Radiant Vein Blade II: Aegis of the Righteous",
-    description: "*Prerequisite: Radiant Vein Blade I*\n\n**Weapon Requirement:** Any weapon.\n\n**Cost:** 2 Essences.\n\n**Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade I, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. On a hit, the attack deals an extra 2d6 damage of a type you choose (radiant, or your weapon's damage type), and the target's AC is reduced by 2 until the end of your next turn.\n\n**Flow:** You can use only one Radiant Vein Blade form per turn. If this attack misses, or you don't use Radiant Vein Blade III on your next turn, the flow breaks and you must start again with Radiant Vein Blade I.",
+    description: "*Prerequisite: Radiant Vein Blade I*\n\n**Weapon Requirement:** Any weapon.\n\n**Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade I, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. On a hit, the attack deals an extra 2d6 damage of a type you choose (radiant, or your weapon's damage type), and the target's AC is reduced by 2 until the end of your next turn.\n\n**Flow:** You can use only one Radiant Vein Blade form per turn. If this attack misses, or you don't use Radiant Vein Blade III on your next turn, the flow breaks and you must start again with Radiant Vein Blade I.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -46,6 +47,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Kelemvor",
     location: "Leatrux",
+    activation: "attack",
   },
   {
     id: "earth_master_stone_fist_3",
@@ -62,7 +64,7 @@ export const heartAbilities = [
   {
     id: "heart_master_radiant_vein_blade_form_3",
     name: "Radiant Vein Blade III: Cascading Judgment",
-    description: "*Prerequisite: Radiant Vein Blade II*\n\n**Weapon Requirement:** Any weapon.\n\n**Cost:** 3 Essences.\n\n**Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade II, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make one weapon attack against the primary target. Hit or miss, you unleash a 15-foot cone of blade energy from yourself toward that target. The primary target and each creature in the cone must make a Dexterity saving throw against your essence ability save DC, and the primary target makes it with disadvantage:\n- **On a failed save:** The creature takes 3d8 damage of a type you choose (radiant, or your weapon's damage type) and is pushed 10 feet away from you.\n- **On a successful save:** The creature takes half damage and is not pushed.\n\n**Flow:** You can use only one Radiant Vein Blade form per turn. The sequence ends after this form. If its weapon attack misses, the flow breaks; otherwise, you can begin again with Radiant Vein Blade I on a later turn.",
+    description: "*Prerequisite: Radiant Vein Blade II*\n\n**Weapon Requirement:** Any weapon.\n\n**Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade II, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make one weapon attack against the primary target. Hit or miss, you unleash a 15-foot cone of blade energy from yourself toward that target. The primary target and each creature in the cone must make a Dexterity saving throw against your essence ability save DC, and the primary target makes it with disadvantage:\n- **On a failed save:** The creature takes 3d8 damage of a type you choose (radiant, or your weapon's damage type) and is pushed 10 feet away from you.\n- **On a successful save:** The creature takes half damage and is not pushed.\n\n**Flow:** You can use only one Radiant Vein Blade form per turn. The sequence ends after this form. If its weapon attack misses, the flow breaks; otherwise, you can begin again with Radiant Vein Blade I on a later turn.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -70,6 +72,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Kelemvor",
     location: "Leatrux",
+    activation: "attack",
   },
   {
     id: "wind_master_sky_piercing_execution",
@@ -82,6 +85,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Yoo Tae-yang",
     location: "Sirius",
+    activation: "reaction",
   },
   {
     id: "heart_grandmaster_stone_fist_4",
@@ -118,6 +122,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
+    activation: "action",
   },
   {
     id: "vine_master_entangling_reach",
@@ -130,6 +135,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "action",
   },
   {
     id: "vine_master_coiling_resilience",
@@ -146,7 +152,7 @@ export const heartAbilities = [
   {
     id: "heart_initiate_rush_attack",
     name: "Rush Attack",
-    description: "**Weapon Requirement:** Any melee weapon that deals piercing damage (such as a spear, pike, rapier, shortsword, trident, or dagger).\n\n**Cost:** 1 Essence.\n\n**Attack replacement:** When you take the Attack action on your turn, you can replace one of your weapon attacks to move up to 30 feet in a straight line toward a target creature you can see. This movement does not provoke opportunity attacks, and you can pass through spaces occupied by hostile creatures. Upon reaching the target, make one melee weapon attack with your piercing weapon against it, dealing your weapon's normal damage on a hit.",
+    description: "**Weapon Requirement:** Any melee weapon that deals piercing damage (such as a spear, pike, rapier, shortsword, trident, or dagger).\n\n**Attack replacement:** When you take the Attack action on your turn, you can replace one of your weapon attacks to move up to 30 feet in a straight line toward a target creature you can see. This movement does not provoke opportunity attacks, and you can pass through spaces occupied by hostile creatures. Upon reaching the target, make one melee weapon attack with your piercing weapon against it, dealing your weapon's normal damage on a hit.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -154,11 +160,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "attack",
   },
   {
     id: "heart_initiate_pommel_strike",
     name: "Pommel Strike",
-    description: "**Weapon Requirement:** Any sword (such as a greatsword, longsword, or shortsword) wielded with two hands or with your other hand empty.\n\n**Cost:** 1 Essence.\n\n**Action:** Bonus Action.\n\nYou strike an adjacent creature with the pommel, crossguard, or hilt of your sword. Make a melee weapon attack. On a hit, the target takes 1d4 bludgeoning damage plus your Strength or Dexterity modifier (your choice).",
+    description: "**Weapon Requirement:** Any sword (such as a greatsword, longsword, or shortsword) wielded with two hands or with your other hand empty.\n\nYou strike an adjacent creature with the pommel, crossguard, or hilt of your sword. Make a melee weapon attack. On a hit, the target takes 1d4 bludgeoning damage plus your Strength or Dexterity modifier (your choice).",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -166,11 +173,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "bonus action",
   },
   {
     id: "heart_initiate_lacerating_edge",
     name: "Lacerating Edge",
-    description: "**Weapon Requirement:** Any melee weapon that deals slashing damage (such as a battleaxe, greataxe, greatsword, scimitar, longsword, sickle, or handaxe).\n\n**Cost:** 1 Essence.\n\n**Attack replacement:** When you hit a creature with a slashing melee weapon as part of the Attack action, the target must succeed on a Constitution saving throw against your essence ability save DC or begin Bleeding for 1 minute. A bleeding creature takes 1d4 necrotic damage at the start of each of its turns and has disadvantage on Constitution saving throws to maintain concentration. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
+    description: "**Weapon Requirement:** Any melee weapon that deals slashing damage (such as a battleaxe, greataxe, greatsword, scimitar, longsword, sickle, or handaxe).\n\n**Attack replacement:** When you hit a creature with a slashing melee weapon as part of the Attack action, the target must succeed on a Constitution saving throw against your essence ability save DC or begin Bleeding for 1 minute. A bleeding creature takes 1d4 necrotic damage at the start of each of its turns and has disadvantage on Constitution saving throws to maintain concentration. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
     tier: "initiate",
     isActive: true,
     isPassive: false,
@@ -178,6 +186,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "on hit",
   },
   {
     id: "wind_adept_cyclone_step",
@@ -190,6 +199,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
+    activation: "free",
   },
   {
     id: "wind_adept_gale_force_strike",
@@ -202,6 +212,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
+    activation: "on hit",
   },
   {
     id: "wind_adept_ascending_dragon_gale",
@@ -214,11 +225,13 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Yoo Tae-yang",
     location: "Sirius",
+    activation: "attack",
+    oncePerTurn: true,
   },
   {
     id: "heart_adept_iron_stance",
     name: "Iron Stance (Brace)",
-    description: "**Weapon Requirement:** A melee weapon with the Heavy or Reach property (such as a pike, glaive, halberd, greatsword, or maul), or a two-handed ranged weapon (such as a heavy crossbow or longbow).\n\n**Cost:** 2 Essences.\n\n**Action:** Bonus Action.\n\nYou steady your grip and plant your stance, expending 15 feet of your movement speed for the turn. Until the start of your next turn:\n- Whenever you roll damage for an attack made with an eligible weapon, you can reroll all damage dice and take the higher total.\n- You have advantage on ability checks and saving throws against effects that would knock you prone, shove you, or move you against your will.",
+    description: "**Weapon Requirement:** A melee weapon with the Heavy or Reach property (such as a pike, glaive, halberd, greatsword, or maul), or a two-handed ranged weapon (such as a heavy crossbow or longbow).\n\nYou steady your grip and plant your stance, expending 15 feet of your movement speed for the turn. Until the start of your next turn:\n- Whenever you roll damage for an attack made with an eligible weapon, you can reroll all damage dice and take the higher total.\n- You have advantage on ability checks and saving throws against effects that would knock you prone, shove you, or move you against your will.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -226,11 +239,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "bonus action",
   },
   {
     id: "heart_adept_concussive_smash",
     name: "Concussive Smash",
-    description: "**Weapon Requirement:** Any melee weapon that deals bludgeoning damage (such as a warhammer, maul, mace, flail, club, greatclub, or light hammer).\n\n**Cost:** 2 Essences.\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action with a jarring strike. Make a melee weapon attack. On a hit, the attack deals an extra 1d8 bludgeoning damage, and the target must make a Constitution saving throw against your essence ability save DC. On a failed save, the target is Dazed for 1 round: it cannot take reactions, its movement speed is halved, and on its next turn it must choose between taking an action or a bonus action—it cannot take both.",
+    description: "**Weapon Requirement:** Any melee weapon that deals bludgeoning damage (such as a warhammer, maul, mace, flail, club, greatclub, or light hammer).\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action with a jarring strike. Make a melee weapon attack. On a hit, the attack deals an extra 1d8 bludgeoning damage, and the target must make a Constitution saving throw against your essence ability save DC. On a failed save, the target is Dazed for 1 round: it cannot take reactions, its movement speed is halved, and on its next turn it must choose between taking an action or a bonus action—it cannot take both.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -238,11 +252,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "attack",
   },
   {
     id: "heart_adept_disarming_feint",
     name: "Disarming Feint",
-    description: "**Weapon Requirement:** Any melee weapon with the Finesse property (such as a rapier, scimitar, or shortsword) or a weapon with the Reach property (such as a trident, pike, or halberd).\n\n**Cost:** 2 Essences.\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action. Make a melee weapon attack roll opposed by the target's Strength (Athletics) or Dexterity (Acrobatics) check (target's choice). If you win the contest, the attack deals normal weapon damage, and one weapon or item held by the target is wrenched from its grasp, flying up to 10 feet away in a direction of your choice and landing on the ground.",
+    description: "**Weapon Requirement:** Any melee weapon with the Finesse property (such as a rapier, scimitar, or shortsword) or a weapon with the Reach property (such as a trident, pike, or halberd).\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action. Make a melee weapon attack roll opposed by the target's Strength (Athletics) or Dexterity (Acrobatics) check (target's choice). If you win the contest, the attack deals normal weapon damage, and one weapon or item held by the target is wrenched from its grasp, flying up to 10 feet away in a direction of your choice and landing on the ground.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -250,11 +265,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "attack",
   },
   {
     id: "heart_adept_skirmishers_volley",
     name: "Skirmisher's Volley (Mobile Shot)",
-    description: "**Weapon Requirement:** Any ranged weapon with the Light property (such as a hand crossbow) or a shortbow.\n\n**Cost:** 2 Essences.\n\n**Action:** Bonus Action.\n\nImmediately after taking the Dash or Disengage action on your turn, you can make one ranged weapon attack with an eligible weapon as a bonus action. This attack ignores half and three-quarters cover and does not suffer disadvantage from being within 5 feet of a hostile creature.",
+    description: "**Weapon Requirement:** Any ranged weapon with the Light property (such as a hand crossbow) or a shortbow.\n\nImmediately after taking the Dash or Disengage action on your turn, you can make one ranged weapon attack with an eligible weapon as a bonus action. This attack ignores half and three-quarters cover and does not suffer disadvantage from being within 5 feet of a hostile creature.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -262,6 +278,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "bonus action",
   },
   {
     id: "wind_master_static_slipstream",
@@ -274,11 +291,13 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Kwon Jae-Hwan",
     location: "Sirius",
+    activation: "action",
+    concentration: true,
   },
   {
     id: "heart_master_tendon_sever",
     name: "Tendon Sever (Maiming Strike)",
-    description: "**Weapon Requirement:** Any melee weapon that deals slashing or piercing damage (such as a battleaxe, war pick, longsword, rapier, or halberd).\n\n**Cost:** 3 Essences.\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action. Make a melee weapon attack. On a hit, the attack deals an extra 2d8 damage of your weapon's type, and the target must make a Constitution saving throw against your essence ability save DC:\n- **On a failed save:** The creature is Maimed for 1 minute. While maimed, its movement speed is reduced to 0, it cannot take reactions or the Dash action, and it has disadvantage on Dexterity saving throws.\n- **On a successful save:** The target takes the extra damage and its movement speed is halved until the end of its next turn.\n\nAn affected creature can repeat the Constitution saving throw at the end of each of its turns, ending the condition on a success.",
+    description: "**Weapon Requirement:** Any melee weapon that deals slashing or piercing damage (such as a battleaxe, war pick, longsword, rapier, or halberd).\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action. Make a melee weapon attack. On a hit, the attack deals an extra 2d8 damage of your weapon's type, and the target must make a Constitution saving throw against your essence ability save DC:\n- **On a failed save:** The creature is Maimed for 1 minute. While maimed, its movement speed is reduced to 0, it cannot take reactions or the Dash action, and it has disadvantage on Dexterity saving throws.\n- **On a successful save:** The target takes the extra damage and its movement speed is halved until the end of its next turn.\n\nAn affected creature can repeat the Constitution saving throw at the end of each of its turns, ending the condition on a success.",
     tier: "master",
     isActive: true,
     isPassive: false,
@@ -286,6 +305,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "attack",
   },
   {
     id: "wood_master_heart_exchange",
@@ -298,11 +318,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Ha Yeon-ae",
     location: "Sirius",
+    activation: "action",
   },
   {
     id: "heart_grandmaster_heartstopper",
     name: "Heartstopper (Sternum Shatter)",
-    description: "**Weapon Requirement:** A melee weapon that deals bludgeoning damage with the Heavy or Versatile property (such as a maul, warhammer, morningstar, or flail).\n\n**Cost:** 4 Essences.\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action with a blow aimed directly at the opponent's sternum or cardiac center. Make a melee weapon attack. On a hit, the attack deals an extra 4d10 bludgeoning or force damage, and the target must make a Constitution saving throw against your essence ability save DC:\n- **On a failed save:** The target suffers Chest Trauma for 1 minute. The target is immediately Incapacitated and suffocating until the end of its next turn. For the remaining duration, its movement speed is halved, it cannot take reactions, and whenever it attempts to cast a spell with verbal components or take the Multiattack or Attack action, it takes 3d8 necrotic damage and must succeed on a Constitution saving throw against your essence ability save DC or lose that action completely.\n- **On a successful save:** The target takes half the extra damage and is Stunned until the end of your current turn.\n\nAn affected creature can repeat the Constitution saving throw at the end of each of its turns, ending the condition on a success.",
+    description: "**Weapon Requirement:** A melee weapon that deals bludgeoning damage with the Heavy or Versatile property (such as a maul, warhammer, morningstar, or flail).\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action with a blow aimed directly at the opponent's sternum or cardiac center. Make a melee weapon attack. On a hit, the attack deals an extra 4d10 bludgeoning or force damage, and the target must make a Constitution saving throw against your essence ability save DC:\n- **On a failed save:** The target suffers Chest Trauma for 1 minute. The target is immediately Incapacitated and suffocating until the end of its next turn. For the remaining duration, its movement speed is halved, it cannot take reactions, and whenever it attempts to cast a spell with verbal components or take the Multiattack or Attack action, it takes 3d8 necrotic damage and must succeed on a Constitution saving throw against your essence ability save DC or lose that action completely.\n- **On a successful save:** The target takes half the extra damage and is Stunned until the end of your current turn.\n\nAn affected creature can repeat the Constitution saving throw at the end of each of its turns, ending the condition on a success.",
     tier: "grandmaster",
     isActive: true,
     isPassive: false,
@@ -310,6 +331,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "attack",
   },
   {
     id: "heart_grandmaster_unwavering_belief",
@@ -326,7 +348,7 @@ export const heartAbilities = [
   {
     id: "heart_grandmaster_supreme_heart_reflection_sword",
     name: "Supreme Heart-Reflection Sword",
-    description: "**Weapon Requirement:** Any sword (such as a greatsword, longsword, rapier, or scimitar).\n\n**Cost:** 4 Essences.\n\n**Action:** Reaction.\n\nWhen a spell or ability forces you to make a saving throw while wielding a sword, you can use your reaction to parry with your blade. You gain advantage on that saving throw. If you succeed on the saving throw, you reflect the spell or ability back at the originator: the originator becomes the target, using the original save DC or effect.",
+    description: "**Weapon Requirement:** Any sword (such as a greatsword, longsword, rapier, or scimitar).\n\nWhen a spell or ability forces you to make a saving throw while wielding a sword, you can use your reaction to parry with your blade. You gain advantage on that saving throw. If you succeed on the saving throw, you reflect the spell or ability back at the originator: the originator becomes the target, using the original save DC or effect.",
     tier: "grandmaster",
     isActive: true,
     isPassive: false,
@@ -334,11 +356,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "reaction",
   },
   {
     id: "heart_grandmaster_divine_ocean_splitting_record",
     name: "Divine Ocean-Splitting Record",
-    description: "**Weapon Requirement:** Any melee weapon that deals slashing or bludgeoning damage with the Heavy or Versatile property (such as a greatsword, greataxe, maul, halberd, or glaive).\n\n**Cost:** 4 Essences.\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action. You deliver a downward cleavage of devastating force, releasing a pressurized torrent in a line 60 feet long and 10 feet wide originating from you:\n- **Environmental Displacement:** Any liquid, fog, mist, or non-solid water-based surface in the area is parted and pushed aside for 1 minute, creating a dry trench 10 feet deep. Any spell of 6th level or lower creating a barrier or wall in the line (such as *Wall of Force*, *Wall of Water*, or *Wall of Ice*) is instantly shattered and dispelled.\n- **Creatures:** Each creature in the area must make a Dexterity saving throw against your essence ability save DC:\n  - **On a failed save:** It takes 4d10 magical bludgeoning or slashing damage plus 4d10 cold damage, is pushed 15 feet to the nearest side of the line, and is knocked prone.\n  - **On a successful save:** It takes half damage and is neither pushed nor knocked prone.",
+    description: "**Weapon Requirement:** Any melee weapon that deals slashing or bludgeoning damage with the Heavy or Versatile property (such as a greatsword, greataxe, maul, halberd, or glaive).\n\n**Attack replacement:** Replace one weapon attack as part of the Attack action. You deliver a downward cleavage of devastating force, releasing a pressurized torrent in a line 60 feet long and 10 feet wide originating from you:\n- **Environmental Displacement:** Any liquid, fog, mist, or non-solid water-based surface in the area is parted and pushed aside for 1 minute, creating a dry trench 10 feet deep. Any spell of 6th level or lower creating a barrier or wall in the line (such as *Wall of Force*, *Wall of Water*, or *Wall of Ice*) is instantly shattered and dispelled.\n- **Creatures:** Each creature in the area must make a Dexterity saving throw against your essence ability save DC:\n  - **On a failed save:** It takes 4d10 magical bludgeoning or slashing damage plus 4d10 cold damage, is pushed 15 feet to the nearest side of the line, and is knocked prone.\n  - **On a successful save:** It takes half damage and is neither pushed nor knocked prone.",
     tier: "grandmaster",
     isActive: true,
     isPassive: false,
@@ -346,11 +369,12 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "attack",
   },
   {
     id: "heart_grandmaster_azure_dragon_ascending_the_waves",
     name: "Azure Dragon Ascending the Waves",
-    description: "**Prerequisite:** Must currently be in a Draconic Form (such as under a dragon transformation, *Dragon Form*, wild shape, or draconic avatar).\n\n**Weapon Requirement:** Natural weapons (claws, bite, tail) or unarmed strikes while in a Draconic Form.\n\n**Cost:** 4 Essences.\n\n**Action:** Bonus Action.\n\nYou erupt upward in a spiraling vortex of churning seawater and storm mist, flying up to your movement speed in a straight line or upward arc without provoking opportunity attacks.\n- Each creature within 10 feet of your flight path must make a Strength saving throw against your essence ability save DC:\n  - **On a failed save:** It takes 4d10 cold damage and 4d10 bludgeoning damage, is lifted 20 feet into the air by the ascending waves, and falls, taking falling damage and landing prone.\n  - **On a successful save:** It takes half damage and is not lifted or knocked prone.\n- At any point during or at the end of this ascent, you can make one natural weapon attack (bite, claw, or tail) against a target within reach with advantage. On a hit, the attack deals its normal damage plus an extra 4d8 thunder or cold damage.",
+    description: "**Prerequisite:** Must currently be in a Draconic Form (such as under a dragon transformation, *Dragon Form*, wild shape, or draconic avatar).\n\n**Weapon Requirement:** Natural weapons (claws, bite, tail) or unarmed strikes while in a Draconic Form.\n\nYou erupt upward in a spiraling vortex of churning seawater and storm mist, flying up to your movement speed in a straight line or upward arc without provoking opportunity attacks.\n- Each creature within 10 feet of your flight path must make a Strength saving throw against your essence ability save DC:\n  - **On a failed save:** It takes 4d10 cold damage and 4d10 bludgeoning damage, is lifted 20 feet into the air by the ascending waves, and falls, taking falling damage and landing prone.\n  - **On a successful save:** It takes half damage and is not lifted or knocked prone.\n- At any point during or at the end of this ascent, you can make one natural weapon attack (bite, claw, or tail) against a target within reach with advantage. On a hit, the attack deals its normal damage plus an extra 4d8 thunder or cold damage.",
     tier: "grandmaster",
     isActive: true,
     isPassive: false,
@@ -358,6 +382,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    activation: "bonus action",
   },
   {
     id: "lightning_adept_thunderous_speed",
@@ -382,6 +407,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Vajra from the Espora Tribe",
     location: "Phudara / Isle of Whispers",
+    activation: "attack",
   }
 ];
 
@@ -389,13 +415,14 @@ export const heartCantrips = [
   {
     id: "ruin_cantrip_true_strike",
     name: "True Strike",
-    description: "Guided by a sudden flash of murder insight, you strike with lethal precision using your spellcasting modifier.\n\nhttps://5e.tools/spells.html#true%20strike_xphb",
+    description: "You make one weapon attack using your spellcasting ability for attack and damage, and it can deal radiant damage instead.\n\nSource reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#true%20strike_xphb).",
     tier: "cantrip",
     isActive: false,
     isPassive: false,
     isSpell: false,
     isCantrip: true,
     author: "Divination / Assassination",
+    activation: "action",
   }
 ];
 

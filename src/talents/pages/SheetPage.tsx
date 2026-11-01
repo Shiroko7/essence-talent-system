@@ -10,7 +10,7 @@ import type { SystemPath } from '../model';
 import { pagePath } from '../routes';
 import { PageHeader } from '../header/PageHeader';
 import {
-  AbilityIcon, DomainLine, EmptyState, GroupLabel, KindTag, PathSigil, SearchField, Segmented, UseButton
+  AbilityIcon, ActivationTags, DomainLine, EmptyState, GroupLabel, KindTag, PathSigil, SearchField, Segmented, UseButton
 } from '../ui';
 
 const KIND_OPTIONS: { id: KindFilter; label: string }[] = [
@@ -35,6 +35,7 @@ const AbilityEntry: React.FC<{
             <span className="block font-display text-[15px] text-ivory tracking-wide">{ability.name}</span>
             <span className="flex flex-wrap items-center gap-2 mt-0.5">
               <KindTag ability={ability} compact />
+              <ActivationTags ability={ability} compact />
               <span className="text-[11px] text-mist">
                 {reservesEssence(ability) ? `Holds ${cost} essence` : `Costs ${cost} to use`}
               </span>

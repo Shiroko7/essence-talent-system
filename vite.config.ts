@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import { PATCH } from './src/data/patchNotesV2'
+import { LATEST_PATCH as PATCH } from './src/data/patchNotes'
 import { RULES_PREVIEW } from './src/data/attunementRules'
 
 interface Preview {

@@ -14,6 +14,7 @@ isSpell: false
 isCantrip: false
 author: Shadow Sect
 location: Sirius
+activation: action
 ```
 
 As an action, you hurl a swirling torrent of flames laced with negative energy at one creature within 60 feet. The target must make a Charisma saving throw against your essence ability save DC:
@@ -106,11 +107,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Transmutation
+activation: action
 ```
 
-You step into the border regions of the Ethereal Plane, moving through objects and creatures on the Material Plane as a ghost.
+You step into the Border Ethereal for up to 8 hours, unseen and able to move through solid objects on your plane.
 
-https://5e.tools/spells.html#etherealness_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#etherealness_xphb).
 
 ---
 
@@ -142,11 +144,10 @@ isSpell: false
 isCantrip: false
 author: Netherdark Emperor "Yuji" (Shadow Sect)
 location: Leatrux
+activation: action
 ```
 
-**Action | Range:** Half your maximum speed
-
-You can move up to half your maximum speed before making this strike. You channel the crushing emptiness of the void into a strike against a single creature within range. The target must make a Charisma saving throw against your essence ability save DC.
+As an action, you can move up to half your speed, then channel the crushing emptiness of the void into a strike against a single creature within a distance equal to half your speed. The target must make a Charisma saving throw against your essence ability save DC.
 
 - **Failed Save:** The creature takes 2d10 force damage.
 - **Successful Save:** The creature takes half damage.
@@ -166,6 +167,7 @@ isSpell: false
 isCantrip: false
 author: Kwon Jae-Hwan
 location: Sirius
+activation: bonus action
 ```
 
 As a bonus action, you flatten and dissolve your physical form into a living shadow for up to 10 minutes. You can dismiss this effect at any time at will (no action required). The effect ends immediately if you make an attack roll or cast a spell.
@@ -188,15 +190,10 @@ isSpell: false
 isCantrip: false
 author: Portfolio (Darkness / Shar)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action
-**Range:** Self 
-**Components:** V, S, M (a shard of polished obsidian) 
-**Duration:** 1 hour
-**Portfolio:**  Darkness
-
-You summon a suit of armor woven from solidified shadow that wreathes your form. This armor provides a shadowy veil that grants you a **+2 bonus to your Armor Class** and resistance to **necrotic and radiant damage**.
+As an action, you summon a suit of armor woven from solidified shadow that wreathes your form for 1 hour. This armor provides a shadowy veil that grants you a **+2 bonus to your Armor Class** and resistance to **necrotic and radiant damage**.
 
 While you are in dim light or darkness, you gain partial concealment from the shadows. Attack rolls against you have disadvantage, and you have advantage on Dexterity (Stealth) checks.
 
@@ -215,15 +212,11 @@ isSpell: false
 isCantrip: false
 author: Portfolio (Darkness / Shar)
 location: Leatrux
+activation: action
+concentration: true
 ```
 
-**Casting Time:** 1 action
-**Range:** 120 feet
-**Components:** S
-**Duration:** Concentration, up to 1 minute
-**Portfolio:** Murder
-
-You create a 4-inch beam of darkness that streaks toward a creature within range. Make a ranged spell attack. On a hit, the target takes **5d8 force damage** and must make a Constitution saving throw. On a failed save, the target is **silenced for the duration of the spell** and cannot speak or cast spells with verbal components. The target can repeat the saving throw at the end of each of its turns, ending the silence on a success.
+As an action, you create a 4-inch beam of darkness that streaks toward a creature within 120 feet. Make a ranged spell attack. On a hit, the target takes **5d8 force damage** and must make a Constitution saving throw. On a failed save, the target is **silenced for up to 1 minute** and cannot speak or cast spells with verbal components. The target can repeat the saving throw at the end of each of its turns, ending the silence on a success.
 
 ---
 
@@ -285,11 +278,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric (Trickery) / Illusion
+activation: action
 ```
 
-You create a sound or an image of an object within range that lasts for the duration to deceive observers.
+You create a sound or an image of an object within 30 feet for 1 minute. A creature can study it to see through it.
 
-https://5e.tools/spells.html#minor%20illusion_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#minor%20illusion_xphb).
 
 ## Spells
 
@@ -305,11 +299,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Necromancy
+activation: action
 ```
 
-You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw or be blinded or deafened for the duration.
+A creature within 120 feet is blinded or deafened for 1 minute on a failed Constitution save, repeating the save each turn.
 
-https://5e.tools/spells.html#blindness%2Fdeafness_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#blindness%2Fdeafness_xphb).
 
 ---
 
@@ -323,11 +318,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Abjuration (Severance)
+activation: action
+concentration: true
 ```
 
-A 10-foot-radius invisible sphere of antimagic surrounds you. Spells cannot be cast and magical effects are utterly suppressed.
+A 10-foot aura of antimagic surrounds you for up to 1 hour. No spells or magical effects work inside it.
 
-https://5e.tools/spells.html#antimagic%20field_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#antimagic%20field_xphb).
 
 ---
 
@@ -341,11 +338,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Trickery Domain) / Abjuration
+activation: action
+concentration: true
 ```
 
-A veil of shadows and silence radiates from you, giving each chosen creature within 30 feet a +10 bonus to Dexterity (Stealth) checks.
+You and creatures you choose in a 30-foot aura gain +10 to Stealth checks and leave no tracks for up to 1 hour.
 
-https://5e.tools/spells.html#pass%20without%20trace_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#pass%20without%20trace_xphb).
 
 ---
 
@@ -359,11 +358,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Trickery Domain) / Evocation
+activation: action
+concentration: true
 ```
 
-Magical darkness fills a 15-foot-radius sphere. Creatures with normal darkvision cannot see through it, and nonmagical light cannot illuminate it.
+Magical darkness that darkvision can't pierce fills a 15-foot-radius sphere within 60 feet for up to 10 minutes.
 
-https://5e.tools/spells.html#darkness_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#darkness_xphb).
 
 ---
 
@@ -377,11 +378,14 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Illusion
+activation: action
+concentration: true
+ritual: true
 ```
 
-No sound can be created within or pass through a 20-foot-radius sphere. Casting a spell with a verbal component is impossible there.
+No sound can exist in a 20-foot-radius sphere within 120 feet for up to 10 minutes, so verbal spells can't be cast there.
 
-https://5e.tools/spells.html#silence_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#silence_xphb).
 
 ---
 
@@ -395,11 +399,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Void / Conjuration
+activation: action
+concentration: true
 ```
 
-You open a gateway to the dark between the stars. A 20-foot-radius sphere of blackness and bitter cold appears, dealing cold and acid damage.
+A 20-foot-radius sphere of freezing darkness within 150 feet deals 2d6 cold damage at the start of turns and 2d6 acid damage at the end on a failed Dexterity save.
 
-https://5e.tools/spells.html#hunger%20of%20hadar_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#hunger%20of%20hadar_xphb).
 
 ---
 
@@ -413,11 +419,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Trickery Domain) / Abjuration
+activation: action
 ```
 
-For the duration, you hide a target from divination magic and scrying sensors.
+For 8 hours a creature, place or object you touch can't be targeted or perceived by divination magic.
 
-https://5e.tools/spells.html#nondetection_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#nondetection_xphb).
 
 ---
 
@@ -431,11 +438,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Twilight/Trickery) / Illusion
+activation: action
+concentration: true
 ```
 
-You or a creature you touch becomes invisible for 1 minute, even when attacking or casting spells.
+A creature you touch is invisible for up to 1 minute, even while it attacks or casts spells.
 
-https://5e.tools/spells.html#greater%20invisibility_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#greater%20invisibility_xphb).
 
 ---
 
@@ -449,11 +458,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Shadow Weave / Necromancy
+activation: action
+concentration: true
 ```
 
-Flame-like shadows wreathe your body, heavily obscuring you and dealing 2d8 necrotic damage to any creature within 10 feet that hits you.
+Shadows wreathe you for up to 1 minute. You're heavily obscured, resist radiant damage, and creatures that hit you in melee take 2d8 necrotic damage.
 
-https://5e.tools/spells.html#shadow%20of%20moil_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#shadow%20of%20moil_xge).
 
 ---
 
@@ -467,11 +478,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Shadow Weave / Evocation
+activation: action
+concentration: true
 ```
 
-Darkness and screaming horrors fill a 60-foot-radius sphere. Creatures in the area take 8d8 psychic damage on a failed Wisdom save.
+Magical darkness fills a 60-foot-radius sphere within 150 feet for up to 10 minutes. Creatures in it take 8d8 psychic damage on a failed Wisdom save, or half on a success.
 
-https://5e.tools/spells.html#maddening%20darkness_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#maddening%20darkness_xge).
 
 ---
 
@@ -485,9 +498,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-Several illusory reflections surround you, confusing attacks aimed at your true form.
+Three illusory duplicates of you appear for 1 minute. Each attack against you can hit a duplicate instead and destroy it.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mirror%20image_phb).
 
@@ -503,9 +517,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-Your outline shifts and shimmers, making your position difficult to read.
+For up to 1 minute, attack rolls against you have disadvantage from creatures that rely on sight.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#blur_phb).
 
@@ -522,6 +538,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can move with such speed and silence that your footsteps echo faintly. You gain advantage on Stealth checks, and creatures within 100 feet of you have disadvantage on Wisdom (Perception) checks to hear you. This effect lasts for 10 minutes.
@@ -542,9 +559,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+ritual: true
 ```
 
-An invisible, mindless force performs simple tasks at your command.
+An invisible, mindless force within 60 feet performs simple tasks for you for 1 hour.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#unseen%20servant_xphb).
 
@@ -560,9 +579,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Heroes of Faerûn)
+activation: bonus action
+concentration: true
 ```
 
-Arcane wards give you advantage on saves against magic and let you shrug off damage entirely on a successful save.
+For up to 1 minute you have advantage on saves against magic and take no damage when you succeed on a save for half.
 
 Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spells.html#elminster's%20elusion_frhof).
 
@@ -572,15 +593,16 @@ Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spel
 
 ```yaml
 id: poison_2nd_level_swallow_magic
-tier: 2nd
+tier: 1st
 isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: reaction
 ```
 
-When a spell fails to affect you, you swallow its leftover magic to heal, gain speed, or bolster a roll.
+As a reaction when a spell fails to affect you, you swallow its magic to heal 1d4 + your spellcasting modifier, gain 15 feet of speed, or add 1d4 to a roll.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#swallow%20magic_obojimatallgrass).
 
@@ -596,9 +618,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+ritual: true
 ```
 
-A quasi-real horse appears to carry you swiftly across the land.
+A Large phantom horse with a 100-foot speed appears within 30 feet for 1 hour for a creature of your choice to ride.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#phantom%20steed_xphb).
 
@@ -616,7 +639,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-You pull shadow material from the Shadowfell to shape a temporary object of vegetable or mineral matter.
+You make a nonliving object of vegetable or mineral matter, up to a 5-foot cube, within 30 feet. How long it lasts depends on the material.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#creation_xphb).
 
@@ -632,9 +655,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-An object or willing creature becomes invisible and hidden from all divination; a creature falls into suspended animation until a set condition ends it.
+A creature or object you touch is invisible and hidden from divination until a condition you set is met. A creature sleeps in suspended animation.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#sequester_xphb).
 
@@ -650,9 +674,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (EGW)
+activation: action
+concentration: true
 ```
 
-A sphere of magical darkness and crushing gravity up to 40 feet across deafens those within, hinders movement, and deals force damage.
+A sphere of magical darkness and crushing gravity, up to 40 feet in radius, forms within 150 feet. Creatures inside take 8d10 force damage on a failed Constitution save, or half on a success.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#dark%20star_egw).
 
@@ -668,9 +694,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (EGW)
+activation: action
+concentration: true
 ```
 
-A 20-foot sphere of destructive gravity drags creatures inward, restrains them, and deals heavy force damage; anything reduced to 0 hit points is annihilated.
+A 20-foot sphere of gravity within 1,000 feet pulls everything within 100 feet toward it and deals 5d10 force damage to creatures inside, restraining them.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#ravenous%20void_egw).
 
@@ -686,9 +714,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: action
 ```
 
-A creature believes it watches itself and its surroundings crumble through the eons, taking 10d12 psychic damage and becoming paralyzed on a failed save.
+A creature within 120 feet that fails an Intelligence save takes 10d12 psychic damage and is paralyzed, gaining exhaustion each time it fails to break free.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#vision%20of%20elapsing%20eons_au).
 
@@ -704,9 +733,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Tales from the Shadows
+concentration: true
 ```
 
-You summon a titan of shadow that obeys your commands, hiding in darkness and hurling boulders of cold shadow-stuff.
+You summon a shadow titan within 90 feet that fights for you and obeys your commands for up to 1 hour.
 
 Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#conjure%20shadow%20titan_talesfromtheshadows).
 
@@ -722,9 +752,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Tales from the Shadows
+activation: action
+concentration: true
 ```
 
-Withering darkness fills a 120-foot sphere, snuffing light and draining chosen creatures with necrotic damage and exhaustion.
+A 120-foot sphere of darkness erupts from you, putting out nonmagical light and dispelling light from spells of 6th level or lower.
 
 Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#dying%20of%20the%20light_talesfromtheshadows).
 
@@ -740,9 +772,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D Beyond Drops
+activation: action
 ```
 
-A fragment of a dark star deals 6d12 necrotic damage, then more a turn later, and you regain hit points equal to that second burst.
+A ranged spell attack within 120 feet deals 6d12 necrotic damage. Hit or miss, the target takes 3d12 more at the end of its next turn and you regain that much.
 
 Source reference: [D&D Beyond Drops on 5e.tools](https://5e.tools/spells.html#void%20star_dndbeyonddrops).
 
@@ -758,9 +791,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Tales from the Shadows
+activation: action
+concentration: true
 ```
 
-A crawling mass of shadows drags and restrains the living, dealing necrotic damage to those caught in its tendrils.
+A mass of grasping shadows fills three 10-foot cubes within 60 feet, moving 20 feet a round and restraining creatures it touches.
 
 Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#creeping%20darkness_talesfromtheshadows).
 
@@ -776,9 +811,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Tales from the Shadows
+activation: action
+concentration: true
 ```
 
-A storm of raging shadow entropy deals necrotic damage and exhaustion to creatures within; you can move it each turn.
+A 20-foot-radius storm of entropy within 120 feet deals 6d8 necrotic damage and exhaustion to creatures inside on a failed Constitution save, or half damage on a success.
 
 Source reference: [Kobold Press Tales from the Shadows on 5e.tools](https://5e.tools/spells.html#umbral%20storm_talesfromtheshadows).
 
@@ -794,9 +831,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Elminster's Guide to Magic
+activation: action
+concentration: true
 ```
 
-You wrap a creature in Shadowfell essence: it gains advantage and doubled proficiency on Stealth checks and can squeeze through any gap wider than an inch.
+A creature you touch gains advantage and doubled proficiency on Stealth checks and can squeeze through small gaps.
 
 Source reference: [Elminster's Guide to Magic on 5e.tools](https://5e.tools/spells.html#shadow%20form_elminsters%20guide%20to%20magic).
 
@@ -812,9 +851,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kibbles' Compendium of Legends and Legacies
+activation: action
 ```
 
-Dark tendrils burst from you, dealing 6d8 necrotic damage to chosen creatures within 20 feet and dragging them to your side; you regain hit points from the damage dealt.
+Creatures of your choice within 20 feet take 6d8 necrotic damage and are pulled next to you on a failed Constitution save, or half damage on a success. You heal a quarter of the total.
 
 Source reference: [Kibbles' Compendium of Legends and Legacies on 5e.tools](https://5e.tools/spells.html#devouring%20darkness_kt-cll).
 
@@ -830,9 +870,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grimlore's Grimoire
+activation: action
 ```
 
-A creature you touch receives a sliver of Shar’s umbral omniscience, gaining blindsight out to 30 feet.
+A creature you touch gains blindsight out to 30 feet.
 
 Source reference: [Grimlore's Grimoire on 5e.tools](https://5e.tools/spells.html#grace%20of%20shar_grimloresgrimoire).
 
@@ -848,8 +889,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Dark Arts Player's Companion
+activation: action
 ```
 
-Shadows swirl around you: you turn invisible at the start of each turn, see through magical darkness to 120 feet, and can conjure spheres of magical darkness.
+For up to 10 minutes you turn invisible at the start of each turn, see through darkness out to 120 feet, and can create magical darkness.
 
 Source reference: [Dark Arts Player's Companion on 5e.tools](https://5e.tools/spells.html#investiture%20of%20shadow_dapc).
+
+

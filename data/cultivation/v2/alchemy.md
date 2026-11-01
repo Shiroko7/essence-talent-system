@@ -14,6 +14,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 As an action, you can create a powerful, improvised explosive from available materials. Each creature in a 10-foot radius must make a Dexterity saving throw, taking 4d6 acid damage on a failed save, or half as much on a successful save.
@@ -99,6 +100,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can create a cloud of acidic mist in a 10-foot radius around you. Any creature that starts its turn within the cloud must make a Constitution saving throw or take 6d6 acid damage and be blinded until the end of its next turn.
@@ -116,6 +118,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute.
@@ -133,6 +136,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Strength for 10 minutes, and you take a –2 penalty to Intelligence for the same duration.
@@ -150,6 +154,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Dexterity for 10 minutes, and you take a –2 penalty to Wisdom for the same duration.
@@ -167,6 +172,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Constitution for 10 minutes, and you take a –2 penalty to Charisma for the same duration.
@@ -184,6 +190,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Intelligence for 10 minutes, and you take a –2 penalty to Strength for the same duration.
@@ -201,6 +208,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Wisdom for 10 minutes, and you take a –2 penalty to Dexterity for the same duration.
@@ -218,6 +226,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, when you drink a mutagen, you gain a +2 bonus to Charisma for 10 minutes, and you take a –2 penalty to Constitution for the same duration.
@@ -252,11 +261,34 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: action
 ```
 
-https://5e.tools/spells.html#acid%20splash_xphb
+An acid bubble bursts in a 5-foot-radius sphere within 60 feet: each creature there takes 1d6 acid damage on a failed Dexterity save.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#acid%20splash_xphb).
 
 ## Spells
+
+---
+
+### Otiluke's Acid Cloud
+
+```yaml
+id: v2_alchemy_otilukes_acid_cloud
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Blackstaff's Book of 1000 Spells
+activation: action
+concentration: true
+```
+
+A glass orb of acid gas appears in your hand. Thrown up to 90 feet, it bursts into a 15-foot cloud that heavily obscures the area for 1 minute and deals 5d6 acid damage on a failed Dexterity save, or half on a success.
+
+Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tools/spells.html#otiluke's%20acid%20cloud_bb1000s).
 
 ---
 
@@ -270,11 +302,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Transmutation / Viral Metamorphosis
+activation: action
+concentration: true
 ```
 
-Permamently warp the biological flesh of a creature or object into any plague beast or form.
+You turn a creature or nonmagical object within 30 feet into another creature or object (Wisdom save for an unwilling creature). After a full hour of concentration, the change is permanent.
 
-https://5e.tools/spells.html#true%20polymorph_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#true%20polymorph_xphb).
 
 ---
 
@@ -289,7 +323,9 @@ isSpell: true
 isCantrip: false
 ```
 
-https://5e.tools/spells.html#fabricate_xphb
+You turn raw materials within 120 feet into finished products of the same material, such as a bridge from trees or clothes from wool.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#fabricate_xphb).
 
 ---
 
@@ -302,9 +338,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#grease_xphb
+Grease covers a 10-foot square within 60 feet as difficult terrain for 1 minute. Creatures there fall prone on a failed Dexterity save.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#grease_xphb).
 
 ---
 
@@ -317,9 +356,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: action
 ```
 
-https://5e.tools/spells.html#primal%20savagery_xge
+Your teeth or nails sharpen for a melee spell attack against a creature within 5 feet, dealing 1d10 acid damage.
+
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#primal%20savagery_xge).
 
 ## Spells
 
@@ -337,7 +379,7 @@ isCantrip: true
 author: D&D 5e (PHB)
 ```
 
-Repairs a single tear or break in an object, restoring it to working condition if the damage is small.
+You repair a single break or tear up to 1 foot across in an object you touch.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mending_phb).
 
@@ -353,9 +395,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (TCE)
+activation: action
+concentration: true
 ```
 
-A stream of corrosive liquid coats creatures in a line, damaging them until they or an ally scrape it away.
+A 30-foot line of acid coats creatures that fail a Dexterity save. They take 2d4 acid damage at the start of each turn until one of them scrapes it off.
 
 Source reference: [D&D 5e TCE on 5e.tools](https://5e.tools/spells.html#tasha's%20caustic%20brew_tce).
 
@@ -371,9 +415,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-A magical arrow of acid strikes one target, with lingering damage if the attack misses.
+A ranged spell attack within 90 feet deals 4d4 acid damage, plus 2d4 more at the end of the target's next turn. A miss deals half the first hit only.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#melf's%20acid%20arrow_phb).
 
@@ -389,9 +434,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-A bubbling sphere bursts into a wide splash of acid that continues to burn after the initial impact.
+A ball of acid explodes in a 20-foot-radius sphere within 150 feet: 10d4 acid damage and 5d4 more at the end of the next turn on a failed Dexterity save, or half on a success.
 
 Source reference: [D&D 5e XGE on 5e.tools](https://5e.tools/spells.html#vitriolic%20sphere_xge).
 
@@ -408,6 +454,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, by drinking a specially prepared potion, you gain an additional 10 feet of movement speed for 10 minutes.
@@ -540,6 +587,7 @@ isSpell: false
 isCantrip: false
 author: Shadow Sect
 location: Sirius
+activation: action
 ```
 
 As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success.
@@ -601,6 +649,7 @@ isSpell: false
 isCantrip: false
 author: Fendral
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine the effect. On a 1–7, you gain the corresponding elixir’s effect. On an 8, you may choose any of the seven:
@@ -626,6 +675,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can drink a mutagen to gain a 1d4 bonus to strength based ability checks for 10 minutes.
@@ -643,6 +693,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 As an action, you can apply a specially crafted perfume that enhances your charm and charisma. For the next hour, you gain a 1d4 bonus to Charisma (Persuasion) and Charisma (Deception) checks.
@@ -660,6 +711,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you can consume a pill to gain advantage on concentration checks for the next hour.
@@ -677,6 +729,7 @@ isSpell: false
 isCantrip: false
 author: Lord Kai (Shadow Sect)
 location: Sirius
+activation: action
 ```
 
 As an Action, through concentrated biochemical reagents and alchemical cultivation, you conjure a monstrous, hissing Snake Horror homunculus in an unoccupied space you can see within 30 feet. The creature is friendly to you and your companions, acts immediately after you in the initiative order, and remains for 1 hour, until it drops to 0 hit points, or until you dismiss it as an action.
@@ -700,9 +753,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-A mass of chaotic energy deals damage of a random type and can leap between targets on matching dice.
+A ranged spell attack within 120 feet deals 2d8 + 1d6 damage of a random type. If both d8s match, it leaps to another creature within 30 feet.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#chaos%20bolt_xge).
 
@@ -718,9 +772,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-An orb of chosen elemental energy deals 3d8 damage and can leap to more targets on matching dice.
+A ranged spell attack within 90 feet deals 3d8 damage of a type you choose: acid, cold, fire, lightning, poison or thunder.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#chromatic%20orb_xphb).
 
@@ -736,9 +791,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A creature or object grows or shrinks one size, changing its strength and weapon damage.
+A creature or object within 30 feet grows or shrinks one size for 1 minute (Constitution save if unwilling), with advantage or disadvantage on Strength rolls and +1d4 or -1d4 weapon damage.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#enlarge%2Freduce_xphb).
 
@@ -754,9 +811,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A green ray deals 10d6 + 40 force damage and reduces anything it kills to dust.
+A green ray hits a target within 60 feet for 10d6 + 40 force damage on a failed Dexterity save. A creature reduced to 0 hit points turns to dust.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#disintegrate_xphb).
 
@@ -772,9 +830,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-Any number of willing creatures take the forms of beasts, and you can reshape them on later turns.
+Any number of willing creatures within 30 feet turn into Large or smaller Beasts of CR 4 or lower for up to 24 hours.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#animal%20shapes_xphb).
 
@@ -790,12 +849,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Paladin
+activation: bonus action
 ```
 
-You end one disease or condition: blinded, deafened, paralyzed, or poisoned.
+You touch a creature and end one condition on it: blinded, deafened, paralyzed or poisoned.
 
-https://5e.tools/spells.html#lesser%20restoration_xphb
-
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#lesser%20restoration_xphb).
 
 ---
 
@@ -809,11 +868,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Abjuration
+activation: action
 ```
 
-You end one debilitating effect: exhaustion levels, charmed/petrified, cursed, or ability reductions.
+You touch a creature and remove one level of exhaustion, charm or petrification, a curse, or a reduction to an ability score or hit point maximum.
 
-https://5e.tools/spells.html#greater%20restoration_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#greater%20restoration_xphb).
 
 ---
 
@@ -829,7 +889,7 @@ isCantrip: false
 author: D&D 5e (IDRotF)
 ```
 
-You transform a quicksilver-filled doll into a magen construct that obeys your commands.
+You turn a prepared doll into a magen, a construct servant that obeys your commands.
 
 Source reference: [D&D 5e (IDRotF) on 5e.tools](https://5e.tools/spells.html#create%20magen_idrotf).
 
@@ -847,7 +907,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-An inert duplicate grows in a vessel over 120 days; if the original dies, its soul transfers to the clone.
+You grow an inert duplicate of a creature over 120 days. If the original dies, its soul moves into the clone.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#clone_xphb).
 
@@ -863,9 +923,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: action
 ```
 
-An explosive seed inside a creature deals 10d10 fire damage, then erupts in a 60-foot blast that damages everyone around it.
+An explosive seed inside a creature within 500 feet deals 10d10 fire damage on a failed Constitution save, then blasts a 60-foot emanation around it.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#detonate_au).
 
@@ -881,9 +942,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-Up to ten creatures transform into beasts of your choice for up to an hour.
+Up to ten creatures within 120 feet turn into Beasts for up to 1 hour (Wisdom save if unwilling).
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#mass%20polymorph_xge).
 
@@ -899,8 +962,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: reaction
 ```
 
-You take on a creature type’s immortal traits, gaining temporary hit points, resistances, and that type’s signature gifts.
+You spend nine Hit Point Dice to gain temporary hit points and steal a creature's type, gaining immunity to poison and no need to eat, drink or breathe.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#steal%20immortality_grimhollowpg24).
+
+

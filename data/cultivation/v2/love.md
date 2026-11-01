@@ -18,15 +18,10 @@ isSpell: false
 isCantrip: false
 author: Cyric (source technique; emotional manipulation)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action  
-**Range:** Touch  
-**Components:** V, S, M (a holy symbol)  
-**Duration:** 1 hour  
-**Portfolio:** Emotional influence
-
-Choose attraction or disdain when you cast this spell:
+As an action, choose attraction or disdain. The effect lasts 1 hour.
 
 **Attraction.** You touch a creature, which must make a Charisma saving throw. On a failure, any negative emotions it has toward you become positive emotions (hatred becomes love, etc.). Your Charisma score increases by 1d4+2 for interactions with the target.
 
@@ -48,11 +43,13 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Enchantment / Emotional influence
+activation: action
+concentration: true
 ```
 
-For a brief time, you gain advantage on Charisma checks directed at one creature that is not hostile to you. When the magic ends, the creature recognizes that its feelings were influenced.
+A creature within 10 feet is charmed for 1 minute on a failed Wisdom save. It knows it was charmed when the spell ends.
 
-https://5e.tools/spells.html#friends_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#friends_xphb).
 
 ## Spells
 
@@ -68,11 +65,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Peace Domain
+activation: action
+concentration: true
 ```
 
-You suppress strong emotions, suppressing charmed or frightened conditions or making hostile creatures indifferent.
+Humanoids in a 20-foot-radius sphere within 60 feet that fail a Charisma save become immune to charm and fear, or lose hostility toward chosen creatures.
 
-https://5e.tools/spells.html#calm%20emotions_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#calm%20emotions_xphb).
 
 ---
 
@@ -86,11 +85,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Enchantment / Love and emotional influence
+activation: action
 ```
 
-You attempt to charm a humanoid you can see. On a failed Wisdom save, it regards you as a friendly acquaintance for the duration; it knows it was charmed when the effect ends.
+A Humanoid within 30 feet is charmed by you for 1 hour on a failed Wisdom save, made with advantage if you're fighting it.
 
-https://5e.tools/spells.html#charm%20person_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#charm%20person_xphb).
 
 ---
 
@@ -104,11 +104,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Enchantment / Love and emotional influence
+activation: action
+concentration: true
 ```
 
-You weave a compelling presence that draws the attention of creatures of your choice, distracting them from others while you speak or perform.
+Creatures of your choice within 60 feet that fail a Wisdom save have disadvantage on Perception checks to notice anyone but you for 1 minute.
 
-https://5e.tools/spells.html#enthrall_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#enthrall_xphb).
 
 ---
 
@@ -122,11 +124,33 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Enchantment / Love and emotional influence
+activation: action
+concentration: true
 ```
 
-You influence a creature with a brief course of action that sounds reasonable to it. A creature that fails its Wisdom save follows the suggestion unless the action is harmful.
+A creature within 30 feet that fails a Wisdom save follows a reasonable suggestion of 25 words or fewer for up to 8 hours.
 
-https://5e.tools/spells.html#suggestion_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#suggestion_xphb).
+
+---
+
+### Fast Friends
+
+```yaml
+id: v2_love_fast_friends
+tier: 3rd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: D&D 5e (Acquisitions Incorporated)
+activation: action
+concentration: true
+```
+
+A humanoid within 30 feet that fails a Wisdom save is charmed for up to 1 hour and gladly performs any services you ask of it.
+
+Source reference: [D&D 5e (Acquisitions Incorporated) on 5e.tools](https://5e.tools/spells.html#fast%20friends_ai).
 
 ---
 
@@ -140,11 +164,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Enchantment / Love and emotional influence
+activation: action
 ```
 
-You attempt to charm a creature you can see. On a failed Wisdom save, it regards you as a friendly acquaintance for the duration and knows it was charmed when the effect ends.
+A creature within 30 feet is charmed by you for 1 hour on a failed Wisdom save, made with advantage if you're fighting it.
 
-https://5e.tools/spells.html#charm%20monster_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#charm%20monster_xphb).
 
 ---
 
@@ -160,9 +185,9 @@ isCantrip: false
 author: Enchantment / Love and emotional influence
 ```
 
-You imbue an area or object with either irresistible attraction or repulsion, drawing creatures toward it or compelling them to avoid it.
+A creature or object repels or attracts a kind of creature you name for 10 days. Those creatures make a Wisdom save or are frightened of it or drawn to it.
 
-https://5e.tools/spells.html#antipathy%2fsympathy_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#antipathy%2fsympathy_xphb).
 
 ---
 
@@ -176,9 +201,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-A compelling rhythm draws creatures of your choice to move in a direction you set.
+Creatures of your choice within 30 feet that fail a Wisdom save must move in a direction you choose on each of their turns for up to 1 minute.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#compulsion_phb).
 
@@ -194,9 +221,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-You exert sustained influence over a humanoid’s actions and choices.
+A Humanoid within 60 feet that fails a Wisdom save is charmed and follows your telepathic commands for up to 1 minute. It repeats the save when it takes damage.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#dominate%20person_phb).
 
@@ -214,7 +243,7 @@ isCantrip: false
 author: D&D 5e (PHB)
 ```
 
-You place a magical command on a creature and punish it for defying the order.
+A creature within 60 feet that fails a Wisdom save must obey a command for 30 days, taking 5d10 psychic damage when it acts against it.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#geas_phb).
 
@@ -230,9 +259,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-You influence several creatures with a brief course of action that sounds reasonable.
+Up to twelve creatures within 60 feet that fail a Wisdom save follow a reasonable suggestion for 24 hours.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mass%20suggestion_phb).
 
@@ -248,11 +278,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Enchantment / Torment
+activation: action
 ```
 
-Unleash strings of barbed insults and psychic cruelty, dealing 1d4 psychic damage and giving disadvantage on its next attack.
+A creature within 60 feet takes 1d6 psychic damage on a failed Wisdom save and has disadvantage on its next attack roll.
 
-https://5e.tools/spells.html#vicious%20mockery_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#vicious%20mockery_xphb).
 
 ---
 
@@ -267,6 +298,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 By channelling the ebb and flow of water, you can influence the emotions of others within a 30-foot radius. Choose one emotion (calm, fear, or joy); affected creatures must succeed on a Wisdom saving throw or be overwhelmed by that emotion for 1 hour.
@@ -287,9 +319,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A beast is charmed by you unless you or your allies harm it.
+A Beast within 30 feet is charmed by you for 24 hours on a failed Wisdom save.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#animal%20friendship_xphb).
 
@@ -305,9 +338,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+ritual: true
 ```
 
-You can understand and speak with beasts and use Influence with them.
+For 10 minutes you can talk with Beasts and use Influence skills with them.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#speak%20with%20animals_xphb).
 
@@ -323,9 +358,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A beast is charmed and telepathically commanded by you.
+A Beast within 60 feet that fails a Wisdom save is charmed and obeys your commands for up to 1 minute. It repeats the save when it takes damage.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#dominate%20beast_xphb).
 
@@ -341,9 +378,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: action
+concentration: true
 ```
 
-Your appearance becomes otherworldly and alluring; one creature that fails a Charisma save is charmed and incapacitated, drawn toward you.
+A creature within 60 feet that fails a Charisma save is charmed and incapacitated for up to 1 minute, walking toward you each turn.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#transfix_au).
 
@@ -359,9 +398,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (EGW)
+activation: action
+concentration: true
 ```
 
-Two creatures are magically linked so that damage and healing dealt to one is also dealt to the other, and when one drops to 0 hit points, so does the other.
+Two creatures within 60 feet that both fail a Constitution save share all damage and healing for up to 1 hour.
 
 Source reference: [D&D 5e (EGW) on 5e.tools](https://5e.tools/spells.html#tether%20essence_egw).
 
@@ -377,9 +418,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A creature that fails a Wisdom save is charmed and follows your telepathic commands for up to 1 hour.
+A creature within 60 feet that fails a Wisdom save is charmed and obeys your telepathic commands for up to 1 hour. It repeats the save when it takes damage.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#dominate%20monster_xphb).
 
@@ -395,9 +438,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-You share a telepathic link with a willing, familiar creature anywhere on the same plane, exchanging words, images, and sensations for 24 hours.
+You and a willing creature you know can speak mind to mind anywhere on the same plane for 24 hours.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#telepathy_xphb).
 
@@ -415,7 +459,7 @@ isCantrip: false
 author: Abi-Dalzim's Abhorrent Adventurers
 ```
 
-You ignite a creature’s passion and direct it at a chosen person; it deepens over the weeks and can become permanent, though true love’s kiss ends it.
+A creature whose true name you know fails a Charisma save and becomes obsessed with a person you choose. The obsession deepens every 7 days it fails again.
 
 Source reference: [Abi-Dalzim's Abhorrent Adventurers on 5e.tools](https://5e.tools/spells.html#obsession_abidalzims).
 
@@ -431,8 +475,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Blackstaff's Book of 1000 Spells
+activation: action
 ```
 
-Up to five creatures are charmed into treating you as a friend, and each spreads the charm by touch to others.
+Up to five creatures within 120 feet that fail a Wisdom save are charmed by you and spread the charm to others they talk to.
 
 Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tools/spells.html#virus%20charm_bb1000s).
+
+

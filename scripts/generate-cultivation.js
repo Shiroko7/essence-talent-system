@@ -47,6 +47,10 @@ function parseMarkdownFile(content, pathName) {
       isCantrip: metadata.isCantrip || false,
       author: metadata.author || metadata.source || undefined,
       location: metadata.location || undefined,
+      activation: metadata.activation || undefined,
+      concentration: metadata.concentration || undefined,
+      oncePerTurn: metadata.oncePerTurn || undefined,
+      ritual: metadata.ritual || undefined,
       domain: metadata.domain || undefined,
       domainText: metadata.domainText || undefined
     };
@@ -63,26 +67,48 @@ function formatAbility(ability) {
   let out = `  {\n    id: "${escapeString(ability.id)}",\n    name: "${escapeString(ability.name)}",\n    description: "${escapeString(ability.description)}",\n    tier: "${ability.tier}",\n    isActive: ${ability.isActive},\n    isPassive: ${ability.isPassive},\n    isSpell: ${ability.isSpell},\n    isCantrip: ${ability.isCantrip},`;
   if (ability.author) out += `\n    author: "${escapeString(ability.author)}",`;
   if (ability.location) out += `\n    location: "${escapeString(ability.location)}",`;
+  if (ability.activation) out += `\n    activation: "${ability.activation}",`;
+  if (ability.concentration) out += `\n    concentration: true,`;
+  if (ability.oncePerTurn) out += `\n    oncePerTurn: true,`;
+  if (ability.ritual) out += `\n    ritual: true,`;
   if (ability.domain) out += `\n    domain: "${ability.domain}",`;
   if (ability.domainText) out += `\n    domainText: "${escapeString(ability.domainText)}",`;
   return `${out}\n  }`;
 }
 
+const ACTIVATIONS = ['action', 'bonus action', 'reaction', 'free', 'attack', 'on hit'];
+const SPELL_ACTIVATIONS = ['action', 'bonus action', 'reaction'];
+
+/** Activation, concentration, ritual and once-per-turn are tags; a spell's come from its 5etools entry. */
+function validateTags(ability, where) {
+  const spell = ability.isSpell || ability.isCantrip;
+  const allowed = spell ? SPELL_ACTIVATIONS : ACTIVATIONS;
+  if (ability.activation && !allowed.includes(ability.activation)) {
+    throw new Error(`"${ability.name}" in ${where} has activation "${ability.activation}"; use ${allowed.join(', ')}.`);
+  }
+  if (ability.oncePerTurn && (spell || ability.activation === 'reaction')) {
+    throw new Error(`"${ability.name}" in ${where} can't be once per turn: spells never are, and a reaction already limits it.`);
+  }
+  if (/^\*\*(Casting Time|Range|Components|Duration|Portfolio|Action)\b/m.test(ability.description)) {
+    throw new Error(`"${ability.name}" in ${where} has a spell-style stat block; use activation and concentration tags.`);
+  }
+}
+
 /**
- * Domain lines follow docs/domain-riders-design.md: a rider is one line of text,
- * and only Grandmaster or higher techniques can be domain-bound (never spells or cantrips).
+ * Domain lines follow docs/domain-expansion-design.md: a Domain Expansion or restore is one line of text,
+ * only Grandmaster or higher techniques can be domain-bound, and spells and cantrips get no domain line at all.
  */
 function validateDomain(ability, where) {
   if (!ability.domain) {
     if (ability.domainText) throw new Error(`"${ability.name}" in ${where} has domainText but no domain.`);
     return;
   }
-  if (ability.domain === 'rider') {
-    if (!ability.domainText) throw new Error(`Rider "${ability.name}" in ${where} needs a domainText line.`);
+  if (ability.isSpell || ability.isCantrip) throw new Error(`Spell "${ability.name}" in ${where} can't have a domain line; only techniques can.`);
+  if (ability.domain === 'expansion' || ability.domain === 'restore') {
+    if (!ability.domainText) throw new Error(`Domain line on "${ability.name}" in ${where} needs a domainText line.`);
     return;
   }
-  if (ability.domain !== 'bound') throw new Error(`"${ability.name}" in ${where} has unknown domain "${ability.domain}"; use rider or bound.`);
-  if (ability.isSpell || ability.isCantrip) throw new Error(`Spell "${ability.name}" in ${where} can't be domain-bound; only techniques can.`);
+  if (ability.domain !== 'bound') throw new Error(`"${ability.name}" in ${where} has unknown domain "${ability.domain}"; use expansion, restore or bound.`);
   if (!['grandmaster', 'greatgrandmaster'].includes(ability.tier)) {
     throw new Error(`"${ability.name}" in ${where} is domain-bound below Grandmaster.`);
   }
@@ -197,12 +223,14 @@ function main() {
         if (priorId) throw new Error(`Duplicate ability id "${ability.id}" in ${version}/${priorId} and ${version}/${pathName}.`);
         abilityIds.set(ability.id, pathName);
         validateDomain(ability, `${version}/${pathName}`);
+        validateTags(ability, `${version}/${pathName}`);
       }
       for (const ability of [...parsed.cantrips, ...parsed.spells]) {
         const name = normalizeName(ability.name);
         const priorPath = spellOwners.get(name);
         if (priorPath) throw new Error(`Duplicate spell/cantrip "${ability.name}" in ${version}/${priorPath} and ${version}/${pathName}; each version can assign it once.`);
         spellOwners.set(name, pathName);
+        validateTags(ability, `${version}/${pathName}`);
       }
       allParsed[version][pathName] = parsed;
       filesByVersion[version].push(pathName);

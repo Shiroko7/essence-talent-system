@@ -32,11 +32,10 @@ isSpell: false
 isCantrip: false
 author: Kelemvor
 location: Leatrux
+activation: attack
 ```
 
 **Weapon Requirement:** Any weapon.
-
-**Cost:** 1 Essence.
 
 **Attack replacement:** Replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make that attack with advantage. On a hit, it deals an extra 1d6 damage of a type you choose: radiant, or your weapon's damage type.
 
@@ -72,13 +71,12 @@ isSpell: false
 isCantrip: false
 author: Kelemvor
 location: Leatrux
+activation: attack
 ```
 
 *Prerequisite: Radiant Vein Blade I*
 
 **Weapon Requirement:** Any weapon.
-
-**Cost:** 2 Essences.
 
 **Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade I, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. On a hit, the attack deals an extra 2d6 damage of a type you choose (radiant, or your weapon's damage type), and the target's AC is reduced by 2 until the end of your next turn.
 
@@ -114,13 +112,12 @@ isSpell: false
 isCantrip: false
 author: Kelemvor
 location: Leatrux
+activation: attack
 ```
 
 *Prerequisite: Radiant Vein Blade II*
 
 **Weapon Requirement:** Any weapon.
-
-**Cost:** 3 Essences.
 
 **Attack replacement:** On the turn immediately after a hit with Radiant Vein Blade II, replace one weapon attack you make as part of the Attack action, including an attack granted by Extra Attack. Make one weapon attack against the primary target. Hit or miss, you unleash a 15-foot cone of blade energy from yourself toward that target. The primary target and each creature in the cone must make a Dexterity saving throw against your essence ability save DC, and the primary target makes it with disadvantage:
 - **On a failed save:** The creature takes 3d8 damage of a type you choose (radiant, or your weapon's damage type) and is pushed 10 feet away from you.
@@ -141,6 +138,7 @@ isSpell: false
 isCantrip: false
 author: Yoo Tae-yang
 location: Sirius
+activation: reaction
 ```
 
 As a reaction when a creature within 60 feet is airborne or suspended, teleport to an adjacent empty space in the air. Make one piercing melee weapon attack against it. On a hit, the target suffers the attack's normal damage plus an extra 4d10 thunder damage. The target must succeed on a Strength saving throw against your essence ability save DC or fall up to 60 feet, land prone, and take the normal falling damage. On a successful save, it remains airborne.
@@ -191,11 +189,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Divination / Assassination
+activation: action
 ```
 
-Guided by a sudden flash of murder insight, you strike with lethal precision using your spellcasting modifier.
+You make one weapon attack using your spellcasting ability for attack and damage, and it can deal radiant damage instead.
 
-https://5e.tools/spells.html#true%20strike_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#true%20strike_xphb).
 
 ---
 
@@ -210,6 +209,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can temporarily turn your thoughts into ice, allowing you to gain deep insight into a complex problem or puzzle. For 1 hour, you gain advantage on Intelligence checks related to solving mysteries or understanding arcane knowledge.
@@ -227,6 +227,7 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: action
 ```
 
 As an action, you can target up to five creatures you can see within 120 feet, expending 1 point of Essence for each creature targeted. An unwilling target must make a Strength or Dexterity saving throw (your choice, DC determined by your abilities). On a failed save, the creature is grappled. This grapple ignores the creature's weight, unless the creature is one size larger than you.
@@ -261,11 +262,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: attack
 ```
 
 **Weapon Requirement:** Any melee weapon that deals piercing damage (such as a spear, pike, rapier, shortsword, trident, or dagger).
-
-**Cost:** 1 Essence.
 
 **Attack replacement:** When you take the Attack action on your turn, you can replace one of your weapon attacks to move up to 30 feet in a straight line toward a target creature you can see. This movement does not provoke opportunity attacks, and you can pass through spaces occupied by hostile creatures. Upon reaching the target, make one melee weapon attack with your piercing weapon against it, dealing your weapon's normal damage on a hit.
 
@@ -282,13 +282,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: bonus action
 ```
 
 **Weapon Requirement:** Any sword (such as a greatsword, longsword, or shortsword) wielded with two hands or with your other hand empty.
-
-**Cost:** 1 Essence.
-
-**Action:** Bonus Action.
 
 You strike an adjacent creature with the pommel, crossguard, or hilt of your sword. Make a melee weapon attack. On a hit, the target takes 1d4 bludgeoning damage plus your Strength or Dexterity modifier (your choice).
 
@@ -305,11 +302,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: on hit
 ```
 
 **Weapon Requirement:** Any melee weapon that deals slashing damage (such as a battleaxe, greataxe, greatsword, scimitar, longsword, sickle, or handaxe).
-
-**Cost:** 1 Essence.
 
 **Attack replacement:** When you hit a creature with a slashing melee weapon as part of the Attack action, the target must succeed on a Constitution saving throw against your essence ability save DC or begin Bleeding for 1 minute. A bleeding creature takes 1d4 necrotic damage at the start of each of its turns and has disadvantage on Constitution saving throws to maintain concentration. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success.
 
@@ -328,6 +324,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: free
 ```
 
 When you use the Dash action, you can create a swirling vortex of wind around you. Creatures within 10 feet of your path must make a Strength saving throw or be knocked prone. The wind dissipates at the end of your movement.
@@ -345,6 +342,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: on hit
 ```
 
 When you hit a creature of your size or smaller, or any creature one size category larger than you, with an attack or spell, you can create a gust of wind that forces the creature to make a Strength saving throw. On a failed save, the creature is pushed 10 feet in any direction you choose.
@@ -362,6 +360,8 @@ isSpell: false
 isCantrip: false
 author: Yoo Tae-yang
 location: Sirius
+activation: attack
+oncePerTurn: true
 ```
 
 When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach (usable once per turn).
@@ -381,13 +381,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: bonus action
 ```
 
 **Weapon Requirement:** A melee weapon with the Heavy or Reach property (such as a pike, glaive, halberd, greatsword, or maul), or a two-handed ranged weapon (such as a heavy crossbow or longbow).
-
-**Cost:** 2 Essences.
-
-**Action:** Bonus Action.
 
 You steady your grip and plant your stance, expending 15 feet of your movement speed for the turn. Until the start of your next turn:
 - Whenever you roll damage for an attack made with an eligible weapon, you can reroll all damage dice and take the higher total.
@@ -406,11 +403,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: attack
 ```
 
 **Weapon Requirement:** Any melee weapon that deals bludgeoning damage (such as a warhammer, maul, mace, flail, club, greatclub, or light hammer).
-
-**Cost:** 2 Essences.
 
 **Attack replacement:** Replace one weapon attack as part of the Attack action with a jarring strike. Make a melee weapon attack. On a hit, the attack deals an extra 1d8 bludgeoning damage, and the target must make a Constitution saving throw against your essence ability save DC. On a failed save, the target is Dazed for 1 round: it cannot take reactions, its movement speed is halved, and on its next turn it must choose between taking an action or a bonus action—it cannot take both.
 
@@ -427,11 +423,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: attack
 ```
 
 **Weapon Requirement:** Any melee weapon with the Finesse property (such as a rapier, scimitar, or shortsword) or a weapon with the Reach property (such as a trident, pike, or halberd).
-
-**Cost:** 2 Essences.
 
 **Attack replacement:** Replace one weapon attack as part of the Attack action. Make a melee weapon attack roll opposed by the target's Strength (Athletics) or Dexterity (Acrobatics) check (target's choice). If you win the contest, the attack deals normal weapon damage, and one weapon or item held by the target is wrenched from its grasp, flying up to 10 feet away in a direction of your choice and landing on the ground.
 
@@ -448,13 +443,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: bonus action
 ```
 
 **Weapon Requirement:** Any ranged weapon with the Light property (such as a hand crossbow) or a shortbow.
-
-**Cost:** 2 Essences.
-
-**Action:** Bonus Action.
 
 Immediately after taking the Dash or Disengage action on your turn, you can make one ranged weapon attack with an eligible weapon as a bonus action. This attack ignores half and three-quarters cover and does not suffer disadvantage from being within 5 feet of a hostile creature.
 
@@ -473,6 +465,8 @@ isSpell: false
 isCantrip: false
 author: Kwon Jae-Hwan
 location: Sirius
+activation: action
+concentration: true
 ```
 
 As an action, you fold space around yourself to step into a static pocket dimension for up to 1 minute (requires concentration).
@@ -504,11 +498,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: attack
 ```
 
 **Weapon Requirement:** Any melee weapon that deals slashing or piercing damage (such as a battleaxe, war pick, longsword, rapier, or halberd).
-
-**Cost:** 3 Essences.
 
 **Attack replacement:** Replace one weapon attack as part of the Attack action. Make a melee weapon attack. On a hit, the attack deals an extra 2d8 damage of your weapon's type, and the target must make a Constitution saving throw against your essence ability save DC:
 - **On a failed save:** The creature is Maimed for 1 minute. While maimed, its movement speed is reduced to 0, it cannot take reactions or the Dash action, and it has disadvantage on Dexterity saving throws.
@@ -529,6 +522,7 @@ isSpell: false
 isCantrip: false
 author: Ha Yeon-ae
 location: Sirius
+activation: action
 ```
 
 As an action, choose a willing creature within 60 feet. You exchange hearts—roots of life intertwining your essences in profound gratitude.
@@ -557,11 +551,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: attack
 ```
 
 **Weapon Requirement:** A melee weapon that deals bludgeoning damage with the Heavy or Versatile property (such as a maul, warhammer, morningstar, or flail).
-
-**Cost:** 4 Essences.
 
 **Attack replacement:** Replace one weapon attack as part of the Attack action with a blow aimed directly at the opponent's sternum or cardiac center. Make a melee weapon attack. On a hit, the attack deals an extra 4d10 bludgeoning or force damage, and the target must make a Constitution saving throw against your essence ability save DC:
 - **On a failed save:** The target suffers Chest Trauma for 1 minute. The target is immediately Incapacitated and suffocating until the end of its next turn. For the remaining duration, its movement speed is halved, it cannot take reactions, and whenever it attempts to cast a spell with verbal components or take the Multiattack or Attack action, it takes 3d8 necrotic damage and must succeed on a Constitution saving throw against your essence ability save DC or lose that action completely.
@@ -599,13 +592,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: reaction
 ```
 
 **Weapon Requirement:** Any sword (such as a greatsword, longsword, rapier, or scimitar).
-
-**Cost:** 4 Essences.
-
-**Action:** Reaction.
 
 When a spell or ability forces you to make a saving throw while wielding a sword, you can use your reaction to parry with your blade. You gain advantage on that saving throw. If you succeed on the saving throw, you reflect the spell or ability back at the originator: the originator becomes the target, using the original save DC or effect.
 
@@ -622,11 +612,10 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: attack
 ```
 
 **Weapon Requirement:** Any melee weapon that deals slashing or bludgeoning damage with the Heavy or Versatile property (such as a greatsword, greataxe, maul, halberd, or glaive).
-
-**Cost:** 4 Essences.
 
 **Attack replacement:** Replace one weapon attack as part of the Attack action. You deliver a downward cleavage of devastating force, releasing a pressurized torrent in a line 60 feet long and 10 feet wide originating from you:
 - **Environmental Displacement:** Any liquid, fog, mist, or non-solid water-based surface in the area is parted and pushed aside for 1 minute, creating a dry trench 10 feet deep. Any spell of 6th level or lower creating a barrier or wall in the line (such as *Wall of Force*, *Wall of Water*, or *Wall of Ice*) is instantly shattered and dispelled.
@@ -647,15 +636,12 @@ isSpell: false
 isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
+activation: bonus action
 ```
 
 **Prerequisite:** Must currently be in a Draconic Form (such as under a dragon transformation, *Dragon Form*, wild shape, or draconic avatar).
 
 **Weapon Requirement:** Natural weapons (claws, bite, tail) or unarmed strikes while in a Draconic Form.
-
-**Cost:** 4 Essences.
-
-**Action:** Bonus Action.
 
 You erupt upward in a spiraling vortex of churning seawater and storm mist, flying up to your movement speed in a straight line or upward arc without provoking opportunity attacks.
 - Each creature within 10 feet of your flight path must make a Strength saving throw against your essence ability save DC:
@@ -697,6 +683,7 @@ isSpell: false
 isCantrip: false
 author: Vajra from the Espora Tribe
 location: Phudara / Isle of Whispers
+activation: attack
 ```
 
 When you take the Attack action, you can replace one of your attacks with a bite attack, imbuing it with a potent venom. Make a melee weapon attack against a creature within your reach. On a hit, the target takes 1d12 piercing damage and must succeed on a Constitution saving throw against your essence ability save DC or become poisoned for 1 minute. The bite attack is considered magical for the purposes of overcoming resistance and immunity to nonmagical attacks.

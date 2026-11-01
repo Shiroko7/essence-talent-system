@@ -13,11 +13,53 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Tempest Domain) / Conjuration
+activation: action
+concentration: true
 ```
 
-You create a 20-foot-radius sphere of dense sea fog heavily obscuring the area.
+A 20-foot-radius sphere of fog within 120 feet heavily obscures the area for up to 1 hour.
 
-https://5e.tools/spells.html#fog%20cloud_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#fog%20cloud_xphb).
+
+---
+
+### Demolishing Smite
+
+```yaml
+id: v2_tempest_demolishing_smite
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Abi-Dalzim's Abhorrent Adventurers
+activation: bonus action
+concentration: true
+```
+
+Your next weapon hit roars with hurricane force for an extra 2d6 thunder damage and deafens the target. Objects you hit take an extra 8d6 thunder damage.
+
+Source reference: [Abi-Dalzim's Abhorrent Adventurers on 5e.tools](https://5e.tools/spells.html#demolishing%20smite_abidalzims).
+
+---
+
+### Storm Form
+
+```yaml
+id: v2_tempest_storm_form
+tier: 6th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Deep Magic (01-20)
+activation: action
+concentration: true
+```
+
+You become a living storm cloud: 60-foot fly speed, resistance to nonmagical damage, immunity to lightning, and 3d8 lightning damage to creatures that hit you in melee.
+
+Source reference: [Deep Magic (01-20) on 5e.tools](https://5e.tools/spells.html#storm%20form_kpdm).
 
 ---
 
@@ -31,11 +73,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Evocation / Hurricane
+activation: action
+concentration: true
 ```
 
-A howling cyclone 10 feet wide and 30 feet tall sweeps across the field, sucking up creatures, hurling them, and dealing 10d6 bludgeoning damage.
+A 10-foot-radius whirlwind within 300 feet deals 10d6 bludgeoning damage on a failed Dexterity save, can suck creatures up, and moves 30 feet each turn.
 
-https://5e.tools/spells.html#whirlwind_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#whirlwind_xge).
 
 ---
 
@@ -50,6 +94,7 @@ isSpell: false
 isCantrip: false
 author: Lei Zhen
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 When you make a Charisma (Persuasion) or Charisma (Intimidation) check to influence a group of people, you can invoke your stormy presence to gain advantage on the roll.
@@ -83,11 +128,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Tempest Domain) / Paladin
+activation: action
 ```
 
-Strike the ground to unleash thunder and radiant/necrotic storm energy: 5d6 thunder + 5d6 damage, knocking enemies prone.
+Creatures you choose within 30 feet take 5d6 thunder and 5d6 radiant or necrotic damage and fall prone on a failed Constitution save, or half on a success.
 
-https://5e.tools/spells.html#destructive%20wave_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#destructive%20wave_xphb).
 
 ---
 
@@ -101,11 +147,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Tempest Domain) / Conjuration
+activation: action
+concentration: true
 ```
 
-A churning storm cloud forms in a 360-foot radius, unleashing lightning bolts, acidic rain, hail, and howling hurricane winds.
+A 300-foot-radius storm within 1 mile deafens creatures and brings acid rain, lightning bolts, hail and freezing wind over several rounds.
 
-https://5e.tools/spells.html#storm%20of%20vengeance_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#storm%20of%20vengeance_xphb).
 
 ---
 
@@ -119,11 +167,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Tempest Domain) / Conjuration
+activation: action
+concentration: true
 ```
 
-Storm cloud forms overhead; each round call down lightning bolts dealing 3d10 (or 4d10 in stormy weather) lightning damage.
+A storm cloud within 120 feet lets you call down a bolt each turn for up to 10 minutes: 3d10 lightning damage in a 5-foot radius on a failed Dexterity save, or half on a success.
 
-https://5e.tools/spells.html#call%20lightning_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#call%20lightning_xphb).
 
 ---
 
@@ -137,11 +187,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Tempest Domain) / Conjuration
+activation: action
+concentration: true
 ```
 
-Freezing rain and sleet create a 40-foot-radius squall: difficult terrain, extinguishes fires, and forces Dexterity saves to avoid falling prone.
+Sleet fills a 20-foot-radius cylinder within 150 feet for up to 1 minute: heavily obscured, slippery difficult terrain that breaks concentration.
 
-https://5e.tools/spells.html#sleet%20storm_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#sleet%20storm_xphb).
 
 ---
 
@@ -155,11 +207,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Conjuration
+activation: action
 ```
 
-A crashing wave of seawater 30 ft long and 10 ft wide knocks creatures prone and deals 4d8 bludgeoning damage.
+A wave up to 30 feet long within 120 feet deals 4d8 bludgeoning damage and knocks creatures prone on a failed Dexterity save, or half damage on a success.
 
-https://5e.tools/spells.html#tidal%20wave_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#tidal%20wave_xge).
 
 ---
 
@@ -173,11 +226,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Evocation / Tempest
+activation: action
+concentration: true
 ```
 
-A 20-foot-radius sphere of gale winds hampers movement, and as a bonus action each round zap a target for 4d6 lightning damage.
+A 20-foot-radius sphere of wind within 150 feet deals 2d6 bludgeoning damage on a failed Strength save, and you can fire 4d6 lightning bolts from it as a bonus action.
 
-https://5e.tools/spells.html#storm%20sphere_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#storm%20sphere_xge).
 
 ---
 
@@ -191,11 +246,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Evocation / Umberlee
+activation: action
+concentration: true
 ```
 
-A 30-foot-radius swirling vortex of water drags creatures toward its center and deals 6d6 bludgeoning damage.
+A 30-foot-radius whirlpool within 120 feet deals 6d6 bludgeoning damage and pulls creatures 10 feet toward its center on a failed Strength save.
 
-https://5e.tools/spells.html#maelstrom_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#maelstrom_xge).
 
 ---
 
@@ -209,11 +266,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Tempest Domain) / Transmutation
+concentration: true
 ```
 
-Seize command of precipitation, temperature, and wind across a 5-mile radius, summoning hurricanes or calm skies.
+For up to 8 hours you change the weather within 5 miles: precipitation, temperature and wind.
 
-https://5e.tools/spells.html#control%20weather_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#control%20weather_xphb).
 
 ---
 
@@ -227,11 +285,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Conjuration
+concentration: true
 ```
 
-A colossal wall of water up to 300 feet long, 300 feet high, and 50 feet thick crashes across the landscape, crushing everything in its path.
+A wall of water up to 300 feet long within 1 mile deals 6d10 bludgeoning damage on a failed Strength save, then rolls away from you, carrying creatures with it.
 
-https://5e.tools/spells.html#tsunami_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#tsunami_xphb).
 
 ---
 
@@ -246,6 +305,7 @@ isSpell: false
 isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can call forth a light rain within a 30-foot radius centered on you for 10 minutes. This rain lightly obscures the area, granting disadvantage on Perception checks relying on sight and extinguishing fires.
@@ -262,9 +322,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: bonus action
+concentration: true
 ```
 
-Your next melee hit releases a concussive thunderclap that can drive the target back.
+Your next melee weapon hit deals an extra 2d6 thunder damage and pushes the target 10 feet and knocks it prone on a failed Strength save.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#thunderous%20smite_phb).
 
@@ -280,9 +342,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-Hail and freezing rain batter an area, turning the ground slick and difficult to cross.
+Hail pounds a 20-foot-radius cylinder within 300 feet for 2d8 bludgeoning and 4d6 cold damage on a failed Dexterity save, or half on a success, leaving difficult terrain.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#ice%20storm_phb).
 
@@ -298,9 +361,10 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: D&D 5e (TCE)
+activation: action
 ```
 
-A lash of lightning pulls a nearby creature toward you and shocks it if it comes close.
+A creature within 15 feet is pulled 10 feet toward you on a failed Strength save and takes 1d8 lightning damage if it ends within 5 feet.
 
 Source reference: [D&D 5e TCE on 5e.tools](https://5e.tools/spells.html#lightning%20lure_tce).
 
@@ -337,6 +401,7 @@ isSpell: false
 isCantrip: false
 author: Lei Zhen
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can make a dramatic entrance by creating a booming thunderclap that announces your presence. This effect grants you expertise on Charisma (Performance) checks to make a memorable first impression.
@@ -354,6 +419,8 @@ isSpell: false
 isCantrip: false
 author: Lei Zhen
 location: Phudara / Isle of Whispers
+activation: on hit
+oncePerTurn: true
 ```
 
 When you hit a creature with a melee weapon attack, you can channel the force of a thunderstorm into your strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn. This ability can only be used once per turn, and once a creature is stunned by this ability, it cannot be stunned again by it for 1 minute.
@@ -371,6 +438,7 @@ isSpell: false
 isCantrip: false
 author: Nethan (Nilo's Father)
 location: Leatrux
+activation: action
 ```
 
 As an action, unleash consuming black lightning in a 60-foot cone. Each creature in the area must make a Dexterity saving throw, taking 6d12 lightning damage on a failed save, or half as much on a successful one.
@@ -396,9 +464,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: bonus action
+concentration: true
 ```
 
-Your next ranged weapon attack becomes a bolt of lightning that deals 4d8 lightning damage and bursts onto nearby creatures.
+Your next ranged weapon attack becomes lightning: 4d8 lightning damage on a hit or half on a miss, plus 2d8 to creatures within 10 feet of the target on a failed Dexterity save.
 
 Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#lightning%20arrow_phb).
 
@@ -408,15 +478,16 @@ Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#lightn
 
 ```yaml
 id: lightning_5th_level_ride_the_lightning
-tier: 5th
+tier: 4th
 isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
 ```
 
-You become a bolt of lightning, damaging creatures along a 60-foot line before reappearing at its end.
+You become lightning and streak up to 60 feet. Creatures in the 5-foot line take 4d6 lightning damage on a failed Dexterity save, or half on a success.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#ride%20the%20lightning_grimhollowpg24).
 
@@ -432,9 +503,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+concentration: true
 ```
 
-Blood rain falls within 5 miles, withering plants, frightening beasts, and draining exposed creatures with exhaustion and necrotic damage.
+You spend eight Hit Point Dice to bring a rain of blood within 5 miles that frightens Beasts and Plants, withers crops, and empowers your blood magic.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#red%20rain_grimhollowpg24).
 
@@ -450,8 +522,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Northlands Worldbook
+activation: action
 ```
 
-Fenris’s aura darkens the sky with snow for a mile around you; you gain advantage on d20 tests and immunity to all damage but one random type.
+Snow and darkness fill a 1-mile sphere around you. You see clearly in it, gain the power of Fenris, and can hurl ice and lightning at your foes.
 
 Source reference: [Kobold Press Northlands Worldbook on 5e.tools](https://5e.tools/spells.html#beast%20of%20ragnarok_northlandsworldbook).
+
+

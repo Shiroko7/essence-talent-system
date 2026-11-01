@@ -14,15 +14,10 @@ isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action  
-**Range:** Touch  
-**Components:** V, S, M (a holy symbol)  
-**Duration:** Permanent  
-**Portfolio:** Murder
-
-You touch nonliving material up to 1 cubic foot per caster level and accelerate its aging process. For every hour that passes, the affected material ages 1 day. Additionally, any stress or strain on the material is magnified twentyfold.
+As an action, you touch nonliving material up to 1 cubic foot per character level and accelerate its aging process. For every hour that passes, the affected material ages 1 day. Additionally, any stress or strain on the material is magnified twentyfold.
 
 After sufficient time, most objects break, rust, corrode, decay into powder, or otherwise become useless. A _dispel magic_ spell halts the accelerated decay but cannot reverse aging that has already occurred.
 
@@ -43,6 +38,8 @@ isSpell: false
 isCantrip: false
 author: Cult of the Lord of Murder
 location: Leatrux
+domain: expansion
+domainText: Its extra damage die is a d6.
 ```
 
 You instinctively track the scent of open wounds. You have advantage on Wisdom (Perception) and Wisdom (Survival) checks to detect or track any creature that is below its hit point maximum. In addition, your weapon attacks deal an extra 1d4 damage against targets below half their maximum hit points.
@@ -60,15 +57,10 @@ isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
 location: Leatrux
+ritual: true
 ```
 
-**Casting Time:** 10 minutes  
-**Range:** Touch  
-**Components:** V, S, M (a corpse that died within the last 24 hours)  
-**Duration:** Instantaneous  
-**Portfolio:**  Murder
-
-You perform a dark ritual using a recently deceased body to erase all evidence of a murder. When you cast this spell, you must touch a corpse that has died within the last 24 hours. The spell affects a 30-foot radius centered on the corpse.
+Over 10 minutes, you perform a dark ritual on a corpse that died within the last 24 hours to erase all evidence of a murder. The ritual affects a 30-foot radius centered on the corpse.
 
 All of the following evidence within the area is completely destroyed:
 - Blood stains, tracks, and other physical traces of violence
@@ -76,7 +68,7 @@ All of the following evidence within the area is completely destroyed:
 - Divination magic targeting events that occurred in the area becomes unable to detect anything related to the murder
 - The corpse itself dissolves into ash that scatters on an unfelt wind
 
-Any creature that witnessed the events and is within the area when the spell is cast must make a Wisdom saving throw. On a failed save, their memories of the murder become hazy and unclear, as if viewed through fog (they remember something happened but cannot recall specific details).
+Any creature that witnessed the events and is within the area when the ritual ends must make a Wisdom saving throw. On a failed save, their memories of the murder become hazy and unclear, as if viewed through fog (they remember something happened but cannot recall specific details).
 
 ## Adept Tier
 
@@ -93,15 +85,13 @@ isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
 location: Leatrux
+activation: bonus action
+concentration: true
+domain: restore
+domainText: It doesn't require concentration.
 ```
 
-**Casting Time:** 1 bonus action  
-**Range:** 60 feet  
-**Components:** V, S, M (a black arrow or dagger)  
-**Duration:** 1 minute  
-**Portfolio:** Murder
-
-You mark one creature you can see within range for assassination. The target must make a Wisdom saving throw. On a successful save, the spell fails. On a failed save, the target is doomed to die and gains the following effects for the duration:
+As a bonus action, you mark one creature you can see within 60 feet for assassination. The target must make a Wisdom saving throw. On a success, nothing happens. On a failure, the target is doomed to die and gains the following effects for up to 1 minute (concentration):
 
 - You have advantage on attack rolls against the marked creature
 - When you hit the marked creature with an attack, it takes an additional 1d8 necrotic damage
@@ -125,6 +115,7 @@ isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
 location: Leatrux
+activation: action
 ```
 
 As an action, you release a wave of necrotic energy from a point you can see within 60 feet. Choose up to six creatures within 30 feet of that point. Each must make a Constitution saving throw against your essence ability save DC, taking 5d10 necrotic damage on a failed save, or half as much on a successful one.
@@ -146,23 +137,19 @@ isSpell: false
 isCantrip: false
 author: Bhaal / Portfolio (Murder)
 location: Leatrux
+activation: bonus action
+domain: bound
 ```
 
-**Casting Time:** 1 bonus action  
-**Range:** Any distance (on same plane)  
-**Components:** V, S, M (an object belonging to the target or blood from a relative of the target)  
-**Duration:** 24 hours  
-**Portfolio:** Murder
+As a bonus action, you mark a single creature on the same plane for death, at any distance, while holding an object that belongs to it or blood from one of its relatives. The target must make a Wisdom saving throw. On a success, nothing happens and the object or blood is consumed.
 
-You mark a single creature for death, targeting them through a personal connection. The target must make a Wisdom saving throw. On a successful save, the spell fails and the material component is consumed.
-
-On a failed save, the target is marked for death and suffers the following effects for the duration:
+On a failed save, the target is marked for death and suffers the following effects for 24 hours:
 
 - The target automatically fails all saving throws against divination spells and effects that would locate or track them
 - The target automatically fails all death saving throws
 - You have advantage on all attack rolls against the target
 
-The marked creature feels a sense of impending doom but doesn't know the source. This spell can only affect one creature at a time per caster. If you cast this spell again while a creature is already marked, the previous mark ends.
+The marked creature feels a sense of impending doom but doesn't know the source. Only one creature can bear your mark at a time. If you use this again while a creature is already marked, the previous mark ends.
 
 ## Cantrips
 
@@ -178,11 +165,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric / Necromancy
+activation: action
 ```
 
-You point at one creature. The sound of a dolorous death bell tolls, dealing 1d8 necrotic damage (or 1d12 if the target is injured).
+A creature within 60 feet takes 1d8 necrotic damage on a failed Wisdom save, or 1d12 if it's missing any hit points.
 
-https://5e.tools/spells.html#toll%20the%20dead_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#toll%20the%20dead_xphb).
 
 ---
 
@@ -196,13 +184,34 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric (Death Domain) / Necromancy
+activation: action
 ```
 
-Assail a foe with deadly chill, dealing 1d8 necrotic damage and stopping it from regaining hit points.
+A melee spell attack deals 1d10 necrotic damage, and the target can't regain hit points until the end of your next turn.
 
-https://5e.tools/spells.html#chill%20touch_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#chill%20touch_xphb).
 
 ## Spells
+
+---
+
+### Murderous Twin
+
+```yaml
+id: v2_ruin_murderous_twin
+tier: 2nd
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: Blackstaff's Book of 1000 Spells
+activation: action
+concentration: true
+```
+
+A shadowy double of a creature within 60 feet appears beside it for up to 1 minute and attacks it, dealing 2d6 psychic damage and disadvantage on its next attack.
+
+Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tools/spells.html#murderous%20twin_bb1000s).
 
 ---
 
@@ -216,11 +225,32 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Death Domain) / Necromancy
+activation: action
+concentration: true
 ```
 
-Siphon life from your victim. Melee spell attack deals 3d6 necrotic damage and heals you for half.
+For up to 1 minute, each turn you can make a melee spell attack for 3d6 necrotic damage and regain half the damage dealt.
 
-https://5e.tools/spells.html#vampiric%20touch_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#vampiric%20touch_xphb).
+
+---
+
+### Assassin's Promise
+
+```yaml
+id: v2_ruin_assassins_promise
+tier: 4th
+isActive: false
+isPassive: false
+isSpell: true
+isCantrip: false
+author: The Compendium of Forgotten Secrets: Awakening
+activation: action
+```
+
+You promise a humanoid within 30 feet its death for 24 hours. Each time you damage it you can add a curse layer: you heal for each layer if it dies, and it takes 1d6 psychic damage per layer if it survives.
+
+Source reference: [The Compendium of Forgotten Secrets: Awakening on 5e.tools](https://5e.tools/spells.html#assassin's%20promise_cofsa).
 
 ---
 
@@ -234,11 +264,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Death Domain) / Necromancy
+activation: action
 ```
 
-A 60-foot-radius slaughter sphere deals 8d6 necrotic damage to all creatures caught within.
+Negative energy fills a 60-foot-radius sphere within 150 feet, dealing 8d8 necrotic damage on a failed Constitution save, or half on a success.
 
-https://5e.tools/spells.html#circle%20of%20death_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#circle%20of%20death_xphb).
 
 ---
 
@@ -252,11 +283,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Death Domain) / Necromancy
+activation: action
 ```
 
-Devastating murder decree deals 7d8 + 30 necrotic damage and rises humanoid slain as a permanent zombie servant.
+A creature within 60 feet takes 7d8 + 30 necrotic damage on a failed Constitution save, or half on a success. A Humanoid it kills rises as your zombie.
 
-https://5e.tools/spells.html#finger%20of%20death_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#finger%20of%20death_xphb).
 
 ---
 
@@ -270,11 +302,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Paladin (Oath of Vengeance)
+activation: bonus action
+concentration: true
 ```
 
-You mark a creature as your quarry. Deal an extra 1d6 damage whenever you hit it with a weapon attack.
+You mark a creature within 90 feet for up to 1 hour and deal an extra 1d6 force damage whenever you hit it with an attack.
 
-https://5e.tools/spells.html#hunter's%20mark_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#hunter's%20mark_xphb).
 
 ---
 
@@ -288,11 +322,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Enchantment / Death
+activation: action
 ```
 
-Utter a word of lethal demise to kill a creature instantly if it has 100 hit points or fewer.
+A creature within 60 feet with 100 hit points or fewer dies. Otherwise it takes 12d12 psychic damage.
 
-https://5e.tools/spells.html#power%20word%20kill_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#power%20word%20kill_xphb).
 
 ---
 
@@ -307,9 +342,13 @@ isSpell: false
 isCantrip: false
 author: Maiden of Pain (Loviatar)
 location: Leatrux
+activation: on hit
+oncePerTurn: true
+domain: expansion
+domainText: It deals extra damage equal to your PB.
 ```
 
-You channel vitality through inflicting suffering. When you hit a creature with an attack, you can invoke barbed ethereal lashes to lacerate the foe, dealing an additional 1d6 piercing damage. The target must succeed on a Wisdom saving throw or have disadvantage on its next attack roll.
+You channel vitality through inflicting suffering. Once per turn, when you hit a creature with an attack, you can invoke barbed ethereal lashes to lacerate the foe, dealing an additional 1d6 piercing damage. The target must succeed on a Wisdom saving throw or have disadvantage on its next attack roll.
 
 ## Adept Tier
 
@@ -325,11 +364,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Necromancy
+activation: action
 ```
 
-Deliver searing necrotizing pain through touch, dealing 3d10 necrotic damage on a melee spell attack.
+A creature you touch takes 2d10 necrotic damage on a failed Constitution save, or half on a success.
 
-https://5e.tools/spells.html#inflict%20wounds_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#inflict%20wounds_xphb).
 
 ---
 
@@ -343,11 +383,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Necromancy
+activation: action
 ```
 
-The pinnacle of agonizing biological ruin: inflicts 14d6 necrotic damage and reduces hit point maximum.
+A creature within 60 feet takes 14d6 necrotic damage and loses that much hit point maximum on a failed Constitution save, or half damage on a success.
 
-https://5e.tools/spells.html#harm_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#harm_xphb).
 
 ---
 
@@ -362,6 +403,9 @@ isSpell: false
 isCantrip: false
 author: Xu Ning (Lime's ancestor)
 location: Phudara / Isle of Whispers
+activation: action
+domain: expansion
+domainText: Its range is 60 feet.
 ```
 
 As an action, you can target one bloodied creature you can see within 15 feet of you. The target must make a Constitution saving throw, taking 6d6 fire damage on a failed save, or half as much damage on a successful one. If this damage reduces the target to 0 hit points, its heart is crushed and it dies instantly.
@@ -396,9 +440,11 @@ isSpell: false
 isCantrip: false
 author: Maiden of Pain (Loviatar)
 location: Leatrux
+domain: restore
+domainText: You gain temporary hit points equal to your character level instead.
 ```
 
-Whenever a creature within 30 feet takes damage from your attacks or spells, you convert their agony into physical resilience, gaining temporary hit points equal to your character level.
+Whenever a creature within 30 feet takes damage from your attacks or spells, you convert their agony into physical resilience, gaining temporary hit points equal to your proficiency bonus.
 
 ## Master Tier
 
@@ -414,9 +460,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-You become invisible while leaving a convincing illusory double behind.
+You turn invisible while an illusory double appears in your place for up to 1 hour. You can move it and see and hear through it.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mislead_phb).
 
@@ -432,9 +480,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
 ```
 
-You reshape the apparent appearance of a group of creatures for a long duration.
+Any number of creatures within 30 feet take on an illusory appearance you choose for 8 hours. Unwilling ones make a Charisma save.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#seeming_phb).
 
@@ -451,9 +500,10 @@ isSpell: false
 isCantrip: false
 author: Maiden of Pain (Loviatar)
 location: Leatrux
+activation: bonus action
 ```
 
-You wreath yourself in a mantle of barbed needles and psychic torment for 1 minute. Any creature that hits you with a melee attack takes psychic damage equal to the damage dealt or 3d8 (whichever is lower), and cannot take reactions until the start of its next turn.
+As a bonus action, you wreathe yourself in a mantle of barbed needles and psychic torment for 1 minute. Any creature that hits you with a melee attack takes psychic damage equal to the damage dealt or 3d8 (whichever is lower), and cannot take reactions until the start of its next turn.
 
 ---
 
@@ -467,11 +517,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Enchantment / Psionic
+activation: action
 ```
 
-Drive a disorienting spike of psychic pain into a creature's mind: 1d6 psychic damage and -1d4 on its next saving throw.
+A creature within 60 feet takes 1d6 psychic damage on a failed Intelligence save and subtracts 1d4 from its next saving throw.
 
-https://5e.tools/spells.html#mind%20sliver_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#mind%20sliver_xphb).
 
 ## Spells
 
@@ -487,11 +538,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Enchantment / Pure Agony
+activation: action
 ```
 
-Utter a word of power that causes overwhelming physical suffering, reducing speed to 10 ft and giving disadvantage on attacks and checks.
+A creature within 60 feet with 100 hit points or fewer is wracked with pain: its speed drops to 10 feet and it has disadvantage on attacks, checks and most saves.
 
-https://5e.tools/spells.html#power%20word%20pain_xge
+Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#power%20word%20pain_xge).
 
 ---
 
@@ -505,9 +557,10 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: D&D 5e (PHB)
+activation: action
 ```
 
-You create a small floating hand that can manipulate or carry light objects at a distance.
+A spectral hand within 30 feet manipulates objects up to 10 pounds for 1 minute.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mage%20hand_phb).
 
@@ -524,6 +577,9 @@ isSpell: false
 isCantrip: false
 author: Cult of Cyric
 location: Leatrux
+activation: bonus action
+domain: expansion
+domainText: The extra damage is 3d6 instead of 2d6.
 ```
 
 As a bonus action, you cloak yourself in deceptive shadows for 1 minute. While cloaked, you make no sound when moving and leave behind neither physical footprints nor forensic trace. The first attack you hit while cloaked deals an extra 2d6 necrotic damage and ends the cloak.
@@ -541,6 +597,9 @@ isSpell: false
 isCantrip: false
 author: Llamarada Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
+domain: expansion
+domainText: You have advantage on the Intimidation check.
 ```
 
 As a bonus action, you can attempt an Intimidation check. If successful, the creature is unsettled and has disadvantage on saving throws against being frightened or charmed by you for 1 minute.
@@ -558,6 +617,9 @@ isSpell: false
 isCantrip: false
 author: Llamarada Tribe
 location: Phudara / Isle of Whispers
+activation: action
+domain: expansion
+domainText: Its save DC is 2 higher.
 ```
 
 Your fiery aura gives you a commanding presence. You can use your action to create a burst of heat and light, giving you advantage on Intimidation checks and causing those who fail a Wisdom saving throw to be frightened until the end of your next turn.
@@ -578,9 +640,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: reaction
 ```
 
-As a reaction to being damaged, you engulf the attacker in green flames for 2d10 fire damage.
+As a reaction to being damaged, the creature that hurt you takes 2d10 fire damage on a failed Dexterity save, or half on a success.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#hellish%20rebuke_xphb).
 
@@ -596,9 +659,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A corpse answers up to five questions with what it knew in life.
+A corpse within 10 feet answers up to five questions with what it knew in life.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#speak%20with%20dead_xphb).
 
@@ -614,9 +678,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A 10-foot aura keeps living creatures, except constructs and undead, from reaching you.
+A 10-foot aura keeps living creatures other than Constructs and Undead from reaching you for up to 1 hour.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#antilife%20shell_xphb).
 
@@ -632,9 +698,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A burst of psychic energy deals 8d6 psychic damage and muddles the thoughts of those who fail their save.
+Psychic energy bursts in a 20-foot-radius sphere within 120 feet for 8d6 psychic damage on a failed Intelligence save, or half on a success. Those who fail subtract 1d6 from attacks and checks.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#synaptic%20static_xphb).
 
@@ -650,9 +717,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A creature with 150 hit points or fewer is stunned until it succeeds on a Constitution save; a stronger one is rooted in place.
+A creature within 60 feet with 150 hit points or fewer is stunned until it succeeds on a Constitution save. Otherwise its speed is 0 for a turn.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#power%20word%20stun_xphb).
 
@@ -668,9 +736,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-For an hour you can treat any Charisma check roll as a 15, and magic that detects lies always reports you as truthful.
+For 1 hour you can treat any Charisma check roll as a 15, and magic that detects lies reads you as truthful.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#glibness_xphb).
 
@@ -686,9 +755,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
 ```
 
-Up to ten creatures take 14d6 psychic damage and are stunned; a creature slain by it has its head explode.
+Up to ten creatures within 90 feet take 14d6 psychic damage and are stunned on a failed Intelligence save, or half damage on a success. A creature it kills has its head explode.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#psychic%20scream_xge).
 
@@ -704,9 +774,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: action
 ```
 
-Your terrible scream kills up to ten creatures with 50 hit points or fewer; stronger targets take heavy psychic damage.
+Up to ten creatures within 60 feet with 50 hit points or fewer die. Stronger ones take 12d10 psychic damage and are deafened on a failed Constitution save, or half on a success.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#wail%20of%20the%20banshee_au).
 
@@ -722,9 +793,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
 ```
 
-A creature with 125 hit points or fewer is twisted for 8d10 necrotic damage and knocked prone; stronger creatures are rooted in place.
+A creature within 60 feet with 125 hit points or fewer takes 8d10 necrotic damage and falls prone. Otherwise its speed is 0 for a turn.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#power%20word%20maim_grimhollowpg24).
 
@@ -740,9 +812,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cthulhu by Torchlight
+activation: bonus action
+concentration: true
 ```
 
-You speak Azathoth’s secret name, dooming a creature to die at the end of its third turn unless the spell is broken.
+A creature within 120 feet gains a curse point at the end of each of its turns and dies on the third, unless the spell is broken.
 
 Source reference: [Cthulhu by Torchlight on 5e.tools](https://5e.tools/spells.html#dread%20curse%20of%20azathoth_cthulhutorchlight).
 
@@ -758,9 +832,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Book of Ebon Tides
+activation: action
+concentration: true
 ```
 
-You sever the bond between two creatures, compelling each to hunt and attack the other.
+Two creatures within 60 feet that fail a Charisma save must move toward and attack each other for up to 1 minute.
 
 Source reference: [Kobold Press Book of Ebon Tides on 5e.tools](https://5e.tools/spells.html#doom%20of%20false%20friends_bookofebontides).
 
@@ -776,9 +852,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-A creature’s face seals over into smooth skin, blinding and incapacitating it as it begins to suffocate.
+A creature within 60 feet has its face sealed over: it's blinded, incapacitated and suffocating until it succeeds on a Constitution save.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#wipe%20face_grimhollowpg24).
 
@@ -794,8 +872,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cthulhu by Torchlight
+activation: action
 ```
 
-A cone of oblivion kills bloodied creatures that fail a save, reducing them to dust.
+Each bloodied creature in a 30-foot cone that fails a Constitution save dies and turns to dust.
 
 Source reference: [Cthulhu by Torchlight on 5e.tools](https://5e.tools/spells.html#wave%20of%20oblivion_cthulhutorchlight).
+
+

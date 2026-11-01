@@ -13,11 +13,12 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric / Necromancy
+activation: action
 ```
 
-You touch a living creature that has 0 hit points. The creature becomes stable immediately.
+A creature within 15 feet at 0 hit points becomes stable.
 
-https://5e.tools/spells.html#spare%20the%20dying_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#spare%20the%20dying_xphb).
 
 ---
 
@@ -49,15 +50,10 @@ isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action 
-**Range:** Touch 
-**Components:** V, S 
-**Duration:** Instantaneous 
-**Portfolio:** Endurance
-
-You touch a willing creature, granting it immediate relief from minor physical burdens. The target gains **1d4 temporary hit points** and can immediately repeat a saving throw against one condition affecting it: **poisoned** or **one level of exhaustion**. If the target succeeds, the condition or exhaustion level ends.
+As an action, you touch a willing creature, granting it immediate relief from minor physical burdens. The target gains **1d4 temporary hit points** and can immediately repeat a saving throw against one condition affecting it: **poisoned** or **one level of exhaustion**. If the target succeeds, the condition or exhaustion level ends.
 
 ---
 
@@ -72,14 +68,11 @@ isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
 location: Leatrux
+activation: action
+concentration: true
 ```
 
-**Casting Time:** 1 action 
-**Range:** 60 feet 
-**Components:** V, S 
-**Duration:** Concentration, up to 1 minute **Portfolio:** Endurance
-
-You choose one creature you can see within range. For the duration, the target gains **advantage on saving throws against the frightened and charmed conditions**.
+As an action, choose one creature you can see within 60 feet. For up to 1 minute, the target gains **advantage on saving throws against the frightened and charmed conditions**.
 
 Additionally, the target becomes **immune to the stunned and incapacitated conditions** if the effect is caused by pain, torture, or physical trauma (such as damage that causes shock, not magical effects). The target is considered to be acting normally despite grievous physical wounds.
 
@@ -98,15 +91,10 @@ isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
 location: Leatrux
+activation: action
 ```
 
-**Casting Time:** 1 action 
-**Range:** Touch 
-**Components:** V, S 
-**Duration:** Instantaneous 
-**Portfolio:** Endurance
-
-You touch a living, willing creature. The target instantly regains **10d10 hit points**. You take **necrotic damage equal to half the number of hit points restored**. If this damage reduces you to 0 hit points, you immediately stabilize, but you gain **one level of exhaustion**.
+As an action, you touch a living, willing creature. The target instantly regains **10d10 hit points**. You take **necrotic damage equal to half the number of hit points restored**. If this damage reduces you to 0 hit points, you immediately stabilize, but you gain **one level of exhaustion**.
 
 ---
 
@@ -121,14 +109,11 @@ isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
 location: Leatrux
+activation: action
+concentration: true
 ```
 
-**Casting Time:** 1 action 
-**Range:** Touch 
-**Components:** V, S 
-**Duration:** Concentration, up to 1 minute **Portfolio:** Endurance
-
-One willing creature you touch gains **40 temporary hit points**. While the target has these temporary hit points, it has **advantage on Strength and Constitution saving throws**, and **advantage on death saving throws**.
+As an action, you touch a willing creature, which gains **40 temporary hit points** for up to 1 minute. While the target has these temporary hit points, it has **advantage on Strength and Constitution saving throws**, and **advantage on death saving throws**.
 
 Additionally, the target **cannot be knocked prone, moved, or grappled** against its will by any nonmagical means.
 
@@ -145,6 +130,8 @@ isSpell: false
 isCantrip: false
 author: Mario (Ilmater's Chosen)
 location: Leatrux
+concentration: true
+activation: action
 ```
 
 You wreathe yourself in holy fire for up to 1 minute (requires concentration), creating a 30-foot protective aura centered on you:
@@ -166,6 +153,7 @@ isSpell: false
 isCantrip: false
 author: Mario (Ilmater's Chosen)
 location: Leatrux
+activation: action
 ```
 
 A cleansing wind sweeps from you to creatures within 60 feet. Choose up to six targets:
@@ -190,11 +178,13 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric / Divination
+activation: action
+concentration: true
 ```
 
-You touch one willing creature. The target can add 1d4 to one ability check of its choice.
+A willing creature you touch adds 1d4 to ability checks with one skill you choose, for up to 1 minute.
 
-https://5e.tools/spells.html#guidance_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#guidance_xphb).
 
 ---
 
@@ -208,11 +198,13 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: Cleric / Abjuration
+activation: action
+concentration: true
 ```
 
-You touch one willing creature, granting perseverance. Once before the spell ends, the target can roll a d4 and add it to one saving throw.
+A willing creature you touch reduces damage of one type you choose by 1d4, once per turn, for up to 1 minute.
 
-https://5e.tools/spells.html#resistance_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#resistance_xphb).
 
 ## Spells
 
@@ -228,11 +220,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric (Life & Peace)
+activation: action
+concentration: true
 ```
 
-Targets have advantage on Wisdom saves and death saves, and receive the maximum possible healing from any source.
+Any number of creatures within 30 feet have advantage on Wisdom and death saves, and regain maximum hit points from healing, for up to 1 minute.
 
-https://5e.tools/spells.html#beacon%20of%20hope_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#beacon%20of%20hope_xphb).
 
 ---
 
@@ -246,11 +240,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Paladin
+activation: action
 ```
 
-The first time the target would drop to 0 hit points as a result of taking damage, it instead drops to 1 hit point.
+The first time a creature you touch would drop to 0 hit points within 8 hours, it drops to 1 instead.
 
-https://5e.tools/spells.html#death%20ward_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#death%20ward_xphb).
 
 ---
 
@@ -264,11 +259,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Paladin
+activation: action
 ```
 
-Bolster up to three creatures with resolve. Each target's current and maximum hit points increase by 5 for 8 hours.
+Up to three creatures within 30 feet gain 5 to their hit point maximum and current hit points for 8 hours.
 
-https://5e.tools/spells.html#aid_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#aid_xphb).
 
 ---
 
@@ -282,11 +278,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Peace Domain
+activation: action
 ```
 
-You ward an ally: +1 AC, +1 to saves, resistance to all damage. Whenever the ally takes damage, you take an equal amount of damage.
+A willing creature you touch gains +1 AC and saves and resistance to all damage for 1 hour, and you take the same damage it does.
 
-https://5e.tools/spells.html#warding%20bond_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#warding%20bond_xphb).
 
 ---
 
@@ -300,11 +297,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Cleric / Paladin
+activation: action
 ```
 
-Target's movement is unaffected by difficult terrain, and spells cannot reduce speed or paralyze/restrain it.
+For 1 hour a willing creature you touch ignores difficult terrain and can't be paralyzed, restrained or slowed by magic.
 
-https://5e.tools/spells.html#freedom%20of%20movement_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#freedom%20of%20movement_xphb).
 
 ---
 
@@ -319,16 +317,13 @@ isSpell: false
 isCantrip: false
 author: Ilmater / Portfolio (Endurance)
 location: Leatrux
+activation: action
+concentration: true
 ```
 
-**Casting Time:** 1 action 
-**Range:** 120 feet 
-**Components:** V, S 
-**Duration:** Concentration, up to 4 rounds **Portfolio:** Endurance
+As an action, you strike one creature you can see within 120 feet with a beam of gray energy. The target makes a **Wisdom saving throw with disadvantage**. On a failed save, the target takes **4d10 necrotic damage** and is **stunned by blinding pain** until the start of your next turn. On a successful save, the target takes half damage and is not stunned, and the effect ends.
 
-A beam of gray energy strikes one creature you can see. The target makes a **Wisdom saving throw with disadvantage**. On a failed save, the target takes **4d10 necrotic damage** and is **stunned by blinding pain** until the start of your next turn. On a successful save, the target takes half damage and is not stunned, and the spell ends.
-
-At the start of each of your subsequent turns for the duration, the target must repeat the Wisdom saving throw, this time **without disadvantage**. On a failure, the target takes **4d10 necrotic damage** and remains stunned until the start of your next turn. On a success, the target takes half damage, and the spell ends.
+At the start of each of your subsequent turns for up to 4 rounds, the target must repeat the Wisdom saving throw, this time **without disadvantage**. On a failure, the target takes **4d10 necrotic damage** and remains stunned until the start of your next turn. On a success, the target takes half damage, and the effect ends.
 
 ## Cantrips
 
@@ -344,9 +339,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-Several creatures gain a small measure of divine aid on attacks and saving throws.
+Up to three creatures within 30 feet add 1d4 to attack rolls and saving throws for up to 1 minute.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#bless_phb).
 
@@ -362,11 +359,13 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Paladin / Cleric (Peace Domain)
+activation: action
+concentration: true
 ```
 
-A willing creature is imbued with bravery: immune to being frightened, and gains temporary HP at the start of each turn.
+A willing creature you touch is immune to fear and gains temporary hit points equal to your spellcasting modifier each turn for up to 1 minute.
 
-https://5e.tools/spells.html#heroism_xphb
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#heroism_xphb).
 
 ---
 
@@ -401,9 +400,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: reaction
 ```
 
-As a reaction you gain resistance to incoming elemental damage and add it to your next melee hit.
+As a reaction to elemental damage, you gain resistance to it, and your next melee hit deals an extra 1d6 of that type.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#absorb%20elements_xge).
 
@@ -421,7 +421,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-You inscribe a hidden glyph that releases an explosion or a stored spell when triggered.
+You inscribe a glyph that triggers an explosion of 5d8 elemental damage or a stored spell when its condition is met.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#glyph%20of%20warding_xphb).
 
@@ -437,9 +437,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+ritual: true
 ```
 
-A dome of force shelters you and your companions and keeps others and outside magic out.
+A 10-foot dome forms around you for 8 hours, keeping out creatures, spells and weather.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#leomund's%20tiny%20hut_xphb).
 
@@ -455,9 +456,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-Protective spirits circle you, slowing enemies and dealing radiant or necrotic damage to them.
+Spirits fill a 15-foot emanation around you for up to 10 minutes. Enemies there have half speed and take 3d8 radiant or necrotic damage on a failed Wisdom save.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#spirit%20guardians_xphb).
 
@@ -473,9 +476,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-A spectral guardian of your deity damages each enemy that comes near it, until it has dealt 60 damage.
+A spectral guardian within 30 feet deals 20 radiant damage to enemies that come within 10 feet of it on a failed Dexterity save, up to 60 in total.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#guardian%20of%20faith_xphb).
 
@@ -493,7 +497,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-You beseech a powerful being, who sends a celestial, elemental, or fiend to aid you in exchange for payment.
+A god or other great power sends a Celestial, Elemental or Fiend to help you, for a price you negotiate.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#planar%20ally_xphb).
 
@@ -509,9 +513,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A 30-foot aura gives you and your allies advantage on saves against magic, and successful saves against half-damage effects deal no damage.
+Allies in a 30-foot aura have advantage on saves against magic and take no damage on a successful save for up to 10 minutes.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#circle%20of%20power_xphb).
 
@@ -527,9 +533,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: bonus action
+concentration: true
 ```
 
-A weapon you touch shines with holy light and deals an extra 2d8 radiant damage; you can dismiss it in a radiant burst that blinds foes.
+A weapon you touch deals an extra 2d8 radiant damage for up to 1 hour. You can end it to blind nearby enemies.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#holy%20weapon_xge).
 
@@ -547,7 +555,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-Up to twelve creatures share a feast that cures poison and disease and grants poison immunity, fear immunity, advantage on Wisdom saves, and extra hit points for 24 hours.
+A feast for up to twelve creatures cures disease and poison, grants immunity to poison and fear, and adds 2d10 hit points for 24 hours.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#heroes'%20feast_xphb).
 
@@ -563,9 +571,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
 ```
 
-Up to six creatures you can see share 120 temporary hit points.
+Up to six creatures within 60 feet share 120 temporary hit points as you divide them.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#power%20word%20fortify_xphb).
 
@@ -581,9 +590,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A 30-foot aura gives allies advantage on all saves and imposes disadvantage on attacks against them; fiends and undead that strike them are blinded.
+Creatures of your choice in a 30-foot aura have advantage on all saves, and attacks against them have disadvantage, for up to 1 minute.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#holy%20aura_xphb).
 
@@ -599,9 +610,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
 ```
 
-A holy word remakes a creature in an Arch Seraph’s image: fully healed, curses suppressed, ability scores below 18 raised to 18, and a seraph’s blessing.
+A creature within 60 feet is healed to full, cured of poison, has its low ability scores raised to 18, and gains an archangel's blessing.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#perfection_grimhollowpg24).
 
@@ -617,9 +629,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
 ```
 
-You die in a burst of holy fire that deals 30d6 radiant damage around you, then rise from the ashes 10 minutes later.
+You burn yourself to death. Creatures in a 30-foot emanation take 30d6 radiant damage and gain exhaustion on a failed Constitution save, and you can return to life.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#phoenix%20flames_grimhollowpg24).
 
@@ -635,9 +648,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Heliana's Guide to Monster Hunting
+activation: reaction
 ```
 
-A word shields a creature: until the end of its next turn it is immune to all but psychic damage and has advantage on saves.
+A creature within 60 feet is immune to all damage except psychic and has advantage on saves until the end of its next turn.
 
 Source reference: [Heliana's Guide to Monster Hunting on 5e.tools](https://5e.tools/spells.html#power%20word%20shield_helianasguidetomonsterhunting).
 
@@ -653,8 +667,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-A pillar of celestial light heals allies and sears enemies within it; you can move it each turn.
+A pillar of celestial light within 90 feet heals your allies or deals radiant damage to your foes in a 10-foot-radius cylinder for up to 10 minutes.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#conjure%20celestial_xphb).
+
+

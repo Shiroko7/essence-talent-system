@@ -12,9 +12,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#goodberry_xphb
+Ten magic berries appear in your hand for 24 hours. Each restores 1 hit point and feeds a creature for a day.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#goodberry_xphb).
 
 ---
 
@@ -46,6 +49,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You gain the ability to manipulate vines and roots within 30 feet of you.
@@ -84,6 +88,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: reaction
 ```
 
 When a creature hits you with a melee attack, you can use your reaction to cause thorns to erupt from your skin. The attacker takes 4d4 piercing damage.
@@ -152,6 +157,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: bonus action
 ```
 
 As a bonus action, you encase yourself in a layer of living wood and leaves for 1 minute. At the start of each of your turns while this armor is active, you regain hit points equal to 1d6.
@@ -169,6 +175,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You unleash a torrent of wooden needles that streak toward one creature you can see within range. The target must make a Dexterity saving throw:
@@ -188,6 +195,7 @@ isSpell: false
 isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
+activation: action
 ```
 
 You can use your action to transform into a treelike creature for 1 minute or until you use your action to revert to your normal form (usable once per long rest).
@@ -211,9 +219,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: action
 ```
 
-https://5e.tools/spells.html#thorn%20whip_xphb
+A thorny vine makes a melee spell attack within 30 feet for 1d6 piercing damage and pulls a Large or smaller target 10 feet toward you.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#thorn%20whip_xphb).
 
 ---
 
@@ -226,9 +237,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: bonus action
 ```
 
-https://5e.tools/spells.html#shillelagh_xphb
+For 1 minute your club or quarterstaff uses your spellcasting ability for attacks and deals a d8 force or normal damage.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#shillelagh_xphb).
 
 ---
 
@@ -241,9 +255,12 @@ isActive: false
 isPassive: false
 isSpell: false
 isCantrip: true
+activation: reaction
 ```
 
-https://5e.tools/spells.html#root%20grab_obojimatallgrass
+As a reaction to a creature provoking your opportunity attack, roots reduce its speed by 10 feet until your next turn.
+
+Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#root%20grab_obojimatallgrass).
 
 ---
 
@@ -256,9 +273,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#spike%20growth_xphb
+A 20-foot-radius area within 150 feet becomes hidden spikes for up to 10 minutes. Creatures take 2d4 piercing damage for every 5 feet they move there.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#spike%20growth_xphb).
 
 ---
 
@@ -271,9 +292,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#entangle_xphb
+Plants fill a 20-foot square within 90 feet as difficult terrain, restraining creatures that fail a Strength save for up to 1 minute.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#entangle_xphb).
 
 ---
 
@@ -286,9 +311,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#plant%20growth_xphb
+Plants in a 100-foot radius become overgrown, so creatures move at a quarter speed, or over 8 hours the land within half a mile becomes twice as fertile.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#plant%20growth_xphb).
 
 ---
 
@@ -301,9 +329,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#speak%20with%20plants_xphb
+For 10 minutes plants in a 30-foot area around you can talk with you, answer questions about the past day, and move aside or entangle at your command.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#speak%20with%20plants_xphb).
 
 ---
 
@@ -316,9 +347,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: bonus action
+concentration: true
 ```
 
-https://5e.tools/spells.html#grasping%20vine_xphb
+A vine within 60 feet makes a melee spell attack for 4d8 bludgeoning damage and pulls the target 30 feet, again as a bonus action each turn.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#grasping%20vine_xphb).
 
 ---
 
@@ -331,9 +366,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#tree%20stride_xphb
+For up to 1 minute you can step into a tree and out of another of the same kind within 500 feet.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#tree%20stride_xphb).
 
 ---
 
@@ -346,9 +385,13 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
+concentration: true
 ```
 
-https://5e.tools/spells.html#wall%20of%20thorns_xphb
+A wall of thorns up to 60 feet long rises within 120 feet. Creatures in it or passing through take 7d8 piercing damage on a failed Dexterity save.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#wall%20of%20thorns_xphb).
 
 ---
 
@@ -361,9 +404,12 @@ isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
+activation: action
 ```
 
-https://5e.tools/spells.html#transport%20via%20plants_xphb
+A Large plant within 10 feet links to another plant you've seen on the same plane, and creatures can step between them for 1 round.
+
+Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#transport%20via%20plants_xphb).
 
 ---
 
@@ -377,9 +423,10 @@ isPassive: false
 isSpell: false
 isCantrip: true
 author: D&D 5e (PHB)
+activation: action
 ```
 
-You create a small natural sign or harmless effect that reflects the nearby environment.
+You create a minor nature effect within 30 feet: a weather sign, a blooming flower, a harmless sensory effect, or lighting a small flame.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#druidcraft_phb).
 
@@ -399,9 +446,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: bonus action
+concentration: true
 ```
 
-Your weapon hit summons grasping vines that restrain the target and pierce it each turn.
+When you hit with a weapon, vines restrain the target on a failed Strength save and deal 1d6 piercing damage each turn.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#ensnaring%20strike_xphb).
 
@@ -417,9 +466,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+ritual: true
 ```
 
-You gain a spirit familiar in animal form that scouts for you and can deliver your touch spells.
+You gain a spirit familiar in the form of a small animal. It shares its senses with you and can deliver your touch spells.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#find%20familiar_xphb).
 
@@ -435,9 +485,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: action
 ```
 
-An animated shrub grows from the ground and lashes hostile creatures that come near it.
+An animated shrub within 60 feet lashes hostile creatures that come within 10 feet of it.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#forest%20guard_obojimatallgrass).
 
@@ -453,9 +504,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Obojima: Tales from the Tall Grass
+activation: action
 ```
 
-Leafy foliage covers your body, letting you pass as a normal bush while prone and motionless.
+Leaves cover your body so that while prone and still you look like a bush.
 
 Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.tools/spells.html#sprout%20foliage_obojimatallgrass).
 
@@ -471,9 +523,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: bonus action
 ```
 
-A touched creature's skin turns bark-like, giving it AC 17 if its AC is lower.
+A willing creature you touch has an AC of at least 17 for 1 hour.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#barkskin_xphb).
 
@@ -489,9 +542,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+ritual: true
 ```
 
-You sense the direction and distance to the nearest named kind of beast or plant within 5 miles.
+You learn the direction and distance to the nearest Beast or plant of a kind you name within 5 miles.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#locate%20animals%20or%20plants_xphb).
 
@@ -501,15 +556,16 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#l
 
 ```yaml
 id: wood_3rd_level_thorn_armor
-tier: 3rd
+tier: 1st
 isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
 ```
 
-A thorny exoskeleton grants temporary hit points and pierces melee attackers for the hit points they strip away.
+A thorny shell gives a willing creature 3d6 temporary hit points. Creatures that hit it in melee take piercing damage equal to the temporary hit points lost.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#thorn%20armor_grimhollowpg24).
 
@@ -525,9 +581,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+activation: action
+concentration: true
 ```
 
-Nature spirits swirl around you, dealing force damage to creatures that enter or remain in their emanation.
+Nature spirits fill a 10-foot emanation around you for up to 10 minutes, dealing 5d8 force damage to creatures in it on a failed Wisdom save, or half on a success.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#conjure%20woodland%20beings_xphb).
 
@@ -537,15 +595,17 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 
 ```yaml
 id: wood_4th_level_summon_plant
-tier: 4th
+tier: 2nd
 isActive: false
 isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
+concentration: true
 ```
 
-You call a plant spirit with a blooming, oaken, or thorny feature that fights alongside you.
+A plant spirit appears within 90 feet and fights for you for up to 1 hour.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#summon%20plant_grimhollowpg24).
 
@@ -563,7 +623,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-A beast or plant gains an Intelligence of 10 and speech, and is charmed by you for a time.
+A Beast or plant you touch gains Intelligence 10, the ability to speak, and is charmed by you for 30 days.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#awaken_xphb).
 
@@ -579,9 +639,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB 2024)
+ritual: true
 ```
 
-Nature spirits reveal facts about the land within 3 miles, such as terrain, water, creatures, and settlements.
+You learn up to three facts about the land within 3 miles, such as terrain, water, creatures or settlements.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#commune%20with%20nature_xphb).
 
@@ -597,9 +658,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (XGE)
+activation: action
+concentration: true
 ```
 
-Trees, rocks, and grasses in a 60-foot cube animate against your enemies, grasping, lashing, and hurling stones.
+Trees, rocks and grass in a 60-foot cube within 120 feet attack your enemies for up to 1 minute: difficult terrain, slashing branches and grasping roots.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#wrath%20of%20nature_xge).
 
@@ -617,7 +680,7 @@ isCantrip: false
 author: D&D 5e (XGE)
 ```
 
-You ward an area with nature spirits: fog, grasping undergrowth, animated trees, and wind hinder intruders; it becomes permanent if cast there daily for a year.
+You ward an outdoor area up to a 90-foot cube for 24 hours with fog, grasping undergrowth, guardian trees and other protections.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#druid%20grove_xge).
 
@@ -633,9 +696,11 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (Arcana Unleashed)
+activation: action
+concentration: true
 ```
 
-You call forth a primeval dinosaur spirit, an ankylosaur, triceratops, or tyrannosaur, that fights at your side.
+A dinosaur spirit appears within 90 feet and fights for you for up to 1 hour.
 
 Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#summon%20dinosaur_au).
 
@@ -653,7 +718,7 @@ isCantrip: false
 author: D&D 5e (PHB 2024)
 ```
 
-A creature regains 4d8 + 15 hit points and 1 hit point each turn for an hour, and severed body parts regrow.
+A creature you touch regains 4d8 + 15 hit points, then 1 hit point each turn for 1 hour, and regrows lost body parts.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#regenerate_xphb).
 
@@ -671,7 +736,7 @@ isCantrip: false
 author: Kobold Press Deep Magic
 ```
 
-You shelter a 200-foot cube of forest from storms, winds, and floods, including magical ones; cast there daily for a year, it becomes permanent.
+In a forest, a 200-foot cube within 300 feet is shielded from storms, floods and blight, and plants there grow and heal.
 
 Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#forest%20sanctuary_kpdm).
 
@@ -687,9 +752,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Fragments of the Forbidden Tome
+ritual: true
 ```
 
-A seed grows into a colossal living tree up to 5 miles tall, with chambers, bridges, and roots that can house a whole civilization.
+You grow a colossal living tree up to 5 miles tall that becomes part of the world.
 
 Source reference: [Fragments of the Forbidden Tome on 5e.tools](https://5e.tools/spells.html#world%20tree_fftforbiddentome).
 
@@ -705,9 +771,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Orana's Expanded Spellbook
+activation: action
 ```
 
-A rainforest sprouts from a seed, overgrowing a 150-foot cube; within it you sense every creature and command lashing vines.
+A rainforest fills a 150-foot cube within 150 feet for up to 10 minutes, overgrowing structures and fighting your enemies. Planted over time, it becomes permanent.
 
 Source reference: [Orana's Expanded Spellbook on 5e.tools](https://5e.tools/spells.html#primordial%20rainforest_oranasexpandedspellbook).
 
@@ -723,9 +790,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Grim Hollow Player's Guide
+activation: action
 ```
 
-A creature’s flesh hardens into bark, restraining it; after three failed saves it becomes a tree, which turns permanent after a year and a day.
+A creature within 60 feet is restrained as it hardens into wood on a failed Constitution save, and becomes a tree after three failed saves.
 
 Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spells.html#arboreal%20curse_grimhollowpg24).
 
@@ -741,9 +809,10 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: Kobold Press Deep Magic
+ritual: true
 ```
 
-A ritual that makes the land within a mile deeply fertile, instantly raising a forest, orchard, grassland, or ready field.
+As a ritual, you plant a silver acorn and make the land within 1 mile extremely fertile for a year.
 
 Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.html#bloom_kpdm).
 
@@ -759,8 +828,12 @@ isPassive: false
 isSpell: true
 isCantrip: false
 author: D&D 5e (PHB)
+activation: action
+concentration: true
 ```
 
-You take the form of another creature while retaining your own mind and abilities.
+For up to 1 hour you take the form of any creature you've seen with a CR up to your level, and can change form again as an action.
 
 Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#shapechange_phb).
+
+
