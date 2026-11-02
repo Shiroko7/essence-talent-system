@@ -77,7 +77,8 @@ export const ATTUNEMENTS: Attunement[] = [
     domainLabel: 'Consecrated Ground',
     summary: 'Wherever your portfolio is revered or lived out: its temples and churches, any place with many of its followers, and wherever it is happening.',
     domains: [
-      { path: 'lunar', name: 'Under the Moon', examples: 'Moonlit or starlit nights, the open sea at night, observatories' },
+      { path: 'lunar', name: 'Under the Night Sky', examples: 'Moonlit or starlit nights, temples of Selûne, shores at a full-moon tide' },
+      { path: 'navigation', name: 'The Charted Way', examples: 'Lighthouses, observatories, chart rooms, any ship or caravan holding its course' },
       { path: 'love', name: 'Places of Beauty', examples: 'Festivals, weddings, theatres, gardens in bloom' },
       { path: 'ruin', name: 'Places of Undoing', examples: 'Battlefields, execution grounds, the scene of a murder' },
       { path: 'pestilence', name: 'Places of Sickness', examples: 'Plague towns, poisoned lands, sickrooms, sewers' },
@@ -153,7 +154,9 @@ export const COEXIST: [string, string, string][] = [
   ['ruin', 'shadow', 'Murder done in the dark.'], ['ruin', 'pestilence', 'Blade and plague serve the same end.'],
   ['tempest', 'undertow', 'Umberlee sinks the ships; the deep keeps them.'], ['shadow', 'undertow', 'The deep is as lightless as Shar’s dark.'],
   ['water', 'undertow', 'The deep is still the sea.'], ['pestilence', 'shadow', 'Talona is Shar’s ally: plague spreads in the dark.'],
-  ['lunar', 'sky', 'The moon rides the open sky.'], ['earth', 'shadow', 'Shar keeps her caverns in the stone.']
+  ['lunar', 'sky', 'The moon rides the open sky.'], ['earth', 'shadow', 'Shar keeps her caverns in the stone.'],
+  ['lunar', 'navigation', 'The sky Selûne lights is the sky her navigators read.'], ['navigation', 'sky', 'The stars are read from the open sky.'],
+  ['navigation', 'water', 'Sailors steer by the stars and ride the water.']
 ];
 
 /**
@@ -166,7 +169,7 @@ export const OVERCOMES: [string, string, string][] = [
   ['fire', 'wood', 'Fire burns Wood.'], ['earth', 'fire', 'Ash smothers the flame.'], ['metal', 'earth', 'The mine hollows the mountain.'],
   ['water', 'metal', 'Water rusts Metal.'], ['wood', 'water', 'Roots drink the spring dry.'],
   ['fire', 'shadow', 'Firelight drives back the dark.'], ['sky', 'pestilence', 'The clean wind scatters the miasma.'],
-  ['lunar', 'water', 'The tides answer to Selûne.'], ['lunar', 'tempest', 'Selûne’s light guides ships home through Umberlee’s storms.'],
+  ['lunar', 'water', 'The tides answer to Selûne.'], ['navigation', 'tempest', 'Selûne’s stars guide ships home through Umberlee’s storms.'],
   ['shadow', 'love', 'Shar is the mistress of loss: forgetting hollows out every bond.'],
   ['love', 'wood', 'Beasts of the wild answer to kinship, as in Animal Friendship and Dominate Beast.'],
   ['pestilence', 'wood', 'Talona’s blight withers the green.'], ['pestilence', 'water', 'Poisoned wells.'], ['pestilence', 'love', 'Talona’s rot spoils Sune’s beauty.'],
@@ -176,6 +179,8 @@ export const OVERCOMES: [string, string, string][] = [
   ['heart', 'ruin', 'A tempered body shrugs off pain; a steady Dao Heart sees through deceit.'],
   ['mysteries', 'lunar', 'Fishing the Moon from the Well: the reflection takes the moon itself.'],
   ['mysteries', 'shadow', 'Space folds around any hiding place.'],
+  ['mysteries', 'navigation', 'Fold the road and every chart is wrong.'],
+  ['undertow', 'navigation', 'No star can be read below the last light.'],
   ['undertow', 'lunar', 'Moonlight never reaches below the last light.'], ['undertow', 'fire', 'Nothing burns in the deep.'],
   ['undertow', 'metal', 'The pressure of the deep crushes iron.'], ['earth', 'undertow', 'Stone doesn’t drown.'],
   ['lunar', 'ruin', 'Selûne’s light exposes Mask’s thieves.']
@@ -185,7 +190,7 @@ export const OVERCOMES: [string, string, string][] = [
 export const OPPOSITES: [string, string, string][] = [
   ['sky', 'earth', 'Heaven and earth.'], ['lunar', 'shadow', 'Selûne and Shar, moonlight and the dark.'],
   ['love', 'ruin', 'Sune’s devotion against murder and betrayal.'], ['pestilence', 'providence', 'Talona’s plague against Ilmater’s healing.'],
-  ['sky', 'undertow', 'Heaven and the abyss.']
+  ['sky', 'undertow', 'Heaven and the abyss.'], ['navigation', 'shadow', 'Selûne and Shar, the stars and the dark.']
 ];
 
 export type Matchup = 'coexist' | 'overcome' | 'overcome-by' | 'opposite' | 'clash';

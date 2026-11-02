@@ -4,11 +4,13 @@ import Layout from '../components/layout/Layout';
 import { LATEST_PATCH, PATCHES, patchDate } from '../data/patchNotes';
 import PatchV2_0 from './patchNotes/PatchV2_0';
 import PatchV2_1 from './patchNotes/PatchV2_1';
+import PatchV2_2 from './patchNotes/PatchV2_2';
 
 /** Each patch's notes, by slug. Register new patches here and in data/patchNotes. */
 const PATCH_PAGES: Record<string, React.FC> = {
   'v2-0': PatchV2_0,
-  'v2-1': PatchV2_1
+  'v2-1': PatchV2_1,
+  'v2-2': PatchV2_2
 };
 
 /**

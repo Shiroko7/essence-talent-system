@@ -32,8 +32,9 @@ pool each.
 ## Cultivation paths
 
 `/` contains the canonical campaign-focused catalog for V2: six Primordial
-foundations (Wood, Fire, Earth, Metal, Water, and Sky), seven Divine portfolios
-(Lunar, Love, Ruin, Pestilence, Shadow, Tempest, and Providence), and three
+foundations (Wood, Fire, Earth, Metal, Water, and Sky), nine Divine portfolios
+(Lunar, Navigation, Love, Ruin, Pestilence, Shadow, Tempest, Undertow, and
+Providence), and three
 Immortal paths (Alchemy, Heart, and Mysteries). Each family shares one Essence
 pool: every path in it adds to the pool, and any learned ability in the family
 spends from it. The older nine-element tree, with one pool per essence, remains

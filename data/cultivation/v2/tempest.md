@@ -101,22 +101,6 @@ When you make a Charisma (Persuasion) or Charisma (Intimidation) check to influe
 
 ---
 
-### Storm Navigator
-
-```yaml
-id: lightning_initiate_storm_navigator
-tier: initiate
-isActive: false
-isPassive: true
-isSpell: false
-isCantrip: false
-author: Lei Zhen
-location: Phudara / Isle of Whispers
-```
-
-Your understanding of storms helps you predict their patterns and avoid hazards. You gain proficiency in Navigator’s Tools and have advantage on Wisdom (Survival) checks made to navigate or map out sea routes in stormy weather.
-
----
 
 ### Destructive Wave
 

@@ -36,7 +36,7 @@ A restore is for a technique that's too strong for its tier. It's nerfed everywh
 - **Never above the old version.** The line only gives back what the nerf removed. Its weight can exceed the tier's usual cap, because it adds no power the path didn't already have.
 - **Worth it away from home.** The nerfed version must still earn its slot.
 
-Ruin's Mark for Death (concentration, none on Consecrated Ground) and Blood Tithe (temporary hit points equal to your PB, your character level at home) are the first restores.
+Ruin's Mark for Death (concentration, none on Consecrated Ground) and Blood Tithe (temporary hit points equal to your PB, your character level at home) are the first restores. Lunar's Waning Moon Sabers (an action, a bonus action on Consecrated Ground) gives back an action cost. Rule 6's ban on faster casting applies to Domain Expansions, not to a restore returning what its nerf took.
 
 ## Why it's built this way
 
@@ -235,6 +235,7 @@ A light Domain Expansion is worth less than a level, a standard Domain Expansion
 | Water | Lift a requirement; farther; move with it |
 | Sky | Range; move with it; ignores cover |
 | Lunar | Range; selective; advantage |
+| Navigation | Lift a requirement; half on a miss; selective; targets |
 | Love | Share; targets; disadvantage on the save |
 | Ruin | Extra dice; a success still costs; flat bonus |
 | Pestilence | Disadvantage on the save; longer; a success still costs |
@@ -301,6 +302,55 @@ domainText: Its damage dice are d10s.
 Hadal Domain is active rather than passive: a bonus action and its Essence wake the deep for 1 minute, so it can't run every fight for free. The first pulse hits as it wakes, so the bonus action costs tempo, not damage. Below the Light only changes ink; treating dry land as underwater would have pulled creatures down into solid rock.
 
 Maelstrom stays in Tempest. It's a spell, so it gets no domain line.
+
+## Navigation and Lunar, worked
+
+**Navigation:** 9 techniques below Grandmaster, 5 with a Domain Expansion (56%, target 40%), plus Tears of Selûne, domain-bound at Grandmaster. Its 23 spells and cantrips have no domain lines. Its Consecrated Ground is The Charted Way.
+
+| Tier | Technique | Kind | On Consecrated Ground | Weight |
+| --- | --- | --- | --- | :-: |
+| Initiate | Wanderer's Road | Domain Expansion | Difficult terrain doesn't slow you in combat either. | ½ |
+| Initiate | Storm Navigator | Domain Expansion | The advantage applies in any weather. | ½ |
+| Initiate | Zenith Mark | Domain Expansion | You can target one more creature. | 1 |
+| Adept | Meteor Trail | Domain Expansion | If the attack misses, the target still takes half damage. | 1 |
+| Master | Asterism | Domain Expansion | You choose which creatures the lines ignore. | ½ |
+| Grandmaster | Tears of Selûne | Bound | A bonus action and 4 Essence bare the night sky for 1 minute. | – |
+
+**Plain (4):** True Bearing (Initiate), Safest Course and Hold the Course (Adept), and Star Road (Master). Voyage Among the Stars (Grandmaster) is plain too: it's a travel ritual, so it wouldn't get much from the domain.
+
+Tears of Selûne uses a saving throw on purpose. Hadal Domain's pressure, which no roll avoids, stays the exception. By the Lunar and Navigation test it could be a body, but the shards are what sailors steer by, so it stays with Navigation.
+
+**Lunar:** 13 techniques below Grandmaster, 6 with a line (46%, target 40%): 5 Domain Expansions and 1 restore. Full Moon and Moonfall Condemnation are domain-bound at Grandmaster. Its 32 spells and cantrips have no domain lines. Its Consecrated Ground is Under the Night Sky.
+
+| Tier | Technique | Kind | On Consecrated Ground | Weight |
+| --- | --- | --- | --- | :-: |
+| Initiate | Moonsight | Domain Expansion | Both ranges double. | ½ |
+| Initiate | Silver Ray | Domain Expansion | You have advantage on the attack roll. | 1 |
+| Adept | Moonbound Form | Domain Expansion | You're one size larger, and your reach is 5 feet longer. | 1 |
+| Master | Phases of the Moon | Domain Expansion | You choose its starting phase. | ½ |
+| Master | Moonburst | Domain Expansion | You choose which creatures in the area it affects. | ½ |
+| Master | Waning Moon Sabers | Restore | You can use it as a bonus action instead. | – |
+| Grandmaster | Full Moon | Bound | A bonus action and 4 Essence raise a full moon for 1 minute. | – |
+| Grandmaster | Moonfall Condemnation | Bound | Works only on the domain. | – |
+
+The techniques take their ideas from Pathfinder 2e spells:
+
+| Path | Technique | Pathfinder 2e source |
+| --- | --- | --- |
+| Navigation | True Bearing | Know the Way |
+| Navigation | Wanderer's Road | Wanderer's Guide, Tailwind |
+| Navigation | Zenith Mark | Zenith Star |
+| Navigation | Meteor Trail | Shooting Star |
+| Navigation | Safest Course | Path of Least Resistance |
+| Navigation | Asterism | Asterism |
+| Navigation | Star Road | Moonlight Bridge |
+| Navigation | Voyage Among the Stars | Phantom Ship |
+| Lunar | Shower of Stars | Spray of Stars |
+| Lunar | Silver Ray | Moonbeam, Moonlight Ray |
+| Lunar | Phases of the Moon | Touch of the Moon |
+| Lunar | Moonbound Form | Moon Frenzy, Animal Form |
+| Lunar | Selûne's Pack | Moon Frenzy |
+| Lunar | Moonburst | Moonburst |
 
 ## Settled
 

@@ -60,6 +60,7 @@ const palettes = {
   shadow: ['bg-purple-900/40', 'text-purple-300', 'border-purple-600/50', 'shadow-glow-void', 'bg-purple-950/80 text-purple-200 border-purple-600/50', '#a855f7'],
   tempest: ['bg-sky-600/30', 'text-sky-300', 'border-sky-400/50', 'shadow-glow-tempest', 'bg-sky-950/80 text-sky-200 border-sky-400/40', '#38bdf8'],
   undertow: ['bg-violet-700/25', 'text-violet-300', 'border-violet-400/50', 'shadow-glow-undertow', 'bg-violet-950/80 text-violet-200 border-violet-500/40', '#9d90ff'],
+  navigation: ['bg-yellow-300/20', 'text-yellow-200', 'border-yellow-200/50', 'shadow-glow-navigation', 'bg-yellow-950/70 text-yellow-100 border-yellow-200/40', '#fde68a'],
   providence: ['bg-amber-500/25', 'text-amber-300', 'border-amber-400/50', 'shadow-glow-providence', 'bg-amber-950/70 text-amber-200 border-amber-400/40', '#fbbf24']
 } as const;
 
@@ -92,7 +93,8 @@ const paths: CultivationPath[] = [
   makePath('alchemy', 'Alchemy', 'human', 'Transformation through craft', 'Formulas, medicines, acids, refining, and the recombination of substances through practice.', 'alchemy'),
   makePath('heart', 'Heart', 'human', 'Martial discipline and embodied mastery', 'Unarmed forms, weapon technique, disciplined movement, and mastery shaped through practice.', 'heart', 'Sirius'),
   makePath('mysteries', 'Mysteries', 'human', 'Space, time, and the illusory made real', 'Folds of space, moments pried loose from time, and reflections drawn out of the well: what cannot be put into words, made to obey anyway.', 'mysteries', 'Netherdark Emperor "Yuji"'),
-  makePath('lunar', 'Lunar', 'divine', 'Moon, stars, and celestial cycles', 'Moonlight, stars, navigation, dreams, reflection, and foresight.', 'lunar', 'Selûne'),
+  makePath('lunar', 'Lunar', 'divine', 'Moon, stars, and celestial cycles', 'Moonlight, starfire, cycles, dreams, reflection, and foresight.', 'lunar', 'Selûne'),
+  makePath('navigation', 'Navigation', 'divine', 'Reading the stars and finding the way home', 'Star-reading, constellations, charts, sea roads and land roads, and never losing your way.', 'navigation', 'Selûne'),
   makePath('love', 'Love', 'divine', 'Affection and emotional bonds', 'Beauty, attraction, devotion, empathy, and the bonds between people.', 'love', 'Sune'),
   makePath('ruin', 'Ruin', 'divine', 'Violence and deliberate undoing', 'Murder, pain, deception, thievery, and the collapse of a chosen foe.', 'ruin', 'Bhaal, Cyric, and Loviatar'),
   makePath('pestilence', 'Pestilence', 'divine', 'Affliction and corruption', 'Disease, poison, curses, contagion, and resistance to corruption.', 'pestilence', 'Talona'),
