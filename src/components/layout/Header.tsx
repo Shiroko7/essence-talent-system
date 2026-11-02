@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sparkles, Menu, X, Github, FlaskConical, Store, ScrollText, Layers, Megaphone, BookOpen } from 'lucide-react';
+import { Sparkles, Menu, X, Github, FlaskConical, Store, Layers, Megaphone, BookOpen } from 'lucide-react';
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -10,13 +10,13 @@ const Header: React.FC = () => {
     { to: '/', label: 'Talents', icon: Layers },
     { to: '/rules', label: 'Rules', icon: BookOpen },
     { to: '/patch-notes', label: 'Patch Notes', icon: Megaphone },
-    { to: '/changelog', label: 'Changelog', icon: ScrollText },
     { to: '/merchants', label: 'Merchants', icon: Store },
     { to: '/potions', label: 'Alchemy', icon: FlaskConical },
   ];
 
   const isActive = (path: string) => {
     if (path === '/') return ['/', '/essence', '/summary', '/migration'].includes(location.pathname) || location.pathname.startsWith('/v1');
+    if (path === '/patch-notes') return location.pathname.startsWith(path) || location.pathname.startsWith('/changelog');
     return location.pathname.startsWith(path);
   };
 

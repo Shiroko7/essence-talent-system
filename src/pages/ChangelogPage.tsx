@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { ScrollText, ChevronDown, ChevronRight, History } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, ScrollText, ChevronDown, ChevronRight, History } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import ChangelogFilters from '../components/changelog/ChangelogFilters';
 import ChangelogTimeline from '../components/changelog/ChangelogTimeline';
@@ -134,6 +135,9 @@ const ChangelogPage: React.FC = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Page Header */}
         <div className="mb-8">
+          <Link to="/patch-notes" className="inline-flex items-center gap-1.5 mb-4 font-display text-sm tracking-wide text-gold hover:text-gold-bright transition-colors">
+            <ArrowLeft size={14} /> Patch Notes
+          </Link>
           <div className="flex items-center gap-3 mb-3">
             <ScrollText size={32} className="text-gold" />
             <h1 className="font-display text-3xl md:text-4xl tracking-wide text-ivory">
