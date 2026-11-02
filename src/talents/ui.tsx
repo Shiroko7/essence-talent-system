@@ -361,9 +361,18 @@ export const CharacterMenu: React.FC<{ ctl: TalentController; align?: 'left' | '
                 <Plus size={15} className="text-gold" /> New build
               </button>
             )}
-            {ctl.system.version === 'v2' && (
-              <Link className={item} to={pagePath('v2', 'migration')} onClick={dismiss}>
-                <History size={15} className="text-gold" /> V1 migration guide
+            {ctl.system.version === 'v2' ? (
+              <>
+                <Link className={item} to={pagePath('v2', 'migration')} onClick={dismiss}>
+                  <History size={15} className="text-gold" /> V1 migration guide
+                </Link>
+                <Link className={item} to={pagePath('v1', 'talents')} onClick={dismiss}>
+                  <Sparkles size={15} className="text-gold" /> Open V1 talents
+                </Link>
+              </>
+            ) : (
+              <Link className={item} to={pagePath('v2', 'talents')} onClick={dismiss}>
+                <Sparkles size={15} className="text-gold" /> Back to V2 talents
               </Link>
             )}
           </div>

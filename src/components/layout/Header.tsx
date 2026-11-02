@@ -8,7 +8,6 @@ const Header: React.FC = () => {
 
   const navItems = [
     { to: '/', label: 'Talents', icon: Layers },
-    { to: '/v1', label: 'Talents (v1)', icon: Sparkles },
     { to: '/rules', label: 'Rules', icon: BookOpen },
     { to: '/patch-notes', label: 'Patch Notes', icon: Megaphone },
     { to: '/changelog', label: 'Changelog', icon: ScrollText },
@@ -17,7 +16,7 @@ const Header: React.FC = () => {
   ];
 
   const isActive = (path: string) => {
-    if (path === '/') return ['/', '/essence', '/summary', '/migration'].includes(location.pathname);
+    if (path === '/') return ['/', '/essence', '/summary', '/migration'].includes(location.pathname) || location.pathname.startsWith('/v1');
     return location.pathname.startsWith(path);
   };
 
