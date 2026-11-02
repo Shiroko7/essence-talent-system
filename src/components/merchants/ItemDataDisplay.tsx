@@ -5,12 +5,71 @@ interface ItemDataDisplayProps {
   data: ItemDetailedData;
 }
 
+// Turns 5etools markup such as {@damage 1d4} or {@spell Fear|XPHB} into the text it displays.
+const formatText = (text: string): string => {
+  let result = text;
+  let previous;
+  do {
+    previous = result;
+    result = result.replace(/\{@(\w+) ([^{}]*)\}/g, (_, tag: string, body: string) => {
+      const parts = body.split('|');
+      switch (tag) {
+        case 'dc':
+          return parts[1] || `DC ${parts[0]}`;
+        case 'hit':
+          return parts[1] || `+${parts[0]}`;
+        case 'chance':
+          return parts[1] || `${parts[0]} percent`;
+        case 'dice':
+        case 'damage':
+        case 'd20':
+          return parts[1] || parts[0];
+        case 'book':
+        case 'adventure':
+        case 'quickref':
+          return parts[0];
+        default:
+          return parts[2] || parts[0];
+      }
+    });
+  } while (result !== previous);
+  return result;
+};
+
+type TableCell =
+  | string
+  | number
+  | { entry?: string; roll?: { exact?: number; min?: number; max?: number } };
+
+type Entry =
+  | string
+  | {
+      type?: string;
+      name?: string;
+      entry?: Entry;
+      entries?: Entry[];
+      items?: Entry[];
+      caption?: string;
+      colLabels?: string[];
+      rows?: TableCell[][];
+    };
+
+// A cell's own text wins; a bare roll falls back to its number or range.
+const formatCell = (cell: TableCell): string => {
+  if (typeof cell === 'string') return formatText(cell);
+  if (typeof cell === 'number') return String(cell);
+  if (cell.entry !== undefined) return formatText(cell.entry);
+  if (!cell.roll) return '';
+  const { exact, min, max } = cell.roll;
+  return exact !== undefined ? String(exact) : `${min}-${max}`;
+};
+
 const ItemDataDisplay: React.FC<ItemDataDisplayProps> = ({ data }) => {
-  const renderEntry = (entry: any, index: number): React.ReactNode => {
+  const renderEntry = (entry: Entry, index: number): React.ReactNode => {
     if (typeof entry === 'string') {
       return (
         <p key={index} className="text-parchment/90 text-sm leading-relaxed text-left font-body">
-          {entry}
+          {formatText(entry)}
         </p>
       );
     }
@@ -21,9 +80,9 @@ const ItemDataDisplay: React.FC<ItemDataDisplayProps> = ({ data }) => {
           <div key={index} className="ml-4 text-left">
             {entry.name && <p className="font-display text-sm text-ivory mb-1 text-left">{entry.name}</p>}
             <ul className="list-disc list-outside ml-5 space-y-2">
-              {entry.items?.map((item: any, i: number) => (
+              {entry.items?.map((item, i) => (
                 <li key={i} className="text-parchment/90 text-sm text-left font-body">
-                  {typeof item === 'string' ? item : renderNestedEntry(item)}
+                  {renderListItem(item)}
                 </li>
               ))}
             </ul>
@@ -34,8 +93,40 @@ const ItemDataDisplay: React.FC<ItemDataDisplayProps> = ({ data }) => {
           <div key={index} className="space-y-2 text-left">
             {entry.name && <p className="font-display text-sm text-ivory text-left">{entry.name}</p>}
             <div className="ml-2">
-              {entry.entries?.map((item: any, i: number) => renderEntry(item, i))}
+              {entry.entries?.map((item, i) => renderEntry(item, i))}
             </div>
+          </div>
+        );
+      } else if (entry.type === 'table') {
+        return (
+          <div key={index} className="overflow-x-auto">
+            <table className="w-full text-sm text-left font-body">
+              {entry.caption && (
+                <caption className="font-display text-ivory text-left mb-1">{formatText(entry.caption)}</caption>
+              )}
+              {entry.colLabels && (
+                <thead>
+                  <tr>
+                    {entry.colLabels.map((label, i) => (
+                      <th key={i} className="font-display text-xs text-gold font-normal pb-1 pr-3 border-b border-gold-subtle">
+                        {formatText(label)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+              )}
+              <tbody>
+                {entry.rows?.map((row, r) => (
+                  <tr key={r}>
+                    {row.map((cell, c) => (
+                      <td key={c} className="text-parchment/90 py-1 pr-3 align-top border-b border-gold-subtle">
+                        {formatCell(cell)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         );
       }
@@ -44,25 +135,27 @@ const ItemDataDisplay: React.FC<ItemDataDisplayProps> = ({ data }) => {
     return null;
   };
 
-  const renderNestedEntry = (entry: any): React.ReactNode => {
-    if (typeof entry === 'string') {
-      return entry;
+  // List items are plain strings or named items that keep their text in `entry` or `entries`.
+  const renderListItem = (item: Entry): React.ReactNode => {
+    if (typeof item === 'string') {
+      return formatText(item);
     }
 
-    if (typeof entry === 'object' && entry !== null && entry.type === 'entries') {
-      return (
-        <div className="space-y-1">
-          {entry.name && <span className="font-display text-ivory">{entry.name}: </span>}
-          {entry.entries?.map((item: any, idx: number) => (
+    const content = item.entries ?? (item.entry !== undefined ? [item.entry] : []);
+    return (
+      <div className="space-y-1">
+        {item.name && <span className="font-display text-ivory">{formatText(item.name)}: </span>}
+        {content.map((part, idx) =>
+          typeof part === 'string' ? (
             <span key={idx} className="text-parchment/90 font-body">
-              {typeof item === 'string' ? item : null}
+              {formatText(part)}
             </span>
-          ))}
-        </div>
-      );
-    }
-
-    return null;
+          ) : (
+            renderEntry(part, idx)
+          )
+        )}
+      </div>
+    );
   };
 
   const renderEntries = () => {

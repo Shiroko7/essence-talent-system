@@ -12,7 +12,7 @@
       "source": "DMG",
       "detailedData": {
         "entries": [
-          "{#itemEntry Ring of Resistance}"
+          "You have resistance to cold damage while wearing this ring. The ring is set with tourmaline."
         ],
         "resist": [
           "cold"
@@ -29,7 +29,7 @@
       "source": "DMG",
       "detailedData": {
         "entries": [
-          "{#itemEntry Ring of Resistance}"
+          "You have resistance to lightning damage while wearing this ring. The ring is set with citrine."
         ],
         "resist": [
           "lightning"
@@ -46,7 +46,7 @@
       "source": "DMG",
       "detailedData": {
         "entries": [
-          "{#itemEntry Ring of Resistance}"
+          "You have resistance to radiant damage while wearing this ring. The ring is set with topaz."
         ],
         "resist": [
           "radiant"

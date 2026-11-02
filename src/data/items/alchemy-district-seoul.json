@@ -145,7 +145,7 @@
       "source": "DMG",
       "detailedData": {
         "entries": [
-          "{#itemEntry Potion of Resistance}"
+          "When you drink this potion, you have resistance to cold damage for 1 hour."
         ],
         "resist": [
           "cold"
@@ -182,7 +182,7 @@
       "source": "DMG",
       "detailedData": {
         "entries": [
-          "{#itemEntry Potion of Resistance}"
+          "When you drink this potion, you have resistance to lightning damage for 1 hour."
         ],
         "resist": [
           "lightning"
@@ -213,7 +213,7 @@
       "source": "DMG",
       "detailedData": {
         "entries": [
-          "{#itemEntry Potion of Resistance}"
+          "When you drink this potion, you have resistance to radiant damage for 1 hour."
         ],
         "resist": [
           "radiant"
