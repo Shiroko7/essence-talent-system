@@ -1,0 +1,326 @@
+{
+  "merchantId": "dead-reckoning",
+  "lastUpdated": "2026-11-01",
+  "items": [
+    {
+      "id": "skull-helm",
+      "name": "Skull Helm",
+      "rarity": "very rare",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#skull%20helm_bmt",
+      "source": "BMT",
+      "detailedData": {
+        "entries": [
+          "While wearing this skull-shaped helm, you have resistance to cold, poison, and necrotic damage.",
+          "Additionally, while wearing the helm, you can cast Spirit of Death from it without requiring material components. Once you use the helm to cast the spell, the helm can't cast this spell again until the next dawn."
+        ],
+        "resist": [
+          "cold",
+          "necrotic",
+          "poison"
+        ]
+      }
+    },
+    {
+      "id": "cwrth-of-traitors-reprise",
+      "name": "Cwrth of Traitor's Reprise",
+      "rarity": "very rare",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#cwrth%20of%20traitor's%20reprise_cofsa",
+      "source": "COFSA",
+      "detailedData": {
+        "entries": [
+          "This stringed instrument was made from the bones of a dead warrior after a vicious betrayal. As an action while you are playing it, you can choose one creature that you can see that can hear you. The target must make a DC 15 Wisdom saving throw. If they fail, they must use their action during their next turn to move to a space within 5 feet of the nearest creature and make a melee attack targeting that creature."
+        ]
+      }
+    },
+    {
+      "id": "cloak-of-the-starwalker",
+      "name": "Cloak of the Starwalker",
+      "rarity": "very rare",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#cloak%20of%20the%20starwalker_belzormm",
+      "source": "BelzorMM",
+      "detailedData": {
+        "entries": [
+          "Belonging to a mythological thief who was said to have stolen the stars themselves, this cloak offers a window into the void of space. Adorned with a pattern of faintly glowing star-like motes of light, the pattern of the cloak shifts when attuned to reveal a picture of the heavens.",
+          "This cloak has 7 charges, and it regains 1d6+1 expended charges daily at dusk. While wearing the cloak, you can use a bonus action to expend one charge to cast misty step.",
+          "While attuned to this cloak, you gain resistance to radiant and force damage, you are immune to any ill effects from being in a vacuum, and your movement speed is doubled in dim light or darkness."
+        ],
+        "charges": 7,
+        "recharge": "dusk",
+        "resist": [
+          "force",
+          "radiant"
+        ]
+      }
+    },
+    {
+      "id": "wand-of-fear",
+      "name": "Wand of Fear",
+      "rarity": "rare",
+      "type": "wand",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#wand%20of%20fear_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "This wand has 7 charges.",
+          {
+            "type": "entries",
+            "name": "Spells",
+            "entries": [
+              "While holding the wand, you can cast one of the spells (save DC 15) on the following table from it. The table indicates how many charges you must expend to cast the spell.",
+              {
+                "type": "table",
+                "colLabels": [
+                  "Spell",
+                  "Charge Cost"
+                ],
+                "rows": [
+                  [
+                    "Command (\"flee\" or \"grovel\" only)",
+                    "1"
+                  ],
+                  [
+                    "Fear (60-foot Cone)",
+                    "3"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "type": "entries",
+            "name": "Regaining Charges",
+            "entries": [
+              "The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll 1d20. On a 1, the wand crumbles into ashes and is destroyed."
+            ]
+          }
+        ],
+        "charges": 7,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "rattling-armor",
+      "name": "Rattling Armor",
+      "rarity": "rare",
+      "type": "armor",
+      "requiresAttunement": true,
+      "properties": {
+        "armorType": "heavy armor"
+      },
+      "toolsUrl": "https://5e.tools/items.html#rattling%20armor_bookofebontides",
+      "source": "BookOfEbonTides",
+      "detailedData": {
+        "entries": [
+          "This armor is made of humanoid bones and enchanted with glamours of terror. While wearing this armor, you have resistance to necrotic damage. In addition, you can use an action to cast the fear spell. This property of the armor can't be used again until the next dawn."
+        ],
+        "ac": 17,
+        "resist": [
+          "necrotic"
+        ],
+        "stealth": true,
+        "strength": 15
+      }
+    },
+    {
+      "id": "cephalian-bands",
+      "name": "Cephalian Bands",
+      "rarity": "rare",
+      "type": "wondrous item",
+      "requiresAttunement": true,
+      "toolsUrl": "https://5e.tools/items.html#cephalian%20bands_abyss",
+      "source": "ABYSS",
+      "detailedData": {
+        "entries": [
+          "These brass armbands bear the shape of entwined tentacles, lined with veins of black ink. While wearing them, you have advantage on checks made to maintain grapples.",
+          "While you are underwater, you can use an action to cast darkness from the bands, centered on yourself. When you do so, your speed is doubled until the end of the turn. Once you cast this spell in this way, you can't do so again until the next dawn."
+        ]
+      }
+    },
+    {
+      "id": "dagger-of-venom",
+      "name": "Dagger of Venom",
+      "rarity": "rare",
+      "type": "weapon",
+      "requiresAttunement": false,
+      "properties": {
+        "weaponType": "dagger"
+      },
+      "toolsUrl": "https://5e.tools/items.html#dagger%20of%20venom_xdmg",
+      "source": "XDMG",
+      "detailedData": {
+        "entries": [
+          "You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.",
+          "You can take a Bonus Action to magically coat the blade with poison. The poison remains for 1 minute or until an attack using this weapon hits a creature. That creature must succeed on a DC 15 Constitution saving throw or take 2d10 Poison damage and have the Poisoned condition for 1 minute. The weapon can't be used this way again until the next dawn."
+        ],
+        "dmg1": "1d4",
+        "dmgType": "P",
+        "range": "20/60",
+        "bonusWeapon": "+1"
+      }
+    },
+    {
+      "id": "ominous-staff-of-skulls",
+      "name": "Ominous Staff of Skulls",
+      "rarity": "uncommon",
+      "type": "staff",
+      "requiresAttunement": true,
+      "properties": {
+        "weaponType": "quarterstaff"
+      },
+      "toolsUrl": "https://5e.tools/items.html#ominous%20staff%20of%20skulls_au",
+      "source": "AU",
+      "detailedData": {
+        "entries": [
+          {
+            "type": "entries",
+            "name": "Ominous",
+            "entries": [
+              "A skull adorns the top of the staff.",
+              "While you hold the staff, you can cast Chill Touch from it, using your spell attack bonus. Additionally, you have Advantage on Charisma (Intimidation) checks made while holding the staff, and the staff's eye sockets glow a disquieting green, shedding Dim Light in a 5-foot radius."
+            ]
+          }
+        ],
+        "dmg1": "1d6",
+        "dmg2": "1d8",
+        "dmgType": "B"
+      }
+    },
+    {
+      "id": "silencing-satchel",
+      "name": "Silencing Satchel",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#silencing%20satchel_dndbeyonddrops",
+      "source": "DnDBeyondDrops",
+      "detailedData": {
+        "entries": [
+          "This magic satchel has 3 charges and regains 1d3 expended charges daily at dawn. As a Magic action, you can expend 1 charge and tighten the satchel's drawstring to inflict a silencing hex on a creature you can see within 60 feet of yourself. The target must succeed on a DC 15 Charisma saving throw or be cursed for 1 minute. While the target is cursed, its mouth is sealed shut. The target can't cast any spell with a Verbal component, consume potions, or take in food or drink. The target makes a DC 15 Charisma save at the end of each of its turns, ending the curse early on a success."
+        ],
+        "charges": 3,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "hand-of-glory",
+      "name": "Hand of Glory",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#hand%20of%20glory_abidalzims",
+      "source": "AbiDalzims",
+      "detailedData": {
+        "entries": [
+          "This leathery severed hand of a felonious Medium humanoid is permanently clenched, ready to receive a candle. If a candle placed in the hand is lit, it sheds bright light in a 20-foot radius and dim light for another 20. This light is visible only to a creature holding the candle and other creatures it chooses.",
+          "If a candle made from corpse-wax is placed within the hand's fingers, the light gains additional properties:",
+          {
+            "type": "list",
+            "items": [
+              "The holder can use an action to choose a 300-foot cube within 5 feet of it and attempt to light the candle. The candle will not light if any creature within the cube is conscious",
+              "The candle's light penetrates magical darkness and heavy obscuration created by fog, mist, and other airborne shrouds",
+              "Ordinary liquids other than milk cannot douse the flame."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "sea-walkers-helm",
+      "name": "Sea Walker's Helm",
+      "rarity": "uncommon",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#sea%20walker's%20helm_abyss",
+      "source": "ABYSS",
+      "detailedData": {
+        "entries": [
+          "This piece of headgear is cobbled together from the chitin and gills of a giant crab. It remains constantly damp with briny water, and never rots. While wearing this helm, you can walk and act on surfaces underwater as if on dry land, regardless of orientation, and the amount of time you can hold your breath is doubled."
+        ]
+      }
+    },
+    {
+      "id": "figglys-wand-of-squids",
+      "name": "Figgly's Wand of Squids",
+      "rarity": "uncommon",
+      "type": "wand",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#figgly's%20wand%20of%20squids_abyss",
+      "source": "ABYSS",
+      "detailedData": {
+        "entries": [
+          "This jet black wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the Figgly's exploding squid spell (+7 to hit) from it. For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend.",
+          "The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand explodes in a burst of black ink and is destroyed."
+        ],
+        "charges": 7,
+        "recharge": "dawn"
+      }
+    },
+    {
+      "id": "potion-of-water-breathing",
+      "name": "Potion of Water Breathing",
+      "rarity": "uncommon",
+      "type": "potion",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#potion%20of%20water%20breathing_xdmg",
+      "source": "XDMG",
+      "price": 400,
+      "detailedData": {
+        "entries": [
+          "You can breathe underwater for 24 hours after drinking this potion.",
+          "This potion's cloudy green fluid smells of the sea and has a jellyfish-like bubble floating in it."
+        ]
+      }
+    },
+    {
+      "id": "gold-fish",
+      "name": "Gold Fish",
+      "rarity": "common",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#gold%20fish_abyss",
+      "source": "ABYSS",
+      "detailedData": {
+        "entries": [
+          "This solid gold clockwork fish flops pathetically when it is within 120 feet of another piece of gold that is coin-sized or larger. If the fish is submerged, it instead swims toward the treasure at a rate of 10 feet per round."
+        ]
+      }
+    },
+    {
+      "id": "hels-coin",
+      "name": "Hel's Coin",
+      "rarity": "common",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#hel's%20coin_northlandsworldbook",
+      "source": "NorthlandsWorldbook",
+      "detailedData": {
+        "entries": [
+          "While carrying this blackened silver coin, if you fail a Death Saving Throw, you treat the save as a success instead. Then the coin crumbles into dust.",
+          "If you carry more than one Hel's Coin, you gain the following curse instead. If you succeed on a Death Saving Throw, you treat the success as a failure. Then one Hel's Coin crumbles to dust. This curse remains until there is only one coin left in your possession, whereupon that coin's normal effect resumes. You can freely divest yourself of extra coins."
+        ]
+      }
+    },
+    {
+      "id": "doublet-of-dramatic-demise",
+      "name": "Doublet of Dramatic Demise",
+      "rarity": "common",
+      "type": "wondrous item",
+      "requiresAttunement": false,
+      "toolsUrl": "https://5e.tools/items.html#doublet%20of%20dramatic%20demise_taldoreicampaignsettingreborn",
+      "source": "TalDoreiCampaignSettingReborn",
+      "detailedData": {
+        "entries": [
+          "This striking satin jacket allows you to make the most of your dying moments. When you drop to 0 hit points while wearing this doublet, you do not fall unconscious. Instead, you are incapacitated and your speed becomes 0, but you can speak and communicate.",
+          "You make death saving throws as normal, but if you roll a 1 on the d20, you swoon with a loud gasp and die instantly."
+        ]
+      }
+    }
+  ]
+}

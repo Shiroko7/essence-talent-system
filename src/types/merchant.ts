@@ -136,7 +136,7 @@ export interface Merchant {
   description: string;
   location?: string;
   region?: string; // Grouping region (e.g., "Sirius")
-  subregion?: string; // Section within a region (e.g., "Glass Mirror Cay — Outpost")
+  subregion?: string; // Section within a region (e.g., "Forbidden Sea")
   isAvailable: boolean; // locked/unlocked for players
   lockReason?: string; // Why merchant is locked (e.g., "Complete quest X")
   inventoryFile: string; // Path to items JSON file

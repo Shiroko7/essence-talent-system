@@ -5,8 +5,9 @@
       "id": "aerang",
       "name": "The Price of Silence",
       "description": "Aerang never brewed a single one of these. She simply watches, listens, and knows far too much, and people pay to keep her quiet with whatever they have on hand. The result is a cabinet of other people's secrets in bottle form: a few genuine treasures, a few bad jokes, and whatever she found too interesting to give back.",
+      "location": "Aerang — Sealed Artifact",
       "region": "Sirius",
-      "subregion": "Aerang — Sealed Artifact",
+      "subregion": "Forbidden Sea",
       "isAvailable": true,
       "inventoryFile": "aerang",
       "pricing": {
@@ -27,9 +28,30 @@
       "description": "A salt-scoured trading post on a black-glass cay at the edge of the Forbidden Sea. Sailors say the Princess of Air and Darkness walked here before she took the Unseelie throne, and that the tide still returns what she left behind: black gems, breathless winds, and cloaks cut from shadow.",
       "location": "Glass Mirror Cay, coast of the Forbidden Sea",
       "region": "Sirius",
-      "subregion": "Glass Mirror Cay — Outpost",
+      "subregion": "Forbidden Sea",
       "isAvailable": true,
       "inventoryFile": "glass-mirror-cay",
+      "pricing": {
+        "currency": "electrum",
+        "priceByRarity": {
+          "common": 200,
+          "uncommon": 800,
+          "rare": 8000,
+          "very rare": 80000,
+          "legendary": 400000,
+          "artifact": 400000
+        }
+      }
+    },
+    {
+      "id": "dead-reckoning",
+      "name": "Dead Reckoning",
+      "description": "The rogue resistance holding Glass Mirror Cay keeps a second counter below the Exchange's boards, and it asks no questions about where anything came from. The cultists behind it deal in treacheries, bones, terrors, things dragged up from below, and a good deal of treasure stolen from people who want it back.",
+      "location": "Glass Mirror Cay, coast of the Forbidden Sea",
+      "region": "Sirius",
+      "subregion": "Forbidden Sea",
+      "isAvailable": true,
+      "inventoryFile": "dead-reckoning",
       "pricing": {
         "currency": "electrum",
         "priceByRarity": {
