@@ -1,4 +1,5 @@
 import { alchemyAbilities as v2_alchemyAbilities, alchemyCantrips as v2_alchemyCantrips, alchemySpells as v2_alchemySpells } from '../components/cultivation/consts/v2/alchemy';
+import { cryptAbilities as v2_cryptAbilities, cryptCantrips as v2_cryptCantrips, cryptSpells as v2_cryptSpells } from '../components/cultivation/consts/v2/crypt';
 import { earthAbilities as v2_earthAbilities, earthCantrips as v2_earthCantrips, earthSpells as v2_earthSpells } from '../components/cultivation/consts/v2/earth';
 import { fireAbilities as v2_fireAbilities, fireCantrips as v2_fireCantrips, fireSpells as v2_fireSpells } from '../components/cultivation/consts/v2/fire';
 import { heartAbilities as v2_heartAbilities, heartCantrips as v2_heartCantrips, heartSpells as v2_heartSpells } from '../components/cultivation/consts/v2/heart';
@@ -12,8 +13,10 @@ import { ruinAbilities as v2_ruinAbilities, ruinCantrips as v2_ruinCantrips, rui
 import { shadowAbilities as v2_shadowAbilities, shadowCantrips as v2_shadowCantrips, shadowSpells as v2_shadowSpells } from '../components/cultivation/consts/v2/shadow';
 import { skyAbilities as v2_skyAbilities, skyCantrips as v2_skyCantrips, skySpells as v2_skySpells } from '../components/cultivation/consts/v2/sky';
 import { tempestAbilities as v2_tempestAbilities, tempestCantrips as v2_tempestCantrips, tempestSpells as v2_tempestSpells } from '../components/cultivation/consts/v2/tempest';
+import { tyrannyAbilities as v2_tyrannyAbilities, tyrannyCantrips as v2_tyrannyCantrips, tyrannySpells as v2_tyrannySpells } from '../components/cultivation/consts/v2/tyranny';
 import { undertowAbilities as v2_undertowAbilities, undertowCantrips as v2_undertowCantrips, undertowSpells as v2_undertowSpells } from '../components/cultivation/consts/v2/undertow';
 import { waterAbilities as v2_waterAbilities, waterCantrips as v2_waterCantrips, waterSpells as v2_waterSpells } from '../components/cultivation/consts/v2/water';
+import { wisdomAbilities as v2_wisdomAbilities, wisdomCantrips as v2_wisdomCantrips, wisdomSpells as v2_wisdomSpells } from '../components/cultivation/consts/v2/wisdom';
 import { woodAbilities as v2_woodAbilities, woodCantrips as v2_woodCantrips, woodSpells as v2_woodSpells } from '../components/cultivation/consts/v2/wood';
 
 import { Ability } from '../types/essence';
@@ -32,6 +35,7 @@ export interface CultivationData {
 const dataByVersion: Record<CultivationVersion, Record<string, PathData>> = {
   v2: {
     "alchemy": { abilities: v2_alchemyAbilities as Ability[], cantrips: v2_alchemyCantrips as Ability[], spells: v2_alchemySpells as Ability[] },
+    "crypt": { abilities: v2_cryptAbilities as Ability[], cantrips: v2_cryptCantrips as Ability[], spells: v2_cryptSpells as Ability[] },
     "earth": { abilities: v2_earthAbilities as Ability[], cantrips: v2_earthCantrips as Ability[], spells: v2_earthSpells as Ability[] },
     "fire": { abilities: v2_fireAbilities as Ability[], cantrips: v2_fireCantrips as Ability[], spells: v2_fireSpells as Ability[] },
     "heart": { abilities: v2_heartAbilities as Ability[], cantrips: v2_heartCantrips as Ability[], spells: v2_heartSpells as Ability[] },
@@ -45,8 +49,10 @@ const dataByVersion: Record<CultivationVersion, Record<string, PathData>> = {
     "shadow": { abilities: v2_shadowAbilities as Ability[], cantrips: v2_shadowCantrips as Ability[], spells: v2_shadowSpells as Ability[] },
     "sky": { abilities: v2_skyAbilities as Ability[], cantrips: v2_skyCantrips as Ability[], spells: v2_skySpells as Ability[] },
     "tempest": { abilities: v2_tempestAbilities as Ability[], cantrips: v2_tempestCantrips as Ability[], spells: v2_tempestSpells as Ability[] },
+    "tyranny": { abilities: v2_tyrannyAbilities as Ability[], cantrips: v2_tyrannyCantrips as Ability[], spells: v2_tyrannySpells as Ability[] },
     "undertow": { abilities: v2_undertowAbilities as Ability[], cantrips: v2_undertowCantrips as Ability[], spells: v2_undertowSpells as Ability[] },
     "water": { abilities: v2_waterAbilities as Ability[], cantrips: v2_waterCantrips as Ability[], spells: v2_waterSpells as Ability[] },
+    "wisdom": { abilities: v2_wisdomAbilities as Ability[], cantrips: v2_wisdomCantrips as Ability[], spells: v2_wisdomSpells as Ability[] },
     "wood": { abilities: v2_woodAbilities as Ability[], cantrips: v2_woodCantrips as Ability[], spells: v2_woodSpells as Ability[] }
   }
 };

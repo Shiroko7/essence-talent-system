@@ -351,7 +351,18 @@ export const MOVED_TALENT_IDS = [
   'water_9th_level_time_stop',
   'v2_lunar_paradox',
   'v2_pestilence_time_ravage',
-  'wood_master_heart_exchange'
+  'wood_master_heart_exchange',
+  // To Crypt
+  'ruin_cantrip_chill_touch',
+  'ruin_cantrip_toll_the_dead',
+  'wood_3rd_level_speak_with_dead',
+  'ruin_6th_circle_of_death',
+  'ruin_7th_finger_of_death',
+  'v2_ruin_wail_of_the_banshee',
+  'pestilence_4th_blight',
+  'v2_pestilence_abi_dalzims_horrid_wilting',
+  // To Wisdom
+  'v2_pestilence_befuddlement'
 ];
 
 export function settleRetieredTalents(

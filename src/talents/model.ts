@@ -23,6 +23,8 @@ export interface SystemPath {
   description?: string;
   patron?: string;
   accent: string;
+  /** Visible for transparency, but nothing in it can be learned until it unlocks in the campaign. */
+  locked?: boolean;
   icon: (size?: number, color?: string) => ReactNode;
 }
 

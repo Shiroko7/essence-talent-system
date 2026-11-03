@@ -7,13 +7,44 @@
 | Wood | Lunar (Selûne) | Alchemy |
 | Fire | Love (Sune) | Heart |
 | Earth | Ruin (Bhaal, Cyric, Loviatar) | Mysteries |
-| Metal | Pestilence (Talona) | |
-| Water | Shadow (Shar) | |
-| Sky | Tempest (Umberlee) | |
+| Metal | Crypt (Myrkul) | Wisdom |
+| Water | Tyranny (Bane), sealed | |
+| Sky | Pestilence (Talona) | |
+| | Shadow (Shar) | |
+| | Tempest (Umberlee) | |
 | | Providence (Ilmater) | |
 | | Undertow (Yhal'etsu) | |
 
-The six Primordial paths cover the five classical elements plus Sky, which houses air and lightning. The eight Divine portfolios preserve the deity themes most important to the setting; Undertow belongs to Yhal'etsu, a god candidate beneath the Forbidden Sea in Sirius rather than an established deity. Immortal holds Alchemy as a learned craft, Heart as martial discipline and embodied mastery, and Mysteries as the grasp of space, time, and the illusory made real. Pain is part of Ruin; poison, disease, and curses are part of Pestilence. Abilities without a useful campaign home were pruned rather than kept to fill a quota.
+The six Primordial paths cover the five classical elements plus Sky, which houses air and lightning. The ten Divine portfolios preserve the deity themes most important to the setting; Undertow belongs to Yhal'etsu, a god candidate beneath the Forbidden Sea in Sirius rather than an established deity. Crypt, Tyranny, and Ruin divide the Dead Three: Myrkul, Bane, and Bhaal. Tyranny is sealed: players can see it, but only NPCs use it until it unlocks in the campaign. Immortal holds Alchemy as a learned craft, Heart as martial discipline and embodied mastery, Mysteries as the grasp of space, time, and the illusory made real, and Wisdom as memory, names, and deduction. Pain is part of Ruin; poison, disease, and curses are part of Pestilence. Abilities without a useful campaign home were pruned rather than kept to fill a quota.
+
+## Which family a path belongs to
+
+Primordial is the matter, Divine is a god's reading of it, and Immortal is what a practitioner makes of it. Ask who holds the power:
+
+| Family | Test | In the Realms |
+| --- | --- | --- |
+| Primordial | It exists whether or not anyone believes in it or understands it | Primordials are worshipped but sit outside the ranks of the gods |
+| Divine | A god holds it, and it fails or changes hands when that god falls | Clerical spells failed in the Time of Troubles; portfolios pass to killers or by Ao's grant |
+| Immortal | It lives in the practitioner, whoever falls | Azuth, Kelemvor, and Midnight mastered their craft as mortals before they held an office |
+
+The teacher doesn't decide the family. Kelemvor's Radiant Vein Blade is in Heart because it is a practiced form, not something he lends.
+
+## Technique design rules
+
+Every custom technique has to pass these. They come from rejected drafts.
+
+- **No menus.** A technique never says "choose one of the following effects when you use it." It does one thing. Don't attach a second, unrelated effect either.
+- **Initiate is a free dip.** Any character can pick up an Initiate technique from any path, so Initiate techniques stay modest. Strong reactions (such as dropping to 1 hit point instead of 0), forced choices like "kneel or take damage", and hard control belong at higher tiers.
+- **No improvising for the DM.** A technique shouldn't let players ask the world open questions whenever they like, such as "what happened here". Information comes from what is already at the table: a stat block, or something the party saw.
+- **Don't rebuild a spell.** If a technique does what a 5e spell already does, use the spell.
+- **No minion gimmick.** A path isn't built around a creature it summons. Specific undead and servants come from spells. A technique must not need a summon or a prepared corpse before it works.
+- **Domain lines must change the fight.** If the line wouldn't matter at the table (for example, "its speed is reduced by 10 feet on a success"), choose another. For a single-target technique, an extra target is usually the right fix.
+- **Exhaustion is extremely special.** Techniques don't give Exhaustion in normal circumstances. Save it for rare, deliberate exceptions.
+- **Don't default to psychic damage.** Force is a fine alternative, especially for higher-tier techniques.
+- **A domain-wide technique covers the whole domain.** When a technique works across your domain, as Necropolis, Hadal Domain, and Throne of Dread do, it affects the entire domain, not a radius around you.
+- **Absolute protections are Great Grandmaster.** "Magic that alters your memories always fails" or "no one can read your mind" belongs at Great Grandmaster, if anywhere.
+
+Magic will be a Divine path for the Weave, Mystra's office, when the campaign needs it. Raw magic stays a story hazard (the Spellplague), and spellcraft is Wisdom applied to magic. Counterspell and Dispel Magic stay out of the catalog until then.
 
 ## Shared Essence
 
@@ -32,17 +63,21 @@ Essence is shared within a family. Every learned path in a family adds its Essen
 - **Immortal paths:** Alchemy is a practice of refining and recombining substances, rather than a natural element or deity portfolio. Its alchemical spells remain with Alchemy. Heart holds Stone Fist I–V, scaling from a d4 to a d12, Radiant Vein Blade I–III, Heart Exchange, and other custom martial talents, along with True Strike as an exceptional strike cantrip; it has no leveled-spell list.
 - **Mysteries:** Mysteries covers what cannot be put into words: space folded, time pried loose, and the illusory made real. It holds teleportation and planar travel, extradimensional spaces, and time magic. Its Grandmaster technique, Fishing the Moon from the Well, draws a soul out of its reflection. Alchemy turns something into something else; Mysteries makes something from nothing, or moves it through space or time. Lunar keeps Selûne's real moon, dreams, and foresight, while Sky keeps flight and Misty Step.
 - **Ruin:** Murder, assassination, pain, deception, and thievery are deliberate forms of destruction and belong together. Loviatar’s pain abilities were moved here; there is no standalone Pain path.
+- **Ruin, Crypt, and Tyranny:** The Dead Three won Jergal's power in a game of knucklebones (*Faiths & Avatars*, pp. 36–37). Bane took hatred, strife, and tyranny, Myrkul took rule over the dead, and Bhaal took death itself, later narrowed to murder. Ruin is the kill. Crypt is what comes after: corpses, bones, the dead who serve, decay, old age, and exhaustion. Tyranny is rule by fear and one iron will.
+- **Crypt and Wisdom:** Crypt works on the body: Speak with Dead stays in Crypt because it animates the corpse, not the soul. Wisdom works on what a mind holds: Echoes of the Departed gives a dead creature's memory a voice. When a spell does both, its result decides.
+- **Wisdom and Mysteries:** Mysteries is what cannot be put into words; Wisdom is what has been. Lunar keeps the future and Wisdom the past. Names show what a thing is; they don't grant control over it.
+- **Tyranny and Love:** Love keeps its domination spells, because Love binds through desire and Tyranny through fear and will. While Tyranny is sealed, it takes no spells from player paths.
 - **Wood:** Wood is plants, roots, forests, and growth. It does not collect every animal, weather, or healing spell with a natural flavor; those entries were pruned or assigned to a clearer path.
 
 ## Portfolio decisions
 
 The Moon label became **Lunar** because Selûne’s scope includes stars, navigation, cycles, dreams, and prophecy alongside moonlight. **Shadow** replaces Void to name Shar’s darkness and concealment directly. **Providence** keeps Ilmater’s endurance, care, freedom, and healing together. The Divine paths intentionally omit a separate Sun portfolio in this version. Solar spells were not assigned to Lunar; a few that fit another path by their actual effect were kept there, such as Flame Strike under Fire.
 
-The archived sixteen-path source remains under [`data/cultivation/archive/v2.2/`](../data/cultivation/archive/v2.2/). Entries from retired Life, Death, Mystery, Sun, Torment, and Void groupings were reassigned only when their effect fit one of the active portfolios. Generic divination and magic spells without a clear fit were removed. The catalog intentionally does not preserve every legacy entry.
+The archived sixteen-path source remains under [`data/cultivation/archive/v2.2/`](../data/cultivation/archive/v2.2/). Entries from retired Life, Death, Mystery, Sun, Torment, and Void groupings were reassigned only when their effect fit one of the active portfolios. A first Life and Death path was drafted and removed; see [`life-and-death-postmortem.md`](life-and-death-postmortem.md).
 
 ## Balance and implementation
 
-The current roster has 212 custom talents (143 active, 69 passive), 41 cantrips, and 356 leveled spells, for 609 total entries. Its path totals range from 23 to 49 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
+The current roster has 239 custom talents (163 active, 76 passive), 47 cantrips, and 431 leveled spells, for 717 total entries. Its path totals range from 24 to 50 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
 
 About half of a path's abilities can answer its domain: weaker ones gain a one-line Domain Expansion there, and a few Grandmaster or higher techniques work only there. Spells and cantrips are never domain-bound. Undertow is the first path built this way; the reasoning, rules, and modifier catalogue are in [`domain-expansion-design.md`](domain-expansion-design.md).
 

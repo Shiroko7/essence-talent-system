@@ -64,7 +64,7 @@ const CultivationPath: React.FC<CultivationPathProps> = ({
     }
 
     tierAbilities.sort((a, b) => getAbilitySortPriority(a) - getAbilitySortPriority(b));
-    const unlocked = isTierUnlocked(tier.id, selectedAbilities, abilities, characterLevel);
+    const unlocked = !path.locked && isTierUnlocked(tier.id, selectedAbilities, abilities, characterLevel);
 
     return { tier, abilities: tierAbilities, unlocked };
   });
@@ -121,7 +121,7 @@ const CultivationPath: React.FC<CultivationPathProps> = ({
           ability={detailsAbility}
           path={path}
           isSelected={selectedAbilities.includes(detailsAbility.id)}
-          isLocked={!isTierUnlocked(detailsAbility.tier, selectedAbilities, abilities, characterLevel)}
+          isLocked={!!path.locked || !isTierUnlocked(detailsAbility.tier, selectedAbilities, abilities, characterLevel)}
           onClose={() => setDetailsAbility(null)}
           onToggle={() => {
             onToggleAbility(detailsAbility);

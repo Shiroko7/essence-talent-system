@@ -77,6 +77,7 @@ export const buildV2System = (): TalentSystem => {
     description: path.description,
     patron: path.thematicFoundation,
     accent: path.accentColor,
+    locked: path.locked,
     icon: (size = 18, color = path.accentColor) => getCultivationPathIcon(path.id, color, size)
   }));
   return {

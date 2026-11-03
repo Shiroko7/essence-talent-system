@@ -68,7 +68,9 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                       style={active ? { background: tint(p.accent, 0.12), boxShadow: `0 0 0 1px ${tint(p.accent, 0.45)}, 0 6px 20px ${tint(p.accent, 0.2)}` } : undefined}
                     >
                       <PathSigil path={p} size={46} active={active} className="!rounded-full" />
-                      <span className={`text-[11px] font-display tracking-wide truncate w-full text-center ${active ? 'text-ivory' : 'text-fog'}`}>{p.name}</span>
+                      <span className={`text-[11px] font-display tracking-wide truncate w-full text-center ${active ? 'text-ivory' : 'text-fog'}`}>
+                        {p.locked && <Lock size={9} className="inline -mt-0.5 mr-0.5 text-mist" aria-label="Sealed" />}{p.name}
+                      </span>
                       {/* One segment per tier, lit once something in it is learned */}
                       <span className="flex gap-0.5 w-12">
                         {TIER_IDS.map(t => {
@@ -171,6 +173,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                         <p className="text-[11px] text-mist">
                           {open
                             ? `Levels ${tier.levels} · ${tier.pointCost} pt${tier.pointCost > 1 ? 's' : ''}`
+                            : path.locked ? 'Sealed until it unlocks in the campaign'
                             : ctl.level < tier.levelRequirement ? `Opens at level ${tier.levelRequirement}` : 'Learn one from the tier before'}
                         </p>
                       </div>

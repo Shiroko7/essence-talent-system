@@ -245,6 +245,10 @@ A light Domain Expansion is worth less than a level, a standard Domain Expansion
 | Alchemy | Free (Initiate and Adept); longer; more healing |
 | Heart | Move with it; advantage; half on a miss |
 | Mysteries | Range; origin; area |
+| Crypt | Targets; area (Ossuary Cage becomes a 10-foot cube); one corpse also bursts (Bone Spear) |
+| Tyranny | Targets; condition step (grappled to restrained); die step |
+| Wisdom | Targets; die step; disadvantage on the save |
+| Life and Death | More healing; die step; no concentration as a restore |
 
 ## Family notes
 

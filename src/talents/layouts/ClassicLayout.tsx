@@ -40,7 +40,7 @@ const AscendingTiers: React.FC<{
           </header>
           {!open && (
             <p className="text-xs text-fog mb-3">
-              {ctl.level < tier.levelRequirement ? `Opens at level ${tier.levelRequirement}.` : ctl.lockReason(tierAbilities[0], path.id)}
+              {!path.locked && ctl.level < tier.levelRequirement ? `Opens at level ${tier.levelRequirement}.` : ctl.lockReason(tierAbilities[0], path.id)}
             </p>
           )}
           <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
@@ -123,6 +123,7 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
                               <span className={`block text-sm font-display tracking-wide truncate ${active ? 'text-ivory' : 'text-fog'}`}>{p.name}</span>
                               {p.concept && <span className="block text-[11px] text-mist truncate">{p.concept}</span>}
                             </span>
+                            {p.locked && <Lock size={12} className="text-mist flex-shrink-0" aria-label="Sealed" />}
                             {count > 0 && <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: p.accent }} title={`${count} learned`} />}
                           </button>
                         </li>

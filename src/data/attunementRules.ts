@@ -80,6 +80,8 @@ export const ATTUNEMENTS: Attunement[] = [
       { path: 'lunar', name: 'Under the Moon', examples: 'Moonlit or starlit nights, the open sea at night, observatories' },
       { path: 'love', name: 'Places of Beauty', examples: 'Festivals, weddings, theatres, gardens in bloom' },
       { path: 'ruin', name: 'Places of Undoing', examples: 'Battlefields, execution grounds, the scene of a murder' },
+      { path: 'crypt', name: 'Places of the Dead', examples: 'Crypts, graveyards, ossuaries, temples of Myrkul, unburied battlefields' },
+      { path: 'tyranny', name: 'Places of Dominion', examples: 'Temples of Bane, a tyrant’s throne room or fortress, conquered cities, slave pits' },
       { path: 'pestilence', name: 'Places of Sickness', examples: 'Plague towns, poisoned lands, sickrooms, sewers' },
       { path: 'shadow', name: 'The Dark', examples: 'Darkness, lightless underground, places of loss' },
       { path: 'tempest', name: 'The Storm', examples: 'At sea, inside a storm, shipwrecks' },
@@ -104,7 +106,8 @@ export const ATTUNEMENTS: Attunement[] = [
     domains: [
       { path: 'alchemy', name: 'At the Furnace', examples: 'Within 30 feet of your alchemy furnace or workshop' },
       { path: 'heart', name: 'The Training Hall', examples: 'A sect training hall or dueling ground where you train, or any ground where you face a worthy opponent' },
-      { path: 'mysteries', name: 'The Reflection', examples: 'Near a still reflection (a well, a pond, a mirror), or where the planes are thin' }
+      { path: 'mysteries', name: 'The Reflection', examples: 'Near a still reflection (a well, a pond, a mirror), or where the planes are thin' },
+      { path: 'wisdom', name: 'The Archive', examples: 'A library or archive where you study, or a place whose history you have learned by heart' }
     ],
     tiers: tiers([
       ['Essence Restoration', 'Finish a short rest in your Sanctum to regain all expended Immortal Essence.'],
@@ -153,7 +156,10 @@ export const COEXIST: [string, string, string][] = [
   ['ruin', 'shadow', 'Murder done in the dark.'], ['ruin', 'pestilence', 'Blade and plague serve the same end.'],
   ['tempest', 'undertow', 'Umberlee sinks the ships; the deep keeps them.'], ['shadow', 'undertow', 'The deep is as lightless as Shar’s dark.'],
   ['water', 'undertow', 'The deep is still the sea.'], ['pestilence', 'shadow', 'Talona is Shar’s ally: plague spreads in the dark.'],
-  ['lunar', 'sky', 'The moon rides the open sky.'], ['earth', 'shadow', 'Shar keeps her caverns in the stone.']
+  ['lunar', 'sky', 'The moon rides the open sky.'], ['earth', 'shadow', 'Shar keeps her caverns in the stone.'],
+  ['ruin', 'crypt', 'Bhaal and Myrkul are two of the Dead Three: murder fills the grave.'],
+  ['ruin', 'tyranny', 'Bhaal and Bane are two of the Dead Three, who won their power from Jergal together.'],
+  ['crypt', 'tyranny', 'Myrkul chose the dead because every subject of Bane’s ends up his.']
 ];
 
 /**
@@ -178,7 +184,10 @@ export const OVERCOMES: [string, string, string][] = [
   ['mysteries', 'shadow', 'Space folds around any hiding place.'],
   ['undertow', 'lunar', 'Moonlight never reaches below the last light.'], ['undertow', 'fire', 'Nothing burns in the deep.'],
   ['undertow', 'metal', 'The pressure of the deep crushes iron.'], ['earth', 'undertow', 'Stone doesn’t drown.'],
-  ['lunar', 'ruin', 'Selûne’s light exposes Mask’s thieves.']
+  ['lunar', 'ruin', 'Selûne’s light exposes Mask’s thieves.'],
+  ['crypt', 'wood', 'Myrkul’s autumn strips every bough.'],
+  ['providence', 'tyranny', 'Ilmater breaks the chains Bane forges.'],
+  ['wisdom', 'shadow', 'What is remembered can’t be lost to Shar’s forgetting.']
 ];
 
 /** Opposite paths (either way round), with the reason. */

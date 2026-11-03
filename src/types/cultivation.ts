@@ -18,6 +18,8 @@ export interface CultivationPath {
   glowClass: string;
   badgeClass: string;
   accentColor: string;
+  /** Shown in the catalog but not learnable until it unlocks in the campaign. */
+  locked?: boolean;
 }
 
 export interface CultivationPathGroup {
@@ -60,7 +62,10 @@ const palettes = {
   shadow: ['bg-purple-900/40', 'text-purple-300', 'border-purple-600/50', 'shadow-glow-void', 'bg-purple-950/80 text-purple-200 border-purple-600/50', '#a855f7'],
   tempest: ['bg-sky-600/30', 'text-sky-300', 'border-sky-400/50', 'shadow-glow-tempest', 'bg-sky-950/80 text-sky-200 border-sky-400/40', '#38bdf8'],
   undertow: ['bg-violet-700/25', 'text-violet-300', 'border-violet-400/50', 'shadow-glow-undertow', 'bg-violet-950/80 text-violet-200 border-violet-500/40', '#9d90ff'],
-  providence: ['bg-amber-500/25', 'text-amber-300', 'border-amber-400/50', 'shadow-glow-providence', 'bg-amber-950/70 text-amber-200 border-amber-400/40', '#fbbf24']
+  providence: ['bg-amber-500/25', 'text-amber-300', 'border-amber-400/50', 'shadow-glow-providence', 'bg-amber-950/70 text-amber-200 border-amber-400/40', '#fbbf24'],
+  crypt: ['bg-neutral-500/20', 'text-neutral-200', 'border-neutral-400/50', 'shadow-glow-crypt', 'bg-neutral-900/80 text-neutral-200 border-neutral-400/40', '#d6cfb4'],
+  tyranny: ['bg-green-800/30', 'text-green-300', 'border-green-600/50', 'shadow-glow-tyranny', 'bg-green-950/80 text-green-200 border-green-600/40', '#22c55e'],
+  wisdom: ['bg-indigo-600/25', 'text-indigo-300', 'border-indigo-400/50', 'shadow-glow-wisdom', 'bg-indigo-950/80 text-indigo-200 border-indigo-400/40', '#818cf8']
 } as const;
 
 type PaletteId = keyof typeof palettes;
@@ -92,9 +97,12 @@ const paths: CultivationPath[] = [
   makePath('alchemy', 'Alchemy', 'human', 'Transformation through craft', 'Formulas, medicines, acids, refining, and the recombination of substances through practice.', 'alchemy'),
   makePath('heart', 'Heart', 'human', 'Martial discipline and embodied mastery', 'Unarmed forms, weapon technique, disciplined movement, and mastery shaped through practice.', 'heart', 'Sirius'),
   makePath('mysteries', 'Mysteries', 'human', 'Space, time, and the illusory made real', 'Folds of space, moments pried loose from time, and reflections drawn out of the well: what cannot be put into words, made to obey anyway.', 'mysteries', 'Netherdark Emperor "Yuji"'),
+  makePath('wisdom', 'Wisdom', 'human', 'Memory, names, and deduction', 'Memories, names, and history, and deductions drawn from what you have seen: what has happened, what a thing is, and what comes next.', 'wisdom', 'Shadow Gate Sect'),
   makePath('lunar', 'Lunar', 'divine', 'Moon, stars, and celestial cycles', 'Moonlight, stars, navigation, dreams, reflection, and foresight.', 'lunar', 'Selûne'),
   makePath('love', 'Love', 'divine', 'Affection and emotional bonds', 'Beauty, attraction, devotion, empathy, and the bonds between people.', 'love', 'Sune'),
   makePath('ruin', 'Ruin', 'divine', 'Violence and deliberate undoing', 'Murder, pain, deception, thievery, and the collapse of a chosen foe.', 'ruin', 'Bhaal, Cyric, and Loviatar'),
+  makePath('crypt', 'Crypt', 'divine', 'Death as an ending', 'Corpses, bones, the dead who serve, decay, old age, and the weariness of the grave.', 'crypt', 'Myrkul'),
+  { ...makePath('tyranny', 'Tyranny', 'divine', 'Rule by fear and one iron will', 'Commands, chains, dread, and the obedience of many.', 'tyranny', 'Bane'), locked: true },
   makePath('pestilence', 'Pestilence', 'divine', 'Affliction and corruption', 'Disease, poison, curses, contagion, and resistance to corruption.', 'pestilence', 'Talona'),
   makePath('shadow', 'Shadow', 'divine', 'Darkness and concealment', 'Darkness, concealment, absence, and the Shadow Weave.', 'shadow', 'Shar'),
   makePath('tempest', 'Tempest', 'divine', 'Weather and storm authority', 'Storm fronts, rain, thunder, violent seas, and maritime peril.', 'tempest', 'Umberlee'),

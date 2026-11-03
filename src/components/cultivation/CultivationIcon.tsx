@@ -16,7 +16,10 @@ import {
   Swords,
   Sparkles,
   Orbit,
-  Anchor
+  Anchor,
+  Bone,
+  Crown,
+  ScrollText
 } from 'lucide-react';
 import { CultivationPathId } from '../../types/cultivation';
 
@@ -41,6 +44,9 @@ export const getCultivationPathIcon = (id: CultivationPathId, color: string, siz
     case 'pestilence': return <FlaskConical {...props} />;
     case 'tempest': return <CloudLightning {...props} />;
     case 'undertow': return <Anchor {...props} />;
+    case 'crypt': return <Bone {...props} />;
+    case 'tyranny': return <Crown {...props} />;
+    case 'wisdom': return <ScrollText {...props} />;
     default: return <Sparkles {...props} />;
   }
 };

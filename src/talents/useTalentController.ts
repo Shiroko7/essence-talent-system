@@ -382,8 +382,9 @@ function useControllerFromAllocation<C extends CharacterLike>(
   const pointsLeft = totalEssencePoints - totalPointsSpent;
 
   const tierUnlocked = useCallback((tierId: typeof TIER_IDS[number], pathId: string) =>
+    !pathById.get(pathId)?.locked &&
     isTierOpen(tierId, character.selectedAbilities, system.abilitiesByPath[pathId] || [], character.level),
-  [character.selectedAbilities, character.level, system]);
+  [character.selectedAbilities, character.level, system, pathById]);
 
   const statusOf = (ability: Ability, pathId: string): AbilityStatus => {
     if (selectedSet.has(ability.id)) return 'learned';
@@ -395,6 +396,8 @@ function useControllerFromAllocation<C extends CharacterLike>(
   const lockReason = (ability: Ability, pathId: string) => {
     const tierId = tierOf(ability);
     if (tierUnlocked(tierId, pathId)) return null;
+    const path = pathById.get(pathId);
+    if (path?.locked) return `${path.name} is sealed: it opens when it unlocks in the campaign`;
     const tier = tierInfo(tierId);
     if (character.level < tier.levelRequirement) return `Opens at level ${tier.levelRequirement}`;
     const previous = tierInfo(TIER_IDS[TIER_IDS.indexOf(tierId) - 1]);

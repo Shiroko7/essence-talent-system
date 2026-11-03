@@ -4,27 +4,32 @@ The canonical catalog intended for V2 groups campaign-relevant paths into **Prim
 
 Each named spell or cantrip belongs to exactly one path. The generator rejects duplicate spell and cantrip titles and duplicate ability IDs. Spellcasting paths need at least one cantrip and one leveled spell; Heart is explicitly marked as a custom-talent path without a spell list.
 
-The catalog contains 212 custom talents (143 active and 69 passive), 41 cantrips, and 356 leveled spells, for 609 entries. Path totals range from 23 to 49 entries. These counts measure available choices; they do not rate mechanical power.
+The catalog contains 239 custom talents (163 active and 76 passive), 47 cantrips, and 431 leveled spells, for 717 entries. Path totals range from 24 to 50 entries. These counts measure available choices; they do not rate mechanical power.
+
+A path can be **sealed**: it shows in the catalog so players can see what exists, but nothing in it can be learned until it unlocks in the campaign. Set `locked: true` on the path in `src/types/cultivation.ts`. Tyranny is sealed, since only NPCs use it for now.
 
 | Family | Path | Active / passive | Cantrips | Spells | Total |
 | --- | --- | ---: | ---: | ---: | ---: |
 | Primordial | Wood | 5 / 5 | 4 | 30 | 44 |
 | Primordial | Fire | 5 / 4 | 5 | 20 | 34 |
-| Primordial | Earth | 6 / 9 | 2 | 22 | 39 |
-| Primordial | Metal | 11 / 1 | 2 | 15 | 29 |
+| Primordial | Earth | 6 / 9 | 2 | 23 | 40 |
+| Primordial | Metal | 11 / 1 | 2 | 17 | 31 |
 | Primordial | Water | 8 / 4 | 3 | 28 | 43 |
-| Primordial | Sky | 12 / 5 | 4 | 28 | 49 |
-| Divine | Lunar | 6 / 1 | 1 | 17 | 25 |
-| Divine | Love | 2 / 0 | 2 | 19 | 23 |
-| Divine | Ruin | 11 / 3 | 4 | 23 | 41 |
-| Divine | Pestilence | 9 / 4 | 2 | 23 | 38 |
+| Primordial | Sky | 12 / 5 | 4 | 29 | 50 |
+| Divine | Lunar | 6 / 1 | 1 | 18 | 26 |
+| Divine | Love | 2 / 0 | 2 | 20 | 24 |
+| Divine | Ruin | 11 / 3 | 2 | 21 | 37 |
+| Divine | Crypt | 7 / 2 | 3 | 24 | 36 |
+| Divine | Tyranny (sealed) | 6 / 2 | 2 | 23 | 33 |
+| Divine | Pestilence | 9 / 4 | 2 | 22 | 37 |
 | Divine | Shadow | 6 / 6 | 1 | 31 | 44 |
-| Divine | Tempest | 5 / 2 | 1 | 17 | 25 |
+| Divine | Tempest | 5 / 2 | 1 | 19 | 27 |
 | Divine | Undertow | 7 / 3 | 2 | 20 | 32 |
 | Divine | Providence | 7 / 2 | 3 | 22 | 34 |
-| Immortal | Alchemy | 16 / 11 | 3 | 18 | 48 |
+| Immortal | Alchemy | 16 / 11 | 3 | 19 | 49 |
 | Immortal | Heart | 24 / 8 | 1 | 0 | 33 |
 | Immortal | Mysteries | 3 / 1 | 1 | 23 | 28 |
+| Immortal | Wisdom | 7 / 3 | 3 | 22 | 35 |
 
 ## Path boundaries
 
@@ -42,16 +47,21 @@ The catalog contains 212 custom talents (143 active and 69 passive), 41 cantrips
 - **Mysteries, Shadow, and Pestilence:** Shadow keeps concealment, illusion made of darkness, and the Ethereal (Etherealness, Sequester, Creation). Pestilence keeps disease and decay, but Time Ravage moved to Mysteries because it ages its target through time. Magic itself (Counterspell, Dispel Magic) is Mystra's Weave and stays out of the catalog.
 - **Mysteries and Alchemy:** Alchemy turns something into something else. Mysteries makes something from nothing, moves it elsewhere, or moves it in time.
 - **Heart and Shadow:** Netherdark Fist stays in Shadow because its defining theme is void and darkness, despite its martial form. Heart holds techniques whose defining identity is embodied martial discipline.
-- **Ruin:** Murder, assassination, pain, deception, and thievery share one portfolio. There is no separate Pain path; Loviatar’s suffering-based talents are assigned here. Ruin also holds death and retribution spells such as Speak with Dead, Antilife Shell, and Hellish Rebuke.
+- **Ruin:** Murder, assassination, pain, deception, and thievery share one portfolio. There is no separate Pain path; Loviatar’s suffering-based talents are assigned here. Ruin keeps retribution spells such as Antilife Shell and Hellish Rebuke. Its spells about the dead moved to Crypt: Chill Touch, Toll the Dead, Speak with Dead, Circle of Death, Finger of Death, and Wail of the Banshee.
+- **The Dead Three:** Bane, Bhaal, and Myrkul won Jergal’s power in a game of knucklebones (*Faiths & Avatars*, pp. 36–37). Bane took hatred, strife, and tyranny; Myrkul took rule over the dead; Bhaal took death itself, later narrowed to murder. Ruin holds Bhaal’s share, Crypt holds Myrkul’s, and Tyranny holds Bane’s.
+- **Ruin and Crypt:** Ruin is the kill. Crypt is what comes after it: the corpse, the grave, bones, the dead who serve, decay, old age, and exhaustion. Blight and Abi-Dalzim's Horrid Wilting moved from Pestilence to Crypt, since they wither rather than sicken. Pestilence keeps sickness in the living.
+- **Crypt and Wisdom:** Crypt works on the body: Speak with Dead stays in Crypt because it animates the corpse, not the soul. Wisdom works on what a mind holds: Echoes of the Departed gives a dead creature's memory a voice. When a spell does both, its result decides.
+- **Wisdom:** Memory, names, history, and deduction. Following Reverend Insanity's wisdom path, deduction needs evidence: Wisdom works from what the cultivator has already seen, never from information the DM has to invent. Mysteries is what cannot be put into words; Wisdom is what has been. Lunar keeps the future (foresight and prophecy), and Wisdom keeps the past. Names define what a thing is: they can strengthen an ally or shackle an enemy, as with the oaths and titles of the Naming Supreme Deity in *A Regressor's Tale of Cultivation*, but they never grant full control. Befuddlement moved from Pestilence to Wisdom, because it wipes out what a mind holds.
+- **Tyranny:** Bane’s rule by fear and one iron will: commands, chains, dread, and armies that obey. Love keeps the domination spells it already had (Compulsion, Dominate Person, Dominate Monster, Suggestion, Mass Suggestion, and Geas): Love binds through desire, Tyranny through fear and will. Tyranny is sealed, so it uses only spells no other path holds.
 - **Wood:** Wood focuses on plants, growth, and the wild spirits of the land, such as Commune with Nature, Conjure Woodland Beings, and Find Familiar. Spells about bonding with animals belong to Love and animal-shaping to Alchemy, so Wood does not become a catch-all nature path. Shapechange is the one exception: as the druid’s capstone, it stays with Wood, where V1 also placed it.
 
-Sun is not a separate path in this model. Explicitly solar spells were left out instead of being placed under Lunar. The retained Flame Strike belongs to Fire, while Crown of Stars belongs to Lunar. General occult-knowledge spells without a clear fit were also pruned rather than gathered under a catch-all path.
+Sun is not a separate path in this model. Explicitly solar spells were left out instead of being placed under Lunar. The retained Flame Strike belongs to Fire, while Crown of Stars belongs to Lunar. General occult-knowledge spells without a clear fit were also pruned rather than gathered under a catch-all path. Wisdom later took only the ones about memory, names, history, and knowledge put to use, such as Identify, Legend Lore, and Modify Memory.
 
 The former Void label is now **Shadow**, matching Shar’s darkness and shadow portfolio. The former Moon label is now **Lunar**, broad enough to include Selûne’s stars, navigation, cycles, dreams, and prophecy.
 
 ## Sources and saved builds
 
-The 5e spell entries link to 5e.tools and include concise effect summaries with their source. Spells from partnered and community books, such as Grim Hollow, Kobold Press, or The Elements and Beyond, only open on 5e.tools once that homebrew is loaded in its Homebrew manager. Every custom talent names an author and a location, so players know who taught it and where: a sect, tribe, person, or deity, and Sirius, Leatrux, or Phudara / Isle of Whispers. Deity and portfolio techniques (Bhaal, Cyric, Loviatar, Ilmater, Talona, Shar, and Kelemvor) are learned in Leatrux. Undertow's techniques come from Yhal'etsu, a god candidate beneath the Forbidden Sea in Sirius. Spells and cantrips instead name their sourcebook as the author and have no location. The current cultivation build uses the shared Essence budget. It reconciles saved V2.3 configurations by surviving ability IDs and shows a notice for retired selections. Abilities that changed tier or moved path keep their IDs; `RETIERED_TALENT_IDS` and `MOVED_TALENT_IDS` in `src/utils/cultivationUtils.ts` list them, and a saved build holding one is re-checked on load. Anything whose tier no longer opens is removed with a notice and its Essence refunded. The moved abilities are Haste, Teleport, Time Stop, Paradox, and Time Ravage (now Mysteries), and Heart Exchange (now Heart). Water's Echoes of the Deep talent was renamed Tidespeech and kept its ID, since Echoes of the Deep is now an Undertow spell.
+The 5e spell entries link to 5e.tools and include concise effect summaries with their source. Spells from partnered and community books, such as Grim Hollow, Kobold Press, or The Elements and Beyond, only open on 5e.tools once that homebrew is loaded in its Homebrew manager. Every custom talent names an author and a location, so players know who taught it and where: a sect, tribe, person, or deity, and Sirius, Leatrux, or Phudara / Isle of Whispers. Deity and portfolio techniques (Bhaal, Cyric, Loviatar, Ilmater, Talona, Shar, and Kelemvor) are learned in Leatrux. Undertow's techniques come from Yhal'etsu, a god candidate beneath the Forbidden Sea in Sirius. Crypt is taught by Song Tae-un and Wisdom by the Shadow Gate Sect, both in Sirius. Tyranny's techniques are found in Sirius. Spells and cantrips instead name their sourcebook as the author and have no location. The current cultivation build uses the shared Essence budget. It reconciles saved V2.3 configurations by surviving ability IDs and shows a notice for retired selections. Abilities that changed tier or moved path keep their IDs; `RETIERED_TALENT_IDS` and `MOVED_TALENT_IDS` in `src/utils/cultivationUtils.ts` list them, and a saved build holding one is re-checked on load. Anything whose tier no longer opens is removed with a notice and its Essence refunded. The moved abilities are Haste, Teleport, Time Stop, Paradox, and Time Ravage (now Mysteries), Heart Exchange (now Heart), Chill Touch, Toll the Dead, Speak with Dead, Circle of Death, Finger of Death, Wail of the Banshee, Blight, and Abi-Dalzim's Horrid Wilting (now Crypt), and Befuddlement (now Wisdom). Water's Echoes of the Deep talent was renamed Tidespeech and kept its ID, since Echoes of the Deep is now an Undertow spell.
 
 Spells restored from the V1 essences keep their V1 IDs so V1 characters carry them over. When V2 knows a V1 ability under a different ID (a spell that moved path, or one V1 listed under two essences), `RENAMED_V1_IDS` in `src/utils/cultivationUtils.ts` maps the old ID to the new one. Seven V1 spells stay retired: Dragon’s Breath, Ember Belly, Elemental Exhalation, Songal’s Elemental Suffusion, Conjure Minor Elementals, Draconic Transformation, and Primordial Power. Reverse Gravity, which V1 listed under Air and Earth, returns in Mysteries.
 

@@ -259,25 +259,6 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 
 ---
 
-### Blight
-
-```yaml
-id: pestilence_4th_blight
-tier: 4th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric (Death Domain) / Necromancy
-activation: action
-```
-
-A creature within 30 feet takes 8d8 necrotic damage on a failed Constitution save, or half on a success. Plants fail automatically.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#blight_xphb).
-
----
-
 ### Contagion
 
 ```yaml
@@ -653,44 +634,6 @@ author: D&D 5e (PHB 2024)
 You inscribe a 10-foot glyph that triggers a harmful effect you choose, such as death, fear, sleep or insanity, on creatures nearby.
 
 Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#symbol_xphb).
-
----
-
-### Abi-Dalzim's Horrid Wilting
-
-```yaml
-id: v2_pestilence_abi_dalzims_horrid_wilting
-tier: 8th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (XGE)
-activation: action
-```
-
-Moisture is drawn from creatures in a 30-foot cube within 150 feet for 12d8 necrotic damage on a failed Constitution save, or half on a success.
-
-Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#abi-dalzim's%20horrid%20wilting_xge).
-
----
-
-### Befuddlement
-
-```yaml
-id: v2_pestilence_befuddlement
-tier: 8th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB 2024)
-activation: action
-```
-
-A creature within 150 feet takes 10d12 psychic damage and can't cast spells on a failed Intelligence save, or half damage on a success.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#befuddlement_xphb).
 
 ---
 

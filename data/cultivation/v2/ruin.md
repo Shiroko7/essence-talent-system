@@ -155,42 +155,6 @@ The marked creature feels a sense of impending doom but doesn't know the source.
 
 ---
 
-### Toll the Dead
-
-```yaml
-id: ruin_cantrip_toll_the_dead
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Cleric / Necromancy
-activation: action
-```
-
-A creature within 60 feet takes 1d8 necrotic damage on a failed Wisdom save, or 1d12 if it's missing any hit points.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#toll%20the%20dead_xphb).
-
----
-
-### Chill Touch
-
-```yaml
-id: ruin_cantrip_chill_touch
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: Cleric (Death Domain) / Necromancy
-activation: action
-```
-
-A melee spell attack deals 1d10 necrotic damage, and the target can't regain hit points until the end of your next turn.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#chill%20touch_xphb).
-
 ## Spells
 
 ---
@@ -251,44 +215,6 @@ activation: action
 You promise a humanoid within 30 feet its death for 24 hours. Each time you damage it you can add a curse layer: you heal for each layer if it dies, and it takes 1d6 psychic damage per layer if it survives.
 
 Source reference: [The Compendium of Forgotten Secrets: Awakening on 5e.tools](https://5e.tools/spells.html#assassin's%20promise_cofsa).
-
----
-
-### Circle of Death
-
-```yaml
-id: ruin_6th_circle_of_death
-tier: 6th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric (Death Domain) / Necromancy
-activation: action
-```
-
-Negative energy fills a 60-foot-radius sphere within 150 feet, dealing 8d8 necrotic damage on a failed Constitution save, or half on a success.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#circle%20of%20death_xphb).
-
----
-
-### Finger of Death
-
-```yaml
-id: ruin_7th_finger_of_death
-tier: 7th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: Cleric (Death Domain) / Necromancy
-activation: action
-```
-
-A creature within 60 feet takes 7d8 + 30 necrotic damage on a failed Constitution save, or half on a success. A Humanoid it kills rises as your zombie.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#finger%20of%20death_xphb).
 
 ---
 
@@ -649,25 +575,6 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#h
 
 ---
 
-### Speak with Dead
-
-```yaml
-id: wood_3rd_level_speak_with_dead
-tier: 3rd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB 2024)
-activation: action
-```
-
-A corpse within 10 feet answers up to five questions with what it knew in life.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#speak%20with%20dead_xphb).
-
----
-
 ### Antilife Shell
 
 ```yaml
@@ -761,25 +668,6 @@ activation: action
 Up to ten creatures within 90 feet take 14d6 psychic damage and are stunned on a failed Intelligence save, or half damage on a success. A creature it kills has its head explode.
 
 Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#psychic%20scream_xge).
-
----
-
-### Wail of the Banshee
-
-```yaml
-id: v2_ruin_wail_of_the_banshee
-tier: 9th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (Arcana Unleashed)
-activation: action
-```
-
-Up to ten creatures within 60 feet with 50 hit points or fewer die. Stronger ones take 12d10 psychic damage and are deafened on a failed Constitution save, or half on a success.
-
-Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spells.html#wail%20of%20the%20banshee_au).
 
 ---
 
@@ -878,5 +766,4 @@ activation: action
 Each bloodied creature in a 30-foot cone that fails a Constitution save dies and turns to dust.
 
 Source reference: [Cthulhu by Torchlight on 5e.tools](https://5e.tools/spells.html#wave%20of%20oblivion_cthulhutorchlight).
-
 

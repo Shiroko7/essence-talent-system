@@ -53,7 +53,7 @@ const CultivationTier: React.FC<CultivationTierProps> = ({
             </span>
           ) : (
             <span className="flex items-center gap-1.5 text-xs text-fog font-display">
-              <Lock size={14} /> Requires Lvl {tier.levelRequirement} & Prior Tier
+              <Lock size={14} /> {path.locked ? 'Sealed until it unlocks in the campaign' : `Requires Lvl ${tier.levelRequirement} & Prior Tier`}
             </span>
           )}
         </div>
