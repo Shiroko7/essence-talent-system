@@ -362,7 +362,10 @@ export const MOVED_TALENT_IDS = [
   'pestilence_4th_blight',
   'v2_pestilence_abi_dalzims_horrid_wilting',
   // To Wisdom
-  'v2_pestilence_befuddlement'
+  'v2_pestilence_befuddlement',
+  // To Navigation
+  'lightning_initiate_storm_navigator',
+  'wood_4th_level_locate_creature'
 ];
 
 export function settleRetieredTalents(

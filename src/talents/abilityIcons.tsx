@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import {
-  Anvil, Biohazard, BookOpen, Bomb, Brain, CloudFog, CloudLightning, CloudRain, Clover, Crosshair, Eye, EyeOff, Feather,
+  Anvil, Biohazard, BookOpen, Bomb, Brain, CloudFog, CloudLightning, CloudRain, Clover, Compass, Crosshair, Eye, EyeOff, Feather,
   FlaskConical, FlaskRound, Flame, Footprints, Gem, Grab, HandCoins, HandMetal, Heart, HeartHandshake, HeartPulse, Hexagon,
   Hourglass, Link, Magnet, Moon, MoonStar, Mountain, Music, Orbit, PawPrint, Shield, ShieldCheck, Shuffle, Skull, Snowflake,
   Sparkle, Sparkles, Sprout, Star, Sun, Swords, TestTube, Tornado, TreeDeciduous, VenetianMask, Wand, Waves, Wind, Zap
@@ -14,6 +14,7 @@ import { kindOf } from './model';
  * before broad ones. Anything unmatched falls back to an icon for its type.
  */
 const RULES: [RegExp, LucideIcon][] = [
+  [/compass|true bearing|wanderer's road|safest course|hold the course|star road|easy trail|find the path/, Compass],
   [/bomb|explos|grenade/, Bomb],
   [/alchem|formula|mutagen|potion|elixir|brew|tincture|reagent/, FlaskConical],
   [/acid|corro|caustic|dissolv/, TestTube],

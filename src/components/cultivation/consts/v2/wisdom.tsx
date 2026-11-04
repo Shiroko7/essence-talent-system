@@ -354,18 +354,6 @@ export const wisdomSpells = [
     concentration: true,
   },
   {
-    id: "v2_wisdom_find_the_path",
-    name: "Find the Path",
-    description: "For up to 1 day, you know the most direct physical route to a place you name.\n\nSource reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#find%20the%20path_xphb).",
-    tier: "6th",
-    isActive: false,
-    isPassive: false,
-    isSpell: true,
-    isCantrip: false,
-    author: "D&D 5e (PHB 2024)",
-    concentration: true,
-  },
-  {
     id: "v2_wisdom_probe_thoughts",
     name: "Probe Thoughts",
     description: "On a failed Wisdom save, a creature's memories open to you, and you learn the answer to one question each round.\n\nSource reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tools/spells.html#probe%20thoughts_bb1000s).",

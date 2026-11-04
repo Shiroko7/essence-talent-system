@@ -538,25 +538,6 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 
 ---
 
-### Find the Path
-
-```yaml
-id: v2_wisdom_find_the_path
-tier: 6th
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB 2024)
-concentration: true
-```
-
-For up to 1 day, you know the most direct physical route to a place you name.
-
-Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#find%20the%20path_xphb).
-
----
-
 ### Probe Thoughts
 
 ```yaml

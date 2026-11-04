@@ -19,7 +19,8 @@ import {
   Anchor,
   Bone,
   Crown,
-  ScrollText
+  ScrollText,
+  Compass
 } from 'lucide-react';
 import { CultivationPathId } from '../../types/cultivation';
 
@@ -47,6 +48,7 @@ export const getCultivationPathIcon = (id: CultivationPathId, color: string, siz
     case 'crypt': return <Bone {...props} />;
     case 'tyranny': return <Crown {...props} />;
     case 'wisdom': return <ScrollText {...props} />;
+    case 'navigation': return <Compass {...props} />;
     default: return <Sparkles {...props} />;
   }
 };

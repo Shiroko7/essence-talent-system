@@ -5,17 +5,18 @@
 | Primordial | Divine | Immortal |
 | --- | --- | --- |
 | Wood | Lunar (Selûne) | Alchemy |
-| Fire | Love (Sune) | Heart |
-| Earth | Ruin (Bhaal, Cyric, Loviatar) | Mysteries |
-| Metal | Crypt (Myrkul) | Wisdom |
-| Water | Tyranny (Bane), sealed | |
-| Sky | Pestilence (Talona) | |
+| Fire | Navigation (Selûne) | Heart |
+| Earth | Love (Sune) | Mysteries |
+| Metal | Ruin (Bhaal, Cyric, Loviatar) | Wisdom |
+| Water | Crypt (Myrkul) | |
+| Sky | Tyranny (Bane), sealed | |
+| | Pestilence (Talona) | |
 | | Shadow (Shar) | |
 | | Tempest (Umberlee) | |
 | | Providence (Ilmater) | |
 | | Undertow (Yhal'etsu) | |
 
-The six Primordial paths cover the five classical elements plus Sky, which houses air and lightning. The ten Divine portfolios preserve the deity themes most important to the setting; Undertow belongs to Yhal'etsu, a god candidate beneath the Forbidden Sea in Sirius rather than an established deity. Crypt, Tyranny, and Ruin divide the Dead Three: Myrkul, Bane, and Bhaal. Tyranny is sealed: players can see it, but only NPCs use it until it unlocks in the campaign. Immortal holds Alchemy as a learned craft, Heart as martial discipline and embodied mastery, Mysteries as the grasp of space, time, and the illusory made real, and Wisdom as memory, names, and deduction. Pain is part of Ruin; poison, disease, and curses are part of Pestilence. Abilities without a useful campaign home were pruned rather than kept to fill a quota.
+The six Primordial paths cover the five classical elements plus Sky, which houses air and lightning. The eleven Divine portfolios preserve the deity themes most important to the setting; Selûne holds two of them, Lunar for the moon and stars themselves and Navigation for the reading of them; Undertow belongs to Yhal'etsu, a god candidate beneath the Forbidden Sea in Sirius rather than an established deity. Crypt, Tyranny, and Ruin divide the Dead Three: Myrkul, Bane, and Bhaal. Tyranny is sealed: players can see it, but only NPCs use it until it unlocks in the campaign. Immortal holds Alchemy as a learned craft, Heart as martial discipline and embodied mastery, Mysteries as the grasp of space, time, and the illusory made real, and Wisdom as memory, names, and deduction. Pain is part of Ruin; poison, disease, and curses are part of Pestilence. Abilities without a useful campaign home were pruned rather than kept to fill a quota.
 
 ## Which family a path belongs to
 
@@ -56,28 +57,31 @@ Essence is shared within a family. Every learned path in a family adds its Essen
 - **Tempest, Water, and Undertow:** Tempest is the sea you can see: weather, waves, and Umberlee's wrath at the surface. Undertow is the sea that takes you: the lightless deep below the last light, with ink, crushing pressure, tentacles, and drowning. Water is the element through both, so conjured or shaped water stays in Water, while Maelstrom stays in Tempest with the sea in upheaval. Undertow's darkness is ink that blinds a predator's prey; Shadow keeps darkness as absence.
 - **Earth and Metal:** Earth governs mass, stone, soil, terrain, and stability. Metal governs ore, metal objects, magnetism, weapons, armor, and refinement.
 - **Alchemy and Pestilence:** Alchemy changes substances through formulas, acids, medicines, and refinement. Pestilence afflicts living bodies through poison, disease, contagion, and curses, and includes resistance or remedies tied directly to those afflictions.
-- **Lunar and Shadow:** Lunar is Selûne’s moonlight, stars, cycles, navigation, dreams, reflection, and celestial foresight. Shadow is Shar’s darkness, concealment, absence, and Shadow Weave. They remain separate; the model does not combine Light and Void as a twilight portfolio.
+- **Lunar and Navigation:** Both belong to Selûne. Lunar holds the celestial bodies themselves: moonlight, falling stars, tides, dreams, and foresight. Navigation holds the reading of them: constellations, marks, predictions, charts, routes, and travel by land and sea. If the star itself hits something, it's Lunar; if it tells you something, or a pattern of stars works for you, it's Navigation. Locate Creature and Storm Navigator moved to Navigation.
+- **Navigation, Tempest, and Water:** Tempest raises the storm and Water is the sea itself; Navigation holds the course through both. Water Walk stays in Water, Wind Walk in Sky, and Phantom Steed in Shadow, and Tempest keeps Lightning Insight, because weather-sense is its own portfolio.
+- **Lunar and Shadow:** Lunar is Selûne’s moonlight, starfire, cycles, dreams, reflection, and celestial foresight. Shadow is Shar’s darkness, concealment, absence, and Shadow Weave. They remain separate; the model does not combine Light and Void as a twilight portfolio.
 - **Love and Providence:** Love is affection, beauty, attraction, devotion, empathy, and emotional bonds. Providence is protection, healing, endurance, hope, sacrifice, and liberation from debilitating bonds.
 - **Love and Heart:** Love concerns relationships and emotional bonds between people. Heart concerns personal discipline expressed through martial forms, unarmed practice, weapon technique, and trained movement. A technique may channel Essence without being a spell.
 - **Heart and Shadow:** Netherdark Fist stays in Shadow because void and darkness define it, despite its martial delivery. Heart holds techniques whose defining identity is embodied martial discipline.
 - **Immortal paths:** Alchemy is a practice of refining and recombining substances, rather than a natural element or deity portfolio. Its alchemical spells remain with Alchemy. Heart holds Stone Fist I–V, scaling from a d4 to a d12, Radiant Vein Blade I–III, Heart Exchange, and other custom martial talents, along with True Strike as an exceptional strike cantrip; it has no leveled-spell list.
-- **Mysteries:** Mysteries covers what cannot be put into words: space folded, time pried loose, and the illusory made real. It holds teleportation and planar travel, extradimensional spaces, and time magic. Its Grandmaster technique, Fishing the Moon from the Well, draws a soul out of its reflection. Alchemy turns something into something else; Mysteries makes something from nothing, or moves it through space or time. Lunar keeps Selûne's real moon, dreams, and foresight, while Sky keeps flight and Misty Step.
+- **Mysteries:** Mysteries covers what cannot be put into words: space folded, time pried loose, and the illusory made real. It holds teleportation and planar travel, extradimensional spaces, and time magic. Its Grandmaster technique, Fishing the Moon from the Well, draws a soul out of its reflection. Alchemy turns something into something else; Mysteries makes something from nothing, or moves it through space or time. Lunar keeps Selûne's real moon, dreams, and foresight, Navigation keeps travel by road and sea, and Sky keeps flight and Misty Step.
 - **Ruin:** Murder, assassination, pain, deception, and thievery are deliberate forms of destruction and belong together. Loviatar’s pain abilities were moved here; there is no standalone Pain path.
 - **Ruin, Crypt, and Tyranny:** The Dead Three won Jergal's power in a game of knucklebones (*Faiths & Avatars*, pp. 36–37). Bane took hatred, strife, and tyranny, Myrkul took rule over the dead, and Bhaal took death itself, later narrowed to murder. Ruin is the kill. Crypt is what comes after: corpses, bones, the dead who serve, decay, old age, and exhaustion. Tyranny is rule by fear and one iron will.
 - **Crypt and Wisdom:** Crypt works on the body: Speak with Dead stays in Crypt because it animates the corpse, not the soul. Wisdom works on what a mind holds: Echoes of the Departed gives a dead creature's memory a voice. When a spell does both, its result decides.
 - **Wisdom and Mysteries:** Mysteries is what cannot be put into words; Wisdom is what has been. Lunar keeps the future and Wisdom the past. Names show what a thing is; they don't grant control over it.
 - **Tyranny and Love:** Love keeps its domination spells, because Love binds through desire and Tyranny through fear and will. While Tyranny is sealed, it takes no spells from player paths.
+- **Lunar and Alchemy:** Lunar holds lycanthropy as Selûne's gift to good and neutral lycanthropes: wolf-kin hybrid forms such as Moonbound Form and Selûne's Pack, with Aspect of the Wolf and Potency of the Pack. Alchemy keeps general animal shaping by craft, such as Animal Shapes and Polymorph.
 - **Wood:** Wood is plants, roots, forests, and growth. It does not collect every animal, weather, or healing spell with a natural flavor; those entries were pruned or assigned to a clearer path.
 
 ## Portfolio decisions
 
-The Moon label became **Lunar** because Selûne’s scope includes stars, navigation, cycles, dreams, and prophecy alongside moonlight. **Shadow** replaces Void to name Shar’s darkness and concealment directly. **Providence** keeps Ilmater’s endurance, care, freedom, and healing together. The Divine paths intentionally omit a separate Sun portfolio in this version. Solar spells were not assigned to Lunar; a few that fit another path by their actual effect were kept there, such as Flame Strike under Fire.
+The Moon label became **Lunar** because Selûne’s scope includes stars, cycles, dreams, and prophecy alongside moonlight. Reading the stars has its own path, **Navigation**. **Shadow** replaces Void to name Shar’s darkness and concealment directly. **Providence** keeps Ilmater’s endurance, care, freedom, and healing together. The Divine paths intentionally omit a separate Sun portfolio in this version. Solar spells were not assigned to Lunar; a few that fit another path by their actual effect were kept there, such as Flame Strike under Fire.
 
 The archived sixteen-path source remains under [`data/cultivation/archive/v2.2/`](../data/cultivation/archive/v2.2/). Entries from retired Life, Death, Mystery, Sun, Torment, and Void groupings were reassigned only when their effect fit one of the active portfolios. A first Life and Death path was drafted and removed; see [`life-and-death-postmortem.md`](life-and-death-postmortem.md).
 
 ## Balance and implementation
 
-The current roster has 239 custom talents (163 active, 76 passive), 47 cantrips, and 431 leveled spells, for 717 total entries. Its path totals range from 24 to 50 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
+The current roster has 258 custom talents (177 active, 81 passive), 51 cantrips, and 462 leveled spells, for 771 total entries. Its path totals range from 24 to 50 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
 
 About half of a path's abilities can answer its domain: weaker ones gain a one-line Domain Expansion there, and a few Grandmaster or higher techniques work only there. Spells and cantrips are never domain-bound. Undertow is the first path built this way; the reasoning, rules, and modifier catalogue are in [`domain-expansion-design.md`](domain-expansion-design.md).
 

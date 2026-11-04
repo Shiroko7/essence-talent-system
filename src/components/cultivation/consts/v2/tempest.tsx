@@ -13,18 +13,6 @@ export const tempestAbilities = [
     activation: "action",
   },
   {
-    id: "lightning_initiate_storm_navigator",
-    name: "Storm Navigator",
-    description: "Your understanding of storms helps you predict their patterns and avoid hazards. You gain proficiency in Navigator’s Tools and have advantage on Wisdom (Survival) checks made to navigate or map out sea routes in stormy weather.",
-    tier: "initiate",
-    isActive: false,
-    isPassive: true,
-    isSpell: false,
-    isCantrip: false,
-    author: "Lei Zhen",
-    location: "Phudara / Isle of Whispers",
-  },
-  {
     id: "water_initiate_raincaller",
     name: "Raincaller",
     description: "You can call forth a light rain within a 30-foot radius centered on you for 10 minutes. This rain lightly obscures the area, granting disadvantage on Perception checks relying on sight and extinguishing fires.",
