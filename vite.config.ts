@@ -5,6 +5,8 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { LATEST_PATCH, PATCHES, type PatchMeta } from './src/data/patchNotes'
 import { RULES_PREVIEW } from './src/data/attunementRules'
+import { importCultivationData } from './src/utils/cultivationData'
+import { pathKicker, renderPathCard } from './scripts/og/pathCard'
 
 interface Preview {
   /** Route, served from `${route}.html` by a rule the build adds to _redirects. */
@@ -31,6 +33,20 @@ const PREVIEWS: Preview[] = [
   ...PATCHES.map(patch => patchPreview(`patch-notes/${patch.slug}`, patch)),
   { route: 'rules', title: RULES_PREVIEW.title, tabTitle: RULES_PREVIEW.title, description: RULES_PREVIEW.summary, image: RULES_PREVIEW.image, type: 'website' }
 ]
+
+/** Every V2 path is shareable at /<path id> (see PathLink in App.tsx), with a card the build draws for it. */
+const cultivation = importCultivationData('v2')
+const PATH_PREVIEWS = cultivation.paths.map(path => ({
+  path,
+  preview: {
+    route: path.id,
+    title: `${path.name} · ${pathKicker(path)}`,
+    tabTitle: `${path.name} · Essence Talent System`,
+    description: `${path.concept}. ${path.description}`,
+    image: `/og/paths/${path.id}.png`,
+    type: 'website'
+  } satisfies Preview
+}))
 
 /** The beta site is a Netlify branch deploy; netlify.toml sets VITE_BETA there. */
 const isBeta = process.env.VITE_BETA === 'true'
@@ -61,10 +77,20 @@ const linkPreviews = (): Plugin => {
       // crawlers need absolute links.
       const site = ((isBeta ? process.env.DEPLOY_PRIME_URL : process.env.URL) || '').replace(/\/$/, '')
       const index = readFileSync(resolve(outDir, 'index.html'), 'utf-8')
+      mkdirSync(resolve(outDir, 'og/paths'), { recursive: true })
+      for (const { path, preview } of PATH_PREVIEWS) {
+        writeFileSync(resolve(outDir, preview.image.slice(1)), renderPathCard({
+          path,
+          facets: cultivation.facets[path.id].map(f => f.label),
+          techniques: cultivation.abilities[path.id].length,
+          spells: cultivation.spells[path.id].length,
+          cantrips: cultivation.cantrips[path.id].length
+        }))
+      }
       // Chat apps cache previews by image URL, so a changed image needs a new URL.
       const versioned = (path: string) =>
         `${site}${path}?v=${createHash('sha1').update(readFileSync(resolve(outDir, path.slice(1)))).digest('hex').slice(0, 8)}`
-      for (const page of PREVIEWS) {
+      for (const page of [...PREVIEWS, ...PATH_PREVIEWS.map(p => p.preview)]) {
         const image = versioned(page.image)
         const tags = [
           ['name', 'description', page.description],
@@ -93,7 +119,7 @@ const linkPreviews = (): Plugin => {
 
       // Netlify uses the first rule that matches, so these go before the SPA catch-all.
       const redirects = resolve(outDir, '_redirects')
-      const rules = PREVIEWS.map(page => `/${page.route}    /${page.route}.html   200`).join('\n')
+      const rules = [...PREVIEWS, ...PATH_PREVIEWS.map(p => p.preview)].map(page => `/${page.route}    /${page.route}.html   200`).join('\n')
       writeFileSync(redirects, `${rules}\n${readFileSync(redirects, 'utf-8')}`)
     }
   }

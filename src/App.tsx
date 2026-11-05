@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useParams } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import TalentPage from './talents/TalentPage';
 import ChangelogPage from './pages/ChangelogPage';
@@ -17,6 +17,12 @@ const queryClient = new QueryClient();
 const Moved = ({ to }: { to: string }) => {
   const { search, hash } = useLocation();
   return <Navigate to={`${to}${search}${hash}`} replace />;
+};
+
+/** Shareable path link: /wisdom opens the talent tree on Wisdom. An unknown name opens the tree as usual. */
+const PathLink = () => {
+  const { pathId } = useParams();
+  return <Navigate to={`/?path=${encodeURIComponent(pathId ?? '')}`} replace />;
 };
 
 function App() {
@@ -46,6 +52,8 @@ function App() {
           <Route path="/merchants" element={<MerchantsPage />} />
           <Route path="/merchants/:merchantId" element={<MerchantCatalogPage />} />
           <Route path="/potions" element={<PotionsPage />} />
+          {/* Last: named routes above always win over this catch-all. */}
+          <Route path="/:pathId" element={<PathLink />} />
         </Routes>
         <BetaBadge />
       </Router>
