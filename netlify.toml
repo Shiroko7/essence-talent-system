@@ -4,3 +4,8 @@
 
 [build.environment]
   BUN_VERSION = "1.3.6"
+
+# Branch deploys (the `beta` branch) are the beta site: the app shows a Beta badge,
+# and vite.config.ts marks the pages noindex and points link previews at the beta URL.
+[context.branch-deploy.environment]
+  VITE_BETA = "true"

@@ -32,6 +32,17 @@ const PREVIEWS: Preview[] = [
   { route: 'rules', title: RULES_PREVIEW.title, tabTitle: RULES_PREVIEW.title, description: RULES_PREVIEW.summary, image: RULES_PREVIEW.image, type: 'website' }
 ]
 
+/** The beta site is a Netlify branch deploy; netlify.toml sets VITE_BETA there. */
+const isBeta = process.env.VITE_BETA === 'true'
+
+/** Keeps the beta site out of search results; the per-route preview pages copy index.html, so they get it too. */
+const betaNoindex = (): Plugin => ({
+  name: 'beta-noindex',
+  apply: 'build',
+  transformIndexHtml: html =>
+    isBeta ? html.replace('</head>', '    <meta name="robots" content="noindex" />\n  </head>') : html
+})
+
 const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 
 /**
@@ -46,8 +57,9 @@ const linkPreviews = (): Plugin => {
     apply: 'build',
     configResolved(config) { outDir = resolve(config.root, config.build.outDir) },
     writeBundle() {
-      // Netlify sets URL to the site's address; crawlers need absolute links.
-      const site = (process.env.URL || '').replace(/\/$/, '')
+      // Netlify sets URL to the public site and DEPLOY_PRIME_URL to this branch's address (the beta site);
+      // crawlers need absolute links.
+      const site = ((isBeta ? process.env.DEPLOY_PRIME_URL : process.env.URL) || '').replace(/\/$/, '')
       const index = readFileSync(resolve(outDir, 'index.html'), 'utf-8')
       // Chat apps cache previews by image URL, so a changed image needs a new URL.
       const versioned = (path: string) =>
@@ -89,5 +101,5 @@ const linkPreviews = (): Plugin => {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), linkPreviews()],
+  plugins: [react(), betaNoindex(), linkPreviews()],
 })

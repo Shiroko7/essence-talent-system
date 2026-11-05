@@ -7,6 +7,7 @@ import RulesPage from './pages/RulesPage';
 import MerchantsPage from './pages/MerchantsPage';
 import MerchantCatalogPage from './pages/MerchantCatalogPage';
 import PotionsPage from './pages/PotionsPage';
+import BetaBadge from './components/layout/BetaBadge';
 import './App.css';
 
 // Create a client for React Query
@@ -46,6 +47,7 @@ function App() {
           <Route path="/merchants/:merchantId" element={<MerchantCatalogPage />} />
           <Route path="/potions" element={<PotionsPage />} />
         </Routes>
+        <BetaBadge />
       </Router>
     </QueryClientProvider>
   );

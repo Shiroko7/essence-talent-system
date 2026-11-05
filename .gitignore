@@ -32,3 +32,6 @@ scripts/5etools-data/
 
 # per-developer Claude Code settings
 .claude/settings.local.json
+
+# Local Netlify folder
+.netlify
