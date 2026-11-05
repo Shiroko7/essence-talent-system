@@ -20,6 +20,8 @@ function parseMarkdownFile(content, pathName) {
   const spells = [];
   content = content.replace(/\r\n/g, '\n');
   const spellcasting = content.match(/^Spellcasting:\s*(.+)$/mi)?.[1]?.trim().toLowerCase() ?? 'catalog';
+  // Facets: a path's optional sub-themes (Alchemy's acid, poison...), used only to filter the UI.
+  const facets = splitList(content.match(/^Facets:\s*(.+)$/mi)?.[1]).map(label => ({ id: facetId(label), label }));
   const headings = [...content.matchAll(/^###\s+.+$/gm)];
   const sections = headings.map((heading, index) => content.slice(heading.index, headings[index + 1]?.index ?? content.length));
 
@@ -52,14 +54,20 @@ function parseMarkdownFile(content, pathName) {
       oncePerTurn: metadata.oncePerTurn || undefined,
       ritual: metadata.ritual || undefined,
       domain: metadata.domain || undefined,
-      domainText: metadata.domainText || undefined
+      domainText: metadata.domainText || undefined,
+      facets: metadata.facets ? splitList(metadata.facets).map(facetId) : undefined,
+      series: metadata.series || undefined,
+      stages: metadata.stages || undefined
     };
     if (ability.isCantrip) cantrips.push(ability);
     else if (ability.isSpell) spells.push(ability);
     else abilities.push(ability);
   }
-  return { abilities, cantrips, spells, spellcasting };
+  return { abilities, cantrips, spells, spellcasting, facets };
 }
+
+const splitList = value => (value ? value.split(',').map(item => item.trim()).filter(Boolean) : []);
+const facetId = label => label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const escapeString = value => value.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
 
@@ -73,6 +81,8 @@ function formatAbility(ability) {
   if (ability.ritual) out += `\n    ritual: true,`;
   if (ability.domain) out += `\n    domain: "${ability.domain}",`;
   if (ability.domainText) out += `\n    domainText: "${escapeString(ability.domainText)}",`;
+  if (ability.facets) out += `\n    facets: ${JSON.stringify(ability.facets)},`;
+  if (ability.series) out += `\n    series: "${ability.series}",\n    stage: ${ability.stage},\n    stages: "${ability.stages}",`;
   return `${out}\n  }`;
 }
 
@@ -91,6 +101,22 @@ function validateTags(ability, where) {
   }
   if (/^\*\*(Casting Time|Range|Components|Duration|Portfolio|Action)\b/m.test(ability.description)) {
     throw new Error(`"${ability.name}" in ${where} has a spell-style stat block; use activation and concentration tags.`);
+  }
+}
+
+/**
+ * A path with a Facets line tags every ability with at least one of them (there is no "Other"
+ * bucket); a facet tag must name one of its path's Facets, and paths without Facets take no tags.
+ */
+function validateFacets(ability, facets, where) {
+  if (!ability.facets) {
+    if (facets.length) throw new Error(`"${ability.name}" in ${where} needs a facets tag: ${facets.map(facet => facet.id).join(', ')}.`);
+    return;
+  }
+  if (!facets.length) throw new Error(`"${ability.name}" in ${where} has facets, but the path declares no Facets line.`);
+  const known = facets.map(facet => facet.id);
+  for (const facet of ability.facets) {
+    if (!known.includes(facet)) throw new Error(`"${ability.name}" in ${where} has unknown facet "${facet}"; use ${known.join(', ')}.`);
   }
 }
 
@@ -114,11 +140,47 @@ function validateDomain(ability, where) {
   }
 }
 
+const TIER_ORDER = ['initiate', 'adept', 'master', 'grandmaster', 'greatgrandmaster'];
+
+/**
+ * Staged techniques: every stage names its series and whether stages replace or add. Stages number
+ * themselves in tier order, one per tier with no gaps, all in one path. Series ids are unique across paths.
+ */
+function assignStages(abilities, where, seen) {
+  const series = new Map();
+  for (const ability of abilities) {
+    if (!ability.series) {
+      if (ability.stages) throw new Error(`"${ability.name}" in ${where} has stages but no series.`);
+      continue;
+    }
+    if (!['replace', 'add'].includes(ability.stages)) {
+      throw new Error(`"${ability.name}" in ${where} is in series "${ability.series}" and needs stages: replace or stages: add.`);
+    }
+    if (!series.has(ability.series)) series.set(ability.series, []);
+    series.get(ability.series).push(ability);
+  }
+  for (const [id, stages] of series) {
+    if (seen.has(id)) throw new Error(`Series "${id}" in ${where} is also used in ${seen.get(id)}.`);
+    seen.set(id, where);
+    if (stages.length < 2) throw new Error(`Series "${id}" in ${where} has only one stage.`);
+    if (new Set(stages.map(s => s.stages)).size > 1) throw new Error(`Series "${id}" in ${where} mixes stages: replace and add.`);
+    stages.sort((a, b) => TIER_ORDER.indexOf(a.tier) - TIER_ORDER.indexOf(b.tier));
+    const first = TIER_ORDER.indexOf(stages[0].tier);
+    stages.forEach((stage, index) => {
+      if (TIER_ORDER.indexOf(stage.tier) !== first + index) {
+        throw new Error(`Series "${id}" in ${where} needs one stage per tier with no gaps; "${stage.name}" is ${stage.tier}.`);
+      }
+      stage.stage = index + 1;
+    });
+  }
+}
+
 function generateTypeScriptFile(data, pathName) {
   return [
     `export const ${pathName}Abilities = [\n${data.abilities.map(formatAbility).join(',\n')}\n];`,
     `export const ${pathName}Cantrips = [\n${data.cantrips.map(formatAbility).join(',\n')}\n];`,
     `export const ${pathName}Spells = [\n${data.spells.map(formatAbility).join(',\n')}\n];`,
+    `export const ${pathName}Facets = ${JSON.stringify(data.facets)};`,
     ''
   ].join('\n\n').trimEnd() + '\n';
 }
@@ -135,16 +197,16 @@ function generateDataModule(filesByVersion) {
     for (const pathName of paths) {
       const symbol = `${version}_${pathName}`;
       const modulePath = `../components/cultivation/consts/${version}/${pathName}`;
-      imports.push(`import { ${pathName}Abilities as ${symbol}Abilities, ${pathName}Cantrips as ${symbol}Cantrips, ${pathName}Spells as ${symbol}Spells } from '${modulePath}';`);
-      definitionsForVersion.push(`    ${JSON.stringify(pathName)}: { abilities: ${symbol}Abilities as Ability[], cantrips: ${symbol}Cantrips as Ability[], spells: ${symbol}Spells as Ability[] }`);
+      imports.push(`import { ${pathName}Abilities as ${symbol}Abilities, ${pathName}Cantrips as ${symbol}Cantrips, ${pathName}Spells as ${symbol}Spells, ${pathName}Facets as ${symbol}Facets } from '${modulePath}';`);
+      definitionsForVersion.push(`    ${JSON.stringify(pathName)}: { abilities: ${symbol}Abilities as Ability[], cantrips: ${symbol}Cantrips as Ability[], spells: ${symbol}Spells as Ability[], facets: ${symbol}Facets as PathFacet[] }`);
     }
     definitions.push(`  ${version}: {\n${definitionsForVersion.join(',\n')}\n  }`);
   }
 
-  return `${imports.join('\n')}\n\nimport { Ability } from '../types/essence';
+  return `${imports.join('\n')}\n\nimport { Ability, PathFacet } from '../types/essence';
 import { CultivationCatalog, CultivationPathId, CultivationVersion, getCultivationCatalog } from '../types/cultivation';
 
-interface PathData { abilities: Ability[]; cantrips: Ability[]; spells: Ability[] }
+interface PathData { abilities: Ability[]; cantrips: Ability[]; spells: Ability[]; facets: PathFacet[] }
 export interface CultivationData {
   paths: CultivationCatalog['paths'];
   groups: CultivationCatalog['groups'];
@@ -152,6 +214,8 @@ export interface CultivationData {
   abilities: Record<CultivationPathId, Ability[]>;
   cantrips: Record<CultivationPathId, Ability[]>;
   spells: Record<CultivationPathId, Ability[]>;
+  /** Each path's optional sub-themes, for filtering. Empty for most paths. */
+  facets: Record<CultivationPathId, PathFacet[]>;
 }
 
 const dataByVersion: Record<CultivationVersion, Record<string, PathData>> = {
@@ -164,13 +228,15 @@ export function importCultivationData(version: CultivationVersion): CultivationD
   const abilities: Record<CultivationPathId, Ability[]> = {};
   const cantrips: Record<CultivationPathId, Ability[]> = {};
   const spells: Record<CultivationPathId, Ability[]> = {};
+  const facets: Record<CultivationPathId, PathFacet[]> = {};
   for (const path of catalog.paths) {
     const pathData = source[path.id];
     abilities[path.id] = pathData.abilities;
     cantrips[path.id] = pathData.cantrips;
     spells[path.id] = pathData.spells;
+    facets[path.id] = pathData.facets;
   }
-  return { catalog, paths: catalog.paths, groups: catalog.groups, abilities, cantrips, spells };
+  return { catalog, paths: catalog.paths, groups: catalog.groups, abilities, cantrips, spells, facets };
 }
 `;
 }
@@ -205,6 +271,7 @@ function main() {
 
     const spellOwners = new Map();
     const abilityIds = new Map();
+    const seriesOwners = new Map();
     for (const file of files) {
       const pathName = path.basename(file, '.md');
       const parsed = parseMarkdownFile(fs.readFileSync(path.join(dataDir, file), 'utf8'), pathName);
@@ -224,7 +291,9 @@ function main() {
         abilityIds.set(ability.id, pathName);
         validateDomain(ability, `${version}/${pathName}`);
         validateTags(ability, `${version}/${pathName}`);
+        validateFacets(ability, parsed.facets, `${version}/${pathName}`);
       }
+      assignStages([...parsed.abilities, ...parsed.cantrips, ...parsed.spells], `${version}/${pathName}`, seriesOwners);
       for (const ability of [...parsed.cantrips, ...parsed.spells]) {
         const name = normalizeName(ability.name);
         const priorPath = spellOwners.get(name);

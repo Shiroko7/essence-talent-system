@@ -498,3 +498,5 @@ export const earthSpells = [
     concentration: true,
   }
 ];
+
+export const earthFacets = [];

@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { Lock, Unlock } from 'lucide-react';
 import { Ability } from '../../types/essence';
-import { KIND_META, TIER_IDS, groupByTier, pathsByGroup, searchAll, tierOf, tint } from '../model';
+import { KIND_META, TIER_IDS, groupByTier, matchesFacet, pathsByGroup, searchAll, seriesOf, tierOf, tint } from '../model';
 import type { LayoutProps } from '../TalentPage';
 import { useInitialPath } from '../routes';
 import { PageHeader } from '../header/PageHeader';
 import {
-  AbilityModal, AbilityTile, EmptyState, PathSigil, SearchField
+  AbilityModal, AbilityTile, EmptyState, FacetChips, PathSigil, SearchField
 } from '../ui';
 
 const NUMERALS = ['I', 'II', 'III', 'IV', 'V'];
+
+/** Paths per row in a tradition's column: two rows when the selector is split by tradition. */
+const columnsFor = (pathCount: number, groupCount: number) => (groupCount > 1 ? Math.ceil(pathCount / 2) : pathCount);
 
 /**
  * Constellation — the talent tree as a game board. A full-width path selector
@@ -20,15 +23,22 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const [pathId, setPathId] = useState(useInitialPath(ctl));
   const [search, setSearch] = useState('');
   const [detail, setDetail] = useState<Ability | null>(null);
+  const [facet, setFacet] = useState('all');
 
   const path = system.paths.find(p => p.id === pathId)!;
-  const tiers = groupByTier(system.abilitiesByPath[pathId] || []);
+  const pathAbilities = system.abilitiesByPath[pathId] || [];
+  const shown = pathAbilities.filter(a => matchesFacet(a, facet));
+  const tiers = groupByTier(shown);
+  // On desktop each series gets its own row, so its stages line up across the tier columns.
+  const series = seriesOf(shown);
+  const boardRows = { gridRow: `span ${series.length + 2}` };
   const searching = search.trim().length > 0;
   const results = searching ? searchAll(system, search) : [];
 
   const openPath = (id: string) => {
     setPathId(id);
     setSearch('');
+    setFacet('all');
   };
 
   return (
@@ -40,14 +50,16 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
         <SearchField value={search} onChange={setSearch} placeholder="Search every path…" />
       </div>
 
-      {/* Path selector: one segment per tradition, sized by its number of paths */}
+      {/* Path selector: one column per tradition, its paths in two rows, sized by paths per row */}
       <div className="arcane-panel mb-6 overflow-x-auto">
-        <div className="flex min-w-max xl:min-w-0">
-          {pathsByGroup(system).map(({ group, paths }, gi) => (
+        <div className="flex min-w-max">
+          {pathsByGroup(system).map(({ group, paths }, gi) => {
+            const columns = columnsFor(paths.length, system.groups.length);
+            return (
             <div
               key={group.id}
-              className={`flex flex-col min-w-0 ${gi > 0 ? 'border-l border-gold-subtle' : ''}`}
-              style={{ flexGrow: paths.length, flexBasis: 0 }}
+              className={`flex flex-col min-w-max ${gi > 0 ? 'border-l border-gold-subtle' : ''}`}
+              style={{ flexGrow: columns, flexBasis: 0 }}
             >
               {system.groups.length > 1 && (
                 <div className="flex items-center justify-center gap-2 pt-3 pb-1">
@@ -56,7 +68,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                   <span className="h-px w-6" style={{ background: tint(group.accent, 0.5) }} />
                 </div>
               )}
-              <div className="flex justify-around px-2 pb-3 pt-2 gap-1">
+              <div className="grid justify-around justify-items-center px-2 pb-3 pt-2 gap-1" style={{ gridTemplateColumns: `repeat(${columns}, 100px)` }}>
                 {paths.map(p => {
                   const active = p.id === pathId && !searching;
                   const abilities = system.abilitiesByPath[p.id] || [];
@@ -64,7 +76,7 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                     <button
                       key={p.id}
                       onClick={() => openPath(p.id)}
-                      className={`flex flex-col items-center gap-1.5 px-2 pt-2 pb-1.5 rounded-lg transition-all w-[84px] xl:w-auto xl:flex-1 xl:min-w-0 xl:max-w-[84px] ${active ? '-translate-y-0.5' : 'hover:bg-charcoal/50'}`}
+                      className={`flex flex-col items-center gap-1.5 px-2 pt-2 pb-1.5 rounded-lg transition-all w-[100px] shrink-0 ${active ? '-translate-y-0.5' : 'hover:bg-charcoal/50'}`}
                       style={active ? { background: tint(p.accent, 0.12), boxShadow: `0 0 0 1px ${tint(p.accent, 0.45)}, 0 6px 20px ${tint(p.accent, 0.2)}` } : undefined}
                     >
                       <PathSigil path={p} size={46} active={active} className="!rounded-full" />
@@ -83,7 +95,8 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                 })}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -127,15 +140,23 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
             </div>
           </div>
 
-          {/* Tier board — left to right on desktop, bottom to top when stacked */}
-          <div className="flex flex-col-reverse xl:flex-row gap-3 xl:gap-0 items-stretch mb-10">
+          {/* Sub-theme filter, only on paths that declare facets */}
+          {path.facets && (
+            <div className="mb-4 px-1">
+              <FacetChips path={path} abilities={pathAbilities} value={facet} onChange={setFacet} />
+            </div>
+          )}
+
+          {/* Tier board — left to right on desktop, bottom to top when stacked. On desktop it is a grid
+              (headers, one row per series, then the rest) that every tier column shares through subgrid. */}
+          <div className="flex flex-col-reverse xl:grid xl:grid-cols-[minmax(0,1fr)_2.25rem_minmax(0,1fr)_2.25rem_minmax(0,1fr)_2.25rem_minmax(0,1fr)_2.25rem_minmax(0,1fr)] gap-3 xl:gap-0 items-stretch mb-10">
             {tiers.map(({ tier, abilities }, index) => {
               const open = ctl.tierUnlocked(tier.id, pathId);
               const lineColor = open ? path.accent : 'rgba(106,106,122,0.35)';
               return (
                 <React.Fragment key={tier.id}>
                   {index > 0 && (
-                    <div className="flex xl:flex-col items-center justify-center xl:justify-start xl:pt-6 gap-1 xl:w-9 flex-shrink-0">
+                    <div className="flex xl:flex-col items-center justify-center xl:justify-start xl:pt-6 gap-1 xl:w-9 flex-shrink-0" style={boardRows}>
                       <span className="h-px w-10 xl:h-8 xl:w-px" style={{ background: lineColor }} />
                       <span
                         className="w-7 h-7 rotate-45 flex items-center justify-center border"
@@ -153,15 +174,17 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                     </div>
                   )}
                   <section
-                    className={`flex-1 min-w-0 rounded-xl border p-3 transition-colors ${open ? '' : 'opacity-60'}`}
+                    className={`flex-1 min-w-0 rounded-xl border p-3 transition-colors xl:grid xl:gap-y-2 ${open ? '' : 'opacity-60'}`}
                     style={{
+                      ...boardRows,
+                      gridTemplateRows: 'subgrid',
                       borderColor: open ? tint(path.accent, 0.3) : 'rgba(201,169,89,0.1)',
                       background: open
                         ? `radial-gradient(120% 60% at 50% 0%, ${tint(path.accent, 0.1)}, rgba(18,18,26,0.7) 70%)`
                         : 'rgba(18,18,26,0.5)'
                     }}
                   >
-                    <header className="flex items-center gap-3 mb-3">
+                    <header className="flex items-center gap-3 mb-3 xl:mb-1">
                       <span
                         className="w-9 h-9 rounded-full flex items-center justify-center font-display text-sm border flex-shrink-0"
                         style={{ borderColor: open ? path.accent : 'rgba(106,106,122,0.5)', color: open ? path.accent : '#6a6a7a' }}
@@ -178,9 +201,17 @@ const ConstellationLayout: React.FC<LayoutProps> = ({ ctl }) => {
                         </p>
                       </div>
                     </header>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-2">
-                      {abilities.length === 0 && <p className="text-xs text-mist italic">No abilities in this tier</p>}
-                      {abilities.map(a => <AbilityTile key={a.id} ctl={ctl} ability={a} path={path} onInfo={setDetail} />)}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xl:contents">
+                      {series.map(id => {
+                        const stage = abilities.find(a => a.series === id);
+                        return stage
+                          ? <AbilityTile key={id} ctl={ctl} ability={stage} path={path} onInfo={setDetail} />
+                          : <div key={id} className="hidden xl:block" aria-hidden />;
+                      })}
+                      <div className="contents xl:flex xl:flex-col xl:gap-2">
+                        {abilities.length === 0 && <p className="text-xs text-mist italic">{facet === 'all' ? 'No abilities in this tier' : 'None of this kind in this tier'}</p>}
+                        {abilities.filter(a => !a.series).map(a => <AbilityTile key={a.id} ctl={ctl} ability={a} path={path} onInfo={setDetail} />)}
+                      </div>
                     </div>
                   </section>
                 </React.Fragment>

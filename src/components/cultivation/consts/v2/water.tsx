@@ -10,6 +10,7 @@ export const waterAbilities = [
     isCantrip: false,
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["water"],
   },
   {
     id: "water_initiate_ice_form",
@@ -23,6 +24,9 @@ export const waterAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "bonus action",
+    domain: "expansion",
+    domainText: "Your speed isn't reduced.",
+    facets: ["ice"],
   },
   {
     id: "water_adept_tides_reflection_art_i",
@@ -36,6 +40,10 @@ export const waterAbilities = [
     author: "Selûne",
     location: "Phudara / Isle of Whispers",
     activation: "bonus action",
+    facets: ["water"],
+    series: "tides_reflection_art",
+    stage: 1,
+    stages: "add",
   },
   {
     id: "water_initiate_restorative_rain",
@@ -49,6 +57,9 @@ export const waterAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "action",
+    domain: "expansion",
+    domainText: "Each creature that starts its turn in the rain also loses 1 level of exhaustion, once per use.",
+    facets: ["water"],
   },
   {
     id: "water_adept_aqua_agility",
@@ -61,6 +72,7 @@ export const waterAbilities = [
     isCantrip: false,
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["water"],
   },
   {
     id: "water_adept_tidal_surge",
@@ -74,6 +86,7 @@ export const waterAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "action",
+    facets: ["water"],
   },
   {
     id: "water_adept_glacial_shield",
@@ -87,6 +100,7 @@ export const waterAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "reaction",
+    facets: ["ice"],
   },
   {
     id: "water_adept_hydroportation",
@@ -100,6 +114,9 @@ export const waterAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "bonus action",
+    domain: "expansion",
+    domainText: "It needs no water or mist.",
+    facets: ["water"],
   },
   {
     id: "wind_adept_misty_escape",
@@ -112,6 +129,7 @@ export const waterAbilities = [
     isCantrip: false,
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["water"],
   },
   {
     id: "water_adept_tides_reflection_art_ii",
@@ -125,6 +143,10 @@ export const waterAbilities = [
     author: "Selûne",
     location: "Phudara / Isle of Whispers",
     activation: "reaction",
+    facets: ["water"],
+    series: "tides_reflection_art",
+    stage: 2,
+    stages: "add",
   },
   {
     id: "water_master_aura_of_the_deep_bulwark",
@@ -138,6 +160,7 @@ export const waterAbilities = [
     author: "Kwon Jae-Hwan",
     location: "Sirius",
     activation: "action",
+    facets: ["water"],
   },
   {
     id: "water_adept_tides_reflection_art_iii",
@@ -150,6 +173,87 @@ export const waterAbilities = [
     isCantrip: false,
     author: "Selûne",
     location: "Phudara / Isle of Whispers",
+    facets: ["water"],
+    series: "tides_reflection_art",
+    stage: 3,
+    stages: "add",
+  },
+  {
+    id: "water_master_hydraulic_torrent",
+    name: "Hydraulic Torrent",
+    description: "As an action, you release a torrent of water in a 60-foot line that is 5 feet wide. Each creature in the line makes a Strength saving throw against your essence ability save DC. On a failure, it takes 6d10 bludgeoning damage and is pushed 15 feet away from you. On a success, it takes half as much damage and isn't pushed.",
+    tier: "master",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
+    activation: "action",
+    domain: "expansion",
+    domainText: "It pushes creatures 30 feet instead.",
+    facets: ["water"],
+  },
+  {
+    id: "water_master_riding_the_current",
+    name: "Riding the Current",
+    description: "As an action, a wave rises behind you and carries you up to 50 feet. This movement doesn't provoke opportunity attacks. At any point during it, you can make one melee weapon attack. On a hit, the wave crashes after it: the target takes an extra 4d10 bludgeoning damage and is pushed 10 feet in a direction you choose.",
+    tier: "master",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
+    activation: "action",
+    domain: "expansion",
+    domainText: "It pushes the target 20 feet instead.",
+    facets: ["water"],
+  },
+  {
+    id: "water_grandmaster_arctic_rift",
+    name: "Arctic Rift",
+    description: "As an action, you tear a jagged rift of cold through the air in a 120-foot line that is 5 feet wide. Each creature in the line makes a Constitution saving throw against your essence ability save DC. On a failure, it takes 12d8 cold damage and is restrained by ice until the end of its next turn. On a success, it takes half as much damage only.",
+    tier: "grandmaster",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
+    activation: "action",
+    facets: ["ice"],
+  },
+  {
+    id: "water_grandmaster_four_strands_of_the_unbreaking_wave",
+    name: "Four Strands of the Unbreaking Wave",
+    description: "As an action in your Favored Domain, four strands of water lash out at up to four creatures you can see within 60 feet. Each makes a Strength saving throw against your essence ability save DC. On a failure, it is restrained by the strands for up to 1 minute and takes 6d10 bludgeoning damage at the start of each of its turns. It repeats the saving throw at the end of each of its turns, breaking free on a success.",
+    tier: "grandmaster",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
+    activation: "action",
+    concentration: true,
+    domain: "bound",
+    facets: ["water"],
+  },
+  {
+    id: "water_grandmaster_deluge",
+    name: "Deluge",
+    description: "As an action in your Favored Domain, you bring a catastrophic downpour down on a 60-foot-radius area centered on a point you can see within 300 feet, and it vanishes an instant later. Each creature of your choice there makes a Strength saving throw against your essence ability save DC. On a failure, it takes 12d10 bludgeoning damage and is knocked prone, and a flying creature is slammed to the ground without taking falling damage. On a success, it takes half as much damage only.",
+    tier: "grandmaster",
+    isActive: true,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: false,
+    author: "Lluvia Tribe",
+    location: "Phudara / Isle of Whispers",
+    activation: "action",
+    domain: "bound",
+    facets: ["water"],
   }
 ];
 
@@ -164,6 +268,7 @@ export const waterCantrips = [
     isSpell: false,
     isCantrip: true,
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_cantrip_ray_of_frost",
@@ -175,6 +280,7 @@ export const waterCantrips = [
     isSpell: false,
     isCantrip: true,
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_cantrip_shape_water",
@@ -186,6 +292,7 @@ export const waterCantrips = [
     isSpell: false,
     isCantrip: true,
     activation: "action",
+    facets: ["water","ice"],
   }
 ];
 
@@ -200,6 +307,7 @@ export const waterSpells = [
     isSpell: true,
     isCantrip: false,
     activation: "action",
+    facets: ["water"],
   },
   {
     id: "water_2nd_level_rimes_binding_ice",
@@ -211,6 +319,7 @@ export const waterSpells = [
     isSpell: true,
     isCantrip: false,
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_3rd_level_water_walk",
@@ -223,6 +332,7 @@ export const waterSpells = [
     isCantrip: false,
     activation: "action",
     ritual: true,
+    facets: ["water"],
   },
   {
     id: "water_4th_level_control_water",
@@ -235,6 +345,7 @@ export const waterSpells = [
     isCantrip: false,
     activation: "action",
     concentration: true,
+    facets: ["water"],
   },
   {
     id: "tempest_5th_cone_of_cold",
@@ -247,6 +358,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "Evocation / Glacial Squall",
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_3rd_level_wall_of_water",
@@ -259,6 +371,7 @@ export const waterSpells = [
     isCantrip: false,
     activation: "action",
     concentration: true,
+    facets: ["water"],
   },
   {
     id: "water_3rd_level_water_breathing",
@@ -271,6 +384,7 @@ export const waterSpells = [
     isCantrip: false,
     activation: "action",
     ritual: true,
+    facets: ["water"],
   },
   {
     id: "water_3rd_level_conjure_ocean",
@@ -283,6 +397,7 @@ export const waterSpells = [
     isCantrip: false,
     activation: "action",
     concentration: true,
+    facets: ["water"],
   },
   {
     id: "water_1st_level_bubble_lift",
@@ -295,6 +410,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "Obojima: Tales from the Tall Grass",
     activation: "action",
+    facets: ["water"],
   },
   {
     id: "water_1st_level_frost_fingers",
@@ -307,6 +423,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "D&D 5e (IDRotF)",
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_1st_level_ice_knife",
@@ -319,6 +436,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "D&D 5e (XGE)",
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_1st_level_water_bullet",
@@ -331,6 +449,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "Obojima: Tales from the Tall Grass",
     activation: "action",
+    facets: ["water"],
   },
   {
     id: "water_1st_level_whelm_weapon",
@@ -344,6 +463,7 @@ export const waterSpells = [
     author: "Obojima: Tales from the Tall Grass",
     activation: "action",
     concentration: true,
+    facets: ["water"],
   },
   {
     id: "water_2nd_level_snillocs_snowball_swarm",
@@ -356,6 +476,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "D&D 5e (XGE)",
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_3rd_level_freedom_of_the_waves",
@@ -368,6 +489,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "Tal'Dorei Campaign Setting Reborn",
     activation: "action",
+    facets: ["water"],
   },
   {
     id: "water_4th_level_watery_sphere",
@@ -381,6 +503,7 @@ export const waterSpells = [
     author: "D&D 5e (XGE)",
     activation: "action",
     concentration: true,
+    facets: ["water"],
   },
   {
     id: "water_6th_level_crustacean_form",
@@ -394,6 +517,7 @@ export const waterSpells = [
     author: "Obojima: Tales from the Tall Grass",
     activation: "action",
     concentration: true,
+    facets: ["water"],
   },
   {
     id: "water_6th_level_investiture_of_ice",
@@ -407,6 +531,7 @@ export const waterSpells = [
     author: "D&D 5e (XGE)",
     activation: "action",
     concentration: true,
+    facets: ["ice"],
   },
   {
     id: "wind_6th_level_otilukes_freezing_sphere",
@@ -419,6 +544,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "water_6th_level_wall_of_ice",
@@ -432,6 +558,7 @@ export const waterSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["ice"],
   },
   {
     id: "v2_water_ice_soldiers",
@@ -444,6 +571,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "Kobold Press Deep Magic",
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "v2_water_triumph_of_ice",
@@ -457,6 +585,7 @@ export const waterSpells = [
     author: "Kobold Press Deep Magic",
     activation: "action",
     concentration: true,
+    facets: ["ice"],
   },
   {
     id: "v2_water_glacial_cascade",
@@ -469,6 +598,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "Kobold Press Deep Magic",
     activation: "action",
+    facets: ["ice"],
   },
   {
     id: "v2_water_great_wave",
@@ -482,6 +612,7 @@ export const waterSpells = [
     author: "Spells That Don't Suck",
     activation: "action",
     concentration: true,
+    facets: ["water"],
   },
   {
     id: "v2_water_grand_flood",
@@ -494,6 +625,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "The Elements and Beyond",
     activation: "action",
+    facets: ["water"],
   },
   {
     id: "v2_water_glacial_tide",
@@ -506,6 +638,7 @@ export const waterSpells = [
     isCantrip: false,
     author: "The Elements and Beyond: Spell Variants",
     activation: "action",
+    facets: ["water","ice"],
   },
   {
     id: "v2_water_deep_freeze",
@@ -519,6 +652,7 @@ export const waterSpells = [
     author: "The Elements and Beyond",
     activation: "action",
     concentration: true,
+    facets: ["ice"],
   },
   {
     id: "v2_water_ice_mountain",
@@ -531,5 +665,8 @@ export const waterSpells = [
     isCantrip: false,
     author: "The Elemental Spellbook",
     activation: "action",
+    facets: ["ice"],
   }
 ];
+
+export const waterFacets = [{"id":"water","label":"Water"},{"id":"ice","label":"Ice"}];

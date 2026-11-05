@@ -44,8 +44,45 @@ Every custom technique has to pass these. They come from rejected drafts.
 - **Don't default to psychic damage.** Force is a fine alternative, especially for higher-tier techniques.
 - **A domain-wide technique covers the whole domain.** When a technique works across your domain, as Necropolis, Hadal Domain, and Throne of Dread do, it affects the entire domain, not a radius around you.
 - **Absolute protections are Great Grandmaster.** "Magic that alters your memories always fails" or "no one can read your mind" belongs at Great Grandmaster, if anywhere.
+- **No flat bonuses.** Don't write "+2 to checks" or similar flat numbers; use dice, advantage, or a rule that changes what the technique does.
+- **Leave damage resistance alone.** A buff never grants, removes, or ignores damage resistance. (Wisdom's Bestow Title, which names resistances as titles, is its own Grandmaster design.)
+- **Draw on many sources.** Pathfinder 2e (Archives of Nethys, every book) is one of several guides for new actives and passives, not the only one. The novels under [Inspirations](#inspirations) apply to every path, alongside 5e and its third-party books and other games and fiction. Whatever the source, turn it into one 5e effect, and name it when proposing the technique.
+- **Actives, not only spells.** Every facet of a path needs active techniques of its own. Wisdom's knowledge facet, for example, had only spells until Gleaned Knowledge and Learned at a Glance.
+- **Spread a theme across the tiers.** When a path has several passives on one theme, they climb one per tier instead of bunching at Initiate or Adept. Alchemy's explosive passives are Extended Reach (Initiate), Expanded Explosion (Adept), and Explosive Savant (Master); its acid passives are Acidic Insight (Initiate), Acidic Precision (Adept), and Chemical Expertise (Master).
+- **Moving up a tier doesn't write its own buff.** A technique that moves to a higher tier may deserve a buff, but buffs are proposed as options and the designer picks one. Moving down never needs one. The moved technique keeps its ID and goes in `RETIERED_TALENT_IDS` (see the data README).
 
 Magic will be a Divine path for the Weave, Mystra's office, when the campaign needs it. Raw magic stays a story hazard (the Spellplague), and spellcraft is Wisdom applied to magic. Counterspell and Dispel Magic stay out of the catalog until then.
+
+## Inspirations
+
+These novels are general references for every path. Their cultivation systems, techniques, and ideas about the Dao are fair game when designing abilities, boundaries, and domains.
+
+- **Er Gen:** *Tian Ni*, *Renegade Immortal*, *Pursuit of the Truth*, *I Shall Seal the Heavens*, *A Will Eternal*, *A World Worth Protecting*, and *Beyond the Timescape* (also *Outside of Time*).
+- **Warmaisach:** *Lightning Is the Only Way*, *Sword God in a World of Magic*, *Kill the Sun*, and *Strongest Hammer God*.
+- **Gu Zhen Ren:** *Reverend Insanity* and *Mysteries of Immortal Puppet Master*.
+- *A Regressor's Tale of Cultivation*.
+- *Lord of the Mysteries* and *Circle of Inevitability* (Cuttlefish That Loves Diving).
+
+## Facets
+
+A path can split into **facets**: sub-themes that stay one path but give the talent tree a filter row (All, then one chip per facet). They are a UI and tagging aid, not a rule: they never change cost, tiers, or Essence.
+
+| Path | Facets |
+| --- | --- |
+| Alchemy | Acid, Medicine, Poison, Explosives, Mutation |
+| Water | Water, Ice |
+| Wisdom | Memory, Names, Knowledge, Thoughts & Deduction |
+| Lunar | Moonlight, Stars, Visions, Lycanthropy |
+| Heart | Unarmed, Blades, Spears, Blunt, Ranged, Body & Mind |
+| Pestilence | Disease, Venom, Curses |
+| Providence | Endurance, Martyrdom, Wards |
+| Ruin | Murder, Pain, Strife |
+
+- **No "Other".** Every ability in a faceted path, spells and cantrips included, has at least one facet. If an ability fits none, it either belongs to another path (Mage Hand left Ruin for Mysteries) or the facet list is wrong.
+- **Read the abilities, not the concept line.** Facets come from what the path actually holds. Ruin's old concept line promised deception and thievery, but its abilities sort into its three patrons: Murder (Bhaal), Pain (Loviatar), and Strife (Cyric). Providence's line said healing, but its abilities are endurance, martyrdom, and wards. When the facets and the concept line disagree, fix the concept line too.
+- **An ability can carry several facets.** A Heart technique that works with any weapon is tagged under every weapon facet, so a spear user filtering by Spears still sees it.
+- **Few enough to scan.** Three to six chips. A path that is mostly one theme or has few entries doesn't need facets.
+- **Words that mean different things stay different.** Pestilence's facet is Venom and Alchemy's is Poison (see Boundaries).
 
 ## Shared Essence
 
@@ -56,18 +93,22 @@ Essence is shared within a family. Every learned path in a family adds its Essen
 - **Sky and Tempest:** Sky shapes local air, pressure, flight, sound carried through air, and direct lightning. Tempest commands weather systems: rain, storm fronts, thunder, and violent seas. A lightning bolt is Sky; a storm raised over an area is Tempest.
 - **Tempest, Water, and Undertow:** Tempest is the sea you can see: weather, waves, and Umberlee's wrath at the surface. Undertow is the sea that takes you: the lightless deep below the last light, with ink, crushing pressure, tentacles, and drowning. Water is the element through both, so conjured or shaped water stays in Water, while Maelstrom stays in Tempest with the sea in upheaval. Undertow's darkness is ink that blinds a predator's prey; Shadow keeps darkness as absence.
 - **Earth and Metal:** Earth governs mass, stone, soil, terrain, and stability. Metal governs ore, metal objects, magnetism, weapons, armor, and refinement.
-- **Alchemy and Pestilence:** Alchemy changes substances through formulas, acids, medicines, and refinement. Pestilence afflicts living bodies through poison, disease, contagion, and curses, and includes resistance or remedies tied directly to those afflictions.
+- **Poison and venom:** if it grows in a body or spreads like a sickness, it is Pestilence's **venom** (Toxic Skin Secretion, Venomous Touch, contagion). If it was brewed, measured, and delivered by needle, vial, or a dose in food, it is Alchemy's **poison** (Lethargy Draught, Nightshade Tincture, Mindfog, Purple Worm Extract). Alchemy's poisons have no Grandmaster technique.
+- **Alchemy's mutation and medicine:** Mutation means rewriting a body: polymorph, cloning, and grafts of monster parts (Claw Graft, Tentacle Graft, Wing Graft), not drinkable boosts. Medicine is Alchemy's elixirs, pills, and cures, including Healing Bomb and Living Suture, which reattaches a part severed within the last hour when you have both pieces. Regrowing a lost part stays with Regenerate.
+- **Alchemy and Pestilence:** Alchemy changes substances through formulas, acids, crafted poisons, medicines, body grafts, and refinement. Pestilence afflicts living bodies through venom, disease, contagion, and curses, and includes resistance or remedies tied directly to those afflictions.
 - **Lunar and Navigation:** Both belong to Selûne. Lunar holds the celestial bodies themselves: moonlight, falling stars, tides, dreams, and foresight. Navigation holds the reading of them: constellations, marks, predictions, charts, routes, and travel by land and sea. If the star itself hits something, it's Lunar; if it tells you something, or a pattern of stars works for you, it's Navigation. Locate Creature and Storm Navigator moved to Navigation.
 - **Navigation, Tempest, and Water:** Tempest raises the storm and Water is the sea itself; Navigation holds the course through both. Water Walk stays in Water, Wind Walk in Sky, and Phantom Steed in Shadow, and Tempest keeps Lightning Insight, because weather-sense is its own portfolio.
 - **Lunar and Shadow:** Lunar is Selûne’s moonlight, starfire, cycles, dreams, reflection, and celestial foresight. Shadow is Shar’s darkness, concealment, absence, and Shadow Weave. They remain separate; the model does not combine Light and Void as a twilight portfolio.
-- **Love and Providence:** Love is affection, beauty, attraction, devotion, empathy, and emotional bonds. Providence is protection, healing, endurance, hope, sacrifice, and liberation from debilitating bonds.
+- **Love and Providence:** Love is affection, beauty, attraction, devotion, empathy, and emotional bonds. Providence is endurance, hope, martyrdom, protection, and liberation from debilitating bonds.
 - **Love and Heart:** Love concerns relationships and emotional bonds between people. Heart concerns personal discipline expressed through martial forms, unarmed practice, weapon technique, and trained movement. A technique may channel Essence without being a spell.
 - **Heart and Shadow:** Netherdark Fist stays in Shadow because void and darkness define it, despite its martial delivery. Heart holds techniques whose defining identity is embodied martial discipline.
 - **Immortal paths:** Alchemy is a practice of refining and recombining substances, rather than a natural element or deity portfolio. Its alchemical spells remain with Alchemy. Heart holds Stone Fist I–V, scaling from a d4 to a d12, Radiant Vein Blade I–III, Heart Exchange, and other custom martial talents, along with True Strike as an exceptional strike cantrip; it has no leveled-spell list.
 - **Mysteries:** Mysteries covers what cannot be put into words: space folded, time pried loose, and the illusory made real. It holds teleportation and planar travel, extradimensional spaces, and time magic. Its Grandmaster technique, Fishing the Moon from the Well, draws a soul out of its reflection. Alchemy turns something into something else; Mysteries makes something from nothing, or moves it through space or time. Lunar keeps Selûne's real moon, dreams, and foresight, Navigation keeps travel by road and sea, and Sky keeps flight and Misty Step.
-- **Ruin:** Murder, assassination, pain, deception, and thievery are deliberate forms of destruction and belong together. Loviatar’s pain abilities were moved here; there is no standalone Pain path.
+- **Ruin:** Murder and assassination (Bhaal), pain (Loviatar), and strife (Cyric) are deliberate forms of destruction and belong together. Loviatar’s pain abilities were moved here; there is no standalone Pain path.
 - **Ruin, Crypt, and Tyranny:** The Dead Three won Jergal's power in a game of knucklebones (*Faiths & Avatars*, pp. 36–37). Bane took hatred, strife, and tyranny, Myrkul took rule over the dead, and Bhaal took death itself, later narrowed to murder. Ruin is the kill. Crypt is what comes after: corpses, bones, the dead who serve, decay, old age, and exhaustion. Tyranny is rule by fear and one iron will.
 - **Crypt and Wisdom:** Crypt works on the body: Speak with Dead stays in Crypt because it animates the corpse, not the soul. Wisdom works on what a mind holds: Echoes of the Departed gives a dead creature's memory a voice. When a spell does both, its result decides.
+- **Wisdom's facets:** memory (what has happened), names (what a thing is, oaths and titles), knowledge (skills, lore, and learned spells, taken from what the cultivator has seen), and thoughts and deduction (reading minds and the next move).
+- **Mysteries and Ruin:** Mage Hand is Mysteries, as space moved at a distance; Ruin keeps no utility cantrip.
 - **Wisdom and Mysteries:** Mysteries is what cannot be put into words; Wisdom is what has been. Lunar keeps the future and Wisdom the past. Names show what a thing is; they don't grant control over it.
 - **Tyranny and Love:** Love keeps its domination spells, because Love binds through desire and Tyranny through fear and will. While Tyranny is sealed, it takes no spells from player paths.
 - **Lunar and Alchemy:** Lunar holds lycanthropy as Selûne's gift to good and neutral lycanthropes: wolf-kin hybrid forms such as Moonbound Form and Selûne's Pack, with Aspect of the Wolf and Potency of the Pack. Alchemy keeps general animal shaping by craft, such as Animal Shapes and Polymorph.
@@ -81,8 +122,8 @@ The archived sixteen-path source remains under [`data/cultivation/archive/v2.2/`
 
 ## Balance and implementation
 
-The current roster has 258 custom talents (177 active, 81 passive), 51 cantrips, and 462 leveled spells, for 771 total entries. Its path totals range from 24 to 50 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
+The current roster has 292 custom talents (211 active, 81 passive), 51 cantrips, and 462 leveled spells, for 805 total entries. Its path totals range from 24 to 58 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
 
-About half of a path's abilities can answer its domain: weaker ones gain a one-line Domain Expansion there, and a few Grandmaster or higher techniques work only there. Spells and cantrips are never domain-bound. Undertow is the first path built this way; the reasoning, rules, and modifier catalogue are in [`domain-expansion-design.md`](domain-expansion-design.md).
+At least 40% of a path's techniques below Grandmaster answer its domain: weaker ones gain a one-line Domain Expansion there. In every family, the strongest one or two Grandmaster or higher techniques work only there, and are strong enough to be worth that limit. Spells and cantrips never get a domain line. Undertow was the first path built this way; the reasoning, rules, and modifier catalogue are in [`domain-expansion-design.md`](domain-expansion-design.md).
 
 Source Markdown lives in `data/cultivation/v2/`; `scripts/generate-cultivation.js` enforces unique IDs and one owner per spell/cantrip. Spellcasting paths require cantrips and leveled spells; Heart is a martial-discipline path with True Strike as its only cantrip and no leveled spells. Path labels, families, colors, and descriptions live in `src/types/cultivation.ts`; the family keeps the internal ID `human` for Immortal so saved builds keep loading. The `/v2` page uses a separate local-save key and reconciles older V2.3 selections by stable ability IDs.

@@ -70,11 +70,11 @@ isCantrip: false
 author: Selûne
 location: Leatrux
 domain: expansion
-domainText: You can target one more creature.
+domainText: The mark lasts 8 hours.
 activation: action
 ```
 
-As an action, you set a tiny star circling a creature you can see within 60 feet. It makes a Constitution saving throw against your essence ability save DC. On a failure, it sheds dim light in a 5-foot radius and can't benefit from the Invisible condition until the end of its next turn. The star then rises into the sky and marks the creature for 24 hours: while you're on the same plane, you know the direction and distance to it. Using this again ends any earlier mark.
+As an action, you set a tiny star circling a creature you can see within 60 feet. It makes a Constitution saving throw against your essence ability save DC. On a failure, the star rises into the sky and marks the creature for 4 hours: while it's within 10 miles of you, you know the direction to it. Using this again ends any earlier mark.
 
 ---
 
@@ -97,7 +97,7 @@ activation: attack
 oncePerTurn: true
 ```
 
-When you take the Attack action, you can replace one attack with a shooting star: make a ranged spell attack against a creature within 120 feet, ignoring half and three-quarters cover. On a hit, it takes 4d6 radiant damage, and the star's trail hangs in the air until the start of your next turn. While it does, attack rolls against the target ignore half and three-quarters cover, and the target can't benefit from the Invisible condition.
+When you take the Attack action, you can replace one ranged weapon attack with a shooting star: make a ranged spell attack against a creature within 120 feet. The star curves around anything in its way, so the attack ignores half and three-quarters cover, and even total cover if there's an open path to the target within range. On a hit, it takes 4d6 radiant damage.
 
 ---
 
@@ -119,7 +119,7 @@ As a bonus action, you read the safest course and move up to your speed. This mo
 
 ---
 
-### Hold the Course
+### Polestar
 
 ```yaml
 id: navigation_adept_hold_the_course
@@ -132,7 +132,7 @@ author: Selûne
 location: Leatrux
 ```
 
-You can't become lost, even by magic. You have advantage on saving throws against being pushed, pulled, teleported, or forced to move in a direction you didn't choose.
+Like the one star that never moves, you hold your place. You have advantage on saving throws against being pushed, pulled, teleported, banished, or otherwise moved against your will.
 
 ---
 
@@ -173,7 +173,7 @@ location: Leatrux
 activation: action
 ```
 
-As an action, you lay a 10-foot-wide road of starlight from a point within 30 feet, running up to 120 feet in a straight line, level or sloping up to 45 degrees. It lasts 10 minutes. You and your allies can walk on it, and it bears any weight, so a ship can sail it and a wagon can roll along it. Other creatures and objects pass through it.
+As an action, you lay a 10-foot-wide road of starlight from a point within 30 feet, running up to 120 feet in a straight line, level or sloping up to 45 degrees. It hangs in the air without support and lasts 10 minutes. You and your allies can walk on it, and it bears any weight, so a ship can sail it and a wagon can roll along it. Other creatures and objects pass through it.
 
 ---
 

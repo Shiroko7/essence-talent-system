@@ -11,6 +11,7 @@ export const ruinAbilities = [
     author: "Bhaal / Portfolio (Murder)",
     location: "Leatrux",
     activation: "action",
+    facets: ["murder"],
   },
   {
     id: "ruin_initiate_blood_scent",
@@ -25,6 +26,7 @@ export const ruinAbilities = [
     location: "Leatrux",
     domain: "expansion",
     domainText: "Its extra damage die is a d6.",
+    facets: ["murder"],
   },
   {
     id: "ruin_initiate_bhaal_s_tribute",
@@ -38,6 +40,7 @@ export const ruinAbilities = [
     author: "Bhaal / Portfolio (Murder)",
     location: "Leatrux",
     ritual: true,
+    facets: ["murder"],
   },
   {
     id: "ruin_adept_mark_for_death",
@@ -54,6 +57,7 @@ export const ruinAbilities = [
     concentration: true,
     domain: "restore",
     domainText: "It doesn't require concentration.",
+    facets: ["murder"],
   },
   {
     id: "ruin_master_mass_inflict_wounds",
@@ -67,6 +71,7 @@ export const ruinAbilities = [
     author: "Bhaal / Portfolio (Murder)",
     location: "Leatrux",
     activation: "action",
+    facets: ["murder"],
   },
   {
     id: "ruin_grandmaster_mark_of_doom",
@@ -81,6 +86,7 @@ export const ruinAbilities = [
     location: "Leatrux",
     activation: "bonus action",
     domain: "bound",
+    facets: ["murder"],
   },
   {
     id: "torment_initiate_whips_kiss",
@@ -97,6 +103,7 @@ export const ruinAbilities = [
     oncePerTurn: true,
     domain: "expansion",
     domainText: "It deals extra damage equal to your PB.",
+    facets: ["pain"],
   },
   {
     id: "fire_initiate_heart_crusher_grip",
@@ -112,6 +119,7 @@ export const ruinAbilities = [
     activation: "action",
     domain: "expansion",
     domainText: "Its range is 60 feet.",
+    facets: ["murder"],
   },
   {
     id: "fire_adept_frightful_pursuit",
@@ -124,6 +132,7 @@ export const ruinAbilities = [
     isCantrip: false,
     author: "Cyric",
     location: "Leatrux",
+    facets: ["strife"],
   },
   {
     id: "torment_adept_blood_tithe",
@@ -138,6 +147,7 @@ export const ruinAbilities = [
     location: "Leatrux",
     domain: "restore",
     domainText: "You gain temporary hit points equal to your character level instead.",
+    facets: ["pain"],
   },
   {
     id: "torment_master_crown_of_agony",
@@ -151,6 +161,7 @@ export const ruinAbilities = [
     author: "Maiden of Pain (Loviatar)",
     location: "Leatrux",
     activation: "bonus action",
+    facets: ["pain"],
   },
   {
     id: "ruin_adept_assassins_shroud",
@@ -166,6 +177,7 @@ export const ruinAbilities = [
     activation: "bonus action",
     domain: "expansion",
     domainText: "The extra damage is 3d6 instead of 2d6.",
+    facets: ["murder"],
   },
   {
     id: "fire_initiate_searing_gaze",
@@ -181,6 +193,7 @@ export const ruinAbilities = [
     activation: "bonus action",
     domain: "expansion",
     domainText: "You have advantage on the Intimidation check.",
+    facets: ["strife"],
   },
   {
     id: "fire_adept_blazing_presence",
@@ -196,6 +209,7 @@ export const ruinAbilities = [
     activation: "action",
     domain: "expansion",
     domainText: "Its save DC is 2 higher.",
+    facets: ["strife"],
   }
 ];
 
@@ -211,18 +225,7 @@ export const ruinCantrips = [
     isCantrip: true,
     author: "Enchantment / Psionic",
     activation: "action",
-  },
-  {
-    id: "v2_mystery_mage_hand",
-    name: "Mage Hand",
-    description: "A spectral hand within 30 feet manipulates objects up to 10 pounds for 1 minute.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mage%20hand_phb).",
-    tier: "cantrip",
-    isActive: false,
-    isPassive: false,
-    isSpell: false,
-    isCantrip: true,
-    author: "D&D 5e (PHB)",
-    activation: "action",
+    facets: ["strife"],
   }
 ];
 
@@ -239,6 +242,7 @@ export const ruinSpells = [
     author: "Blackstaff's Book of 1000 Spells",
     activation: "action",
     concentration: true,
+    facets: ["murder"],
   },
   {
     id: "ruin_3rd_vampiric_touch",
@@ -252,6 +256,7 @@ export const ruinSpells = [
     author: "Cleric (Death Domain) / Necromancy",
     activation: "action",
     concentration: true,
+    facets: ["murder"],
   },
   {
     id: "v2_ruin_assassins_promise",
@@ -264,6 +269,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "The Compendium of Forgotten Secrets: Awakening",
     activation: "action",
+    facets: ["murder"],
   },
   {
     id: "ruin_1st_hunters_mark",
@@ -277,6 +283,7 @@ export const ruinSpells = [
     author: "Paladin (Oath of Vengeance)",
     activation: "bonus action",
     concentration: true,
+    facets: ["murder"],
   },
   {
     id: "ruin_9th_power_word_kill",
@@ -289,6 +296,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "Enchantment / Death",
     activation: "action",
+    facets: ["murder"],
   },
   {
     id: "torment_1st_inflict_wounds",
@@ -301,6 +309,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "Cleric / Necromancy",
     activation: "action",
+    facets: ["murder"],
   },
   {
     id: "torment_6th_harm",
@@ -313,6 +322,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "Cleric / Necromancy",
     activation: "action",
+    facets: ["murder"],
   },
   {
     id: "v2_moon_mislead",
@@ -326,6 +336,7 @@ export const ruinSpells = [
     author: "D&D 5e (PHB)",
     activation: "action",
     concentration: true,
+    facets: ["strife"],
   },
   {
     id: "v2_moon_seeming",
@@ -338,6 +349,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB)",
     activation: "action",
+    facets: ["strife"],
   },
   {
     id: "torment_7th_power_word_pain",
@@ -350,6 +362,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "Enchantment / Pure Agony",
     activation: "action",
+    facets: ["pain"],
   },
   {
     id: "fire_1st_level_hellish_rebuke",
@@ -362,6 +375,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     activation: "reaction",
+    facets: ["pain"],
   },
   {
     id: "wood_5th_level_antilife_shell",
@@ -375,6 +389,7 @@ export const ruinSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["murder"],
   },
   {
     id: "acid_5th_level_synaptic_static",
@@ -387,6 +402,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     activation: "action",
+    facets: ["strife"],
   },
   {
     id: "v2_ruin_power_word_stun",
@@ -399,6 +415,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     activation: "action",
+    facets: ["strife"],
   },
   {
     id: "v2_ruin_glibness",
@@ -411,6 +428,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     activation: "action",
+    facets: ["strife"],
   },
   {
     id: "v2_ruin_psychic_scream",
@@ -423,6 +441,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "D&D 5e (XGE)",
     activation: "action",
+    facets: ["strife"],
   },
   {
     id: "v2_ruin_power_word_maim",
@@ -435,6 +454,7 @@ export const ruinSpells = [
     isCantrip: false,
     author: "Grim Hollow Player's Guide",
     activation: "action",
+    facets: ["pain"],
   },
   {
     id: "v2_ruin_dread_curse_of_azathoth",
@@ -448,6 +468,7 @@ export const ruinSpells = [
     author: "Cthulhu by Torchlight",
     activation: "bonus action",
     concentration: true,
+    facets: ["murder"],
   },
   {
     id: "v2_ruin_doom_of_false_friends",
@@ -461,6 +482,7 @@ export const ruinSpells = [
     author: "Kobold Press Book of Ebon Tides",
     activation: "action",
     concentration: true,
+    facets: ["strife"],
   },
   {
     id: "v2_ruin_wipe_face",
@@ -474,6 +496,7 @@ export const ruinSpells = [
     author: "Grim Hollow Player's Guide",
     activation: "action",
     concentration: true,
+    facets: ["murder"],
   },
   {
     id: "v2_ruin_wave_of_oblivion",
@@ -486,5 +509,8 @@ export const ruinSpells = [
     isCantrip: false,
     author: "Cthulhu by Torchlight",
     activation: "action",
+    facets: ["murder"],
   }
 ];
+
+export const ruinFacets = [{"id":"murder","label":"Murder"},{"id":"pain","label":"Pain"},{"id":"strife","label":"Strife"}];

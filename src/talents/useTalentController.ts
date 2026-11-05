@@ -4,7 +4,15 @@ import useEssenceAllocation from '../hooks/useEssenceAllocation';
 import { useCultivationAllocation } from '../hooks/useCultivationAllocation';
 import { importEssenceData } from '../utils/essenceData';
 import { importCultivationData } from '../utils/cultivationData';
-import { calculatePathEssenceStatus, reconcileCultivationCharacter, settleRetieredTalents } from '../utils/cultivationUtils';
+import {
+  abilityPointCost,
+  calculatePathEssenceStatus,
+  calculateTotalPointsSpent,
+  isReplacedStage,
+  missingPreviousStage,
+  reconcileCultivationCharacter,
+  settleRetieredTalents
+} from '../utils/cultivationUtils';
 import { CultivationCharacter } from '../types/cultivation';
 import { MigrationSource, planV1Migration, readMigrationSource, readV1Save, writeMigrationSource } from './migration';
 import {
@@ -379,7 +387,14 @@ function useControllerFromAllocation<C extends CharacterLike>(
   }, [system]);
 
   const pathById = useMemo(() => new Map(system.paths.map(p => [p.id, p])), [system]);
+  const allAbilities = useMemo(() => Object.values(system.abilitiesByPath).flat(), [system]);
   const pointsLeft = totalEssencePoints - totalPointsSpent;
+  /** What learning it adds to the build: a later passive stage frees the one before it. */
+  const learnCost = (ability: Ability) =>
+    calculateTotalPointsSpent([...character.selectedAbilities, ability.id], allAbilities)
+    - calculateTotalPointsSpent(character.selectedAbilities, allAbilities);
+  const previousStage = (ability: Ability, pathId: string) =>
+    missingPreviousStage(ability, character.selectedAbilities, system.abilitiesByPath[pathId] || []);
 
   const tierUnlocked = useCallback((tierId: typeof TIER_IDS[number], pathId: string) =>
     !pathById.get(pathId)?.locked &&
@@ -388,14 +403,17 @@ function useControllerFromAllocation<C extends CharacterLike>(
 
   const statusOf = (ability: Ability, pathId: string): AbilityStatus => {
     if (selectedSet.has(ability.id)) return 'learned';
-    if (!tierUnlocked(tierOf(ability), pathId)) return 'locked';
-    if (costOf(ability) > pointsLeft) return 'unaffordable';
+    if (!tierUnlocked(tierOf(ability), pathId) || previousStage(ability, pathId)) return 'locked';
+    if (learnCost(ability) > pointsLeft) return 'unaffordable';
     return 'available';
   };
 
   const lockReason = (ability: Ability, pathId: string) => {
     const tierId = tierOf(ability);
-    if (tierUnlocked(tierId, pathId)) return null;
+    if (tierUnlocked(tierId, pathId)) {
+      const previous = previousStage(ability, pathId);
+      return previous ? `Learn ${previous.name} first` : null;
+    }
     const path = pathById.get(pathId);
     if (path?.locked) return `${path.name} is sealed: it opens when it unlocks in the campaign`;
     const tier = tierInfo(tierId);
@@ -411,7 +429,7 @@ function useControllerFromAllocation<C extends CharacterLike>(
       return;
     }
     if (status === 'unaffordable') {
-      setNotice(`Not enough essence points for ${ability.name} (costs ${costOf(ability)}, ${pointsLeft} left).`);
+      setNotice(`Not enough essence points for ${ability.name} (costs ${learnCost(ability)}, ${pointsLeft} left).`);
       return;
     }
     allocation.toggleAbility(ability, pathId as never);
@@ -470,6 +488,8 @@ function useControllerFromAllocation<C extends CharacterLike>(
     toggle,
     statusOf,
     lockReason,
+    pointCostOf: ability => abilityPointCost(ability, character.selectedAbilities, allAbilities),
+    isReplaced: ability => isReplacedStage(ability, character.selectedAbilities, allAbilities),
     tierUnlocked,
     pools: allPools.filter(p => p.paths.some(path => learnedSet.has(path.id))),
     poolOf,

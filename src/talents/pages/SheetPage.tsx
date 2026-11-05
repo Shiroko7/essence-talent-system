@@ -26,6 +26,7 @@ const AbilityEntry: React.FC<{
   ctl: TalentController; ability: Ability; path: SystemPath; open: boolean; onToggle: () => void; searchTerm: string;
 }> = ({ ctl, ability, path, open, onToggle, searchTerm }) => {
   const cost = costOf(ability);
+  const held = ctl.pointCostOf(ability);
   return (
     <article className="rounded-lg border break-inside-avoid" style={{ borderColor: tint(path.accent, 0.22), background: 'rgba(12,12,18,0.6)' }}>
       <div className="flex items-center gap-3 p-3">
@@ -37,7 +38,7 @@ const AbilityEntry: React.FC<{
               <KindTag ability={ability} compact />
               <ActivationTags ability={ability} compact />
               <span className="text-[11px] text-mist">
-                {reservesEssence(ability) ? `Holds ${cost} essence` : `Costs ${cost} to use`}
+                {!reservesEssence(ability) ? `Costs ${cost} to use` : held ? `Holds ${held} essence` : 'Holds nothing: a later stage holds it'}
               </span>
             </span>
           </span>
@@ -72,7 +73,8 @@ const SheetPage: React.FC<{ ctl: TalentController }> = ({ ctl }) => {
   const [search, setSearch] = useState('');
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
 
-  const learnedIn = (pathId: string) => (system.abilitiesByPath[pathId] || []).filter(a => ctl.isLearned(a.id));
+  // A stage that a higher learned stage replaces repeats it with a smaller number, so the sheet leaves it out.
+  const learnedIn = (pathId: string) => (system.abilitiesByPath[pathId] || []).filter(a => ctl.isLearned(a.id) && !ctl.isReplaced(a));
   const visibleIn = (pathId: string) => learnedIn(pathId).filter(a => matchesKind(a, kind) && matchesSearch(a, search));
   // Like the talent tree's default, lead with the furthest path: families
   // follow their furthest path, and paths within a family are ranked the same way.

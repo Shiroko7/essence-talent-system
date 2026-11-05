@@ -424,3 +424,5 @@ export const tyrannySpells = [
     concentration: true,
   }
 ];
+
+export const tyrannyFacets = [];

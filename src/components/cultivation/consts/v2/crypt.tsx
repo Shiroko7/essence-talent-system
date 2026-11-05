@@ -46,7 +46,7 @@ export const cryptAbilities = [
   {
     id: "crypt_adept_ossuary_cage",
     name: "Ossuary Cage",
-    description: "As an action, ribs and long bones burst from the ground around a Large or smaller creature you can see within 60 feet. It makes a Dexterity saving throw against your essence ability save DC. On a failure, it is restrained inside the cage for 1 minute, and the bones grind into it for 2d10 piercing damage at the start of each of its turns while it stays caged.\n\nAs an action, a caged creature or a creature next to the cage can make a Strength (Athletics) check against your essence ability save DC, breaking the cage on a success.",
+    description: "As an action, ribs and long bones burst from the ground around a Large or smaller creature you can see within 60 feet. It makes a Dexterity saving throw against your essence ability save DC. On a failure, it is restrained inside the cage for up to 1 minute, and the bones grind into it for 2d10 piercing damage at the start of each of its turns while it stays caged.\n\nA creature in or next to the cage can take an action to break it, making a Strength (Athletics) check against your essence ability save DC.",
     tier: "adept",
     isActive: true,
     isPassive: false,
@@ -55,8 +55,9 @@ export const cryptAbilities = [
     author: "Song Tae-un",
     location: "Sirius",
     activation: "action",
-    domain: "expansion",
-    domainText: "The cage fills a 10-foot cube instead, and each creature in it makes the saving throw.",
+    concentration: true,
+    domain: "restore",
+    domainText: "It doesn't require concentration.",
   },
   {
     id: "crypt_adept_claim_the_fallen",
@@ -460,3 +461,5 @@ export const cryptSpells = [
     activation: "action",
   }
 ];
+
+export const cryptFacets = [];

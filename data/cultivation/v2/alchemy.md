@@ -2,12 +2,14 @@
 
 Tradition: Immortal
 Concept: The transformation, refinement, and recombination of substances.
+Facets: Acid, Medicine, Poison, Explosives, Mutation
 
 ### Caustic Bomb
 
 ```yaml
 id: acid_initiate_caustic_bomb
 tier: initiate
+facets: explosives, acid
 isActive: true
 isPassive: false
 isSpell: false
@@ -15,6 +17,8 @@ isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
 activation: action
+domain: expansion
+domainText: You choose which creatures in the area it affects.
 ```
 
 As an action, you can create a powerful, improvised explosive from available materials. Each creature in a 10-foot radius must make a Dexterity saving throw, taking 4d6 acid damage on a failed save, or half as much on a successful save.
@@ -26,6 +30,7 @@ As an action, you can create a powerful, improvised explosive from available mat
 ```yaml
 id: acid_initiate_acidic_insight
 tier: initiate
+facets: acid
 isActive: false
 isPassive: true
 isSpell: false
@@ -43,6 +48,7 @@ You have developed a keen understanding of acidic substances and their effects. 
 ```yaml
 id: acid_initiate_alchemy_proficiency
 tier: initiate
+facets: acid, medicine
 isActive: false
 isPassive: true
 isSpell: false
@@ -59,7 +65,8 @@ Gain proficiency in Alchemist’s Supplies. You can craft basic alchemical subst
 
 ```yaml
 id: acid_adept_explosive_savant
-tier: adept
+tier: master
+facets: explosives
 isActive: false
 isPassive: true
 isSpell: false
@@ -77,6 +84,7 @@ When you use an explosive device or alchemical flask, its damage increases by an
 ```yaml
 id: acid_adept_expanded_explosion
 tier: adept
+facets: explosives
 isActive: false
 isPassive: true
 isSpell: false
@@ -94,6 +102,7 @@ Your expertise in crafting explosives has improved the effectiveness of your bom
 ```yaml
 id: acid_adept_miasmic_cloud
 tier: adept
+facets: acid
 isActive: true
 isPassive: false
 isSpell: false
@@ -101,6 +110,8 @@ isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
 activation: action
+domain: expansion
+domainText: Its radius is 20 feet.
 ```
 
 You can create a cloud of acidic mist in a 10-foot radius around you. Any creature that starts its turn within the cloud must make a Constitution saving throw or take 6d6 acid damage and be blinded until the end of its next turn.
@@ -112,6 +123,7 @@ You can create a cloud of acidic mist in a 10-foot radius around you. Any creatu
 ```yaml
 id: acid_adept_acidic_embrace
 tier: adept
+facets: acid
 isActive: true
 isPassive: false
 isSpell: false
@@ -119,6 +131,8 @@ isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
 activation: bonus action
+domain: expansion
+domainText: If you're wielding two weapons, it coats both.
 ```
 
 You can magically coat a weapon or object in a layer of corrosive acid. The weapon deals an additional 2d4 acid damage on a successful hit, and the object corrodes any non-magical material it touches. This effect lasts for 1 minute.
@@ -130,6 +144,7 @@ You can magically coat a weapon or object in a layer of corrosive acid. The weap
 ```yaml
 id: poison_adept_enhanced_mutagen
 tier: adept
+facets: mutation
 isActive: true
 isPassive: false
 isSpell: false
@@ -148,6 +163,7 @@ As a bonus action, when you drink a mutagen, you gain a +2 bonus to Strength for
 ```yaml
 id: poison_adept_enhanced_mutagen_dexterity
 tier: adept
+facets: mutation
 isActive: true
 isPassive: false
 isSpell: false
@@ -166,6 +182,7 @@ As a bonus action, when you drink a mutagen, you gain a +2 bonus to Dexterity fo
 ```yaml
 id: poison_adept_enhanced_mutagen_constitution
 tier: adept
+facets: mutation
 isActive: true
 isPassive: false
 isSpell: false
@@ -184,6 +201,7 @@ As a bonus action, when you drink a mutagen, you gain a +2 bonus to Constitution
 ```yaml
 id: poison_adept_enhanced_mutagen_intelligence
 tier: adept
+facets: mutation
 isActive: true
 isPassive: false
 isSpell: false
@@ -202,6 +220,7 @@ As a bonus action, when you drink a mutagen, you gain a +2 bonus to Intelligence
 ```yaml
 id: poison_adept_enhanced_mutagen_wisdom
 tier: adept
+facets: mutation
 isActive: true
 isPassive: false
 isSpell: false
@@ -220,6 +239,7 @@ As a bonus action, when you drink a mutagen, you gain a +2 bonus to Wisdom for 1
 ```yaml
 id: poison_adept_enhanced_mutagen_charisma
 tier: adept
+facets: mutation
 isActive: true
 isPassive: false
 isSpell: false
@@ -237,7 +257,8 @@ As a bonus action, when you drink a mutagen, you gain a +2 bonus to Charisma for
 
 ```yaml
 id: acid_adept_chemical_expertise
-tier: adept
+tier: master
+facets: acid, explosives
 isActive: false
 isPassive: true
 isSpell: false
@@ -257,6 +278,7 @@ You can create more advanced alchemical mixtures, such as potent acid flasks or 
 ```yaml
 id: acid_cantrip_acid_splash
 tier: cantrip
+facets: acid
 isActive: false
 isPassive: false
 isSpell: false
@@ -277,6 +299,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#a
 ```yaml
 id: v2_alchemy_otilukes_acid_cloud
 tier: 3rd
+facets: acid
 isActive: false
 isPassive: false
 isSpell: true
@@ -297,6 +320,7 @@ Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tool
 ```yaml
 id: pestilence_9th_true_polymorph
 tier: 9th
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true
@@ -317,6 +341,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#t
 ```yaml
 id: metal_4th_level_fabricate
 tier: 4th
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true
@@ -334,6 +359,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#f
 ```yaml
 id: water_1st_level_grease
 tier: 1st
+facets: acid
 isActive: false
 isPassive: false
 isSpell: true
@@ -352,6 +378,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 ```yaml
 id: acid_cantrip_primal_savagery
 tier: cantrip
+facets: mutation, acid
 isActive: false
 isPassive: false
 isSpell: false
@@ -372,6 +399,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#primal
 ```yaml
 id: v2_alchemy_mending
 tier: cantrip
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: false
@@ -390,6 +418,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mending_
 ```yaml
 id: v2_alchemy_tasha_s_caustic_brew
 tier: 1st
+facets: acid
 isActive: false
 isPassive: false
 isSpell: true
@@ -410,6 +439,7 @@ Source reference: [D&D 5e TCE on 5e.tools](https://5e.tools/spells.html#tasha's%
 ```yaml
 id: v2_alchemy_acid_arrow
 tier: 2nd
+facets: acid
 isActive: false
 isPassive: false
 isSpell: true
@@ -429,6 +459,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#melf's%2
 ```yaml
 id: v2_alchemy_vitriolic_sphere
 tier: 4th
+facets: acid
 isActive: false
 isPassive: false
 isSpell: true
@@ -448,6 +479,7 @@ Source reference: [D&D 5e XGE on 5e.tools](https://5e.tools/spells.html#vitrioli
 ```yaml
 id: poison_initiate_quickening_draught
 tier: initiate
+facets: medicine
 isActive: true
 isPassive: false
 isSpell: false
@@ -455,6 +487,8 @@ isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
 activation: bonus action
+domain: expansion
+domainText: Your speed increases by 20 feet instead.
 ```
 
 As a bonus action, by drinking a specially prepared potion, you gain an additional 10 feet of movement speed for 10 minutes.
@@ -466,6 +500,9 @@ As a bonus action, by drinking a specially prepared potion, you gain an addition
 ```yaml
 id: poison_initiate_vital_essence_sublimation_i
 tier: initiate
+series: vital_essence_sublimation
+stages: add
+facets: mutation
 isActive: false
 isPassive: true
 isSpell: false
@@ -495,6 +532,7 @@ You can hold only one distilled essence at a time. Distilled potions do not expi
 ```yaml
 id: poison_initiate_herbalists_knowledge
 tier: initiate
+facets: medicine, poison
 isActive: false
 isPassive: true
 isSpell: false
@@ -514,6 +552,9 @@ You gain proficiency with the Medicine skill and advantage on checks to identify
 ```yaml
 id: poison_adept_vital_essence_sublimation_ii
 tier: adept
+series: vital_essence_sublimation
+stages: add
+facets: mutation
 isActive: false
 isPassive: true
 isSpell: false
@@ -540,6 +581,9 @@ Your distillation technique improves, reducing failure rates and expanding capac
 ```yaml
 id: poison_master_vital_essence_sublimation_iii
 tier: master
+series: vital_essence_sublimation
+stages: add
+facets: mutation
 isActive: false
 isPassive: true
 isSpell: false
@@ -581,6 +625,7 @@ If the creature dies from the triggering damage, the extraction costs no essence
 ```yaml
 id: acid_master_erosion_of_being
 tier: master
+facets: acid
 isActive: true
 isPassive: false
 isSpell: false
@@ -588,6 +633,8 @@ isCantrip: false
 author: Shadow Sect
 location: Sirius
 activation: action
+domain: expansion
+domainText: It deals 8d8 acid damage instead of 6d8.
 ```
 
 As an action, target a creature within 60 feet to make a Constitution saving throw, taking 6d8 acid damage on a failed save or half as much on a success.
@@ -602,7 +649,8 @@ At the end of each turn while banished, the creature takes 2d8 acid damage and c
 
 ```yaml
 id: acid_initiate_acidic_precision
-tier: initiate
+tier: adept
+facets: acid
 isActive: false
 isPassive: true
 isSpell: false
@@ -622,7 +670,8 @@ Your expertise with corrosive substances has honed your skill in turning everyda
 
 ```yaml
 id: acid_adept_extended_reach
-tier: adept
+tier: initiate
+facets: explosives
 isActive: false
 isPassive: true
 isSpell: false
@@ -643,6 +692,7 @@ Your skill with explosive devices allows you to strike from farther away. When y
 ```yaml
 id: acid_seven_color_elixir
 tier: master
+facets: medicine
 isActive: true
 isPassive: false
 isSpell: false
@@ -669,6 +719,7 @@ As a bonus action, you drink one of your seven elixirs and roll 1d8 to determine
 ```yaml
 id: poison_initiate_strength_booster
 tier: initiate
+facets: mutation
 isActive: true
 isPassive: false
 isSpell: false
@@ -676,6 +727,8 @@ isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
 activation: bonus action
+domain: expansion
+domainText: The bonus is a d6 instead.
 ```
 
 As a bonus action, you can drink a mutagen to gain a 1d4 bonus to strength based ability checks for 10 minutes.
@@ -687,6 +740,7 @@ As a bonus action, you can drink a mutagen to gain a 1d4 bonus to strength based
 ```yaml
 id: poison_initiate_enchanting_perfume
 tier: initiate
+facets: medicine
 isActive: true
 isPassive: false
 isSpell: false
@@ -694,6 +748,8 @@ isCantrip: false
 author: Espora Tribe
 location: Phudara / Isle of Whispers
 activation: action
+domain: expansion
+domainText: One ally within 30 feet also gains the benefit.
 ```
 
 As an action, you can apply a specially crafted perfume that enhances your charm and charisma. For the next hour, you gain a 1d4 bonus to Charisma (Persuasion) and Charisma (Deception) checks.
@@ -705,6 +761,7 @@ As an action, you can apply a specially crafted perfume that enhances your charm
 ```yaml
 id: poison_adept_pill_of_focus
 tier: adept
+facets: medicine
 isActive: true
 isPassive: false
 isSpell: false
@@ -718,11 +775,196 @@ As a bonus action, you can consume a pill to gain advantage on concentration che
 
 ---
 
+### Lethargy Draught
+
+```yaml
+id: alchemy_adept_lethargy_draught
+tier: adept
+facets: poison
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+domain: expansion
+domainText: It falls unconscious for 10 minutes instead.
+activation: action
+```
+
+As an action, you throw a needle tipped with a lethargy draught at a creature you can see within 30 feet. It makes a Constitution saving throw against your essence ability save DC. On a failure, its speed is halved and it can't take reactions until the end of its next turn, when it repeats the saving throw. If it fails again, it falls unconscious for 1 minute, until it takes damage, or until another creature uses an action to shake it awake. A creature immune to poison is unaffected.
+
+---
+
+### Mindfog
+
+```yaml
+id: alchemy_master_mindfog
+tier: master
+facets: poison
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+activation: action
+```
+
+As an action, you break a vial of mindfog into a 15-foot-radius cloud centered on a point you can see within 60 feet. Each creature there that breathes makes a Constitution saving throw against your essence ability save DC. On a failure, it loses concentration and can't concentrate until the end of its next turn. A creature immune to poison is unaffected.
+
+---
+
+### Purple Worm Extract
+
+```yaml
+id: alchemy_master_purple_worm_extract
+tier: master
+facets: poison
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+activation: action
+```
+
+As an action, you make a melee spell attack against a creature within your reach with a stinger dipped in purple worm extract. On a hit, it takes 3d6 piercing damage and makes a Constitution saving throw against your essence ability save DC. On a failure, it takes 6d6 poison damage and is poisoned for 1 minute. On a success, it takes half as much poison damage only.
+
+---
+
+### Claw Graft
+
+```yaml
+id: alchemy_initiate_claw_graft
+tier: initiate
+facets: mutation
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+activation: bonus action
+domain: expansion
+domainText: Its damage dice are d10s.
+```
+
+As a bonus action, you rewrite the flesh of your hands, and they split into hooked claws. For 1 minute, your unarmed strikes deal 1d8 slashing damage, and you can climb at your full speed.
+
+---
+
+### Tentacle Graft
+
+```yaml
+id: alchemy_adept_tentacle_graft
+tier: adept
+facets: mutation
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+activation: bonus action
+domain: expansion
+domainText: The escape DC is 2 higher.
+```
+
+As a bonus action, you unknot your arms into long, muscled tentacles. For 1 minute, your reach for unarmed strikes and grapples is 15 feet, and you can grapple up to two creatures at once.
+
+---
+
+### Wing Graft
+
+```yaml
+id: alchemy_master_wing_graft
+tier: master
+facets: mutation
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+domain: expansion
+domainText: It lasts 10 minutes instead.
+activation: bonus action
+```
+
+As a bonus action, you rewrite your shoulders, and a pair of leathery wings tears free of your back. For 1 minute, you have a flying speed equal to your walking speed.
+
+---
+
+### Nightshade Tincture
+
+```yaml
+id: alchemy_adept_nightshade_tincture
+tier: adept
+facets: poison
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+activation: action
+domain: expansion
+domainText: Its range is 60 feet.
+```
+
+As an action, you throw a vial of nightshade tincture that shatters on a creature you can see within 30 feet. It makes a Constitution saving throw against your essence ability save DC. On a failure, it takes 4d6 poison damage and is poisoned for 1 minute; it repeats the saving throw at the end of each of its turns, ending the poisoning on a success. On a success, it takes half as much damage only. A creature immune to poison is unaffected.
+
+---
+
+### Healing Bomb
+
+```yaml
+id: alchemy_adept_healing_bomb
+tier: adept
+facets: medicine
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+domain: expansion
+domainText: It restores an extra 2d8 hit points.
+activation: action
+```
+
+As an action, you throw a vial of healing elixir that bursts over a creature you can see within 60 feet, soaking into its wounds. It regains hit points equal to 3d8 + your essence ability modifier.
+
+---
+
+### Living Suture
+
+```yaml
+id: alchemy_master_living_suture
+tier: master
+facets: medicine
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Espora Tribe
+location: Phudara / Isle of Whispers
+domain: expansion
+domainText: The part can have been severed within the last 24 hours.
+```
+
+Over 1 minute, you bind a severed body part, such as a hand, a foot, an ear, or an eye, back onto the creature it came from with a living suture of alchemical tissue. You need both the creature and the part, and the part must have been severed within the last hour. When the minute ends, the part is reattached and works normally again.
+
+---
+
 ### Apex Toxinator
 
 ```yaml
 id: poison_master_essence_snake_horror
 tier: master
+facets: poison
 isActive: true
 isPassive: false
 isSpell: false
@@ -748,6 +990,7 @@ As an Action, through concentrated biochemical reagents and alchemical cultivati
 ```yaml
 id: acid_1st_level_chaos_bolt
 tier: 1st
+facets: explosives
 isActive: false
 isPassive: false
 isSpell: true
@@ -767,6 +1010,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#chaos%
 ```yaml
 id: acid_1st_level_chromatic_orb
 tier: 1st
+facets: acid, poison
 isActive: false
 isPassive: false
 isSpell: true
@@ -786,6 +1030,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: poison_2nd_level_enlarge_reduce
 tier: 2nd
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true
@@ -806,6 +1051,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#e
 ```yaml
 id: acid_6th_level_disintegrate
 tier: 6th
+facets: acid
 isActive: false
 isPassive: false
 isSpell: true
@@ -825,6 +1071,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 ```yaml
 id: wood_8th_level_animal_shapes
 tier: 8th
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true
@@ -844,6 +1091,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#a
 ```yaml
 id: providence_2nd_lesser_restoration
 tier: 2nd
+facets: medicine
 isActive: false
 isPassive: false
 isSpell: true
@@ -863,6 +1111,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#l
 ```yaml
 id: providence_5th_greater_restoration
 tier: 5th
+facets: medicine
 isActive: false
 isPassive: false
 isSpell: true
@@ -882,6 +1131,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 ```yaml
 id: v2_alchemy_create_magen
 tier: 7th
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true
@@ -900,6 +1150,7 @@ Source reference: [D&D 5e (IDRotF) on 5e.tools](https://5e.tools/spells.html#cre
 ```yaml
 id: v2_alchemy_clone
 tier: 8th
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true
@@ -918,6 +1169,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: v2_alchemy_detonate
 tier: 9th
+facets: explosives
 isActive: false
 isPassive: false
 isSpell: true
@@ -937,6 +1189,7 @@ Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spell
 ```yaml
 id: v2_alchemy_mass_polymorph
 tier: 9th
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true
@@ -957,6 +1210,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#mass%2
 ```yaml
 id: v2_alchemy_steal_immortality
 tier: 9th
+facets: mutation
 isActive: false
 isPassive: false
 isSpell: true

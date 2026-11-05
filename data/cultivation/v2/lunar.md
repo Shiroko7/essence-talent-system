@@ -2,12 +2,14 @@
 
 Tradition: Divine
 Concept: Selûne’s moon and stars themselves: moonlight, starfire, cycles, dreams, and celestial foresight.
+Facets: Moonlight, Stars, Visions, Lycanthropy
 
 ### Moonlit Verdant Beam
 
 ```yaml
 id: water_adept_moonlit_verdant_beam
 tier: adept
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -30,6 +32,7 @@ As an action, you fire a beam of toxic moonlight at a creature within 60 feet. M
 ```yaml
 id: water_master_lunar_tide
 tier: adept
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -48,6 +51,7 @@ As a reaction when you or creatures within 30 feet are subjected to a Dexterity 
 ```yaml
 id: water_master_moonfall_condemnation
 tier: grandmaster
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -72,6 +76,7 @@ If this damage reduces the target to 50 hit points or fewer, it must immediately
 ```yaml
 id: wind_master_essence_lunar_wind_spiral
 tier: grandmaster
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -101,6 +106,7 @@ You can use a bonus action on a subsequent turn to move the cylinder up to 30 fe
 ```yaml
 id: wind_master_essence_waning_moon_sabers
 tier: master
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -129,6 +135,7 @@ Make a ranged spell attack for each saber:
 ```yaml
 id: moon_1st_faerie_fire
 tier: 1st
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -149,6 +156,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#f
 ```yaml
 id: moon_2nd_moonbeam
 tier: 2nd
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -169,6 +177,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#m
 ```yaml
 id: moon_2nd_see_invisibility
 tier: 2nd
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -188,6 +197,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#s
 ```yaml
 id: v2_lunar_clairvoyance
 tier: 3rd
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -207,6 +217,7 @@ Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#clairv
 ```yaml
 id: moon_5th_alustriels_mooncloak
 tier: 5th
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -227,6 +238,7 @@ Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spel
 ```yaml
 id: moon_6th_true_seeing
 tier: 6th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -246,6 +258,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#t
 ```yaml
 id: v2_moon_dancing_lights
 tier: cantrip
+facets: stars
 isActive: false
 isPassive: false
 isSpell: false
@@ -266,6 +279,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#dancing%
 ```yaml
 id: moon_9th_foresight
 tier: 9th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -284,6 +298,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#f
 ```yaml
 id: moon_4th_divination
 tier: 4th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -304,6 +319,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 ```yaml
 id: moon_5th_dream
 tier: 5th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -323,6 +339,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 ```yaml
 id: metal_1st_level_arcane_aegis
 tier: 1st
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -341,6 +358,7 @@ Source reference: [Grim Hollow: Player's Guide (2024) on 5e.tools](https://5e.to
 ```yaml
 id: water_master_draconic_regeneration_emerald_moon
 tier: master
+facets: moonlight
 isActive: false
 isPassive: true
 isSpell: false
@@ -358,6 +376,7 @@ While under direct moonlight, you regain 1 hit point at the start of each of you
 ```yaml
 id: water_adept_rain_of_revelation
 tier: adept
+facets: visions
 isActive: true
 isPassive: false
 isSpell: false
@@ -381,6 +400,7 @@ You can summon a gentle, magical rain that grants clarity and insight to those w
 ```yaml
 id: acid_5th_level_magic_mirror
 tier: 5th
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -400,6 +420,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: acid_7th_level_prismatic_spray
 tier: 7th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -419,6 +440,7 @@ Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prisma
 ```yaml
 id: acid_9th_level_prismatic_wall
 tier: 9th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -438,6 +460,7 @@ Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prisma
 ```yaml
 id: v2_lunar_dream_of_the_blue_veil
 tier: 7th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -456,6 +479,7 @@ Source reference: [D&D 5e (TCE) on 5e.tools](https://5e.tools/spells.html#dream%
 ```yaml
 id: v2_lunar_moment_of_prescience
 tier: 8th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -475,6 +499,7 @@ Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spell
 ```yaml
 id: v2_lunar_wyrd_sight
 tier: 9th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -499,6 +524,7 @@ Source reference: [Kobold Press Northlands Worldbook on 5e.tools](https://5e.too
 ```yaml
 id: lunar_initiate_moonsight
 tier: initiate
+facets: moonlight, visions
 isActive: false
 isPassive: true
 isSpell: false
@@ -518,6 +544,7 @@ You have darkvision out to 60 feet, or 30 feet farther if you already have it, a
 ```yaml
 id: lunar_initiate_silver_ray
 tier: initiate
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -538,6 +565,7 @@ As an action, you shine a ray of silver moonlight at a creature within 120 feet.
 ```yaml
 id: lunar_initiate_shower_of_stars
 tier: initiate
+facets: stars
 isActive: true
 isPassive: false
 isSpell: false
@@ -556,6 +584,7 @@ As an action, you fling a spray of tiny shooting stars in a 15-foot cone. Each c
 ```yaml
 id: lunar_master_phases_of_the_moon
 tier: master
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -581,6 +610,7 @@ As a bonus action, you touch a willing creature and mark it with the moon for up
 ```yaml
 id: lunar_master_moonburst
 tier: master
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -601,6 +631,7 @@ As an action, a globe of chilling moonlight explodes in a 20-foot-radius sphere 
 ```yaml
 id: lunar_grandmaster_full_moon
 tier: grandmaster
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -622,6 +653,7 @@ As a bonus action on your Consecrated Ground, you raise a full moon overhead for
 ```yaml
 id: v2_lunar_starburst
 tier: cantrip
+facets: stars
 isActive: false
 isPassive: false
 isSpell: false
@@ -641,6 +673,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_lunar_by_the_light_of_the_moon
 tier: 2nd
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -661,6 +694,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_lunar_alter_moon_phase
 tier: 3rd
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -681,6 +715,7 @@ Source reference: [Kobold Press Expanding Codex on 5e.tools](https://5e.tools/sp
 ```yaml
 id: v2_lunar_moonbeam_form
 tier: 3rd
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -700,6 +735,7 @@ Source reference: [Kobold Press Expanding Codex on 5e.tools](https://5e.tools/sp
 ```yaml
 id: v2_lunar_fount_of_moonlight
 tier: 4th
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -720,6 +756,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#f
 ```yaml
 id: v2_lunar_field_of_stars
 tier: 4th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -739,6 +776,7 @@ Source reference: [Belzor's Magical Manifesto on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_lunar_starfall
 tier: 5th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -758,6 +796,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_sun_crown_of_stars
 tier: 7th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -777,6 +816,7 @@ Source reference: [D&D 5e XGE on 5e.tools](https://5e.tools/spells.html#crown%20
 ```yaml
 id: v2_lunar_summon_star
 tier: 8th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -797,6 +837,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_lunar_moonfall
 tier: 8th
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -816,6 +857,7 @@ Source reference: [Belzor's Magical Manifesto on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_lunar_supernova
 tier: 9th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -835,6 +877,7 @@ Source reference: [Belzor's Magical Manifesto on 5e.tools](https://5e.tools/spel
 ```yaml
 id: lunar_initiate_moonblood
 tier: initiate
+facets: lycanthropy
 isActive: false
 isPassive: true
 isSpell: false
@@ -852,6 +895,7 @@ You have advantage on Wisdom (Perception) checks that rely on hearing or smell. 
 ```yaml
 id: lunar_adept_moonbound_form
 tier: adept
+facets: lycanthropy
 isActive: true
 isPassive: false
 isSpell: false
@@ -872,6 +916,7 @@ As a bonus action, you take the hybrid shape of a wolf, bear, tiger, boar or rat
 ```yaml
 id: lunar_master_selunes_pack
 tier: master
+facets: lycanthropy
 isActive: true
 isPassive: false
 isSpell: false
@@ -891,6 +936,7 @@ As an action, you share the moon's gift with a number of willing creatures withi
 ```yaml
 id: v2_lunar_howl
 tier: cantrip
+facets: lycanthropy
 isActive: false
 isPassive: false
 isSpell: false
@@ -910,6 +956,7 @@ Source reference: [Heliana's Guide to Monster Hunting on 5e.tools](https://5e.to
 ```yaml
 id: v2_lunar_aspect_of_the_wolf
 tier: 1st
+facets: lycanthropy
 isActive: false
 isPassive: false
 isSpell: true
@@ -929,6 +976,7 @@ Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tool
 ```yaml
 id: v2_lunar_potency_of_the_pack
 tier: 3rd
+facets: lycanthropy
 isActive: false
 isPassive: false
 isSpell: true
@@ -948,6 +996,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_lunar_labyrinthine_howl
 tier: 5th
+facets: lycanthropy
 isActive: false
 isPassive: false
 isSpell: true

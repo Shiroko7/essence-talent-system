@@ -535,3 +535,5 @@ export const woodSpells = [
     concentration: true,
   }
 ];
+
+export const woodFacets = [];

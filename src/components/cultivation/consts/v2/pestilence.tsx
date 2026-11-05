@@ -11,6 +11,7 @@ export const pestilenceAbilities = [
     author: "Espora Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "action",
+    facets: ["venom"],
   },
   {
     id: "poison_adept_venomous_strike",
@@ -24,6 +25,7 @@ export const pestilenceAbilities = [
     author: "Espora Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "bonus action",
+    facets: ["venom"],
   },
   {
     id: "pestilence_initiate_corrosive_touch",
@@ -37,6 +39,7 @@ export const pestilenceAbilities = [
     author: "Talona / Portfolio (Poison)",
     location: "Leatrux",
     activation: "action",
+    facets: ["disease"],
   },
   {
     id: "poison_adept_toxic_skin_secretion_1",
@@ -50,6 +53,10 @@ export const pestilenceAbilities = [
     author: "Church of Talona",
     location: "Leatrux",
     oncePerTurn: true,
+    facets: ["venom"],
+    series: "toxic_skin_secretion",
+    stage: 1,
+    stages: "replace",
   },
   {
     id: "pestilence_initiate_creeping_pestilence",
@@ -64,6 +71,7 @@ export const pestilenceAbilities = [
     location: "Leatrux",
     activation: "action",
     concentration: true,
+    facets: ["disease"],
   },
   {
     id: "poison_adept_toxic_skin_secretion_2",
@@ -77,6 +85,10 @@ export const pestilenceAbilities = [
     author: "Church of Talona",
     location: "Leatrux",
     oncePerTurn: true,
+    facets: ["venom"],
+    series: "toxic_skin_secretion",
+    stage: 2,
+    stages: "replace",
   },
   {
     id: "pestilence_adept_pestilent_cloud",
@@ -91,6 +103,7 @@ export const pestilenceAbilities = [
     location: "Leatrux",
     activation: "action",
     concentration: true,
+    facets: ["disease"],
   },
   {
     id: "pestilence_adept_lingering_touch",
@@ -104,6 +117,7 @@ export const pestilenceAbilities = [
     author: "Talona / Portfolio (Poison)",
     location: "Leatrux",
     activation: "action",
+    facets: ["disease"],
   },
   {
     id: "poison_adept_toxic_skin_secretion_3",
@@ -117,6 +131,10 @@ export const pestilenceAbilities = [
     author: "Church of Talona",
     location: "Leatrux",
     oncePerTurn: true,
+    facets: ["venom"],
+    series: "toxic_skin_secretion",
+    stage: 3,
+    stages: "replace",
   },
   {
     id: "pestilence_master_blessed_immunity",
@@ -130,6 +148,7 @@ export const pestilenceAbilities = [
     author: "Talona / Portfolio (Poison)",
     location: "Leatrux",
     activation: "action",
+    facets: ["disease","venom"],
   },
   {
     id: "poison_adept_hallucinogenic_trance",
@@ -143,6 +162,7 @@ export const pestilenceAbilities = [
     author: "Espora Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "bonus action",
+    facets: ["venom"],
   },
   {
     id: "poison_adept_vestibular_trance",
@@ -156,6 +176,7 @@ export const pestilenceAbilities = [
     author: "Shadow Sect",
     location: "Sirius",
     activation: "bonus action",
+    facets: ["venom"],
   },
   {
     id: "poison_adept_venomous_precision",
@@ -168,6 +189,7 @@ export const pestilenceAbilities = [
     isCantrip: false,
     author: "Espora Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["venom"],
   }
 ];
 
@@ -183,6 +205,7 @@ export const pestilenceCantrips = [
     isCantrip: true,
     author: "Cleric / Conjuration",
     activation: "action",
+    facets: ["venom"],
   },
   {
     id: "pestilence_cantrip_infestation",
@@ -195,6 +218,7 @@ export const pestilenceCantrips = [
     isCantrip: true,
     author: "Cleric / Conjuration",
     activation: "action",
+    facets: ["disease"],
   }
 ];
 
@@ -210,6 +234,7 @@ export const pestilenceSpells = [
     isCantrip: false,
     author: "Cleric (Death Domain) / Necromancy",
     activation: "action",
+    facets: ["disease"],
   },
   {
     id: "pestilence_1st_detect_poison_and_disease",
@@ -224,6 +249,7 @@ export const pestilenceSpells = [
     activation: "action",
     concentration: true,
     ritual: true,
+    facets: ["disease","venom"],
   },
   {
     id: "pestilence_5th_contagion",
@@ -236,6 +262,7 @@ export const pestilenceSpells = [
     isCantrip: false,
     author: "Cleric / Necromancy",
     activation: "action",
+    facets: ["disease"],
   },
   {
     id: "pestilence_5th_insect_plague",
@@ -249,6 +276,7 @@ export const pestilenceSpells = [
     author: "Cleric / Conjuration",
     activation: "action",
     concentration: true,
+    facets: ["disease"],
   },
   {
     id: "pestilence_5th_cloudkill",
@@ -262,6 +290,7 @@ export const pestilenceSpells = [
     author: "Conjuration / Toxic Cloud",
     activation: "action",
     concentration: true,
+    facets: ["venom"],
   },
   {
     id: "pestilence_1st_purify_food_and_drink",
@@ -275,6 +304,7 @@ export const pestilenceSpells = [
     author: "Cleric / Transmutation",
     activation: "action",
     ritual: true,
+    facets: ["disease","venom"],
   },
   {
     id: "pestilence_2nd_protection_from_poison",
@@ -287,6 +317,7 @@ export const pestilenceSpells = [
     isCantrip: false,
     author: "Cleric / Abjuration",
     activation: "action",
+    facets: ["venom"],
   },
   {
     id: "torment_3rd_bestow_curse",
@@ -300,6 +331,7 @@ export const pestilenceSpells = [
     author: "Cleric / Necromancy",
     activation: "action",
     concentration: true,
+    facets: ["curses"],
   },
   {
     id: "torment_1st_bane",
@@ -313,6 +345,7 @@ export const pestilenceSpells = [
     author: "Cleric / Enchantment",
     activation: "action",
     concentration: true,
+    facets: ["curses"],
   },
   {
     id: "v2_providence_remove_curse",
@@ -325,6 +358,7 @@ export const pestilenceSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB)",
     activation: "action",
+    facets: ["curses"],
   },
   {
     id: "wind_3rd_level_stinking_cloud",
@@ -338,6 +372,7 @@ export const pestilenceSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["venom"],
   },
   {
     id: "poison_3rd_level_sylunes_viper",
@@ -350,6 +385,7 @@ export const pestilenceSpells = [
     isCantrip: false,
     author: "D&D 5e (Heroes of Faerûn)",
     activation: "bonus action",
+    facets: ["venom"],
   },
   {
     id: "acid_4th_level_elemental_bane",
@@ -363,6 +399,7 @@ export const pestilenceSpells = [
     author: "D&D 5e (XGE)",
     activation: "action",
     concentration: true,
+    facets: ["curses"],
   },
   {
     id: "wood_4th_level_giant_insect",
@@ -376,6 +413,7 @@ export const pestilenceSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["venom"],
   },
   {
     id: "poison_6th_level_investiture_of_venom",
@@ -389,6 +427,7 @@ export const pestilenceSpells = [
     author: "Grim Hollow Player's Guide",
     activation: "action",
     concentration: true,
+    facets: ["venom"],
   },
   {
     id: "v2_pestilence_contagious_touch",
@@ -401,6 +440,7 @@ export const pestilenceSpells = [
     isCantrip: false,
     author: "Blackstaff's Book of 1000 Spells",
     activation: "action",
+    facets: ["disease"],
   },
   {
     id: "v2_pestilence_symbol",
@@ -412,6 +452,7 @@ export const pestilenceSpells = [
     isSpell: true,
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
+    facets: ["curses"],
   },
   {
     id: "v2_pestilence_fleshcrawl",
@@ -425,6 +466,7 @@ export const pestilenceSpells = [
     author: "Grim Hollow Player's Guide",
     activation: "action",
     concentration: true,
+    facets: ["disease"],
   },
   {
     id: "v2_pestilence_flense",
@@ -438,6 +480,7 @@ export const pestilenceSpells = [
     author: "Grim Hollow Player's Guide",
     activation: "action",
     concentration: true,
+    facets: ["disease"],
   },
   {
     id: "v2_pestilence_creeping_death",
@@ -451,6 +494,7 @@ export const pestilenceSpells = [
     author: "Grim Hollow Player's Guide",
     activation: "action",
     concentration: true,
+    facets: ["curses"],
   },
   {
     id: "v2_pestilence_lifesink",
@@ -464,6 +508,7 @@ export const pestilenceSpells = [
     author: "Grim Hollow Player's Guide",
     activation: "action",
     concentration: true,
+    facets: ["disease"],
   },
   {
     id: "v2_pestilence_afflict_line",
@@ -476,5 +521,8 @@ export const pestilenceSpells = [
     isCantrip: false,
     author: "Deep Magic (01-20)",
     ritual: true,
+    facets: ["curses"],
   }
 ];
+
+export const pestilenceFacets = [{"id":"disease","label":"Disease"},{"id":"venom","label":"Venom"},{"id":"curses","label":"Curses"}];

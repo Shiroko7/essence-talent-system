@@ -57,16 +57,16 @@ const palettes = {
   mysteries: ['bg-stone-400/20', 'text-stone-200', 'border-stone-300/50', 'shadow-glow-mysteries', 'bg-stone-900/70 text-stone-200 border-stone-300/40', '#e7e5e4'],
   lunar: ['bg-indigo-400/25', 'text-indigo-200', 'border-indigo-300/50', 'shadow-glow-moon', 'bg-indigo-950/70 text-indigo-200 border-indigo-400/40', '#c7d2fe'],
   love: ['bg-rose-500/25', 'text-rose-300', 'border-rose-400/50', 'shadow-glow-love', 'bg-rose-950/70 text-rose-200 border-rose-400/40', '#fb7185'],
-  ruin: ['bg-red-600/25', 'text-red-300', 'border-red-500/50', 'shadow-glow-ruin', 'bg-red-950/80 text-red-200 border-red-500/50', '#f87171'],
+  ruin: ['bg-violet-600/25', 'text-violet-300', 'border-violet-500/50', 'shadow-glow-ruin', 'bg-violet-950/80 text-violet-200 border-violet-500/50', '#8b5cf6'],
   pestilence: ['bg-lime-700/25', 'text-lime-300', 'border-lime-500/50', 'shadow-glow-pestilence', 'bg-lime-950/80 text-lime-200 border-lime-500/50', '#a3e635'],
-  shadow: ['bg-purple-900/40', 'text-purple-300', 'border-purple-600/50', 'shadow-glow-void', 'bg-purple-950/80 text-purple-200 border-purple-600/50', '#a855f7'],
+  shadow: ['bg-purple-950/50', 'text-purple-300/80', 'border-purple-800/50', 'shadow-glow-void', 'bg-black/80 text-purple-200/80 border-purple-800/50', '#7b5ea7'],
   tempest: ['bg-sky-600/30', 'text-sky-300', 'border-sky-400/50', 'shadow-glow-tempest', 'bg-sky-950/80 text-sky-200 border-sky-400/40', '#38bdf8'],
   undertow: ['bg-violet-700/25', 'text-violet-300', 'border-violet-400/50', 'shadow-glow-undertow', 'bg-violet-950/80 text-violet-200 border-violet-500/40', '#9d90ff'],
   navigation: ['bg-yellow-300/20', 'text-yellow-200', 'border-yellow-200/50', 'shadow-glow-navigation', 'bg-yellow-950/70 text-yellow-100 border-yellow-200/40', '#fde68a'],
   providence: ['bg-amber-500/25', 'text-amber-300', 'border-amber-400/50', 'shadow-glow-providence', 'bg-amber-950/70 text-amber-200 border-amber-400/40', '#fbbf24'],
-  crypt: ['bg-neutral-500/20', 'text-neutral-200', 'border-neutral-400/50', 'shadow-glow-crypt', 'bg-neutral-900/80 text-neutral-200 border-neutral-400/40', '#d6cfb4'],
-  tyranny: ['bg-green-800/30', 'text-green-300', 'border-green-600/50', 'shadow-glow-tyranny', 'bg-green-950/80 text-green-200 border-green-600/40', '#22c55e'],
-  wisdom: ['bg-indigo-600/25', 'text-indigo-300', 'border-indigo-400/50', 'shadow-glow-wisdom', 'bg-indigo-950/80 text-indigo-200 border-indigo-400/40', '#818cf8']
+  crypt: ['bg-emerald-700/25', 'text-emerald-300', 'border-emerald-500/50', 'shadow-glow-crypt', 'bg-emerald-950/80 text-emerald-200 border-emerald-500/40', '#34d399'],
+  tyranny: ['bg-red-800/30', 'text-red-400', 'border-red-700/50', 'shadow-glow-tyranny', 'bg-red-950/80 text-red-200 border-red-700/50', '#dc143c'],
+  wisdom: ['bg-indigo-600/25', 'text-indigo-300', 'border-indigo-400/50', 'shadow-glow-wisdom', 'bg-indigo-950/80 text-indigo-200 border-indigo-400/40', '#6f8ff7']
 } as const;
 
 type PaletteId = keyof typeof palettes;
@@ -98,18 +98,18 @@ const paths: CultivationPath[] = [
   makePath('alchemy', 'Alchemy', 'human', 'Transformation through craft', 'Formulas, medicines, acids, refining, and the recombination of substances through practice.', 'alchemy'),
   makePath('heart', 'Heart', 'human', 'Martial discipline and embodied mastery', 'Unarmed forms, weapon technique, disciplined movement, and mastery shaped through practice.', 'heart', 'Sirius'),
   makePath('mysteries', 'Mysteries', 'human', 'Space, time, and the illusory made real', 'Folds of space, moments pried loose from time, and reflections drawn out of the well: what cannot be put into words, made to obey anyway.', 'mysteries', 'Netherdark Emperor "Yuji"'),
-  makePath('wisdom', 'Wisdom', 'human', 'Memory, names, and deduction', 'Memories, names, and history, and deductions drawn from what you have seen: what has happened, what a thing is, and what comes next.', 'wisdom', 'Shadow Gate Sect'),
+  makePath('wisdom', 'Wisdom', 'human', 'Memory, names, knowledge, and deduction', 'Memories, names, knowledge, and thoughts, and deductions drawn from what you have seen: what has happened, what a thing is, and what comes next.', 'wisdom', 'Harphonia "Harpy"'),
   makePath('lunar', 'Lunar', 'divine', 'Moon, stars, and celestial cycles', 'Moonlight, starfire, cycles, dreams, reflection, and foresight.', 'lunar', 'Selûne'),
   makePath('navigation', 'Navigation', 'divine', 'Reading the stars and finding the way home', 'Star-reading, constellations, charts, sea roads and land roads, and never losing your way.', 'navigation', 'Selûne'),
+  makePath('providence', 'Providence', 'divine', 'Endurance, hope, and freedom', 'Perseverance, bearing burdens for others, protection, and liberation from bonds.', 'providence', 'Ilmater'),
   makePath('love', 'Love', 'divine', 'Affection and emotional bonds', 'Beauty, attraction, devotion, empathy, and the bonds between people.', 'love', 'Sune'),
-  makePath('ruin', 'Ruin', 'divine', 'Violence and deliberate undoing', 'Murder, pain, deception, thievery, and the collapse of a chosen foe.', 'ruin', 'Bhaal, Cyric, and Loviatar'),
-  makePath('crypt', 'Crypt', 'divine', 'Death as an ending', 'Corpses, bones, the dead who serve, decay, old age, and the weariness of the grave.', 'crypt', 'Myrkul'),
-  { ...makePath('tyranny', 'Tyranny', 'divine', 'Rule by fear and one iron will', 'Commands, chains, dread, and the obedience of many.', 'tyranny', 'Bane'), locked: true },
-  makePath('pestilence', 'Pestilence', 'divine', 'Affliction and corruption', 'Disease, poison, curses, contagion, and resistance to corruption.', 'pestilence', 'Talona'),
-  makePath('shadow', 'Shadow', 'divine', 'Darkness and concealment', 'Darkness, concealment, absence, and the Shadow Weave.', 'shadow', 'Shar'),
   makePath('tempest', 'Tempest', 'divine', 'Weather and storm authority', 'Storm fronts, rain, thunder, violent seas, and maritime peril.', 'tempest', 'Umberlee'),
   makePath('undertow', 'Undertow', 'divine', 'The deep\'s hunger and the grasp that pulls you under', 'Lightless water, ink, crushing pressure, tentacles, drowning, and whatever is dragged below.', 'undertow', 'Yhal\'etsu'),
-  makePath('providence', 'Providence', 'divine', 'Endurance, hope, and freedom', 'Protection, healing, perseverance, bearing burdens, and liberation from bonds.', 'providence', 'Ilmater')
+  { ...makePath('tyranny', 'Tyranny', 'divine', 'Rule by fear and one iron will', 'Commands, chains, dread, and the obedience of many.', 'tyranny', 'Bane'), locked: true },
+  makePath('ruin', 'Ruin', 'divine', 'Violence and deliberate undoing', 'Murder, pain, strife, and the collapse of a chosen foe.', 'ruin', 'Bhaal, Cyric, and Loviatar'),
+  makePath('crypt', 'Crypt', 'divine', 'Death as an ending', 'Corpses, bones, the dead who serve, decay, old age, and the weariness of the grave.', 'crypt', 'Myrkul'),
+  makePath('pestilence', 'Pestilence', 'divine', 'Affliction and corruption', 'Disease, venom, curses, contagion, and resistance to corruption.', 'pestilence', 'Talona'),
+  makePath('shadow', 'Shadow', 'divine', 'Darkness and concealment', 'Darkness, concealment, absence, and the Shadow Weave.', 'shadow', 'Shar')
 ];
 
 export const CULTIVATION_CATALOGS: Record<CultivationVersion, CultivationCatalog> = {

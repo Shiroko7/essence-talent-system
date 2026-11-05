@@ -2,6 +2,7 @@
 
 Tradition: Immortal
 Concept: Martial discipline and embodied mastery.
+Facets: Unarmed, Blades, Spears, Blunt, Ranged, Body & Mind
 Spellcasting: none
 
 ### Stone Fist I
@@ -9,6 +10,9 @@ Spellcasting: none
 ```yaml
 id: earth_initiate_stone_fist_1
 tier: initiate
+series: stone_fist
+stages: replace
+facets: unarmed
 isActive: false
 isPassive: true
 isSpell: false
@@ -26,6 +30,9 @@ Your unarmed strikes deal 1d4 bludgeoning damage and count as magical for overco
 ```yaml
 id: heart_initiate_radiant_vein_blade_form_1
 tier: initiate
+series: radiant_vein_blade
+stages: add
+facets: blades, spears, blunt, ranged
 isActive: true
 isPassive: false
 isSpell: false
@@ -33,6 +40,8 @@ isCantrip: false
 author: Kelemvor
 location: Leatrux
 activation: attack
+domain: expansion
+domainText: A miss doesn't break the flow.
 ```
 
 **Weapon Requirement:** Any weapon.
@@ -48,6 +57,9 @@ activation: attack
 ```yaml
 id: earth_adept_stone_fist_2
 tier: adept
+series: stone_fist
+stages: replace
+facets: unarmed
 isActive: false
 isPassive: true
 isSpell: false
@@ -65,6 +77,9 @@ Your unarmed strikes deal 1d6 bludgeoning damage and count as magical for overco
 ```yaml
 id: heart_adept_radiant_vein_blade_form_2
 tier: adept
+series: radiant_vein_blade
+stages: add
+facets: blades, spears, blunt, ranged
 isActive: true
 isPassive: false
 isSpell: false
@@ -72,6 +87,8 @@ isCantrip: false
 author: Kelemvor
 location: Leatrux
 activation: attack
+domain: expansion
+domainText: You have advantage on the attack roll.
 ```
 
 *Prerequisite: Radiant Vein Blade I*
@@ -89,6 +106,9 @@ activation: attack
 ```yaml
 id: earth_master_stone_fist_3
 tier: master
+series: stone_fist
+stages: replace
+facets: unarmed
 isActive: false
 isPassive: true
 isSpell: false
@@ -106,6 +126,9 @@ Your unarmed strikes deal 1d8 bludgeoning damage and count as magical for overco
 ```yaml
 id: heart_master_radiant_vein_blade_form_3
 tier: master
+series: radiant_vein_blade
+stages: add
+facets: blades, spears, blunt, ranged
 isActive: true
 isPassive: false
 isSpell: false
@@ -113,6 +136,8 @@ isCantrip: false
 author: Kelemvor
 location: Leatrux
 activation: attack
+domain: expansion
+domainText: You have advantage on the weapon attack roll.
 ```
 
 *Prerequisite: Radiant Vein Blade II*
@@ -132,6 +157,7 @@ activation: attack
 ```yaml
 id: wind_master_sky_piercing_execution
 tier: master
+facets: spears
 isActive: true
 isPassive: false
 isSpell: false
@@ -139,6 +165,8 @@ isCantrip: false
 author: Yoo Tae-yang
 location: Sirius
 activation: reaction
+domain: expansion
+domainText: If the attack misses, the target still takes half damage.
 ```
 
 As a reaction when a creature within 60 feet is airborne or suspended, teleport to an adjacent empty space in the air. Make one piercing melee weapon attack against it. On a hit, the target suffers the attack's normal damage plus an extra 4d10 thunder damage. The target must succeed on a Strength saving throw against your essence ability save DC or fall up to 60 feet, land prone, and take the normal falling damage. On a successful save, it remains airborne.
@@ -150,6 +178,9 @@ As a reaction when a creature within 60 feet is airborne or suspended, teleport 
 ```yaml
 id: heart_grandmaster_stone_fist_4
 tier: grandmaster
+series: stone_fist
+stages: replace
+facets: unarmed
 isActive: false
 isPassive: true
 isSpell: false
@@ -167,6 +198,9 @@ Your unarmed strikes deal 1d10 bludgeoning damage and count as magical for overc
 ```yaml
 id: heart_greatgrandmaster_stone_fist_5
 tier: greatgrandmaster
+series: stone_fist
+stages: replace
+facets: unarmed
 isActive: false
 isPassive: true
 isSpell: false
@@ -184,6 +218,7 @@ Your unarmed strikes deal 1d12 bludgeoning damage and count as magical for overc
 ```yaml
 id: ruin_cantrip_true_strike
 tier: cantrip
+facets: blades, spears, blunt, ranged
 isActive: false
 isPassive: false
 isSpell: false
@@ -203,6 +238,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#t
 ```yaml
 id: water_initiate_frozen_insight
 tier: initiate
+facets: body-mind
 isActive: true
 isPassive: false
 isSpell: false
@@ -221,6 +257,7 @@ You can temporarily turn your thoughts into ice, allowing you to gain deep insig
 ```yaml
 id: vine_master_entangling_reach
 tier: initiate
+facets: unarmed
 isActive: true
 isPassive: false
 isSpell: false
@@ -239,6 +276,7 @@ As an action, you can target up to five creatures you can see within 120 feet, e
 ```yaml
 id: vine_master_coiling_resilience
 tier: initiate
+facets: unarmed
 isActive: false
 isPassive: true
 isSpell: false
@@ -256,6 +294,7 @@ You gain a +1 bonus to all saving throws for each creature you currently have gr
 ```yaml
 id: heart_initiate_rush_attack
 tier: initiate
+facets: spears
 isActive: true
 isPassive: false
 isSpell: false
@@ -263,6 +302,8 @@ isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
 activation: attack
+domain: expansion
+domainText: You have advantage on the attack roll.
 ```
 
 **Weapon Requirement:** Any melee weapon that deals piercing damage (such as a spear, pike, rapier, shortsword, trident, or dagger).
@@ -276,6 +317,7 @@ activation: attack
 ```yaml
 id: heart_initiate_pommel_strike
 tier: initiate
+facets: blades
 isActive: true
 isPassive: false
 isSpell: false
@@ -283,6 +325,8 @@ isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
 activation: bonus action
+domain: expansion
+domainText: You have advantage on the attack roll.
 ```
 
 **Weapon Requirement:** Any sword (such as a greatsword, longsword, or shortsword) wielded with two hands or with your other hand empty.
@@ -296,6 +340,7 @@ You strike an adjacent creature with the pommel, crossguard, or hilt of your swo
 ```yaml
 id: heart_initiate_lacerating_edge
 tier: initiate
+facets: blades
 isActive: true
 isPassive: false
 isSpell: false
@@ -318,6 +363,7 @@ activation: on hit
 ```yaml
 id: wind_adept_cyclone_step
 tier: adept
+facets: body-mind
 isActive: true
 isPassive: false
 isSpell: false
@@ -336,6 +382,7 @@ When you use the Dash action, you can create a swirling vortex of wind around yo
 ```yaml
 id: wind_adept_gale_force_strike
 tier: adept
+facets: body-mind
 isActive: true
 isPassive: false
 isSpell: false
@@ -354,6 +401,7 @@ When you hit a creature of your size or smaller, or any creature one size catego
 ```yaml
 id: wind_adept_ascending_dragon_gale
 tier: adept
+facets: spears
 isActive: true
 isPassive: false
 isSpell: false
@@ -362,6 +410,8 @@ author: Yoo Tae-yang
 location: Sirius
 activation: attack
 oncePerTurn: true
+domain: expansion
+domainText: You can then move up to half your speed without provoking opportunity attacks.
 ```
 
 When taking the Attack action with a piercing melee weapon, you can replace one attack to strike a creature within reach (usable once per turn).
@@ -375,6 +425,7 @@ The target must make a Strength saving throw. On a failed save, it takes 3d10 th
 ```yaml
 id: heart_adept_iron_stance
 tier: adept
+facets: blades, spears, blunt, ranged
 isActive: true
 isPassive: false
 isSpell: false
@@ -382,6 +433,8 @@ isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
 activation: bonus action
+domain: expansion
+domainText: You gain temporary hit points equal to twice your PB.
 ```
 
 **Weapon Requirement:** A melee weapon with the Heavy or Reach property (such as a pike, glaive, halberd, greatsword, or maul), or a two-handed ranged weapon (such as a heavy crossbow or longbow).
@@ -397,6 +450,7 @@ You steady your grip and plant your stance, expending 15 feet of your movement s
 ```yaml
 id: heart_adept_concussive_smash
 tier: adept
+facets: blunt
 isActive: true
 isPassive: false
 isSpell: false
@@ -404,6 +458,8 @@ isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
 activation: attack
+domain: expansion
+domainText: You have advantage on the attack roll.
 ```
 
 **Weapon Requirement:** Any melee weapon that deals bludgeoning damage (such as a warhammer, maul, mace, flail, club, greatclub, or light hammer).
@@ -417,6 +473,7 @@ activation: attack
 ```yaml
 id: heart_adept_disarming_feint
 tier: adept
+facets: blades, spears
 isActive: true
 isPassive: false
 isSpell: false
@@ -424,6 +481,8 @@ isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
 activation: attack
+domain: expansion
+domainText: You have advantage on the attack roll.
 ```
 
 **Weapon Requirement:** Any melee weapon with the Finesse property (such as a rapier, scimitar, or shortsword) or a weapon with the Reach property (such as a trident, pike, or halberd).
@@ -437,6 +496,7 @@ activation: attack
 ```yaml
 id: heart_adept_skirmishers_volley
 tier: adept
+facets: ranged
 isActive: true
 isPassive: false
 isSpell: false
@@ -444,6 +504,8 @@ isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
 activation: bonus action
+domain: expansion
+domainText: You have advantage on the attack roll.
 ```
 
 **Weapon Requirement:** Any ranged weapon with the Light property (such as a hand crossbow) or a shortbow.
@@ -459,6 +521,7 @@ Immediately after taking the Dash or Disengage action on your turn, you can make
 ```yaml
 id: wind_master_static_slipstream
 tier: master
+facets: body-mind
 isActive: true
 isPassive: false
 isSpell: false
@@ -492,6 +555,7 @@ When the dimension collapses, each creature inside immediately reappears in the 
 ```yaml
 id: heart_master_tendon_sever
 tier: master
+facets: blades, spears
 isActive: true
 isPassive: false
 isSpell: false
@@ -499,6 +563,8 @@ isCantrip: false
 author: Bingsan Mun Sect
 location: Sirius
 activation: attack
+domain: expansion
+domainText: If the attack misses, the target still takes half damage.
 ```
 
 **Weapon Requirement:** Any melee weapon that deals slashing or piercing damage (such as a battleaxe, war pick, longsword, rapier, or halberd).
@@ -516,6 +582,7 @@ An affected creature can repeat the Constitution saving throw at the end of each
 ```yaml
 id: wood_master_heart_exchange
 tier: master
+facets: body-mind
 isActive: true
 isPassive: false
 isSpell: false
@@ -545,6 +612,7 @@ You can maintain only one heart exchange at a time.
 ```yaml
 id: heart_grandmaster_heartstopper
 tier: grandmaster
+facets: blunt
 isActive: true
 isPassive: false
 isSpell: false
@@ -569,6 +637,7 @@ An affected creature can repeat the Constitution saving throw at the end of each
 ```yaml
 id: heart_grandmaster_unwavering_belief
 tier: grandmaster
+facets: body-mind
 isActive: false
 isPassive: true
 isSpell: false
@@ -586,6 +655,7 @@ You gain proficiency in all saving throws.
 ```yaml
 id: heart_grandmaster_supreme_heart_reflection_sword
 tier: grandmaster
+facets: blades
 isActive: true
 isPassive: false
 isSpell: false
@@ -606,6 +676,7 @@ When a spell or ability forces you to make a saving throw while wielding a sword
 ```yaml
 id: heart_grandmaster_divine_ocean_splitting_record
 tier: grandmaster
+facets: blades, blunt
 isActive: true
 isPassive: false
 isSpell: false
@@ -630,6 +701,7 @@ activation: attack
 ```yaml
 id: heart_grandmaster_azure_dragon_ascending_the_waves
 tier: grandmaster
+facets: unarmed
 isActive: true
 isPassive: false
 isSpell: false
@@ -660,6 +732,7 @@ You erupt upward in a spiraling vortex of churning seawater and storm mist, flyi
 ```yaml
 id: lightning_adept_thunderous_speed
 tier: adept
+facets: body-mind
 isActive: false
 isPassive: true
 isSpell: false
@@ -677,6 +750,7 @@ Your movement speed increases by 10 feet. Additionally, you can take the Dash ac
 ```yaml
 id: poison_initiate_venomous_bite
 tier: initiate
+facets: unarmed
 isActive: true
 isPassive: false
 isSpell: false
@@ -684,6 +758,8 @@ isCantrip: false
 author: Vajra from the Espora Tribe
 location: Phudara / Isle of Whispers
 activation: attack
+domain: expansion
+domainText: You have advantage on the attack roll.
 ```
 
 When you take the Attack action, you can replace one of your attacks with a bite attack, imbuing it with a potent venom. Make a melee weapon attack against a creature within your reach. On a hit, the target takes 1d12 piercing damage and must succeed on a Constitution saving throw against your essence ability save DC or become poisoned for 1 minute. The bite attack is considered magical for the purposes of overcoming resistance and immunity to nonmagical attacks.

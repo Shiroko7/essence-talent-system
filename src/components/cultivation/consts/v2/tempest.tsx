@@ -335,3 +335,5 @@ export const tempestSpells = [
     activation: "action",
   }
 ];
+
+export const tempestFacets = [];

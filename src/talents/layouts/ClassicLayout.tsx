@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { ChevronDown, Layers, Lock } from 'lucide-react';
 import { Ability } from '../../types/essence';
-import { KindFilter, SystemPath, groupByTier, learnedCount, matchesKind, pathsByGroup, searchAll, tint } from '../model';
+import { KindFilter, SystemPath, groupByTier, learnedCount, matchesFacet, matchesKind, pathsByGroup, searchAll, tint } from '../model';
 import type { TalentController } from '../model';
 import type { LayoutProps } from '../TalentPage';
 import { useInitialPath } from '../routes';
 import { PageHeader } from '../header/PageHeader';
 import {
-  AbilityModal, AbilityTile, EmptyState, GroupLabel, PathSigil, SearchField, Segmented
+  AbilityModal, AbilityTile, EmptyState, FacetChips, GroupLabel, PathSigil, SearchField, Segmented
 } from '../ui';
 
 const KIND_OPTIONS: { id: KindFilter; label: string }[] = [
@@ -64,8 +64,10 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const [search, setSearch] = useState('');
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [detail, setDetail] = useState<Ability | null>(null);
+  const [facet, setFacet] = useState('all');
 
   const path = pathId ? system.paths.find(p => p.id === pathId)! : null;
+  const pathAbilities = path ? (system.abilitiesByPath[path.id] || []).filter(a => matchesKind(a, kind)) : [];
   const showAll = !path || search.trim().length > 0;
   const results = showAll ? searchAll(system, search, kind) : [];
 
@@ -78,6 +80,7 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
   const openPath = (id: string) => {
     setPathId(id);
     setSearch('');
+    setFacet('all');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -173,10 +176,15 @@ const ClassicLayout: React.FC<LayoutProps> = ({ ctl }) => {
                   {path.description ?? path.concept}
                 </p>
               </header>
+              {path.facets && (
+                <div className="mb-4">
+                  <FacetChips path={path} abilities={pathAbilities} value={facet} onChange={setFacet} />
+                </div>
+              )}
               <AscendingTiers
                 ctl={ctl}
                 path={path}
-                abilities={(system.abilitiesByPath[path.id] || []).filter(a => matchesKind(a, kind))}
+                abilities={pathAbilities.filter(a => matchesFacet(a, facet))}
                 onInfo={setDetail}
               />
             </>

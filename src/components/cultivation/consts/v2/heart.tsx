@@ -10,6 +10,10 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Llamarada Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["unarmed"],
+    series: "stone_fist",
+    stage: 1,
+    stages: "replace",
   },
   {
     id: "heart_initiate_radiant_vein_blade_form_1",
@@ -23,6 +27,12 @@ export const heartAbilities = [
     author: "Kelemvor",
     location: "Leatrux",
     activation: "attack",
+    domain: "expansion",
+    domainText: "A miss doesn't break the flow.",
+    facets: ["blades","spears","blunt","ranged"],
+    series: "radiant_vein_blade",
+    stage: 1,
+    stages: "add",
   },
   {
     id: "earth_adept_stone_fist_2",
@@ -35,6 +45,10 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Llamarada Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["unarmed"],
+    series: "stone_fist",
+    stage: 2,
+    stages: "replace",
   },
   {
     id: "heart_adept_radiant_vein_blade_form_2",
@@ -48,6 +62,12 @@ export const heartAbilities = [
     author: "Kelemvor",
     location: "Leatrux",
     activation: "attack",
+    domain: "expansion",
+    domainText: "You have advantage on the attack roll.",
+    facets: ["blades","spears","blunt","ranged"],
+    series: "radiant_vein_blade",
+    stage: 2,
+    stages: "add",
   },
   {
     id: "earth_master_stone_fist_3",
@@ -60,6 +80,10 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Llamarada Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["unarmed"],
+    series: "stone_fist",
+    stage: 3,
+    stages: "replace",
   },
   {
     id: "heart_master_radiant_vein_blade_form_3",
@@ -73,6 +97,12 @@ export const heartAbilities = [
     author: "Kelemvor",
     location: "Leatrux",
     activation: "attack",
+    domain: "expansion",
+    domainText: "You have advantage on the weapon attack roll.",
+    facets: ["blades","spears","blunt","ranged"],
+    series: "radiant_vein_blade",
+    stage: 3,
+    stages: "add",
   },
   {
     id: "wind_master_sky_piercing_execution",
@@ -86,6 +116,9 @@ export const heartAbilities = [
     author: "Yoo Tae-yang",
     location: "Sirius",
     activation: "reaction",
+    domain: "expansion",
+    domainText: "If the attack misses, the target still takes half damage.",
+    facets: ["spears"],
   },
   {
     id: "heart_grandmaster_stone_fist_4",
@@ -98,6 +131,10 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Llamarada Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["unarmed"],
+    series: "stone_fist",
+    stage: 4,
+    stages: "replace",
   },
   {
     id: "heart_greatgrandmaster_stone_fist_5",
@@ -110,6 +147,10 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Llamarada Tribe",
     location: "Phudara / Isle of Whispers",
+    facets: ["unarmed"],
+    series: "stone_fist",
+    stage: 5,
+    stages: "replace",
   },
   {
     id: "water_initiate_frozen_insight",
@@ -123,6 +164,7 @@ export const heartAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "action",
+    facets: ["body-mind"],
   },
   {
     id: "vine_master_entangling_reach",
@@ -136,6 +178,7 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "action",
+    facets: ["unarmed"],
   },
   {
     id: "vine_master_coiling_resilience",
@@ -148,6 +191,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    facets: ["unarmed"],
   },
   {
     id: "heart_initiate_rush_attack",
@@ -161,6 +205,9 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "attack",
+    domain: "expansion",
+    domainText: "You have advantage on the attack roll.",
+    facets: ["spears"],
   },
   {
     id: "heart_initiate_pommel_strike",
@@ -174,6 +221,9 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "bonus action",
+    domain: "expansion",
+    domainText: "You have advantage on the attack roll.",
+    facets: ["blades"],
   },
   {
     id: "heart_initiate_lacerating_edge",
@@ -187,6 +237,7 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "on hit",
+    facets: ["blades"],
   },
   {
     id: "wind_adept_cyclone_step",
@@ -200,6 +251,7 @@ export const heartAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "free",
+    facets: ["body-mind"],
   },
   {
     id: "wind_adept_gale_force_strike",
@@ -213,6 +265,7 @@ export const heartAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "on hit",
+    facets: ["body-mind"],
   },
   {
     id: "wind_adept_ascending_dragon_gale",
@@ -227,6 +280,9 @@ export const heartAbilities = [
     location: "Sirius",
     activation: "attack",
     oncePerTurn: true,
+    domain: "expansion",
+    domainText: "You can then move up to half your speed without provoking opportunity attacks.",
+    facets: ["spears"],
   },
   {
     id: "heart_adept_iron_stance",
@@ -240,6 +296,9 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "bonus action",
+    domain: "expansion",
+    domainText: "You gain temporary hit points equal to twice your PB.",
+    facets: ["blades","spears","blunt","ranged"],
   },
   {
     id: "heart_adept_concussive_smash",
@@ -253,6 +312,9 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "attack",
+    domain: "expansion",
+    domainText: "You have advantage on the attack roll.",
+    facets: ["blunt"],
   },
   {
     id: "heart_adept_disarming_feint",
@@ -266,6 +328,9 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "attack",
+    domain: "expansion",
+    domainText: "You have advantage on the attack roll.",
+    facets: ["blades","spears"],
   },
   {
     id: "heart_adept_skirmishers_volley",
@@ -279,6 +344,9 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "bonus action",
+    domain: "expansion",
+    domainText: "You have advantage on the attack roll.",
+    facets: ["ranged"],
   },
   {
     id: "wind_master_static_slipstream",
@@ -293,6 +361,7 @@ export const heartAbilities = [
     location: "Sirius",
     activation: "action",
     concentration: true,
+    facets: ["body-mind"],
   },
   {
     id: "heart_master_tendon_sever",
@@ -306,6 +375,9 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "attack",
+    domain: "expansion",
+    domainText: "If the attack misses, the target still takes half damage.",
+    facets: ["blades","spears"],
   },
   {
     id: "wood_master_heart_exchange",
@@ -319,6 +391,7 @@ export const heartAbilities = [
     author: "Ha Yeon-ae",
     location: "Sirius",
     activation: "action",
+    facets: ["body-mind"],
   },
   {
     id: "heart_grandmaster_heartstopper",
@@ -332,6 +405,7 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "attack",
+    facets: ["blunt"],
   },
   {
     id: "heart_grandmaster_unwavering_belief",
@@ -344,6 +418,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Bingsan Mun Sect",
     location: "Sirius",
+    facets: ["body-mind"],
   },
   {
     id: "heart_grandmaster_supreme_heart_reflection_sword",
@@ -357,6 +432,7 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "reaction",
+    facets: ["blades"],
   },
   {
     id: "heart_grandmaster_divine_ocean_splitting_record",
@@ -370,6 +446,7 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "attack",
+    facets: ["blades","blunt"],
   },
   {
     id: "heart_grandmaster_azure_dragon_ascending_the_waves",
@@ -383,6 +460,7 @@ export const heartAbilities = [
     author: "Bingsan Mun Sect",
     location: "Sirius",
     activation: "bonus action",
+    facets: ["unarmed"],
   },
   {
     id: "lightning_adept_thunderous_speed",
@@ -395,6 +473,7 @@ export const heartAbilities = [
     isCantrip: false,
     author: "Lei Zhen",
     location: "Phudara / Isle of Whispers",
+    facets: ["body-mind"],
   },
   {
     id: "poison_initiate_venomous_bite",
@@ -408,6 +487,9 @@ export const heartAbilities = [
     author: "Vajra from the Espora Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "attack",
+    domain: "expansion",
+    domainText: "You have advantage on the attack roll.",
+    facets: ["unarmed"],
   }
 ];
 
@@ -423,9 +505,12 @@ export const heartCantrips = [
     isCantrip: true,
     author: "Divination / Assassination",
     activation: "action",
+    facets: ["blades","spears","blunt","ranged"],
   }
 ];
 
 export const heartSpells = [
 
 ];
+
+export const heartFacets = [{"id":"unarmed","label":"Unarmed"},{"id":"blades","label":"Blades"},{"id":"spears","label":"Spears"},{"id":"blunt","label":"Blunt"},{"id":"ranged","label":"Ranged"},{"id":"body-mind","label":"Body & Mind"}];

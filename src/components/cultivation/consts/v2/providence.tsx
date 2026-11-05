@@ -10,6 +10,7 @@ export const providenceAbilities = [
     isCantrip: false,
     author: "Order of the Broken Arrow (Ilmater)",
     location: "Leatrux",
+    facets: ["endurance"],
   },
   {
     id: "providence_initiate_touch_of_respite",
@@ -23,6 +24,7 @@ export const providenceAbilities = [
     author: "Ilmater / Portfolio (Endurance)",
     location: "Leatrux",
     activation: "action",
+    facets: ["endurance"],
   },
   {
     id: "providence_initiate_boon_of_fortitude",
@@ -37,6 +39,7 @@ export const providenceAbilities = [
     location: "Leatrux",
     activation: "action",
     concentration: true,
+    facets: ["endurance"],
   },
   {
     id: "providence_adept_gift_of_enduring_faith",
@@ -50,6 +53,7 @@ export const providenceAbilities = [
     author: "Ilmater / Portfolio (Endurance)",
     location: "Leatrux",
     activation: "action",
+    facets: ["martyrdom"],
   },
   {
     id: "providence_adept_endurance_of_ilmater",
@@ -64,6 +68,7 @@ export const providenceAbilities = [
     location: "Leatrux",
     activation: "action",
     concentration: true,
+    facets: ["endurance"],
   },
   {
     id: "fire_essence_martyrs_flame_aura",
@@ -78,6 +83,7 @@ export const providenceAbilities = [
     location: "Leatrux",
     activation: "action",
     concentration: true,
+    facets: ["martyrdom","wards"],
   },
   {
     id: "wind_master_essence_liberations_gale",
@@ -91,6 +97,7 @@ export const providenceAbilities = [
     author: "Mario (Ilmater's Chosen)",
     location: "Leatrux",
     activation: "action",
+    facets: ["wards"],
   },
   {
     id: "providence_master_agony_of_the_martyr",
@@ -105,6 +112,7 @@ export const providenceAbilities = [
     location: "Leatrux",
     activation: "action",
     concentration: true,
+    facets: ["martyrdom"],
   },
   {
     id: "wind_adept_fortune_favors_the_swift",
@@ -117,6 +125,7 @@ export const providenceAbilities = [
     isCantrip: false,
     author: "Wang Dabao",
     location: "Phudara / Isle of Whispers",
+    facets: ["endurance"],
   }
 ];
 
@@ -132,6 +141,7 @@ export const providenceCantrips = [
     isCantrip: true,
     author: "Cleric / Necromancy",
     activation: "action",
+    facets: ["endurance"],
   },
   {
     id: "providence_cantrip_guidance",
@@ -145,6 +155,7 @@ export const providenceCantrips = [
     author: "Cleric / Divination",
     activation: "action",
     concentration: true,
+    facets: ["endurance"],
   },
   {
     id: "providence_cantrip_resistance",
@@ -158,6 +169,7 @@ export const providenceCantrips = [
     author: "Cleric / Abjuration",
     activation: "action",
     concentration: true,
+    facets: ["wards"],
   }
 ];
 
@@ -174,6 +186,7 @@ export const providenceSpells = [
     author: "Cleric (Life & Peace)",
     activation: "action",
     concentration: true,
+    facets: ["endurance"],
   },
   {
     id: "providence_4th_death_ward",
@@ -186,6 +199,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "Cleric / Paladin",
     activation: "action",
+    facets: ["endurance"],
   },
   {
     id: "providence_2nd_aid",
@@ -198,6 +212,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "Cleric / Paladin",
     activation: "action",
+    facets: ["endurance"],
   },
   {
     id: "providence_2nd_warding_bond",
@@ -210,6 +225,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "Cleric / Peace Domain",
     activation: "action",
+    facets: ["martyrdom"],
   },
   {
     id: "providence_4th_freedom_of_movement",
@@ -222,6 +238,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "Cleric / Paladin",
     activation: "action",
+    facets: ["wards"],
   },
   {
     id: "v2_providence_bless",
@@ -235,6 +252,7 @@ export const providenceSpells = [
     author: "D&D 5e (PHB)",
     activation: "action",
     concentration: true,
+    facets: ["endurance"],
   },
   {
     id: "providence_1st_heroism",
@@ -248,6 +266,7 @@ export const providenceSpells = [
     author: "Paladin / Cleric (Peace Domain)",
     activation: "action",
     concentration: true,
+    facets: ["endurance"],
   },
   {
     id: "acid_1st_level_absorb_elements",
@@ -260,6 +279,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "D&D 5e (XGE)",
     activation: "reaction",
+    facets: ["wards"],
   },
   {
     id: "acid_3rd_level_glyph_of_warding",
@@ -271,6 +291,7 @@ export const providenceSpells = [
     isSpell: true,
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
+    facets: ["wards"],
   },
   {
     id: "wood_3rd_level_leomunds_tiny_hut",
@@ -283,6 +304,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     ritual: true,
+    facets: ["wards"],
   },
   {
     id: "wood_3rd_level_spirit_guardians",
@@ -296,6 +318,7 @@ export const providenceSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["wards"],
   },
   {
     id: "wood_4th_level_guardian_of_faith",
@@ -308,6 +331,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     activation: "action",
+    facets: ["wards"],
   },
   {
     id: "wood_6th_level_planar_ally",
@@ -319,6 +343,7 @@ export const providenceSpells = [
     isSpell: true,
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
+    facets: ["wards"],
   },
   {
     id: "v2_providence_circle_of_power",
@@ -332,6 +357,7 @@ export const providenceSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["wards"],
   },
   {
     id: "v2_providence_holy_weapon",
@@ -345,6 +371,7 @@ export const providenceSpells = [
     author: "D&D 5e (XGE)",
     activation: "bonus action",
     concentration: true,
+    facets: ["wards"],
   },
   {
     id: "v2_providence_heroes_feast",
@@ -356,6 +383,7 @@ export const providenceSpells = [
     isSpell: true,
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
+    facets: ["endurance"],
   },
   {
     id: "v2_providence_power_word_fortify",
@@ -368,6 +396,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB 2024)",
     activation: "action",
+    facets: ["endurance"],
   },
   {
     id: "v2_providence_holy_aura",
@@ -381,6 +410,7 @@ export const providenceSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["wards"],
   },
   {
     id: "v2_providence_perfection",
@@ -393,6 +423,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "Grim Hollow Player's Guide",
     activation: "action",
+    facets: ["endurance"],
   },
   {
     id: "v2_providence_phoenix_flames",
@@ -405,6 +436,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "Grim Hollow Player's Guide",
     activation: "action",
+    facets: ["martyrdom"],
   },
   {
     id: "v2_providence_power_word_shield",
@@ -417,6 +449,7 @@ export const providenceSpells = [
     isCantrip: false,
     author: "Heliana's Guide to Monster Hunting",
     activation: "reaction",
+    facets: ["wards"],
   },
   {
     id: "wood_7th_level_conjure_celestial",
@@ -430,5 +463,8 @@ export const providenceSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["wards"],
   }
 ];
+
+export const providenceFacets = [{"id":"endurance","label":"Endurance"},{"id":"martyrdom","label":"Martyrdom"},{"id":"wards","label":"Wards"}];

@@ -23,6 +23,9 @@ export const shadowAbilities = [
     isCantrip: false,
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
+    series: "netherdark_fist",
+    stage: 2,
+    stages: "add",
   },
   {
     id: "void_master_netherdark_fist_iii",
@@ -35,6 +38,9 @@ export const shadowAbilities = [
     isCantrip: false,
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
+    series: "netherdark_fist",
+    stage: 3,
+    stages: "add",
   },
   {
     id: "acid_grandmaster_ethereal_phase_barrier",
@@ -72,6 +78,9 @@ export const shadowAbilities = [
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
     activation: "action",
+    series: "netherdark_fist",
+    stage: 1,
+    stages: "add",
   },
   {
     id: "wind_adept_umbral_form",
@@ -124,6 +133,9 @@ export const shadowAbilities = [
     isCantrip: false,
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
+    series: "netherdark_fist",
+    stage: 4,
+    stages: "add",
   },
   {
     id: "void_greatgrandmaster_netherdark_fist_v",
@@ -136,6 +148,9 @@ export const shadowAbilities = [
     isCantrip: false,
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
+    series: "netherdark_fist",
+    stage: 5,
+    stages: "add",
   },
   {
     id: "wind_adept_echoing_footsteps",
@@ -558,3 +573,5 @@ export const shadowSpells = [
     activation: "action",
   }
 ];
+
+export const shadowFacets = [];

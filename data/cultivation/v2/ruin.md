@@ -1,13 +1,15 @@
 # Ruin Cultivation Path
 
 Tradition: Divine
-Concept: Murder, pain, deception, thievery, and the deliberate undoing of a foe.
+Concept: Murder, pain, and strife: the deliberate undoing of a foe.
+Facets: Murder, Pain, Strife
 
 ### Decay
 
 ```yaml
 id: ruin_adept_decay
 tier: adept
+facets: murder
 isActive: true
 isPassive: false
 isSpell: false
@@ -32,6 +34,7 @@ To affect an item being worn or carried by an unwilling creature, you must make 
 ```yaml
 id: ruin_initiate_blood_scent
 tier: initiate
+facets: murder
 isActive: false
 isPassive: true
 isSpell: false
@@ -51,6 +54,7 @@ You instinctively track the scent of open wounds. You have advantage on Wisdom (
 ```yaml
 id: ruin_initiate_bhaal_s_tribute
 tier: initiate
+facets: murder
 isActive: true
 isPassive: false
 isSpell: false
@@ -79,6 +83,7 @@ Any creature that witnessed the events and is within the area when the ritual en
 ```yaml
 id: ruin_adept_mark_for_death
 tier: adept
+facets: murder
 isActive: true
 isPassive: false
 isSpell: false
@@ -109,6 +114,7 @@ The marked creature feels an overwhelming sense of impending doom.
 ```yaml
 id: ruin_master_mass_inflict_wounds
 tier: master
+facets: murder
 isActive: true
 isPassive: false
 isSpell: false
@@ -131,6 +137,7 @@ As an action, you release a wave of necrotic energy from a point you can see wit
 ```yaml
 id: ruin_grandmaster_mark_of_doom
 tier: grandmaster
+facets: murder
 isActive: true
 isPassive: false
 isSpell: false
@@ -164,6 +171,7 @@ The marked creature feels a sense of impending doom but doesn't know the source.
 ```yaml
 id: v2_ruin_murderous_twin
 tier: 2nd
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -184,6 +192,7 @@ Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tool
 ```yaml
 id: ruin_3rd_vampiric_touch
 tier: 3rd
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -204,6 +213,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#v
 ```yaml
 id: v2_ruin_assassins_promise
 tier: 4th
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -223,6 +233,7 @@ Source reference: [The Compendium of Forgotten Secrets: Awakening on 5e.tools](h
 ```yaml
 id: ruin_1st_hunters_mark
 tier: 1st
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -243,6 +254,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#h
 ```yaml
 id: ruin_9th_power_word_kill
 tier: 9th
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -262,6 +274,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 ```yaml
 id: torment_initiate_whips_kiss
 tier: initiate
+facets: pain
 isActive: true
 isPassive: false
 isSpell: false
@@ -285,6 +298,7 @@ You channel vitality through inflicting suffering. Once per turn, when you hit a
 ```yaml
 id: torment_1st_inflict_wounds
 tier: 1st
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -304,6 +318,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#i
 ```yaml
 id: torment_6th_harm
 tier: 6th
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -323,6 +338,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#h
 ```yaml
 id: fire_initiate_heart_crusher_grip
 tier: initiate
+facets: murder
 isActive: true
 isPassive: false
 isSpell: false
@@ -343,6 +359,7 @@ As an action, you can target one bloodied creature you can see within 15 feet of
 ```yaml
 id: fire_adept_frightful_pursuit
 tier: adept
+facets: strife
 isActive: false
 isPassive: true
 isSpell: false
@@ -360,6 +377,7 @@ You have advantage on attack rolls against any creature that is currently fright
 ```yaml
 id: torment_adept_blood_tithe
 tier: adept
+facets: pain
 isActive: false
 isPassive: true
 isSpell: false
@@ -381,6 +399,7 @@ Whenever a creature within 30 feet takes damage from your attacks or spells, you
 ```yaml
 id: v2_moon_mislead
 tier: 5th
+facets: strife
 isActive: false
 isPassive: false
 isSpell: true
@@ -401,6 +420,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mislead_
 ```yaml
 id: v2_moon_seeming
 tier: 5th
+facets: strife
 isActive: false
 isPassive: false
 isSpell: true
@@ -420,6 +440,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#seeming_
 ```yaml
 id: torment_master_crown_of_agony
 tier: master
+facets: pain
 isActive: true
 isPassive: false
 isSpell: false
@@ -438,6 +459,7 @@ As a bonus action, you wreathe yourself in a mantle of barbed needles and psychi
 ```yaml
 id: torment_cantrip_mind_sliver
 tier: cantrip
+facets: strife
 isActive: false
 isPassive: false
 isSpell: false
@@ -459,6 +481,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#m
 ```yaml
 id: torment_7th_power_word_pain
 tier: 7th
+facets: pain
 isActive: false
 isPassive: false
 isSpell: true
@@ -473,30 +496,12 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#power%
 
 ---
 
-### Mage Hand
-
-```yaml
-id: v2_mystery_mage_hand
-tier: cantrip
-isActive: false
-isPassive: false
-isSpell: false
-isCantrip: true
-author: D&D 5e (PHB)
-activation: action
-```
-
-A spectral hand within 30 feet manipulates objects up to 10 pounds for 1 minute.
-
-Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mage%20hand_phb).
-
----
-
 ### Assassin's Shroud
 
 ```yaml
 id: ruin_adept_assassins_shroud
 tier: adept
+facets: murder
 isActive: true
 isPassive: false
 isSpell: false
@@ -517,6 +522,7 @@ As a bonus action, you cloak yourself in deceptive shadows for 1 minute. While c
 ```yaml
 id: fire_initiate_searing_gaze
 tier: initiate
+facets: strife
 isActive: true
 isPassive: false
 isSpell: false
@@ -537,6 +543,7 @@ As a bonus action, you can attempt an Intimidation check. If successful, the cre
 ```yaml
 id: fire_adept_blazing_presence
 tier: adept
+facets: strife
 isActive: true
 isPassive: false
 isSpell: false
@@ -561,6 +568,7 @@ Your fiery aura gives you a commanding presence. You can use your action to crea
 ```yaml
 id: fire_1st_level_hellish_rebuke
 tier: 1st
+facets: pain
 isActive: false
 isPassive: false
 isSpell: true
@@ -580,6 +588,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#h
 ```yaml
 id: wood_5th_level_antilife_shell
 tier: 5th
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -600,6 +609,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#a
 ```yaml
 id: acid_5th_level_synaptic_static
 tier: 5th
+facets: strife
 isActive: false
 isPassive: false
 isSpell: true
@@ -619,6 +629,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#s
 ```yaml
 id: v2_ruin_power_word_stun
 tier: 8th
+facets: strife
 isActive: false
 isPassive: false
 isSpell: true
@@ -638,6 +649,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 ```yaml
 id: v2_ruin_glibness
 tier: 8th
+facets: strife
 isActive: false
 isPassive: false
 isSpell: true
@@ -657,6 +669,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 ```yaml
 id: v2_ruin_psychic_scream
 tier: 9th
+facets: strife
 isActive: false
 isPassive: false
 isSpell: true
@@ -676,6 +689,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#psychi
 ```yaml
 id: v2_ruin_power_word_maim
 tier: 7th
+facets: pain
 isActive: false
 isPassive: false
 isSpell: true
@@ -695,6 +709,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_ruin_dread_curse_of_azathoth
 tier: 7th
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -715,6 +730,7 @@ Source reference: [Cthulhu by Torchlight on 5e.tools](https://5e.tools/spells.ht
 ```yaml
 id: v2_ruin_doom_of_false_friends
 tier: 8th
+facets: strife
 isActive: false
 isPassive: false
 isSpell: true
@@ -735,6 +751,7 @@ Source reference: [Kobold Press Book of Ebon Tides on 5e.tools](https://5e.tools
 ```yaml
 id: v2_ruin_wipe_face
 tier: 9th
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true
@@ -755,6 +772,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_ruin_wave_of_oblivion
 tier: 9th
+facets: murder
 isActive: false
 isPassive: false
 isSpell: true

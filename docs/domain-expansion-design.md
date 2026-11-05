@@ -10,7 +10,7 @@ Every path has a domain: a Favored Domain (Primordial), Consecrated Ground (Divi
 
 - The **weaker** ones get a **Domain Expansion**. They work everywhere, and on the domain they add one thing.
 - Techniques **too strong for their tier** get a **restore**: nerfed everywhere, full strength on the domain.
-- One or two of the **strongest techniques**, Grandmaster or higher, are **domain-bound**. They work only on the domain.
+- One or two of the **strongest techniques**, Grandmaster or higher, are **domain-bound**. They work only on the domain. This applies to every family: Primordial, Divine, and Immortal paths all have them.
 - **Spells and cantrips** get no domain line at all, neither a Domain Expansion nor domain-bound.
 - **Everything else** works the same wherever you stand.
 
@@ -58,13 +58,22 @@ Before Grandmaster, whether you're on your domain depends entirely on the story,
 | --- | --- | --- |
 | Elemental (Primordial) | Domain Manifestation: once per day, the area within 1 mile becomes your Favored Domain for 1 hour | At least one fight a day |
 | Portfolio (Divine) | Consecration: the same, for Consecrated Ground | At least one fight a day |
-| Dao (Immortal) | Dao Domain: once per day, you are in your Sanctum for 1 hour, wherever you are, and it never collapses in a clash | At least one fight a day, which a clash can't take away |
+| Dao (Immortal) | Dao Domain: once per day, you are in your Sanctum for 1 hour, wherever you are, and it never collapses in a clash, except against its opposite | At least one fight a day, which a clash can't take away |
 
 So a domain-bound ability is guaranteed one big fight a day, which is about how often a cultivator would use their strongest ability anyway. That limit is what pays for its power.
 
 ### Only a few
 
 Domain-bound abilities should feel like the god or the element answering, not like the normal kit. If most of a Grandmaster's abilities were domain-bound, their whole kit would hang on one Consecration a day and they'd be weak in every other fight. One or two techniques per path keeps them as the climax.
+
+### Strong enough to be worth the leash
+
+A domain-bound technique is strong, perhaps a bit too strong, and the domain is what makes that acceptable. That's a general rule rather than a strict formula, but two checks always apply:
+
+- **Bind only the strongest.** Never bind an average or weak technique; it becomes a trap. The rest of the path's Grandmaster and Great Grandmaster techniques work anywhere.
+- **It must beat the unbound ones.** A bound technique should outclass the path's unbound techniques of the same tier. If it doesn't, raise it when you bind it. Water's Deluge went from 8d10 in a 40-foot radius to 12d10 in a 60-foot radius, affecting only creatures you choose, when it became domain-bound; Arctic Rift, which works anywhere, stayed at 12d8 in a line.
+
+Its text says where it works, in the family's own words: "As an action in your Favored Domain, …", "As a bonus action on your Consecrated Ground, …", or "… in your Sanctum, …".
 
 ### Never spells or cantrips
 
@@ -243,21 +252,21 @@ A light Domain Expansion is worth less than a level, a standard Domain Expansion
 | Tempest | Area; farther; extra dice |
 | Providence | More healing; temporary HP; share |
 | Undertow | Lift a requirement; condition step; targets; ignore an exemption |
-| Alchemy | Free (Initiate and Adept); longer; more healing |
+| Alchemy | Selective; area; targets; range; extra dice; die step; share; harder escape; more healing |
 | Heart | Move with it; advantage; half on a miss |
 | Mysteries | Range; origin; area |
-| Crypt | Targets; area (Ossuary Cage becomes a 10-foot cube); die step (Bone Spear deals 4d10) |
+| Crypt | Targets; no concentration (Ossuary Cage); die step (Bone Spear deals 4d10) |
 | Tyranny | Targets; condition step (grappled to restrained); die step |
 | Wisdom | Targets; die step; disadvantage on the save |
 | Life and Death | More healing; die step; no concentration as a restore |
 
 ## Family notes
 
-**Primordial.** Essence Supremacy (Great Grandmaster) already ignores resistance at home, so skip damage-type and resistance Domain Expansions. Domain Movement (Adept) already grants movement speeds at home, so Water and Sky shouldn't spend Domain Expansions on swim or fly speeds.
+**Primordial.** Primordial paths take domain-bound techniques like the others; Water's are Four Strands of the Unbreaking Wave and Deluge. Essence Supremacy (Great Grandmaster) already ignores resistance at home, so skip damage-type and resistance Domain Expansions. Domain Movement (Adept) already grants movement speeds at home, so Water and Sky shouldn't spend Domain Expansions on swim or fly speeds.
 
 **Divine.** Several Consecrated Grounds include "wherever it is happening": Ruin's murder scene, Providence's suffering. Rule 4 is what stops a cultivator from creating their own domain mid-fight. Undertow avoids the problem by wording its last example as "any wreck or shore where someone drowned" instead of "anywhere someone is being dragged under".
 
-**Immortal.** From Grandmaster, Dao Domain gives an hour a day like Domain Manifestation and Consecration, so Immortal paths take Domain Expansions and domain-bound abilities the same way as the other families. What sets them apart is that a clash can't take the hour away: Dao Domain never collapses, even when its side loses, though it still joins clashes and can collapse other domains. Their Dao Heart belongs to them alone.
+**Immortal.** From Grandmaster, Dao Domain gives an hour a day like Domain Manifestation and Consecration, so Immortal paths take Domain Expansions and domain-bound abilities the same way as the other families. What sets them apart is that a clash can't take the hour away: Dao Domain never collapses, even when its side loses, though it still joins clashes and can collapse other domains. The one exception is an opposite: Mysteries and Wisdom, what is beyond words and what is named, are the only Immortal opposites, and both collapse before the roll even under Dao Domain. Their Dao Heart belongs to them alone.
 
 ## In the data
 
@@ -315,12 +324,12 @@ Maelstrom stays in Tempest. It's a spell, so it gets no domain line.
 | --- | --- | --- | --- | :-: |
 | Initiate | Wanderer's Road | Domain Expansion | Difficult terrain doesn't slow you in combat either. | ½ |
 | Initiate | Storm Navigator | Domain Expansion | The advantage applies in any weather. | ½ |
-| Initiate | Zenith Mark | Domain Expansion | You can target one more creature. | 1 |
+| Initiate | Zenith Mark | Domain Expansion | The mark lasts 8 hours. | 1 |
 | Adept | Meteor Trail | Domain Expansion | If the attack misses, the target still takes half damage. | 1 |
 | Master | Asterism | Domain Expansion | You choose which creatures the lines ignore. | ½ |
 | Grandmaster | Tears of Selûne | Bound | A bonus action and 4 Essence bare the night sky for 1 minute. | – |
 
-**Plain (4):** True Bearing (Initiate), Safest Course and Hold the Course (Adept), and Star Road (Master). Voyage Among the Stars (Grandmaster) is plain too: it's a travel ritual, so it wouldn't get much from the domain.
+**Plain (4):** True Bearing (Initiate), Safest Course and Polestar (Adept), and Star Road (Master). Voyage Among the Stars (Grandmaster) is plain too: it's a travel ritual, so it wouldn't get much from the domain.
 
 Tears of Selûne uses a saving throw on purpose. Hadal Domain's pressure, which no roll avoids, stays the exception. By the Lunar and Navigation test it could be a body, but the shards are what sailors steer by, so it stays with Navigation.
 
@@ -362,6 +371,9 @@ The techniques take their ideas from Pathfinder 2e spells:
 2. **Spells and cantrips:** no domain line of any kind. Undertow's Great Grandmaster technique won't be domain-bound either.
 3. **The Deep:** its last example is "any wreck or shore where someone drowned".
 4. **Elsewhere:** Maelstrom stays in Tempest, and Water's former Echoes of the Deep talent becomes Tidespeech.
+5. **Every family binds:** domain-bound isn't Divine-only. Each path with Grandmaster techniques binds its strongest one or two, and raises them if they aren't the strongest yet.
+6. **Exhaustion on the domain:** Restorative Rain's Domain Expansion removes 1 level of exhaustion, once per use. It is a deliberate exception to "Exhaustion is extremely special".
+7. **Lines that make sense:** a Domain Expansion has to fit what the technique already does. Glacial Shield and Misty Escape lost their movement lines because moving after a defensive reaction didn't fit either; a technique without a fitting line simply gets none.
 
 ## Sources
 

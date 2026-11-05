@@ -6,7 +6,7 @@ import { buildV2System } from '../../talents/systems';
 import { PathSigil } from '../../talents/ui';
 import { HOMEBREW_URL } from '../../data/patchNotes/v2-1';
 import {
-  LUNAR_CANTRIPS, LUNAR_CHANGES, LUNAR_DOMAIN, LUNAR_DOMAIN_LINES, LUNAR_SPELLS, LUNAR_TECHNIQUES, MOVED, NEW_PATHS, NewPath, PATCH
+  EXPANDED, LUNAR_CANTRIPS, LUNAR_CHANGES, LUNAR_DOMAIN, LUNAR_DOMAIN_LINES, LUNAR_SPELLS, LUNAR_TECHNIQUES, MOVED, NEW_PATHS, NewPath, PATCH, STAGED
 } from '../../data/patchNotes/v2-2';
 import { patchDate } from '../../data/patchNotes';
 import { AbilityChip, AbilityDialog, Chips, PathChip, Prose, Section } from './shared';
@@ -18,6 +18,9 @@ const TOC = [
   ...NEW_PATHS.map(p => [p.id, `${p.sealed ? 'Sealed' : 'New'} path: ${titleCase(p.id)}`]),
   ['moved', 'Moved abilities'],
   ['lunar', 'Lunar'],
+  ['techniques', 'New techniques and Domain Expansions'],
+  ['filters', 'Path filters'],
+  ['staged', 'Staged techniques'],
   ['homebrew', 'Homebrew sources']
 ];
 
@@ -46,7 +49,7 @@ const NewPathSection: React.FC<{
                 {data.sealed ? <><Lock size={10} /> Sealed</> : 'New'}
               </span>
             </p>
-            {path.patron && <p className="text-sm text-gold-dim">{data.kicker.includes('Immortal') ? 'Taught by the' : 'Portfolio of'} {path.patron}</p>}
+            {path.patron && <p className="text-sm text-gold-dim">{data.kicker.includes('Immortal') ? 'Taught by' : 'Portfolio of'} {path.patron}</p>}
             <p className="text-parchment/90 mt-1">{path.description}</p>
           </div>
         </div>
@@ -112,7 +115,7 @@ const PatchV2_2: React.FC = () => {
     <>
       <header className="arcane-panel p-6 md:p-10 mb-8 overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: `radial-gradient(60% 90% at 10% 0%, ${glow('navigation', '#fde68a', 0.14)}, transparent 70%), radial-gradient(50% 90% at 55% 0%, ${glow('crypt', '#d6cfb4', 0.07)}, transparent 70%), radial-gradient(50% 90% at 95% 0%, ${glow('wisdom', '#818cf8', 0.12)}, transparent 70%)` }} />
+          style={{ background: `radial-gradient(60% 90% at 10% 0%, ${glow('navigation', '#fde68a', 0.14)}, transparent 70%), radial-gradient(50% 90% at 55% 0%, ${glow('crypt', '#34d399', 0.07)}, transparent 70%), radial-gradient(50% 90% at 95% 0%, ${glow('wisdom', '#818cf8', 0.12)}, transparent 70%)` }} />
         <div className="relative">
           <p className="flex flex-wrap items-center gap-2 font-display text-[11px] tracking-[0.25em] uppercase text-gold">
             <Megaphone size={14} /> Patch {PATCH.version} · {PATCH.name} <span className="text-mist">· {patchDate(PATCH)}</span>
@@ -121,7 +124,7 @@ const PatchV2_2: React.FC = () => {
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
             {[
               [String(NEW_PATHS.length), 'new paths'],
-              [count([...NEW_PATHS.map(p => p.techniques), LUNAR_TECHNIQUES]), 'new techniques'],
+              [count([...NEW_PATHS.map(p => p.techniques), LUNAR_TECHNIQUES, ...EXPANDED.map(p => p.techniques)]), 'new techniques'],
               [count([...NEW_PATHS.flatMap(p => [p.cantrips, p.spells]), LUNAR_CANTRIPS, LUNAR_SPELLS]), 'new spells and cantrips'],
               [String(MOVED.length), 'abilities moved']
             ].map(([value, label]) => (
@@ -150,7 +153,7 @@ const PatchV2_2: React.FC = () => {
 
           <Section id="moved" kicker="Other paths" title="Moved abilities">
             <Prose>
-              <p>These now belong to one of the new paths. If you've learned one, it stays on your sheet.</p>
+              <p>These now belong to another path, mostly one of the new ones. Mage Hand goes back to Mysteries, since moving things through space is its domain and not Ruin's. If you've learned one, it stays on your sheet.</p>
             </Prose>
             <ul className="arcane-panel px-4">
               {MOVED.map(m => (
@@ -213,9 +216,88 @@ const PatchV2_2: React.FC = () => {
             </div>
             <div className="arcane-panel p-4 flex flex-wrap items-center gap-3 text-sm">
               <PathChip path={lunar} />
-              <span className="text-mist">and</span>
+              <span className="text-mist">still overcomes</span>
               <PathChip path={path('tempest')} />
-              <span className="text-parchment/90">now clash evenly. Lunar no longer overcomes Tempest, because guiding ships through storms is Navigation's now.</span>
+              <span className="text-parchment/90">but for a new reason: every storm blows over, and the moon still rises. Guiding ships through storms is Navigation's now.</span>
+            </div>
+          </Section>
+
+          <Section id="techniques" kicker="Existing paths" title="New techniques and Domain Expansions">
+            <Prose>
+              <p>Water, Mysteries, and Alchemy get new techniques, adapted from Pathfinder 2e spells, and Water, Alchemy, and Heart get Domain Expansions on techniques they already had. Click any ability to read it.</p>
+            </Prose>
+            {EXPANDED.map(entry => (
+              <div key={entry.id} className="arcane-panel px-4">
+                <div className="flex flex-wrap items-center gap-3 pt-4">
+                  <PathChip path={path(entry.id)} />
+                  <p className="text-sm text-parchment/90">{entry.intro}</p>
+                </div>
+                {entry.techniques.length > 0 && (
+                  <div className="py-3">
+                    <Chips names={entry.techniques} pathId={entry.id} lookup={find} onOpen={setOpen} />
+                  </div>
+                )}
+                {entry.changes?.map(change => (
+                  <div key={change.name} className="grid md:grid-cols-[220px_1fr] gap-1 md:gap-4 py-2 border-t border-gold-subtle text-sm">
+                    <div><AbilityChip name={change.name} found={find(entry.id, change.name)} onOpen={setOpen} /></div>
+                    <p className="text-parchment/90"><span className="text-mist">Changed: </span>{change.text}</p>
+                  </div>
+                ))}
+                {entry.domainLines.length > 0 && (
+                  <ul className="pb-2">
+                    {entry.domainLines.map(line => (
+                      <li key={line.name} className="grid md:grid-cols-[220px_1fr] gap-1 md:gap-4 py-2 border-t border-gold-subtle text-sm">
+                        <div><AbilityChip name={line.name} found={find(entry.id, line.name)} onOpen={setOpen} /></div>
+                        <p className="text-parchment/90"><span className="text-mist">Domain Expansion: </span>{line.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </Section>
+
+          <Section id="filters" kicker="Talent tree" title="Path filters">
+            <Prose>
+              <p>Eight paths now have filter chips above their tiers. The path is still one path: the chips only narrow what you see.</p>
+              <ul>
+                <li><strong>Alchemy:</strong> Acid, Medicine, Poison, Explosives, Mutation</li>
+                <li><strong>Water:</strong> Water, Ice</li>
+                <li><strong>Heart:</strong> Unarmed, Blades, Spears, Blunt, Ranged, Body &amp; Mind. Techniques that work with any weapon show under every weapon.</li>
+                <li><strong>Wisdom:</strong> Memory, Names, Knowledge, Thoughts &amp; Deduction</li>
+                <li><strong>Lunar:</strong> Moonlight, Stars, Visions, Lycanthropy</li>
+                <li><strong>Pestilence:</strong> Disease, Venom, Curses</li>
+                <li><strong>Providence:</strong> Endurance, Martyrdom, Wards</li>
+                <li><strong>Ruin:</strong> Murder, Pain, Strife</li>
+              </ul>
+              <p>Poison and Venom are different things. Venom grows in a body or spreads like sickness, and belongs to Pestilence. Poison is brewed, measured, and delivered by needle or vial, and belongs to Alchemy.</p>
+            </Prose>
+          </Section>
+
+          <Section id="staged" kicker="Talent tree" title="Staged techniques">
+            <Prose>
+              <p>Techniques learned in stages, such as Stone Fist I to V, are now linked as one series.</p>
+              <ul>
+                <li>Each stage needs the one before it. Unlearning a stage also removes the stages after it.</li>
+                <li>A staged technique costs the price of its highest stage, so each upgrade costs the difference: Stone Fist I, II, and III cost 3 together, not 6.</li>
+                <li>Every active stage still adds its own cost to your Essence pool, since you still use it: Radiant Vein Blade I, II, and III cost 3 and add 6. Only the highest stage holds Essence, if it's a passive.</li>
+                <li>On the talent tree, each series has its own row, so its stages line up across the tiers.</li>
+                <li>When each stage is a stronger copy of the one before, your sheet shows only the highest.</li>
+              </ul>
+              <p>If your build has a later stage without the earlier ones, the earlier ones are added for you. If you can't afford them, the later stages are removed and their Essence refunded. The app tells you which when you load the character.</p>
+            </Prose>
+            <div className="arcane-panel px-4">
+              <ul>
+                {STAGED.map(series => (
+                  <li key={series.names[0]} className="grid md:grid-cols-[130px_150px_1fr] gap-1 md:gap-4 py-3 border-t border-gold-subtle first:border-t-0 text-sm">
+                    <div><PathChip path={path(series.path)} /></div>
+                    <p className="text-gold-bright md:pt-0.5">{series.stages === 'replace' ? 'Sheet shows the highest' : 'Sheet shows every stage'}</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {series.names.map(name => <AbilityChip key={name} name={name} found={find(series.path, name)} onOpen={setOpen} />)}
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </Section>
 

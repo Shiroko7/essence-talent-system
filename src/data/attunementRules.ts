@@ -114,7 +114,7 @@ export const ATTUNEMENTS: Attunement[] = [
       ['Essence Restoration', 'Finish a short rest in your Sanctum to regain all expended Immortal Essence.'],
       ['Tempered Body', 'In your Sanctum, when you roll initiative, gain temporary hit points equal to 10 + your level.'],
       ['Natal Treasure', 'One extra attunement slot for a single item you refine into your natal treasure over a long rest in your Sanctum. It stays bound to you until you choose another.'],
-      ['Dao Domain', 'Once per day, as an action or when you roll initiative, you enter your Sanctum for 1 hour, wherever you are. For that hour it never collapses in a clash, even if your side loses, but it still joins clashes and can make other domains collapse.'],
+      ['Dao Domain', 'Once per day, as an action or when you roll initiative, you enter your Sanctum for 1 hour, wherever you are. For that hour it never collapses in a clash, even if your side loses, but it still joins clashes and can make other domains collapse. Only an opposite domain collapses it.'],
       ['Transcendence', 'You are no longer mortal, and no longer written into fate. Your creature type becomes Immortal, and effects that only work on specific creature types don’t affect you. A creature that targets you with divination, prophecy, or a curse takes 10d10 force damage, or half as much on a successful Constitution saving throw against your essence ability save DC.']
     ]),
     notes: ['Choose one Immortal path you have learned; only its Sanctum counts.']
@@ -190,6 +190,7 @@ export const OVERCOMES: [string, string, string][] = [
   ['undertow', 'lunar', 'Moonlight never reaches below the last light.'], ['undertow', 'fire', 'Nothing burns in the deep.'],
   ['undertow', 'metal', 'The pressure of the deep crushes iron.'], ['earth', 'undertow', 'Stone doesn’t drown.'],
   ['lunar', 'ruin', 'Selûne’s light exposes Mask’s thieves.'],
+  ['lunar', 'tempest', 'Every storm blows over, and the moon still rises.'],
   ['crypt', 'wood', 'Myrkul’s autumn strips every bough.'],
   ['providence', 'tyranny', 'Ilmater breaks the chains Bane forges.'],
   ['wisdom', 'shadow', 'What is remembered can’t be lost to Shar’s forgetting.']
@@ -199,7 +200,8 @@ export const OVERCOMES: [string, string, string][] = [
 export const OPPOSITES: [string, string, string][] = [
   ['sky', 'earth', 'Heaven and earth.'], ['lunar', 'shadow', 'Selûne and Shar, moonlight and the dark.'],
   ['love', 'ruin', 'Sune’s devotion against murder and betrayal.'], ['pestilence', 'providence', 'Talona’s plague against Ilmater’s healing.'],
-  ['sky', 'undertow', 'Heaven and the abyss.'], ['navigation', 'shadow', 'Selûne and Shar, the stars and the dark.']
+  ['sky', 'undertow', 'Heaven and the abyss.'], ['navigation', 'shadow', 'Selûne and Shar, the stars and the dark.'],
+  ['mysteries', 'wisdom', 'The Dao that can be named is not the eternal Dao: what is beyond words and what is named undo each other.']
 ];
 
 export type Matchup = 'coexist' | 'overcome' | 'overcome-by' | 'opposite' | 'clash';
