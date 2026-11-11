@@ -8,8 +8,8 @@ export const PATCH = {
   version: 'V2.1.1',
   name: 'Craft and Stages',
   date: '2026-11-10',
-  title: 'Alchemy, Path Filters, and Staged Techniques',
-  summary: 'Alchemy gets crafted poisons, body grafts, new medicine, and Domain Expansions. Seven paths get filter chips, and techniques learned in stages are now linked, so each upgrade costs only the difference. The Tempest errata adds five storm techniques and replaces Lightning Arrow with Stormshot.',
+  title: 'Alchemy, Tempest, Path Filters, and Staged Techniques',
+  summary: 'Alchemy gets crafted poisons, body grafts, new medicine, and Domain Expansions. Seven paths get filter chips, and techniques learned in stages are now linked, so each upgrade costs only the difference. The Tempest errata adds six storm techniques and replaces Lightning Arrow with Stormshot.',
   image: '/og/patch-notes-v2-1-1.png'
 };
 
@@ -38,7 +38,7 @@ export const ALCHEMY = {
 };
 
 export const TEMPEST_ERRATA = {
-  techniques: ['Stormshot', 'Thunderhead Judgment', 'Terrain of Tempest', 'Red Lightning of Punishment', 'The Last Shipwreck'],
+  techniques: ['Stormshot', 'Thunderhead Judgment', 'Storm Broadside', 'Terrain of Tempest', 'Red Lightning of Punishment', 'The Last Shipwreck'],
   updated: ['Stormborn Presence', 'Raincaller']
 };
 

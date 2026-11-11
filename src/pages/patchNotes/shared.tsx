@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 import AbilityMarkdown from '../../components/essences/AbilityMarkdown';
 import { SystemPath, tint } from '../../talents/model';
-import { PathSigil } from '../../talents/ui';
+import { DomainLine, PathSigil } from '../../talents/ui';
 import { Found, byRank, makeLookup, rankLabel } from './lookup';
 
 /* Building blocks shared by every patch's notes. */
@@ -84,8 +84,9 @@ export const AbilityDialog: React.FC<{ found: Found | null; onClose: () => void 
           </div>
           <button onClick={onClose} className="p-1.5 text-mist hover:text-parchment rounded hover:bg-charcoal" aria-label="Close"><X size={18} /></button>
         </header>
-        <div className="flex-1 overflow-y-auto p-5">
+        <div className="flex-1 overflow-y-auto p-5 space-y-3">
           <AbilityMarkdown content={ability.description} />
+          <DomainLine ability={ability} path={path} />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ The canonical catalog intended for V2 groups campaign-relevant paths into **Prim
 
 Each named spell or cantrip belongs to exactly one path. The generator rejects duplicate spell and cantrip titles and duplicate ability IDs. Spellcasting paths need at least one cantrip and one leveled spell; Heart is explicitly marked as a custom-talent path without a spell list.
 
-The catalog contains 227 custom talents (157 active and 70 passive), 41 cantrips, and 388 leveled spells, for 656 entries. Path totals range from 24 to 79 entries. These counts measure available choices; they do not rate mechanical power.
+The catalog contains 228 custom talents (158 active and 70 passive), 41 cantrips, and 388 leveled spells, for 657 entries. Path totals range from 24 to 79 entries. These counts measure available choices; they do not rate mechanical power.
 
 | Family | Path | Active / passive | Cantrips | Spells | Total |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -17,7 +17,7 @@ The catalog contains 227 custom talents (157 active and 70 passive), 41 cantrips
 | Divine | Lunar | 6 / 1 | 1 | 18 | 26 |
 | Divine | Providence | 7 / 2 | 3 | 22 | 34 |
 | Divine | Love | 2 / 0 | 2 | 20 | 24 |
-| Divine | Tempest | 10 / 2 | 1 | 18 | 31 |
+| Divine | Tempest | 11 / 2 | 1 | 18 | 32 |
 | Divine | Undertow | 7 / 3 | 2 | 20 | 32 |
 | Divine | Ruin | 11 / 3 | 3 | 25 | 42 |
 | Divine | Pestilence | 9 / 4 | 2 | 25 | 40 |

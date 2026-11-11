@@ -9,8 +9,8 @@ import { AbilityChip, AbilityDialog, Chips, PathChip, Prose, Section } from './s
 import { Found, makeLookup } from './lookup';
 
 const TOC = [
-  ['tempest-errata', 'Tempest errata'],
   ['alchemy', 'Alchemy'],
+  ['tempest-errata', 'Tempest errata'],
   ['filters', 'Path filters'],
   ['staged', 'Staged techniques'],
   ['moved', 'Moved abilities'],
@@ -41,6 +41,7 @@ const PatchV2_1_1: React.FC = () => {
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
             {[
               [String(ALCHEMY.techniques.length), 'new Alchemy techniques'],
+              [String(TEMPEST_ERRATA.techniques.length), 'new Tempest techniques'],
               [String(FILTERS.length), 'paths with filters'],
               [String(STAGED.length), 'staged techniques linked']
             ].map(([value, label]) => (
@@ -63,25 +64,6 @@ const PatchV2_1_1: React.FC = () => {
         </nav>
 
         <div className="space-y-14 min-w-0">
-          <Section id="tempest-errata" kicker="Errata" title="Tempest">
-            <Prose>
-              <p>Stormshot replaces Lightning Arrow in Tempest. If you had Lightning Arrow learned, the app removes it and frees its Essence points when you load your character.</p>
-              <p>Thunderhead Judgment strikes a single target at Master. At Grandmaster, Red Lightning of Punishment blasts a 30-foot-radius sphere. Terrain of Tempest moves creatures and vehicles across the domain at initiative count 20, and The Last Shipwreck traps one creature in a shipwreck illusion. Terrain of Tempest and The Last Shipwreck require Consecrated Ground.</p>
-              <p>Stormborn Presence and Raincaller gain Domain Expansions on Consecrated Ground.</p>
-            </Prose>
-            <div className="arcane-panel px-4">
-              <div className="grid md:grid-cols-[150px_1fr] gap-2 md:gap-4 py-3">
-                <p className="font-display text-[11px] tracking-[0.2em] uppercase text-gold-dim md:pt-1">New techniques</p>
-                <Chips names={TEMPEST_ERRATA.techniques} pathId="tempest" lookup={find} onOpen={setOpen} />
-              </div>
-              <div className="grid md:grid-cols-[150px_1fr] gap-2 md:gap-4 py-3 border-t border-gold-subtle">
-                <p className="font-display text-[11px] tracking-[0.2em] uppercase text-gold-dim md:pt-1">Updated techniques</p>
-                <Chips names={TEMPEST_ERRATA.updated} pathId="tempest" lookup={find} onOpen={setOpen} />
-              </div>
-            </div>
-            <Link to="/?path=tempest" className="arcane-btn !px-4 !py-2 text-sm inline-flex items-center gap-2">Open the Tempest path <ArrowRight size={14} /></Link>
-          </Section>
-
           <Section id="alchemy" kicker="Immortal path" title="Alchemy">
             <Prose>
               <p>Alchemy gets crafted poisons, body grafts (claws and wings), and new medicine, all of Nilo's own invention, and its older techniques get Domain Expansions. Vital Essence Sublimation gets a fourth stage at Grandmaster, which can seal one of a poisoned creature's abilities. Suicide Fuse makes a creature you finish burst over everyone near it. Two Grandmaster techniques work only in your Sanctum: Eight Trigrams Furnace seals a creature in a burning furnace, and Myriad Poison Sanctum poisons the creatures you choose there. Twenty new spells fill out its poisons, acids, explosives, medicine, and transmutation, from Wine Bomb to Bite of the King. Click any ability to read it.</p>
@@ -119,6 +101,26 @@ const PatchV2_1_1: React.FC = () => {
               </ul>
             </div>
             <Link to="/?path=alchemy" className="arcane-btn !px-4 !py-2 text-sm inline-flex items-center gap-2">Open the Alchemy path <ArrowRight size={14} /></Link>
+          </Section>
+
+          <Section id="tempest-errata" kicker="Errata" title="Tempest">
+            <Prose>
+              <p>Stormshot replaces Lightning Arrow in Tempest. If you had Lightning Arrow learned, the app removes it and frees its Essence points when you load your character.</p>
+              <p>At Master, Thunderhead Judgment can knock one target prone, and Storm Broadside rolls a separate attack for each of its four bolts. At Grandmaster, Red Lightning of Punishment blasts a 30-foot-radius sphere. Creatures that fail the save take 6d12 lightning damage and are cursed. Each attack that hits a cursed creature deals an extra 2d8 lightning damage until the curse is removed.</p>
+              <p>Terrain of Tempest moves creatures and vehicles across the domain at initiative count 20, and The Last Shipwreck traps one creature in a shipwreck illusion. Both techniques require Consecrated Ground.</p>
+              <p>On your Consecrated Ground, you can center Storm Broadside and Red Lightning of Punishment up to 240 feet away. Stormborn Presence and Raincaller also gain Domain Expansions.</p>
+            </Prose>
+            <div className="arcane-panel px-4">
+              <div className="grid md:grid-cols-[150px_1fr] gap-2 md:gap-4 py-3">
+                <p className="font-display text-[11px] tracking-[0.2em] uppercase text-gold-dim md:pt-1">New techniques</p>
+                <Chips names={TEMPEST_ERRATA.techniques} pathId="tempest" lookup={find} onOpen={setOpen} />
+              </div>
+              <div className="grid md:grid-cols-[150px_1fr] gap-2 md:gap-4 py-3 border-t border-gold-subtle">
+                <p className="font-display text-[11px] tracking-[0.2em] uppercase text-gold-dim md:pt-1">Updated techniques</p>
+                <Chips names={TEMPEST_ERRATA.updated} pathId="tempest" lookup={find} onOpen={setOpen} />
+              </div>
+            </div>
+            <Link to="/?path=tempest" className="arcane-btn !px-4 !py-2 text-sm inline-flex items-center gap-2">Open the Tempest path <ArrowRight size={14} /></Link>
           </Section>
 
           <Section id="filters" kicker="Talent tree" title="Path filters">
