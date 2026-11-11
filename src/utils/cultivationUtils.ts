@@ -65,12 +65,40 @@ export function isTierUnlocked(
   return prevTierAbilities.some(ability => selectedAbilities.includes(ability.id));
 }
 
+/**
+ * A stage with a higher stage of its series learned. A series is one technique, so only its highest
+ * learned stage costs points (Stone Fist I, II and III cost 3, not 6) and, if passive, holds essence.
+ * Active stages still add their own cost to the essence pool, since each is still used.
+ */
+export function isSupersededStage(ability: Ability, selectedAbilities: string[], abilities: Ability[]): boolean {
+  if (!ability.series) return false;
+  return abilities.some(a =>
+    a.series === ability.series && (a.stage ?? 0) > (ability.stage ?? 0) && selectedAbilities.includes(a.id));
+}
+
+/** In a series whose stages replace each other, a stage below the highest one learned. Sheets leave it out. */
+export function isReplacedStage(ability: Ability, selectedAbilities: string[], abilities: Ability[]): boolean {
+  if (!ability.series || ability.stages !== 'replace') return false;
+  return abilities.some(a => a.series === ability.series && (a.stage ?? 0) > (ability.stage ?? 0) && selectedAbilities.includes(a.id));
+}
+
+/** What a learned ability costs in points, and holds in essence if it is a passive or cantrip. Pool capacity from actives doesn't use it. */
+export const abilityPointCost = (ability: Ability, selectedAbilities: string[], abilities: Ability[]) =>
+  isSupersededStage(ability, selectedAbilities, abilities) ? 0 : getTierCost(ability.tier);
+
+/** The stage before this one, when it isn't learned. Every stage of a series needs the one before it. */
+export function missingPreviousStage(ability: Ability, selectedAbilities: string[], abilities: Ability[]): Ability | undefined {
+  if (!ability.series || !ability.stage || ability.stage < 2) return undefined;
+  const previous = abilities.find(a => a.series === ability.series && a.stage === ability.stage! - 1);
+  return previous && !selectedAbilities.includes(previous.id) ? previous : undefined;
+}
+
 // Calculate total essence points spent
 export function calculateTotalPointsSpent(selectedAbilities: string[], allAbilities: Ability[]): number {
   return selectedAbilities.reduce((total, abilityId) => {
     const ability = allAbilities.find(a => a.id === abilityId);
     if (!ability) return total;
-    return total + getTierCost(ability.tier);
+    return total + abilityPointCost(ability, selectedAbilities, allAbilities);
   }, 0);
 }
 
@@ -86,7 +114,7 @@ export function calculateEffectiveMaxPoints(
     const ability = allAbilities.find(a => a.id === abilityId);
     if (!ability) return total;
     if (ability.isPassive || ability.isCantrip) {
-      return total + getTierCost(ability.tier);
+      return total + abilityPointCost(ability, selectedAbilities, allAbilities);
     }
     return total;
   }, 0);
@@ -135,7 +163,7 @@ export function calculatePathEssenceStatus(
     const ability = pathAbilities.find(a => a.id === abilityId);
     if (!ability) return total;
     if (ability.isPassive || ability.isCantrip) {
-      return total + getTierCost(ability.tier);
+      return total + abilityPointCost(ability, selectedAbilities, pathAbilities);
     }
     return total;
   }, 0);
@@ -180,7 +208,8 @@ export function shouldUnallocateAbility(
   pathAbilities: Ability[],
   characterLevel: number
 ): boolean {
-  return !isTierUnlocked(ability.tier, selectedAbilities, pathAbilities, characterLevel);
+  return !isTierUnlocked(ability.tier, selectedAbilities, pathAbilities, characterLevel)
+    || !!missingPreviousStage(ability, selectedAbilities, pathAbilities);
 }
 
 export interface V1CharacterConfig {
@@ -336,7 +365,12 @@ export function reconcileCultivationCharacter(
 export const RETIERED_TALENT_IDS = [
   'water_master_moonfall_condemnation',
   'wind_master_essence_lunar_wind_spiral',
-  'water_master_lunar_tide'
+  'water_master_lunar_tide',
+  // Alchemy's explosive and acid passives, spread across Initiate, Adept and Master
+  'acid_adept_extended_reach',
+  'acid_adept_explosive_savant',
+  'acid_initiate_acidic_precision',
+  'acid_adept_chemical_expertise'
 ];
 
 /**
@@ -351,7 +385,9 @@ export const MOVED_TALENT_IDS = [
   'water_9th_level_time_stop',
   'v2_lunar_paradox',
   'v2_pestilence_time_ravage',
-  'wood_master_heart_exchange'
+  'wood_master_heart_exchange',
+  // Back to Mysteries
+  'v2_mystery_mage_hand'
 ];
 
 export function settleRetieredTalents(
@@ -363,15 +399,22 @@ export function settleRetieredTalents(
   },
   paths: CultivationPath[]
 ): CultivationCharacter {
-  const held = [...RETIERED_TALENT_IDS, ...MOVED_TALENT_IDS].filter(id => character.selectedAbilities.includes(id));
-  if (!held.length) return character;
-
   const pathAbilities = (pathId: CultivationPathId) =>
     getCultivationPathAbilities(pathId, cultivationData.abilities, cultivationData.cantrips, cultivationData.spells);
+  const all = paths.flatMap(path => pathAbilities(path.id));
+  // Earlier stages a build skipped: a stage of a series is learned, but not every stage before it.
+  const skipped = all.filter(a => a.series && !character.selectedAbilities.includes(a.id) && all.some(b =>
+    b.series === a.series && (b.stage ?? 0) > (a.stage ?? 0) && character.selectedAbilities.includes(b.id)));
+  const held = [...RETIERED_TALENT_IDS, ...MOVED_TALENT_IDS].filter(id => character.selectedAbilities.includes(id));
+  if (!held.length && !skipped.length) return character;
+
   // Every path is re-checked: a moved spell can also leave its old path without the tier it opened.
   const affected = paths;
-  const all = paths.flatMap(path => pathAbilities(path.id));
   let selected = [...character.selectedAbilities];
+  // Fill in skipped stages when the build can afford them; otherwise the later stages are dropped below.
+  const filled = [...selected, ...skipped.map(a => a.id)];
+  const added = skipped.length && calculateTotalPointsSpent(filled, all) <= calculateEssencePoints(character.level) ? skipped : [];
+  if (added.length) selected = filled;
 
   // Losing one ability can close the next tier up, so repeat until nothing else locks.
   const dropLocked = () => {
@@ -397,7 +440,7 @@ export function settleRetieredTalents(
   }
 
   const removed = character.selectedAbilities.filter(id => !selected.includes(id));
-  if (!removed.length) return character;
+  if (!removed.length && !added.length) return character;
 
   const activeEssenceByPath = { ...character.activeEssenceByPath };
   for (const path of affected) {
@@ -406,12 +449,19 @@ export function settleRetieredTalents(
       .reduce((total, a) => total + getTierCost(a.tier), 0);
     activeEssenceByPath[path.id] = Math.min(activeEssenceByPath[path.id] || 0, available);
   }
-  const names = removed.map(id => all.find(a => a.id === id)?.name ?? id).join(', ');
+  const nameOf = (id: string) => all.find(a => a.id === id)?.name ?? id;
+  const notices: string[] = [];
+  if (added.length) {
+    notices.push(`Each stage of a staged ability now needs the stage before it, so ${added.map(a => a.name).join(', ')} ${added.length > 1 ? 'were' : 'was'} added to this build.`);
+  }
+  if (removed.length) {
+    notices.push(`${removed.length} selection(s) that no longer fit this build were removed, because abilities changed tier, moved path, or now need the stage before them: ${removed.map(nameOf).join(', ')}. Their Essence is free to spend again.`);
+  }
   return {
     ...character,
     selectedAbilities: selected,
     activeEssenceByPath,
-    migrationNotice: `Some abilities changed tier or moved to another path, so ${removed.length} selection(s) that no longer fit this build were removed: ${names}. Their Essence is free to spend again.`
+    migrationNotice: notices.join(' ')
   };
 }
 

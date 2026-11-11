@@ -417,3 +417,5 @@ export const fireSpells = [
     concentration: true,
   }
 ];
+
+export const fireFacets = [];

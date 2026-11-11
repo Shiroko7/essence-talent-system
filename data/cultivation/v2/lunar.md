@@ -2,12 +2,14 @@
 
 Tradition: Divine
 Concept: Selûne’s moon, stars, cycles, navigation, dreams, and celestial foresight.
+Facets: Moonlight, Stars, Visions
 
 ### Moonlit Verdant Beam
 
 ```yaml
 id: water_adept_moonlit_verdant_beam
 tier: adept
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -30,6 +32,7 @@ As an action, you fire a beam of toxic moonlight at a creature within 60 feet. M
 ```yaml
 id: water_master_lunar_tide
 tier: adept
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -48,6 +51,7 @@ As a reaction when you or creatures within 30 feet are subjected to a Dexterity 
 ```yaml
 id: water_master_moonfall_condemnation
 tier: grandmaster
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -71,6 +75,7 @@ If this damage reduces the target to 50 hit points or fewer, it must immediately
 ```yaml
 id: wind_master_essence_lunar_wind_spiral
 tier: grandmaster
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -100,6 +105,7 @@ You can use a bonus action on a subsequent turn to move the cylinder up to 30 fe
 ```yaml
 id: wind_master_essence_waning_moon_sabers
 tier: master
+facets: moonlight
 isActive: true
 isPassive: false
 isSpell: false
@@ -126,6 +132,7 @@ Make a ranged spell attack for each saber:
 ```yaml
 id: moon_1st_faerie_fire
 tier: 1st
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -146,6 +153,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#f
 ```yaml
 id: moon_2nd_moonbeam
 tier: 2nd
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -166,6 +174,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#m
 ```yaml
 id: moon_2nd_see_invisibility
 tier: 2nd
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -185,6 +194,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#s
 ```yaml
 id: v2_lunar_clairvoyance
 tier: 3rd
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -204,6 +214,7 @@ Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#clairv
 ```yaml
 id: moon_5th_alustriels_mooncloak
 tier: 5th
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -224,6 +235,7 @@ Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spel
 ```yaml
 id: moon_6th_true_seeing
 tier: 6th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -243,6 +255,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#t
 ```yaml
 id: v2_moon_dancing_lights
 tier: cantrip
+facets: stars
 isActive: false
 isPassive: false
 isSpell: false
@@ -263,6 +276,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#dancing%
 ```yaml
 id: moon_9th_foresight
 tier: 9th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -281,6 +295,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#f
 ```yaml
 id: moon_4th_divination
 tier: 4th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -301,6 +316,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 ```yaml
 id: moon_5th_dream
 tier: 5th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -319,6 +335,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 ```yaml
 id: v2_sun_crown_of_stars
 tier: 7th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -338,6 +355,7 @@ Source reference: [D&D 5e XGE on 5e.tools](https://5e.tools/spells.html#crown%20
 ```yaml
 id: metal_1st_level_arcane_aegis
 tier: 1st
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -356,6 +374,7 @@ Source reference: [Grim Hollow: Player's Guide (2024) on 5e.tools](https://5e.to
 ```yaml
 id: water_master_draconic_regeneration_emerald_moon
 tier: master
+facets: moonlight
 isActive: false
 isPassive: true
 isSpell: false
@@ -373,6 +392,7 @@ While under direct moonlight, you regain 1 hit point at the start of each of you
 ```yaml
 id: water_adept_rain_of_revelation
 tier: adept
+facets: visions
 isActive: true
 isPassive: false
 isSpell: false
@@ -395,6 +415,7 @@ You can summon a gentle, magical rain that grants clarity and insight to those w
 ```yaml
 id: wood_4th_level_locate_creature
 tier: 4th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -415,6 +436,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#l
 ```yaml
 id: acid_5th_level_magic_mirror
 tier: 5th
+facets: moonlight
 isActive: false
 isPassive: false
 isSpell: true
@@ -434,6 +456,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: acid_7th_level_prismatic_spray
 tier: 7th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -453,6 +476,7 @@ Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prisma
 ```yaml
 id: acid_9th_level_prismatic_wall
 tier: 9th
+facets: stars
 isActive: false
 isPassive: false
 isSpell: true
@@ -472,6 +496,7 @@ Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#prisma
 ```yaml
 id: v2_lunar_dream_of_the_blue_veil
 tier: 7th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -490,6 +515,7 @@ Source reference: [D&D 5e (TCE) on 5e.tools](https://5e.tools/spells.html#dream%
 ```yaml
 id: v2_lunar_moment_of_prescience
 tier: 8th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true
@@ -509,6 +535,7 @@ Source reference: [D&D 5e (Arcana Unleashed) on 5e.tools](https://5e.tools/spell
 ```yaml
 id: v2_lunar_wyrd_sight
 tier: 9th
+facets: visions
 isActive: false
 isPassive: false
 isSpell: true

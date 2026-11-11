@@ -11,6 +11,7 @@ export const lunarAbilities = [
     author: "Lesbian Dragons",
     location: "Leatrux",
     activation: "action",
+    facets: ["moonlight"],
   },
   {
     id: "water_master_lunar_tide",
@@ -24,6 +25,7 @@ export const lunarAbilities = [
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
     activation: "reaction",
+    facets: ["moonlight"],
   },
   {
     id: "water_master_moonfall_condemnation",
@@ -37,6 +39,7 @@ export const lunarAbilities = [
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
     activation: "action",
+    facets: ["moonlight"],
   },
   {
     id: "wind_master_essence_lunar_wind_spiral",
@@ -50,6 +53,7 @@ export const lunarAbilities = [
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
     activation: "action",
+    facets: ["moonlight"],
   },
   {
     id: "wind_master_essence_waning_moon_sabers",
@@ -63,6 +67,7 @@ export const lunarAbilities = [
     author: "Netherdark Emperor \"Yuji\" (Shadow Sect)",
     location: "Leatrux",
     activation: "bonus action",
+    facets: ["moonlight"],
   },
   {
     id: "water_master_draconic_regeneration_emerald_moon",
@@ -75,6 +80,7 @@ export const lunarAbilities = [
     isCantrip: false,
     author: "Lesbian Dragons",
     location: "Leatrux",
+    facets: ["moonlight"],
   },
   {
     id: "water_adept_rain_of_revelation",
@@ -88,6 +94,7 @@ export const lunarAbilities = [
     author: "Lluvia Tribe",
     location: "Phudara / Isle of Whispers",
     activation: "action",
+    facets: ["visions"],
   }
 ];
 
@@ -104,6 +111,7 @@ export const lunarCantrips = [
     author: "D&D 5e (PHB)",
     activation: "action",
     concentration: true,
+    facets: ["stars"],
   }
 ];
 
@@ -120,6 +128,7 @@ export const lunarSpells = [
     author: "Cleric (Twilight Domain) / Druid",
     activation: "action",
     concentration: true,
+    facets: ["moonlight"],
   },
   {
     id: "moon_2nd_moonbeam",
@@ -133,6 +142,7 @@ export const lunarSpells = [
     author: "Cleric (Twilight Domain) / Paladin (Ancients)",
     activation: "action",
     concentration: true,
+    facets: ["moonlight"],
   },
   {
     id: "moon_2nd_see_invisibility",
@@ -145,6 +155,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "Cleric (Twilight Domain) / Divination",
     activation: "action",
+    facets: ["visions"],
   },
   {
     id: "v2_lunar_clairvoyance",
@@ -157,6 +168,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB)",
     concentration: true,
+    facets: ["visions"],
   },
   {
     id: "moon_5th_alustriels_mooncloak",
@@ -170,6 +182,7 @@ export const lunarSpells = [
     author: "Alustriel / Selûne",
     activation: "action",
     concentration: true,
+    facets: ["moonlight"],
   },
   {
     id: "moon_6th_true_seeing",
@@ -182,6 +195,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "Cleric / Divination",
     activation: "action",
+    facets: ["visions"],
   },
   {
     id: "moon_9th_foresight",
@@ -193,6 +207,7 @@ export const lunarSpells = [
     isSpell: true,
     isCantrip: false,
     author: "Cleric / Divination",
+    facets: ["visions"],
   },
   {
     id: "moon_4th_divination",
@@ -206,6 +221,7 @@ export const lunarSpells = [
     author: "Cleric / Divination",
     activation: "action",
     ritual: true,
+    facets: ["visions"],
   },
   {
     id: "moon_5th_dream",
@@ -217,6 +233,7 @@ export const lunarSpells = [
     isSpell: true,
     isCantrip: false,
     author: "Cleric (Twilight Domain) / Illusion",
+    facets: ["visions"],
   },
   {
     id: "v2_sun_crown_of_stars",
@@ -229,6 +246,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "D&D 5e (XGE)",
     activation: "action",
+    facets: ["stars"],
   },
   {
     id: "metal_1st_level_arcane_aegis",
@@ -240,6 +258,7 @@ export const lunarSpells = [
     isSpell: true,
     isCantrip: false,
     activation: "action",
+    facets: ["moonlight"],
   },
   {
     id: "wood_4th_level_locate_creature",
@@ -253,6 +272,7 @@ export const lunarSpells = [
     author: "D&D 5e (PHB 2024)",
     activation: "action",
     concentration: true,
+    facets: ["visions"],
   },
   {
     id: "acid_5th_level_magic_mirror",
@@ -265,6 +285,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "Grim Hollow Player's Guide",
     activation: "reaction",
+    facets: ["moonlight"],
   },
   {
     id: "acid_7th_level_prismatic_spray",
@@ -277,6 +298,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB)",
     activation: "action",
+    facets: ["stars"],
   },
   {
     id: "acid_9th_level_prismatic_wall",
@@ -289,6 +311,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "D&D 5e (PHB)",
     activation: "action",
+    facets: ["stars"],
   },
   {
     id: "v2_lunar_dream_of_the_blue_veil",
@@ -300,6 +323,7 @@ export const lunarSpells = [
     isSpell: true,
     isCantrip: false,
     author: "D&D 5e (TCE)",
+    facets: ["visions"],
   },
   {
     id: "v2_lunar_moment_of_prescience",
@@ -312,6 +336,7 @@ export const lunarSpells = [
     isCantrip: false,
     author: "D&D 5e (Arcana Unleashed)",
     activation: "reaction",
+    facets: ["visions"],
   },
   {
     id: "v2_lunar_wyrd_sight",
@@ -325,5 +350,8 @@ export const lunarSpells = [
     author: "Kobold Press Northlands Worldbook",
     activation: "action",
     concentration: true,
+    facets: ["visions"],
   }
 ];
+
+export const lunarFacets = [{"id":"moonlight","label":"Moonlight"},{"id":"stars","label":"Stars"},{"id":"visions","label":"Visions"}];

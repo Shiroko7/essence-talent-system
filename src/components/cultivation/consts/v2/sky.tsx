@@ -632,3 +632,5 @@ export const skySpells = [
     concentration: true,
   }
 ];
+
+export const skyFacets = [];

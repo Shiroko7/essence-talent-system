@@ -1,13 +1,15 @@
 # Providence Cultivation Path
 
 Tradition: Divine
-Concept: Ilmater’s endurance, hope, protection, healing, and freedom from bonds.
+Concept: Ilmater’s endurance, hope, martyrdom, protection, and freedom from bonds.
+Facets: Endurance, Martyrdom, Wards
 
 ### Spare the Dying
 
 ```yaml
 id: providence_cantrip_spare_the_dying
 tier: cantrip
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: false
@@ -27,6 +29,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#s
 ```yaml
 id: providence_initiate_unbroken_spirit
 tier: initiate
+facets: endurance
 isActive: false
 isPassive: true
 isSpell: false
@@ -44,6 +47,7 @@ Your resolve remains steadfast under trial. When you or an ally within 15 feet m
 ```yaml
 id: providence_initiate_touch_of_respite
 tier: initiate
+facets: endurance
 isActive: true
 isPassive: false
 isSpell: false
@@ -62,6 +66,7 @@ As an action, you touch a willing creature, granting it immediate relief from mi
 ```yaml
 id: providence_initiate_boon_of_fortitude
 tier: initiate
+facets: endurance
 isActive: true
 isPassive: false
 isSpell: false
@@ -85,6 +90,7 @@ Additionally, the target becomes **immune to the stunned and incapacitated condi
 ```yaml
 id: providence_adept_gift_of_enduring_faith
 tier: adept
+facets: martyrdom
 isActive: true
 isPassive: false
 isSpell: false
@@ -103,6 +109,7 @@ As an action, you touch a living, willing creature. The target instantly regains
 ```yaml
 id: providence_adept_endurance_of_ilmater
 tier: adept
+facets: endurance
 isActive: true
 isPassive: false
 isSpell: false
@@ -124,6 +131,7 @@ Additionally, the target **cannot be knocked prone, moved, or grappled** against
 ```yaml
 id: fire_essence_martyrs_flame_aura
 tier: master
+facets: martyrdom, wards
 isActive: true
 isPassive: false
 isSpell: false
@@ -147,6 +155,7 @@ The flames warm and protect, never harming your allies.
 ```yaml
 id: wind_master_essence_liberations_gale
 tier: master
+facets: wards
 isActive: true
 isPassive: false
 isSpell: false
@@ -173,6 +182,7 @@ In addition, for 1 minute, you become an unyielding force:
 ```yaml
 id: providence_cantrip_guidance
 tier: cantrip
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: false
@@ -193,6 +203,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 ```yaml
 id: providence_cantrip_resistance
 tier: cantrip
+facets: wards
 isActive: false
 isPassive: false
 isSpell: false
@@ -215,6 +226,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#r
 ```yaml
 id: providence_3rd_beacon_of_hope
 tier: 3rd
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -235,6 +247,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#b
 ```yaml
 id: providence_4th_death_ward
 tier: 4th
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -254,6 +267,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 ```yaml
 id: providence_2nd_aid
 tier: 2nd
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -273,6 +287,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#a
 ```yaml
 id: providence_2nd_warding_bond
 tier: 2nd
+facets: martyrdom
 isActive: false
 isPassive: false
 isSpell: true
@@ -292,6 +307,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#w
 ```yaml
 id: providence_4th_freedom_of_movement
 tier: 4th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -311,6 +327,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#f
 ```yaml
 id: providence_master_agony_of_the_martyr
 tier: master
+facets: martyrdom
 isActive: true
 isPassive: false
 isSpell: false
@@ -334,6 +351,7 @@ At the start of each of your subsequent turns for up to 4 rounds, the target mus
 ```yaml
 id: v2_providence_bless
 tier: 1st
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -354,6 +372,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#bless_ph
 ```yaml
 id: providence_1st_heroism
 tier: 1st
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -374,6 +393,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#h
 ```yaml
 id: wind_adept_fortune_favors_the_swift
 tier: adept
+facets: endurance
 isActive: false
 isPassive: true
 isSpell: false
@@ -395,6 +415,7 @@ Whenever you expend a spell slot, you gain a d6 “wind die”. You can add it t
 ```yaml
 id: acid_1st_level_absorb_elements
 tier: 1st
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -414,6 +435,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#absorb
 ```yaml
 id: acid_3rd_level_glyph_of_warding
 tier: 3rd
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -432,6 +454,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 ```yaml
 id: wood_3rd_level_leomunds_tiny_hut
 tier: 3rd
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -451,6 +474,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#l
 ```yaml
 id: wood_3rd_level_spirit_guardians
 tier: 3rd
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -471,6 +495,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#s
 ```yaml
 id: wood_4th_level_guardian_of_faith
 tier: 4th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -490,6 +515,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 ```yaml
 id: wood_6th_level_planar_ally
 tier: 6th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -508,6 +534,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 ```yaml
 id: v2_providence_circle_of_power
 tier: 5th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -528,6 +555,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: v2_providence_holy_weapon
 tier: 5th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -548,6 +576,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#holy%2
 ```yaml
 id: v2_providence_heroes_feast
 tier: 6th
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -566,6 +595,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#h
 ```yaml
 id: v2_providence_power_word_fortify
 tier: 7th
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -585,6 +615,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 ```yaml
 id: v2_providence_holy_aura
 tier: 8th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -605,6 +636,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#h
 ```yaml
 id: v2_providence_perfection
 tier: 9th
+facets: endurance
 isActive: false
 isPassive: false
 isSpell: true
@@ -624,6 +656,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_providence_phoenix_flames
 tier: 9th
+facets: martyrdom
 isActive: false
 isPassive: false
 isSpell: true
@@ -643,6 +676,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_providence_power_word_shield
 tier: 7th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true
@@ -662,6 +696,7 @@ Source reference: [Heliana's Guide to Monster Hunting on 5e.tools](https://5e.to
 ```yaml
 id: wood_7th_level_conjure_celestial
 tier: 7th
+facets: wards
 isActive: false
 isPassive: false
 isSpell: true

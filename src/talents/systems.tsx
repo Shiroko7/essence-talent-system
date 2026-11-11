@@ -68,7 +68,7 @@ export const buildV1System = (): TalentSystem => {
 };
 
 export const buildV2System = (): TalentSystem => {
-  const { abilities, cantrips, spells, paths, groups, catalog } = importCultivationData('v2');
+  const { abilities, cantrips, spells, paths, groups, catalog, facets } = importCultivationData('v2');
   const systemPaths: SystemPath[] = paths.map(path => ({
     id: path.id,
     name: path.name,
@@ -77,6 +77,7 @@ export const buildV2System = (): TalentSystem => {
     description: path.description,
     patron: path.thematicFoundation,
     accent: path.accentColor,
+    facets: facets[path.id]?.length ? facets[path.id] : undefined,
     icon: (size = 18, color = path.accentColor) => getCultivationPathIcon(path.id, color, size)
   }));
   return {

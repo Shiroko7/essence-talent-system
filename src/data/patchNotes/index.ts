@@ -7,6 +7,7 @@
 
 import { PATCH as V2_0 } from './v2-0';
 import { PATCH as V2_1 } from './v2-1';
+import { PATCH as V2_1_1 } from './v2-1-1';
 
 export interface PatchMeta {
   /** URL segment: /patch-notes/<slug>. */
@@ -22,7 +23,7 @@ export interface PatchMeta {
   image: string;
 }
 
-export const PATCHES: PatchMeta[] = [V2_1, V2_0];
+export const PATCHES: PatchMeta[] = [V2_1_1, V2_1, V2_0];
 
 export const LATEST_PATCH = PATCHES[0];
 

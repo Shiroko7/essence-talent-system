@@ -7,7 +7,7 @@ import { Ability } from '../types/essence';
 import AbilityMarkdown from '../components/essences/AbilityMarkdown';
 import { DOMAIN_LABELS } from '../data/attunementRules';
 import {
-  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, kindLabel, kindOf, previewText, reservesEssence,
+  AbilityStatus, KIND_META, SystemPath, TalentController, costOf, facetOptions, kindLabel, kindOf, matchesFacet, previewText, reservesEssence,
   tierInfo, tierOf, tint
 } from './model';
 import { iconFor } from './abilityIcons';
@@ -115,6 +115,34 @@ export const Segmented = <T extends string>({ value, options, onChange, size = '
     ))}
   </div>
 );
+
+/** Facet chips for a path with sub-themes (Alchemy's acid, poison…). Renders nothing for other paths. */
+export const FacetChips: React.FC<{
+  path: SystemPath; abilities: Ability[]; value: string; onChange: (facet: string) => void;
+}> = ({ path, abilities, value, onChange }) => {
+  const options = facetOptions(path);
+  if (!options.length) return null;
+  const chip = (id: string, label: string, count: number) => {
+    const active = value === id;
+    return (
+      <button
+        key={id}
+        onClick={() => onChange(active && id !== 'all' ? 'all' : id)}
+        aria-pressed={active}
+        className={`rounded-full border px-3 py-1 text-xs font-display tracking-wide transition-colors whitespace-nowrap ${active ? 'text-ivory' : 'text-fog hover:text-parchment border-gold-subtle'}`}
+        style={active ? { borderColor: tint(path.accent, 0.6), background: tint(path.accent, 0.18) } : undefined}
+      >
+        {label} <span className="text-mist">{count}</span>
+      </button>
+    );
+  };
+  return (
+    <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label={`Filter ${path.name}`}>
+      {chip('all', 'All', abilities.length)}
+      {options.map(o => chip(o.id, o.label, abilities.filter(a => matchesFacet(a, o.id)).length))}
+    </div>
+  );
+};
 
 /* ------------------------------------------------------- character state */
 
@@ -534,7 +562,13 @@ export const AbilityModal: React.FC<{
             <X size={18} />
           </button>
           <AbilityIcon ability={ability} path={path} status={status} size={64} />
-          <p className="mt-3 text-[11px] font-display tracking-[0.2em] uppercase" style={{ color: path.accent }}>{path.name}</p>
+          <p className="mt-3 text-[11px] font-display tracking-[0.2em] uppercase" style={{ color: path.accent }}>
+            {path.name}
+            {/* Its sub-themes within the path, e.g. "Alchemy · Acid · Explosives" */}
+            {ability.facets?.map(id => path.facets?.find(f => f.id === id)?.label).filter(Boolean).map(label => (
+              <span key={label} className="text-fog"> · {label}</span>
+            ))}
+          </p>
           <h2 className="font-display text-2xl text-ivory leading-tight">{ability.name}</h2>
         </header>
         <div className="flex-1 overflow-y-auto p-5">

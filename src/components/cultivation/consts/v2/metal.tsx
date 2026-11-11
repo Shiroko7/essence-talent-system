@@ -393,3 +393,5 @@ export const metalSpells = [
     concentration: true,
   }
 ];
+
+export const metalFacets = [];

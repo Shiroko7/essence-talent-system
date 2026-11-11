@@ -2,12 +2,14 @@
 
 Tradition: Divine
 Concept: Disease, poison, curses, affliction, and resistance to corruption.
+Facets: Disease, Venom, Curses
 
 ### Venomous Touch
 
 ```yaml
 id: poison_initiate_venomous_touch
 tier: initiate
+facets: venom
 isActive: true
 isPassive: false
 isSpell: false
@@ -26,6 +28,7 @@ As an action, you can imbue your touch with a mild poison. A creature you touch 
 ```yaml
 id: poison_adept_venomous_strike
 tier: adept
+facets: venom
 isActive: true
 isPassive: false
 isSpell: false
@@ -44,6 +47,7 @@ As a bonus action, you can coat a weapon with a potent poison. The next attack y
 ```yaml
 id: pestilence_initiate_corrosive_touch
 tier: initiate
+facets: disease
 isActive: true
 isPassive: false
 isSpell: false
@@ -62,6 +66,9 @@ As an action, you wreathe your hand in sickly brown radiance and make a melee sp
 ```yaml
 id: poison_adept_toxic_skin_secretion_1
 tier: initiate
+series: toxic_skin_secretion
+stages: replace
+facets: venom
 isActive: false
 isPassive: true
 isSpell: false
@@ -80,6 +87,7 @@ Once per turn, when a creature hits you with a melee attack, that creature must 
 ```yaml
 id: pestilence_initiate_creeping_pestilence
 tier: initiate
+facets: disease
 isActive: true
 isPassive: false
 isSpell: false
@@ -103,6 +111,9 @@ At the end of each of its turns, the target can make another Constitution saving
 ```yaml
 id: poison_adept_toxic_skin_secretion_2
 tier: adept
+series: toxic_skin_secretion
+stages: replace
+facets: venom
 isActive: false
 isPassive: true
 isSpell: false
@@ -121,6 +132,7 @@ Once per turn, when a creature hits you with a melee attack, that creature must 
 ```yaml
 id: pestilence_adept_pestilent_cloud
 tier: adept
+facets: disease
 isActive: true
 isPassive: false
 isSpell: false
@@ -144,6 +156,7 @@ Creatures wearing or bearing a holy symbol of Talona are immune to its effects.
 ```yaml
 id: pestilence_adept_lingering_touch
 tier: adept
+facets: disease
 isActive: true
 isPassive: false
 isSpell: false
@@ -166,6 +179,9 @@ A restrained creature can use its action to make a Constitution saving throw. On
 ```yaml
 id: poison_adept_toxic_skin_secretion_3
 tier: master
+series: toxic_skin_secretion
+stages: replace
+facets: venom
 isActive: false
 isPassive: true
 isSpell: false
@@ -184,6 +200,7 @@ Once per turn, when a creature hits you with a melee attack, that creature must 
 ```yaml
 id: pestilence_cantrip_poison_spray
 tier: cantrip
+facets: venom
 isActive: false
 isPassive: false
 isSpell: false
@@ -203,6 +220,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 ```yaml
 id: pestilence_cantrip_infestation
 tier: cantrip
+facets: disease
 isActive: false
 isPassive: false
 isSpell: false
@@ -224,6 +242,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#infest
 ```yaml
 id: pestilence_1st_ray_of_sickness
 tier: 1st
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -243,6 +262,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#r
 ```yaml
 id: pestilence_1st_detect_poison_and_disease
 tier: 1st
+facets: disease, venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -264,6 +284,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#d
 ```yaml
 id: pestilence_4th_blight
 tier: 4th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -283,6 +304,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#b
 ```yaml
 id: pestilence_5th_contagion
 tier: 5th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -302,6 +324,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: pestilence_5th_insect_plague
 tier: 5th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -322,6 +345,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#i
 ```yaml
 id: pestilence_5th_cloudkill
 tier: 5th
+facets: venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -342,6 +366,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: pestilence_1st_purify_food_and_drink
 tier: 1st
+facets: disease, venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -362,6 +387,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 ```yaml
 id: pestilence_2nd_protection_from_poison
 tier: 2nd
+facets: venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -381,6 +407,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 ```yaml
 id: pestilence_master_blessed_immunity
 tier: master
+facets: disease, venom
 isActive: true
 isPassive: false
 isSpell: false
@@ -409,6 +436,7 @@ Additionally, if the target would contract a disease during that time, they auto
 ```yaml
 id: poison_adept_hallucinogenic_trance
 tier: adept
+facets: venom
 isActive: true
 isPassive: false
 isSpell: false
@@ -427,6 +455,7 @@ As a bonus action, you can target one poisoned creature within 30 feet. The targ
 ```yaml
 id: poison_adept_vestibular_trance
 tier: adept
+facets: venom
 isActive: true
 isPassive: false
 isSpell: false
@@ -445,6 +474,7 @@ As a bonus action, you can target one poisoned creature within 30 feet. The targ
 ```yaml
 id: torment_3rd_bestow_curse
 tier: 3rd
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true
@@ -465,6 +495,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#b
 ```yaml
 id: torment_1st_bane
 tier: 1st
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true
@@ -485,6 +516,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#b
 ```yaml
 id: v2_providence_remove_curse
 tier: 3rd
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true
@@ -504,6 +536,7 @@ Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#remove%2
 ```yaml
 id: poison_adept_venomous_precision
 tier: adept
+facets: venom
 isActive: false
 isPassive: true
 isSpell: false
@@ -525,6 +558,7 @@ When attacking a creature that is poisoned, you have advantage on attack rolls a
 ```yaml
 id: wind_3rd_level_stinking_cloud
 tier: 3rd
+facets: venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -545,6 +579,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#s
 ```yaml
 id: poison_3rd_level_sylunes_viper
 tier: 3rd
+facets: venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -564,6 +599,7 @@ Source reference: [D&D 5e (Heroes of Faerûn) on 5e.tools](https://5e.tools/spel
 ```yaml
 id: acid_4th_level_elemental_bane
 tier: 4th
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true
@@ -584,6 +620,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#elemen
 ```yaml
 id: wood_4th_level_giant_insect
 tier: 4th
+facets: venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -604,6 +641,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#g
 ```yaml
 id: poison_6th_level_investiture_of_venom
 tier: 5th
+facets: venom
 isActive: false
 isPassive: false
 isSpell: true
@@ -624,6 +662,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_pestilence_contagious_touch
 tier: 6th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -643,6 +682,7 @@ Source reference: [Blackstaff's Book of 1000 Spells on 5e.tools](https://5e.tool
 ```yaml
 id: v2_pestilence_symbol
 tier: 7th
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true
@@ -661,6 +701,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#s
 ```yaml
 id: v2_pestilence_abi_dalzims_horrid_wilting
 tier: 8th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -680,6 +721,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#abi-da
 ```yaml
 id: v2_pestilence_befuddlement
 tier: 8th
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true
@@ -699,6 +741,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#b
 ```yaml
 id: v2_pestilence_fleshcrawl
 tier: 7th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -719,6 +762,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_pestilence_flense
 tier: 8th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -739,6 +783,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_pestilence_creeping_death
 tier: 8th
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true
@@ -759,6 +804,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_pestilence_lifesink
 tier: 8th
+facets: disease
 isActive: false
 isPassive: false
 isSpell: true
@@ -779,6 +825,7 @@ Source reference: [Grim Hollow Player's Guide on 5e.tools](https://5e.tools/spel
 ```yaml
 id: v2_pestilence_afflict_line
 tier: 9th
+facets: curses
 isActive: false
 isPassive: false
 isSpell: true

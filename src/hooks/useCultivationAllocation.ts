@@ -7,6 +7,7 @@ import {
   CultivationVersion
 } from '../types/cultivation';
 import {
+  abilityPointCost,
   calculateTotalPointsSpent,
   calculateEffectiveMaxPoints,
   getCultivationPathAbilities,
@@ -46,7 +47,7 @@ export const backUpCultivationSave = (catalogVersion: CultivationVersion) => {
 };
 
 export const useCultivationAllocation = ({
-  initialLevel = 11,
+  initialLevel = 13,
   initialSelectedAbilities = [],
   paths,
   catalogVersion,
@@ -132,7 +133,7 @@ export const useCultivationAllocation = ({
       const ability = pathAbilities.find(a => a.id === abilityId);
       if (!ability) return total;
       if (ability.isPassive || ability.isCantrip) {
-        return total + getTierCost(ability.tier);
+        return total + abilityPointCost(ability, character.selectedAbilities, pathAbilities);
       }
       return total;
     }, 0);
@@ -176,8 +177,8 @@ export const useCultivationAllocation = ({
       return;
     }
 
-    const cost = getTierCost(ability.tier);
-    if (cost + totalPointsSpent > totalEssencePoints) {
+    // A later passive stage frees the one before it, so compare whole builds, not one ability's cost.
+    if (calculateTotalPointsSpent([...character.selectedAbilities, ability.id], allAbilitiesList) > totalEssencePoints) {
       setCurrentAbilityError(ability);
       return;
     }

@@ -95,7 +95,7 @@ const seedFromLegacy = (version: SystemVersion): CharacterBuild[] => {
     id: generateBuildId(),
     name: 'Character 1',
     version,
-    level: 11,
+    level: 13,
     selectedAbilities: [],
     activeEssenceByPath: {},
     createdAt: Date.now(),

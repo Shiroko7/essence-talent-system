@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Ability, SpellLevel, Tier, TierId, TIERS, getTierCost } from '../types/essence';
+import { Ability, PathFacet, SpellLevel, Tier, TierId, TIERS, getTierCost } from '../types/essence';
 import { isTierUnlocked } from '../utils/cultivationUtils';
 import type { CharacterBuild } from './characters/characterTypes';
 
@@ -23,6 +23,8 @@ export interface SystemPath {
   description?: string;
   patron?: string;
   accent: string;
+  /** Sub-themes the path's abilities are tagged with, for filtering (Alchemy's poisons, Water's ice). */
+  facets?: PathFacet[];
   icon: (size?: number, color?: string) => ReactNode;
 }
 
@@ -79,6 +81,10 @@ export interface TalentController {
   toggle: (ability: Ability, pathId: string) => void;
   statusOf: (ability: Ability, pathId: string) => AbilityStatus;
   lockReason: (ability: Ability, pathId: string) => string | null;
+  /** What a learned ability costs in points and holds if passive: 0 for a stage below a higher learned one. */
+  pointCostOf: (ability: Ability) => number;
+  /** A learned stage that a higher stage of its series replaces; sheets leave it out. */
+  isReplaced: (ability: Ability) => boolean;
   tierUnlocked: (tierId: TierId, pathId: string) => boolean;
   /** Pools with at least one learned ability, in catalog order. */
   pools: EssencePool[];
@@ -161,8 +167,15 @@ export const abilitySortKey = (ability: Ability) => {
   return 3 + SPELL_ORDER.indexOf(ability.tier);
 };
 
+/** Stages of a series lead each tier, so a series reads as one line up the tree; then passives, actives and spells. */
 export const sortAbilities = (abilities: Ability[]) =>
-  [...abilities].sort((a, b) => abilitySortKey(a) - abilitySortKey(b) || a.name.localeCompare(b.name));
+  [...abilities].sort((a, b) =>
+    Number(!a.series) - Number(!b.series) || (a.series ?? '').localeCompare(b.series ?? '')
+    || abilitySortKey(a) - abilitySortKey(b) || a.name.localeCompare(b.name));
+
+/** A path's series, in the order their first stage appears. */
+export const seriesOf = (abilities: Ability[]) =>
+  [...new Set(sortAbilities(abilities).filter(a => a.series).map(a => a.series!))];
 
 /**
  * Abilities bucketed by tier. Vertical layouts use 'ascending' so the tree grows
@@ -204,6 +217,15 @@ export const matchesSearch = (ability: Ability, term: string) => {
 export type KindFilter = 'all' | AbilityKind;
 
 export const matchesKind = (ability: Ability, filter: KindFilter) => filter === 'all' || kindOf(ability) === filter;
+
+/** A path's facet filter: 'all' or a facet id. Every ability in a faceted path has at least one facet. */
+export type FacetFilter = string;
+
+export const matchesFacet = (ability: Ability, filter: FacetFilter) =>
+  filter === 'all' || !!ability.facets?.includes(filter);
+
+/** The chips a path offers: its declared facets, or none for a path without them. */
+export const facetOptions = (path: SystemPath): PathFacet[] => path.facets ?? [];
 
 /** A short plain-text preview of a markdown description. */
 export const previewText = (description: string, length = 140) => {

@@ -426,3 +426,5 @@ export const undertowSpells = [
     concentration: true,
   }
 ];
+
+export const undertowFacets = [];

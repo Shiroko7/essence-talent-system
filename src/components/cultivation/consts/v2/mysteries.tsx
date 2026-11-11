@@ -64,6 +64,18 @@ export const mysteriesCantrips = [
     isCantrip: true,
     author: "D&D 5e (PHB 2024)",
     activation: "action",
+  },
+  {
+    id: "v2_mystery_mage_hand",
+    name: "Mage Hand",
+    description: "A spectral hand within 30 feet manipulates objects up to 10 pounds for 1 minute.\n\nSource reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mage%20hand_phb).",
+    tier: "cantrip",
+    isActive: false,
+    isPassive: false,
+    isSpell: false,
+    isCantrip: true,
+    author: "D&D 5e (PHB)",
+    activation: "action",
   }
 ];
 
@@ -350,3 +362,5 @@ export const mysteriesSpells = [
     activation: "action",
   }
 ];
+
+export const mysteriesFacets = [];

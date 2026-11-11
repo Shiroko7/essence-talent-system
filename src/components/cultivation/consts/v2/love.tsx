@@ -305,3 +305,5 @@ export const loveSpells = [
     activation: "action",
   }
 ];
+
+export const loveFacets = [];

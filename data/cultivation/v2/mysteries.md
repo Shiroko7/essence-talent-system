@@ -125,6 +125,25 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#p
 
 ---
 
+### Mage Hand
+
+```yaml
+id: v2_mystery_mage_hand
+tier: cantrip
+isActive: false
+isPassive: false
+isSpell: false
+isCantrip: true
+author: D&D 5e (PHB)
+activation: action
+```
+
+A spectral hand within 30 feet manipulates objects up to 10 pounds for 1 minute.
+
+Source reference: [D&D 5e PHB on 5e.tools](https://5e.tools/spells.html#mage%20hand_phb).
+
+---
+
 ## Spells
 
 ---

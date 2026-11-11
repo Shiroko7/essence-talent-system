@@ -63,6 +63,24 @@ export interface Ability {
   domain?: 'expansion' | 'restore' | 'bound';
   /** The one line a Domain Expansion or restore adds on the domain. */
   domainText?: string;
+  /** Facet ids from its path's Facets line (V2 only), used to filter the path's abilities. */
+  facets?: string[];
+  /**
+   * Staged techniques (Stone Fist I, II, III...) share a series id. Each stage needs the one
+   * before it, and only the highest learned passive stage of a series costs points and holds
+   * essence. See data/cultivation/README.md.
+   */
+  series?: string;
+  /** Its place in the series, from 1; assigned by the generator in tier order. */
+  stage?: number;
+  /** 'replace': each stage is a stronger copy of the last, so a sheet shows only the highest. 'add': each stage is its own ability. */
+  stages?: 'replace' | 'add';
+}
+
+/** A sub-theme within a path, such as Alchemy's poisons or Water's ice. */
+export interface PathFacet {
+  id: string;
+  label: string;
 }
 
 // Define the character state

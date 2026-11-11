@@ -2,12 +2,14 @@
 
 Tradition: Primordial
 Concept: Water, ice, mist, tides, and fluid adaptation.
+Facets: Water, Ice
 
 ### Tidespeech
 
 ```yaml
 id: water_initiate_echoes_of_the_deep
 tier: initiate
+facets: water
 isActive: false
 isPassive: true
 isSpell: false
@@ -25,6 +27,7 @@ You can communicate with aquatic creatures or spirits of water, allowing you to 
 ```yaml
 id: water_initiate_ice_form
 tier: initiate
+facets: ice
 isActive: true
 isPassive: false
 isSpell: false
@@ -43,6 +46,9 @@ As a bonus action, you can turn your body into ice for 1 minute. You gain resist
 ```yaml
 id: water_adept_tides_reflection_art_i
 tier: initiate
+series: tides_reflection_art
+stages: add
+facets: water
 isActive: true
 isPassive: false
 isSpell: false
@@ -73,6 +79,7 @@ As a bonus action, you can command the clone to move and take one of the followi
 ```yaml
 id: water_initiate_restorative_rain
 tier: initiate
+facets: water
 isActive: true
 isPassive: false
 isSpell: false
@@ -96,6 +103,7 @@ As an action, you create a 20-foot radius of gentle rain centered on you that la
 ```yaml
 id: water_adept_aqua_agility
 tier: adept
+facets: water
 isActive: false
 isPassive: true
 isSpell: false
@@ -113,6 +121,7 @@ Your swimming speed equals your walking speed. Additionally, you gain the abilit
 ```yaml
 id: water_adept_tidal_surge
 tier: adept
+facets: water
 isActive: true
 isPassive: false
 isSpell: false
@@ -131,6 +140,7 @@ You can summon a powerful wave of water that heals and revitalizes. As an action
 ```yaml
 id: water_adept_glacial_shield
 tier: adept
+facets: ice
 isActive: true
 isPassive: false
 isSpell: false
@@ -149,6 +159,7 @@ As a reaction, you can spend one spell slot and encase yourself in a barrier of 
 ```yaml
 id: water_adept_hydroportation
 tier: adept
+facets: water
 isActive: true
 isPassive: false
 isSpell: false
@@ -167,6 +178,7 @@ As a bonus action, you can teleport up to 60 feet to a space you can see within 
 ```yaml
 id: wind_adept_misty_escape
 tier: adept
+facets: water
 isActive: false
 isPassive: true
 isSpell: false
@@ -184,6 +196,9 @@ When you take damage, you can use your reaction to turn into a cloud of mist, ca
 ```yaml
 id: water_adept_tides_reflection_art_ii
 tier: adept
+series: tides_reflection_art
+stages: add
+facets: water
 isActive: true
 isPassive: false
 isSpell: false
@@ -206,6 +221,7 @@ In addition, you can now summon up to two Water Clones simultaneously. When they
 ```yaml
 id: water_master_aura_of_the_deep_bulwark
 tier: master
+facets: water
 isActive: true
 isPassive: false
 isSpell: false
@@ -226,6 +242,9 @@ While inside this aura, you and friendly creatures gain resistance to fire damag
 ```yaml
 id: water_adept_tides_reflection_art_iii
 tier: master
+series: tides_reflection_art
+stages: add
+facets: water
 isActive: false
 isPassive: true
 isSpell: false
@@ -250,6 +269,7 @@ In addition, your mastery deepens:
 ```yaml
 id: water_cantrip_frostbite
 tier: cantrip
+facets: ice
 isActive: false
 isPassive: false
 isSpell: false
@@ -268,6 +288,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#frostb
 ```yaml
 id: water_cantrip_ray_of_frost
 tier: cantrip
+facets: ice
 isActive: false
 isPassive: false
 isSpell: false
@@ -286,6 +307,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#r
 ```yaml
 id: water_cantrip_shape_water
 tier: cantrip
+facets: water, ice
 isActive: false
 isPassive: false
 isSpell: false
@@ -306,6 +328,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#shape%
 ```yaml
 id: water_1st_level_create_or_destroy_water
 tier: 1st
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -324,6 +347,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: water_2nd_level_rimes_binding_ice
 tier: 2nd
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -342,6 +366,7 @@ Source reference: [D&D 5e (FTD) on 5e.tools](https://5e.tools/spells.html#rime's
 ```yaml
 id: water_3rd_level_water_walk
 tier: 3rd
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -361,6 +386,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#w
 ```yaml
 id: water_4th_level_control_water
 tier: 4th
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -380,6 +406,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: tempest_5th_cone_of_cold
 tier: 5th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -399,6 +426,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#c
 ```yaml
 id: water_3rd_level_wall_of_water
 tier: 3rd
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -418,6 +446,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#wall%2
 ```yaml
 id: water_3rd_level_water_breathing
 tier: 3rd
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -437,6 +466,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#w
 ```yaml
 id: water_3rd_level_conjure_ocean
 tier: 3rd
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -460,6 +490,7 @@ Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.to
 ```yaml
 id: water_1st_level_bubble_lift
 tier: 1st
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -479,6 +510,7 @@ Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.to
 ```yaml
 id: water_1st_level_frost_fingers
 tier: 1st
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -498,6 +530,7 @@ Source reference: [D&D 5e (IDRotF) on 5e.tools](https://5e.tools/spells.html#fro
 ```yaml
 id: water_1st_level_ice_knife
 tier: 1st
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -517,6 +550,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#ice%20
 ```yaml
 id: water_1st_level_water_bullet
 tier: 1st
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -536,6 +570,7 @@ Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.to
 ```yaml
 id: water_1st_level_whelm_weapon
 tier: 1st
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -556,6 +591,7 @@ Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.to
 ```yaml
 id: water_2nd_level_snillocs_snowball_swarm
 tier: 2nd
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -575,6 +611,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#snillo
 ```yaml
 id: water_3rd_level_freedom_of_the_waves
 tier: 3rd
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -594,6 +631,7 @@ Source reference: [Tal'Dorei Campaign Setting Reborn on 5e.tools](https://5e.too
 ```yaml
 id: water_4th_level_watery_sphere
 tier: 4th
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -614,6 +652,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#watery
 ```yaml
 id: water_6th_level_crustacean_form
 tier: 6th
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -634,6 +673,7 @@ Source reference: [Obojima: Tales from the Tall Grass on 5e.tools](https://5e.to
 ```yaml
 id: water_6th_level_investiture_of_ice
 tier: 6th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -654,6 +694,7 @@ Source reference: [D&D 5e (XGE) on 5e.tools](https://5e.tools/spells.html#invest
 ```yaml
 id: wind_6th_level_otilukes_freezing_sphere
 tier: 6th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -673,6 +714,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#o
 ```yaml
 id: water_6th_level_wall_of_ice
 tier: 6th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -693,6 +735,7 @@ Source reference: [D&D 5e (PHB 2024) on 5e.tools](https://5e.tools/spells.html#w
 ```yaml
 id: v2_water_ice_soldiers
 tier: 7th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -712,6 +755,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_water_triumph_of_ice
 tier: 7th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -732,6 +776,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_water_glacial_cascade
 tier: 8th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -751,6 +796,7 @@ Source reference: [Kobold Press Deep Magic on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_water_great_wave
 tier: 8th
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -771,6 +817,7 @@ Source reference: [Spells That Don't Suck on 5e.tools](https://5e.tools/spells.h
 ```yaml
 id: v2_water_grand_flood
 tier: 9th
+facets: water
 isActive: false
 isPassive: false
 isSpell: true
@@ -790,6 +837,7 @@ Source reference: [The Elements and Beyond on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_water_glacial_tide
 tier: 9th
+facets: water, ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -809,6 +857,7 @@ Source reference: [The Elements and Beyond: Spell Variants on 5e.tools](https://
 ```yaml
 id: v2_water_deep_freeze
 tier: 9th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true
@@ -829,6 +878,7 @@ Source reference: [The Elements and Beyond on 5e.tools](https://5e.tools/spells.
 ```yaml
 id: v2_water_ice_mountain
 tier: 9th
+facets: ice
 isActive: false
 isPassive: false
 isSpell: true

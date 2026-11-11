@@ -28,6 +28,8 @@ As an action, you hurl a swirling torrent of flames laced with negative energy a
 ```yaml
 id: void_adept_netherdark_fist_ii
 tier: adept
+series: netherdark_fist
+stages: add
 isActive: false
 isPassive: true
 isSpell: false
@@ -53,6 +55,8 @@ When you use Netherdark Fist, you can spend **2 essences** instead of 1:
 ```yaml
 id: void_master_netherdark_fist_iii
 tier: master
+series: netherdark_fist
+stages: add
 isActive: false
 isPassive: true
 isSpell: false
@@ -138,6 +142,8 @@ You wrap yourself in the silence and obscurity of the Void. You gain darkvision 
 ```yaml
 id: void_initiate_netherdark_fist
 tier: initiate
+series: netherdark_fist
+stages: add
 isActive: true
 isPassive: false
 isSpell: false
@@ -225,6 +231,8 @@ As an action, you create a 4-inch beam of darkness that streaks toward a creatur
 ```yaml
 id: void_grandmaster_netherdark_fist_iv
 tier: grandmaster
+series: netherdark_fist
+stages: add
 isActive: false
 isPassive: true
 isSpell: false
@@ -249,6 +257,8 @@ When you use Netherdark Fist, you can spend **4 essences**:
 ```yaml
 id: void_greatgrandmaster_netherdark_fist_v
 tier: greatgrandmaster
+series: netherdark_fist
+stages: add
 isActive: false
 isPassive: true
 isSpell: false

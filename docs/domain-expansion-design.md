@@ -10,7 +10,7 @@ Every path has a domain: a Favored Domain (Primordial), Consecrated Ground (Divi
 
 - The **weaker** ones get a **Domain Expansion**. They work everywhere, and on the domain they add one thing.
 - Techniques **too strong for their tier** get a **restore**: nerfed everywhere, full strength on the domain.
-- One or two of the **strongest techniques**, Grandmaster or higher, are **domain-bound**. They work only on the domain.
+- The **strongest techniques**, Grandmaster or higher, can be **domain-bound**. They work only on the domain.
 - **Spells and cantrips** get no domain line at all, neither a Domain Expansion nor domain-bound.
 - **Everything else** works the same wherever you stand.
 
@@ -23,8 +23,8 @@ A Domain Expansion is one line. The player decides it when they use the ability,
 | Away from the domain | Works as written | Works, nerfed | Can't be used |
 | On the domain | Adds one thing | Full strength, as before the nerf | Works |
 | Tiers | Any, mostly Initiate to Master | Any below Grandmaster | Grandmaster or higher |
-| Which abilities | The weakest third of each tier's techniques | Techniques too strong for their tier | The strongest one or two techniques |
-| Share of a path | At least 40% of its techniques below Grandmaster | Counts toward the 40% | 1 or 2 entries |
+| Which abilities | The weakest third of each tier's techniques | Techniques too strong for their tier | The strongest techniques |
+| Share of a path | At least 40% of its techniques below Grandmaster | Counts toward the 40% | No fixed number |
 | How it's written | A last line: **Consecrated Ground.** Its damage dice are d10s. | A last line that gives back what the nerf took: **Consecrated Ground.** It doesn't require concentration. | A tag in the header, then: You can use this only on your Consecrated Ground. |
 
 The label is the family's own word: **Favored Domain.**, **Consecrated Ground.** or **Sanctum.**
@@ -62,9 +62,9 @@ Before Grandmaster, whether you're on your domain depends entirely on the story,
 
 So a domain-bound ability is guaranteed one big fight a day, which is about how often a cultivator would use their strongest ability anyway. That limit is what pays for its power.
 
-### Only a few
+### The climax, not the kit
 
-Domain-bound abilities should feel like the god or the element answering, not like the normal kit. If most of a Grandmaster's abilities were domain-bound, their whole kit would hang on one Consecration a day and they'd be weak in every other fight. One or two techniques per path keeps them as the climax.
+Domain-bound abilities should feel like the god or the element answering, not like the normal kit. If most of a Grandmaster's abilities were domain-bound, their whole kit would hang on one Consecration a day and they'd be weak in every other fight. There's no fixed number per path; bind a technique only when it's strong enough to need the leash.
 
 ### Never spells or cantrips
 
@@ -220,7 +220,7 @@ A light Domain Expansion is worth less than a level, a standard Domain Expansion
 
 1. List the path's techniques by tier and rank each tier by power. Leave spells and cantrips out.
 2. The bottom third of each tier are Domain Expansion candidates. Find each one's weakness and let the Domain Expansion fix exactly that: a narrow requirement gets lifted, low damage gets dice, one target gets more, an easy save gets disadvantage.
-3. The strongest one or two techniques at Grandmaster or above can become domain-bound. Check that the limit makes sense in the fiction: Hadal Domain is the deep itself rising.
+3. The strongest techniques at Grandmaster or above can become domain-bound. Check that the limit makes sense in the fiction: Hadal Domain is the deep itself rising.
 4. Leave the rest plain once at least 40% of the techniques below Grandmaster have a line.
 5. Write it in the path's voice. A Domain Expansion should feel like the place answering, not a generic +1.
 
