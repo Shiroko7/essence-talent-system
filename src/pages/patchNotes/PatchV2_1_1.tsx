@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Megaphone } from 'lucide-react';
 import { tint } from '../../talents/model';
 import { buildV2System } from '../../talents/systems';
+import { ATTUNEMENTS } from '../../data/attunementRules';
 import { ALCHEMY, FILTERS, MOVED, PATCH, STAGED, TEMPEST_ERRATA } from '../../data/patchNotes/v2-1-1';
 import { patchDate } from '../../data/patchNotes';
 import { AbilityChip, AbilityDialog, Chips, PathChip, Prose, Section } from './shared';
@@ -17,6 +18,8 @@ const TOC = [
   ['colours', 'Path colours']
 ];
 
+const tempestGround = ATTUNEMENTS.find(attunement => attunement.id === 'divine')?.domains.find(domain => domain.path === 'tempest');
+
 /** V2.1.1: Alchemy's expansion, path filters, staged techniques, and new colours for Ruin and Shadow. */
 const PatchV2_1_1: React.FC = () => {
   const { v2, find } = useMemo(() => {
@@ -27,6 +30,9 @@ const PatchV2_1_1: React.FC = () => {
   const path = (id: string) => v2.paths.find(p => p.id === id);
   const alchemy = path('alchemy');
   const heart = path('heart');
+  const tempestDomainAbilities = [...TEMPEST_ERRATA.updated, ...TEMPEST_ERRATA.techniques]
+    .map(name => find('tempest', name))
+    .filter((found): found is Found => found?.path.id === 'tempest' && Boolean(found.ability.domain));
 
   return (
     <>
@@ -107,8 +113,7 @@ const PatchV2_1_1: React.FC = () => {
             <Prose>
               <p>Stormshot replaces Lightning Arrow in Tempest. If you had Lightning Arrow learned, the app removes it and frees its Essence points when you load your character.</p>
               <p>At Master, Thunderhead Judgment can knock one target prone, and Storm Broadside rolls a separate attack for each of its four bolts. At Grandmaster, Red Lightning of Punishment blasts a 30-foot-radius sphere. Creatures that fail the save take 6d12 lightning damage and are cursed. Each attack that hits a cursed creature deals an extra 2d8 lightning damage until the curse is removed.</p>
-              <p>Terrain of Tempest moves creatures and vehicles across the domain at initiative count 20, and The Last Shipwreck traps one creature in a shipwreck illusion. Both techniques require Consecrated Ground.</p>
-              <p>On your Consecrated Ground, you can center Storm Broadside and Red Lightning of Punishment up to 240 feet away. Stormborn Presence and Raincaller also gain Domain Expansions.</p>
+              <p>Terrain of Tempest moves creatures and vehicles across the domain at initiative count 20, and The Last Shipwreck traps one creature in a shipwreck illusion.</p>
             </Prose>
             <div className="arcane-panel px-4">
               <div className="grid md:grid-cols-[150px_1fr] gap-2 md:gap-4 py-3">
@@ -120,6 +125,22 @@ const PatchV2_1_1: React.FC = () => {
                 <Chips names={TEMPEST_ERRATA.updated} pathId="tempest" lookup={find} onOpen={setOpen} />
               </div>
             </div>
+            <section className="arcane-panel px-4" aria-labelledby="tempest-consecrated-ground">
+              <h3 id="tempest-consecrated-ground" className="pt-4 font-display text-ivory">Consecrated Ground</h3>
+              {tempestGround && (
+                <p className="pb-2 text-sm text-mist"><strong className="text-parchment">{tempestGround.name}</strong> · {tempestGround.examples}</p>
+              )}
+              <ul>
+                {tempestDomainAbilities.map(found => (
+                  <li key={found.ability.id} className="grid md:grid-cols-[220px_1fr] gap-1 md:gap-4 py-3 border-t border-gold-subtle text-sm">
+                    <div><AbilityChip name={found.ability.name} found={found} onOpen={setOpen} /></div>
+                    <p className="text-parchment/90">
+                      {found.ability.domain === 'bound' ? 'Requires Consecrated Ground.' : found.ability.domainText}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </section>
             <Link to="/?path=tempest" className="arcane-btn !px-4 !py-2 text-sm inline-flex items-center gap-2">Open the Tempest path <ArrowRight size={14} /></Link>
           </Section>
 
