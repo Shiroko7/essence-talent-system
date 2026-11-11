@@ -28,7 +28,7 @@ export const ALCHEMY = {
     { name: 'Lethargy Draught', text: 'It falls unconscious for 10 minutes instead.' },
     { name: 'Claw Graft', text: 'Its damage dice are d10s.' },
     { name: 'Wing Graft', text: 'It lasts 1 hour instead.' },
-    { name: 'Healing Bomb', text: 'It restores an extra 2d8 hit points.' }
+    { name: 'Healing Bomb', text: 'It restores 4d8 + your essence ability modifier instead.' }
   ],
   changes: [
     { name: 'Extended Reach', text: 'Moves from Adept to Initiate.' },

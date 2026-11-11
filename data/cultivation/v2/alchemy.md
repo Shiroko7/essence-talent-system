@@ -1005,11 +1005,11 @@ isCantrip: false
 author: Nilo
 location: Phudara / Isle of Whispers
 domain: expansion
-domainText: It restores an extra 2d8 hit points.
+domainText: It restores 4d8 + your essence ability modifier instead.
 activation: action
 ```
 
-As an action, you throw a vial of healing elixir that bursts over a creature you can see within 60 feet, soaking into its wounds. It regains hit points equal to 3d8 + your essence ability modifier.
+As an action, you throw a vial of healing elixir that bursts at a point you can see within 60 feet. Each creature you choose within 10 feet of that point regains hit points equal to 2d8 + your essence ability modifier.
 
 ---
 
