@@ -4,7 +4,7 @@ The canonical catalog intended for V2 groups campaign-relevant paths into **Prim
 
 Each named spell or cantrip belongs to exactly one path. The generator rejects duplicate spell and cantrip titles and duplicate ability IDs. Spellcasting paths need at least one cantrip and one leveled spell; Heart is explicitly marked as a custom-talent path without a spell list.
 
-The catalog contains 222 custom talents (152 active and 70 passive), 41 cantrips, and 389 leveled spells, for 652 entries. Path totals range from 24 to 79 entries. These counts measure available choices; they do not rate mechanical power.
+The catalog contains 227 custom talents (157 active and 70 passive), 41 cantrips, and 388 leveled spells, for 656 entries. Path totals range from 24 to 79 entries. These counts measure available choices; they do not rate mechanical power.
 
 | Family | Path | Active / passive | Cantrips | Spells | Total |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -17,7 +17,7 @@ The catalog contains 222 custom talents (152 active and 70 passive), 41 cantrips
 | Divine | Lunar | 6 / 1 | 1 | 18 | 26 |
 | Divine | Providence | 7 / 2 | 3 | 22 | 34 |
 | Divine | Love | 2 / 0 | 2 | 20 | 24 |
-| Divine | Tempest | 5 / 2 | 1 | 19 | 27 |
+| Divine | Tempest | 10 / 2 | 1 | 18 | 31 |
 | Divine | Undertow | 7 / 3 | 2 | 20 | 32 |
 | Divine | Ruin | 11 / 3 | 3 | 25 | 42 |
 | Divine | Pestilence | 9 / 4 | 2 | 25 | 40 |
@@ -28,7 +28,7 @@ The catalog contains 222 custom talents (152 active and 70 passive), 41 cantrips
 
 ## Path boundaries
 
-- **Sky and Tempest:** Sky governs local air, pressure, flight, mist, sound carried through air, and direct lightning such as Lightning Bolt and Chain Lightning. Tempest governs weather systems, storm fronts, rain, thunder, dangerous seas, and lightning channeled as a storm’s strike, such as Call Lightning, Lightning Arrow, and Ride the Lightning.
+- **Sky and Tempest:** Sky governs local air, pressure, flight, mist, sound carried through air, and direct lightning such as Lightning Bolt and Chain Lightning. Tempest governs weather systems, storm fronts, rain, thunder, dangerous seas, and lightning channeled as a storm’s strike, such as Call Lightning, Stormshot, and Ride the Lightning.
 - **Tempest, Water, and Undertow:** Tempest is the sea you can see: Umberlee's weather, waves, and wrath at the surface. Undertow is the sea that takes you: Yhal'etsu's lightless deep below the last light, with ink, crushing pressure, tentacles, and drowning. Water is the element that runs through both, so water that is simply conjured or shaped stays in Water (Control Water, Watery Sphere, Wall of Water), and Maelstrom stays in Tempest with the sea in upheaval.
 - **Shadow and Undertow:** Shadow's darkness is absence and the Shadow Weave, so Hunger of Hadar stays there. Undertow's darkness is ink: it blinds, stains, and hides a predator.
 - **Alchemy and Pestilence:** Alchemy transforms and refines substances, including acids, medicines, crafted poisons, and body grafts; restorative cures such as Lesser and Greater Restoration live here. Pestilence governs venom, disease, contagion, curses, and resistance to them.
@@ -55,7 +55,7 @@ The former Void label is now **Shadow**, matching Shar’s darkness and shadow p
 
 The 5e spell entries link to 5e.tools and include concise effect summaries with their source. Spells from partnered and community books, such as Grim Hollow, Kobold Press, or The Elements and Beyond, only open on 5e.tools once that homebrew is loaded in its Homebrew manager. Every custom talent names an author and a location, so players know who taught it and where: a sect, tribe, person, or deity, and Sirius, Leatrux, or Phudara / Isle of Whispers. Deity and portfolio techniques (Bhaal, Cyric, Loviatar, Ilmater, Talona, Shar, and Kelemvor) are learned in Leatrux. Undertow's techniques come from Yhal'etsu, a god candidate beneath the Forbidden Sea in Sirius. Spells and cantrips instead name their sourcebook as the author and have no location. The current cultivation build uses the shared Essence budget. It reconciles saved V2.3 configurations by surviving ability IDs and shows a notice for retired selections. Abilities that changed tier or moved path keep their IDs; `RETIERED_TALENT_IDS` and `MOVED_TALENT_IDS` in `src/utils/cultivationUtils.ts` list them, and a saved build holding one is re-checked on load. Anything whose tier no longer opens is removed with a notice and its Essence refunded. The moved abilities are Haste, Teleport, Time Stop, Paradox, Time Ravage, and Mage Hand (now Mysteries), and Heart Exchange (now Heart). Water's Echoes of the Deep talent was renamed Tidespeech and kept its ID, since Echoes of the Deep is now an Undertow spell.
 
-Spells restored from the V1 essences keep their V1 IDs so V1 characters carry them over. When V2 knows a V1 ability under a different ID (a spell that moved path, or one V1 listed under two essences), `RENAMED_V1_IDS` in `src/utils/cultivationUtils.ts` maps the old ID to the new one. Seven V1 spells stay retired: Dragon’s Breath, Ember Belly, Elemental Exhalation, Songal’s Elemental Suffusion, Conjure Minor Elementals, Draconic Transformation, and Primordial Power. Reverse Gravity, which V1 listed under Air and Earth, returns in Mysteries.
+Spells restored from the V1 essences keep their V1 IDs so V1 characters carry them over. When V2 knows a V1 ability under a different ID (a spell that moved path, or one V1 listed under two essences), `RENAMED_V1_IDS` in `src/utils/cultivationUtils.ts` maps the old ID to the new one. Eight V1 spells are retired in V2: Dragon’s Breath, Ember Belly, Elemental Exhalation, Songal’s Elemental Suffusion, Conjure Minor Elementals, Draconic Transformation, Primordial Power, and Lightning Arrow. Reverse Gravity, which V1 listed under Air and Earth, returns in Mysteries.
 
 Run `bun run generate:cultivation` to validate and regenerate the catalog. `bun run build` runs the complete project generation and production build.
 

@@ -64,7 +64,7 @@ The archived sixteen-path source remains under [`data/cultivation/archive/v2.2/`
 
 ## Balance and implementation
 
-The current roster has 222 custom talents (152 active, 70 passive), 41 cantrips, and 389 leveled spells, for 652 total entries. Its path totals range from 24 to 79 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
+The current roster has 227 custom talents (157 active, 70 passive), 41 cantrips, and 388 leveled spells, for 656 total entries. Its path totals range from 24 to 79 entries; the detailed table is in [`data/cultivation/README.md`](../data/cultivation/README.md). The lower totals belong to focused paths such as Love, Lunar, and Tempest, while Sky and Alchemy cover wider sets of effects. Counts help expose where choices concentrate; they do not measure power. Review damage, control, defense, healing, mobility, and action economy in play.
 
 About half of a path's abilities can answer its domain: weaker ones gain a one-line Domain Expansion there, and a few Grandmaster or higher techniques work only there. Spells and cantrips are never domain-bound. Undertow is the first path built this way; the reasoning, rules, and modifier catalogue are in [`domain-expansion-design.md`](domain-expansion-design.md).
 

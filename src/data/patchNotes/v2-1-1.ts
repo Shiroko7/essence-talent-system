@@ -1,7 +1,6 @@
 /**
- * Patch notes for V2.1.1: Alchemy's expansion, path filters, staged techniques, and new colours
- * for Ruin and Shadow. A snapshot of the change; ability names must match the catalog names so
- * the notes can open their full text.
+ * Patch notes for V2.1.1, including the Tempest errata. Ability names must match the catalog
+ * names so the notes can open their full text.
  */
 
 export const PATCH = {
@@ -10,7 +9,7 @@ export const PATCH = {
   name: 'Craft and Stages',
   date: '2026-11-10',
   title: 'Alchemy, Path Filters, and Staged Techniques',
-  summary: 'Alchemy gets crafted poisons, body grafts, new medicine, and Domain Expansions. Seven paths get filter chips, and techniques learned in stages are now linked, so each upgrade costs only the difference.',
+  summary: 'Alchemy gets crafted poisons, body grafts, new medicine, and Domain Expansions. Seven paths get filter chips, and techniques learned in stages are now linked, so each upgrade costs only the difference. The Tempest errata adds five storm techniques and replaces Lightning Arrow with Stormshot.',
   image: '/og/patch-notes-v2-1-1.png'
 };
 
@@ -36,6 +35,11 @@ export const ALCHEMY = {
     { name: 'Acidic Precision', text: 'Moves from Initiate to Adept.' },
     { name: 'Chemical Expertise', text: 'Moves from Adept to Master, and adds 1d4 to Alchemist’s Supplies checks instead of +2.' }
   ]
+};
+
+export const TEMPEST_ERRATA = {
+  techniques: ['Stormshot', 'Thunderhead Judgment', 'Terrain of Tempest', 'Red Lightning of Punishment', 'The Last Shipwreck'],
+  updated: ['Stormborn Presence', 'Raincaller']
 };
 
 /** Each faceted path and its filter chips, in catalog order. */

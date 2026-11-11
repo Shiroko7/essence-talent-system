@@ -390,6 +390,11 @@ export const MOVED_TALENT_IDS = [
   'v2_mystery_mage_hand'
 ];
 
+/** Names to display when removing retired selections from saved builds. */
+const RETIRED_ABILITY_NAMES: ReadonlyMap<string, string> = new Map([
+  ['lightning_3rd_level_lightning_arrow', 'Lightning Arrow']
+]);
+
 export function settleRetieredTalents(
   character: CultivationCharacter,
   cultivationData: {
@@ -406,11 +411,12 @@ export function settleRetieredTalents(
   const skipped = all.filter(a => a.series && !character.selectedAbilities.includes(a.id) && all.some(b =>
     b.series === a.series && (b.stage ?? 0) > (a.stage ?? 0) && character.selectedAbilities.includes(b.id)));
   const held = [...RETIERED_TALENT_IDS, ...MOVED_TALENT_IDS].filter(id => character.selectedAbilities.includes(id));
-  if (!held.length && !skipped.length) return character;
+  const retired = character.selectedAbilities.filter(id => RETIRED_ABILITY_NAMES.has(id) && !all.some(ability => ability.id === id));
+  if (!held.length && !skipped.length && !retired.length) return character;
 
   // Every path is re-checked: a moved spell can also leave its old path without the tier it opened.
   const affected = paths;
-  let selected = [...character.selectedAbilities];
+  let selected = character.selectedAbilities.filter(id => !retired.includes(id));
   // Fill in skipped stages when the build can afford them; otherwise the later stages are dropped below.
   const filled = [...selected, ...skipped.map(a => a.id)];
   const added = skipped.length && calculateTotalPointsSpent(filled, all) <= calculateEssencePoints(character.level) ? skipped : [];
@@ -449,13 +455,13 @@ export function settleRetieredTalents(
       .reduce((total, a) => total + getTierCost(a.tier), 0);
     activeEssenceByPath[path.id] = Math.min(activeEssenceByPath[path.id] || 0, available);
   }
-  const nameOf = (id: string) => all.find(a => a.id === id)?.name ?? id;
+  const nameOf = (id: string) => all.find(a => a.id === id)?.name ?? RETIRED_ABILITY_NAMES.get(id) ?? id;
   const notices: string[] = [];
   if (added.length) {
     notices.push(`Each stage of a staged ability now needs the stage before it, so ${added.map(a => a.name).join(', ')} ${added.length > 1 ? 'were' : 'was'} added to this build.`);
   }
   if (removed.length) {
-    notices.push(`${removed.length} selection(s) that no longer fit this build were removed, because abilities changed tier, moved path, or now need the stage before them: ${removed.map(nameOf).join(', ')}. Their Essence is free to spend again.`);
+    notices.push(`Removed from this build: ${removed.map(nameOf).join(', ')}. Their Essence is free to spend again.`);
   }
   return {
     ...character,

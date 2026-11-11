@@ -95,6 +95,8 @@ isCantrip: false
 author: Lei Zhen
 location: Phudara / Isle of Whispers
 activation: action
+domain: expansion
+domainText: You can also use this technique to influence a single creature.
 ```
 
 When you make a Charisma (Persuasion) or Charisma (Intimidation) check to influence a group of people, you can invoke your stormy presence to gain advantage on the roll.
@@ -306,6 +308,8 @@ isCantrip: false
 author: Lluvia Tribe
 location: Phudara / Isle of Whispers
 activation: action
+domain: expansion
+domainText: The rain's radius is 60 feet.
 ```
 
 You can call forth a light rain within a 30-foot radius centered on you for 10 minutes. This rain lightly obscures the area, granting disadvantage on Perception checks relying on sight and extinguishing fires.
@@ -427,6 +431,28 @@ When you hit a creature with a melee weapon attack, you can channel the force of
 
 ---
 
+### Stormshot
+
+```yaml
+id: tempest_adept_stormshot
+tier: adept
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Umberlee
+location: Leatrux
+activation: bonus action
+domain: expansion
+domainText: The lightning damage dice are d10s.
+```
+
+As a bonus action, you gather storm lightning that lasts until the end of your turn. Your next ranged attack with a weapon against a creature releases it. On a hit, the attack deals an extra 4d8 lightning damage. On a miss, the target takes half as much lightning damage.
+
+---
+
+## Master Tier
+
 ### Extinguishing Lightning
 
 ```yaml
@@ -446,31 +472,97 @@ As an action, unleash consuming black lightning in a 60-foot cone. Each creature
 On a failed save, one ongoing magical effect or spell on the creature immediately ends (your choice).
 
 ---
+
+### Thunderhead Judgment
+
+```yaml
+id: tempest_master_thunderhead_judgment
+tier: master
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Umberlee
+location: Leatrux
+activation: action
+domain: expansion
+domainText: Its range is 240 feet.
+```
+
+As an action, you gather a thunderhead around one creature you can see within 120 feet and strike it with lightning from all sides. The target makes a Constitution saving throw against your essence ability save DC. On a failure, it takes 8d10 lightning damage and the thunderclap knocks it prone. On a success, it takes half as much damage only.
+
+---
+
+## Grandmaster Tier
+
+### Terrain of Tempest
+
+```yaml
+id: tempest_grandmaster_terrain_of_tempest
+tier: grandmaster
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Umberlee
+location: Leatrux
+domain: bound
+activation: bonus action
+```
+
+As a bonus action on your Consecrated Ground, you raise a sea storm across the entire domain for 1 minute. When you raise the storm, choose any number of creatures and land, water, or air vehicles you can see there. The gales make the domain difficult terrain for those targets until you choose again or the storm ends.
+
+At initiative count 20 each round while the storm lasts, choose targets again. A surge lit by lightning pushes each chosen target up to 15 feet horizontally in the same direction. Choose that direction or roll a d8, with 1 pointing north and the other results proceeding clockwise in 45-degree steps.
+
+A vehicle moves only through spaces it can traverse in its current mode of travel. Its passengers and cargo move with it and count as having been moved by that surge.
+
+---
+
+### Red Lightning of Punishment
+
+```yaml
+id: tempest_grandmaster_red_lightning_of_punishment
+tier: grandmaster
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Umberlee
+location: Leatrux
+activation: action
+```
+
+As an action, you call down a bolt of red lightning that bursts in a 30-foot-radius sphere centered on a point you can see within 120 feet. Each creature in the sphere makes a Dexterity saving throw against your essence ability save DC, taking 10d8 lightning damage on a failure or half as much on a success.
+
+---
+
+### The Last Shipwreck
+
+```yaml
+id: tempest_grandmaster_the_last_shipwreck
+tier: grandmaster
+isActive: true
+isPassive: false
+isSpell: false
+isCantrip: false
+author: Umberlee
+location: Leatrux
+activation: action
+concentration: true
+domain: bound
+```
+
+As an action on your Consecrated Ground, you show one creature you can see within 60 feet an illusion of its own shipwreck, with each wave tearing it from the wreckage. The target makes an Intelligence saving throw against your essence ability save DC. On a failure, the illusion incapacitates it while you concentrate, up to 1 minute.
+
+At the start of each of its turns while incapacitated by the illusion, the target takes 8d10 psychic damage. It repeats the saving throw at the end of each of its turns and immediately after it takes damage from another source. The illusion ends on a successful save.
+
+---
+
 ## Cantrips
 
 ---
 
 ## Spells restored from V1
-
----
-
-### Lightning Arrow
-
-```yaml
-id: lightning_3rd_level_lightning_arrow
-tier: 3rd
-isActive: false
-isPassive: false
-isSpell: true
-isCantrip: false
-author: D&D 5e (PHB)
-activation: bonus action
-concentration: true
-```
-
-Your next ranged weapon attack becomes lightning: 4d8 lightning damage on a hit or half on a miss, plus 2d8 to creatures within 10 feet of the target on a failed Dexterity save.
-
-Source reference: [D&D 5e (PHB) on 5e.tools](https://5e.tools/spells.html#lightning%20arrow_phb).
 
 ---
 
