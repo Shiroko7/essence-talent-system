@@ -506,7 +506,7 @@ author: Umberlee
 location: Leatrux
 activation: action
 domain: expansion
-domainText: You can choose a point within 240 feet.
+domainText: You can choose a point within 300 feet.
 ```
 
 As an action, you gather a bank of storm clouds over a point you can see within 120 feet and bring down up to four lightning bolts in quick succession. For each bolt, choose one creature you can see within 20 feet of that point and make a ranged spell attack against it. On a hit, the bolt deals 2d8 lightning damage. Resolve each bolt before choosing the next target. You can target the same creature with multiple bolts.
@@ -551,7 +551,7 @@ author: Umberlee
 location: Leatrux
 activation: action
 domain: expansion
-domainText: You can choose a point within 240 feet.
+domainText: You can choose a point within 300 feet.
 ```
 
 As an action, you call down a bolt of red lightning that bursts in a 30-foot-radius sphere centered on a point you can see within 120 feet. Each creature in the sphere makes a Dexterity saving throw against your essence ability save DC. On a failure, it takes 6d12 lightning damage and is cursed. On a success, it takes half as much damage only.

@@ -136,7 +136,7 @@ export const tempestAbilities = [
     location: "Leatrux",
     activation: "action",
     domain: "expansion",
-    domainText: "You can choose a point within 240 feet.",
+    domainText: "You can choose a point within 300 feet.",
   },
   {
     id: "tempest_grandmaster_terrain_of_tempest",
@@ -165,7 +165,7 @@ export const tempestAbilities = [
     location: "Leatrux",
     activation: "action",
     domain: "expansion",
-    domainText: "You can choose a point within 240 feet.",
+    domainText: "You can choose a point within 300 feet.",
   },
   {
     id: "tempest_grandmaster_the_last_shipwreck",
