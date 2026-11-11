@@ -486,7 +486,7 @@ author: Umberlee
 location: Leatrux
 activation: action
 domain: expansion
-domainText: On a failed save, the thunderclap pushes the target up to 10 feet horizontally in a direction you choose before knocking it prone.
+domainText: On a failed save, you can knock the target 30 feet in any direction you choose before it falls prone.
 ```
 
 As an action, you gather a thunderhead around one creature you can see within 120 feet and strike it with lightning from all sides. The target makes a Constitution saving throw against your essence ability save DC. On a failure, it takes 8d10 lightning damage and the thunderclap knocks it prone. On a success, it takes half as much damage only.

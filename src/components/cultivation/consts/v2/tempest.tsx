@@ -121,7 +121,7 @@ export const tempestAbilities = [
     location: "Leatrux",
     activation: "action",
     domain: "expansion",
-    domainText: "On a failed save, the thunderclap pushes the target up to 10 feet horizontally in a direction you choose before knocking it prone.",
+    domainText: "On a failed save, you can knock the target 30 feet in any direction you choose before it falls prone.",
   },
   {
     id: "tempest_master_storm_broadside",
