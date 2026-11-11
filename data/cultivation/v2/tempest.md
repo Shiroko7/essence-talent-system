@@ -96,7 +96,7 @@ author: Lei Zhen
 location: Phudara / Isle of Whispers
 activation: action
 domain: expansion
-domainText: You can also use this technique to influence a single creature.
+domainText: If you succeed on the Charisma (Intimidation) check, choose one creature from the group. It is frightened of you until the end of its next turn.
 ```
 
 When you make a Charisma (Persuasion) or Charisma (Intimidation) check to influence a group of people, you can invoke your stormy presence to gain advantage on the roll.
@@ -486,7 +486,7 @@ author: Umberlee
 location: Leatrux
 activation: action
 domain: expansion
-domainText: Its range is 240 feet.
+domainText: On a failed save, the thunderclap pushes the target up to 10 feet horizontally in a direction you choose before knocking it prone.
 ```
 
 As an action, you gather a thunderhead around one creature you can see within 120 feet and strike it with lightning from all sides. The target makes a Constitution saving throw against your essence ability save DC. On a failure, it takes 8d10 lightning damage and the thunderclap knocks it prone. On a success, it takes half as much damage only.

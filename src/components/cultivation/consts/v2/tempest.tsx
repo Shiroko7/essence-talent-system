@@ -12,7 +12,7 @@ export const tempestAbilities = [
     location: "Phudara / Isle of Whispers",
     activation: "action",
     domain: "expansion",
-    domainText: "You can also use this technique to influence a single creature.",
+    domainText: "If you succeed on the Charisma (Intimidation) check, choose one creature from the group. It is frightened of you until the end of its next turn.",
   },
   {
     id: "lightning_initiate_storm_navigator",
@@ -121,7 +121,7 @@ export const tempestAbilities = [
     location: "Leatrux",
     activation: "action",
     domain: "expansion",
-    domainText: "Its range is 240 feet.",
+    domainText: "On a failed save, the thunderclap pushes the target up to 10 feet horizontally in a direction you choose before knocking it prone.",
   },
   {
     id: "tempest_master_storm_broadside",
